@@ -25,7 +25,7 @@ PATTERN_SECTION_DEPRECATED="refactor\(deprecated\):|chore\(deprecated\)"
 PATTERN_SECTION_FIXED="fix:"
 PATTERN_SECTION_SECURITY="fix\(security\):"
 PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:|refactor\(@pylapp\)!:"
-PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|chore\(@pylapp\):|ci:|docs:|style:|refactor:|perf:|test:"
+PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|chore\(@pylapp\):|ci:|docs:|style:|refactor:|refactor\(@pylapp\):|perf:|test:"
 
 # All acceptable patterns
 COMMIT_PREFIX_PATTERN="^($PATTERN_SECTION_ADDED|$PATTERN_SECTION_REMOVED|$PATTERN_SECTION_DEPRECATED|$PATTERN_SECTION_FIXED|$PATTERN_SECTION_SECURITY|$PATTERN_SECTION_BREAKING|$PATTERN_SECTION_CHANGED)"

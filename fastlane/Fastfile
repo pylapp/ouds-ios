@@ -1,15 +1,11 @@
 #
-# Software Name: Orange Unified Design System
-# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# Software Name: MISO
+# SPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne
 # SPDX-License-Identifier: MIT
 #
 # This software is distributed under the MIT license,
 # the text of which is available at https://opensource.org/license/MIT/
 # or see the "LICENSE" file for more details.
-#
-# Authors: See CONTRIBUTORS.txt
-# Software description: A SwiftUI components library with code examples for Orange Unified Design System
-#
 
 # Lanes
 # ------
@@ -36,8 +32,7 @@ platform :ios do
     lane :format do
         puts "👉 Run Swift Format to format sources"
 
-        template = '\\nSoftware Name: OUDS iOS\\nSPDX-FileCopyrightText: Copyright (c) Orange SA\\nSPDX-License-Identifier: MIT\\n\\nThis software is distributed under the MIT license,\\nthe text of which is available at https://opensource.org/license/MIT/\\nor see the \\"LICENSE\\" file for more details.\\n\\nAuthors: See CONTRIBUTORS.txt\\nSoftware description: A SwiftUI components library with code examples for Orange Unified Design System\\n'
-        sh "cd .. && swiftformat . --exclude OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_discovery --exclude OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_onboarding --header \"#{template}\""
+        sh "cd .. && swiftformat ."
     end
 
     # ------------------------------------------------------------

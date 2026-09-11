@@ -1,27 +1,23 @@
 // swift-tools-version: 6.3
 
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software Name: MISO iOS
+// SPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 //
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
 
 import PackageDescription
 
-/// Exposing OUDS through a Swift Package is a good start.
+/// Exposing MISO through a Swift Package is a good start.
 /// Expose it through Pod or XCFramework should be investigated later.
 /// Defining here hierarchy between targets will prevent us to have cyclic dependencies and help to have separated responsibilities.
 let package = Package(
 
     // MARK: - Package setup
 
-    name: "OUDS",
+    name: "MISO",
     defaultLocalization: "en",
     platforms: [.iOS(.v15) /* and also iPadOS v15 */, .macOS(.v13), .visionOS(.v1), .watchOS(.v11), .tvOS(.v16)],
 
@@ -32,65 +28,36 @@ let package = Package(
 
         // MARK: Umbrella products
 
-        // Umbrella library to improve Developer eXperience and let users use OUDS in only one import
+        // Umbrella library to improve Developer eXperience and let users use MISO in only one import
 
         // Embeds all libraries and all themes
         .library(
-            name: "OUDSSwiftUI",
-            targets: ["OUDSSwiftUI"]),
-
-        // Embeds all libraries but only Orange and Orange Compact themes
-        .library(
-            name: "OUDSSwiftUIOrange",
-            targets: ["OUDSSwiftUIOrange"]),
-
-        // Embeds all libraries but only Orange and Sosh themes
-        .library(
-            name: "OUDSSwiftUIOrangeSosh",
-            targets: ["OUDSSwiftUIOrangeSosh"]),
-
-        // Embeds all libraries but only Wireframe theme
-        .library(
-            name: "OUDSSwiftUIWireframe",
-            targets: ["OUDSSwiftUIWireframe"]),
+            name: "MISO",
+            targets: ["MISO"]),
 
         // MARK: Atomic products
 
-        // Better user of products, choose only the one users want
-        // Helps to isolate packages ouf OUDS
         .library(
-            name: "OUDSThemesOrange",
-            targets: ["OUDSThemesOrange"]),
+            name: "MISOThemesContract",
+            targets: ["MISOThemesContract"]),
         .library(
-            name: "OUDSThemesOrangeCompact",
-            targets: ["OUDSThemesOrangeCompact"]),
+            name: "MISOModules",
+            targets: ["MISOModules"]),
         .library(
-            name: "OUDSThemesSosh",
-            targets: ["OUDSThemesSosh"]),
+            name: "MISOComponents",
+            targets: ["MISOComponents"]),
         .library(
-            name: "OUDSThemesWireframe",
-            targets: ["OUDSThemesWireframe"]),
+            name: "MISOTokensComponent",
+            targets: ["MISOTokensComponent"]),
         .library(
-            name: "OUDSThemesContract",
-            targets: ["OUDSThemesContract"]),
+            name: "MISOTokensSemantic",
+            targets: ["MISOSTokensRaw"]),
         .library(
-            name: "OUDSModules",
-            targets: ["OUDSModules"]),
+            name: "MISOTokensRaw",
+            targets: ["MISOTokensRaw"]),
         .library(
-            name: "OUDSComponents",
-            targets: ["OUDSComponents"]),
-        .library(
-            name: "OUDSTokensComponent",
-            targets: ["OUDSTokensComponent"]),
-        .library(
-            name: "OUDSTokensSemantic",
-            targets: ["OUDSTokensRaw"]),
-        .library(
-            name: "OUDSTokensRaw",
-            targets: ["OUDSTokensRaw"]),
-        .library(
-            name: "OUDSFoundations",
-            targets: ["OUDSFoundations"]),
+            name: "MISOFoundations",
+            targets: ["MISOFoundations"]),
     ],
 
     // MARK: - Dependencies
@@ -116,165 +83,89 @@ let package = Package(
         // MARK: Umbrella targets
 
         .target(
-            name: "OUDSSwiftUI",
+            name: "MISO",
             dependencies: [
-                "OUDSThemesOrange",
-                "OUDSThemesOrangeCompact",
-                "OUDSThemesSosh",
-                "OUDSThemesWireframe",
-                "OUDSThemesContract",
-                "OUDSModules",
-                "OUDSComponents",
-                "OUDSTokensComponent",
-                "OUDSTokensSemantic",
-                "OUDSTokensRaw",
-                "OUDSFoundations",
+                "MISOThemesWireframe",
+                "MISOThemesContract",
+                "MISOModules",
+                "MISOComponents",
+                "MISOTokensComponent",
+                "MISOTokensSemantic",
+                "MISOTokensRaw",
+                "MISOFoundations",
             ],
-            path: "OUDS/exported/OUDSSwiftUI/Sources"),
-
-        .target(
-            name: "OUDSSwiftUIOrange",
-            dependencies: [
-                "OUDSThemesOrange",
-                "OUDSThemesOrangeCompact",
-                "OUDSThemesContract",
-                "OUDSModules",
-                "OUDSComponents",
-                "OUDSTokensComponent",
-                "OUDSTokensSemantic",
-                "OUDSTokensRaw",
-                "OUDSFoundations",
-            ],
-            path: "OUDS/exported/OUDSSwiftUIOrange/Sources"),
-
-        .target(
-            name: "OUDSSwiftUIOrangeSosh",
-            dependencies: [
-                "OUDSThemesOrange",
-                "OUDSThemesSosh",
-                "OUDSThemesContract",
-                "OUDSModules",
-                "OUDSComponents",
-                "OUDSTokensComponent",
-                "OUDSTokensSemantic",
-                "OUDSTokensRaw",
-                "OUDSFoundations",
-            ],
-            path: "OUDS/exported/OUDSSwiftUIOrangeSosh/Sources"),
-
-        .target(
-            name: "OUDSSwiftUIWireframe",
-            dependencies: [
-                "OUDSThemesWireframe",
-                "OUDSThemesContract",
-                "OUDSModules",
-                "OUDSComponents",
-                "OUDSTokensComponent",
-                "OUDSTokensSemantic",
-                "OUDSTokensRaw",
-                "OUDSFoundations",
-            ],
-            path: "OUDS/exported/OUDSSwiftUIWireframe/Sources"),
+            path: "MISO/exported/MISO/Sources"),
 
         // MARK: Atomic targets
 
         .target(
-            name: "OUDSThemesOrange",
-            dependencies: ["OUDSThemesContract"],
-            path: "OUDS/Core/Themes/Orange/Sources",
+            name: "MISOThemesWireframe",
+            dependencies: ["MISOThemesContract"],
+            path: "MISO/Core/Themes/Wireframe/Sources",
             resources: [.process("Resources/")]),
         .testTarget(
-            name: "OUDSThemesOrange-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesOrange"],
-            path: "OUDS/Core/Themes/Orange/Tests"),
+            name: "MISOThemesWirefame-Tests",
+            dependencies: ["TestsUtils", "MISOThemesWireframe"],
+            path: "MISO/Core/Themes/Wireframe/Tests"),
 
         .target(
-            name: "OUDSThemesOrangeCompact",
-            dependencies: ["OUDSThemesContract", "OUDSThemesOrange"],
-            path: "OUDS/Core/Themes/OrangeCompact/Sources"),
+            name: "MISOThemesContract",
+            dependencies: ["MISOTokensRaw", "MISOTokensSemantic", "MISOTokensComponent"],
+            path: "MISO/Core/ThemesContract/Sources"),
         .testTarget(
-            name: "OUDSThemesOrangeCompact-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesOrangeCompact"],
-            path: "OUDS/Core/Themes/OrangeCompact/Tests"),
+            name: "MISOThemesContract-Tests",
+            dependencies: ["MISOThemesContract", "TestsUtils"],
+            path: "MISO/Core/ThemesContract/Tests"),
 
         .target(
-            name: "OUDSThemesSosh",
-            dependencies: ["OUDSThemesContract"],
-            path: "OUDS/Core/Themes/Sosh/Sources",
-            resources: [.process("Resources/")]),
-        .testTarget(
-            name: "OUDSThemesSosh-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesSosh"],
-            path: "OUDS/Core/Themes/Sosh/Tests"),
+            name: "MISOModules",
+            dependencies: ["MISOComponents"],
+            path: "MISO/Modules/Sources"),
 
         .target(
-            name: "OUDSThemesWireframe",
-            dependencies: ["OUDSThemesContract"],
-            path: "OUDS/Core/Themes/Wireframe/Sources",
-            resources: [.process("Resources/")]),
-        .testTarget(
-            name: "OUDSThemesWirefame-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesWireframe"],
-            path: "OUDS/Core/Themes/Wireframe/Tests"),
-
-        .target(
-            name: "OUDSThemesContract",
-            dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
-            path: "OUDS/Core/ThemesContract/Sources"),
-        .testTarget(
-            name: "OUDSThemesContract-Tests",
-            dependencies: ["OUDSThemesContract", "TestsUtils"],
-            path: "OUDS/Core/ThemesContract/Tests"),
-
-        .target(
-            name: "OUDSModules",
-            dependencies: ["OUDSComponents"],
-            path: "OUDS/Modules/Sources"),
-
-        .target(
-            name: "OUDSComponents",
-            dependencies: ["OUDSTokensComponent", "OUDSThemesContract"],
-            path: "OUDS/Core/Components/Sources",
+            name: "MISOComponents",
+            dependencies: ["MISOTokensComponent", "MISOThemesContract"],
+            path: "MISO/Core/Components/Sources",
             resources: [.process("_/Resources/")]),
         .testTarget(
-            name: "OUDSComponents-Tests",
-            dependencies: ["OUDSComponents"],
-            path: "OUDS/Core/Components/Tests"),
+            name: "MISOComponents-Tests",
+            dependencies: ["MISOComponents"],
+            path: "MISO/Core/Components/Tests"),
 
         .target(
-            name: "OUDSTokensComponent",
-            dependencies: ["OUDSTokensSemantic"],
-            path: "OUDS/Core/Tokens/ComponentTokens/Sources"),
+            name: "MISOTokensComponent",
+            dependencies: ["MISOTokensSemantic"],
+            path: "MISO/Core/Tokens/ComponentTokens/Sources"),
 
         .target(
-            name: "OUDSTokensSemantic",
-            dependencies: ["OUDSTokensRaw"],
-            path: "OUDS/Core/Tokens/SemanticTokens/Sources"),
+            name: "MISOTokensSemantic",
+            dependencies: ["MISOTokensRaw"],
+            path: "MISO/Core/Tokens/SemanticTokens/Sources"),
         .testTarget(
-            name: "OUDSTokensSemantic-Tests",
-            dependencies: ["OUDSTokensSemantic"],
-            path: "OUDS/Core/Tokens/SemanticTokens/Tests"),
+            name: "MISOTokensSemantic-Tests",
+            dependencies: ["MISOTokensSemantic"],
+            path: "MISO/Core/Tokens/SemanticTokens/Tests"),
 
         .target(
-            name: "OUDSTokensRaw",
-            dependencies: ["OUDSFoundations"],
-            path: "OUDS/Core/Tokens/RawTokens/Sources"),
+            name: "MISOTokensRaw",
+            dependencies: ["MISOFoundations"],
+            path: "MISO/Core/Tokens/RawTokens/Sources"),
         .testTarget(
-            name: "OUDSTokensRaw-Tests",
-            dependencies: ["TestsUtils", "OUDSTokensRaw"],
-            path: "OUDS/Core/Tokens/RawTokens/Tests"),
+            name: "MISOTokensRaw-Tests",
+            dependencies: ["TestsUtils", "MISOTokensRaw"],
+            path: "MISO/Core/Tokens/RawTokens/Tests"),
 
         .target(
-            name: "OUDSFoundations",
-            path: "OUDS/Foundations/Sources"),
+            name: "MISOFoundations",
+            path: "MISO/Foundations/Sources"),
         .testTarget(
-            name: "OUDSFoundations-Tests",
-            dependencies: ["OUDSFoundations"],
-            path: "OUDS/Foundations/Tests"),
+            name: "MISOFoundations-Tests",
+            dependencies: ["MISOFoundations"],
+            path: "MISO/Foundations/Tests"),
         .target(
             name: "TestsUtils",
-            dependencies: ["OUDSFoundations"],
-            path: "OUDS/Foundations/TestsUtils"),
+            dependencies: ["MISOFoundations"],
+            path: "MISO/Foundations/TestsUtils"),
     ],
 
     // MARK: - Swift language modes
