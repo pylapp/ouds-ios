@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
 import MISOThemesContract
@@ -169,28 +156,6 @@ import SwiftUI
 ///     // Fixed height — no vertical growth
 ///     MISOTextArea(label: "Comments", text: $text, constrainedMaxHeight: true)
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-text-area)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A text area component in light and dark modes with Orange theme](component_textArea_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A text area component in light and dark modes with Orange Compact theme](component_textArea_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A text area component in light and dark modes with Sosh theme](component_textArea_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A text area component in light and dark modes with Wireframe theme](component_textArea_Wireframe)
 ///
 /// - Version: 1.2.1 (Figma component design version)
 /// - Since: 1.4.0
