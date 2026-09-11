@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 /// Text component providing the largest typography styles of the design system.
@@ -31,14 +18,14 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Simple raw string
-///     OUDSDisplay(text: "Woy!")
+///     MISODisplay(text: "Woy!")
 ///
 ///     // Explicit size
-///     OUDSDisplay(text: "Woy!", size: .medium)
+///     MISODisplay(text: "Woy!", size: .medium)
 ///
 ///     // Localizable from a bundle
-///     OUDSDisplay(LocalizedStringKey("welcome_title_wording_key"), bundle: Bundle.module)
-///     OUDSDisplay(LocalizedStringKey("welcome_title_wording_key"), bundle: Bundle.module, size: .small)
+///     MISODisplay(LocalizedStringKey("welcome_title_wording_key"), bundle: Bundle.module)
+///     MISODisplay(LocalizedStringKey("welcome_title_wording_key"), bundle: Bundle.module, size: .small)
 /// ```
 ///
 /// ## Accessibility
@@ -46,32 +33,10 @@ import SwiftUI
 /// The component adds the `.isHeader` accessibility trait so that assistive technologies (like *VoiceOver*)
 /// announce the text as a header.
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A display typography component in light and dark modes with Orange theme](component_typography_display_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A display typography component in light and dark modes with Orange Compact theme](component_typography_display_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A display typography component in light and dark modes with Sosh theme](component_typography_display_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A display typography component in light and dark modes with Wireframe theme](component_typography_display_Wireframe)
-///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSDisplay: View { // TODO: #1580 - Add reference to documentation when available
+public struct MISODisplay: View { // TODO: #1580 - Add reference to documentation when available
 
     // MARK: Properties
 
@@ -101,7 +66,7 @@ public struct OUDSDisplay: View { // TODO: #1580 - Add reference to documentatio
     /// Creates a display text with a raw `String`.
     ///
     /// ```swift
-    ///     OUDSDisplay(text: "Welcome", size: .large)
+    ///     MISODisplay(text: "Welcome", size: .large)
     /// ```
     ///
     /// - Parameters:
@@ -115,7 +80,7 @@ public struct OUDSDisplay: View { // TODO: #1580 - Add reference to documentatio
     /// Creates a display text with a localized `LocalizedStringKey`, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSDisplay(LocalizedStringKey("welcome_title"),
+    ///     MISODisplay(LocalizedStringKey("welcome_title"),
     ///                 bundle: Bundle.module,
     ///                 size: .medium)
     /// ```

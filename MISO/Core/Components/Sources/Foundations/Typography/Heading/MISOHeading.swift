@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import SwiftUI
 
@@ -46,22 +33,22 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Simple raw string
-///     OUDSHeading(text: "Title")
+///     MISOHeading(text: "Title")
 ///
 ///     // Large heading with a marker (rendered only when the theme supports it)
-///     OUDSHeading(text: "Section title", size: .large, hasMarker: true)
+///     MISOHeading(text: "Section title", size: .large, hasMarker: true)
 ///
 ///     // Smaller heading (marker parameter would be ignored here)
-///     OUDSHeading(text: "Sub-section", size: .medium)
+///     MISOHeading(text: "Sub-section", size: .medium)
 ///
 ///     // Heading with a brand-coloured word
-///     OUDSHeading(text: "Welcome to Orange", coloredText: "Orange")
+///     MISOHeading(text: "Welcome to Orange", coloredText: "Orange")
 ///
 ///     // Combined: coloured word
-///     OUDSHeading(text: "Welcome to Sosh", coloredText: "Sosh")
+///     MISOHeading(text: "Welcome to Sosh", coloredText: "Sosh")
 ///
 ///     // Localizable from a bundle
-///     OUDSHeading(LocalizedStringKey("section_title"), bundle: Bundle.module, size: .large)
+///     MISOHeading(LocalizedStringKey("section_title"), bundle: Bundle.module, size: .large)
 /// ```
 ///
 /// ## Accessibility
@@ -69,32 +56,10 @@ import SwiftUI
 /// The component adds the `.isHeader` accessibility trait so that assistive technologies (like *VoiceOver*)
 /// announce the text as a header. When a marker is drawn, it is hidden from assistive technologies (decorative).
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A heading typography component in light and dark modes with Orange theme](component_typography_heading_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A heading typography component in light and dark modes with Orange Compact theme](component_typography_heading_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A heading typography component in light and dark modes with Sosh theme](component_typography_heading_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A heading typography component in light and dark modes with Wireframe theme](component_typography_heading_Wireframe)
-///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSHeading: View {
+public struct MISOHeading: View {
 
     // MARK: - Properties
 
@@ -130,7 +95,7 @@ public struct OUDSHeading: View {
     /// Creates a heading with a raw `String`.
     ///
     /// ```swift
-    ///     OUDSHeading(text: "Title", size: .large, hasMarker: true)
+    ///     MISOHeading(text: "Title", size: .large, hasMarker: true)
     /// ```
     ///
     /// - Parameters:
@@ -148,7 +113,7 @@ public struct OUDSHeading: View {
     /// Creates a heading with a localized `LocalizedStringKey`, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSHeading(LocalizedStringKey("section_title"),
+    ///     MISOHeading(LocalizedStringKey("section_title"),
     ///                 bundle: Bundle.module,
     ///                 size: .large,
     ///                 hasMarker: true)
@@ -176,7 +141,7 @@ public struct OUDSHeading: View {
     /// This variant is meant for `size == .large`; passing another size will log a warning and render the text plain.
     ///
     /// ```swift
-    ///     OUDSHeading(text: "Welcome to Sosh", coloredText: "Sosh")
+    ///     MISOHeading(text: "Welcome to Sosh", coloredText: "Sosh")
     /// ```
     ///
     /// - Parameters:
@@ -196,7 +161,7 @@ public struct OUDSHeading: View {
     /// looking up the text in a bundle for localization.
     ///
     /// ```swift
-    ///     OUDSHeading(LocalizedStringKey("welcome_sosh"),
+    ///     MISOHeading(LocalizedStringKey("welcome_sosh"),
     ///                 bundle: Bundle.module,
     ///                 coloredText: "Sosh")
     /// ```
@@ -251,12 +216,12 @@ public struct OUDSHeading: View {
     /// Emits warnings when the parameters are used outside their supported combinations.
     private func logMisuseWarningsIfNeeded() {
         if hasMarker, size != .large {
-            ML.warning("The 'hasMarker' parameter of OUDSHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
+            ML.warning("The 'hasMarker' parameter of MISOHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
         } else if hasMarker, size == .large, !theme.typography.headingLargeMarker {
             ML.warning("The current theme does not support a large heading marker. The 'hasMarker' parameter is ignored.")
         }
         if coloredText != nil, size != .large {
-            ML.warning("The 'coloredText' parameter of OUDSHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
+            ML.warning("The 'coloredText' parameter of MISOHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
         }
     }
 

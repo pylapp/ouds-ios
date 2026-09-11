@@ -19,7 +19,7 @@ import Testing
 
 // MARK: - HeadingMarker Tests
 
-/// Unit tests for the ``HeadingMarker`` internal view used by ``OUDSHeading`` when the current theme
+/// Unit tests for the ``HeadingMarker`` internal view used by ``MISOHeading`` when the current theme
 /// declares a supported heading large marker.
 ///
 /// The rectangle dimensions are pinned to the values coming from the Figma design of the

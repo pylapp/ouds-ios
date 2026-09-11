@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 /// Text component used to render *code snippets* and technical values using a monospaced typography.
@@ -24,36 +11,14 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     OUDSCode(text: "let x = 42")
-///     OUDSCode(LocalizedStringKey("code_sample_wording_key"), bundle: Bundle.module)
+///     MISOCode(text: "let x = 42")
+///     MISOCode(LocalizedStringKey("code_sample_wording_key"), bundle: Bundle.module)
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A code typography component in light and dark modes with Orange theme](component_typography_code_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A code typography component in light and dark modes with Orange Compact theme](component_typography_code_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A code typography component in light and dark modes with Sosh theme](component_typography_code_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A code typography component in light and dark modes with Wireframe theme](component_typography_code_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSCode: View { // TODO: #1580 - Add reference to documentation when available
+public struct MISOCode: View { // TODO: #1580 - Add reference to documentation when available
 
     // MARK: Properties
 

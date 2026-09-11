@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 /// Text component used for the main content of a screen (paragraphs, descriptions, helper texts, etc.).
@@ -33,37 +20,15 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     OUDSBody(text: "This is the black collar song...")
-///     OUDSBody(text: "This is the black collar song...", size: .large, weight: .strong)
-///     OUDSBody(LocalizedStringKey("some_wording_key"), bundle: Bundle.module, size: .small, weight: .moderate)
+///     MISOBody(text: "This is the black collar song...")
+///     MISOBody(text: "This is the black collar song...", size: .large, weight: .strong)
+///     MISOBody(LocalizedStringKey("some_wording_key"), bundle: Bundle.module, size: .small, weight: .moderate)
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A body typography component in light and dark modes with Orange theme](component_typography_body_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A body typography component in light and dark modes with Orange Compact theme](component_typography_body_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A body typography component in light and dark modes with Sosh theme](component_typography_body_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A body typography component in light and dark modes with Wireframe theme](component_typography_body_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSBody: View { // TODO: #1580 - Add reference to documentation when available
+public struct MISOBody: View { // TODO: #1580 - Add reference to documentation when available
 
     // TODO: #1580 - Add illustrations
 
