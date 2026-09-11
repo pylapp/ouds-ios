@@ -119,7 +119,7 @@ bar                            | For bars components like bottom and navigation 
 badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
 button                         | For buttons like `MISOButton` 
 bulletList                     | For list of elements with bullets like `MISOBulletList`
-checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckboxItem` and their indeterminate variants 
+checkbox                       | For checkboxes like `MISOCheckbox`, `MISOCheckboxItem` and their indeterminate variants 
 chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip`  
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
 icon                           | For components containing icons like `OUDSTag`

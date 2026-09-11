@@ -22,7 +22,7 @@ import MISOTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`.
+/// Declares all component tokens for checkboxes components like `MISOCheckbox` and `MISOCheckboxItem`.
 /// Used for tokens providers like `OrangeThemeCheckboxComponentTokensProvider`.
 ///
 /// - Since: 0.10.0

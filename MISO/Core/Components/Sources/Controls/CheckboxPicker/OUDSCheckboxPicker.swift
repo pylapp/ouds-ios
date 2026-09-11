@@ -22,7 +22,7 @@ import SwiftUI
 /// A picker allowing to expose several checkboxes and select some of them within the others.
 /// Each checkbox contains a "tag", i.e. a supposed to be unique value.
 /// The picker will expose the choosen values using this "tag".
-/// It has also some configuration elements which will override the one applied to nested ``OUDSCheckboxItem`` (divider, read only and error mode, layout and outlined)
+/// It has also some configuration elements which will override the one applied to nested ``MISOCheckboxItem`` (divider, read only and error mode, layout and outlined)
 ///
 /// ## Accessibility considerations
 ///
@@ -33,15 +33,15 @@ import SwiftUI
 ///
 /// ## Forbidden by design
 ///
-/// The design system does not allow to have ``OUDSCheckboxItem`` in both an error situation and a read only state.
-/// The design system does not allow to have ``OUDSCheckboxItem`` in both an error situation and a disabled state.
-/// The design system does not allow to have ``OUDSCheckboxItem`` in both a read only and a disabled state.
+/// The design system does not allow to have ``MISOCheckboxItem`` in both an error situation and a read only state.
+/// The design system does not allow to have ``MISOCheckboxItem`` in both an error situation and a disabled state.
+/// The design system does not allow to have ``MISOCheckboxItem`` in both a read only and a disabled state.
 ///
 /// ## Code samples
 ///
 /// ```swift
 ///     // Define the elements to display in checkboxes using OUDSCheckboxPickerData.
-///     // This object has the same properties as the OUDSCheckboxItem,
+///     // This object has the same properties as the MISOCheckboxItem,
 ///     // and some of them are optional with default values set
 ///     var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
 ///         [
@@ -102,22 +102,22 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// The tags of the selected checkbox
     var selections: Binding<[Tag]>
 
-    /// The list of data to wrap in ``OUDSCheckboxItem`` inside this picker
+    /// The list of data to wrap in ``MISOCheckboxItem`` inside this picker
     private let checkboxes: [OUDSCheckboxPickerData<Tag>]
 
     /// The type of layout the picker must have
     private let placement: OUDSCheckboxPickerPlacement
 
-    /// Overrides any configuration applied to embedded ``OUDSCheckboxItem`` and forces them to apply the reversed layout
+    /// Overrides any configuration applied to embedded ``MISOCheckboxItem`` and forces them to apply the reversed layout
     private let isReversed: Bool
 
-    /// Overrides any configuration applied to embedded ``OUDSCheckboxItem`` and forces them to error mode
+    /// Overrides any configuration applied to embedded ``MISOCheckboxItem`` and forces them to error mode
     private let isError: Bool
 
-    /// Overrides any configuration applied to embedded ``OUDSCheckboxItem`` and forces them to read only mode
+    /// Overrides any configuration applied to embedded ``MISOCheckboxItem`` and forces them to read only mode
     private let isReadOnly: Bool
 
-    /// Overrides any configuration applied to embedded ``OUDSCheckboxItem`` and displays a divider (except for the last one)
+    /// Overrides any configuration applied to embedded ``MISOCheckboxItem`` and displays a divider (except for the last one)
     private let hasDivider: Bool
 
     /// The custom spacing to apply between items by user
@@ -134,7 +134,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
 
     // MARK: - Init
 
-    /// Defines the picker view which displays using ``OUDSCheckboxItem`` view the ``OUDSCheckboxPickerData``
+    /// Defines the picker view which displays using ``MISOCheckboxItem`` view the ``OUDSCheckboxPickerData``
     ///
     /// ```swift
     ///     OUDSCheckboxPicker(selections: $selections, checkboxes: [
@@ -145,12 +145,12 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///
     /// - Parameters:
     ///    - selections: The current selected values
-    ///    - checkboxes: The raw data to wrap in ``OUDSCheckboxItem`` for display
+    ///    - checkboxes: The raw data to wrap in ``MISOCheckboxItem`` for display
     ///    - placement: How checkboxes must be placed (default set to *vertical*)
-    ///    - isReversed: If *true*, force all ``OUDSCheckboxItem`` to have reversed layout (default set to *false*)
-    ///    - isError: If *true*, force all ``OUDSCheckboxItem`` to be in error mode (default set to *false*)
-    ///    - isReadOnly: If *true*, force all ``OUDSCheckboxItem`` to be in read only mode (default set to *false*)
-    ///    - hasDivider: If *true*, force all ``OUDSCheckboxItem`` except the last one to have a divider (default set to *false*)
+    ///    - isReversed: If *true*, force all ``MISOCheckboxItem`` to have reversed layout (default set to *false*)
+    ///    - isError: If *true*, force all ``MISOCheckboxItem`` to be in error mode (default set to *false*)
+    ///    - isReadOnly: If *true*, force all ``MISOCheckboxItem`` to be in read only mode (default set to *false*)
+    ///    - hasDivider: If *true*, force all ``MISOCheckboxItem`` except the last one to have a divider (default set to *false*)
     ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(selections: Binding<[Tag]>,
                 checkboxes: [OUDSCheckboxPickerData<Tag>],
@@ -202,7 +202,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - text: The text to display in the root view
     ///    - type: The type of display for the root label
     private func rootItem(labeled text: String, of type: OUDSCheckboxPickerPlacement.DisplayType) -> some View {
-        OUDSCheckboxItemIndeterminate(rootLabel(for: text, of: type),
+        MISOCheckboxItemIndeterminate(rootLabel(for: text, of: type),
                                       selection: $coordinator.selectionRootState,
                                       isReversed: isReversed,
                                       isError: isError,
@@ -221,8 +221,8 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         .accessibilityIdentifier(rootLabel(for: text, of: type))
     }
 
-    /// Creates several ``OUDSCheckboxItem`` `View` objects from ``OUDSCheckboxPickerData`` objects
-    /// - Parameter checkboxes: The data to display in ``OUDSCheckboxItem`
+    /// Creates several ``MISOCheckboxItem`` `View` objects from ``OUDSCheckboxPickerData`` objects
+    /// - Parameter checkboxes: The data to display in ``MISOCheckboxItem`
     /// - Returns: The view
     private func content(for checkboxes: [OUDSCheckboxPickerData<Tag>]) -> some View {
         ForEach(checkboxes, id: \.tag) { checkbox in
@@ -237,13 +237,13 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         }
     }
 
-    /// Creates a new ``OUDSCheckboxItem`` `View` from one ``OUDSCheckboxPickerData``
+    /// Creates a new ``MISOCheckboxItem`` `View` from one ``OUDSCheckboxPickerData``
     /// - Parameters:
-    ///    - checkbox: The data to display in ``OUDSCheckboxItem`
+    ///    - checkbox: The data to display in ``MISOCheckboxItem`
     ///    - noDivider: If true, do not add divider to the item
     /// - Returns: The view
     private func content(for checkbox: OUDSCheckboxPickerData<Tag>, noDivider: Bool) -> some View {
-        OUDSCheckboxItem(checkbox.label,
+        MISOCheckboxItem(checkbox.label,
                          isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
                          description: checkbox.description,
                          image: checkbox.icon,

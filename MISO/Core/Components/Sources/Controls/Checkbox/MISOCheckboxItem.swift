@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import SwiftUI
 
@@ -35,15 +22,15 @@ import SwiftUI
 /// - **selected**: the checkbox is filled with a tick, the user has made the action to select the checkbox
 /// - **unselected**: the checkbox is empty, does not contain a tick, the user has made the action to unselect or did not select yet the checkbox
 ///
-/// If you are looking for a checkbox component with three states, use instead ``OUDSCheckboxItemIndeterminate``.
+/// If you are looking for a checkbox component with three states, use instead ``MISOCheckboxItemIndeterminate``.
 ///
 /// ## Particular cases
 ///
-/// An ``OUDSCheckboxItem`` can be related to an error situation, for example troubles for a form.
+/// An ``MISOCheckboxItem`` can be related to an error situation, for example troubles for a form.
 /// A dedicated look and feel is implemented for that if the `isError` flag is risen.
 /// In that case if the component displayed an icon, this icon will be replaced automatically by an error icon.
 ///
-/// In addition, the ``OUDSCheckboxItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
+/// In addition, the ``MISOCheckboxItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
 ///
 /// The component does not follow the right-to-left (RTL) / left-to-right (LTR) mode returned by the system as it could have some meaning
@@ -80,86 +67,59 @@ import SwiftUI
 ///     @Published var isOn: Bool = false
 ///
 ///     // A leading checkbox with a label.
-///     OUDSCheckboxItem("Hello world", isOn: $isOn)
+///     MISOCheckboxItem("Hello world", isOn: $isOn)
 ///
 ///     // Localizable from bundle can also be used
-///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn)
+///     MISOCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn)
 ///
 ///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
-///     OUDSCheckboxItem("Hello world", isOn: $isOn, isReadOnly: true)
+///     MISOCheckboxItem("Hello world", isOn: $isOn, isReadOnly: true)
 ///
 ///     // A leading checkbox with a label and a description as helper text.
-///     OUDSCheckboxItem("Bazinga!", isOn: $isOn, description: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
+///     MISOCheckboxItem("Bazinga!", isOn: $isOn, description: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
 ///     // A trailing checkbox with a label, a description and an icon (tinted, default rendering).
-///     OUDSCheckboxItem("We live in a fabled world",
+///     MISOCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      description: "Of dreaming boys and wide-eyed girls",
 ///                      image: MISOImage(asset: Image(decorative: "ic_heart")),
 ///                      isReversed: true)
 ///
 ///     // A trailing checkbox with a raw (non-tinted) image.
-///     OUDSCheckboxItem("We live in a fabled world",
+///     MISOCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      description: "Of dreaming boys and wide-eyed girls",
 ///                      image: MISOImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
 ///                      isReversed: true)
 ///
 ///     // Flip the icon for RTL layouts using MISOImage.
-///     OUDSCheckboxItem("Cocorico !",
+///     MISOCheckboxItem("Cocorico !",
 ///                      isOn: $isOn,
 ///                      image: MISOImage(asset: Image(systemName: "figure.handball"),
 ///                                      flipped: layoutDirection == .rightToLeft),
 ///                      isReversed: layoutDirection == .rightToLeft)
 ///
 ///     // If on error, add an error message can help user to understand error context
-///     OUDSCheckboxItem("We live in a fabled world",
+///     MISOCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      isError: true,
 ///                      errorText: "Something wrong",
 ///                      hasDivider: true)
 ///
 ///     // A leading checkbox with a label, but disabled.
-///     OUDSCheckboxItem("Hello world", isOn: $isOn)
+///     MISOCheckboxItem("Hello world", isOn: $isOn)
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSCheckboxItem("Hello world", isOn: $isOn, isError: true).disabled(true) // fatal error
-///     OUDSCheckboxItem("Hello world", isOn: $isOn, isReadOnly: true).disabled(true) // fatal error
+///     MISOCheckboxItem("Hello world", isOn: $isOn, isError: true).disabled(true) // fatal error
+///     MISOCheckboxItem("Hello world", isOn: $isOn, isReadOnly: true).disabled(true) // fatal error
 /// ```
-///
-/// ## Suggestions
-///
-/// According to the [documentation](https://r.orange.fr/r/S-ouds-doc-checkbox),
-/// the checkbox by default must be used in unselected state.
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-checkbox)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A checkbox item component in light and dark modes with Orange theme](component_checkboxItem_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A checkbox item component in light and dark modes with Orange Compact theme](component_checkboxItem_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A checkbox item component in light and dark modes with Sosh theme](component_checkboxItem_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A checkbox item component in light and dark modes with Wireframe theme](component_checkboxItem_Wireframe)
 ///
 /// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSCheckboxItem: View {
+public struct MISOCheckboxItem: View {
 
     // MARK: - Properties
 
@@ -175,7 +135,7 @@ public struct OUDSCheckboxItem: View {
     /// Creates a checkbox with label and optional helper text, icon, divider.
     ///
     /// ```swift
-    ///     OUDSCheckboxItem("Virgin Holy Lava",
+    ///     MISOCheckboxItem("Virgin Holy Lava",
     ///                      isOn: $isOn,
     ///                      description: "Very spicy",
     ///                      image: MISOImage(asset: Image(systemName: "flame")))
@@ -215,20 +175,20 @@ public struct OUDSCheckboxItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an OUDSCheckboxItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an MISOCheckboxItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an OUDSCheckboxItem is empty, prefer OUDSCheckbox(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an MISOCheckboxItem is empty, prefer MISOCheckbox(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description given to an OUDSCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description given to an MISOCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
-            ML.warning("Error text given to an OUDSCheckboxItem must be defined in case of error")
+            ML.warning("Error text given to an MISOCheckboxItem must be defined in case of error")
         }
         // swiftlint:enable force_unwrapping
 
@@ -261,7 +221,7 @@ public struct OUDSCheckboxItem: View {
     /// Creates a checkbox with label, optional helper text, icon, divider, and a rich attributed error text.
     ///
     /// ```swift
-    ///     OUDSCheckboxItem("Virgin Holy Lava",
+    ///     MISOCheckboxItem("Virgin Holy Lava",
     ///                      isOn: $isOn,
     ///                      description: "Very spicy",
     ///                      image: MISOImage(asset: Image(systemName: "flame")),
@@ -302,19 +262,19 @@ public struct OUDSCheckboxItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an OUDSCheckboxItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an MISOCheckboxItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an OUDSCheckboxItem is empty, prefer OUDSCheckbox(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an MISOCheckboxItem is empty, prefer MISOCheckbox(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description given to an OUDSCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description given to an MISOCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if isError, errorText.isEmpty {
-            ML.warning("Error text given to an OUDSCheckboxItem must be defined in case of error")
+            ML.warning("Error text given to an MISOCheckboxItem must be defined in case of error")
         }
 
         _isOn = isOn
@@ -342,9 +302,9 @@ public struct OUDSCheckboxItem: View {
     /// Creates a checkbox with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn)
+    ///     MISOCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn)
     ///
-    ///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"),
+    ///     MISOCheckboxItem(LocalizedStringKey("agree_terms"),
     ///                      bundle: Bundle.module,
     ///                      isOn: $isOn,
     ///                      image: MISOImage(asset: Image(decorative: "ic_heart")))
@@ -402,7 +362,7 @@ public struct OUDSCheckboxItem: View {
     /// Creates a checkbox with a localized label and a rich attributed error text.
     ///
     /// ```swift
-    ///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"),
+    ///     MISOCheckboxItem(LocalizedStringKey("agree_terms"),
     ///                      bundle: Bundle.module,
     ///                      isOn: $isOn,
     ///                      errorText: AttributedString(markdown: "You **must** accept the ToS"))

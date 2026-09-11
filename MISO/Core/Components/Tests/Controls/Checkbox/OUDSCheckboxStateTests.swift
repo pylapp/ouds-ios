@@ -17,7 +17,7 @@
 import MISOComponents
 import Testing
 
-/// Tests some API for `OUDSCheckbox`
+/// Tests some API for `MISOCheckbox`
 struct OUDSCheckboxStateTests {
 
     /// A selected checkbox must be toggled to an unselected checkbox.

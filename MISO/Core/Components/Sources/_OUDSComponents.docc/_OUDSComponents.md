@@ -181,7 +181,7 @@ The `flipped` property of ``MISOImage`` can be used when passing an icon to a co
 // (layoutDirection == .rightToLeft)
 
 // For example in a checkbox item — wrap the asset in MISOImage and set flipped:
-OUDSCheckboxItem("Label",
+MISOCheckboxItem("Label",
                  isOn: $isOn,
                  image: MISOImage(asset: Image(systemName: "figure.handball"),
                                   flipped: layoutDirection == .rightToLeft),

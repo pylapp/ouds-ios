@@ -124,7 +124,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to categorical tag like `OUDSCategoricalTag`
     public let categoricalTag: AllCategoricalTagComponentTokensProvider
 
-    /// All components tokens related to checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`
+    /// All components tokens related to checkboxes components like `MISOCheckbox` and `MISOCheckboxItem`
     public let checkbox: AllCheckboxComponentTokensProvider
 
     /// All components tokens related to chip components like `OUDSFilterChip` and `OUDSSuggestionChip`
@@ -140,7 +140,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     public let link: AllLinkComponentTokensProvider
 
     /// All components tokens related to list item components like `OUDSListItem` and `OUDSSmallListItem`,
-    /// and also `OUDSSwitchItem`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
+    /// and also `OUDSSwitchItem`, `OUDSRadioButtonItem` and `MISOCheckboxItem`
     public let listItem: AllListItemComponentTokensProvider
 
     /// All components tokens related to pin code input components

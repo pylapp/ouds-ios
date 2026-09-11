@@ -29,8 +29,8 @@ Some components can be used for **controls** and **inputs**.
 }
 
 The library proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
-You can use a simple checkbox without any labels and images using ``OUDSCheckbox``.
-This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate) with ``OUDSCheckboxIndeterminate``.
+You can use a simple checkbox without any labels and images using ``MISOCheckbox``.
+This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate) with ``MISOCheckboxIndeterminate``.
 
 ```swift
 // A simple checkbox, with only an indicator
@@ -38,10 +38,10 @@ This checkbox can provide two values (selected and unselected) or three values (
 // vocalized by Voice Over.
 
 // The isOn parameter can have only two values: true (selected), false (unselected)
-OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Select the element")
+MISOCheckbox(isOn: $isOn, accessibilityLabel: "Select the element")
 
 // The selection parameter can have only three values: selected, unselected and indeterminate
-OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select the element")
+MISOCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select the element")
 ```
 
 #### Checkbox item
@@ -63,20 +63,20 @@ OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select the
 
 The library proposes also a checkbox which has in its layout some labels and icons.
 The indicator can be leading or trailing.
-It can be be used for two-states (``OUDSCheckboxItem``) or three-states management (``OUDSCheckboxItemIndeterminate``).
+It can be be used for two-states (``MISOCheckboxItem``) or three-states management (``MISOCheckboxItemIndeterminate``).
 
 ```swift
 // A leading checkbox with a label, with only two states
-OUDSCheckboxItem("Hello world", isOn: $isOn)
+MISOCheckboxItem("Hello world", isOn: $isOn)
 
 // A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
-OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
+MISOCheckboxItemIndeterminate("Dead Robot Zombie Cop",
                               selection: $selection,
                               description: "from Outer Space II")
 
 // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
 // with a reversed layout, and exposing only two states through isOn binding
-OUDSCheckboxItem("We live in a fabled world",
+MISOCheckboxItem("We live in a fabled world",
                  isOn: $isOn,
                  description: "Of dreaming boys and wide-eyed girls",
                  image: MISOImage(asset: Image(decorative: "ic_heart")),
@@ -106,7 +106,7 @@ Checkboxes can be embedded in a checkbox picker (`OUDSCheckboxPicker`) so as to 
 
 ```swift
 // Define the elements to display in checkboxes using OUDSCheckboxPickerData.
-// This object has the same properties as the OUDSCheckboxItem,
+// This object has the same properties as the MISOCheckboxItem,
 // and some of them are optional with default values set
 var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
     [
