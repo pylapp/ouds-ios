@@ -565,7 +565,7 @@ public struct MISOTextInput: View {
             // so VoiceOver behaviour is unaffected by this removal.
 
             if let helperLink, !helperLink.text.isEmpty {
-                OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
+                MISOLink(text: helperLink.text, size: .small, action: helperLink.action)
                     .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
             }
         }

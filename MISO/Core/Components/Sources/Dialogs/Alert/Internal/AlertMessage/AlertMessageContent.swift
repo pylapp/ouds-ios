@@ -51,7 +51,7 @@ struct AlertMessageContent: View {
 
             // Action
             if let link, self.link?.position == .bottom {
-                OUDSLink(text: link.text, size: .default, action: link.action)
+                MISOLink(text: link.text, size: .default, action: link.action)
                     .accessibilitySortPriority(MISOAlertMessage.actionLinkAccessibilityPriority)
             }
         }

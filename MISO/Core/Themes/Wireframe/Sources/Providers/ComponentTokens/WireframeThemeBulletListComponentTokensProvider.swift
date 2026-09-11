@@ -36,7 +36,7 @@ final class WireframeThemeBulletListComponentTokensProvider: AllBulletListCompon
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSLink`
+    /// Defines a provider of component tokens dedicated to `MISOLink`
     /// - Parameter spaces: Provider for space semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
     init(spaces: AllSpaceSemanticTokensProvider? = nil) {
         ML.debug("Init of WireframeThemeBulletListComponentTokensProvider")

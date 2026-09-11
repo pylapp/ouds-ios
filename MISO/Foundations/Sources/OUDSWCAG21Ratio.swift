@@ -34,7 +34,7 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
 /// See for example [the following guidelines](https://system.design.orange.com/0c1af118d/p/2531b9-accessibility-compliance)
 ///
 /// - Since: 0.15.0
-@frozen public struct OUDSWCAG21Ratio {
+@frozen public struct MISOWCAG21Ratio {
 
     // MARK: - Stored properties
 
@@ -138,7 +138,7 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
     ///    - lhs: One color to test
     ///    - rhs: Another color to test
     /// - Returns: The computed ratio and flags saying if it match 3:1, 4.5:1 or 7:1
-    public static func contrastRatios(_ lhs: String, _ rhs: String) -> OUDSWCAG21Ratio? {
+    public static func contrastRatios(_ lhs: String, _ rhs: String) -> MISOWCAG21Ratio? {
         guard !lhs.isEmpty, !rhs.isEmpty else {
             ML.warning("Ask to comput contrast ratio but one or two of the colors is empty")
             return nil
@@ -158,6 +158,6 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
             return nil
         }
 
-        return OUDSWCAG21Ratio(ratio: contrastRatio)
+        return MISOWCAG21Ratio(ratio: contrastRatio)
     }
 }

@@ -22,7 +22,7 @@ import MISOTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for links components like `OUDSLink` in **monochrome mode**.
+/// Declares all component tokens for links components like `MISOLink` in **monochrome mode**.
 /// Used for tokens providers like `OrangeThemeLinkComponentTokensProvider`.
 ///
 /// - Since: 0.16.0

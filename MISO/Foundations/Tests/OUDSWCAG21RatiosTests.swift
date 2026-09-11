@@ -22,7 +22,7 @@ import Testing
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length
 
-/// Struct to test `OUDSWCAG21Ratio`.
+/// Struct to test `MISOWCAG21Ratio`.
 /// Use cases picked from issue [#647](https://github.com/Orange-OpenSource/ouds-ios/issues/647)
 /// based on Orange Theme v0.14.0 and tokens lib v0.11.0
 /// The aim is to be sure the utils are able to computed the suitable ratios and define whether or not WCAG 2.1 are respected.
@@ -39,7 +39,7 @@ struct OUDSWCAG21RatioTests {
 
     @Test("Constrast ratio under 4.5:1 must not pass for textual components and AA")
     func ratioUnder4_5for1MustNotPassForTextualAndAA() {
-        let ratio = OUDSWCAG21Ratio(ratio: 4.0)
+        let ratio = MISOWCAG21Ratio(ratio: 4.0)
 
         #expect(ratio.meets3to1 == true)
         #expect(ratio.meets4_5to1 == false)
@@ -51,7 +51,7 @@ struct OUDSWCAG21RatioTests {
 
     @Test("Constrast ratio of 4.5:1 must pass for textual components and AA")
     func ratioOf4_5for1MustNotPassForTextualAndAA() {
-        var ratio = OUDSWCAG21Ratio(ratio: 4.5)
+        var ratio = MISOWCAG21Ratio(ratio: 4.5)
 
         #expect(ratio.meets3to1 == true)
         #expect(ratio.meets4_5to1 == true)
@@ -60,7 +60,7 @@ struct OUDSWCAG21RatioTests {
         var (textual, _) = ratio.requirementsAA
         #expect(textual == true)
 
-        ratio = OUDSWCAG21Ratio(ratio: 5.0)
+        ratio = MISOWCAG21Ratio(ratio: 5.0)
 
         #expect(ratio.meets3to1 == true)
         #expect(ratio.meets4_5to1 == true)
@@ -72,7 +72,7 @@ struct OUDSWCAG21RatioTests {
 
     @Test("Constrast ratio under 7:1 must not pass for textual components and AAA")
     func ratioUnder7for1MustNotPassForTextualAndAAA() {
-        let ratio = OUDSWCAG21Ratio(ratio: 6.5)
+        let ratio = MISOWCAG21Ratio(ratio: 6.5)
 
         #expect(ratio.meets3to1 == true)
         #expect(ratio.meets4_5to1 == true)
@@ -84,7 +84,7 @@ struct OUDSWCAG21RatioTests {
 
     @Test("Constrast ratio of 7:1 must pass for textual components and AAA")
     func ratioOf7for1MustPassForTextualAndAAA() {
-        var ratio = OUDSWCAG21Ratio(ratio: 7.0)
+        var ratio = MISOWCAG21Ratio(ratio: 7.0)
 
         #expect(ratio.meets3to1 == true)
         #expect(ratio.meets4_5to1 == true)
@@ -93,7 +93,7 @@ struct OUDSWCAG21RatioTests {
         var (textual, _) = ratio.requirementsAAA
         #expect(textual == true)
 
-        ratio = OUDSWCAG21Ratio(ratio: 7.5)
+        ratio = MISOWCAG21Ratio(ratio: 7.5)
 
         #expect(ratio.meets3to1 == true)
         #expect(ratio.meets4_5to1 == true)
@@ -107,7 +107,7 @@ struct OUDSWCAG21RatioTests {
 
     @Test("Constrast ratio under 3:1 must not pass for non textual components and AA")
     func ratioUnder3for1MustNotPassForNonTextualAndAA() {
-        let ratio = OUDSWCAG21Ratio(ratio: 2.5)
+        let ratio = MISOWCAG21Ratio(ratio: 2.5)
 
         #expect(ratio.meets3to1 == false)
         #expect(ratio.meets4_5to1 == false)
@@ -119,7 +119,7 @@ struct OUDSWCAG21RatioTests {
 
     @Test("Constrast ratio of 3:1 must pass for non textual components and AA")
     func ratioOf3for1MustPassForNonTextualAndAA() {
-        var ratio = OUDSWCAG21Ratio(ratio: 3.0)
+        var ratio = MISOWCAG21Ratio(ratio: 3.0)
 
         #expect(ratio.meets3to1 == true)
         #expect(ratio.meets4_5to1 == false)
@@ -128,7 +128,7 @@ struct OUDSWCAG21RatioTests {
         var (_, nonTextual) = ratio.requirementsAA
         #expect(nonTextual == true)
 
-        ratio = OUDSWCAG21Ratio(ratio: 3.5)
+        ratio = MISOWCAG21Ratio(ratio: 3.5)
 
         #expect(ratio.meets3to1 == true)
         #expect(ratio.meets4_5to1 == false)
@@ -140,7 +140,7 @@ struct OUDSWCAG21RatioTests {
 
     @Test("Constrast ratio under 4.5:1 must not pass for non textual components and AAA")
     func ratioUnder4_5for1MustNotPassForNonTextualAndAAA() {
-        let ratio = OUDSWCAG21Ratio(ratio: 4.0)
+        let ratio = MISOWCAG21Ratio(ratio: 4.0)
 
         #expect(ratio.meets3to1 == true)
         #expect(ratio.meets4_5to1 == false)
@@ -152,7 +152,7 @@ struct OUDSWCAG21RatioTests {
 
     @Test("Constrast ratio of 4.5:1 must pass for non textual components and AAA")
     func ratioOf4_5for1MustPassForNonTextualAndAAA() {
-        var ratio = OUDSWCAG21Ratio(ratio: 4.5)
+        var ratio = MISOWCAG21Ratio(ratio: 4.5)
 
         #expect(ratio.meets3to1 == true)
         #expect(ratio.meets4_5to1 == true)
@@ -161,7 +161,7 @@ struct OUDSWCAG21RatioTests {
         var (_, nonTextual) = ratio.requirementsAAA
         #expect(nonTextual == true)
 
-        ratio = OUDSWCAG21Ratio(ratio: 5.0)
+        ratio = MISOWCAG21Ratio(ratio: 5.0)
 
         #expect(ratio.meets3to1 == true)
         #expect(ratio.meets4_5to1 == true)
@@ -175,31 +175,31 @@ struct OUDSWCAG21RatioTests {
 
     @Test("#FFFFFFFF has luminance of 1", .enabled(if: Self.doesRunOniOS))
     func luminanceForFFFFFFFF() throws {
-        let luminance = OUDSWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#FFFFFFFF")!)
+        let luminance = MISOWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#FFFFFFFF")!)
         #expect(luminance == 1, "luminance = \(String(describing: luminance))")
     }
 
     @Test("#000000FF has luminance of 0.0722", .enabled(if: Self.doesRunOniOS))
     func luminanceFor000000FF() throws {
-        let luminance = OUDSWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#000000FF")!)
+        let luminance = MISOWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#000000FF")!)
         #expect(luminance == 0.0, "luminance = \(String(describing: luminance))")
     }
 
     @Test("#F15E00FF has luminance of 0.339261794", .enabled(if: Self.doesRunOniOS))
     func luminanceForF15E00FF() throws {
-        let luminance = OUDSWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#F15E00FF")!)
+        let luminance = MISOWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#F15E00FF")!)
         #expect(luminance == 0.267061825736296, "luminance = \(String(describing: luminance))")
     }
 
     @Test("#26B2FF14 has luminance of 0.3230336529", .enabled(if: Self.doesRunOniOS))
     func luminanceFor26B2FF14() throws {
-        let luminance = OUDSWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#26B2FF14")!)
+        let luminance = MISOWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#26B2FF14")!)
         #expect(luminance == 0.3947286020914061, "luminance = \(String(describing: luminance))")
     }
 
     @Test("#3DE35A1F has luminance of 0.5602919883", .enabled(if: Self.doesRunOniOS))
     func luminanceFor3DE35A1F() throws {
-        let luminance = OUDSWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#3DE35A1F")!)
+        let luminance = MISOWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#3DE35A1F")!)
         #expect(luminance == 0.5666845580578855, "luminance = \(String(describing: luminance))")
     }
 
@@ -209,7 +209,7 @@ struct OUDSWCAG21RatioTests {
     func whiteColorOnWhiteAlwaysFail() throws {
         let foregroundColor = "#FFFFFFFF"
         let backgroundColor = "#FFFFFFFF"
-        let ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        let ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -218,7 +218,7 @@ struct OUDSWCAG21RatioTests {
     func blackColorOnBlackAlwaysFail() throws {
         let foregroundColor = "#000000FF"
         let backgroundColor = "#000000FF"
-        let ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        let ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -230,7 +230,7 @@ struct OUDSWCAG21RatioTests {
 
         let foregroundColor = "#FFFFFFFF"
         let backgroundColor = "#000000FF"
-        let ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        let ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
@@ -239,7 +239,7 @@ struct OUDSWCAG21RatioTests {
     func blackColorOnWhiteMustAlwaysPass() throws {
         let foregroundColor = "#000000FF"
         let backgroundColor = "#FFFFFFFF"
-        let ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        let ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
@@ -251,7 +251,7 @@ struct OUDSWCAG21RatioTests {
     func whiteColorOnOrangeSurfacesMustFailFor4_5to1() throws {
         let foregroundColor = "#FFFFFFFF"
         let backgroundColor = "#FF7900FF"
-        let ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        let ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -261,7 +261,7 @@ struct OUDSWCAG21RatioTests {
     func blackColorOnAlmostBlackSurfaceMustFailFor4_5to1() throws {
         let foregroundColor = "#000000FF"
         let backgroundColor = "#000000D6"
-        let ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        let ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -272,12 +272,12 @@ struct OUDSWCAG21RatioTests {
         let backgroundColor = "#FF7900FF"
 
         var foregroundColor = "#F15E00FF" // Light mode
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         foregroundColor = "#FF7900FF" // Dark mode
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -288,12 +288,12 @@ struct OUDSWCAG21RatioTests {
         let backgroundColor = "#FFD00029" // Opacity sun color
 
         var foregroundColor = "#F15E00FF" // Light mode
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         foregroundColor = "#FF7900FF" // Dark mode
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -304,12 +304,12 @@ struct OUDSWCAG21RatioTests {
         let backgroundColor = "#3DE35A1F" // Functional Malachite color
 
         var foregroundColor = "#F15E00FF" // Light mode
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         foregroundColor = "#FF7900FF" // Dark mode
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -320,12 +320,12 @@ struct OUDSWCAG21RatioTests {
         let foregroundColor = "#000000"
 
         var backgroundColor = "#000000D6" // Opacity Black 840
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#FFFFFFCC" // Opacity White 800
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
@@ -336,12 +336,12 @@ struct OUDSWCAG21RatioTests {
         let backgroundColor = "#26B2FF14" // Opacity dodger blue color
 
         var foregroundColor = "#F15E00FF" // Light mode
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         foregroundColor = "#FF7900FF" // Dark mode
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -352,12 +352,12 @@ struct OUDSWCAG21RatioTests {
         let backgroundColor = "#EA030514" // Opacity scarlet color
 
         var foregroundColor = "#F15E00FF" // Light mode
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         foregroundColor = "#FF7900FF" // Dark mode
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -367,12 +367,12 @@ struct OUDSWCAG21RatioTests {
         let foregroundColor = "#000000"
 
         var backgroundColor = "#FF7900FF" // Orange brand color Orange 500
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#FF7900FF" // Orange brand color Orange 500
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
@@ -382,12 +382,12 @@ struct OUDSWCAG21RatioTests {
         let foregroundColor = "#000000"
 
         var backgroundColor = "#FFD000FF" // Functional sun 500
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#FFE270FF" // Functional sun 300
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
@@ -400,18 +400,18 @@ struct OUDSWCAG21RatioTests {
         let foregroundWhite = "#FFFFFFFF"
 
         var backgroundColor = "#F9F5F0FF" // Orange brand color Warm gray 100
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#353228FF" // Orange brand color Warm gray 500
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundWhite, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundWhite, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -421,12 +421,12 @@ struct OUDSWCAG21RatioTests {
         let foregroundColor = "#000000FF"
 
         var backgroundColor = "#26B2FFFF" // Functional Dodger blue 500
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#8AD5FFFF" // Functional Dodger blue 300
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
@@ -439,18 +439,18 @@ struct OUDSWCAG21RatioTests {
         let foregroundWhite = "#FFFFFFFF"
 
         var backgroundColor = "#26B2FF14" // Opacity Dodger blue
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#003857FF" // Functional Dodger blue 900
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundWhite, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundWhite, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -460,18 +460,18 @@ struct OUDSWCAG21RatioTests {
         var foregroundColor = "#FFFFFFFF"
 
         var backgroundColor = "#DB0002FF" // Functional Scarlet 600
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
 
         foregroundColor = "#000000FF"
 
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#FF8081FF" // Functional Scarlet 300
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
@@ -484,18 +484,18 @@ struct OUDSWCAG21RatioTests {
         let foregroundWhite = "#FFFFFFFF"
 
         var backgroundColor = "#EA030514" // Opacity scarlet
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#4D0001FF" // Opacity scarlet 900
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundWhite, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundWhite, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
@@ -504,13 +504,13 @@ struct OUDSWCAG21RatioTests {
     func blackAndWhiteColorsBlackColorsOnStatusNeutralEmphasizedSurfaceMustPassForAll() throws {
         var foregroundColor = "#FFFFFFFF"
         var backgroundColor = "#000000D6" // Opacity Black 840
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
 
         foregroundColor = "#000000FF"
         backgroundColor = "#FFFFFFCC" // Opacity white 800
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
@@ -522,15 +522,15 @@ struct OUDSWCAG21RatioTests {
         let foregroundOrangeDark = "#F15E00FF" // Orange brand color Orange 550
 
         var backgroundColor = "#0000000A" // Opacity Black 40
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#FFFFFF14" // Opacity white 80
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -540,12 +540,12 @@ struct OUDSWCAG21RatioTests {
         let foregroundColor = "#000000FF"
 
         var backgroundColor = "#3DE35AFF" // Functional Malachite 500
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#94F0A4FF" // Functional Malachite 300
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
@@ -558,18 +558,18 @@ struct OUDSWCAG21RatioTests {
         let foregroundWhite = "#FFFFFFFF"
 
         var backgroundColor = "#3DE35A1F" // Functional Malachite
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#0A4715FF" // Functional Malachite 900
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundWhite, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundWhite, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
@@ -579,12 +579,12 @@ struct OUDSWCAG21RatioTests {
         let foregroundColor = "#000000FF"
 
         var backgroundColor = "#FFD000FF" // Functional Sun 500
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#FFE270FF" // Functional Sun 300
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
@@ -597,18 +597,18 @@ struct OUDSWCAG21RatioTests {
         let foregroundWhite = "#FFFFFFFF"
 
         var backgroundColor = "#FFD00029" // Opacity sun
-        var ratio = OUDSWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
+        var ratio = MISOWCAG21Ratio.contrastRatios(foregroundBlack, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeLight, backgroundColor)!
         #expect(ratio.meets3to1 == false, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
 
         backgroundColor = "#3D3100FF" // Functional Sun 900
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundWhite, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundWhite, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
-        ratio = OUDSWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
+        ratio = MISOWCAG21Ratio.contrastRatios(foregroundOrangeDark, backgroundColor)!
         #expect(ratio.meets3to1 == true, "Ratio = \(ratio.ratio)")
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }

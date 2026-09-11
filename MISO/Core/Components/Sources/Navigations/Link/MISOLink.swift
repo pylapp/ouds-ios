@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 /// Link is a UI element that allows to navigate from one location to another, either within the same page or across different pages in the same resource,
@@ -62,28 +49,6 @@ import SwiftUI
 /// ## Colored Surface
 ///
 /// If link is placed on colored surface using `MISOColoredSurface`, the default colors (content text and icon or arrow) are automatically adjusted to switch to monochrom.
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-link)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A link component in light and dark modes with Orange theme](component_link_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A link component in light and dark modes with Orange Compact theme](component_link_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A link component in light and dark modes with Sosh theme](component_link_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A link component in light and dark modes with Wireframe theme](component_link_Wireframe)
 ///
 /// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.11.0

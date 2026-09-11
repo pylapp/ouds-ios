@@ -121,7 +121,7 @@ public final class MultipleColorSemanticToken: NSObject, Sendable {
 
 // MARK: - Color WCAG 2.1
 
-extension OUDSWCAG21Ratio {
+extension MISOWCAG21Ratio {
 
     /// Flag to rise so as to display in logs some warnings if there are troubles
     /// with contrast ratios between colors. Default set to *false*.
@@ -171,13 +171,13 @@ extension OUDSWCAG21Ratio {
     /// let colorToApply = theme.colors.someColor
     ///
     /// // If you want to check for textual component
-    /// OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor)
+    /// MISOWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor)
     ///
     /// // If you want to check for non-textual component (i.e. images, chevrons, indicators, ...)
-    /// OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .nonTextual)
+    /// MISOWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .nonTextual)
     ///
     /// // If you want to check the AAA requirements instead of AA (by default)
-    /// OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .AAA)
+    /// MISOWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .AAA)
     /// ```
     ///
     /// - Parameters:
@@ -190,8 +190,8 @@ extension OUDSWCAG21Ratio {
     @discardableResult
     public static func debugContrastRatio(_ lhs: MultipleColorSemanticToken,
                                           _ rhs: MultipleColorSemanticToken,
-                                          _ target: OUDSWCAG21Ratio.Target = .textual,
-                                          _ criteria: OUDSWCAG21Ratio.Criteria = .AA,
+                                          _ target: MISOWCAG21Ratio.Target = .textual,
+                                          _ criteria: MISOWCAG21Ratio.Criteria = .AA,
                                           _ source: String = #file) -> Bool
     {
         guard oudsDebugWCAG21Colors else {
@@ -205,11 +205,11 @@ extension OUDSWCAG21Ratio {
     private static func debugContrastRatio(for scheme: String,
                                            _ lhs: String,
                                            _ rhs: String,
-                                           _ target: OUDSWCAG21Ratio.Target,
-                                           _ criteria: OUDSWCAG21Ratio.Criteria,
+                                           _ target: MISOWCAG21Ratio.Target,
+                                           _ criteria: MISOWCAG21Ratio.Criteria,
                                            _ source: String) -> Bool
     {
-        guard let ratio = OUDSWCAG21Ratio.contrastRatios(lhs, rhs) else {
+        guard let ratio = MISOWCAG21Ratio.contrastRatios(lhs, rhs) else {
             return false
         }
         switch criteria {

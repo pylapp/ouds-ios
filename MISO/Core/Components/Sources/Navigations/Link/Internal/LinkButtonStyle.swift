@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOThemesContract
 import MISOTokensComponent
 import SwiftUI
@@ -24,9 +11,9 @@ struct LinkButtonStyle: ButtonStyle {
 
     // MARK: Stored properties
 
-    let layout: OUDSLink.Layout
-    let size: OUDSLink.Size
-    let density: OUDSLink.Density
+    let layout: MISOLink.Layout
+    let size: MISOLink.Size
+    let density: MISOLink.Density
     let isFullWidth: Bool
 
     @State private var isHover: Bool
@@ -36,7 +23,7 @@ struct LinkButtonStyle: ButtonStyle {
 
     // MARK: Initializer
 
-    init(layout: OUDSLink.Layout, size: OUDSLink.Size, density: OUDSLink.Density, isFullWidth: Bool) {
+    init(layout: MISOLink.Layout, size: MISOLink.Size, density: MISOLink.Density, isFullWidth: Bool) {
         self.layout = layout
         self.size = size
         self.density = density
@@ -105,8 +92,8 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
     @Environment(\.theme) private var theme
 
     let interactionState: MISOButtonInteractionState
-    let size: OUDSLink.Size
-    let indicator: OUDSLink.Indicator
+    let size: MISOLink.Size
+    let indicator: MISOLink.Indicator
     let isFullWidth: Bool
 
     func makeBody(configuration: Configuration) -> some View {
@@ -149,8 +136,8 @@ private struct LinkTextAndIconLabelStyle: LabelStyle {
     @Environment(\.theme) private var theme
 
     let interactionState: MISOButtonInteractionState
-    let size: OUDSLink.Size
-    let layout: OUDSLink.Layout
+    let size: MISOLink.Size
+    let layout: MISOLink.Layout
 
     func makeBody(configuration: Configuration) -> some View {
         HStack(spacing: spacing) {

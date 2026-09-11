@@ -27,7 +27,7 @@ Some components can be used for **layouts**.
 }
 
 Colored backgrounds use surface colors to maximize the contrast with content. 
-The colors of several OUDS components (for instance ``MISOButton`` or ``OUDSLink``) are automatically adjusted if they are placed on ``MISOColoredSurface``.
+The colors of several OUDS components (for instance ``MISOButton`` or ``MISOLink``) are automatically adjusted if they are placed on ``MISOColoredSurface``.
 To do so, some tokens associated with these specific colors can be customized and are identified with the *Mono* suffix (for instance *colorBgDefaultEnabledMono* of *OrangeThemeButtonComponentTokensProvider*).
 
 #### How it works
@@ -72,7 +72,7 @@ This is for example the case for France with the [Référentiel Général d'Amé
 The WCAG specifications, for AA level, defines a contrast ratio of 4.5:1 for textual elements (i.e. texts), and 3:1 for non-textual elements (i.e. link's chevron).
 However it is highly recommended for mobile devices to reach AAA level because of the screen sizes and luminosity issues, i.e. 7:1 for texts and 4.5:1 for non-textual elements.
 
-Some components like ``MISOButton`` or ``OUDSLink`` can be used on ``MISOColoredSurface`` ; thus in that case we can know the surface color for a given component on it, and compute the contrast ratio, and in the end display or not warnings.
+Some components like ``MISOButton`` or ``MISOLink`` can be used on ``MISOColoredSurface`` ; thus in that case we can know the surface color for a given component on it, and compute the contrast ratio, and in the end display or not warnings.
 
 To do that, some steps must be followed in your component implementation:
 - Rise the flag to allow debugging (e.g. i #DEBUG mode)
@@ -95,10 +95,10 @@ OUDSWCAG21Ratios.oudsDebugWCAG21Colors = true
 // where colorTokenToApply is the color to apply from a theme:
 
 // Non-textual components, in AA
-OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .nonTextual)
+MISOWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .nonTextual)
 
 // Textual components and AAA to check
-OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .AAA)
+MISOWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .AAA)
 ```
 
 ### Divider

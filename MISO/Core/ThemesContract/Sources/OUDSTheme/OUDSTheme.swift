@@ -136,7 +136,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to icons components
     public let icon: AllIconComponentTokensProvider
 
-    /// All components tokens related to link components like `OUDSLink`
+    /// All components tokens related to link components like `MISOLink`
     public let link: AllLinkComponentTokensProvider
 
     /// All components tokens related to list item components like `OUDSListItem` and `OUDSSmallListItem`,

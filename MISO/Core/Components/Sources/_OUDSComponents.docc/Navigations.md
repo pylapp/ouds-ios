@@ -26,25 +26,25 @@ Some components can be used for **navigation**.
     }
 }
 
-The ``OUDSLink`` proposes layout with text only or text with icon.
+The ``MISOLink`` proposes layout with text only or text with icon.
 It also proposes layout to navigate forward, backward and outside the app.
 The link can be displayed in `small` or `default` size.
 
 ```swift        
 // Text in small size, with next indicator
-OUDSLink(text: "Feedback", indicator: .next, size: .small) { /* the action to process */ }
+MISOLink(text: "Feedback", indicator: .next, size: .small) { /* the action to process */ }
 
 // Text and icon in default size
-OUDSLink(text: "Feedback", image: MISOImage(asset: Image("ic_heart")), size: .default) {}
+MISOLink(text: "Feedback", image: MISOImage(asset: Image("ic_heart")), size: .default) {}
 
 // Text and raw icon (not tinted)
-OUDSLink(text: "Brand", image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
+MISOLink(text: "Brand", image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
 
 // Navigate to previous page with link in a default size
-OUDSLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
+MISOLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
 
 // Navigate to outside the app with link in a default size
-OUDSLink(text: "Open outside", indicator: .external, size: .default) { /* the action to process */ }
+MISOLink(text: "Open outside", indicator: .external, size: .default) { /* the action to process */ }
 ```
 
 ### List items

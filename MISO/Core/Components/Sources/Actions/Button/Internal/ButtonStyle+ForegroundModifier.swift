@@ -44,7 +44,7 @@ struct ButtonForegroundModifier: ViewModifier {
         case .disabled:
             colorToApply = disabledColor
         }
-        OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor)
+        MISOWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor)
         return colorToApply.color(for: colorScheme)
     }
 

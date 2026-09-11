@@ -123,7 +123,7 @@ checkbox                       | For checkboxes like `MISOCheckbox`, `MISOCheckb
 chip                           | For chips like `MISOSuggestionChip` and `MISOFilterChip`  
 divider                        | For dividers like `MISOHorizontalDivider` and `MISOVerticalDivider` 
 icon                           | For components containing icons like `MISOTag`
-link                           | For links like `OUDSLink` 
+link                           | For links like `MISOLink` 
 listItem                       | Shared and used for switch, checkbox, radio items and list items layouts
 pinCodeInput                   |  
 quantityInput                  | 

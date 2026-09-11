@@ -455,7 +455,7 @@ public struct MISOTextArea: View {
             .accessibilityElement(children: .contain)
 
             if let helperLink, !helperLink.text.isEmpty {
-                OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
+                MISOLink(text: helperLink.text, size: .small, action: helperLink.action)
                     .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
             }
         }
