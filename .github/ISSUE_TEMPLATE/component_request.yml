@@ -2,7 +2,7 @@ name: Component Request
 description: Please fill out the following details for your component creation / update request.
 title: "For / Add component ..."
 labels: ["🧰 library", "⚛️ component", "🔍 triage"]
-assignees: ["ludovic35", "pylapp"]
+assignees: ["pylapp"]
 body:
   - type: textarea
     id: description

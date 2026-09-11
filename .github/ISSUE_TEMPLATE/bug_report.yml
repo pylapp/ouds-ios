@@ -1,15 +1,15 @@
 name: Report a bug
-description: Tell us about a bug or issue you may have identified in OUDS iOS (in english if possible)
+description: Tell us about a bug or issue you may have identified in MISO iOS (in english if possible)
 title: "When / For / In / On ... "
 labels: ["🐞 bug", "🔍 triage"]
-assignees: ["ludovic35", "pylapp"]
+assignees: ["pylapp"]
 body:
   - type: checkboxes
     attributes:
       label: Prerequisites
       description: Take a couple minutes to help our maintainers work faster.
       options:
-        - label: I have [searched the backlog](https://github.com/Orange-OpenSource/ouds-ios/issues) for duplicate or closed feature requests
+        - label: I have [searched the backlog](https://github.com/pylapp/miso-ios/issues) for duplicate or closed feature requests
           required: true
   - type: input
     id: device
@@ -37,9 +37,9 @@ body:
     validations:
       required: true
   - type: input
-    id: app-ouds-lib-version
+    id: app-miso-lib-version
     attributes:
-      label: OUDS iOS library version
+      label: MISO iOS library version
       placeholder: "1.4.0"
     validations:
       required: true      
@@ -78,30 +78,6 @@ body:
       placeholder: English
     validations:
       required: false               
-  - type: input
-    id: app-token-lib-version
-    attributes:
-      label: Tokens libraries versions embeded in the app (check your logs)
-      placeholder: "Orange 1.1.0, Core 1.2.0, Sosh 1.0.0, ..."
-    validations:
-      required: false       
-  - type: input
-    id: design-toolbox-app-version
-    attributes:
-      label: Design System Toolbox app version (if used)
-      placeholder: 1.0.0
-  - type: input
-    id: design-toolbox-app-build-number
-    attributes:
-      label: Design System Toolbox app build number (if used)
-      placeholder: "1766065729"         
-  - type: input
-    id: design-toolbox-app-build-type
-    attributes:
-      label: Design System Toolbox app build type (if used)
-      placeholder: alpha, beta, prod, debug
-    validations:
-      required: false             
   - type: textarea
     id: what-happened
     attributes:

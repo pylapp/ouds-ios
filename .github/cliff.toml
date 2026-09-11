@@ -1,6 +1,6 @@
 #
-# Software Name: OUDS iOS
-# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# Software Name: MISO iOS
+# SPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne
 # SPDX-License-Identifier: MIT
 #
 # This software is distributed under the MIT license,
@@ -19,16 +19,6 @@
 # changelog header
 header = """
 # What's new\n
-```
-🧬 Core OUDS version: 
-🧬 Core Orange version: 
-🧬 Core Sosh version: 
-🧬 Core Wireframe version: 
-🧬 Orange brand version: 
-🧬 Orange Compact brand version: 
-🧬 Sosh brand version: 
-🧬 Wireframe brand version: 
-```
 """
 
 # Template for the changelog body

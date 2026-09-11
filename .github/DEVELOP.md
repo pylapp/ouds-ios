@@ -1,12 +1,12 @@
 # Developer guide
 
 - [Technical preconditions](#technical-preconditions)
-- [Build OUDS Package](#build-ouds-package)
+- [Build MISO Package](#build-ouds-package)
 - [Documentation](#documentation)
   * [Generation](#generation)
   * [Illustrations](#illustrations)
 - [Run tests](#run-tests)
-  * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
+  * [Unit tests for MISO Swift package](#unit-tests-for-ouds-swift-package)
   * [On devices tests](#on-devices-tests)
 - [Developer Certificate of Origin](#developer-certificate-of-origin)
 - [Commits, changelog, release note, versioning](#commits-changelog-release-note-versioning)
@@ -28,7 +28,7 @@
 
 > [!IMPORTANT]
 > You must have an iOS-ready environment to contribute to the project or at least build it.
-> Thus macOS is mandatory and Xcode 26.4.
+> Thus macOS is mandatory and Xcode 26.5.
 
 > [!IMPORTANT]
 > You should check wether or not you have the tools in use in the project like Fastlane, SwiftLint, SwiftFormat, etc.
@@ -37,7 +37,7 @@
 
 > [!IMPORTANT]
 > We use a lot Fastlane for its automatic features and also to wrap to Shell command lines in order to have the same command to trigger
-> for both the design ssytem toolbox app and the OUDS Swift package.
+> for both the design ssytem toolbox app and the MISO Swift package.
 
 If some tools are missing, pick the suitable command line below and check versions:
 ```bash
@@ -116,25 +116,21 @@ source ~/.zshrc
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 26.4**, we suggest you use this version or newer if you want (but not recommended).
+We use also for our GitLab CI runners **Xcode 26.5**, we suggest you use this version or newer if you want (but not recommended).
 
 > [!IMPORTANT]
-> Xcode 26.4 and Swift 6.3 are used for this project. You must use this configuration.
+> Xcode 26.5 and Swift 6.3 are used for this project. You must use this configuration.
 > No retrocompatibility is planned.
-> If needed, contact us and open a discussino on GitHub Orange-OpenSource/ouds-ios
 
-## Build OUDS Package
+## Build MISO Package
 
-To build the OUDS package:
+To build the MISO package:
 1. Open the folder containing the *Package.swift* file in Xcode
-2. Select the "OUDS-Package" scheme
+2. Select the "MISO-Package" scheme
 3. Build
 
 > [!TIP]
-> You can also move the folder from the *Finder* to the [Design System Toolbox project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox) so as to have a local reference of the package in the demo project.
-
-> [!TIP]
-> For consistancy reasons, when you work on a dedicated branch on the Swift Package repository and need to have a dedicated branch in the design system toolbox app, you should create a branch from the issue in GitHub and (creating then a branch in the package repository) and create a branch with the same name in the design system toolbox app repositoy. Thus with two repositories we will be able to find easily the suitable branches because the names are the same. Because issues are disabled in the design system toolbox repository, there is no wories to have to refer to issues numbers in the branch names.
+> You can also move the folder from the *Finder* to your own app project so as to have a local reference of the package and make evolutions.
 
 ## Documentation
 
@@ -143,53 +139,18 @@ To build the OUDS package:
 The documentation is based on the Swift documentation with [DocC](https://www.swift.org/documentation/docc/).
 Documentation catalogs / archives can be generated through Xcode with _Product > Build Documentation_.
 
-The `generateWebDocumentation.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
-the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
-
-### Illustrations
-
-The illustrations in use for the documentation are versioned in the [Swift Package project](https://github.com/Orange-OpenSource/ouds-ios).
-They are made manually with iPhone 17 Pro, in english, portrait, light mode without increased size text.
-Because 4 themes are available with dedicated fonts and tokens, it was not possible to implement and maintain a test suite with one codebase for all cases.
-
-To update the illustrations, you have to:
-- have such iPhone (e.g. simulator or real device)
-- configure it with the theme you want
-- make screenshots and crop them then
-
-Repeat this process for the other themes if needed.
-
-For *App Store* illustrations, same thing, but with the suitable simulators or devices:
-- iPad Pro 2nd generation / 12.9-inch
-- iPad Pro 3rd generation (2018) / 12.9-inch
-- iPhone 5.5-inch devices (iPhone 6/7/8 Plus) 1242 x 2208
-- iPhone 6.5-inch (iPhone XS Max) 1242 x 2688
-
 ## Run tests 
 
-### Unit tests for OUDS Swift package
+### Unit tests for MISO Swift package
 
 The unit tests are here to ensure there are no regressions in core features, tokens management, etc.
 You should run the tests using an iPhone simulator (like *iPhone 17 Pro*).
-Because OUDS is designed first for iOS, some of the OUDS API rely on UIKit (color colors and a11y features), and some tests are condioned to the platform.
-So running tests on macOS or CI/CD today won't run all the tests (see [#667](https://github.com/Orange-OpenSource/ouds-ios/issues/667)).
+Because MISO is designed first for iOS, some of the MISO API rely on UIKit (color colors and a11y features), and some tests are condioned to the platform.
+So running tests on macOS or CI/CD today won't run all the tests.
 
 To run these unit tests follow some steps:
-1. Select the "OUDS-Package" scheme
+1. Select the "MISO-Package" scheme
 2. In the test pane run the autocreated plan or any test scheme you want
-
-Unit tests care have been implemented for several reasons. 
-
-First, we don't have too much control on the raw tokens values. We rely on the _Figma_ design tool which outputs the tokens in a JSON file. 
-And this file will be parsed to as to generate Swift files. But if there are inconsistencies in the _Figma_ side or in the parser side, the inconsistencies will be spread in our code base. 
-It is not useful to define unit tests for raw tokens to test their values ; in fact they exist here to be updated.
-But we wan still check other things like the relationship between them. For example a _grid100_ should always be less or equal than a _grid100_. Some _color100_ should be always lighter than a _color200_, etc, etc. A small typo should be always smaller or with the sale size has a one-step-bigger typo.
-
-Then, we want to know when tokens have been removed so as to warn our users and keep release notes and changelog clean. If we don't spot such changes, maybe some users will be impacted.
-
-Finally, we ensure our themes can override any semantic tokens. Themes are in fact a set of values for the whole universe of semantic tokens, and if a theme cannot override a semantic token, there could be an issue. Unit tests also help us to find if some tokens have been removed before releasing the library.
-
-Beware, UI tests and snapshots tests (i.e. visual regression) are designed in the [Design System Toolbox project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox): we need an app to build, generated views and tigger some user inputs.
 
 ### On devices tests
 
@@ -279,7 +240,7 @@ This is not mandatory (yet) but a good practice and quite interesting to know wh
 You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
 Because feedbacks of our users are important, you can also mention people who suggested issues to thanks them (*Suggested-by*).
 
-For example, for issue n°123 and its pull request n°456, for a bug reported by Pierre-Yves, tested by Anton, Jérôme and Benoit, reviewed by Ludovic, authored by and Pierre-Yves, acked by Maxime and suggested by Thomas:
+For example, for issue n°123 and its pull request n°456, for a bug reported by Pierre-Yves, tested by Anton, reviewed by Ludovic, authored by Pierre-Yves, acked by Maxime and suggested by Thomas:
 ```text
 refactor: update some things colors and design of the demo app (#123) (#456)
 
@@ -288,8 +249,6 @@ Some things have been refactored to make incredible things.
 Reported-by: Pierre-Yves Ayoul <pierreyves.ayoul@orange.com>
 Suggested-by: Thomas Martin <thomas2.martin@orange.com>
 Tested-by: Anton Astafev <anton.astafev@orange.com>
-Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
-Tested-by: Jérôme Régnier <jerome.regnier@orange.com>
 Acked-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
 Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
 Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
@@ -299,25 +258,6 @@ Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 > [!TIP]
 > Keep things clear and sorted. If people worked on your commits, mention them if relevant.
 > The lower is the people, the older is its contribution
-
-#### Integration of tokenator updates
-
-You should refer to the [dedicated page in the wiki for more details](https://github.com/Orange-OpenSource/ouds-ios/wiki/20-%E2%80%90-How-to-update-tokens).
-
-Keep in mind the commit adding *tokenator* updates in the codebase must be formatted like
-
-```text
-chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#225)
-``` 
-
-i.e. precise the tokens updated, the *tokenator* generation timestamp and the pull request number.
-
-If you know what is the token library version, add it in the commit body, like:
-```text
-chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#225)
-
-Tokens library v0.4.1
-``` 
 
 #### Verifying commits cryptographic signatures
 
@@ -359,7 +299,6 @@ In few words, if the commit was signed with the committer's verified signature, 
 We try also to apply [keep a changelog](https://keepachangelog.com/en/1.0.0/), and [semantic versioning](https://semver.org/spec/v2.0.0.html) both with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 We can generate a `RELEASE_NOTE.md` file using the Git history and [git cliff](https://git-cliff.org/) tool.
-Today we update the unique CHANGELOG manualy, but you can find [in the wiki more details about the use of git-cliff](https://github.com/Orange-OpenSource/ouds-ios/wiki/52-%E2%80%90-About-changelog,-release-notes-and-hooks)
 
 To generate a release note:
 ```shell
@@ -398,12 +337,7 @@ bundle exec fastlane check_leaks
 ```
 
 > [!CAUTION]
-> It can increase yout git flow time if your run this command in pre-commit stage
-
-
-Note that we face some issues about the use of _Gitleaks GitHub Action_ and _Gitleaks_ as CLI command, for fur further details see [#131](https://github.com/gitleaks/gitleaks-action/issues/131), [#132](https://github.com/gitleaks/gitleaks-action/issues/132) and [#1331](https://github.com/gitleaks/gitleaks/issues/1331).
-
-Remember _Gitleaks_ is also used in GitHub project side thanks to the [dedicated GitHub Action](https://github.com/marketplace/actions/gitleaks) but these controls are done online once commits have left the local environment.
+> It can increase your git flow time if your run this command in pre-commit stage
 
 ## Linter
 
@@ -416,30 +350,6 @@ bundle exec fastlane lint
 ```
 
 **In most of cases you must fix warnings, or explain why in your commits and pull request comments you choose to disable them.**
-
-Today, only in very few cases some _SwiftLint_ warnings are disabled at files (or lower) level:
-- in tests classes
-- in files containing tokens which will be generated
-- in tokens providers
-
-The warnings which can be disabled for token files: 
-- *missing_docs*: because tokens will be generated without documentation by the tokenator
-- *identifier_name*: because the name of the tokens are defined in *Figma* and strongly related to the design system, and in they can be long
-- *line_length*: because tokens definition can take a lot of place
-- *file_length*: because the files containing declarations or definitions of tokens can be very long
-
-The warnings which can be disabled for test classes files and mocks files:
-- *identifier_name*: because of length of tokens names 
-- *type_name*: because stringly related to the types under test, which can have a long name
-- *line_length*: because of length of tokens names
-- *file_length*: because of the amount of tokens to test
-- *type_body_length*: because we can have a lot of tests to do
-- *function_body_length*: because we can have function with a lot of assertions
-- *force_try*: because we can need tod efine some configuration variable we are sure they work (like regxp)
-- *required_deinit*: because we do not need to manage init and deinit of test classe
-- *implicitly_unwrapped_optional*: because for declaration of themes to test we bang!
-
-Do not forget if possible to enable the warnings in the end of the file to reduce as much as possible the scope of the disabled warnings. Disable warnings only if needed.
 
 ## Formater
 
@@ -516,33 +426,20 @@ We use *GitHub Actions* so as to define several workflows with some actions to b
 It will help us to ensure code on pull requests or being merged compiles and has all tests green.
 
 Workflows are the following:
-- [build-and-test](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml) to build and run unit tests
-- [build-documentation](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-documentation.yml) to ensure documentation can be built from sources without warnings
-- [dependency-review](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/dependency-review.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
-- [gitleaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
-- [scorecard](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/scorecard.yml) to build the OpenSSF score card on README
-- [snapshot](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/sapshot.yml) to move the SNAPSHOT tag to the last commit on develop branch
-- [swiftlint](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftlint.yml) to check if there is no linter warnings
-- [swiftpolyglot](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftpolyglot.yml) to check if there are localizations troubles
-
-We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
-There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
+- [build-and-test](https://github.com/pylapp/miso-ios/blob/develop/.github/workflows/build-and-test.yml) to build and run unit tests
+- [build-documentation](https://github.com/pylapp/miso-ios/blob/develop/.github/workflows/build-documentation.yml) to ensure documentation can be built from sources without warnings
+- [dependency-review](https://github.com/pylapp/miso-ios/blob/develop/.github/workflows/dependency-review.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
+- [gitleaks](https://github.com/pylapp/miso-ios/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
+- [scorecard](https://github.com/pylapp/miso-ios/blob/develop/.github/workflows/scorecard.yml) to build the OpenSSF score card on README
+- [snapshot](https://github.com/pylapp/miso-ios/blob/develop/.github/workflows/sapshot.yml) to move the SNAPSHOT tag to the last commit on develop branch
+- [swiftlint](https://github.com/pylapp/miso-ios/blob/develop/.github/workflows/swiftlint.yml) to check if there is no linter warnings
+- [swiftpolyglot](https://github.com/pylapp/miso-ios/blob/develop/.github/workflows/swiftpolyglot.yml) to check if there are localizations troubles
 
 Note the workflow about the documentation builds it but does not expose it online. It allows us to ensure the documentation can be built on the current code base.
 
 > [!NOTE]
 > A workflow for dependency-review based on CodeQL existed but it was not posssible to have successful build for analyis
 > It has been withdrawn and will be added later.
-
-### GitLab CI (internal)
-
-We use *GitLab CI*for CI/CD with our own runners so as to keep private our sensitive files likes certificates and provisioning profiles.
-Our current plan does not allow to make GitHub mirroring, so we use GitHub HTTP REST API to download sources, before using Xcode to build and sign.
-However of course you will have to define all the variables, secrets and have the mandatory files.
-
-You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/51-%E2%80%90-About-continuous-integration-and-delivery).
-
-In few words, there is a pipeline containing some stages and jobs to build alpha, nightly/beta and production releases.
 
 ## Use of GenAI
 
@@ -591,7 +488,7 @@ The main things to note are the LLM in use and the products behind with, if rele
 Bots accounts can be used, e.g. to update dependencies with *Dependabot*, *Snyk* or *Renovate*, or also to provide new tokens with the [boosted-bot](https://github.com/boosted-bot).
 It could be interesting to keep traces of what they did, e.g. review pull requests or provide source code.
 The suitable field must be used and also the bot name and associated email.
-By doing so be add useful details about commits origin and content, and are aligned with for example some specific [GitHub view about contributors](https://github.com/Orange-OpenSource/ouds-ios/graphs/contributors).
+By doing so be add useful details about commits origin and content, and are aligned with for example some specific [GitHub view about contributors](https://github.com/pylapp/miso-ios/graphs/contributors).
 
 For example:
 ```text
