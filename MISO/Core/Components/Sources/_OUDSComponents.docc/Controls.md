@@ -167,13 +167,13 @@ MISOCheckboxPicker(selections: $selections,
 }
 
 The library proposes layout to add in your views some radio buttons components, even if this type of component is not iOS-native one.
-You can use a simple radio without any labels and images thanks to ``OUDSRadio``.
+You can use a simple radio without any labels and images thanks to ``MISORadio``.
 
 ```swift
 // A simple radio, with only an indicator
 // The component must be instanciated with a string parameter used as accessibility label that will
 // be vocalized by Voice Over.
-OUDSRadio(isOn: $isOn, accessibilityLabel: "Select the element")
+MISORadio(isOn: $isOn, accessibilityLabel: "Select the element")
 ```
 
 #### Radio item
@@ -193,16 +193,16 @@ OUDSRadio(isOn: $isOn, accessibilityLabel: "Select the element")
     }
 }
 
-The library proposes also a radio which has in its layout some labels and icons (``OUDSRadioItem``).
+The library proposes also a radio which has in its layout some labels and icons (``MISORadioItem``).
 The indicator can be leading or trailing.
 
 ```swift
 // A leading radio with a label
-OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $isOn)
+MISORadioItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 
 // A trailing radio with a label, an additional label, a description, a tinted icon,
 // a divider and is about an error with a reversed layout
-OUDSRadioItem("Lucy in the Sky with Diamonds",
+MISORadioItem("Lucy in the Sky with Diamonds",
               isOn: $isOn,
               extraLabel: "The Beatles",
               description: "1967",
@@ -212,7 +212,7 @@ OUDSRadioItem("Lucy in the Sky with Diamonds",
               hasDivider: true)
 
 // A radio with a raw (non-tinted) image and RTL flip support
-OUDSRadioItem("Lucy in the Sky with Diamonds",
+MISORadioItem("Lucy in the Sky with Diamonds",
               isOn: $isOn,
               image: MISOImage(asset: Image(decorative: "il_someImage"),
                                flipped: layoutDirection == .rightToLeft,
@@ -240,7 +240,7 @@ Radio items can be embedded in a radio picker so as to let the users to select o
 
 ```swift
 // Define the elements to display in radio buttons using MISORadioPickerData.
-// This object has the same properties as the OUDSRadioItem,
+// This object has the same properties as the MISORadioItem,
 // and some of them are optional withdefault values set
 var someDataToPopulate: [MISORadioPickerData<String>] {
     [

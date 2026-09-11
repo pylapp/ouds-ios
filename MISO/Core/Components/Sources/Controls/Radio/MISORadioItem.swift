@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import SwiftUI
 
@@ -37,11 +24,11 @@ import SwiftUI
 ///
 /// ## Particular cases
 ///
-/// An ``OUDSRadioItem`` can be related to an error situation, for example troubles for a form.
+/// An ``MISORadioItem`` can be related to an error situation, for example troubles for a form.
 /// A dedicated look and feel is implemented for that if the `isError` flag is risen.
 /// In that case if the component displayed an icon, this icon will be replaced automatically by an error icon.
 ///
-/// In addition, the ``OUDSRadioItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
+/// In addition, the ``MISORadioItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
 /// The radio can be also outlined in some cases.
 ///
@@ -74,27 +61,27 @@ import SwiftUI
 ///
 /// ## Code samples
 ///
-/// The ``OUDSRadioItem`` can be used outside a dedicated picker, thus it does not need any tag and associated type.
+/// The ``MISORadioItem`` can be used outside a dedicated picker, thus it does not need any tag and associated type.
 ///
 /// ```swift
 ///     // Supposing we have an unselected state
 ///     @Published var selection: Bool = false
 ///
 ///     // A leading radio with a label.
-///     OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $selection)
+///     MISORadioItem("Lucy in the Sky with Diamonds", isOn: $selection)
 ///
 ///     // Localizable from bundle can also be used
-///     OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $selection)
+///     MISORadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $selection)
 ///
 ///     // A leading radio with a label, but in read only mode (user cannot interact yet, but not disabled).
-///     OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $selection, isReadOnly: true)
+///     MISORadioItem("Lucy in the Sky with Diamonds", isOn: $selection, isReadOnly: true)
 ///
 ///     // A leading radio with an additional label and a description.
-///     OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $selection,
+///     MISORadioItem("Lucy in the Sky with Diamonds", isOn: $selection,
 ///                   extraLabel: "The Beatles", description: "1967")
 ///
 ///     // A trailing radio with a label, a description, a tinted icon, a divider and an error.
-///     OUDSRadioItem("Rescue from this world!",
+///     MISORadioItem("Rescue from this world!",
 ///                   isOn: $selection,
 ///                   description: "Put your hand in mine",
 ///                   image: MISOImage(asset: Image(decorative: "ic_heart")),
@@ -103,7 +90,7 @@ import SwiftUI
 ///                   hasDivider: true)
 ///
 ///     // A trailing radio with a raw (non-tinted) image.
-///     OUDSRadioItem("Rescue from this world!",
+///     MISORadioItem("Rescue from this world!",
 ///                   isOn: $selection,
 ///                   description: "Put your hand in mine",
 ///                   image: MISOImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
@@ -112,55 +99,33 @@ import SwiftUI
 ///                   hasDivider: true)
 ///
 ///     // Flip the icon for RTL layouts using MISOImage.
-///     OUDSRadioItem("Cocorico !",
+///     MISORadioItem("Cocorico !",
 ///                   isOn: $selection,
 ///                   image: MISOImage(asset: Image(systemName: "figure.handball"),
 ///                                   flipped: layoutDirection == .rightToLeft),
 ///                   isReversed: layoutDirection == .rightToLeft)
 ///
 ///     // If on error, add an error message can help user to understand error context
-///     OUDSRadioItem("Rescue from this world!",
+///     MISORadioItem("Rescue from this world!",
 ///                   isOn: $selection,
 ///                   isError: true,
 ///                   errorText: "Something wrong",
 ///                   hasDivider: true)
 ///
 ///     // A leading radio with a label, but disabled.
-///     OUDSRadioItem("Rescue from this world!", isOn: $selection)
+///     MISORadioItem("Rescue from this world!", isOn: $selection)
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related radio as it will crash
 ///     // This is forbidden by design!
-///     OUDSRadioItem("Kaboom!", isOn: $selection, isError: true).disabled(true) // fatal error
-///     OUDSRadioItem("Kaboom!", isOn: $selection, isReadOnly: true).disabled(true) // fatal error
+///     MISORadioItem("Kaboom!", isOn: $selection, isError: true).disabled(true) // fatal error
+///     MISORadioItem("Kaboom!", isOn: $selection, isReadOnly: true).disabled(true) // fatal error
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-radio-button)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A radio item component in light and dark modes with Orange theme](component_radioItem_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A radio item component in light and dark modes with Orange Compact theme](component_radioItem_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A radio item component in light and dark modes with Sosh theme](component_radioItem_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A radio item component in light and dark modes with Wireframe theme](component_radioItem_Wireframe)
 ///
 /// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSRadioItem: View {
+public struct MISORadioItem: View {
 
     // MARK: - Properties
 
@@ -176,7 +141,7 @@ public struct OUDSRadioItem: View {
     /// Creates a radio with label and optional helper text as description, icon, divider.
     ///
     /// ```swift
-    ///     OUDSRadioItem("Virgin Holy Lava",
+    ///     MISORadioItem("Virgin Holy Lava",
     ///                   isOn: $selection,
     ///                   extraLabel: "Very spicy",
     ///                   description: "No alcohol, only tasty flavors",
@@ -222,24 +187,24 @@ public struct OUDSRadioItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an MISORadioItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an OUDSRadioItem is empty, prefer OUDSRadio(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an MISORadioItem is empty, prefer MISORadio(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if let extraLabel, extraLabel.isEmpty {
-            ML.warning("Extra label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Extra label text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
-            ML.warning("Error text given to an OUDSRadioItem must be defined in case of error")
+            ML.warning("Error text given to an MISORadioItem must be defined in case of error")
         }
         // swiftlint:enable force_unwrapping
 
@@ -272,7 +237,7 @@ public struct OUDSRadioItem: View {
     /// Creates a radio with label, optional helper text, icon, divider, and a rich attributed error text.
     ///
     /// ```swift
-    ///     OUDSRadioItem("Virgin Holy Lava",
+    ///     MISORadioItem("Virgin Holy Lava",
     ///                   isOn: $selection,
     ///                   extraLabel: "Very spicy",
     ///                   description: "No alcohol, only tasty flavors",
@@ -320,23 +285,23 @@ public struct OUDSRadioItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an MISORadioItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an OUDSRadioItem is empty, prefer OUDSRadio(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an MISORadioItem is empty, prefer MISORadio(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if let extraLabel, extraLabel.isEmpty {
-            ML.warning("Extra label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Extra label text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if isError, errorText.isEmpty {
-            ML.warning("Error text given to an OUDSRadioItem must be defined in case of error")
+            ML.warning("Error text given to an MISORadioItem must be defined in case of error")
         }
 
         _isOn = isOn
@@ -364,11 +329,11 @@ public struct OUDSRadioItem: View {
     /// Creates a radio with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSRadioItem(LocalizedStringKey("option_label"),
+    ///     MISORadioItem(LocalizedStringKey("option_label"),
     ///                   bundle: Bundle.module,
     ///                   isOn: $selection)
     ///
-    ///     OUDSRadioItem(LocalizedStringKey("option_label"),
+    ///     MISORadioItem(LocalizedStringKey("option_label"),
     ///                   bundle: Bundle.module,
     ///                   isOn: $selection,
     ///                   image: MISOImage(asset: Image(decorative: "ic_heart")))
@@ -432,7 +397,7 @@ public struct OUDSRadioItem: View {
     /// Creates a radio with a localized label and a rich attributed error text.
     ///
     /// ```swift
-    ///     OUDSRadioItem(LocalizedStringKey("option_label"),
+    ///     MISORadioItem(LocalizedStringKey("option_label"),
     ///                   bundle: Bundle.module,
     ///                   isOn: $selection,
     ///                   errorText: AttributedString(markdown: "Please select **one flavor** for this drink"))

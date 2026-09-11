@@ -127,7 +127,7 @@ link                           | For links like `OUDSLink`
 listItem                       | Shared and used for switch, checkbox, radio items and list items layouts
 pinCodeInput                   |  
 quantityInput                  | 
-radioButton                    | For radio components like `OUDSRadio` and `OUDSRadioItem` 
+radioButton                    | For radio components like `MISORadio` and `MISORadioItem` 
 selectInput                    |
 skeleton                       |
 switch                         | For switch components like `OUDSSwitch` and `OUDSSwitchItem` 

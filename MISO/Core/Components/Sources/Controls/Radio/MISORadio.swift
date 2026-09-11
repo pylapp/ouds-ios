@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOTokensComponent
 import SwiftUI
@@ -25,7 +12,7 @@ import SwiftUI
 ///
 /// ## Particular cases
 ///
-/// An ``OUDSRadio`` can be related to an error situation, for example troubles for a form.
+/// An ``MISORadio`` can be related to an error situation, for example troubles for a form.
 /// A dedicated look-and-feel is implemented for that if the `isError` flag is risen.
 ///
 /// ## Accessibility considerations
@@ -46,42 +33,20 @@ import SwiftUI
 ///     @Published var selection: Bool = false
 ///
 ///     // A simple radio, no error, not in read only mode
-///     OUDSRadio(isOn: $selection, accessibilityLabel: "The cake is a lie")
+///     MISORadio(isOn: $selection, accessibilityLabel: "The cake is a lie")
 ///
 ///     // A simple radio, but is an error context
-///     OUDSRadio(isOn: $selection, accessibilityLabel: "The cake is a lie", isError: true)
+///     MISORadio(isOn: $selection, accessibilityLabel: "The cake is a lie", isError: true)
 ///
 ///     // Never disable an error-related radio button as it will crash
 ///     // This is forbidden by design!
-///     OUDSRadio(isOn: $selection, accessibilityLabel: "The cake is a lie", isError: true).disabled(true) // fatal error
+///     MISORadio(isOn: $selection, accessibilityLabel: "The cake is a lie", isError: true).disabled(true) // fatal error
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-radio-button)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A radio button component in light and dark modes with Orange theme](component_radio_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A radio button component in light and dark modes with Orange Compact theme](component_radio_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A radio button component in light and dark modes with Sosh theme](component_radio_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A radio button component in light and dark modes with Wireframe theme](component_radio_Wireframe)
 ///
 /// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSRadio: View {
+public struct MISORadio: View {
 
     // MARK: - Properties
 
@@ -98,7 +63,7 @@ public struct OUDSRadio: View {
     /// Creates a radio with only an indicator.
     ///
     /// ```swift
-    ///     OUDSRadio(isOn: $isOn, accessibilityLabel: LocalizedStringKey("agree_terms"), bundle: Bundle.module)
+    ///     MISORadio(isOn: $isOn, accessibilityLabel: LocalizedStringKey("agree_terms"), bundle: Bundle.module)
     /// ```
     ///
     /// **The design system does not allow to have both an error or a read only situation and a disabled state for the component.**
@@ -124,7 +89,7 @@ public struct OUDSRadio: View {
     /// Creates a radio with only an indicator.
     ///
     /// ```swift
-    ///     OUDSRadio(isOn: $isOn, accessibilityLabel: "Agree to terms")
+    ///     MISORadio(isOn: $isOn, accessibilityLabel: "Agree to terms")
     /// ```
     ///
     /// **The design system does not allow to have both an error or a read only situation and a disabled state for the component.**
@@ -140,7 +105,7 @@ public struct OUDSRadio: View {
                 isReadOnly: Bool = false)
     {
         if accessibilityLabel.isEmpty {
-            ML.warning("The OUDSRadio should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The MISORadio should not have an empty accessibility label, think about your disabled users!")
         }
         _isOn = isOn
         self.accessibilityLabel = accessibilityLabel.localized()

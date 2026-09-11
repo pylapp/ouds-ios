@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 import MISOTokensSemantic
@@ -103,7 +90,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     private var readOnlyColor: MultipleColorSemanticToken {
         guard !isError else {
-            ML.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed."
+            ML.fatal("A MISORadio with a read only state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a read only state.")
         }
         return theme.colors.actionReadOnlyPrimary
@@ -111,7 +98,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticToken {
         guard !isError else {
-            ML.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
+            ML.fatal("A MISORadio with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionDisabled
@@ -163,7 +150,7 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
 
     private var disabledColor: Color {
         guard !isError else {
-            ML.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
+            ML.fatal("A MISORadio with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
@@ -241,7 +228,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     private var readOnlyColor: MultipleColorSemanticToken {
         guard !isError else {
-            ML.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed"
+            ML.fatal("An MISORadio with a read only state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionReadOnlySecondary
@@ -249,7 +236,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticToken {
         guard !isError else {
-            ML.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed"
+            ML.fatal("An MISORadio with a disabled state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionDisabled

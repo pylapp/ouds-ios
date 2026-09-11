@@ -22,7 +22,7 @@ import SwiftUI
 /// A picker allowing to expose several radio buttons and choose only one within the others.
 /// Each radio button contains a "tag", i.e. a supposed to be unique value.
 /// The picker will expose the choosen value through this "tag".
-/// It has also some configuration elements which will override the one applied to nested ``OUDSRadioItem`` (divider, read only and error mode, layout and outlined)
+/// It has also some configuration elements which will override the one applied to nested ``MISORadioItem`` (divider, read only and error mode, layout and outlined)
 ///
 /// ## Accessibility considerations
 ///
@@ -32,15 +32,15 @@ import SwiftUI
 ///
 /// ## Forbidden by design
 ///
-/// The design system does not allow to have ``OUDSRadioItem`` in both an error situation and a read only state.
-/// The design system does not allow to have ``OUDSRadioItem`` in both an error situation and a disabled state.
-/// The design system does not allow to have ``OUDSRadioItem`` in both a read only and a disabled state.
+/// The design system does not allow to have ``MISORadioItem`` in both an error situation and a read only state.
+/// The design system does not allow to have ``MISORadioItem`` in both an error situation and a disabled state.
+/// The design system does not allow to have ``MISORadioItem`` in both a read only and a disabled state.
 ///
 /// ## Code samples
 ///
 /// ```swift
 ///     // Define the elements to display in radio buttons using MISORadioPickerData.
-///     // This object has the same properties as the OUDSRadioItem,
+///     // This object has the same properties as the MISORadioItem,
 ///     // and some of them are optional withdefault values set
 ///     var someDataToPopulate: [MISORadioPickerData<String>] {
 ///         [
@@ -115,19 +115,19 @@ public struct MISORadioPicker<Tag>: View where Tag: Hashable {
     /// The type of layout the picker must have
     private let placement: OUDSRadioPickerPlacement
 
-    /// Overrides any configuration applied to embedded ``OUDSRadioItem`` and forces them to apply the outlined layout
+    /// Overrides any configuration applied to embedded ``MISORadioItem`` and forces them to apply the outlined layout
     private let isOutlined: Bool
 
-    /// Overrides any configuration applied to embedded ``OUDSRadioItem`` and forces them to apply the reversed layout
+    /// Overrides any configuration applied to embedded ``MISORadioItem`` and forces them to apply the reversed layout
     private let isReversed: Bool
 
-    /// Overrides any configuration applied to embedded ``OUDSRadioItem`` and forces them to error mode
+    /// Overrides any configuration applied to embedded ``MISORadioItem`` and forces them to error mode
     private let isError: Bool
 
-    /// Overrides any configuration applied to embedded ``OUDSRadioItem`` and forces them to read only mode
+    /// Overrides any configuration applied to embedded ``MISORadioItem`` and forces them to read only mode
     private let isReadOnly: Bool
 
-    /// Overrides any configuration applied to embedded ``OUDSRadioItem`` and displays a divider (except for the last one)
+    /// Overrides any configuration applied to embedded ``MISORadioItem`` and displays a divider (except for the last one)
     private let hasDivider: Bool
 
     /// The custom spacing to apply between items by user
@@ -137,7 +137,7 @@ public struct MISORadioPicker<Tag>: View where Tag: Hashable {
 
     // MARK: - Init
 
-    /// Defines the picker view which displays using ``OUDSRadioItem`` view the ``MISORadioPickerData``
+    /// Defines the picker view which displays using ``MISORadioItem`` view the ``MISORadioPickerData``
     ///
     /// ```swift
     ///     MISORadioPicker(selection: $selection, radios: [
@@ -148,13 +148,13 @@ public struct MISORadioPicker<Tag>: View where Tag: Hashable {
     ///
     /// - Parameters:
     ///    - selection: The current selected value
-    ///    - radios: The raw data to wrap in ``OUDSRadioItem`` for display
+    ///    - radios: The raw data to wrap in ``MISORadioItem`` for display
     ///    - placement: How radio buttons must be placed (default set to *vertical*)
-    ///    - isOutlined: If *true*, force all ``OUDSRadioItem`` to be outlined (default set to *false*)
-    ///    - isReversed: If *true*, force all ``OUDSRadioItem`` to have reversed layout (default set to *false*)
-    ///    - isError: If *true*, force all ``OUDSRadioItem`` to be in error mode (default set to *false*)
-    ///    - isReadOnly: If *true*, force all ``OUDSRadioItem`` to be in read only mode (default set to *false*)
-    ///    - hasDivider: If *true*, force all ``OUDSRadioItem`` except the last one to have a divider (default set to *false*)
+    ///    - isOutlined: If *true*, force all ``MISORadioItem`` to be outlined (default set to *false*)
+    ///    - isReversed: If *true*, force all ``MISORadioItem`` to have reversed layout (default set to *false*)
+    ///    - isError: If *true*, force all ``MISORadioItem`` to be in error mode (default set to *false*)
+    ///    - isReadOnly: If *true*, force all ``MISORadioItem`` to be in read only mode (default set to *false*)
+    ///    - hasDivider: If *true*, force all ``MISORadioItem`` except the last one to have a divider (default set to *false*)
     ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(selection: Binding<Tag>,
                 radios: [MISORadioPickerData<Tag>],
@@ -209,7 +209,7 @@ public struct MISORadioPicker<Tag>: View where Tag: Hashable {
     }
 
     private func content(for radio: MISORadioPickerData<Tag>, noDivider: Bool) -> some View {
-        OUDSRadioItem(radio.label,
+        MISORadioItem(radio.label,
                       isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
                       extraLabel: radio.extraLabel,
                       description: radio.description,
