@@ -7,7 +7,7 @@ requirements of the relevant license of the Third Party Software they are using.
 
 For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *Package.swift* and *Package.resolved* files.
 
-## In OUDS library 
+## In MISO library 
 <!-- No dependency yet -->
 
 ### Shantell Sans
