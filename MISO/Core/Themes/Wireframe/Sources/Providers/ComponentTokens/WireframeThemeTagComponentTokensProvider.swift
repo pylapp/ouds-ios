@@ -17,7 +17,7 @@
 import MISOFoundations
 import MISOThemesContract
 
-/// A class which wraps all **component  tokens of tag** for *tag* objects like `OUDSTag`.
+/// A class which wraps all **component  tokens of tag** for *tag* objects like `MISOTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllTagComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
@@ -45,7 +45,7 @@ final class WireframeThemeTagComponentTokensProvider: AllTagComponentTokensProvi
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSTag`
+    /// Defines a provider of component tokens dedicated to `MISOTag`
     /// - Parameters:
     ///    - sizes: Provider for sizes semantic tokens. If nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)

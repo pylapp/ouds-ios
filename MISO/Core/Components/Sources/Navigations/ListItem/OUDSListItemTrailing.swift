@@ -26,7 +26,7 @@ import SwiftUI
 ///
 /// - `text(_:)`: A textual element with various styles (see ``TextType``).
 /// - `badge(_:)`: A badge component (see ``MISOBadgeStandard`` or ``MISOBadgeCount``).
-/// - `tag(_:)`: A tag component (see ``OUDSTag``).
+/// - `tag(_:)`: A tag component (see ``MISOTag``).
 /// - `icon(_:)`: A status or custom icon (see ``OUDSListItemIcon``).
 /// - `image(_:)`: A static image asset (see ``OUDSListItemImage``).
 /// - `flag(_:)`: A country flag image (see ``OUDSListItemFlag``).
@@ -61,7 +61,7 @@ import SwiftUI
 ///     )
 ///
 ///     // Trailing with a tag
-///     let tag = OUDSTag(label: "New", size: .small)
+///     let tag = MISOTag(label: "New", size: .small)
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Feature"),
 ///         trailing: .tag(tag)
@@ -171,8 +171,8 @@ import SwiftUI
 
     /// A tag component providing categorization or status information.
     ///
-    /// See ``OUDSTag`` for available configurations.
-    case tag(OUDSTag)
+    /// See ``MISOTag`` for available configurations.
+    case tag(MISOTag)
 
     /// A status or custom icon.
     ///

@@ -22,7 +22,7 @@ import MISOTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for tags components like `OUDSInputTag`
+/// Declares all component tokens for tags components like `MISOInputTag`
 /// Used for tokens providers like `OrangeThemeInputTagComponentTokensProvider`.
 ///
 /// - Since: 0.17.0

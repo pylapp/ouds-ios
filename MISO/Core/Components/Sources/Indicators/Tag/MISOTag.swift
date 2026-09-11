@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 // swiftlint:disable nesting
@@ -98,59 +85,37 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Text only with neutral status, for emphasized appearance with rounded shape in default size
-///     OUDSTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
+///     MISOTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
 ///     // Or also
-///     OUDSTag(label: "Label")
+///     MISOTag(label: "Label")
 ///     // Or from a localizale and a bundle
-///     OUDSTag(LocalizedStringKey("label_wording"), bundle: Bundle.module)
+///     MISOTag(LocalizedStringKey("label_wording"), bundle: Bundle.module)
 ///
 ///     // Tag with neutral status with bullet
-///     OUDSTag(label: "Label", status: .neutral(leading: .bullet)
+///     MISOTag(label: "Label", status: .neutral(leading: .bullet)
 ///
 ///     // Tag with neutral status with a custom decorative icon
-///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"))))
+///     MISOTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"))))
 ///     // If your layout is in RTL mode but your tag has an icon with another meaning because of bad orientation,
 ///     // you can flip the icon using MISOImage.flipped
-///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), flipped: true)))
+///     MISOTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), flipped: true)))
 ///     // If you want to display a raw image (not tinted), use renderingMode: .original
-///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
+///     MISOTag(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
 ///
 ///     // Text with neutral status with bullet
-///     OUDSTag(label: "Label", status: .neutral(bullet: true))
+///     MISOTag(label: "Label", status: .neutral(bullet: true))
 ///
 ///     // Tag with indeterminate circular progress indicator, with rounded shape in small size
-///     OUDSTag(loadingLabel: "Processing...", shape: .rounded, size: .small)
+///     MISOTag(loadingLabel: "Processing...", shape: .rounded, size: .small)
 ///
 ///     // Tag with determinate circular progress indicator, with rounded shape in default size
-///     OUDSTag(loadingLabel: "Processing...", progress: 0.75)
+///     MISOTag(loadingLabel: "Processing...", progress: 0.75)
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-tag)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A tag component in light and dark modes with Orange theme](component_tag_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A tag component in light and dark modes with Orange Compact theme](component_tag_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A tag component in light and dark modes with Sosh theme](component_tag_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A tag component in light and dark modes with Wireframe theme](component_tag_Wireframe)
 ///
 /// - Version: 1.5.0 (Figma component design version)
 /// - Since: 0.18.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSTag: View {
+public struct MISOTag: View {
 
     // MARK: Stored Properties
 
@@ -178,7 +143,7 @@ public struct OUDSTag: View {
         }
     }
 
-    /// The status of an `OUDSTag` determines the leading element, the background
+    /// The status of an `MISOTag` determines the leading element, the background
     /// and the content colors of the tag according to the category.
     /// - Since: 0.18.0
     @frozen public struct Status {
@@ -196,7 +161,7 @@ public struct OUDSTag: View {
             /// To display the leading bullet
             case bullet
 
-            /// To display the leadiong icon. For `OUDSTag.Status.Category.neutral` and `OUDSTag.Status.Category.accent`
+            /// To display the leadiong icon. For `MISOTag.Status.Category.neutral` and `MISOTag.Status.Category.accent`
             /// the decorative icon need to be provided. For other categories, a default icon is already provided.
             case icon
         }
@@ -253,13 +218,13 @@ public struct OUDSTag: View {
         /// Used to create a tag with a neutral status with a leading ``MISOImage`` icon.
         ///
         /// ```swift
-        ///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"))))
+        ///     MISOTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"))))
         ///
         ///     // Raw (non-tinted) image:
-        ///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
+        ///     MISOTag(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
         ///
         ///     // Flip for RTL:
-        ///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), flipped: true)))
+        ///     MISOTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), flipped: true)))
         /// ```
         ///
         /// - Parameter image: An ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode
@@ -277,10 +242,10 @@ public struct OUDSTag: View {
         /// Used to create a tag with an accent status with a leading ``MISOImage`` icon.
         ///
         /// ```swift
-        ///     OUDSTag(label: "Label", status: .accent(image: MISOImage(asset: Image(decorative: "ic_heart"))))
+        ///     MISOTag(label: "Label", status: .accent(image: MISOImage(asset: Image(decorative: "ic_heart"))))
         ///
         ///     // Raw (non-tinted) image:
-        ///     OUDSTag(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
+        ///     MISOTag(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
         /// ```
         ///
         /// - Parameter image: An ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode
@@ -308,7 +273,7 @@ public struct OUDSTag: View {
         }
     }
 
-    /// Represents the appearance of an `OUDSTag`
+    /// Represents the appearance of an `MISOTag`
     /// - Since: 0.18.0
     @frozen public enum Appearance {
 
@@ -323,7 +288,7 @@ public struct OUDSTag: View {
         case muted
     }
 
-    /// Defines the shape of an `OUDSTag`
+    /// Defines the shape of an `MISOTag`
     /// - Since: 0.18.0
     @frozen public enum Shape {
         /// A tag with sharp, square corners.
@@ -335,7 +300,7 @@ public struct OUDSTag: View {
         case rounded
     }
 
-    /// Defines the size of an `OUDSTag`
+    /// Defines the size of an `MISOTag`
     /// - Since: 0.18.0
     @frozen public enum Size {
         /// The standard tag size, suitable for most use cases and offering good readability.
@@ -353,15 +318,15 @@ public struct OUDSTag: View {
     /// When loader is added, `status` and `appearance` are ignored.
     ///
     /// ```swift
-    ///     OUDSTag(label: "Label")
+    ///     MISOTag(label: "Label")
     /// ```
     ///
     /// - Parameters:
     ///    - label: The label displayed in the tag
     ///    - status: The status of the tag. Its background color and its content color are based on
-    ///    this `OUDSTag.Status` combined to the `OUDSTag.Appearance` of the tag. Default set to *neutral*.
+    ///    this `MISOTag.Status` combined to the `MISOTag.Appearance` of the tag. Default set to *neutral*.
     ///    - appearance: The importance of the tag. Its background color and its content color are based on
-    ///    this `OUDSTag.Appearance` combined to the `OUDSTag.Status` of the tag. Default set to *emphasized*
+    ///    this `MISOTag.Appearance` combined to the `MISOTag.Status` of the tag. Default set to *emphasized*
     ///    - shape: The shape of the tag, i.e. the corners style. Default set to *rounded*.
     ///    - size: The size of the tag. Default set to *default*.
     public init(label: String,
@@ -379,7 +344,7 @@ public struct OUDSTag: View {
     /// Creates a tag with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSTag(LocalizedStringKey("status_tag"), bundle: Bundle.module, status: .positive(leading: .none))
+    ///     MISOTag(LocalizedStringKey("status_tag"), bundle: Bundle.module, status: .positive(leading: .none))
     /// ```
     ///
     /// - Parameters:
@@ -408,7 +373,7 @@ public struct OUDSTag: View {
     /// The use the `View/disabled(_:)` method has no effect on this state.
     ///
     /// ```swift
-    ///     OUDSTag(loadingLabel: "Processing...", progress: 0.75)
+    ///     MISOTag(loadingLabel: "Processing...", progress: 0.75)
     /// ```
     ///
     /// - Parameters:
@@ -432,7 +397,7 @@ public struct OUDSTag: View {
     /// Creates a tag in the loading state with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSTag(loadingKey: LocalizedStringKey("loading_tag"), bundle: Bundle.module)
+    ///     MISOTag(loadingKey: LocalizedStringKey("loading_tag"), bundle: Bundle.module)
     /// ```
     ///
     /// - Parameters:

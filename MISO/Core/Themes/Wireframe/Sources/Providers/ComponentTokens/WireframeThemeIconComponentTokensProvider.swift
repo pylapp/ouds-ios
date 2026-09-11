@@ -19,7 +19,7 @@ import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of icons** for *icons* used in some components like `OUDSTag`.
+/// A class which wraps all **component  tokens of icons** for *icons* used in some components like `MISOTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllIconComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.

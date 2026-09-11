@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOTokensSemantic
 import SwiftUI
 
@@ -21,8 +8,8 @@ struct TagBackgroundModifier: ViewModifier {
 
     // MARK: Properties
 
-    let appearance: OUDSTag.Appearance
-    let type: OUDSTag.`Type`
+    let appearance: MISOTag.Appearance
+    let type: MISOTag.`Type`
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
@@ -53,7 +40,7 @@ struct TagBackgroundModifier: ViewModifier {
         }
     }
 
-    private func emphasizedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticToken {
+    private func emphasizedBackground(for status: MISOTag.Status) -> MultipleColorSemanticToken {
         switch status.category {
         case .neutral:
             theme.colors.surfaceInverseHigh
@@ -70,7 +57,7 @@ struct TagBackgroundModifier: ViewModifier {
         }
     }
 
-    private func mutedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticToken {
+    private func mutedBackground(for status: MISOTag.Status) -> MultipleColorSemanticToken {
         switch status.category {
         case .neutral:
             theme.colors.surfaceSecondary

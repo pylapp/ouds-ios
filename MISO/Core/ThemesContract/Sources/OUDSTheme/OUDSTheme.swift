@@ -164,10 +164,10 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to switch / toggle components like `MISOSwitch`
     public let `switch`: AllSwitchComponentTokensProvider
 
-    /// All components tokens related to tags components like `OUDSTag`
+    /// All components tokens related to tags components like `MISOTag`
     public let tag: AllTagComponentTokensProvider
 
-    /// All components tokens related to tags components like `OUDSInputTag`
+    /// All components tokens related to tags components like `MISOInputTag`
     public let inputTag: AllInputTagComponentTokensProvider
 
     /// All components tokens related to text area components like `MISOTextArea`

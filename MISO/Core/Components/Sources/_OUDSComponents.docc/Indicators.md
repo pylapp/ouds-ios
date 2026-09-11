@@ -169,36 +169,36 @@ MISOLinearProgressIndicator(status: .info, helperText: "Processing…", helperTe
     }
 }
 
-An ``OUDSTag`` is a small element that shows short information like a label, keyword, or category. It helps users quickly find, group, or understand content.
+An ``MISOTag`` is a small element that shows short information like a label, keyword, or category. It helps users quickly find, group, or understand content.
 
 ```swift            
 // Text only with neutral status, for emphasized appearance with rounded shape in default size
-OUDSTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
+MISOTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
 // Or also
-OUDSTag(label: "Label")
+MISOTag(label: "Label")
             
 // Tag with negative status with bullet
-OUDSTag(label: "Label", status: .negative(leading: .bullet)
+MISOTag(label: "Label", status: .negative(leading: .bullet)
             
 // Tag with neutral status with a custom decorative icon
-OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"))))
+MISOTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"))))
 // Flip the icon for RTL layouts using MISOImage.flipped
-OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), flipped: true)))
+MISOTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), flipped: true)))
 
 // Tag with neutral status with a raw image (not tinted)
-OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
+MISOTag(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
 
 // Tag with accent status with a raw image (not tinted)
-OUDSTag(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
+MISOTag(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
             
 // Text with neutral status with bullet
-OUDSTag(label: "Label", status: .neutral(bullet: true))
+MISOTag(label: "Label", status: .neutral(bullet: true))
             
 // Tag with indeterminate circular progress indicator, with rounded shape in small size
-OUDSTag(loadingLabel: "Processing...", shape: .rounded, size: .small)
+MISOTag(loadingLabel: "Processing...", shape: .rounded, size: .small)
 
 // Tag with determinate circular progress indicator, with rounded shape in default size
-OUDSTag(loadingLabel: "Processing...", progress: 0.75)
+MISOTag(loadingLabel: "Processing...", progress: 0.75)
 ```
 
 ### Input Tag
@@ -218,11 +218,11 @@ OUDSTag(loadingLabel: "Processing...", progress: 0.75)
     }
 }
 
-An ``OUDSInputTag`` is a small element that shows short information like a label, keyword, or category, which can be removed or changed on tap.
+An ``MISOInputTag`` is a small element that shows short information like a label, keyword, or category, which can be removed or changed on tap.
 
 ```swift    
 // Create an input tag
-OUDSInputTag("Label") {
+MISOInputTag("Label") {
     // Do something, usually remove itself from a list
 }
     
@@ -230,7 +230,7 @@ OUDSInputTag("Label") {
 var names: [String] = [ "Foo", "Bar", "Wizz" ]
     
 ForEach(names, id: \.self) { name in
-    OUDSInputTag(label: name) {
+    MISOInputTag(label: name) {
         if let index = names.firstIndex(of: name) {
             names.remove(at: index)
         }

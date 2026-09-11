@@ -1,23 +1,10 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import SwiftUI
 
-// MARK: - OUDS Input Tag
+// MARK: - MISO Input Tag
 
 /// Input tag is a UI element that allows to enter multiple values, each represented as a tag.
 /// As users type and submit values (usually by pressing enter, comma, or tab), each value is transformed into a tag.
@@ -27,7 +14,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Create an input tag
-///     OUDSInputTag("Label") {
+///     MISOInputTag("Label") {
 ///         // Do something, usually remove itself from a list
 ///     }
 ///
@@ -35,7 +22,7 @@ import SwiftUI
 ///     var names: [String] = [ "Foo", "Bar", "Wizz" ]
 ///
 ///     ForEach(names, id: \.self) { name in
-///         OUDSInputTag(label: name) {
+///         MISOInputTag(label: name) {
 ///             if let index = names.firstIndex(of: name) {
 ///                 names.remove(at: index)
 ///             }
@@ -43,44 +30,22 @@ import SwiftUI
 ///     }
 /// ```
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-input-tag)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![An input tag component in light and dark modes with Orange theme](component_inputTag_Orange)
-///
-/// ### Orange Compact
-///
-/// ![An input tag component in light and dark modes with Orange Compact theme](component_inputTag_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![An input tag component in light and dark modes with Sosh theme](component_inputTag_Sosh)
-///
-/// ### Wireframe
-///
-/// ![An input tag component in light and dark modes with Wireframe theme](component_inputTag_Wireframe)
-///
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 0.21.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSInputTag: View {
+public struct MISOInputTag: View {
 
     let label: String
     let action: () -> Void
 
     @Environment(\.theme) private var theme
 
-    /// Creates an `OUDSInputTag`
+    /// Creates an `MISOInputTag`
     ///
     /// **Remark: To disable the tag, use the `View/disabled(disabled:)` view modifier
     ///
     /// ```swift
-    ///     OUDSInputTag(label: "Swift") { /* Remove action */ }
+    ///     MISOInputTag(label: "Swift") { /* Remove action */ }
     /// ```
     ///
     /// - Parameters:
@@ -88,7 +53,7 @@ public struct OUDSInputTag: View {
     ///    - action: Called when the input tag is clicked, supposed for remove / delete action
     public init(label: String, action: @escaping () -> Void) {
         if label.isEmpty {
-            ML.warning("The OUDSInputTag must not be empty!")
+            ML.warning("The MISOInputTag must not be empty!")
         }
         self.label = label
         self.action = action

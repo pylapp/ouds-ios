@@ -1,29 +1,16 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 struct TagLabelStyle: LabelStyle {
 
     // MARK: Stored properties
 
-    let appearance: OUDSTag.Appearance
-    let shape: OUDSTag.Shape
-    let size: OUDSTag.Size
-    let type: OUDSTag.`Type`
+    let appearance: MISOTag.Appearance
+    let shape: MISOTag.Shape
+    let size: MISOTag.Size
+    let type: MISOTag.`Type`
 
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize

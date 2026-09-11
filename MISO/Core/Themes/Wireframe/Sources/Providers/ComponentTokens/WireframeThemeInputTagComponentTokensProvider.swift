@@ -19,7 +19,7 @@ import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of tag input** objects like `OUDSInputTag`.
+/// A class which wraps all **component  tokens of tag input** objects like `MISOInputTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// It implements also the protocol `InputTagComponentTokens` so as to expose the component tokens for *tag inputs* through any `OUDSTheme`.
 /// *Tag inputs* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`),
@@ -38,7 +38,7 @@ final class WireframeThemeInputTagComponentTokensProvider: AllInputTagComponentT
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSInputTag`
+    /// Defines a provider of component tokens dedicated to `MISOInputTag`
     /// - Parameters:
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeColorSemanticTokensProvider``)

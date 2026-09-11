@@ -122,7 +122,7 @@ bulletList                     | For list of elements with bullets like `MISOBul
 checkbox                       | For checkboxes like `MISOCheckbox`, `MISOCheckboxItem` and their indeterminate variants 
 chip                           | For chips like `MISOSuggestionChip` and `MISOFilterChip`  
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
-icon                           | For components containing icons like `OUDSTag`
+icon                           | For components containing icons like `MISOTag`
 link                           | For links like `OUDSLink` 
 listItem                       | Shared and used for switch, checkbox, radio items and list items layouts
 pinCodeInput                   |  
@@ -131,8 +131,8 @@ radioButton                    | For radio components like `MISORadio` and `MISO
 selectInput                    |
 skeleton                       |
 switch                         | For switch components like `MISOSwitch` and `MISOSwitchItem` 
-tag                            | For tag components like `OUDSTag`
-inputTag                       | For input tag components like `OUDSInputTag`
+tag                            | For tag components like `MISOTag`
+inputTag                       | For input tag components like `MISOInputTag`
 textArea                       | For text area components like `MISOTextArea`
 textInput                      | For text field input components like `MISOTextInput`
 typography                     | For textual components like `OUDSText`

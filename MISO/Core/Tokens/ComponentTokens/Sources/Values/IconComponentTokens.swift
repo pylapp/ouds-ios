@@ -23,7 +23,7 @@ import MISOTokensSemantic
 // swiftlint:disable missing_docs
 // swiftlint:disable identifier_name
 
-/// Declares all component tokens for components using icons (like `OUDSTag`).
+/// Declares all component tokens for components using icons (like `MISOTag`).
 /// Use for tokens providers like `OrangeThemeIconComponentTokensProvider`.
 ///
 /// - Since: 0.20.0
