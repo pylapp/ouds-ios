@@ -14,15 +14,6 @@ Dialogs components are UI elements that display information, system feedback or 
 ### Alert Message
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![An alert message component in light and dark modes with Orange theme](component_alertMessage_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![An alert message component in light and dark modes with Orange Compact theme](component_alertMessage_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![An alert message component in light and dark modes with Sosh theme](component_alertMessage_Sosh)
-    }
     @Tab("Wireframe") {
         ![An alert message component in light and dark modes with Wireframe theme](component_alertMessage_Wireframe)
     }
@@ -52,15 +43,6 @@ Dialogs components are UI elements that display information, system feedback or 
 ### Inline Alert
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![An inline alert component in light and dark modes with Orange theme](component_inlineAlert_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![An inline alert component in light and dark modes with Orange Compact theme](component_inlineAlert_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![An inline alert component in light and dark modes with Sosh theme](component_inlineAlert_Sosh)
-    }
     @Tab("Wireframe") {
         ![An inline alert component in light and dark modes with Wireframe theme](component_inlineAlert_Wireframe)
     }

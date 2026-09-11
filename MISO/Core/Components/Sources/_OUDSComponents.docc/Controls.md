@@ -14,15 +14,6 @@ Some components can be used for **controls** and **inputs**.
 #### Checkbox (only)
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A checkbox component in light and dark modes with Orange theme](component_checkbox_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A checkbox component in light and dark modes with Orange Compact theme](component_checkbox_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A checkbox component in light and dark modes with Sosh theme](component_checkbox_Sosh)
-    }
     @Tab("Wireframe") {
         ![A checkbox component in light and dark modes with Wireframe theme](component_checkbox_Wireframe)
     }
@@ -47,15 +38,6 @@ MISOCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select the
 #### Checkbox item
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A checkbox item component in light and dark modes with Orange theme](component_checkboxItem_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A checkbox item component in light and dark modes with Orange Compact theme](component_checkboxItem_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A checkbox item component in light and dark modes with Sosh theme](component_checkboxItem_Sosh)
-    }
     @Tab("Wireframe") {
         ![A checkbox item component in light and dark modes with Wireframe theme](component_checkboxItem_Wireframe)
     }
@@ -88,15 +70,6 @@ MISOCheckboxItem("We live in a fabled world",
 #### Checkbox picker
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A checkbox picker component in light and dark modes with Orange theme](component_checkboxPicker_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A checkbox picker component in light and dark modes with Orange Compact theme](component_checkboxPicker_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A checkbox picker component in light and dark modes with Sosh theme](component_checkboxPicker_Sosh)
-    }
     @Tab("Wireframe") {
         ![A checkbox picker component in light and dark modes with Wireframe theme](component_checkboxPicker_Wireframe)
     }
@@ -152,15 +125,6 @@ MISOCheckboxPicker(selections: $selections,
 #### Radio (only)
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A radio button component in light and dark modes with Orange theme](component_radio_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A radio button component in light and dark modes with Orange Compact theme](component_radio_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A radio button component in light and dark modes with Sosh theme](component_radio_Sosh)
-    }
     @Tab("Wireframe") {
         ![A radio button component in light and dark modes with Wireframe theme](component_radio_Wireframe)
     }
@@ -179,15 +143,6 @@ MISORadio(isOn: $isOn, accessibilityLabel: "Select the element")
 #### Radio item
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A radio item component in light and dark modes with Orange theme](component_radioItem_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A radio item component in light and dark modes with Orange Compact theme](component_radioItem_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A radio item component in light and dark modes with Sosh theme](component_radioItem_Sosh)
-    }
     @Tab("Wireframe") {
         ![A radio item component in light and dark modes with Wireframe theme](component_radioItem_Wireframe)
     }
@@ -222,15 +177,6 @@ MISORadioItem("Lucy in the Sky with Diamonds",
 #### Radio picker
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A radio picker component in light and dark modes with Orange theme](component_radioPicker_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A radio picker component in light and dark modes with Orange Compact theme](component_radioPicker_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A radio picker component in light and dark modes with Sosh theme](component_radioPicker_Sosh)
-    }
     @Tab("Wireframe") {
         ![A radio picker component in light and dark modes with Wireframe theme](component_radioPicker_Wireframe)
     }
@@ -274,15 +220,6 @@ MISORadioPicker(selection: $selection, radios: someDataToPopulate)
 #### Switch (only)
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A switch component in light and dark modes with Orange theme](component_switch_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A switch component in light and dark modes with Orange Compact theme](component_switch_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A switch component in light and dark modes with Sosh theme](component_switch_Sosh)
-    }
     @Tab("Wireframe") {
         ![A switch component in light and dark modes with Wireframe theme](component_switch_Wireframe)
     }
@@ -303,15 +240,6 @@ MISOSwitch(isOn: $isOn, accessibilityLabel: "Select the element")
 #### Switch item
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A switch item component in light and dark modes with Orange theme](component_switchItem_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A switch item component in light and dark modes with Orange Compact theme](component_switchItem_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A switch item component in light and dark modes with Sosh theme](component_switchItem_Sosh)
-    }
     @Tab("Wireframe") {
         ![A switch item component in light and dark modes with Wireframe theme](component_switchItem_Wireframe)
     }
@@ -352,15 +280,6 @@ MISOSwitchItem("We live in a fabled world",
 #### Suggestion
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A suggestion chip component in light and dark modes with Orange theme](component_suggestionChip_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A suggestion chip component in light and dark modes with Orange Compact theme](component_suggestionChip_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A suggestion chip component in light and dark modes with Sosh theme](component_suggestionChip_Sosh)
-    }
     @Tab("Wireframe") {
         ![A suggestion chip component in light and dark modes with Wireframe theme](component_suggestionChip_Wireframe)
     }
@@ -388,15 +307,6 @@ MISOSuggestionChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .or
 #### Filter
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A fiter chip component in light and dark modes with Orange theme](component_filterChip_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A fiter chip component in light and dark modes with Orange Compact theme](component_filterChip_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A fiter chip component in light and dark modes with Sosh theme](component_filterChip_Sosh)
-    }
     @Tab("Wireframe") {
         ![A fiter chip component in light and dark modes with Wireframe theme](component_filterChip_Wireframe)
     }
@@ -425,15 +335,6 @@ MISOFilterChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .origin
 #### Chip picker
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A chip picker component in light and dark modes with Orange theme](component_chipPicker_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A chip picker component in light and dark modes with Orange Compact theme](component_chipPicker_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A chip picker component in light and dark modes with Sosh theme](component_chipPicker_Sosh)
-    }
     @Tab("Wireframe") {
         ![A chip picker component in light and dark modes with Wireframe theme](component_chipPicker_Wireframe)
     }
@@ -497,15 +398,6 @@ MISOChipPicker(title: "Select a drink", selections: $selections, chips: someData
 ### Password input
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A password input component in light and dark modes with Orange theme](component_passwordInput_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A password input component in light and dark modes with Orange Compact theme](component_passwordInput_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A password input component in light and dark modes with Sosh theme](component_passwordInput_Sosh)
-    }
     @Tab("Wireframe") {
         ![A password input component in light and dark modes with Wireframe theme](component_passwordInput_Wireframe)
     }
@@ -530,15 +422,6 @@ MISOPasswordInput(label: "Password", password: $password, prefix: "CORP-")
 ### Pin Code Input
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A Pin Code input component in light and dark modes with Orange theme](component_pinCodeInput_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A Pin Code input component in light and dark modes with Orange theme](component_pinCodeInput_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A Pin Code input component in light and dark modes with Orange theme](component_pinCodeInput_Sosh)
-    }
     @Tab("Wireframe") {
         ![A Pin Code input component in light and dark modes with Orange theme](component_pinCodeInput_Wireframe)
     }
@@ -563,15 +446,6 @@ MISOPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code y
 ### Text area
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A text area component in light and dark modes with Orange theme](component_textArea_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A text area component in light and dark modes with Orange Compact theme](component_textArea_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A text area component in light and dark modes with Sosh theme](component_textArea_Sosh)
-    }
     @Tab("Wireframe") {
         ![A text area component in light and dark modes with Wireframe theme](component_textArea_Wireframe)
     }
@@ -619,15 +493,6 @@ MISOTextArea(label: "Comments",
 ### Text input
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A text input component in light and dark modes with Orange theme](component_textInput_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A text input component in light and dark modes with Orange Compact theme](component_textInput_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A text input component in light and dark modes with Sosh theme](component_textInput_Sosh)
-    }
     @Tab("Wireframe") {
         ![A text input component in light and dark modes with Wireframe theme](component_textInput_Wireframe)
     }

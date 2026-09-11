@@ -14,15 +14,6 @@ Some components can be used for **content display**.
 The ``MISOBulletList`` is a UI element that helps to display related individual text items grouped together; items usually start with a number or a bullet.
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A bullet list in light and dark modes with Orange theme](component_bullet_list_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A bullet list in light and dark modes with Orange Compact theme](component_bullet_list_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A bullet list in light and dark modes with Sosh theme](component_bullet_list_Sosh)
-    }
     @Tab("Wireframe") {
         ![A bullet list in light and dark modes with Wireframe theme](component_bullet_list_Wireframe)
     }

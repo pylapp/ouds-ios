@@ -16,15 +16,6 @@ The badge is a small UI element used to highlight status, notifications, or cate
 #### Badge Count
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A count badge component in light and dark modes with Orange theme](component_badge_count_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A count badge component in light and dark modes with Orange Compact theme](component_badge_count_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A count badge component in light and dark modes with Sosh theme](component_badge_count_Sosh)
-    }
     @Tab("Wireframe") {
         ![A count badge component in light and dark modes with Wireframe theme](component_badge_count_Wireframe)
     }
@@ -40,15 +31,6 @@ MISOBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_hea
 #### Badge Icon
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![An icon badge component in light and dark modes with Orange theme](component_badge_icon_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![An icon badge component in light and dark modes with Orange Compact theme](component_badge_icon_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![An icon badge component in light and dark modes with Sosh theme](component_badge_icon_Sosh)
-    }
     @Tab("Wireframe") {
         ![An icon badge component in light and dark modes with Wireframe theme](component_badge_icon_Wireframe)
     }
@@ -64,15 +46,6 @@ MISOBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_hea
 #### Badge Standard
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A standard badge component in light and dark modes with Orange theme](component_badge_standard_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A standard badge component in light and dark modes with Orange Compact theme](component_badge_standard_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A standard badge component in light and dark modes with Sosh theme](component_badge_standard_Sosh)
-    }
     @Tab("Wireframe") {
         ![A standard badge component in light and dark modes with Wireframe theme](component_badge_standard_Wireframe)
     }
@@ -90,15 +63,6 @@ MISOBadgeStandard(status: .info, size: .medium)
 #### Circular Progress Indicator
 
 @TabNavigator {
-    @Tab("Orange") {
-        @Video(source: "component_progress_indicator_circular_Orange.video")
-    }
-    @Tab("Orange Compact") {
-        @Video(source: "component_progress_indicator_circular_OrangeCompact.video")
-    }
-    @Tab("Sosh") {
-        @Video(source: "component_progress_indicator_circular_Sosh.video")
-    }
     @Tab("Wireframe") {
         @Video(source: "component_progress_indicator_circular_Wireframe.video")
     }
@@ -117,15 +81,6 @@ MISOCircularProgressIndicator(status: .accent)
 #### Linear Progress Indicator
 
 @TabNavigator {
-    @Tab("Orange") {
-        @Video(source: "component_progress_indicator_linear_Orange.video")
-    }
-    @Tab("Orange Compact") {
-        @Video(source: "component_progress_indicator_linear_OrangeCompact.video")
-    }
-    @Tab("Sosh") {
-        @Video(source: "component_progress_indicator_linear_Sosh.video")
-    }
     @Tab("Wireframe") {
         @Video(source: "component_progress_indicator_linear_Wireframe.video")
     }
@@ -155,15 +110,6 @@ MISOLinearProgressIndicator(status: .info, helperText: "Processing…", helperTe
 ### Tag
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A tag component in light and dark modes with Orange theme](component_tag_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A tag component in light and dark modes with Orange Compact theme](component_tag_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A tag component in light and dark modes with Sosh theme](component_tag_Sosh)
-    }
     @Tab("Wireframe") {
         ![A tag component in light and dark modes with Wireframe theme](component_tag_Wireframe)
     }
@@ -204,15 +150,6 @@ MISOTag(loadingLabel: "Processing...", progress: 0.75)
 ### Input Tag
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![An input tag component in light and dark modes with Orange theme](component_inputTag_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![An input tag component in light and dark modes with Orange Compact theme](component_inputTag_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![An input tag component in light and dark modes with Sosh theme](component_inputTag_Sosh)
-    }
     @Tab("Wireframe") {
         ![An input tag component in light and dark modes with Wireframe theme](component_inputTag_Wireframe)
     }

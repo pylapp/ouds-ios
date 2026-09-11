@@ -12,15 +12,6 @@ Some components can be used for **actions**.
 ### Buttons
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A button component in light and dark modes with Orange theme](component_button_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A button component in light and dark modes with Orange Compact theme](component_button_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A button component in light and dark modes with Sosh theme](component_button_Sosh)
-    }
     @Tab("Wireframe") {
         ![A button component in light and dark modes with Wireframe theme](component_button_Wireframe)
     }

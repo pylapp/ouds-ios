@@ -12,15 +12,6 @@ Some components can be used for **navigation**.
 ### Links
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A link component in light and dark modes with Orange theme](component_link_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A link component in light and dark modes with Orange Compact theme](component_link_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A link component in light and dark modes with Sosh theme](component_link_Sosh)
-    }
     @Tab("Wireframe") {
         ![A link component in light and dark modes with Wireframe theme](component_link_Wireframe)
     }
@@ -58,15 +49,6 @@ Both components use an ``MISOListItemData`` model for their textual content, and
 Use ``MISOStaticListItem`` when the row is display-only and should not trigger any action or navigation.
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A list item component in light and dark modes with Orange theme](component_static_list_item_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A list item component in light and dark modes with Orange compact theme](component_static_list_item_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A list item component in light and dark modes with Sosh theme](component_static_list_item_Sosh)
-    }
     @Tab("Wireframe") {
         ![A list item component in light and dark modes with Wireframe theme](component_static_list_item_Wireframe)
     }
@@ -160,15 +142,6 @@ MISOStaticListItem(
 Use ``MISONavigationListItem`` when tapping the row should trigger an action. The ``MISONavigationListItemIndicatorType`` defines the visual indicator shown:
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A list item component in light and dark modes with Orange theme](component_navigation_list_item_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A list item component in light and dark modes with Orange compact theme](component_navigation_list_item_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A list item component in light and dark modes with Sosh theme](component_navigation_list_item_Sosh)
-    }
     @Tab("Wireframe") {
         ![A list item component in light and dark modes with Wireframe theme](component_navigation_list_item_Wireframe)
     }
@@ -269,18 +242,6 @@ MISONavigationListItem(
 ### Tab bars
 
 @TabNavigator {
-    @Tab("Orange (Liquid Glass)") {
-        ![A tab bar component with Liquid Glass in light mode with Orange theme](component_tabBar_LiquidGlass_Orange_light)
-        ![A tab bar component with Liquid Glass in dark mode with Orange theme](component_tabBar_LiquidGlass_Orange_dark)
-    }
-    @Tab("Orange Compact (Liquid Glass)") {
-        ![A tab bar component with Liquid Glass in light mode with Orange Compact theme](component_tabBar_LiquidGlass_OrangeCompact_light)
-        ![A tab bar component with Liquid Glass in dark mode with Orange Compact theme](component_tabBar_LiquidGlass_OrangeCompact_dark)
-    }
-    @Tab("Sosh (Liquid Glass)") {
-        ![A tab bar component with Liquid Glass in light mode with Sosh theme](component_tabBar_LiquidGlass_Sosh_light)
-        ![A tab bar component with Liquid Glass in dark mode with Sosh theme](component_tabBar_LiquidGlass_Sosh_dark)
-    }
     @Tab("Wireframe (Liquid Glass)") {
         ![A tab bar component with Liquid Glass in light mode with Wireframe theme](component_tabBar_LiquidGlass_Wireframe_light)
         ![A tab bar component with Liquid Glass in dark mode with Wireframe theme](component_tabBar_LiquidGlass_Wireframe_dark)
@@ -288,18 +249,6 @@ MISONavigationListItem(
 }
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A tab bar component without Liquid Glass in light mode with Orange theme](component_tabBar_Orange_light)
-        ![A tab bar component without Liquid Glass in dark mode with Orange theme](component_tabBar_Orange_dark)
-    }
-    @Tab("Orange Compact") {
-        ![A tab bar component without Liquid Glass in light mode with Orange Compact theme](component_tabBar_OrangeCompact_light)
-        ![A tab bar component without Liquid Glass in dark mode with Orange Compact theme](component_tabBar_OrangeCompact_dark)
-    }
-    @Tab("Sosh") {
-        ![A tab bar component without Liquid Glass in light mode with Sosh theme](component_tabBar_Sosh_light)
-        ![A tab bar component without Liquid Glass in dark mode with Sosh theme](component_tabBar_Sosh_dark)
-    }
     @Tab("Wireframe") {
         ![A tab bar component without Liquid Glass in light mode with Wireframe theme](component_tabBar_Wireframe_light)
         ![A tab bar component without Liquid Glass in dark mode with Wireframe theme](component_tabBar_Wireframe_dark)
@@ -378,18 +327,6 @@ There are different style depending to Liquid Glass (iOS 26+) or not (iOS 18 and
 #### Top toolbar
 
 @TabNavigator {
-    @Tab("Orange (Liquid Glass)") {
-        ![A toolbar top component with Liquid Glass in light mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
-        ![A toolbar top component with Liquid Glass in dark mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
-    }
-    @Tab("Orange Compact (Liquid Glass)") {
-        ![A toolbar top component with Liquid Glass in light mode with Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_light)
-        ![A toolbar top component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_dark)
-    }
-    @Tab("Sosh (Liquid Glass)") {
-        ![A toolbar top component with Liquid Glass in light mode with Sosh theme](component_toolBarTop_LiquidGlass_Sosh_light)
-        ![A toolbar top component with Liquid Glass in dark mode with Sosh theme](component_toolBarTop_LiquidGlass_Sosh_dark)
-    }
     @Tab("Wireframe (Liquid Glass)") {
         ![A toolbar top component with Liquid Glass in light mode with Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_light)
         ![A toolbar top component with Liquid Glass in dark mode with Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_dark)
@@ -397,18 +334,6 @@ There are different style depending to Liquid Glass (iOS 26+) or not (iOS 18 and
 }
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A toolbar top component with Liquid Glass in light mode with Orange theme](component_toolBarTop_Orange_light)
-        ![A toolbar top component with Liquid Glass in dark mode with Orange theme](component_toolBarTop_Orange_dark)
-    }
-    @Tab("Orange Compact") {
-        ![A toolbar top component with Liquid Glass in light mode with Orange Compact theme](component_toolBarTop_OrangeCompact_light)
-        ![A toolbar top component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarTop_OrangeCompact_dark)
-    }
-    @Tab("Sosh") {
-        ![A toolbar top component with Liquid Glass in light mode with Sosh theme](component_toolBarTop_Sosh_light)
-        ![A toolbar top component with Liquid Glass in dark mode with Sosh theme](component_toolBarTop_Sosh_dark)
-    }
     @Tab("Wireframe") {
         ![A toolbar top component with Liquid Glass in light mode with Wireframe theme](component_toolBarTop_Wireframe_light)
         ![A toolbar top component with Liquid Glass in dark mode with Wireframe theme](component_toolBarTop_Wireframe_dark)
@@ -476,18 +401,6 @@ SomeView()
 #### Bottom toolbar
 
 @TabNavigator {
-    @Tab("Orange (Liquid Glass)") {
-        ![A toolbar bottom component with Liquid Glass in light mode with Orange theme](component_toolBarBottom_LiquidGlass_Orange_light)
-        ![A toolbar bottom component with Liquid Glass in dark mode with Orange theme](component_toolBarBottom_LiquidGlass_Orange_dark)
-    }
-    @Tab("Orange Compact (Liquid Glass)") {
-        ![A toolbar bottom component with Liquid Glass in light mode with Orange Compact theme](component_toolBarBottom_LiquidGlass_OrangeCompact_light)
-        ![A toolbar bottom component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarBottom_LiquidGlass_OrangeCompact_dark)
-    }
-    @Tab("Sosh (Liquid Glass)") {
-        ![A toolbar bottom component with Liquid Glass in light mode with Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_light)
-        ![A toolbar bottom component with Liquid Glass in dark mode with Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_dark)
-    }
     @Tab("Wireframe (Liquid Glass)") {
         ![A toolbar bottom component with Liquid Glass in light mode with Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_light)
         ![A toolbar bottom component with Liquid Glass in dark mode with Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_dark)
@@ -495,18 +408,6 @@ SomeView()
 }
 
 @TabNavigator {
-    @Tab("Orange") {
-        ![A toolbar bottom component with Liquid Glass in light mode with Orange theme](component_toolBarBottom_Orange_light)
-        ![A toolbar bottom component with Liquid Glass in dark mode with Orange theme](component_toolBarBottom_Orange_dark)
-    }
-    @Tab("Orange Compact") {
-        ![A toolbar bottom component with Liquid Glass in light mode with Orange Compact theme](component_toolBarBottom_OrangeCompact_light)
-        ![A toolbar bottom component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarBottom_OrangeCompact_dark)
-    }
-    @Tab("Sosh") {
-        ![A toolbar bottom component with Liquid Glass in light mode with Sosh theme](component_toolBarBottom_Sosh_light)
-        ![A toolbar bottom component with Liquid Glass in dark mode with Sosh theme](component_toolBarBottom_Sosh_dark)
-    }
     @Tab("Wireframe") {
         ![A toolbar bottom component with Liquid Glass in light mode with Wireframe theme](component_toolBarBottom_Wireframe_light)
         ![A toolbar bottom component with Liquid Glass in dark mode with Wireframe theme](component_toolBarBottom_Wireframe_dark)
