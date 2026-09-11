@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
 import MISOThemesContract
@@ -43,10 +30,10 @@ import SwiftUI
 ///
 ///  ```swift
 ///     // An outlined text input
-///     OUDSPasswordInput(label: "Your password", password: $password, isOutlined: true)
+///     MISOPasswordInput(label: "Your password", password: $password, isOutlined: true)
 ///
 ///     // With a localizable from a bundle
-///     OUDSPasswordInput(LocalizedStringKey("password_label"), bundle: Bundle.module, password: $password)
+///     MISOPasswordInput(LocalizedStringKey("password_label"), bundle: Bundle.module, password: $password)
 /// ```
 ///
 /// ### Rounded layout
@@ -56,7 +43,7 @@ import SwiftUI
 ///
 /// ## Status
 ///
-/// As `OUDSPasswordInput` is based on the` MISOTextInput`, all the status are the same and have the same behavior available here `MISOTextInput.Status`
+/// As `MISOPasswordInput` is based on the` MISOTextInput`, all the status are the same and have the same behavior available here `MISOTextInput.Status`
 ///
 /// ## Accessibility considerations
 ///
@@ -79,44 +66,22 @@ import SwiftUI
 ///     @State var password: String = ""
 ///
 ///     // A basic password input with label
-///     OUDSPasswordInput(label: "Password", password: $password)
+///     MISOPasswordInput(label: "Password", password: $password)
 ///
 ///     // Add a leading icon and helper text to more context
-///     OUDSPasswordInput(label: "Password", password: $password, lockIcon: true, helperText: "Your password must be between 8 and 20 characters long.")
+///     MISOPasswordInput(label: "Password", password: $password, lockIcon: true, helperText: "Your password must be between 8 and 20 characters long.")
 ///
 ///     // Password with prefix
-///     OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
+///     MISOPasswordInput(label: "Password", password: $password, prefix: "CORP-")
 ///
 ///     // Make password visible
-///     OUDSPasswordInput(label: "Password", password: $password, isHiddenPassword: .constant(false))
+///     MISOPasswordInput(label: "Password", password: $password, isHiddenPassword: .constant(false))
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-password-input)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A text input component in light and dark modes with Orange theme](component_passwordInput_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A text input component in light and dark modes with Orange Compact theme](component_passwordInput_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A text input component in light and dark modes with Sosh theme](component_passwordInput_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A text input component in light and dark modes with Wireframe theme](component_passwordInput_Wireframe)
 ///
 /// - Version: 1.3.1 (Figma component design version)
 /// - Since: 1.2.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSPasswordInput: View {
+public struct MISOPasswordInput: View {
 
     // MARK: - Properties
 
@@ -141,7 +106,7 @@ public struct OUDSPasswordInput: View {
     /// Creates a password input.
     ///
     /// ```swift
-    ///     OUDSPasswordInput(label: "Password", password: $password)
+    ///     MISOPasswordInput(label: "Password", password: $password)
     /// ```
     ///
     /// - Parameters:
@@ -193,7 +158,7 @@ public struct OUDSPasswordInput: View {
     /// Creates a password input with a rich text as helper text
     ///
     /// ```swift
-    ///     OUDSPasswordInput(label: "Password",
+    ///     MISOPasswordInput(label: "Password",
     ///                       password: $password,
     ///                       helperText: AttributedString(markdown: "You should use a **strong password**"))  // Manage in your side errors for init)
     /// ```
@@ -243,7 +208,7 @@ public struct OUDSPasswordInput: View {
     /// Creates a password input with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSPasswordInput(LocalizedStringKey("password_label"),
+    ///     MISOPasswordInput(LocalizedStringKey("password_label"),
     ///                       bundle: Bundle.module,
     ///                       password: $password,
     ///                       helperText: AttributedString(markdown: "You should use a **strong password**"))  // Manage in your side errors for init)
@@ -290,7 +255,7 @@ public struct OUDSPasswordInput: View {
     /// Creates a password input with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSPasswordInput(LocalizedStringKey("password_label"), bundle: Bundle.module, password: $password)
+    ///     MISOPasswordInput(LocalizedStringKey("password_label"), bundle: Bundle.module, password: $password)
     /// ```
     ///
     /// - Parameters:

@@ -270,7 +270,7 @@ let richTextHelperMessage = AttributedString.from(text: "You must read our priva
                                                   font: themeBodyFont,
                                                   urlConfigurations: urlConfigurations)
                                                   
-OUDSPasswordInput("Enter your password", password: $password, helperText: richTextHelperMessage)
+MISOPasswordInput("Enter your password", password: $password, helperText: richTextHelperMessage)
 ```
 
 If you handle Markdown data, you can define your own styles for the hyperlinks:

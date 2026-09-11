@@ -18,6 +18,6 @@ import SwiftUI
 
 extension EnvironmentValues {
 
-    /// A flag to know if ``MISOTextInput`` is used as a secure field by ``OUDSPasswordInput``
+    /// A flag to know if ``MISOTextInput`` is used as a secure field by ``MISOPasswordInput``
     @Entry var textInputAsSecureField: Bool = false
 }
