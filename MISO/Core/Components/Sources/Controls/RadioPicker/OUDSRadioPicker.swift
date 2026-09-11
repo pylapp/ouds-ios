@@ -28,7 +28,7 @@ import SwiftUI
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom radio trait.
 /// The picker itself does no have any defined accessiiblity value, label or identifier ; it remains in the users hands to define which one will be used.
-/// However if defined in the ``OUDSRadioPickerData`` the items inside the picker will have such accessibility identifiers.
+/// However if defined in the ``MISORadioPickerData`` the items inside the picker will have such accessibility identifiers.
 ///
 /// ## Forbidden by design
 ///
@@ -39,23 +39,23 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // Define the elements to display in radio buttons using OUDSRadioPickerData.
+///     // Define the elements to display in radio buttons using MISORadioPickerData.
 ///     // This object has the same properties as the OUDSRadioItem,
 ///     // and some of them are optional withdefault values set
-///     var someDataToPopulate: [OUDSRadioPickerData<String>] {
+///     var someDataToPopulate: [MISORadioPickerData<String>] {
 ///         [
-///             OUDSRadioPickerData<String>(tag: "Choice_1",
+///             MISORadioPickerData<String>(tag: "Choice_1",
 ///                                         label: "Virgin Holy Lava",
 ///                                         extraLabel: "Very spicy",
 ///                                         description: "No alcohol, only tasty flavors",
 ///                                         image: MISOImage(asset: Image(systemName: "flame")),
 ///
-///             OUDSRadioPickerData<String>(tag: "Choice_2",
+///             MISORadioPickerData<String>(tag: "Choice_2",
 ///                                         label: "IPA beer",
 ///                                         description: "From Brewdog company",
 ///                                         image: MISOImage(asset: Image(systemName: "dog.fill")),
 ///
-///             OUDSRadioPickerData<String>(tag: "Choice_3",
+///             MISORadioPickerData<String>(tag: "Choice_3",
 ///                                         label: "Mineral water",
 ///                                         image: MISOImage(asset: Image(systemName: "waterbottle.fill")),
 ///         ]
@@ -66,12 +66,12 @@ import SwiftUI
 ///     @State var selection: String = "Choice_1"
 ///
 ///     // Here the picker is vertical
-///     OUDSRadioPicker(selection: $selection, radios: someDataToPopulate)
+///     MISORadioPicker(selection: $selection, radios: someDataToPopulate)
 ///
 ///     // The picker can apply some settings to all its radio buttons.
 ///     // It can be also horitzontal with a scroll indicator.
 ///     // Here all the the radio buttons are in read only mode and use reversed layout.
-///     OUDSRadioPicker(selection: $selection,
+///     MISORadioPicker(selection: $selection,
 ///                     radios: someDataToPopulate,
 ///                     isReversed: true,
 ///                     isReadOnly: true,
@@ -102,7 +102,7 @@ import SwiftUI
 ///
 /// - Since: 0.14.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
+public struct MISORadioPicker<Tag>: View where Tag: Hashable {
 
     // MARK: - Properties
 
@@ -110,7 +110,7 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
     var selection: Binding<Tag>
 
     /// The list of data to wrap in ``OUDSRadiooItem`` inside this picker
-    private let radios: [OUDSRadioPickerData<Tag>]
+    private let radios: [MISORadioPickerData<Tag>]
 
     /// The type of layout the picker must have
     private let placement: OUDSRadioPickerPlacement
@@ -137,12 +137,12 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
 
     // MARK: - Init
 
-    /// Defines the picker view which displays using ``OUDSRadioItem`` view the ``OUDSRadioPickerData``
+    /// Defines the picker view which displays using ``OUDSRadioItem`` view the ``MISORadioPickerData``
     ///
     /// ```swift
-    ///     OUDSRadioPicker(selection: $selection, radios: [
-    ///         OUDSRadioPickerData(tag: "a", label: "Option A"),
-    ///         OUDSRadioPickerData(tag: "b", label: "Option B"),
+    ///     MISORadioPicker(selection: $selection, radios: [
+    ///         MISORadioPickerData(tag: "a", label: "Option A"),
+    ///         MISORadioPickerData(tag: "b", label: "Option B"),
     ///     ])
     /// ```
     ///
@@ -157,7 +157,7 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
     ///    - hasDivider: If *true*, force all ``OUDSRadioItem`` except the last one to have a divider (default set to *false*)
     ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(selection: Binding<Tag>,
-                radios: [OUDSRadioPickerData<Tag>],
+                radios: [MISORadioPickerData<Tag>],
                 placement: OUDSRadioPickerPlacement = .vertical,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
@@ -195,7 +195,7 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
         }
     }
 
-    private func content(for radios: [OUDSRadioPickerData<Tag>]) -> some View {
+    private func content(for radios: [MISORadioPickerData<Tag>]) -> some View {
         ForEach(radios, id: \.tag) { radio in
             if let a11yidentifier = radio.accessibilityIdentifier {
                 content(for: radio,
@@ -208,7 +208,7 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
         }
     }
 
-    private func content(for radio: OUDSRadioPickerData<Tag>, noDivider: Bool) -> some View {
+    private func content(for radio: MISORadioPickerData<Tag>, noDivider: Bool) -> some View {
         OUDSRadioItem(radio.label,
                       isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
                       extraLabel: radio.extraLabel,

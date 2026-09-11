@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
 import MISOTokensSemantic
@@ -28,7 +15,7 @@ import SwiftUI
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a chekcbox trait.
 /// The picker itself does no have any defined accessiiblity value, label or identifier ; it remains in the users hands to define which one will be used.
-/// However if defined in the ``OUDSRadioPickerData`` the items inside the picker will have such accessibility identifiers.
+/// However if defined in the ``MISORadioPickerData`` the items inside the picker will have such accessibility identifiers.
 /// In addition the root item of the picker has for accessiiblity identifier the displayed text.
 ///
 /// ## Forbidden by design
@@ -40,22 +27,22 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // Define the elements to display in checkboxes using OUDSCheckboxPickerData.
+///     // Define the elements to display in checkboxes using MISOCheckboxPickerData.
 ///     // This object has the same properties as the MISOCheckboxItem,
 ///     // and some of them are optional with default values set
-///     var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
+///     var someDataToPopulate: [MISOCheckboxPickerData<String>] {
 ///         [
-///         OUDSCheckboxPickerData<String>(tag: "Choice_1",
+///         MISOCheckboxPickerData<String>(tag: "Choice_1",
 ///                                        label: "Virgin Holy Lava",
 ///                                        description: "No alcohol, only tasty flavors",
 ///                                        image: MISOImage(asset: Image(systemName: "flame")),
 ///
-///         OUDSCheckboxPickerData<String>(tag: "Choice_2",
+///         MISOCheckboxPickerData<String>(tag: "Choice_2",
 ///                                        label: "IPA beer",
 ///                                        description: "From Brewdog company",
 ///                                        image: MISOImage(asset: Image(systemName: "dog.fill")),
 ///
-///         OUDSCheckboxPickerData<String>(tag: "Choice_3",
+///         MISOCheckboxPickerData<String>(tag: "Choice_3",
 ///                                        label: "Mineral water",
 ///                                        image: MISOImage(asset: Image(systemName: "waterbottle.fill"))
 ///         ]
@@ -66,36 +53,26 @@ import SwiftUI
 ///     @State var selections: [String] = ["Choice_1"] // or empty if nothing selected
 ///
 ///     // Here the picker is vertical by default
-///     OUDSCheckboxPicker(selections: $selections, checkboxes: someDataToPopulate)
+///     MISOCheckboxPicker(selections: $selections, checkboxes: someDataToPopulate)
 ///
 ///     // The picker can be vertical and have a root item with a label and a counter
-///     OUDSCheckboxPicker(selections: $selections,
+///     MISOCheckboxPicker(selections: $selections,
 ///                        placement: .verticalRooted(label, .textAndCount))
 ///
 ///     // The picker can apply some settings to all its radio buttons.
 ///     // It can be also horizontal with a scroll indicator.
 ///     // Here all the the checkboxes are in read only mode and use reversed layout.
 ///     // Here the picker is horizontal and shows the scroll indicator
-///     OUDSCheckboxPicker(selections: $selections,
+///     MISOCheckboxPicker(selections: $selections,
 ///                        checkboxes: someDataToPopulate)
 ///                        isReversed: true,
 ///                        isReadOnly: true,
 ///                        placement: .horizontal(true))
 /// ```
 ///
-/// ## Design documentation
-///
-/// There is no online specification as this component is not an official OUDS one
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A checkbox picker component in light and dark modes with Orange theme](component_checkboxPicker_Orange)
-///
 /// - Since: 0.14.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
+public struct MISOCheckboxPicker<Tag>: View where Tag: Hashable {
 
     // MARK: - Properties
 
@@ -103,10 +80,10 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     var selections: Binding<[Tag]>
 
     /// The list of data to wrap in ``MISOCheckboxItem`` inside this picker
-    private let checkboxes: [OUDSCheckboxPickerData<Tag>]
+    private let checkboxes: [MISOCheckboxPickerData<Tag>]
 
     /// The type of layout the picker must have
-    private let placement: OUDSCheckboxPickerPlacement
+    private let placement: MISOCheckboxPickerPlacement
 
     /// Overrides any configuration applied to embedded ``MISOCheckboxItem`` and forces them to apply the reversed layout
     private let isReversed: Bool
@@ -134,12 +111,12 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
 
     // MARK: - Init
 
-    /// Defines the picker view which displays using ``MISOCheckboxItem`` view the ``OUDSCheckboxPickerData``
+    /// Defines the picker view which displays using ``MISOCheckboxItem`` view the ``MISOCheckboxPickerData``
     ///
     /// ```swift
-    ///     OUDSCheckboxPicker(selections: $selections, checkboxes: [
-    ///         OUDSCheckboxPickerData(tag: "a", label: "Option A"),
-    ///         OUDSCheckboxPickerData(tag: "b", label: "Option B"),
+    ///     MISOCheckboxPicker(selections: $selections, checkboxes: [
+    ///         MISOCheckboxPickerData(tag: "a", label: "Option A"),
+    ///         MISOCheckboxPickerData(tag: "b", label: "Option B"),
     ///     ])
     /// ```
     ///
@@ -153,8 +130,8 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - hasDivider: If *true*, force all ``MISOCheckboxItem`` except the last one to have a divider (default set to *false*)
     ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(selections: Binding<[Tag]>,
-                checkboxes: [OUDSCheckboxPickerData<Tag>],
-                placement: OUDSCheckboxPickerPlacement = .vertical,
+                checkboxes: [MISOCheckboxPickerData<Tag>],
+                placement: MISOCheckboxPickerPlacement = .vertical,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
@@ -201,7 +178,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// - Parameters:
     ///    - text: The text to display in the root view
     ///    - type: The type of display for the root label
-    private func rootItem(labeled text: String, of type: OUDSCheckboxPickerPlacement.DisplayType) -> some View {
+    private func rootItem(labeled text: String, of type: MISOCheckboxPickerPlacement.DisplayType) -> some View {
         MISOCheckboxItemIndeterminate(rootLabel(for: text, of: type),
                                       selection: $coordinator.selectionRootState,
                                       isReversed: isReversed,
@@ -221,10 +198,10 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         .accessibilityIdentifier(rootLabel(for: text, of: type))
     }
 
-    /// Creates several ``MISOCheckboxItem`` `View` objects from ``OUDSCheckboxPickerData`` objects
+    /// Creates several ``MISOCheckboxItem`` `View` objects from ``MISOCheckboxPickerData`` objects
     /// - Parameter checkboxes: The data to display in ``MISOCheckboxItem`
     /// - Returns: The view
-    private func content(for checkboxes: [OUDSCheckboxPickerData<Tag>]) -> some View {
+    private func content(for checkboxes: [MISOCheckboxPickerData<Tag>]) -> some View {
         ForEach(checkboxes, id: \.tag) { checkbox in
             if let a11yidentifier = checkbox.accessibilityIdentifier {
                 content(for: checkbox,
@@ -237,12 +214,12 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         }
     }
 
-    /// Creates a new ``MISOCheckboxItem`` `View` from one ``OUDSCheckboxPickerData``
+    /// Creates a new ``MISOCheckboxItem`` `View` from one ``MISOCheckboxPickerData``
     /// - Parameters:
     ///    - checkbox: The data to display in ``MISOCheckboxItem`
     ///    - noDivider: If true, do not add divider to the item
     /// - Returns: The view
-    private func content(for checkbox: OUDSCheckboxPickerData<Tag>, noDivider: Bool) -> some View {
+    private func content(for checkbox: MISOCheckboxPickerData<Tag>, noDivider: Bool) -> some View {
         MISOCheckboxItem(checkbox.label,
                          isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
                          description: checkbox.description,
@@ -267,8 +244,8 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - text: The text to display as label for the root checkbox, to update if needed
     ///    - type: The type of display
     /// - Returns: The final string to add in the view
-    private func rootLabel(for text: OUDSCheckboxPickerPlacement.RootLabel,
-                           of type: OUDSCheckboxPickerPlacement.DisplayType) -> String
+    private func rootLabel(for text: MISOCheckboxPickerPlacement.RootLabel,
+                           of type: MISOCheckboxPickerPlacement.DisplayType) -> String
     {
         let count = selections.count
         switch type {

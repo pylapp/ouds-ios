@@ -15,7 +15,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-/// Enumerates the types of layouts a ``OUDSRadioPicker`` can have
+/// Enumerates the types of layouts a ``MISORadioPicker`` can have
 ///
 /// - Since: 0.14.0
 @frozen public enum OUDSRadioPickerPlacement {

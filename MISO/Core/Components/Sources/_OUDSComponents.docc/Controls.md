@@ -102,25 +102,25 @@ MISOCheckboxItem("We live in a fabled world",
     }
 }
 
-Checkboxes can be embedded in a checkbox picker (`OUDSCheckboxPicker`) so as to let the users to select one or more items within several.
+Checkboxes can be embedded in a checkbox picker (`MISOCheckboxPicker`) so as to let the users to select one or more items within several.
 
 ```swift
-// Define the elements to display in checkboxes using OUDSCheckboxPickerData.
+// Define the elements to display in checkboxes using MISOCheckboxPickerData.
 // This object has the same properties as the MISOCheckboxItem,
 // and some of them are optional with default values set
-var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
+var someDataToPopulate: [MISOCheckboxPickerData<String>] {
     [
-         OUDSCheckboxPickerData<String>(tag: "Choice_1",
+         MISOCheckboxPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
                                         description: "No alcohol, only tasty flavors",
                                         image: MISOImage(asset: Image(systemName: "flame"))),
 
-         OUDSCheckboxPickerData<String>(tag: "Choice_2",
+         MISOCheckboxPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         description: "From Brewdog company",
                                         image: MISOImage(asset: Image(systemName: "dog.fill"))),
 
-         OUDSCheckboxPickerData<String>(tag: "Choice_3",
+         MISOCheckboxPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
                                         image: MISOImage(asset: Image(systemName: "waterbottle.fill"))),
     ]
@@ -130,17 +130,17 @@ var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
 // Use the data and the binding for the picker.
 @State var selections: [String] = ["Choice_1"] // or empty if nothing selected
 // Here the picker is vertical by default
-OUDSCheckboxPicker(selections: $selections, checkboxes: someDataToPopulate)
+MISOCheckboxPicker(selections: $selections, checkboxes: someDataToPopulate)
 
 // The picker can be vertical and have a root item with a label and a counter
-OUDSCheckboxPicker(selections: $selections,
+MISOCheckboxPicker(selections: $selections,
                   placement: .verticalRooted(label, .textAndCount))
 
 // The picker can apply some settings to all its radio buttons.
 // It can be also horizontal with a scroll indicator.
 // Here all the the checkboxes are in read only mode and use reversed layout.
 // Here the picker is horizontal and shows the scroll indicator
-OUDSCheckboxPicker(selections: $selections,
+MISOCheckboxPicker(selections: $selections,
                    checkboxes: someDataToPopulate)
                    isReversed: true,
                    isReadOnly: true,
@@ -236,26 +236,26 @@ OUDSRadioItem("Lucy in the Sky with Diamonds",
     }
 }
 
-Radio items can be embedded in a radio picker so as to let the users to select only one item within several (`OUDSRadioPicker`).
+Radio items can be embedded in a radio picker so as to let the users to select only one item within several (`MISORadioPicker`).
 
 ```swift
-// Define the elements to display in radio buttons using OUDSRadioPickerData.
+// Define the elements to display in radio buttons using MISORadioPickerData.
 // This object has the same properties as the OUDSRadioItem,
 // and some of them are optional withdefault values set
-var someDataToPopulate: [OUDSRadioPickerData<String>] {
+var someDataToPopulate: [MISORadioPickerData<String>] {
     [
-            OUDSRadioPickerData<String>(tag: "Choice_1",
+            MISORadioPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
                                         extraLabel: "Very spicy",
                                         description: "No alcohol, only tasty flavors",
                                         image: MISOImage(asset: Image(systemName: "flame"))),
 
-            OUDSRadioPickerData<String>(tag: "Choice_2",
+            MISORadioPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         description: "From Brewdog company",
                                         image: MISOImage(asset: Image(systemName: "dog.fill"))),
 
-            OUDSRadioPickerData<String>(tag: "Choice_3",
+            MISORadioPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
                                         image: MISOImage(asset: Image(systemName: "waterbottle.fill"))),
     ]
@@ -266,7 +266,7 @@ var someDataToPopulate: [OUDSRadioPickerData<String>] {
 @State var selection: String = "Choice_1"
 
 // Here the picker is vertical
-OUDSRadioPicker(selection: $selection, radios: someDataToPopulate)
+MISORadioPicker(selection: $selection, radios: someDataToPopulate)
 ```
 
 ### Switches

@@ -123,7 +123,7 @@ public struct MISOCheckboxItem: View {
 
     // MARK: - Properties
 
-    // NOTE: Do not forget to keep updated OUDSCheckboxPickerData
+    // NOTE: Do not forget to keep updated MISOCheckboxPickerData
     @Binding private var isOn: Bool
     private let layoutData: ControlItemLabel.LayoutData
     private let action: (() -> Void)?

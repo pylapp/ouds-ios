@@ -164,7 +164,7 @@ public struct OUDSRadioItem: View {
 
     // MARK: - Properties
 
-    // NOTE: Do not forget to keep updated OUDSRadioPickerData
+    // NOTE: Do not forget to keep updated MISORadioPickerData
     @Binding private var isOn: Bool
     private let layoutData: ControlItemLabel.LayoutData
     private let action: (() -> Void)?
