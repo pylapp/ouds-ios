@@ -112,7 +112,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to badge components like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`
     public let badge: AllBadgeComponentTokensProvider
 
-    /// All components tokens related to bullet list components like `OUDSBulletList`
+    /// All components tokens related to bullet list components like `MISOBulletList`
     public let bulletList: AllBulletListComponentTokensProvider
 
     /// All components tokens related to button components like `MISOButton`

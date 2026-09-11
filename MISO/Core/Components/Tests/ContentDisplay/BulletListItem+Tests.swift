@@ -156,7 +156,7 @@ struct OUDSBulletListItemTests {
 
     @MainActor @Test func `prefix computations check in latin alphabet without prior label on level zero depth`() {
         let label = ""
-        let level = OUDSBulletList.NestedLevel.zero
+        let level = MISOBulletList.NestedLevel.zero
 
         var index = 0
         var result = BulletListItem.prefixAfter(label, for: level, at: index)
@@ -181,7 +181,7 @@ struct OUDSBulletListItemTests {
 
     @MainActor @Test func `prefix computations check in latin alphabet without prior label on level one depth`() {
         let label = ""
-        let level = OUDSBulletList.NestedLevel.one
+        let level = MISOBulletList.NestedLevel.one
 
         var index = 0
         var result = BulletListItem.prefixAfter(label, for: level, at: index)
@@ -206,7 +206,7 @@ struct OUDSBulletListItemTests {
 
     @MainActor @Test func `prefix computations check in latin alphabet without prior label on level two depth`() {
         let label = ""
-        let level = OUDSBulletList.NestedLevel.two
+        let level = MISOBulletList.NestedLevel.two
 
         var index = 0
         var result = BulletListItem.prefixAfter(label, for: level, at: index)
@@ -233,7 +233,7 @@ struct OUDSBulletListItemTests {
 
     @MainActor @Test func `prefix computations check in latin alphabet on level one depth`() {
         let label = "1."
-        let level = OUDSBulletList.NestedLevel.one
+        let level = MISOBulletList.NestedLevel.one
 
         var index = 0
         var result = BulletListItem.prefixAfter(label, for: level, at: index)
@@ -258,7 +258,7 @@ struct OUDSBulletListItemTests {
 
     @MainActor @Test func `prefix computations check in latin alphabet on level two depth`() {
         let label = "1.A."
-        let level = OUDSBulletList.NestedLevel.two
+        let level = MISOBulletList.NestedLevel.two
 
         var index = 0
         var result = BulletListItem.prefixAfter(label, for: level, at: index)

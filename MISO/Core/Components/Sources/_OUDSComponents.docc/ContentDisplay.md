@@ -11,7 +11,7 @@ Some components can be used for **content display**.
 
 ### Bullet List
 
-The ``OUDSBulletList`` is a UI element that helps to display related individual text items grouped together; items usually start with a number or a bullet.
+The ``MISOBulletList`` is a UI element that helps to display related individual text items grouped together; items usually start with a number or a bullet.
 
 @TabNavigator {
     @Tab("Orange") {
@@ -28,37 +28,37 @@ The ``OUDSBulletList`` is a UI element that helps to display related individual 
     }
 }
 
-``OUDSBulletList`` is also known as _Unordered list_ or _Ordered list_ and is not an interactive element by default.
+``MISOBulletList`` is also known as _Unordered list_ or _Ordered list_ and is not an interactive element by default.
 
 ```swift
 // Bare list with 3 items
-OUDSBulletList(type: .bare) {
-    OUDSBulletList.Item("Label 1")
-    OUDSBulletList.Item("Label 2")
-    OUDSBulletList.Item("Label 3")
+MISOBulletList(type: .bare) {
+    MISOBulletList.Item("Label 1")
+    MISOBulletList.Item("Label 2")
+    MISOBulletList.Item("Label 3")
 }
 
 // Item of Unordered list with bullet as tick, a text style
 // body medium and text bold
-OUDSBulletList(type: .unordered(asset: .tick),
+MISOBulletList(type: .unordered(asset: .tick),
               textStyle: .bodyMedium,
               isBold: true)  {
-    OUDSBulletList.Item("Label 1")
-    OUDSBulletList.Item("Label 2")
-    OUDSBulletList.Item("Label 3")
+    MISOBulletList.Item("Label 1")
+    MISOBulletList.Item("Label 2")
+    MISOBulletList.Item("Label 3")
 }
 
 // Ordered list with 3 items in first level,
 // and one item as sub item (second level),
 // and 2 items as sub item in (third level)
-OUDSBulletList(type: .ordered) {
-    OUDSBulletList.Item("Label 1") {
-        OUDSBulletList.Item("Label 1.1") {
-            OUDSBulletList.Item("Label 1.1.1")
-            OUDSBulletList.Item("Label 1.1.2")
+MISOBulletList(type: .ordered) {
+    MISOBulletList.Item("Label 1") {
+        MISOBulletList.Item("Label 1.1") {
+            MISOBulletList.Item("Label 1.1.1")
+            MISOBulletList.Item("Label 1.1.2")
         }
     }
-    OUDSBulletList.Item("Label 2")
-    OUDSBulletList.Item("Label 3")
+    MISOBulletList.Item("Label 2")
+    MISOBulletList.Item("Label 3")
 }
 ```

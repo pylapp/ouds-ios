@@ -16,7 +16,7 @@ import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of bullet list** for *bullet list* objects like `OUDSBulletList`.
+/// A class which wraps all **component  tokens of bullet list** for *bullet list* objects like `MISOBulletList`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllBulletListComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.

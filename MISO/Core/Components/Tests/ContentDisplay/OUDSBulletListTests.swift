@@ -15,23 +15,23 @@ import MISOComponents
 import SwiftUI
 import Testing
 
-/// Tests the default and explicit parameter values of `OUDSBulletList` enum cases.
+/// Tests the default and explicit parameter values of `MISOBulletList` enum cases.
 struct OUDSBulletListTests {
 
-    // MARK: - OUDSBulletList.UnorderedAsset.icon default values
+    // MARK: - MISOBulletList.UnorderedAsset.icon default values
 
     @Test func unorderedAssetIconDefaultAccessibilityLabelIsNil() {
-        guard case let .icon(_, accessibilityLabel) = OUDSBulletList.UnorderedAsset.icon(Image(systemName: "star")) else {
+        guard case let .icon(_, accessibilityLabel) = MISOBulletList.UnorderedAsset.icon(Image(systemName: "star")) else {
             Issue.record("Expected .icon case")
             return
         }
         #expect(accessibilityLabel == nil)
     }
 
-    // MARK: - OUDSBulletList.Type.unordered default values
+    // MARK: - MISOBulletList.Type.unordered default values
 
     @Test func bulletListTypeDefaultAssetIsBullet() {
-        let type: OUDSBulletList.`Type` = .unordered()
+        let type: MISOBulletList.`Type` = .unordered()
         guard case let .unordered(asset, _) = type else {
             Issue.record("Expected .unordered case")
             return
@@ -43,7 +43,7 @@ struct OUDSBulletListTests {
     }
 
     @Test func bulletListTypeDefaultIsBrandedIsTrue() {
-        let type: OUDSBulletList.`Type` = .unordered()
+        let type: MISOBulletList.`Type` = .unordered()
         guard case let .unordered(_, isBranded) = type else {
             Issue.record("Expected .unordered case")
             return
@@ -51,10 +51,10 @@ struct OUDSBulletListTests {
         #expect(isBranded == true)
     }
 
-    // MARK: - OUDSBulletList.Type.unordered explicit values are preserved
+    // MARK: - MISOBulletList.Type.unordered explicit values are preserved
 
     @Test func bulletListTypeExplicitIsBrandedFalseIsPreserved() {
-        let type: OUDSBulletList.`Type` = .unordered(isBranded: false)
+        let type: MISOBulletList.`Type` = .unordered(isBranded: false)
         guard case let .unordered(_, isBranded) = type else {
             Issue.record("Expected .unordered case")
             return

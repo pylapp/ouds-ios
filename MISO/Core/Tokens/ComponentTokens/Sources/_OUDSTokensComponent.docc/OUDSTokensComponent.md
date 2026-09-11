@@ -118,7 +118,7 @@ alert                          | For alert mesdsages and inline alert components
 bar                            | For bars components like bottom and navigation bars
 badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
 button                         | For buttons like `MISOButton` 
-bulletList                     | For list of elements with bullets like `OUDSBulletList`
+bulletList                     | For list of elements with bullets like `MISOBulletList`
 checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckboxItem` and their indeterminate variants 
 chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip`  
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 

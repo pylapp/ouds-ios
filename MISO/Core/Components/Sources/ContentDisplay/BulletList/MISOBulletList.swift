@@ -26,7 +26,7 @@ import SwiftUI
 /// - **Ordered**: Collects related items with numeric order or sequence.
 /// - **Bare**: An unordered list without any bullets or alphanumeric sequence.
 ///
-/// Types can be mixed in list, but must be identical for the same `OUDSBulletList.NestedLevel`.
+/// Types can be mixed in list, but must be identical for the same `MISOBulletList.NestedLevel`.
 ///
 /// ## Levels
 ///
@@ -58,61 +58,61 @@ import SwiftUI
 ///
 /// ```swift
 ///        // 1. Unordered list with bullets
-///        OUDSBulletList {
-///            OUDSBulletList.Item("Label 1")
-///            OUDSBulletList.Item("Label 2")
-///            OUDSBulletList.Item("Label 3")
+///        MISOBulletList {
+///            MISOBulletList.Item("Label 1")
+///            MISOBulletList.Item("Label 2")
+///            MISOBulletList.Item("Label 3")
 ///        }
 ///
 ///        // 1.1. Item of Unordered list with bullet as tick, a text style
 ///        // body medium and text bold
-///        OUDSBulletList(type: .unordered(asset: .tick),
+///        MISOBulletList(type: .unordered(asset: .tick),
 ///                       textStyle: .bodyMedium,
 ///                       isBold: true)  {
-///            OUDSBulletList.Item("Label 1")
-///            OUDSBulletList.Item("Label 2")
-///            OUDSBulletList.Item("Label 3")
+///            MISOBulletList.Item("Label 1")
+///            MISOBulletList.Item("Label 2")
+///            MISOBulletList.Item("Label 3")
 ///        }
 ///
 ///        // 2. Bare list with 3 items
-///        OUDSBulletList(type: .bare) {
-///            OUDSBulletList.Item("Label 1")
-///            OUDSBulletList.Item("Label 2")
-///            OUDSBulletList.Item("Label 3")
+///        MISOBulletList(type: .bare) {
+///            MISOBulletList.Item("Label 1")
+///            MISOBulletList.Item("Label 2")
+///            MISOBulletList.Item("Label 3")
 ///        }
 ///
 ///        // 3. Ordered list with 3 items
-///        OUDSBulletList(type: .ordered) {
-///            OUDSBulletList.Item("Label 1")
-///            OUDSBulletList.Item("Label 2")
-///            OUDSBulletList.Item("Label 3")
+///        MISOBulletList(type: .ordered) {
+///            MISOBulletList.Item("Label 1")
+///            MISOBulletList.Item("Label 2")
+///            MISOBulletList.Item("Label 3")
 ///        }
 ///
 ///        // 3.1. Ordered list with 3 items in first level,
 ///        // and one item as sub item (second level),
 ///        // and 2 items as sub item in (third level)
-///        OUDSBulletList(type: .ordered) {
-///            OUDSBulletList.Item("Label 1") {
-///                OUDSBulletList.Item("Label 1.1") {
-///                    OUDSBulletList.Item("Label 1.1.1")
-///                    OUDSBulletList.Item("Label 1.1.2")
+///        MISOBulletList(type: .ordered) {
+///            MISOBulletList.Item("Label 1") {
+///                MISOBulletList.Item("Label 1.1") {
+///                    MISOBulletList.Item("Label 1.1.1")
+///                    MISOBulletList.Item("Label 1.1.2")
 ///                }
 ///            }
-///            OUDSBulletList.Item("Label 2")
-///            OUDSBulletList.Item("Label 3")
+///            MISOBulletList.Item("Label 2")
+///            MISOBulletList.Item("Label 3")
 ///        }
 ///
 ///        // Same Bullet list but items in third level with free icon as bullet
 ///        let icon = Image(decorative: "ic_heart")
-///        OUDSBulletList(type: .ordered) {
-///            OUDSBulletList.Item("Label 1") {
-///                OUDSBulletList.Item("Label 1.1", subListType: .unordered(asset: .icon(icon))) {
-///                    OUDSBulletList.Item("Label 1.1.1")
-///                    OUDSBulletList.Item("Label 1.1.2")
+///        MISOBulletList(type: .ordered) {
+///            MISOBulletList.Item("Label 1") {
+///                MISOBulletList.Item("Label 1.1", subListType: .unordered(asset: .icon(icon))) {
+///                    MISOBulletList.Item("Label 1.1.1")
+///                    MISOBulletList.Item("Label 1.1.2")
 ///                }
 ///            }
-///            OUDSBulletList.Item("Label 2")
-///            OUDSBulletList.Item("Label 3")
+///            MISOBulletList.Item("Label 2")
+///            MISOBulletList.Item("Label 3")
 ///        }
 /// ```
 ///
@@ -131,32 +131,10 @@ import SwiftUI
 ///
 /// Always check the results of rich text mode with high contrast, light and dark modes, and Voice Over vocalization.
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-bullet-list)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A bullet list component in light and dark modes with Orange theme](component_bullet_list_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A bullet list component in light and dark modes with Orange Compact theme](component_bullet_list_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A bullet list component in light and dark modes with Sosh theme](component_bullet_list_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A bullet list component in light and dark modes with Wireframe theme](component_bullet_list_Wireframe)
-///
 /// - Version: 1.1.0 (Figma component design version)
 /// - Since: 1.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSBulletList: View {
+public struct MISOBulletList: View {
 
     // MARK: Properties
 
@@ -176,8 +154,8 @@ public struct OUDSBulletList: View {
         // MARK: Properties
 
         let text: TextualContent
-        let subListType: OUDSBulletList.`Type`?
-        let subListTextStyle: OUDSBulletList.TextStyle?
+        let subListType: MISOBulletList.`Type`?
+        let subListTextStyle: MISOBulletList.TextStyle?
         let subListHasBoldText: Bool?
         let subItems: [Item]
 
@@ -188,26 +166,26 @@ public struct OUDSBulletList: View {
         /// to change properties for those sub items, if needed.
         ///
         /// ```swift
-        ///     OUDSBulletList.Item("First point")
-        ///     OUDSBulletList.Item("Parent") {
-        ///         OUDSBulletList.Item("Child")
+        ///     MISOBulletList.Item("First point")
+        ///     MISOBulletList.Item("Parent") {
+        ///         MISOBulletList.Item("Child")
         ///     }
         /// ```
         ///
         /// - Parameters:
         ///    - text: The text of the item
-        ///    - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
+        ///    - subListType: The specific `MISOBulletList.Type` for the nested sub-list, if any. If `nil`,
         ///     the type is inherited from the parent list.
-        ///    - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
+        ///    - subListTextStyle: The specific `MISOBulletList.TextStyle` for the nested sub-list, if any. If
         ///     `nil`, the text style is inherited from the parent list.
         ///    - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
         ///     setting is inherited from the parent list.
         ///    - subItems: The sub items builder to add to the current item. **Remark** only three levels are allowed.
         public init(_ text: String,
-                    subListType: OUDSBulletList.`Type`? = nil,
-                    subListTextStyle: OUDSBulletList.TextStyle? = nil,
+                    subListType: MISOBulletList.`Type`? = nil,
+                    subListTextStyle: MISOBulletList.TextStyle? = nil,
                     subListHasBoldText: Bool? = nil,
-                    @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
+                    @MISOBulletListItemBuilder subItems: () -> [MISOBulletList.Item] = { [] })
         {
             self.text = .raw(text)
             self.subListType = subListType
@@ -221,23 +199,23 @@ public struct OUDSBulletList: View {
         /// to change properties for those sub items, if needed.
         ///
         /// ```swift
-        ///     OUDSBulletList.Item(AttributedString(markdown: "First **important** point")) // Manage in your side errors for init
+        ///     MISOBulletList.Item(AttributedString(markdown: "First **important** point")) // Manage in your side errors for init
         /// ```
         ///
         /// - Parameters:
         ///    - richText: The rich text of the item
-        ///    - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
+        ///    - subListType: The specific `MISOBulletList.Type` for the nested sub-list, if any. If `nil`,
         ///     the type is inherited from the parent list.
-        ///    - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
+        ///    - subListTextStyle: The specific `MISOBulletList.TextStyle` for the nested sub-list, if any. If
         ///     `nil`, the text style is inherited from the parent list.
         ///    - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
         ///     setting is inherited from the parent list.
         ///    - subItems: The sub items builder to add to the current item. **Remark** only three levels are allowed.
         public init(_ richText: AttributedString,
-                    subListType: OUDSBulletList.`Type`? = nil,
-                    subListTextStyle: OUDSBulletList.TextStyle? = nil,
+                    subListType: MISOBulletList.`Type`? = nil,
+                    subListTextStyle: MISOBulletList.TextStyle? = nil,
                     subListHasBoldText: Bool? = nil,
-                    @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
+                    @MISOBulletListItemBuilder subItems: () -> [MISOBulletList.Item] = { [] })
         {
             text = .attributed(richText)
             self.subListType = subListType
@@ -249,16 +227,16 @@ public struct OUDSBulletList: View {
         /// Creates a bullet list item with a localized text, looking up the key in the given bundle.
         ///
         /// ```swift
-        ///     OUDSBulletList.Item(LocalizedStringKey("item_label"), bundle: Bundle.module)
+        ///     MISOBulletList.Item(LocalizedStringKey("item_label"), bundle: Bundle.module)
         /// ```
         ///
         /// - Parameters:
         ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
         ///    - tableName: The name of the `.strings` file, or `nil` for the default
         ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-        ///    - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
+        ///    - subListType: The specific `MISOBulletList.Type` for the nested sub-list, if any. If `nil`,
         ///     the type is inherited from the parent list.
-        ///    - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
+        ///    - subListTextStyle: The specific `MISOBulletList.TextStyle` for the nested sub-list, if any. If
         ///     `nil`, the text style is inherited from the parent list.
         ///    - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
         ///     setting is inherited from the parent list.
@@ -266,10 +244,10 @@ public struct OUDSBulletList: View {
         public init(_ key: LocalizedStringKey,
                     tableName: String? = nil,
                     bundle: Bundle = .main,
-                    subListType: OUDSBulletList.`Type`? = nil,
-                    subListTextStyle: OUDSBulletList.TextStyle? = nil,
+                    subListType: MISOBulletList.`Type`? = nil,
+                    subListTextStyle: MISOBulletList.TextStyle? = nil,
                     subListHasBoldText: Bool? = nil,
-                    @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
+                    @MISOBulletListItemBuilder subItems: () -> [MISOBulletList.Item] = { [] })
         {
             text = .raw(key.resolved(tableName: tableName, bundle: bundle))
             self.subListType = subListType
@@ -355,22 +333,22 @@ public struct OUDSBulletList: View {
     /// Creates a bullet list with a bullet type, text style and bold.
     ///
     /// ```swift
-    ///     OUDSBulletList {
-    ///         OUDSBulletList.Item("First point")
-    ///         OUDSBulletList.Item("Second point")
+    ///     MISOBulletList {
+    ///         MISOBulletList.Item("First point")
+    ///         MISOBulletList.Item("Second point")
     ///     }
     /// ```
     ///
     /// - Parameters:
     ///    - type: The visual type of the list (e.g., `ordered`, `unordered` or `bare`).
-    ///     See `OUDSBulletList.Type`, default `.unordered(asset: .bullet, isBranded: false)`
-    ///    - textStyle: The typography style for the list items. See `OUDSBulletList.TextStyle`, defaults `.bodyLarge`
+    ///     See `MISOBulletList.Type`, default `.unordered(asset: .bullet, isBranded: false)`
+    ///    - textStyle: The typography style for the list items. See `MISOBulletList.TextStyle`, defaults `.bodyLarge`
     ///    - isBold: Whether the list item text should be bold. This can be overridden for sub-lists. Defaults to `true`
     ///    - items: Defines the list items
     public init(type: Self.`Type` = .unordered(asset: .bullet, isBranded: false),
                 textStyle: Self.TextStyle = .bodyLarge,
                 isBold: Bool = true,
-                @OUDSBulletListItemBuilder items: () -> [OUDSBulletList.Item])
+                @MISOBulletListItemBuilder items: () -> [MISOBulletList.Item])
     {
         self.type = type
         self.textStyle = textStyle

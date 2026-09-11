@@ -19,11 +19,11 @@ struct BulletListItem: View {
 
     // MARK: - Properties
 
-    private let item: OUDSBulletList.Item
-    private let type: OUDSBulletList.`Type`
-    private let textStyle: OUDSBulletList.TextStyle
+    private let item: MISOBulletList.Item
+    private let type: MISOBulletList.`Type`
+    private let textStyle: MISOBulletList.TextStyle
     private let isBold: Bool
-    private let level: OUDSBulletList.NestedLevel
+    private let level: MISOBulletList.NestedLevel
     private let index: UInt8
     private let accessibilityLabelPrefix: String
 
@@ -31,11 +31,11 @@ struct BulletListItem: View {
 
     // MARK: - Init
 
-    init(item: OUDSBulletList.Item,
-         type: OUDSBulletList.`Type`,
-         textStyle: OUDSBulletList.TextStyle,
+    init(item: MISOBulletList.Item,
+         type: MISOBulletList.`Type`,
+         textStyle: MISOBulletList.TextStyle,
          isBold: Bool,
-         level: OUDSBulletList.NestedLevel,
+         level: MISOBulletList.NestedLevel,
          index: UInt8,
          accessibilityLabelPrefix: String? = nil)
     {
@@ -115,8 +115,8 @@ struct BulletListItem: View {
         }
     }
 
-    private var nextLevel: OUDSBulletList.NestedLevel {
-        guard let nextLevel = OUDSBulletList.NestedLevel(rawValue: level.rawValue + 1) else {
+    private var nextLevel: MISOBulletList.NestedLevel {
+        guard let nextLevel = MISOBulletList.NestedLevel(rawValue: level.rawValue + 1) else {
             ML.fatal("It is forbidden by design to have more than 3 levels depth. Children of '\(item.text)' are too much.")
         }
         return nextLevel
@@ -155,7 +155,7 @@ struct BulletListItem: View {
     /// - Returns: A localised accessibility label string.
     static func buildAccessibilityLabel(orderedPrefix: String?,
                                         text: String,
-                                        level: OUDSBulletList.NestedLevel,
+                                        level: MISOBulletList.NestedLevel,
                                         subItemsCount: Int) -> String
     {
         var components: [String] = []
@@ -186,7 +186,7 @@ struct BulletListItem: View {
         return components.joined(separator: ", ")
     }
 
-    static func prefixAfter(_ accessibilityLabel: String, for level: OUDSBulletList.NestedLevel, at index: Int) -> String {
+    static func prefixAfter(_ accessibilityLabel: String, for level: MISOBulletList.NestedLevel, at index: Int) -> String {
         let index = UInt8(index)
         let currentPrefix = switch level {
         case .zero:

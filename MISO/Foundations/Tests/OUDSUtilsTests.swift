@@ -25,32 +25,32 @@ struct OUDSUtilsTests {
 
         @Test("First letter should be 'a'")
         func firstLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 0, isUppercase: false) == "a")
+            #expect(MYOUtils.cyclicLatinLetter(at: 0, isUppercase: false) == "a")
         }
 
         @Test("Last single letter should be 'z'")
         func lastSingleLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 25, isUppercase: false) == "z")
+            #expect(MYOUtils.cyclicLatinLetter(at: 25, isUppercase: false) == "z")
         }
 
         @Test("First double letter should be 'aa'")
         func firstDoubleLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 26, isUppercase: false) == "aa")
+            #expect(MYOUtils.cyclicLatinLetter(at: 26, isUppercase: false) == "aa")
         }
 
         @Test("Second double letter should be 'ab'")
         func secondDoubleLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 27, isUppercase: false) == "ab")
+            #expect(MYOUtils.cyclicLatinLetter(at: 27, isUppercase: false) == "ab")
         }
 
         @Test("Last double letter should be 'az'")
         func lastDoubleLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 51, isUppercase: false) == "az")
+            #expect(MYOUtils.cyclicLatinLetter(at: 51, isUppercase: false) == "az")
         }
 
         @Test("First triple letter should be 'ba'")
         func firstTripleLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 52, isUppercase: false) == "ba")
+            #expect(MYOUtils.cyclicLatinLetter(at: 52, isUppercase: false) == "ba")
         }
 
         @Test("Middle values", arguments: [
@@ -60,7 +60,7 @@ struct OUDSUtilsTests {
             (20, "u"),
         ])
         func middleValues(index: UInt8, expected: String) {
-            #expect(OUDSUtils.cyclicLatinLetter(at: index, isUppercase: false) == expected)
+            #expect(MYOUtils.cyclicLatinLetter(at: index, isUppercase: false) == expected)
         }
 
         @Test("Double letter progression", arguments: [
@@ -72,7 +72,7 @@ struct OUDSUtilsTests {
             (50, "ay"),
         ])
         func doubleLetterProgression(index: UInt8, expected: String) {
-            #expect(OUDSUtils.cyclicLatinLetter(at: index, isUppercase: false) == expected)
+            #expect(MYOUtils.cyclicLatinLetter(at: index, isUppercase: false) == expected)
         }
     }
 
@@ -83,32 +83,32 @@ struct OUDSUtilsTests {
 
         @Test("First letter should be 'A'")
         func testFirstLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 0, isUppercase: true) == "A")
+            #expect(MYOUtils.cyclicLatinLetter(at: 0, isUppercase: true) == "A")
         }
 
         @Test("Last single letter should be 'Z'")
         func testLastSingleLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 25, isUppercase: true) == "Z")
+            #expect(MYOUtils.cyclicLatinLetter(at: 25, isUppercase: true) == "Z")
         }
 
         @Test("First double letter should be 'AA'")
         func testFirstDoubleLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 26, isUppercase: true) == "AA")
+            #expect(MYOUtils.cyclicLatinLetter(at: 26, isUppercase: true) == "AA")
         }
 
         @Test("Second double letter should be 'AB'")
         func testSecondDoubleLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 27, isUppercase: true) == "AB")
+            #expect(MYOUtils.cyclicLatinLetter(at: 27, isUppercase: true) == "AB")
         }
 
         @Test("Last double letter should be 'AZ'")
         func testLastDoubleLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 51, isUppercase: true) == "AZ")
+            #expect(MYOUtils.cyclicLatinLetter(at: 51, isUppercase: true) == "AZ")
         }
 
         @Test("First triple letter should be 'BA'")
         func testFirstTripleLetter() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 52, isUppercase: true) == "BA")
+            #expect(MYOUtils.cyclicLatinLetter(at: 52, isUppercase: true) == "BA")
         }
 
         @Test("Uppercase progression", arguments: [
@@ -123,7 +123,7 @@ struct OUDSUtilsTests {
             (53, "BB"),
         ])
         func uppercaseProgression(index: UInt8, expected: String) {
-            #expect(OUDSUtils.cyclicLatinLetter(at: index, isUppercase: true) == expected)
+            #expect(MYOUtils.cyclicLatinLetter(at: index, isUppercase: true) == expected)
         }
     }
 
@@ -134,42 +134,42 @@ struct OUDSUtilsTests {
 
         @Test("First letter should be 'ا'")
         func testFirstLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 0) == "أ")
+            #expect(MYOUtils.cyclicArabicLetter(at: 0) == "أ")
         }
 
         @Test("Second letter should be 'ب'")
         func secondLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 1) == "ب")
+            #expect(MYOUtils.cyclicArabicLetter(at: 1) == "ب")
         }
 
         @Test("Last single letter should be 'ي' (28th letter)")
         func testLastSingleLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 27) == "ي")
+            #expect(MYOUtils.cyclicArabicLetter(at: 27) == "ي")
         }
 
         @Test("First double letter should be 'اا'")
         func testFirstDoubleLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 28) == "أأ")
+            #expect(MYOUtils.cyclicArabicLetter(at: 28) == "أأ")
         }
 
         @Test("Second double letter should be 'اب'")
         func testSecondDoubleLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 29) == "أب")
+            #expect(MYOUtils.cyclicArabicLetter(at: 29) == "أب")
         }
 
         @Test("Last double letter should be 'اي'")
         func testLastDoubleLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 55) == "أي")
+            #expect(MYOUtils.cyclicArabicLetter(at: 55) == "أي")
         }
 
         @Test("First triple letter should be 'با'")
         func testFirstTripleLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 56) == "بأ")
+            #expect(MYOUtils.cyclicArabicLetter(at: 56) == "بأ")
         }
 
         @Test("Second triple letter should be 'بب'")
         func secondTripleLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 57) == "بب")
+            #expect(MYOUtils.cyclicArabicLetter(at: 57) == "بب")
         }
     }
 
@@ -180,28 +180,28 @@ struct OUDSUtilsTests {
 
         @Test("Latin lowercase at boundary 26")
         func latinLowercaseBoundary() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 25, isUppercase: false) == "z")
-            #expect(OUDSUtils.cyclicLatinLetter(at: 26, isUppercase: false) == "aa")
+            #expect(MYOUtils.cyclicLatinLetter(at: 25, isUppercase: false) == "z")
+            #expect(MYOUtils.cyclicLatinLetter(at: 26, isUppercase: false) == "aa")
         }
 
         @Test("Latin uppercase at boundary 26")
         func latinUppercaseBoundary() {
-            #expect(OUDSUtils.cyclicLatinLetter(at: 25, isUppercase: true) == "Z")
-            #expect(OUDSUtils.cyclicLatinLetter(at: 26, isUppercase: true) == "AA")
+            #expect(MYOUtils.cyclicLatinLetter(at: 25, isUppercase: true) == "Z")
+            #expect(MYOUtils.cyclicLatinLetter(at: 26, isUppercase: true) == "AA")
         }
 
         @Test("Arabic at boundary 28")
         func arabicBoundary() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 27) == "ي")
-            #expect(OUDSUtils.cyclicArabicLetter(at: 28) == "أأ")
+            #expect(MYOUtils.cyclicArabicLetter(at: 27) == "ي")
+            #expect(MYOUtils.cyclicArabicLetter(at: 28) == "أأ")
         }
 
         @Test("Maximum UInt8 value (255)")
         func maximumValue() {
             // Should not crash
-            let latinLower = OUDSUtils.cyclicLatinLetter(at: 255, isUppercase: false)
-            let latinUpper = OUDSUtils.cyclicLatinLetter(at: 255, isUppercase: true)
-            let arabic = OUDSUtils.cyclicArabicLetter(at: 255)
+            let latinLower = MYOUtils.cyclicLatinLetter(at: 255, isUppercase: false)
+            let latinUpper = MYOUtils.cyclicLatinLetter(at: 255, isUppercase: true)
+            let arabic = MYOUtils.cyclicArabicLetter(at: 255)
 
             #expect(!latinLower.isEmpty)
             #expect(!latinUpper.isEmpty)
@@ -217,15 +217,15 @@ struct OUDSUtilsTests {
         @Test("Lowercase and uppercase should have same length")
         func caseLengthConsistency() {
             for index: UInt8 in 0 ... 100 {
-                let lower = OUDSUtils.cyclicLatinLetter(at: index, isUppercase: false)
-                let upper = OUDSUtils.cyclicLatinLetter(at: index, isUppercase: true)
+                let lower = MYOUtils.cyclicLatinLetter(at: index, isUppercase: false)
+                let upper = MYOUtils.cyclicLatinLetter(at: index, isUppercase: true)
                 #expect(lower.count == upper.count)
             }
         }
 
         @Test("Sequential indices should produce sequential letters (first 26)")
         func sequentialLetters() {
-            let lowercase = (0 ..< 26).map { OUDSUtils.cyclicLatinLetter(at: $0, isUppercase: false) }
+            let lowercase = (0 ..< 26).map { MYOUtils.cyclicLatinLetter(at: $0, isUppercase: false) }
             let expected = [
                 "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
                 "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
@@ -235,7 +235,7 @@ struct OUDSUtilsTests {
 
         @Test("Arabic sequential letters (first 28)")
         func arabicSequentialLetters() {
-            let arabic = (0 ..< 28).map { OUDSUtils.cyclicArabicLetter(at: $0) }
+            let arabic = (0 ..< 28).map { MYOUtils.cyclicArabicLetter(at: $0) }
             let expected: [String] = [
                 "أ",
                 "ب",

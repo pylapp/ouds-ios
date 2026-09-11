@@ -21,15 +21,15 @@ struct Bullet: View {
 
     // MARK: Properties
 
-    let type: OUDSBulletList.`Type`
-    let level: OUDSBulletList.NestedLevel
-    let textStyle: OUDSBulletList.TextStyle
+    let type: MISOBulletList.`Type`
+    let level: MISOBulletList.NestedLevel
+    let textStyle: MISOBulletList.TextStyle
     let isBold: Bool
     let index: UInt8
 
     @Environment(\.theme) private var theme
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
     // MARK: Body
@@ -84,10 +84,10 @@ struct UnorderedBullet: View {
 
     // MARK: Properties
 
-    let asset: OUDSBulletList.UnorderedAsset
+    let asset: MISOBulletList.UnorderedAsset
     let isBranded: Bool
-    let level: OUDSBulletList.NestedLevel
-    let textStyle: OUDSBulletList.TextStyle
+    let level: MISOBulletList.NestedLevel
+    let textStyle: MISOBulletList.TextStyle
 
     @Environment(\.theme) private var theme
     @Environment(\.verticalSizeClass) private var verticalSizeClass
@@ -143,8 +143,8 @@ struct OrderedBullet: View {
 
     // MARK: Properties
 
-    let level: OUDSBulletList.NestedLevel
-    let textStyle: OUDSBulletList.TextStyle
+    let level: MISOBulletList.NestedLevel
+    let textStyle: MISOBulletList.TextStyle
     let isBold: Bool
     let index: UInt8
 
@@ -167,7 +167,7 @@ struct OrderedBullet: View {
     // MARK: Helpers
 
     static func levelZeroBullet(for index: UInt8) -> String {
-        if OUDSUtils.isArabicLanguageInUse() {
+        if MYOUtils.isArabicLanguageInUse() {
             ".\(index + 1)"
         } else {
             "\(index + 1)."
@@ -175,18 +175,18 @@ struct OrderedBullet: View {
     }
 
     static func levelOneBullet(for index: UInt8) -> String {
-        if OUDSUtils.isArabicLanguageInUse() {
-            OUDSUtils.cyclicArabicLetter(at: index) + "." // NOTE: . won't be leading but trailing, arabic alphabet in use
+        if MYOUtils.isArabicLanguageInUse() {
+            MYOUtils.cyclicArabicLetter(at: index) + "." // NOTE: . won't be leading but trailing, arabic alphabet in use
         } else {
-            OUDSUtils.cyclicLatinLetter(at: index, isUppercase: true) + "."
+            MYOUtils.cyclicLatinLetter(at: index, isUppercase: true) + "."
         }
     }
 
     static func levelTwoBullet(for index: UInt8) -> String {
-        if OUDSUtils.isArabicLanguageInUse() {
-            "(" + OUDSUtils.cyclicArabicLetter(at: index) + ")" + "." // NOTE: . won't be leading but trailing, arabic alphabet in use
+        if MYOUtils.isArabicLanguageInUse() {
+            "(" + MYOUtils.cyclicArabicLetter(at: index) + ")" + "." // NOTE: . won't be leading but trailing, arabic alphabet in use
         } else {
-            OUDSUtils.cyclicLatinLetter(at: index, isUppercase: false) + "."
+            MYOUtils.cyclicLatinLetter(at: index, isUppercase: false) + "."
         }
     }
 }

@@ -21,7 +21,7 @@ struct BulletListLabel: View {
     // MARK: Properties
 
     let label: TextualContent
-    let textStyle: OUDSBulletList.TextStyle
+    let textStyle: MISOBulletList.TextStyle
     let isBold: Bool
 
     @Environment(\.theme) private var theme
@@ -51,7 +51,7 @@ struct BulletTextModifier: ViewModifier {
 
     // MARK: Properties
 
-    let textStyle: OUDSBulletList.TextStyle
+    let textStyle: MISOBulletList.TextStyle
     let isBold: Bool
 
     @Environment(\.theme) private var theme
