@@ -439,28 +439,28 @@ MISOFilterChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .origin
     }
 }
 
-The library proposes a chip picker (`OUDSChipPicker`) to make easily filtering with two kinds of selection:
+The library proposes a chip picker (`MISOChipPicker`) to make easily filtering with two kinds of selection:
 - **single or none**: to select or unselect one option only
 - **single**: to select at least one option
 - **multiple**: to select several options
 
 ```swift
-// Define the elements to display in filter chip using OUDSChipPickerData.
+// Define the elements to display in filter chip using MISOChipPickerData.
 enum Drink: String, CaseIterable {
     case virginHolyLava, ipaBeer, mineralWater
 }
 
-var someDataToPopulate: [OUDSChipPickerData<Drink>] {
+var someDataToPopulate: [MISOChipPickerData<Drink>] {
     [
-        OUDSChipPickerData(tag: Drink.virginHolyLava,
+        MISOChipPickerData(tag: Drink.virginHolyLava,
                           layout: .textAndIcon("Virgin Holy Lava",
                                                image: MISOImage(asset: Image(systemName: "flame")))),
 
-        OUDSChipPickerData(tag: Drink.ipaBeer,
+        MISOChipPickerData(tag: Drink.ipaBeer,
                            layout: .textAndIcon("IPA Beer",
                                                 image: MISOImage(asset: Image(systemName: "dog.fill")))),
 
-        OUDSChipPickerData(tag: Drink.mineralWater,
+        MISOChipPickerData(tag: Drink.mineralWater,
                            layout: .textAndIcon("Mineral water",
                                                 image: MISOImage(asset: Image(systemName: "waterbottle.fill")))),
     ]
@@ -473,7 +473,7 @@ var someDataToPopulate: [OUDSChipPickerData<Drink>] {
 @State var selection: Drink? = .mineralWater
 
 // Here the picker with title, selection and data
-OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
+MISOChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
 
 // MARK: - Simple selection
 
@@ -482,7 +482,7 @@ OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataTo
 @State var selection: Drink = .mineralWater
 
 // Here the picker with title, selection and data
-OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
+MISOChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
 
 // MARK: - Multiple selection
 
@@ -491,7 +491,7 @@ OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataTo
 @State var selections: [Drink] = [.mineralWater]
 
 // Here the picker with title, selection and data
-OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someDataToPopulate)
+MISOChipPicker(title: "Select a drink", selections: $selections, chips: someDataToPopulate)
 ```
 
 ### Password input

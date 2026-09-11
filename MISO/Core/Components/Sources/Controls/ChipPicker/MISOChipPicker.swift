@@ -1,18 +1,5 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
-// SPDX-License-Identifier: MIT
-
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-License-Identifier: MITs
 
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
@@ -29,25 +16,25 @@ import SwiftUI
 ///
 /// *Voice Over* will use several elements to describe the component.
 /// The picker itself does no have any defined accessiiblity value, label or identifier ; it remains in the users hands to define which one will be used.
-/// However if defined in the ``OUDSChipPickerData`` the items inside the picker will have such accessibility identifiers.
+/// However if defined in the ``MISOChipPickerData`` the items inside the picker will have such accessibility identifiers.
 ///
 /// ## Code samples
 ///
 /// ```swift
-///     // Define the elements to display in filter chip using OUDSChipPickerData.
+///     // Define the elements to display in filter chip using MISOChipPickerData.
 ///     enum Drink: String, CaseIterable {
 ///         case virginHolyLava, ipaBeer, mineralWater
 ///     }
 ///
-///     var someDataToPopulate: [OUDSChipPickerData<Drink>] {
+///     var someDataToPopulate: [MISOChipPickerData<Drink>] {
 ///         [
-///             OUDSChipPickerData(tag: Drink.virginHolyLava,
+///             MISOChipPickerData(tag: Drink.virginHolyLava,
 ///                                layout: .textAndImage("Virgin Holy Lava", image: MISOImage(asset: Image(systemName: "flame")))),
 ///
-///             OUDSChipPickerData(tag: Drink.ipaBeer,
+///             MISOChipPickerData(tag: Drink.ipaBeer,
 ///                                layout: .textAndImage("IPA Beer", image: MISOImage(asset: Image(systemName: "dog.fill")))),
 ///
-///             OUDSChipPickerData(tag: Drink.mineralWater,
+///             MISOChipPickerData(tag: Drink.mineralWater,
 ///                                layout: .textAndImage("Mineral water", image: MISOImage(asset: Image(systemName: "waterbottle.fill")))),
 ///         ]
 ///     }
@@ -59,7 +46,7 @@ import SwiftUI
 ///     @State var selection: Drink = .mineralWater
 ///
 ///     // Here the picker with title, selection and data
-///     OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
+///     MISOChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
 ///
 ///     /// Multiple selection case
 ///
@@ -68,34 +55,12 @@ import SwiftUI
 ///     @State var selections: [Drink] = [.mineralWater]
 ///
 ///     // Here the picker with title, selection and data
-///     OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someDataToPopulate)
+///     MISOChipPicker(title: "Select a drink", selections: $selections, chips: someDataToPopulate)
 /// ```
-///
-/// ## Design documentation
-///
-/// There is no online specification as this component is not an official OUDS one.
-///
-/// ## Theme rendering
-///
-/// ### Orange
-///
-/// ![A chip picker component in light and dark modes with Orange theme](component_chipPicker_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A chip picker component in light and dark modes with Orange Compact theme](component_chipPicker_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A chip picker component in light and dark modes with Sosh theme](component_chipPicker_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A chip picker component in light and dark modes with Wireframe theme](component_chipPicker_Wireframe)
 ///
 /// - Since: 0.17.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSChipPicker<Tag: Hashable>: View {
+public struct MISOChipPicker<Tag: Hashable>: View {
 
     /// The title of the picker
     let title: String?
@@ -104,7 +69,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     var selectionType: SelectionType
 
     /// The list of data to wrap in ``MISOFilterChip`` inside this picker
-    private let chips: [OUDSChipPickerData<Tag>]
+    private let chips: [MISOChipPickerData<Tag>]
 
     /// The custom spacing to apply between items by user
     private let customItemsSpacing: SpaceSemanticToken?
@@ -126,11 +91,11 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     // MARK: - Init
 
     // swiftlint:disable function_default_parameter_at_end
-    /// Defines the single selection picker view which displays using ``MISOFilterChip`` view the ``OUDSChipPickerData``.
+    /// Defines the single selection picker view which displays using ``MISOFilterChip`` view the ``MISOChipPickerData``.
     /// The user will be able to choose zero or one option in this picker.
     ///
     /// ```swift
-    ///     OUDSChipPicker(title: "Category", selection: $selection, chips: data)
+    ///     MISOChipPicker(title: "Category", selection: $selection, chips: data)
     /// ```
     ///
     /// - Parameters:
@@ -138,9 +103,9 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     ///    - selection: The current selected value
     ///    - chips: The raw data to wrap in ``MISOFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
-    public init(title: String? = nil, selection: Binding<Tag?>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
+    public init(title: String? = nil, selection: Binding<Tag?>, chips: [MISOChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
-            ML.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
         self.chips = chips
@@ -151,7 +116,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     /// Defines the single selection picker view with a localized title, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSChipPicker(title: LocalizedStringKey("picker_title"), bundle: Bundle.module, selection: $selection, chips: data)
+    ///     MISOChipPicker(title: LocalizedStringKey("picker_title"), bundle: Bundle.module, selection: $selection, chips: data)
     /// ```
     ///
     /// - Parameters:
@@ -165,12 +130,12 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 selection: Binding<Tag?>,
-                chips: [OUDSChipPickerData<Tag>],
+                chips: [MISOChipPickerData<Tag>],
                 itemsSpacing: SpaceSemanticToken? = nil)
     {
         let resolvedTitle = title.map { $0.resolved(tableName: tableName, bundle: bundle) }
         if let resolvedTitle, resolvedTitle.isEmpty {
-            ML.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = resolvedTitle
         self.chips = chips
@@ -178,11 +143,11 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
         selectionType = .singleOrNone(selection)
     }
 
-    /// Defines the single selection picker view which displays using ``MISOFilterChip`` view the ``OUDSChipPickerData``
+    /// Defines the single selection picker view which displays using ``MISOFilterChip`` view the ``MISOChipPickerData``
     /// The user will be able to choose only one option in this picker.
     ///
     /// ```swift
-    ///     OUDSChipPicker(title: "Category", selection: $selection, chips: data)
+    ///     MISOChipPicker(title: "Category", selection: $selection, chips: data)
     /// ```
     ///
     /// - Parameters:
@@ -190,9 +155,9 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     ///    - selection: The current selected value
     ///    - chips: The raw data to wrap in ``MISOFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
-    public init(title: String? = nil, selection: Binding<Tag>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
+    public init(title: String? = nil, selection: Binding<Tag>, chips: [MISOChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
-            ML.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
         self.chips = chips
@@ -203,7 +168,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     /// Defines the single selection picker view with a localized title, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSChipPicker(title: LocalizedStringKey("picker_title"), bundle: Bundle.module, selection: $selection, chips: data)
+    ///     MISOChipPicker(title: LocalizedStringKey("picker_title"), bundle: Bundle.module, selection: $selection, chips: data)
     /// ```
     ///
     /// - Parameters:
@@ -217,12 +182,12 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 selection: Binding<Tag>,
-                chips: [OUDSChipPickerData<Tag>],
+                chips: [MISOChipPickerData<Tag>],
                 itemsSpacing: SpaceSemanticToken? = nil)
     {
         let resolvedTitle = title.map { $0.resolved(tableName: tableName, bundle: bundle) }
         if let resolvedTitle, resolvedTitle.isEmpty {
-            ML.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = resolvedTitle
         self.chips = chips
@@ -230,11 +195,11 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
         selectionType = .single(selection)
     }
 
-    /// Defines the multiple selection picker view which displays using ``MISOFilterChip`` view the ``OUDSChipPickerData``.
+    /// Defines the multiple selection picker view which displays using ``MISOFilterChip`` view the ``MISOChipPickerData``.
     /// The user will be able to choose zero or one or seevral options in this picker.
     ///
     /// ```swift
-    ///     OUDSChipPicker(title: "Tags", selections: $selections, chips: data)
+    ///     MISOChipPicker(title: "Tags", selections: $selections, chips: data)
     /// ```
     ///
     /// - Parameters:
@@ -242,9 +207,9 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     ///    - selections: Current selected values
     ///    - chips: The raw data to wrap in ``MISOFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
-    public init(title: String? = nil, selections: Binding<[Tag]>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
+    public init(title: String? = nil, selections: Binding<[Tag]>, chips: [MISOChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
-            ML.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
         self.chips = chips
@@ -255,7 +220,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     /// Defines the multiple selection picker view with a localized title, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSChipPicker(title: LocalizedStringKey("picker_title"), bundle: Bundle.module, selections: $selections, chips: data)
+    ///     MISOChipPicker(title: LocalizedStringKey("picker_title"), bundle: Bundle.module, selections: $selections, chips: data)
     /// ```
     ///
     /// - Parameters:
@@ -269,12 +234,12 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 selections: Binding<[Tag]>,
-                chips: [OUDSChipPickerData<Tag>],
+                chips: [MISOChipPickerData<Tag>],
                 itemsSpacing: SpaceSemanticToken? = nil)
     {
         let resolvedTitle = title.map { $0.resolved(tableName: tableName, bundle: bundle) }
         if let resolvedTitle, resolvedTitle.isEmpty {
-            ML.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = resolvedTitle
         self.chips = chips
@@ -315,7 +280,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     }
 
     @ViewBuilder
-    private func filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
+    private func filterChip(from data: MISOChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
         if let a11yidentifier = data.accessibilityIdentifier {
             _filterChip(from: data, action: action).accessibilityIdentifier(a11yidentifier)
         } else {
@@ -324,7 +289,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     }
 
     @ViewBuilder
-    private func _filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
+    private func _filterChip(from data: MISOChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
         let selected = selected(tag: data.tag)
         switch data.layout {
         case let .text(text):
