@@ -1,24 +1,11 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOTokensSemantic
 import SwiftUI
 
-/// `ViewModifier` to draw borders on text fields in ``OUDSPinCodeInput`` component
+/// `ViewModifier` to draw borders on text fields in ``MISOPinCodeInput`` component
 struct PinCodeInputBorderModifier: ViewModifier {
 
     let isOutlined: Bool

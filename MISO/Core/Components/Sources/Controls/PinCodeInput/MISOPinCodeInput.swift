@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import SwiftUI
 
@@ -55,7 +42,7 @@ import SwiftUI
 ///
 /// ## Particular cases
 ///
-/// The ``OUDSPinCodeInput`` component supports autofill feature of values like OTP code.
+/// The ``MISOPinCodeInput`` component supports autofill feature of values like OTP code.
 /// For example if the user receives a message with inside a code the system can extract, the keyboard can suggest to the user to fill it.
 /// If the digits fits the component, it will be filled.
 /// If the digits are longer, they will be truncated.
@@ -68,7 +55,7 @@ import SwiftUI
 /// For some cases, on phones screens or with 8 boxes in iPhone, you may need to use a `ScrollView` to embed the component and let user move it.
 /// ```swift
 /// ScrollView(.horizontal) {
-///     OUDSPinCodeInput($value,
+///     MISOPinCodeInput($value,
 ///                      length: .eight,
 ///                      helperText: "Enter your secret code sent to your phone")
 /// }
@@ -78,7 +65,7 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
-/// The content of the fields is vocalized by Voice Over; the placeholders (defined in ``OUDSPinCodeInput/obfuscationCharacter`` and ``OUDSPinCodeInput/placeholderCharacter``)
+/// The content of the fields is vocalized by Voice Over; the placeholders (defined in ``MISOPinCodeInput/obfuscationCharacter`` and ``MISOPinCodeInput/placeholderCharacter``)
 /// are not vocalized to let users know what they wrote.
 ///
 /// The component gets only numeric values, not letters or symbols, only numbers.
@@ -109,41 +96,19 @@ import SwiftUI
 ///     @State private var pinCode: String = ""
 ///
 ///     // By default, the PIN code input displays only 6 boxes
-///     OUDSPinCodeInput($pinCode)
+///     MISOPinCodeInput($pinCode)
 ///
 ///     // It can have also up 4 or 8 boxes, with an helper text
-///     OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
+///     MISOPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
 ///
 ///     // The component can be used in error contexts
-///     OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
+///     MISOPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-pin-code-input)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A PIN code input component in light and dark modes with Orange theme](component_pinCodeInput_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A PIN code input  component in light and dark modes with Orange Compact theme](component_pinCodeInput_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A PIN code input  component in light and dark modes with Sosh theme](component_pinCodeInput_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A PIN code input component in light and dark modes with Wireframe theme](component_pinCodeInput_Wireframe)
 ///
 /// - Version: 1.3.0 (Figma component design version)
 /// - Since: 1.4.0
 @available(iOS 15, visionOS 1, *)
-public struct OUDSPinCodeInput: View {
+public struct MISOPinCodeInput: View {
 
     // MARK: - Constants
 
@@ -203,7 +168,7 @@ public struct OUDSPinCodeInput: View {
     /// Defines a PIN code imput component with several boxes to fill the code
     ///
     /// ```swift
-    ///     OUDSPinCodeInput($pinCode)
+    ///     MISOPinCodeInput($pinCode)
     /// ```
     ///
     /// - Parameters:
@@ -214,7 +179,7 @@ public struct OUDSPinCodeInput: View {
     ///   - status: Default set to *.enabled*, defines if there is an error context or not
     ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
     public init(_ value: Binding<String>,
-                length: OUDSPinCodeInput.Length = .six,
+                length: MISOPinCodeInput.Length = .six,
                 helperText: String? = nil,
                 isOutlined: Bool = false,
                 status: Self.Status = .enabled,
@@ -235,7 +200,7 @@ public struct OUDSPinCodeInput: View {
     /// Defines a PIN code imput component with several boxes to fill the code and an helper text in rich text
     ///
     /// ```swift
-    ///     OUDSPinCodeInput($pinCode,
+    ///     MISOPinCodeInput($pinCode,
     ///                      helperText: AttributedString(markdown: "Enter the **one-time code** sent to your device"))  // Manage in your side errors for init
     /// ```
     ///
@@ -247,7 +212,7 @@ public struct OUDSPinCodeInput: View {
     ///   - status: Default set to *.enabled*, defines if there is an error context or not
     ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
     public init(_ value: Binding<String>,
-                length: OUDSPinCodeInput.Length = .six,
+                length: MISOPinCodeInput.Length = .six,
                 helperText: AttributedString,
                 isOutlined: Bool = false,
                 status: Self.Status = .enabled,
@@ -264,7 +229,7 @@ public struct OUDSPinCodeInput: View {
     /// Defines a PIN code imput component with several boxes to fill the code, and an helper text in rich text.
     ///
     /// ```swift
-    ///     OUDSPinCodeInput($pinCode, helperText: LocalizedStringKey("pin_helper"), bundle: Bundle.module)
+    ///     MISOPinCodeInput($pinCode, helperText: LocalizedStringKey("pin_helper"), bundle: Bundle.module)
     /// ```
     ///
     /// - Parameters:
@@ -277,7 +242,7 @@ public struct OUDSPinCodeInput: View {
     ///   - status: Default set to *.enabled*, defines if there is an error context or not
     ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
     public init(_ value: Binding<String>,
-                length: OUDSPinCodeInput.Length = .six,
+                length: MISOPinCodeInput.Length = .six,
                 helperText key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,

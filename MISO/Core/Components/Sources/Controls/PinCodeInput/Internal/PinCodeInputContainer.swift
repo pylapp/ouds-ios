@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
 import MISOTokensSemantic
@@ -26,7 +13,7 @@ struct PinCodeInputContainer: View {
     /// The `Binding` exposing the final result when everything is written
     @Binding private var value: String
     /// Number of boxes / size of the code to write
-    private let length: OUDSPinCodeInput.Length
+    private let length: MISOPinCodeInput.Length
     /// If there is an error context about the value of the container
     private let isError: Bool
     /// If the outline layout must be applied on the container
@@ -47,7 +34,7 @@ struct PinCodeInputContainer: View {
     // MARK: - Initializer
 
     init(_ value: Binding<String>,
-         length: OUDSPinCodeInput.Length,
+         length: MISOPinCodeInput.Length,
          isError: Bool,
          isOutlined: Bool,
          autofocus: Bool)
@@ -61,7 +48,7 @@ struct PinCodeInputContainer: View {
         // Warning if value is longer than the expected length
         let rawValue = value.wrappedValue
         if rawValue.count > length.rawValue {
-            ML.warning("The given value '\(rawValue)' for OUDSPinCodeInput has \(rawValue.count) digits but length is \(length.rawValue). Extra digits will be ignored.")
+            ML.warning("The given value '\(rawValue)' for MISOPinCodeInput has \(rawValue.count) digits but length is \(length.rawValue). Extra digits will be ignored.")
         }
 
         // Pre-fill digits from value, filtered to digits only and clamped to length
@@ -183,8 +170,8 @@ struct PinCodeInputContainer: View {
     // MARK: - Digits fields
 
     /// Returns the string to display for a digit field:
-    /// - ``OUDSPinCodeInput/placeholderCharacter`` for placeholder on not focused input
-    /// - ``OUDSPinCodeInput/obfuscationCharacter`` for filled input
+    /// - ``MISOPinCodeInput/placeholderCharacter`` for placeholder on not focused input
+    /// - ``MISOPinCodeInput/obfuscationCharacter`` for filled input
     /// - empty string for input focused without text yet
     ///
     /// - Parameter index: The index of the field
@@ -194,10 +181,10 @@ struct PinCodeInputContainer: View {
             if focusedIndex == index {
                 ""
             } else {
-                OUDSPinCodeInput.placeholderCharacter
+                MISOPinCodeInput.placeholderCharacter
             }
         } else {
-            OUDSPinCodeInput.obfuscationCharacter
+            MISOPinCodeInput.obfuscationCharacter
         }
     }
 

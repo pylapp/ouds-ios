@@ -544,20 +544,20 @@ MISOPasswordInput(label: "Password", password: $password, prefix: "CORP-")
     }
 }
 
-The library provides an `OUDSPinCodeInput` to let user provides PIN code or OTP code with only digits.
+The library provides an `MISOPinCodeInput` to let user provides PIN code or OTP code with only digits.
 
 ```swift
 // The value with the code
 @State private var pinCode: String = ""
 
 // By default, the PIN code input displays only 6 boxes
-OUDSPinCodeInput($pinCode)
+MISOPinCodeInput($pinCode)
 
 // It can have also up 4 or 8 boxes, with an helper text
-OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
+MISOPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
 
 // The component can be used in error contexts
-OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
+MISOPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
 ```
 
 ### Text area

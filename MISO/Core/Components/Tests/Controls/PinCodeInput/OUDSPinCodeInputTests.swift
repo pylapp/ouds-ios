@@ -19,21 +19,21 @@
 import Testing
 import UIKit
 
-/// Tests some API for `OUDSPinCodeInput`
+/// Tests some API for `MISOPinCodeInput`
 @MainActor
 struct OUDSPinCodeInputTests {
 
     /// Test the raw values for the length of the component
     @Test func `pin code input length values`() {
-        #expect(OUDSPinCodeInput.Length.four.rawValue == 4)
-        #expect(OUDSPinCodeInput.Length.six.rawValue == 6)
-        #expect(OUDSPinCodeInput.Length.eight.rawValue == 8)
+        #expect(MISOPinCodeInput.Length.four.rawValue == 4)
+        #expect(MISOPinCodeInput.Length.six.rawValue == 6)
+        #expect(MISOPinCodeInput.Length.eight.rawValue == 8)
     }
 
     /// Test the string values used for obfuscation and placeholders
     @Test func `pin code input predefined symbols`() {
-        #expect(OUDSPinCodeInput.obfuscationCharacter == "●")
-        #expect(OUDSPinCodeInput.placeholderCharacter == "-")
+        #expect(MISOPinCodeInput.obfuscationCharacter == "●")
+        #expect(MISOPinCodeInput.placeholderCharacter == "-")
     }
 
     @Test func `text field delegate reports focus changes`() {

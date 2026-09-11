@@ -22,7 +22,7 @@ import MISOTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for input components like `OUDSPinCodeInput`
+/// Declares all component tokens for input components like `MISOPinCodeInput`
 /// Use for tokens providers like `OrangeThemePinCodeInputComponentTokensProvider`.
 ///
 /// - Since: 0.17.0
