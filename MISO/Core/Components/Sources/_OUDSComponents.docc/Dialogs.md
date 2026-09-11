@@ -28,25 +28,25 @@ Dialogs components are UI elements that display information, system feedback or 
     }
 }
 
-``OUDSAlertMessage`` is a UI element that displays system feedback, status changes or required action; throughout detailed, prominent, persistent and actionable communication. Alert message includes functional icon and semantic colour, and may include as well a close button and/or action link.
+``MISOAlertMessage`` is a UI element that displays system feedback, status changes or required action; throughout detailed, prominent, persistent and actionable communication. Alert message includes functional icon and semantic colour, and may include as well a close button and/or action link.
 
-``OUDSAlertMessage`` does not disappear automatically and remains visible until dismissed or resolved by the user.
+``MISOAlertMessage`` does not disappear automatically and remains visible until dismissed or resolved by the user.
 
 ```swift
     // A basic positive alert message with text and badge
-    OUDSAlertMessage(label: "Label")
+    MISOAlertMessage(label: "Label")
 
     // A more complex alert message for warning status with a description and a close action
     // to dismiss the message.
-    OUDSAlertMessage(label: "Warning", status: .warning, description: "Some details about the warning") {
+    MISOAlertMessage(label: "Warning", status: .warning, description: "Some details about the warning") {
         // Do some tasks here to dismiss the alert message when clicked
     }
         
     // Add a custom icon for accent and neutral status
     // with original rendering mode (to avoid tints) or not.
     // By default, tinted, template mode.
-    OUDSAlertMessage(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_heart"))))
-    OUDSAlertMessage(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original)))
+    MISOAlertMessage(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_heart"))))
+    MISOAlertMessage(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original)))
 ```
 
 ### Inline Alert
@@ -66,19 +66,19 @@ Dialogs components are UI elements that display information, system feedback or 
     }
 }
 
-``OUDSInlineAlert`` is a lightweight UI element, placed in the content flow, that displays information, system feedback, status changes throughout short, prominent, 
+``MISOInlineAlert`` is a lightweight UI element, placed in the content flow, that displays information, system feedback, status changes throughout short, prominent, 
 persistent and non actionable communication. 
-``OUDSInlineAlert`` includes functional icon and semantic colour, and does not include a close button and/or action link. 
+``MISOInlineAlert`` includes functional icon and semantic colour, and does not include a close button and/or action link. 
 Inline alert does not disappear and remains visible.
 
 ```swift
     // An inline alert with a label and the default neutral status
-    OUDSInlineAlert(label: "Label")
+    MISOInlineAlert(label: "Label")
 
     // An inline alert
-    OUDSInlineAlert(label: "Warning", status: .warning)
+    MISOInlineAlert(label: "Warning", status: .warning)
 
     // Add a custom icon for accent and neutral status
-    OUDSInlineAlert(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_heart"))))
-    OUDSInlineAlert(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_heart"))))
+    MISOInlineAlert(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_heart"))))
+    MISOInlineAlert(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_heart"))))
 ```

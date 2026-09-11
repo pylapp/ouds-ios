@@ -114,7 +114,7 @@ The components tokens are wrapped in tokens provider accessible through the them
 Components tokens provider     | Target component                          
 ------------------------------ | ------------------------------------- 
 accordion / accordionFaq       | For accordions components
-alert                          | For alert mesdsages and inline alert components like `OUDSAlertMessage` and `OUDSInlineAlert`
+alert                          | For alert mesdsages and inline alert components like `MISOAlertMessage` and `MISOInlineAlert`
 bar                            | For bars components like bottom and navigation bars
 badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
 button                         | For buttons like `MISOButton` 

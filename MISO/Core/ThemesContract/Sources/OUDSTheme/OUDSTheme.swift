@@ -103,10 +103,10 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to alert componens
     public let accordion: AllAccordionComponentTokensProvider
 
-    /// All components tokens related to alert component like `OUDSAlertMessage` and `OUDSInlineAlert`
+    /// All components tokens related to alert component like `MISOAlertMessage` and `MISOInlineAlert`
     public let alert: AllAlertComponentTokensProvider
 
-    /// All components tokens related only to `OUDSAlertMessage`
+    /// All components tokens related only to `MISOAlertMessage`
     public let alertMessage: AllAlertMessageComponentTokensProvider
 
     /// All components tokens related to bar components

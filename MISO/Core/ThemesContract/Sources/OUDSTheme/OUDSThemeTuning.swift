@@ -41,7 +41,7 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// must have always rounded corners or not
     public let hasRoundedTextInputs: Bool
 
-    /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
+    /// If components like alert message (e.g. `MISOAlertMessage`) must have always rounded corners or not
     public let hasRoundedAlertMessages: Bool
 
     /// If components like progress indicators (e.g. `MISOCircularProgressIndicator` or `OUDSLinearProgressIndicator`) must have always rounded corners or not

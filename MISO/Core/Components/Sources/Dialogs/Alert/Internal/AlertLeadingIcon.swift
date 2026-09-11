@@ -1,35 +1,23 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - Alert Leading Icon
+
 struct AlertLeadingIcon: View {
 
     // MARK: Properties
 
-    private let status: OUDSAlertStatus
+    private let status: MISOAlertStatus
 
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
     // MARK: Initilizer
 
-    init?(status: OUDSAlertStatus) {
+    init?(status: MISOAlertStatus) {
         if status.hasIcon {
             self.status = status
         } else {
@@ -67,9 +55,9 @@ struct AlertLeadingIcon: View {
     }
 }
 
-// MARK: - Extension of OUDS Alert Status
+// MARK: - Extension of MISO Alert Status
 
-extension OUDSAlertStatus {
+extension MISOAlertStatus {
     var hasIcon: Bool {
         switch self {
         case let .neutral(icon), let .accent(icon):

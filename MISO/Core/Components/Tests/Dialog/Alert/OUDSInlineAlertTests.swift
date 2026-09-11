@@ -18,14 +18,14 @@
 import SwiftUI
 import Testing
 
-/// Tests some values for `OUDSInlineAlert` component.
+/// Tests some values for `MISOInlineAlert` component.
 struct OUDSInlineAlertTests {
 
     // MARK: - Default status
 
     @Test("Inline alert default status must be neutral with an icon")
     @MainActor func defaultStatusIsNeutralWithIcon() {
-        let neutralWithIcon = OUDSAlertStatus.neutral(image: MISOImage(name: "ic_heart"))
+        let neutralWithIcon = MISOAlertStatus.neutral(image: MISOImage(name: "ic_heart"))
         #expect(neutralWithIcon.hasIcon, "Neutral status with a non-nil icon must report hasIcon as true")
     }
 
@@ -33,47 +33,47 @@ struct OUDSInlineAlertTests {
 
     @Test("Functional status positive must always have an icon")
     func positiveStatusHasIcon() {
-        #expect(OUDSAlertStatus.positive.hasIcon)
+        #expect(MISOAlertStatus.positive.hasIcon)
     }
 
     @Test("Functional status info must always have an icon")
     func infoStatusHasIcon() {
-        #expect(OUDSAlertStatus.info.hasIcon)
+        #expect(MISOAlertStatus.info.hasIcon)
     }
 
     @Test("Functional status warning must always have an icon")
     func warningStatusHasIcon() {
-        #expect(OUDSAlertStatus.warning.hasIcon)
+        #expect(MISOAlertStatus.warning.hasIcon)
     }
 
     @Test("Functional status negative must always have an icon")
     func negativeStatusHasIcon() {
-        #expect(OUDSAlertStatus.negative.hasIcon)
+        #expect(MISOAlertStatus.negative.hasIcon)
     }
 
     // MARK: - Failable icon rendering for neutral and accent
 
     @Test("Neutral status without icon must not render a leading icon")
     func neutralStatusWithoutIconHasNoIcon() {
-        let status = OUDSAlertStatus.neutral(image: nil)
+        let status = MISOAlertStatus.neutral(image: nil)
         #expect(!status.hasIcon, "Neutral status with nil icon must report hasIcon as false, preventing icon rendering")
     }
 
     @MainActor @Test("Neutral status with icon must render a leading icon")
     func neutralStatusWithIconHasIcon() {
-        let status = OUDSAlertStatus.neutral(image: MISOImage(name: "ic_heart"))
+        let status = MISOAlertStatus.neutral(image: MISOImage(name: "ic_heart"))
         #expect(status.hasIcon, "Neutral status with non-nil icon must report hasIcon as true, allowing icon rendering")
     }
 
     @Test("Accent status without icon must not render a leading icon")
     func accentStatusWithoutIconHasNoIcon() {
-        let status = OUDSAlertStatus.accent(image: nil)
+        let status = MISOAlertStatus.accent(image: nil)
         #expect(!status.hasIcon, "Accent status with nil icon must report hasIcon as false, preventing icon rendering")
     }
 
     @MainActor @Test("Accent status with icon must render a leading icon")
     func accentStatusWithIconHasIcon() {
-        let status = OUDSAlertStatus.accent(image: MISOImage(name: "ic_heart"))
+        let status = MISOAlertStatus.accent(image: MISOImage(name: "ic_heart"))
         #expect(status.hasIcon, "Accent status with non-nil icon must report hasIcon as true, allowing icon rendering")
     }
 }

@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOTokensSemantic
 import SwiftUI
@@ -26,32 +13,32 @@ import SwiftUI
 ///
 /// ```swift
 ///         // A basic positive alert message with text and description
-///         OUDSAlertMessage(label: "Label", description: "You should read this text")
+///         MISOAlertMessage(label: "Label", description: "You should read this text")
 ///         // From a localizable in a bundle
-///         OUDSAlertMessage(LocalizedStringKey("label_wording"), bundle: Bundle.module)
+///         MISOAlertMessage(LocalizedStringKey("label_wording"), bundle: Bundle.module)
 ///
 ///         // With a rich text for the description (e.g. markdown here, do not forget to manage the errors)
 ///         let richDescription = AttributedString(markdown: "You **must read this text**")
-///         OUDSAlertMessage(label: "Label", description: richDescription)
+///         MISOAlertMessage(label: "Label", description: richDescription)
 ///
 ///         // A more complex alert message for warning status with a description and a close action
 ///         // to dismiss the message.
-///         OUDSAlertMessage(label: "Warning", status: .warning, description: "Some details about the warning") {
+///         MISOAlertMessage(label: "Warning", status: .warning, description: "Some details about the warning") {
 ///               // Do some stuff here to dismiss the alert message when clicked
 ///         }
 ///
 ///         // Add a custom icon for accent and neutral status
 ///         // with original rendering mode (to avoid tints) or not.
 ///         // By default, tinted, template mode.
-///         OUDSAlertMessage(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_heart"))))
-///         OUDSAlertMessage(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original)))
+///         MISOAlertMessage(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_heart"))))
+///         MISOAlertMessage(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original)))
 ///
 ///         // Add a custom action (i.e Link) at bottom (could also at top trailing position)
 ///         @Environment(\.openURL) private var openUrl
-///         let link = OUDSAlertMessage.Link(text: "Action", position: .bottom) {
+///         let link = MISOAlertMessage.Link(text: "Action", position: .bottom) {
 ///            openUrl.callAsFunction(url)
 ///         }
-///         OUDSAlertMessage(label: "Label", link: link)
+///         MISOAlertMessage(label: "Label", link: link)
 /// ```
 ///
 /// ## Rich text
@@ -68,37 +55,15 @@ import SwiftUI
 ///
 /// Always check the results of rich text mode with high contrast, light and dark modes, and Voice Over vocalization.
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-alert-message)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![An alert message component in light and dark modes with Orange theme](component_alertMessage_Orange)
-///
-/// ### Orange Compact
-///
-/// ![An alert message component in light and dark modes with Orange Compact theme](component_alertMessage_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![An alert message component in light and dark modes with Sosh theme](component_alertMessage_Sosh)
-///
-/// ### Wireframe
-///
-/// ![An alert message component in light and dark modes with Wireframe theme](component_alertMessage_Wireframe)
-///
 /// - Version: 1.1.1 (Figma component design version)
 /// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, tvOS 16, *)
-public struct OUDSAlertMessage: View {
+public struct MISOAlertMessage: View {
 
     // MARK: Stored properties
 
     private let text: String
-    private let status: OUDSAlertStatus
+    private let status: MISOAlertStatus
     private let description: TextualContent?
     private let bulletList: [TextualContent]
     private let link: Self.Link?
@@ -115,10 +80,10 @@ public struct OUDSAlertMessage: View {
     // MARK: - Link
 
     // swiftlint:disable nesting
-    /// Used to describe the link display in the `OUDSAlertMessage`
+    /// Used to describe the link display in the `MISOAlertMessage`
     @frozen public struct Link {
 
-        /// The position of an `OUDSAlertMessage.Link`in the alert message.
+        /// The position of an `MISOAlertMessage.Link`in the alert message.
         @frozen public enum Position {
             /// The link is displayed at the bottom of the alert message below the main message content.
             /// Recommended for mobile or narrow layouts, or when the text spans multiple lines. This vertical structure improves clarity and ensures the action remains
@@ -138,11 +103,11 @@ public struct OUDSAlertMessage: View {
         ///
         /// - Parameters:
         ///   - text: The text (could be the url)
-        ///   - position: `OUDSAlertMessage.Link.Position` of the link within the alert message.
+        ///   - position: `MISOAlertMessage.Link.Position` of the link within the alert message.
         ///   - action: The action to process when clicked
         public init(text: String, position: Position = .bottom, action: @escaping () -> Void) {
             if text.isEmpty {
-                ML.warning("The link text for the OUDSAlertMessage is empty, avoid using it in that case.")
+                ML.warning("The link text for the MISOAlertMessage is empty, avoid using it in that case.")
             }
             self.text = text
             self.action = action
@@ -162,12 +127,12 @@ public struct OUDSAlertMessage: View {
     /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///
     /// ```swift
-    ///     OUDSAlertMessage(label: "Success! Your form was submitted.", status: .positive)
+    ///     MISOAlertMessage(label: "Success! Your form was submitted.", status: .positive)
     /// ```
     ///
     /// - Parameters:
     ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
-    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
+    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``MISOAlertStatus``)
     ///   - description: An optional supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
     ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
     ///   - bulletList: An optional list of bullet points to be displayed in the alert message following the label or the optional `description`.
@@ -177,7 +142,7 @@ public struct OUDSAlertMessage: View {
     ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
     ///   user is aware of important information; others can be closed to reduce visual clutter.
     public init(label: String,
-                status: OUDSAlertStatus = .positive,
+                status: MISOAlertStatus = .positive,
                 description: String? = nil,
                 bulletList: [String] = [],
                 link: Self.Link? = nil,
@@ -185,7 +150,7 @@ public struct OUDSAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            ML.warning("The label for the OUDSAlertMessage must not be empty!")
+            ML.warning("The label for the MISOAlertMessage must not be empty!")
         }
         self.status = status
         self.description = if let description {
@@ -203,14 +168,14 @@ public struct OUDSAlertMessage: View {
     /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///
     /// ```swift
-    ///     OUDSAlertMessage(label: "Success! Your form was submitted.",
+    ///     MISOAlertMessage(label: "Success! Your form was submitted.",
     ///                      status: .positive,
     ///                      description: AttributedString(markdown: "This is **an important notice**")) // Manage in your side errors for init
     /// ```
     ///
     /// - Parameters:
     ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
-    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
+    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``MISOAlertStatus``)
     ///   - description: A supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
     ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
     ///   - bulletList: An optional list of bullet points to be displayed in the alert message following the label or the optional `description`.
@@ -220,7 +185,7 @@ public struct OUDSAlertMessage: View {
     ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
     ///   user is aware of important information; others can be closed to reduce visual clutter.
     public init(label: String,
-                status: OUDSAlertStatus = .positive,
+                status: MISOAlertStatus = .positive,
                 description: AttributedString,
                 bulletList: [String] = [],
                 link: Self.Link? = nil,
@@ -228,7 +193,7 @@ public struct OUDSAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            ML.warning("The label for the OUDSAlertMessage must not be empty!")
+            ML.warning("The label for the MISOAlertMessage must not be empty!")
         }
         self.status = status
         self.description = .attributed(description)
@@ -242,7 +207,7 @@ public struct OUDSAlertMessage: View {
     /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///
     /// ```swift
-    ///     OUDSAlertMessage(label: "Success! Your form was submitted.",
+    ///     MISOAlertMessage(label: "Success! Your form was submitted.",
     ///                      status: .positive,
     ///                      bulletList: [
     ///                         AttributedString("First thing"),
@@ -252,7 +217,7 @@ public struct OUDSAlertMessage: View {
     ///
     /// - Parameters:
     ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
-    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
+    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``MISOAlertStatus``)
     ///   - description: An optional supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
     ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
     ///   - bulletList: An list of bullet points to be displayed in the alert message following the label or the optional `description`.
@@ -262,7 +227,7 @@ public struct OUDSAlertMessage: View {
     ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
     ///   user is aware of important information; others can be closed to reduce visual clutter.
     public init(label: String,
-                status: OUDSAlertStatus = .positive,
+                status: MISOAlertStatus = .positive,
                 description: String? = nil,
                 bulletList: [AttributedString],
                 link: Self.Link? = nil,
@@ -270,7 +235,7 @@ public struct OUDSAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            ML.warning("The label for the OUDSAlertMessage must not be empty!")
+            ML.warning("The label for the MISOAlertMessage must not be empty!")
         }
         self.status = status
         self.description = if let description {
@@ -288,7 +253,7 @@ public struct OUDSAlertMessage: View {
     /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///
     /// ```swift
-    ///     OUDSAlertMessage(label: "Success! Your form was submitted.",
+    ///     MISOAlertMessage(label: "Success! Your form was submitted.",
     ///                      status: .positive,
     ///                      description: AttributedString(markdown: "This is **an important notice**") // Manage in your side errors for init
     ///                      bulletList: [
@@ -299,7 +264,7 @@ public struct OUDSAlertMessage: View {
     ///
     /// - Parameters:
     ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
-    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
+    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``MISOAlertStatus``)
     ///   - description: An optional supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
     ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
     ///   - bulletList: An list of bullet points to be displayed in the alert message following the label or the optional `description`.
@@ -309,7 +274,7 @@ public struct OUDSAlertMessage: View {
     ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
     ///   user is aware of important information; others can be closed to reduce visual clutter.
     public init(label: String,
-                status: OUDSAlertStatus = .positive,
+                status: MISOAlertStatus = .positive,
                 description: AttributedString,
                 bulletList: [AttributedString],
                 link: Self.Link? = nil,
@@ -317,7 +282,7 @@ public struct OUDSAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            ML.warning("The label for the OUDSAlertMessage must not be empty!")
+            ML.warning("The label for the MISOAlertMessage must not be empty!")
         }
         self.status = status
         self.description = .attributed(description)
@@ -329,7 +294,7 @@ public struct OUDSAlertMessage: View {
     /// Creates an alert message with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSAlertMessage(LocalizedStringKey("error_message"), bundle: Bundle.module, status: .negative)
+    ///     MISOAlertMessage(LocalizedStringKey("error_message"), bundle: Bundle.module, status: .negative)
     /// ```
     ///
     /// - Parameters:
@@ -344,7 +309,7 @@ public struct OUDSAlertMessage: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                status: OUDSAlertStatus = .positive,
+                status: MISOAlertStatus = .positive,
                 description: String? = nil,
                 bulletList: [String] = [],
                 link: Self.Link? = nil,
@@ -361,7 +326,7 @@ public struct OUDSAlertMessage: View {
     /// Creates an alert message with a localized label, looking up the key in the given bundle, and a rich text description.
     ///
     /// ```swift
-    ///     OUDSAlertMessage(LocalizedStringKey("error_message"),
+    ///     MISOAlertMessage(LocalizedStringKey("error_message"),
     ///                      bundle: Bundle.module,
     ///                      status: .negative,
     ///                      description: AttributedString(markdown: "This is **an important notice**")) // Manage in your side errors for init
@@ -379,7 +344,7 @@ public struct OUDSAlertMessage: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                status: OUDSAlertStatus = .positive,
+                status: MISOAlertStatus = .positive,
                 description: AttributedString,
                 bulletList: [String] = [],
                 link: Self.Link? = nil,
@@ -397,7 +362,7 @@ public struct OUDSAlertMessage: View {
     /// Uses rich text for the bullet list.
     ///
     /// ```swift
-    ///     OUDSAlertMessage(LocalizedStringKey("error_message"),
+    ///     MISOAlertMessage(LocalizedStringKey("error_message"),
     ///                      bundle: Bundle.module,
     ///                      status: .negative,
     ///                      bulletList: [
@@ -418,7 +383,7 @@ public struct OUDSAlertMessage: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                status: OUDSAlertStatus = .positive,
+                status: MISOAlertStatus = .positive,
                 description: String? = nil,
                 bulletList: [AttributedString],
                 link: Self.Link? = nil,
@@ -436,7 +401,7 @@ public struct OUDSAlertMessage: View {
     /// Uses rich text for the bullet list.
     ///
     /// ```swift
-    ///     OUDSAlertMessage(LocalizedStringKey("error_message"),
+    ///     MISOAlertMessage(LocalizedStringKey("error_message"),
     ///                      bundle: Bundle.module,
     ///                      status: .negative,
     ///                      description: AttributedString(markdown: "This is **an important notice**"), // Manage in your side errors for init
@@ -458,7 +423,7 @@ public struct OUDSAlertMessage: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                status: OUDSAlertStatus = .positive,
+                status: MISOAlertStatus = .positive,
                 description: AttributedString,
                 bulletList: [AttributedString],
                 link: Self.Link? = nil,

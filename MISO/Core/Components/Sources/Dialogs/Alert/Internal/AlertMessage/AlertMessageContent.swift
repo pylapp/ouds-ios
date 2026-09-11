@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOTokensSemantic
 import SwiftUI
 
@@ -22,10 +9,10 @@ struct AlertMessageContent: View {
     // MARK: - Properties
 
     let text: String
-    let status: OUDSAlertStatus
+    let status: MISOAlertStatus
     let description: TextualContent?
     let bulletList: [TextualContent]
-    let link: OUDSAlertMessage.Link?
+    let link: MISOAlertMessage.Link?
     let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
@@ -57,7 +44,7 @@ struct AlertMessageContent: View {
             }
             .accessibilityElement(children: .combine)
             .accessibilityLabel(accessibilityLabel)
-            .accessibilitySortPriority(OUDSAlertMessage.textsAccessibilityPriority)
+            .accessibilitySortPriority(MISOAlertMessage.textsAccessibilityPriority)
             #if canImport(UIKit)
                 .modifier(AlertMessageFKACustomActionsModifier(link: link, onClose: onClose))
             #endif
@@ -65,7 +52,7 @@ struct AlertMessageContent: View {
             // Action
             if let link, self.link?.position == .bottom {
                 OUDSLink(text: link.text, size: .default, action: link.action)
-                    .accessibilitySortPriority(OUDSAlertMessage.actionLinkAccessibilityPriority)
+                    .accessibilitySortPriority(MISOAlertMessage.actionLinkAccessibilityPriority)
             }
         }
         .padding(.vertical, theme.alert.spacePaddingBlock)

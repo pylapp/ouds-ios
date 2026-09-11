@@ -1,24 +1,11 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 /// The status of the alerts.
-/// ``OUDSAlertMessage`` background color and its icon color are based on this status.
-/// ``OUDSInlineAlert`` icon and text color are based on this status.
+/// ``MISOAlertMessage`` background color and its icon color are based on this status.
+/// ``MISOInlineAlert`` icon and text color are based on this status.
 ///
 /// There are two types of statuses:
 ///  - Non-functional statuses used for informational or decorative alert messages.
@@ -28,7 +15,7 @@ import SwiftUI
 ///  Each variant conveys a clear semantic meaning and must always be paired with its dedicated functional icon to ensure clarity and accessibility.
 ///  Use functional alerts to inform user about state changes, confirmations, or issues that are directly connected to system logic or user actions.
 ///  These messages carry functional meaning and help guide user response or acknowledgment.
-@frozen public enum OUDSAlertStatus {
+@frozen public enum MISOAlertStatus {
 
     /// Neutral status can be used as a generic informative alert without semantic meaning or colour association.
     /// Suitable for a wide range of contexts — such as tips, general information, or descriptive labels — where

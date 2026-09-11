@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOTokensSemantic
 import SwiftUI
@@ -26,49 +13,27 @@ import SwiftUI
 ///
 /// ```swift
 ///     // A inline alert with a label and the default neutral status
-///     OUDSInlineAlert(label: "Label")
+///     MISOInlineAlert(label: "Label")
 ///     // From a localizable in a bundle
-///     OUDSInlineAlert(LocalizedStringKey("label_wording"), bundle: Bundle.module)
+///     MISOInlineAlert(LocalizedStringKey("label_wording"), bundle: Bundle.module)
 ///
 ///     // An inline alert
-///     OUDSInlineAlert(label: "Warning", status: .warning)
+///     MISOInlineAlert(label: "Warning", status: .warning)
 ///
 ///     // Add a custom icon for accent and neutral status
-///     OUDSInlineAlert(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_heart"))))
-///     OUDSInlineAlert(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_heart"))))
+///     MISOInlineAlert(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_heart"))))
+///     MISOInlineAlert(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_heart"))))
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-alert-message)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![An inline alert component in light and dark modes with Orange theme](component_inlineAlert_Orange)
-///
-/// ### Orange Compact
-///
-/// ![An inline alert component in light and dark modes with Orange Compact theme](component_inlineAlert_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![An inline alert component in light and dark modes with Sosh theme](component_inlineAlert_Sosh)
-///
-/// ### Wireframe
-///
-/// ![An inline alertcomponent in light and dark modes with Wireframe theme](component_inlineAlert_Wireframe)
 ///
 /// - Version: 1.1.1 (Figma component design version)
 /// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSInlineAlert: View {
+public struct MISOInlineAlert: View {
 
     // MARK: Stored properties
 
     private let text: String
-    private let status: OUDSAlertStatus
+    private let status: MISOAlertStatus
 
     @Environment(\.theme) private var theme
 
@@ -79,16 +44,16 @@ public struct OUDSInlineAlert: View {
     /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///
     /// ```swift
-    ///     OUDSInlineAlert(label: "Your session will expire soon.", status: .warning)
+    ///     MISOInlineAlert(label: "Your session will expire soon.", status: .warning)
     /// ```
     ///
     /// - Parameters:
     ///   - label: Label displayed in the inline alert. Main message that should be short, clear, and readable at a glance.
     ///   - status: The status of the inline alert. Its text and its icon color are based on this status. Default set to *neutral* without icon.
-    public init(label: String, status: OUDSAlertStatus = .neutral()) {
+    public init(label: String, status: MISOAlertStatus = .neutral()) {
         text = label
         if text.isEmpty {
-            ML.warning("The label for the OUDSInlineAlert must not be empty!")
+            ML.warning("The label for the MISOInlineAlert must not be empty!")
         }
         self.status = status
     }
@@ -96,7 +61,7 @@ public struct OUDSInlineAlert: View {
     /// Creates an inline alert with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSInlineAlert(LocalizedStringKey("info_message"), bundle: Bundle.module, status: .info)
+    ///     MISOInlineAlert(LocalizedStringKey("info_message"), bundle: Bundle.module, status: .info)
     /// ```
     ///
     /// - Parameters:
@@ -107,7 +72,7 @@ public struct OUDSInlineAlert: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                status: OUDSAlertStatus = .neutral())
+                status: MISOAlertStatus = .neutral())
     {
         self.init(label: key.resolved(tableName: tableName, bundle: bundle), status: status)
     }

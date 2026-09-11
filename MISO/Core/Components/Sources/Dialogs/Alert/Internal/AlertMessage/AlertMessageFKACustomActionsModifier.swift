@@ -1,25 +1,12 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if canImport(UIKit)
 import MISOFoundations
 import SwiftUI
 
 /// Adds accessibility custom actions for the action link and the close button onto the combined text element.
-/// Trick to let `OUDSAlertMessage` link and close button elements be focusable in *Full Keyboard Access*.
+/// Trick to let `MISOAlertMessage` link and close button elements be focusable in *Full Keyboard Access*.
 /// Otherwise these elements can be reached from outside the component from elements in the same Y axis (duh!), and navigation order won't be acceptable.
 /// If *Voice Over* enabled, do not add the actions because link and close button are already focusable with *Voice Over* and actions are not usable.
 struct AlertMessageFKACustomActionsModifier: ViewModifier {
@@ -27,7 +14,7 @@ struct AlertMessageFKACustomActionsModifier: ViewModifier {
     // People needing both Full Keyboard Access and Voice Over will have "Voice Over enabled" behavior.
     // See original https://github.com/Orange-OpenSource/ouds-ios/issues/1564
 
-    let link: OUDSAlertMessage.Link?
+    let link: MISOAlertMessage.Link?
     let onClose: (() -> Void)?
 
     @Environment(\.accessibilityVoiceOverEnabled) private var isVoiceOverEnabled

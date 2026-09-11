@@ -21,7 +21,7 @@ import MISOTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for alert components like `OUDSAlertMessage`
+/// Declares all component tokens for alert components like `MISOAlertMessage`
 /// Used for tokens providers like `OrangeThemeAlertMessageComponentTokensProvider` etc.
 ///
 /// - Since: 3.0.0

@@ -19,7 +19,7 @@ import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of alert** for *alert* objects like `OUDSAlertMessage`.
+/// A class which wraps all **component  tokens of alert** for *alert* objects like `MISOAlertMessage`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllAlertMessageComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
@@ -40,7 +40,7 @@ final class WireframeThemeAlertMessageComponentTokensProvider: AllAlertMessageCo
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSAlertMessage`
+    /// Defines a provider of component tokens dedicated to `MISOAlertMessage`
     /// - Parameters:
     ///    - borders: Provider for border semantic tokens, if nil, default one will be used ( ``WireframeThemeBorderSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
