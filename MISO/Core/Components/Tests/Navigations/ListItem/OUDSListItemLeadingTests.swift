@@ -18,13 +18,13 @@ import MISOComponents
 import SwiftUI
 import Testing
 
-/// Tests the `OUDSListItemLeading` cases.
+/// Tests the `MISOListItemLeading` cases.
 struct OUDSListItemLeadingTests {
 
     // MARK: - .custom builds a .slot case
 
     @Test func customFactoryBuildsSlotCase() {
-        let leading = OUDSListItemLeading.slot { Text("Gauge") }
+        let leading = MISOListItemLeading.slot { Text("Gauge") }
         guard case .slot = leading else {
             Issue.record("Expected .slot case")
             return

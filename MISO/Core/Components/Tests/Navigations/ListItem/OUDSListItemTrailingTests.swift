@@ -18,13 +18,13 @@ import MISOComponents
 import SwiftUI
 import Testing
 
-/// Tests the `OUDSListItemTrailing` cases.
+/// Tests the `MISOListItemTrailing` cases.
 struct OUDSListItemTrailingTests {
 
     // MARK: - .custom builds a .slot case
 
     @Test func customFactoryBuildsSlotCase() {
-        let trailing = OUDSListItemTrailing.slot { Text("Gauge") }
+        let trailing = MISOListItemTrailing.slot { Text("Gauge") }
         guard case .slot = trailing else {
             Issue.record("Expected .slot case")
             return

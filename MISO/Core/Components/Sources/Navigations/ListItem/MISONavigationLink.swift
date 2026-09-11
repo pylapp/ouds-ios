@@ -1,31 +1,18 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(tvOS) && !os(watchOS) && !os(visionOS)
 // Component available only for iOS, but macOS not excluded to allow documentation build
 import SwiftUI
 
-/// Uses an ``OUDSNavigationListItem``  object backed by a `NavigationLink`
+/// Uses an ``MISONavigationListItem``  object backed by a `NavigationLink`
 /// so as to use easily the navigation list item from OUDS inside the navigation of the app.
 ///
 /// ## Code samples
 ///
 /// ```swift
-///     // Title will be used both for OUDSNavigationListItem label and navigation title
-///     OUDSNavigationLink(title: "Title of my destination view") {
+///     // Title will be used both for MISONavigationListItem label and navigation title
+///     MISONavigationLink(title: "Title of my destination view") {
 ///         // The view to display when the user taps on the item
 ///         MyDestinationView()
 ///     }
@@ -33,21 +20,21 @@ import SwiftUI
 ///
 /// - Since: 3.0.0
 @available(iOS 15, *)
-public struct OUDSNavigationLink<Destination: View>: View {
+public struct MISONavigationLink<Destination: View>: View {
 
     // MARK: - Properties
 
-    /// The label of the ``OUDSNavigationListItem``, used then as navigation title
+    /// The label of the ``MISONavigationListItem``, used then as navigation title
     private let title: String
 
     /// Set to `true`  if the label must be bold, false otherwise
     private let hasBoldLabel: Bool
 
-    /// The type of indicator for the ``OUDSNavigationListItem``, e.g. `.next` or `.previous` to define the chevron.
-    private let indicatorType: OUDSNavigationListItemIndicatorType
+    /// The type of indicator for the ``MISONavigationListItem``, e.g. `.next` or `.previous` to define the chevron.
+    private let indicatorType: MISONavigationListItemIndicatorType
 
-    /// The style to apply to the ``OUDSNavigationListItem``
-    private let style: OUDSListItemContentStyle
+    /// The style to apply to the ``MISONavigationListItem``
+    private let style: MISOListItemContentStyle
 
     /// The ``SwiftUICore/View`` to display when the user taps on the element
     @ViewBuilder private let destination: () -> Destination
@@ -57,19 +44,19 @@ public struct OUDSNavigationLink<Destination: View>: View {
 
     // MARK: - Initializers
 
-    /// Defines an ``OUDSNavigationListItem`` backed by a `NavigationLink`
+    /// Defines an ``MISONavigationListItem`` backed by a `NavigationLink`
     /// with a `Destination` ``SwiftUICore/View``  to display whe the user taps.
     ///
     /// - Parameters:
-    ///    - title: The label for the ``OUDSNavigationListItem``
+    ///    - title: The label for the ``MISONavigationListItem``
     ///    - hasBoldLabel: Flag to rise if title must be bold or not, default set to *false*
     ///    - indicatorType: The type of link to apply, default set to `.next`
     ///    - style: The type of style to apply, default set to `.item(divider: false, background: false)`
     ///    - destination: A closure providing the view to display when the user taps the item.
     public init(title: String,
                 hasBoldLabel: Bool = false,
-                indicatorType: OUDSNavigationListItemIndicatorType = .next,
-                style: OUDSListItemContentStyle = .item(divider: true, background: false),
+                indicatorType: MISONavigationListItemIndicatorType = .next,
+                style: MISOListItemContentStyle = .item(divider: true, background: false),
                 destination: @escaping () -> Destination)
     {
         self.title = title
@@ -80,7 +67,7 @@ public struct OUDSNavigationLink<Destination: View>: View {
         isActive = false
     }
 
-    /// Defines an ``OUDSNavigationListItem`` backed by a `NavigationLink`
+    /// Defines an ``MISONavigationListItem`` backed by a `NavigationLink`
     /// with a `Destination` ``SwiftUICore/View``  to display whe the user taps.
     ///
     /// - Parameters:
@@ -95,8 +82,8 @@ public struct OUDSNavigationLink<Destination: View>: View {
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 hasBoldLabel: Bool = false,
-                indicatorType: OUDSNavigationListItemIndicatorType = .next,
-                style: OUDSListItemContentStyle = .item(divider: true, background: false),
+                indicatorType: MISONavigationListItemIndicatorType = .next,
+                style: MISOListItemContentStyle = .item(divider: true, background: false),
                 destination: @escaping () -> Destination)
     {
         self.init(title: key.resolved(tableName: tableName, bundle: bundle),
@@ -109,10 +96,10 @@ public struct OUDSNavigationLink<Destination: View>: View {
     // MARK: - Body
 
     public var body: some View {
-        OUDSNavigationListItem(data: .init(label: title, hasBoldLabel: hasBoldLabel), indicatorType: indicatorType) {
+        MISONavigationListItem(data: .init(label: title, hasBoldLabel: hasBoldLabel), indicatorType: indicatorType) {
             isActive = true
         }
-        .oudsListContentStyle(style)
+        .misoListContentStyle(style)
         .background {
             NavigationLink(destination: destination().navigationTitle(title), isActive: $isActive) {
                 EmptyView()

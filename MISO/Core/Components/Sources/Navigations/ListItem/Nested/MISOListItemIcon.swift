@@ -1,27 +1,14 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOThemesContract
 import MISOTokensSemantic
 import SwiftUI
 
 /// An icon element that can be used at the leading or trailing position of a list item
-/// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
+/// such as ``MISOStaticListItem`` or ``MISONavigationListItem``.
 ///
-/// ``OUDSListItemIcon`` displays a status icon (info, warning, positive, negative) with a predefined asset,
+/// ``MISOListItemIcon`` displays a status icon (info, warning, positive, negative) with a predefined asset,
 /// or a custom neutral icon from a provided image. Each icon type has a semantic color applied automatically
 /// based on the current theme.
 ///
@@ -45,43 +32,43 @@ import SwiftUI
 /// - **`.large`**: The largest size, corresponding to the theme's `controlItem.sizeAssetLarge` token.
 ///
 /// **Note:** When the icon is embedded in a list item with small size
-/// (via `SwiftUI/View/oudsListItemSize(_:)`), the icon is always rendered at its smallest size
+/// (via `SwiftUI/View/misoListItemSize(_:)`), the icon is always rendered at its smallest size
 /// regardless of the `size` parameter.
 ///
 /// ## Code samples
 ///
 /// ```swift
 ///     // Info icon with medium size (default)
-///     OUDSListItemIcon(status: .info, description: "Something new")
+///     MISOListItemIcon(status: .info, description: "Something new")
 ///
 ///     // Warning icon with large size
-///     OUDSListItemIcon(status: .warning, description: "Mobile data almost used", size: .large)
+///     MISOListItemIcon(status: .warning, description: "Mobile data almost used", size: .large)
 ///
 ///     // Negative icon with medium size
-///     OUDSListItemIcon(status: .negative, description: "Payment failed", size: .medium)
+///     MISOListItemIcon(status: .negative, description: "Payment failed", size: .medium)
 ///
 ///     // Custom neutral icon without badge
-///     OUDSListItemIcon(status: .neutral(asset: Image(decorative: "ic_heart"), descritpion: "Emails"))
+///     MISOListItemIcon(status: .neutral(asset: Image(decorative: "ic_heart"), descritpion: "Emails"))
 ///
 ///     // Custom neutral icon with notification badge
-///     OUDSListItemIcon(status: .neutral(asset: Image(decorative: "ic_heart"), description: "New emails received", badge: true))
+///     MISOListItemIcon(status: .neutral(asset: Image(decorative: "ic_heart"), description: "New emails received", badge: true))
 ///
 ///     // Usage as leading element in a list item
-///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Information"),
-///         leading: .icon(OUDSListItemIcon(status: .info, description: "", size: .medium))
+///     MISOStaticListItem(
+///         data: MISOListItemData(label: "Information"),
+///         leading: .icon(MISOListItemIcon(status: .info, description: "", size: .medium))
 ///     )
 ///
 ///     // Usage as trailing element in a list item
-///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Warning"),
-///         trailing: .icon(OUDSListItemIcon(status: .warning, description: "", size: .medium))
+///     MISOStaticListItem(
+///         data: MISOListItemData(label: "Warning"),
+///         trailing: .icon(MISOListItemIcon(status: .warning, description: "", size: .medium))
 ///     )
 /// ```
 ///
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSListItemIcon: View {
+public struct MISOListItemIcon: View {
 
     // MARK: Status
 
@@ -131,8 +118,8 @@ public struct OUDSListItemIcon: View {
     /// Creates an icon element for use in a list item at the leading or trailing position.
     ///
     /// ```swift
-    ///     OUDSListItemIcon(status: .info, description: "Information")
-    ///     OUDSListItemIcon(status: .neutral(asset: Image(decorative: "ic_heart"), badge: true), description: "Like", size: .large)
+    ///     MISOListItemIcon(status: .info, description: "Information")
+    ///     MISOListItemIcon(status: .neutral(asset: Image(decorative: "ic_heart"), badge: true), description: "Like", size: .large)
     /// ```
     ///
     /// - Parameters:
@@ -140,7 +127,7 @@ public struct OUDSListItemIcon: View {
     ///   - description: The description of the icon
     ///   - size: The size of the icon. Defaults to `.medium`.
     ///     **Note:** Ignored when the icon is embedded in a list item with small size
-    ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
+    ///     (via ``SwiftUICore/View/misoListItemSize(_:)``), where the smallest size is always applied.
     public init(status: IconStatus, description: String, size: Size = .medium) {
         self.status = status
         self.description = description
@@ -155,7 +142,7 @@ public struct OUDSListItemIcon: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.misoListItemSize) private var itemSize
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: Body

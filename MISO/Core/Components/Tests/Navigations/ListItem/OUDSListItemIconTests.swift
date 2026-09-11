@@ -18,13 +18,13 @@ import MISOComponents
 import SwiftUI
 import Testing
 
-/// Tests the default and explicit parameter values of `OUDSListItemIcon.IconType` cases.
+/// Tests the default and explicit parameter values of `MISOListItemIcon.IconType` cases.
 struct OUDSListItemIconTests {
 
     // MARK: - .neutral default values
 
     @Test func neutralIconTypeDefaultBadgeIsFalse() {
-        guard case let .neutral(_, badge) = OUDSListItemIcon.IconStatus.neutral(asset: Image(systemName: "star")) else {
+        guard case let .neutral(_, badge) = MISOListItemIcon.IconStatus.neutral(asset: Image(systemName: "star")) else {
             Issue.record("Expected .neutral case")
             return
         }
@@ -34,7 +34,7 @@ struct OUDSListItemIconTests {
     // MARK: - .neutral explicit values are preserved
 
     @Test func neutralIconTypeExplicitBadgeTrueIsPreserved() {
-        guard case let .neutral(_, badge) = OUDSListItemIcon.IconStatus.neutral(asset: Image(systemName: "star"), badge: true) else {
+        guard case let .neutral(_, badge) = MISOListItemIcon.IconStatus.neutral(asset: Image(systemName: "star"), badge: true) else {
             Issue.record("Expected .neutral case")
             return
         }

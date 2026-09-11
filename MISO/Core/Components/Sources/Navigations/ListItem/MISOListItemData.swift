@@ -1,25 +1,12 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 /// Represents the main content displayed within a list item component such as
-/// ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
+/// ``MISOStaticListItem`` or ``MISONavigationListItem``.
 ///
-/// ``OUDSListItemData`` groups all the text-based information that a list item can display:
+/// ``MISOListItemData`` groups all the text-based information that a list item can display:
 /// a mandatory label (either a `String` or a custom `View`), and optional description, overline,
 /// extra label, and helper text, and slots.
 ///
@@ -27,13 +14,13 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Minimal: label only (String)
-///     let data = OUDSListItemData(label: "Label")
+///     let data = MISOListItemData(label: "Label")
 ///
 ///     // Label with bold style
-///     let data = OUDSListItemData(label: "Label", hasBoldLabel: true)
+///     let data = MISOListItemData(label: "Label", hasBoldLabel: true)
 ///
 ///     // Custom view as label with accessibility label
-///     let data = OUDSListItemData(
+///     let data = MISOListItemData(
 ///         label: HStack {
 ///             Image(systemName: "star.fill")
 ///             Text("Custom Label")
@@ -42,7 +29,7 @@ import SwiftUI
 ///     )
 ///
 ///     // Full content with text label
-///     let data = OUDSListItemData(
+///     let data = MISOListItemData(
 ///         label: "Label",
 ///         hasBoldLabel: false,
 ///         description: "Description",
@@ -52,7 +39,7 @@ import SwiftUI
 ///     )
 ///
 ///     // Full content with custom view label
-///     let data = OUDSListItemData(
+///     let data = MISOListItemData(
 ///         label: VStack(alignment: .leading) {
 ///             Text("Title").font(.headline)
 ///             Text("Subtitle").font(.caption)
@@ -66,7 +53,7 @@ import SwiftUI
 ///
 ///     // Overline as a user-styled rich text (AttributedString)
 ///     // Same "overline" parameter name as the String variant, disambiguated by the value's type.
-///     let data = OUDSListItemData(
+///     let data = MISOListItemData(
 ///         label: "Label",
 ///         overline: .from(text: "Overline",
 ///                         foregroundColor: theme.colors.contentBrandPrimary.color(for: colorScheme),
@@ -74,25 +61,25 @@ import SwiftUI
 ///     )
 ///
 ///     // Usage with a static list item
-///     OUDSStaticListItem(data: data)
+///     MISOStaticListItem(data: data)
 ///
 ///     // Usage with a navigation list item
-///     OUDSNavigationListItem(data: data) {
+///     MISONavigationListItem(data: data) {
 ///         // Navigate to next screen
 ///     }
 ///
 ///     // With slot (displayed under texts, before helper text)
-///     let dataWithSlot = OUDSListItemData(
+///     let dataWithSlot = MISOListItemData(
 ///         label: "Label",
-///         textSlot: OUDSListItemData.Slot { Text("Additional content") },
+///         textSlot: MISOListItemData.Slot { Text("Additional content") },
 ///         helperText: "Helper text"
 ///     )
 ///
 ///     // With text slot and bottom slot (bottom slot displayed under text slot, before helper text)
-///     let dataWithBothSlots = OUDSListItemData(
+///     let dataWithBothSlots = MISOListItemData(
 ///         label: "Label",
-///         textSlot: OUDSListItemData.Slot { Text("Slot content") },
-///         bottomSlot: OUDSListItemData.Slot { Text("Bottom content") },
+///         textSlot: MISOListItemData.Slot { Text("Slot content") },
+///         bottomSlot: MISOListItemData.Slot { Text("Bottom content") },
 ///         helperText: "Helper text"
 ///     )
 /// ```
@@ -107,7 +94,7 @@ import SwiftUI
 ///
 /// ## Small size behavior
 ///
-/// When the list item is displayed in small size (via the `.oudsListItemSize(.small)` modifier),
+/// When the list item is displayed in small size (via the `.misoListItemSize(.small)` modifier),
 /// the `overline` and `extraLabel` properties are **automatically hidden** to ensure a compact layout.
 /// Only the `label`, `description`, and `helperText` remain visible.
 ///
@@ -115,17 +102,17 @@ import SwiftUI
 ///
 /// ```swift
 ///     // overline, extraLabel and bottomSlot will not be displayed
-///     OUDSStaticListItem(data: OUDSListItemData(
+///     MISOStaticListItem(data: MISOListItemData(
 ///         label: "Label",
 ///         overline: "Hidden in small",
 ///         extraLabel: "Also hidden in small"
 ///     ))
-///     .oudsListItemSize(.small)
+///     .misoListItemSize(.small)
 /// ```
 ///
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSListItemData {
+public struct MISOListItemData {
 
     // MARK: - Slot
 
@@ -133,7 +120,7 @@ public struct OUDSListItemData {
     ///
     /// ```swift
     ///     // Call to give to any property for slots
-    ///     OUDSListItemData.Slot { Text("Some text") }
+    ///     MISOListItemData.Slot { Text("Some text") }
     /// ```
     ///
     /// - Since: 3.0.0
@@ -200,7 +187,7 @@ public struct OUDSListItemData {
     // MARK: - Properties
 
     /// The primary content of the list item. Can be a plain text or a custom view.
-    /// See ``OUDSListItemData/Label`` for available options.
+    /// See ``MISOListItemData/Label`` for available options.
     let labelContent: Label
 
     /// An optional secondary text displayed below the label.
@@ -223,7 +210,7 @@ public struct OUDSListItemData {
     /// `overline: AttributedString` parameter.
     ///
     /// ```swift
-    ///     OUDSListItemData(
+    ///     MISOListItemData(
     ///         label: "Label",
     ///         overline: .from(text: "Overline", foregroundColor: someColor, font: someFont)
     ///     )
@@ -248,7 +235,7 @@ public struct OUDSListItemData {
     /// This slot is positioned below the main row content and above the helper text.
     /// It is useful for displaying additional information that should be visually separated from the main texts.
     ///
-    /// **Note:** Not displayed in small size (via ``SwiftUICore/View/oudsListItemSize(_:)``).
+    /// **Note:** Not displayed in small size (via ``SwiftUICore/View/misoListItemSize(_:)``).
     let bottomSlot: Slot?
 
     // MARK: - Initializers
@@ -329,7 +316,7 @@ public struct OUDSListItemData {
     /// alongside the overline, extra label, and description.
     ///
     /// ```swift
-    ///     let data = OUDSListItemData(
+    ///     let data = MISOListItemData(
     ///         label: HStack {
     ///             Image(systemName: "star.fill")
     ///             Text("Favorite")
@@ -337,7 +324,7 @@ public struct OUDSListItemData {
     ///         accessibilityLabel: "Favorite",
     ///         description: "A custom label example"
     ///     )
-    ///     OUDSStaticListItem(data: data)
+    ///     MISOStaticListItem(data: data)
     /// ```
     ///
     /// - Parameters:

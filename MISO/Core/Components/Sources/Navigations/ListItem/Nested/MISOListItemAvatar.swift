@@ -1,26 +1,13 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOTokensSemantic
 import SwiftUI
 
 /// An avatar element that can be used at the leading or trailing position of a list item
-/// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
+/// such as ``MISOStaticListItem`` or ``MISONavigationListItem``.
 ///
-/// ``OUDSListItemAvatar`` displays a circular visual identifier that can represent a user, a contact,
+/// ``MISOListItemAvatar`` displays a circular visual identifier that can represent a user, a contact,
 /// or any entity. It supports three content types: a predefined icon, a custom image, or text initials.
 /// An optional ``MISOBadgeStandard`` or ``MISOBadgeIcon`` can be attached at the bottom-trailing corner to indicate status.
 ///
@@ -39,7 +26,7 @@ import SwiftUI
 /// - **`.extraLarge`**: The largest variant, typically used for profile-like displays.
 ///
 /// **Note:** When the avatar is embedded in a list item with small size
-/// (via ``SwiftUICore/View/oudsListItemSize(_:)``), the `size` parameter is **ignored**
+/// (via ``SwiftUICore/View/misoListItemSize(_:)``), the `size` parameter is **ignored**
 /// and the avatar is always rendered at its smallest available size.
 ///
 /// ## Badge
@@ -57,44 +44,44 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Avatar with predefined icon, medium size
-///     OUDSListItemAvatar(type: .icon, size: .medium)
+///     MISOListItemAvatar(type: .icon, size: .medium)
 ///
 ///     // Avatar with a custom image, large size
-///     OUDSListItemAvatar(type: .image(Image("il_placeholder")), size: .large)
+///     MISOListItemAvatar(type: .image(Image("il_placeholder")), size: .large)
 ///
 ///     // Avatar with initials, extra large size
-///     OUDSListItemAvatar(type: .initials("AB"), size: .extraLarge)
+///     MISOListItemAvatar(type: .initials("AB"), size: .extraLarge)
 ///
 ///     // Avatar with icon and a notification badge
 ///     let badgeType = .standard(.init(accessibilityLabel: "Do not disturb", status: .negative, size: .small))
-///     OUDSListItemAvatar(type: .icon, size: .medium, badgeType: badgeType)
+///     MISOListItemAvatar(type: .icon, size: .medium, badgeType: badgeType)
 ///
 ///     // Avatar with initials and a icon badge with positive status
 ///     let badgeType = .icon(.init(status: .positive, accessibilityLable: "Online", size: .small))
-///     OUDSListItemAvatar(type: .initials("JD"), size: .large, badgeType: badgeType)
+///     MISOListItemAvatar(type: .initials("JD"), size: .large, badgeType: badgeType)
 ///
 ///     // Usage as leading element in a list item
-///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "John Doe", description: "Online"),
-///         leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium))
+///     MISOStaticListItem(
+///         data: MISOListItemData(label: "John Doe", description: "Online"),
+///         leading: .avatar(MISOListItemAvatar(type: .icon, size: .medium))
 ///     )
 ///
 ///     // Usage as trailing element in a list item
-///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Contact"),
-///         trailing: .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))
+///     MISOStaticListItem(
+///         data: MISOListItemData(label: "Contact"),
+///         trailing: .avatar(MISOListItemAvatar(type: .initials("AB"), size: .medium))
 ///     )
 /// ```
 ///
 /// ## Containers alignment
 ///
 /// The avatar, along with other leading/trailing elements and the text container, can be
-/// vertically aligned using the ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier
+/// vertically aligned using the ``SwiftUICore/View/misoListItemContainerAlignment(_:)`` view modifier
 /// (`.center` by default, or `.top`).
 ///
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSListItemAvatar: View {
+public struct MISOListItemAvatar: View {
 
     // MARK: Types and sizes
 
@@ -140,7 +127,7 @@ public struct OUDSListItemAvatar: View {
     ///
     /// The actual rendered size is determined by the theme's `controlItem` size tokens.
     /// When the avatar is embedded in a list item with `.small` size
-    /// (via ``SwiftUICore/View/oudsListItemSize(_:)``), this parameter is ignored
+    /// (via ``SwiftUICore/View/misoListItemSize(_:)``), this parameter is ignored
     /// and the smallest size is always used.
     ///
     /// - Since: 3.0.0
@@ -164,26 +151,26 @@ public struct OUDSListItemAvatar: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.misoListItemSize) private var itemSize
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: Initializer
 
     /// Creates an avatar view to be displayed at the leading or trailing position
-    /// of a list item such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
+    /// of a list item such as ``MISOStaticListItem`` or ``MISONavigationListItem``.
     ///
     /// ```swift
     ///     // Simple avatar with icon
-    ///     OUDSListItemAvatar(type: .icon, size: .medium)
+    ///     MISOListItemAvatar(type: .icon, size: .medium)
     ///
     ///     // Avatar with initials and a standard badge with negative status
-    ///     OUDSListItemAvatar(type: .initials("JD"), size: .large, badgeType: .standard(.negative))
+    ///     MISOListItemAvatar(type: .initials("JD"), size: .large, badgeType: .standard(.negative))
     /// ```
     ///
     /// - Parameters:
     ///    - type: The type of content displayed inside the avatar. See ``AvatarType``.
     ///    - size: The size of the avatar. Defaults to `.medium`.
-    ///    Ignored when embedded in a list item with small size (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
+    ///    Ignored when embedded in a list item with small size (via ``SwiftUICore/View/misoListItemSize(_:)``), where the smallest size is always applied.
     ///    - badgeType: The type of an optional badge displayed at the bottom-trailing corner of the avatar.  Defaults to `nil`.
     ///    - accessibilityLabel: Default set to empty string, label assigned to the avatar for Voice Over
     public init(type: AvatarType, size: Size, badgeType: BadgeType? = nil, accessibilityLabel: String = "") {

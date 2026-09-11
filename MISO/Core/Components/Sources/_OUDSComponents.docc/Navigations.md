@@ -49,13 +49,13 @@ MISOLink(text: "Open outside", indicator: .external, size: .default) { /* the ac
 
 ### List items
 
-The ``OUDSStaticListItem`` displays a non-interactive row of information, while ``OUDSNavigationListItem`` adds tap interaction and a navigation affordance indicator (chevron or external link icon).
+The ``MISOStaticListItem`` displays a non-interactive row of information, while ``MISONavigationListItem`` adds tap interaction and a navigation affordance indicator (chevron or external link icon).
 
-Both components use an ``OUDSListItemData`` model for their textual content, and accept optional leading and trailing elements.
+Both components use an ``MISOListItemData`` model for their textual content, and accept optional leading and trailing elements.
 
 #### Static list item
 
-Use ``OUDSStaticListItem`` when the row is display-only and should not trigger any action or navigation.
+Use ``MISOStaticListItem`` when the row is display-only and should not trigger any action or navigation.
 
 @TabNavigator {
     @Tab("Orange") {
@@ -75,10 +75,10 @@ Use ``OUDSStaticListItem`` when the row is display-only and should not trigger a
 
 ```swift
 // Simple list item with a label only
-OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+MISOStaticListItem(data: MISOListItemData(label: "Label"))
 
 // List item with full textual content
-OUDSStaticListItem(data: OUDSListItemData(
+MISOStaticListItem(data: MISOListItemData(
     label: "Label",
     hasBoldLabel: true,
     description: "Description",
@@ -88,24 +88,24 @@ OUDSStaticListItem(data: OUDSListItemData(
 ))
 
 // List item with a leading icon and a trailing badge
-let icon = OUDSListItemIcon(status: .info, description: "", size: .medium)
+let icon = MISOListItemIcon(status: .info, description: "", size: .medium)
 
-OUDSStaticListItem(
-    data: OUDSListItemData(label: "Notifications"),
+MISOStaticListItem(
+    data: MISOListItemData(label: "Notifications"),
     leading: .icon(icon),
     trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 )
 
 // List item with a leading image (static asset)
-OUDSStaticListItem(
-    data: OUDSListItemData(label: "Product"),
-    leading: .image(OUDSListItemImage(asset: Image("product_thumb"), size: .medium))
+MISOStaticListItem(
+    data: MISOListItemData(label: "Product"),
+    leading: .image(MISOListItemImage(asset: Image("product_thumb"), size: .medium))
 )
 
 // List item with a leading async image (from URL)
-OUDSStaticListItem(
-    data: OUDSListItemData(label: "Remote Product"),
-    leading: .image(OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/image.png")), description: "Product image", size: .medium))
+MISOStaticListItem(
+    data: MISOListItemData(label: "Remote Product"),
+    leading: .image(MISOListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/image.png")), description: "Product image", size: .medium))
 )
 
 // List item with async image and custom placeholder
@@ -115,20 +115,20 @@ let asyncImageWithPlaceholder = AsyncImage(url: URL(string: "https://example.com
     ProgressView()
 }
 
-OUDSStaticListItem(
-    data: OUDSListItemData(label: "Loading Product"),
-    leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product image", size: .medium))
+MISOStaticListItem(
+    data: MISOListItemData(label: "Loading Product"),
+    leading: .image(MISOListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product image", size: .medium))
 )
 
 // List item with a trailing image
-OUDSStaticListItem(
-    data: OUDSListItemData(label: "Status"),
-    trailing: .image(OUDSListItemImage(asset: Image("status_icon"), size: .small))
+MISOStaticListItem(
+    data: MISOListItemData(label: "Status"),
+    trailing: .image(MISOListItemImage(asset: Image("status_icon"), size: .small))
 )
 
 // List item with slot (displayed under texts, before helper text)
-OUDSStaticListItem(
-    data: OUDSListItemData(
+MISOStaticListItem(
+    data: MISOListItemData(
         label: "With slot",
         textSlot: .init { Text("Additional content") },
         helperText: "Helper text"
@@ -136,8 +136,8 @@ OUDSStaticListItem(
 )
 
 // List item with bottom slot (displayed under main content, before helper text)
-OUDSStaticListItem(
-    data: OUDSListItemData(
+MISOStaticListItem(
+    data: MISOListItemData(
         label: "With bottom slot",
         bottomSlot: .init { Text("Bottom content") },
         helperText: "Helper text"
@@ -145,8 +145,8 @@ OUDSStaticListItem(
 )
 
 // List item with both slot and bottomSlot
-OUDSStaticListItem(
-    data: OUDSListItemData(
+MISOStaticListItem(
+    data: MISOListItemData(
         label: "Label",
         textSlot: .init { Text("Slot content") },
         bottomSlot: .init { Text("Bottom content") },
@@ -157,7 +157,7 @@ OUDSStaticListItem(
 
 #### Navigable list item
 
-Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItemIndicatorType`` defines the visual indicator shown:
+Use ``MISONavigationListItem`` when tapping the row should trigger an action. The ``MISONavigationListItemIndicatorType`` defines the visual indicator shown:
 
 @TabNavigator {
     @Tab("Orange") {
@@ -176,33 +176,33 @@ Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. Th
 
 ```swift
 // Forward navigation (default)
-OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Next screen")
+MISONavigationListItem(
+    data: MISOListItemData(label: "Next screen")
 ) {
     // Navigate to next screen
 }
 
 // External navigation
-OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Open website"),
+MISONavigationListItem(
+    data: MISOListItemData(label: "Open website"),
     indicatorType: .external
 ) {
     openURL(url)
 }
 
 // Backward navigation
-OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Go back"),
+MISONavigationListItem(
+    data: MISOListItemData(label: "Go back"),
     indicatorType: .previous
 ) {
     // Navigate back
 }
 
 // With a leading avatar and a trailing text
-let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
+let avatar = MISOListItemAvatar(type: .icon, size: .medium)
 
-OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Profile", description: "View your profile"),
+MISONavigationListItem(
+    data: MISOListItemData(label: "Profile", description: "View your profile"),
     leading: .avatar(avatar),
     trailing: .text(.labelMuted("Details"))
 ) {
@@ -210,9 +210,9 @@ OUDSNavigationListItem(
 }
 
 // With a leading async image loaded from URL
-OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Product", description: "View product details"),
-    leading: .image(OUDSListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/product.png")), description: "Product thumbnail", size: .medium))
+MISONavigationListItem(
+    data: MISOListItemData(label: "Product", description: "View product details"),
+    leading: .image(MISOListItemImage(asyncImage: AsyncImage(url: URL(string: "https://example.com/product.png")), description: "Product thumbnail", size: .medium))
 ) {
     // Navigate to product
 }
@@ -224,16 +224,16 @@ let asyncImageWithPlaceholder = AsyncImage(url: URL(string: "https://example.com
     ProgressView()
 }
 
-OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Loading Product", description: "View product details"),
-    leading: .image(OUDSListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product thumbnail", size: .medium))
+MISONavigationListItem(
+    data: MISOListItemData(label: "Loading Product", description: "View product details"),
+    leading: .image(MISOListItemImage(asyncImage: asyncImageWithPlaceholder, description: "Product thumbnail", size: .medium))
 ) {
     // Navigate to product
 }
 
 // List item with slot (displayed under texts, before helper text)
-OUDSNavigationListItem(
-    data: OUDSListItemData(
+MISONavigationListItem(
+    data: MISOListItemData(
         label: "Settings",
         textSlot: .init { Text("Configure options") },
         helperText: "Helper text"
@@ -243,8 +243,8 @@ OUDSNavigationListItem(
 }
 
 // List item with bottomSlot (displayed under main content, before helper text)
-OUDSNavigationListItem(
-    data: OUDSListItemData(
+MISONavigationListItem(
+    data: MISOListItemData(
         label: "Profile",
         bottomSlot: .init { Text("Additional info") },
         helperText: "Helper text"
@@ -254,8 +254,8 @@ OUDSNavigationListItem(
 }
 
 // List item with both slot and bottomSlot
-OUDSNavigationListItem(
-    data: OUDSListItemData(
+MISONavigationListItem(
+    data: MISOListItemData(
         label: "Settings",
         textSlot: { Text("Slot content") },
         bottomSlot: { Text("Bottom content") },

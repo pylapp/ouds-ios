@@ -18,7 +18,7 @@
 import SwiftUI
 import Testing
 
-/// Tests the `OUDSListItemImage.ImageType` cases, in particular the `.animated` case
+/// Tests the `MISOListItemImage.ImageType` cases, in particular the `.animated` case
 /// used to display GIF/WebP animated images (see ``AnimatedImage``).
 @MainActor
 struct OUDSListItemImageTests {
@@ -26,7 +26,7 @@ struct OUDSListItemImageTests {
     // MARK: - init(asset:) builds a .asset case
 
     @Test func assetInitializerBuildsAssetCase() {
-        let image = OUDSListItemImage(asset: Image(systemName: "star"))
+        let image = MISOListItemImage(asset: Image(systemName: "star"))
         guard case .asset = image.imageType else {
             Issue.record("Expected .asset case")
             return
@@ -36,7 +36,7 @@ struct OUDSListItemImageTests {
     // MARK: - init(animatedImage:) builds a .animated case
 
     @Test func animatedImageInitializerBuildsAnimatedCase() {
-        let image = OUDSListItemImage(animatedImage: MISOAnimatedImage(url: nil))
+        let image = MISOListItemImage(animatedImage: MISOAnimatedImage(url: nil))
         guard case .animated = image.imageType else {
             Issue.record("Expected .animated case")
             return

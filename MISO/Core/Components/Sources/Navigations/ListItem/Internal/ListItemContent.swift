@@ -1,38 +1,25 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOThemesContract
 import MISOTokensSemantic
 import SwiftUI
 
-/// The content for the ``OUDSStaticListItem`` and the ``OUDSNavigationListItem`` component described by the ``OUDSListItemData``.
+/// The content for the ``MISOStaticListItem`` and the ``MISONavigationListItem`` component described by the ``MISOListItemData``.
 /// The layout (divider, background, size) are updated according to the interaction state ``MISOButtonInteractionState``.
 struct ListItemContent: View {
 
     // MARK: Properties
 
-    let data: OUDSListItemData
-    let indicatorType: OUDSNavigationListItemIndicatorType?
-    let leading: OUDSListItemLeading?
-    let trailing: OUDSListItemTrailing?
+    let data: MISOListItemData
+    let indicatorType: MISONavigationListItemIndicatorType?
+    let leading: MISOListItemLeading?
+    let trailing: MISOListItemTrailing?
     let interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListItemSize) private var itemSize
-    @Environment(\.oudsListItemContainersAlignment) private var containersAlignment
+    @Environment(\.misoListItemSize) private var itemSize
+    @Environment(\.misoListItemContainersAlignment) private var containersAlignment
 
     // MARK: Body
 
@@ -84,7 +71,7 @@ struct ListItemContent: View {
     // MARK: Containers
 
     @ViewBuilder
-    private func leadingContainer(_ leading: OUDSListItemLeading) -> some View {
+    private func leadingContainer(_ leading: MISOListItemLeading) -> some View {
         // Remove leading element if previous indicator is presented
         if indicatorType != .previous {
             ListItemLeadingContainer(leading: leading, interactionState: interactionState)
@@ -95,20 +82,20 @@ struct ListItemContent: View {
         ListItemTextContainer(data: data, interactionState: interactionState)
     }
 
-    private func trailingContainer(_ trailing: OUDSListItemTrailing) -> some View {
+    private func trailingContainer(_ trailing: MISOListItemTrailing) -> some View {
         ListItemTrailingContainer(trailing: trailing, interactionState: interactionState)
     }
 
     // MARK: Display helpers
 
-    private func shouldDisplay(leading: OUDSListItemLeading) -> Bool {
+    private func shouldDisplay(leading: MISOListItemLeading) -> Bool {
         if case .slot = leading, itemSize == .small {
             return false
         }
         return true
     }
 
-    private func shouldDisplay(trailing: OUDSListItemTrailing) -> Bool {
+    private func shouldDisplay(trailing: MISOListItemTrailing) -> Bool {
         if case .slot = trailing, itemSize == .small {
             return false
         }

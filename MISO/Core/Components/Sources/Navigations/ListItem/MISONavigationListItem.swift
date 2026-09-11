@@ -1,39 +1,26 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
-// MARK: - OUDS Navigation List Item
+// MARK: - MISO Navigation List Item
 
 /// A list item component used to display a row of interactive, navigable content within a list.
 ///
-/// ``OUDSNavigationListItem`` is an interactive variant of the list item that triggers an action when tapped.
+/// ``MISONavigationListItem`` is an interactive variant of the list item that triggers an action when tapped.
 /// It displays a navigation indicator (chevron for next/previous, or an external link icon)
 /// to communicate the type of navigation to the user.
 ///
 /// The item typically contains a label, and optionally a description, an overline, an extra label,
-/// a text slot, a bottom slot, and a helper text — all provided through ``OUDSListItemData``.
+/// a text slot, a bottom slot, and a helper text — all provided through ``MISOListItemData``.
 /// It can also include an optional leading element (such as an icon, image, avatar, flag or custom view)
 /// and an optional trailing element (such as a text, badge, tag, icon, image, avatar, flag or custom view)
 ///
-/// For non-interactive, display-only list items, see ``OUDSStaticListItem``.
+/// For non-interactive, display-only list items, see ``MISOStaticListItem``.
 ///
 /// ## Indicator types
 ///
-/// The ``OUDSNavigationListItemIndicatorType`` enum defines the visual indicator and semantic meaning of the navigation:
+/// The ``MISONavigationListItemIndicatorType`` enum defines the visual indicator and semantic meaning of the navigation:
 /// - **`.next`** (default): A forward chevron indicating in-app navigation to a next screen.
 /// - **`.previous`**: A backward chevron indicating in-app navigation to a previous screen.
 ///   When using `.previous`, the leading element is automatically hidden.
@@ -44,33 +31,33 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Simple navigable list item with forward navigation
-///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Next screen")
+///     MISONavigationListItem(
+///         data: MISOListItemData(label: "Next screen")
 ///     ) {
 ///         // Navigate to next screen
 ///     }
 ///
 ///     // List item with external navigation
-///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Open website"),
+///     MISONavigationListItem(
+///         data: MISOListItemData(label: "Open website"),
 ///         indicatorType: .external
 ///     ) {
 ///         openURL(url)
 ///     }
 ///
 ///     // List item with backward navigation
-///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Go back"),
+///     MISONavigationListItem(
+///         data: MISOListItemData(label: "Go back"),
 ///         indicatorType: .previous
 ///     ) {
 ///         // Navigate back
 ///     }
 ///
 ///     // List item with leading avatar, trailing text, and forward navigation
-///     let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
+///     let avatar = MISOListItemAvatar(type: .icon, size: .medium)
 ///
-///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Profile", description: "View your profile"),
+///     MISONavigationListItem(
+///         data: MISOListItemData(label: "Profile", description: "View your profile"),
 ///         leading: .avatar(avatar),
 ///         trailing: .text(.labelMuted(Text("Details")))
 ///     ) {
@@ -78,8 +65,8 @@ import SwiftUI
 ///     }
 ///
 ///     // List item with a custom view as trailing, e.g. a gauge showing a remaining SMS credit
-///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "SMS credit"),
+///     MISONavigationListItem(
+///         data: MISOListItemData(label: "SMS credit"),
 ///         trailing: .custom {
 ///             MISOCircularProgressIndicator(progress: 0.75)
 ///         }
@@ -88,8 +75,8 @@ import SwiftUI
 ///     }
 ///
 ///     // List item with slot (displayed under texts, before helper text)
-///     OUDSNavigationListItem(
-///         data: OUDSListItemData(
+///     MISONavigationListItem(
+///         data: MISOListItemData(
 ///             label: "Settings",
 ///             textSlot: { Text("Configure options") },
 ///             helperText: "Helper text"
@@ -99,8 +86,8 @@ import SwiftUI
 ///     }
 ///
 ///     // List item with bottomSlot (displayed under main content, before helper text)
-///     OUDSNavigationListItem(
-///         data: OUDSListItemData(
+///     MISONavigationListItem(
+///         data: MISOListItemData(
 ///             label: "Profile",
 ///             bottomSlot: { Text("Additional info") },
 ///             helperText: "Helper text"
@@ -112,16 +99,16 @@ import SwiftUI
 ///
 /// ## Leading elements
 ///
-///  The leading position (before the texts) accepts one optional element via ``OUDSListItemLeading``:
-///  - `.icon(OUDSListItemIcon)`: A status or custom icon (neutral, info, warning, negative, positive)
-///  - `.image(OUDSListItemImage)`: A static image asset
-///  - `.flag(OUDSListItemFlag)`: A country flag image
-///  - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+///  The leading position (before the texts) accepts one optional element via ``MISOListItemLeading``:
+///  - `.icon(MISOListItemIcon)`: A status or custom icon (neutral, info, warning, negative, positive)
+///  - `.image(MISOListItemImage)`: A static image asset
+///  - `.flag(MISOListItemFlag)`: A country flag image
+///  - `.avatar(MISOListItemAvatar)`: An avatar with icon, initials, or image
 ///  - `.custom { ... }`: Any custom SwiftUI view (e.g. a gauge)
 ///
 /// ## Trailing elements
 ///
-/// The trailing position (after the texts) accepts one optional element via ``OUDSListItemTrailing``, like:
+/// The trailing position (after the texts) accepts one optional element via ``MISOListItemTrailing``, like:
 /// - `.text(.label(String))`: A default-styled label
 /// - `.text(.labelMuted(String))`: A muted (secondary) label
 /// - `.text(.labelStrong(String))`: An emphasized (bold) label
@@ -129,77 +116,55 @@ import SwiftUI
 /// - `.badge(.count(MISOBadgeCount)`: A badge with count
 /// - `.badge(.standard(MISOBadgeStandard)`: A badge with standard status
 /// - `.tag(MISOTag)`: A tag for categorization
-/// - `.icon(OUDSListItemIcon)`: A status or custom icon
-/// - `.image(OUDSListItemImage)`:  A static image asset
-/// - `.flag(OUDSListItemFlag)`: A country flag image
-/// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+/// - `.icon(MISOListItemIcon)`: A status or custom icon
+/// - `.image(MISOListItemImage)`:  A static image asset
+/// - `.flag(MISOListItemFlag)`: A country flag image
+/// - `.avatar(MISOListItemAvatar)`: An avatar with icon, initials, or image
 /// - `.custom { ... }`: Any custom SwiftUI view
 ///
 /// ## View modifiers
 ///
 /// Several view modifiers can be applied to customize the appearance and layout of list items:
 ///
-/// - ``SwiftUICore/View/oudsListItemSize(_:)`` — Sets the size of the item (`.standard` or `.small`).
-/// - ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` — Aligns leading, trailing, and text containers (`.top` or `.center`).
-/// - ``SwiftUICore/View/oudsListItemStyle(divider:background:)`` — Applies a item style with optional divider and background.
-/// - ``SwiftUICore/View/oudsListCardStyle(_:)`` — Applies a card style on list items.
-/// - ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` — Defines whether media (images) should be displayed with rounded corners.
+/// - ``SwiftUICore/View/misoListItemSize(_:)`` — Sets the size of the item (`.standard` or `.small`).
+/// - ``SwiftUICore/View/misoListItemContainerAlignment(_:)`` — Aligns leading, trailing, and text containers (`.top` or `.center`).
+/// - ``SwiftUICore/View/misoListItemStyle(divider:background:)`` — Applies a item style with optional divider and background.
+/// - ``SwiftUICore/View/misoListCardStyle(_:)`` — Applies a card style on list items.
+/// - ``SwiftUICore/View/misoListItemRoundedMedia(_:)`` — Defines whether media (images) should be displayed with rounded corners.
 ///
 /// ```swift
-///     OUDSNavigationListItem(
-///         data: OUDSListItemData(label: "Settings"),
+///     MISONavigationListItem(
+///         data: MISOListItemData(label: "Settings"),
 ///         indicatorType: .next
 ///     ) {
 ///         // Navigate to settings
 ///     }
-///     .oudsListItemSize(.small)
-///     .oudsListItemContainerAlignment(.top)
-///     .oudsListCardStyle(.outlined)
+///     .misoListItemSize(.small)
+///     .misoListItemContainerAlignment(.top)
+///     .misoListCardStyle(.outlined)
 /// ```
 ///
 /// ## Accessibility considerations
 ///
-/// You should test with Voice Over your `OUDSNavigationListItem` to check which parts are vocalized and if they are well vocalized, specially for
+/// You should test with Voice Over your `MISONavigationListItem` to check which parts are vocalized and if they are well vocalized, specially for
 /// the avatars, badges, tags and slot views.  Do not vocalize decorative elements.
 ///
-/// If flags are used, do not suppose users know the flags and add in the texts parts of the `OUDSNavigationListItem` the country or region name.
+/// If flags are used, do not suppose users know the flags and add in the texts parts of the `MISONavigationListItem` the country or region name.
 ///
 /// Be sure the available texts are enough to explain to the users the navigation depending to its indicator type.
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-listitem)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A list item component in light and dark modes with Orange theme](component_navigation_list_item_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A list item component in light and dark modes with Orange Compact theme](component_navigation_list_item_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A list item component in light and dark modes with Sosh theme](component_navigation_list_item_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A list item component in light and dark modes with Wireframe theme](component_navigation_list_item_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSNavigationListItem: View {
+public struct MISONavigationListItem: View {
 
     // MARK: Properties
 
-    private let data: OUDSListItemData
-    private let indicatorType: OUDSNavigationListItemIndicatorType
+    private let data: MISOListItemData
+    private let indicatorType: MISONavigationListItemIndicatorType
     private let action: (() -> Void)?
-    private let leading: OUDSListItemLeading?
-    private let trailing: OUDSListItemTrailing?
+    private let leading: MISOListItemLeading?
+    private let trailing: MISOListItemTrailing?
 
     // MARK: Initializers
 
@@ -208,20 +173,20 @@ public struct OUDSNavigationListItem: View {
     /// - Parameters:
     ///   - data: The textual data of the item, including label, description, overline, extra label, slot, bottomSlot, and helper text.
     ///   - indicatorType: The type of navigation indicator to display. Defaults to `.next`.
-    ///     See ``OUDSNavigationListItemIndicatorType`` for available options (previous, next and external).
+    ///     See ``MISONavigationListItemIndicatorType`` for available options (previous, next and external).
     ///   - leading: An optional element displayed at the leading position (before the texts).
-    ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, avatar, custom).
+    ///     See ``MISOListItemLeading`` for available options (icon, image, flag, avatar, custom).
     ///     **Note:** Ignored when `indicatorType` is `.previous`.
     ///   - trailing: An optional element displayed at the trailing position (after the texts).
-    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar, custom).
+    ///     See ``MISOListItemTrailing`` for available options (text, badge, tag, icon, image, flag, avatar, custom).
     ///   - action: An optional closure triggered when the item is tapped.
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the
-    ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
-    public init(data: OUDSListItemData,
-                indicatorType: OUDSNavigationListItemIndicatorType = .next,
-                leading: OUDSListItemLeading? = nil,
-                trailing: OUDSListItemTrailing? = nil,
+    ///   ``SwiftUICore/View/misoListItemContainerAlignment(_:)`` view modifier.
+    public init(data: MISOListItemData,
+                indicatorType: MISONavigationListItemIndicatorType = .next,
+                leading: MISOListItemLeading? = nil,
+                trailing: MISOListItemTrailing? = nil,
                 action: (() -> Void)? = nil)
     {
         self.data = data
@@ -254,7 +219,7 @@ public struct OUDSNavigationListItem: View {
 /// The navigation indicator, describing the type of navigation triggered when the item is tapped.
 ///
 /// - Since: 3.0.0
-@frozen public enum OUDSNavigationListItemIndicatorType {
+@frozen public enum MISONavigationListItemIndicatorType {
     /// When item is tapped, the previous page is presented in navigation.
     /// A backward chevron is displayed at the leading edge.
     /// **Note:** When using `.previous`, the leading element is automatically hidden.

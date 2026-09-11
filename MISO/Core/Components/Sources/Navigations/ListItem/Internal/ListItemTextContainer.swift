@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 import MISOTokensSemantic
@@ -21,7 +8,7 @@ import SwiftUI
 
 /// Contains all texts (overline, label, extra label, description) of the ``ListItemContent``.
 ///
-/// The label area supports two modes via ``OUDSListItemData/Label``:
+/// The label area supports two modes via ``MISOListItemData/Label``:
 /// - **`.text(String, isBold: Bool)`**: The label is rendered as a styled `Text` view.
 ///   When `isBold` is `true`, a bold typography is applied.
 /// - **`.custom(AnyView, accessibilityLabel: String)`**: A user-provided SwiftUI view is rendered
@@ -31,13 +18,13 @@ struct ListItemTextContainer: View {
 
     // MARK: Properties
 
-    let data: OUDSListItemData
+    let data: MISOListItemData
     let interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.misoListItemSize) private var itemSize
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-    @Environment(\.oudsListItemContainersAlignment) private var alignment
+    @Environment(\.misoListItemContainersAlignment) private var alignment
 
     // MARK: Body
 

@@ -47,7 +47,7 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// If components like progress indicators (e.g. `MISOCircularProgressIndicator` or `MISOLinearProgressIndicator`) must have always rounded corners or not
     public let hasRoundedProgressIndicators: Bool
 
-    /// If components like list item (`OUDSStaticListItem` and `OUDSNavigationListItem`) must have always rounded corners or not
+    /// If components like list item (`MISOStaticListItem` and `MISONavigationListItem`) must have always rounded corners or not
     public let hasRoundedListItems: Bool
 
     /// Defines the tuning for a theme

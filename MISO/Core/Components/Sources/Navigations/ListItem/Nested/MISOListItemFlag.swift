@@ -1,50 +1,37 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOThemesContract
 import MISOTokensSemantic
 import SwiftUI
 
 /// An country flag element that can be used at the leading or trailing position of a list item
-/// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
+/// such as ``MISOStaticListItem`` or ``MISONavigationListItem``.
 ///
-/// ``OUDSListItemFlag`` displays a country flag (i.e. image)
+/// ``MISOListItemFlag`` displays a country flag (i.e. image)
 ///
 /// ## Code samples
 ///
 /// ```swift
 ///     // Country flag with medium size (default)
-///     OUDSListItemFlag(asset: Image(decorative: "il_flag_fr"), description: "France")
+///     MISOListItemFlag(asset: Image(decorative: "il_flag_fr"), description: "France")
 ///
 ///     // Usage as leading element in a list item
-///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Information"),
+///     MISOStaticListItem(
+///         data: MISOListItemData(label: "Information"),
 ///         leading: .flag(.init(asset: Image(decorative: "il_flag_fr"), description: "France"))
 ///     )
 ///
 ///     // Usage as trailing element in a list item
-///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Warning"),
+///     MISOStaticListItem(
+///         data: MISOListItemData(label: "Warning"),
 ///         trailing: .flag(.init(asset: Image(decorative: "il_flag_fr"), description: "France"))
 ///     )
 /// ```
 ///
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSListItemFlag: View {
+public struct MISOListItemFlag: View {
 
     // MARK: Properties
 
@@ -53,7 +40,7 @@ public struct OUDSListItemFlag: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.misoListItemSize) private var itemSize
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: Initializer
@@ -62,7 +49,7 @@ public struct OUDSListItemFlag: View {
     ///
     /// ```swift
     ///     // Decorative image
-    ///     OUDSListItemFlag(asset: Image(decorative: "il_flag_fr"))
+    ///     MISOListItemFlag(asset: Image(decorative: "il_flag_fr"))
     /// ```
     ///
     /// - Parameters:
