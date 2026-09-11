@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -29,7 +29,7 @@ final class WireframeThemeElevationSemanticTokensProvider: AllElevationSemanticT
 
     /// Intializes the provider
     init() {
-        OL.debug("Init of WireframeThemeElevationSemanticTokensProvider")
+        ML.debug("Init of WireframeThemeElevationSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "WireframeThemeElevationSemanticTokensProvider")

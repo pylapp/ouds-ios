@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSThemesContract
+import MISOThemesContract
 import SwiftUI
 
 // swiftlint:disable function_body_length

@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 /// A class which wraps all **font semantic tokens**, *multiple*, *composite* or not, and expose them.
 /// This provider should be integrated as a `AllFontSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -27,7 +27,7 @@ final class WireframeThemeFontSemanticTokensProvider: AllFontSemanticTokensProvi
 
     /// Intializes the provider
     init() {
-        OL.debug("Init of WireframeThemeFontSemanticTokensProvider")
+        ML.debug("Init of WireframeThemeFontSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "WireframeThemeFontSemanticTokensProvider")

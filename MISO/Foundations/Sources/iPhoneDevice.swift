@@ -214,7 +214,7 @@ public enum iPhoneDevice: CustomStringConvertible, Sendable {
         case 2_868: // 956 x @3 (16 Pro max, 17 Pro Max)
             self = .proMax16
         default:
-            OL.warning("iPhone device not recognized (with max dimension \(maxDimension)), please submit an issue with the device reference and computed dimension (https://github.com/Orange-OpenSource/ouds-ios/issues)")
+            ML.warning("iPhone device not recognized (with max dimension \(maxDimension)), please submit an issue with the device reference and computed dimension (https://github.com/Orange-OpenSource/ouds-ios/issues)")
             self = iPhoneDevice.unknown
         }
     }

@@ -28,7 +28,7 @@ extension Color {
 
         #if DEBUG
         if hexadecimalCode == "ouds-forbidden-color-value" {
-            OL.error("Trying to parse forbidden color as SwiftUI Color, it will crash")
+            ML.error("Trying to parse forbidden color as SwiftUI Color, it will crash")
         }
         #endif
 
@@ -54,7 +54,7 @@ extension Color {
             b = CGFloat((rgb & 0x0000_FF00) >> 8) / 255.0
             a = CGFloat(rgb & 0x0000_00FF) / 255.0
         } else {
-            OL.warning("The hexadecimal code value given for the color cannot be processed, please check '\(hexadecimalCode)'")
+            ML.warning("The hexadecimal code value given for the color cannot be processed, please check '\(hexadecimalCode)'")
             return nil
         }
 

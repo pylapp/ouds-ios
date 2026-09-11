@@ -20,7 +20,7 @@ struct ListItemLeadingContainer: View {
     // MARK: Properties
 
     let leading: OUDSListItemLeading
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemSize) private var itemSize

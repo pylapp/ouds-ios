@@ -14,9 +14,9 @@
 #if os(iOS)
 
 import MISOFoundations
+import MISOThemesContract
 import MISOTokensRaw
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 /// An indicator to display at the top of the selected tab for iOS lower than 26 (i.e. Liquid Glass not available) or with Liquid Glass disabled (26+)

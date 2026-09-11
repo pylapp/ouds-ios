@@ -219,24 +219,24 @@ public struct OUDSRadioItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            OL.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            OL.warning("Label given to an OUDSRadioItem is empty, prefer OUDSRadio(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an OUDSRadioItem is empty, prefer OUDSRadio(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            OL.warning("Description text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if let extraLabel, extraLabel.isEmpty {
-            OL.warning("Extra label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Extra label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
-            OL.warning("Error text given to an OUDSRadioItem must be defined in case of error")
+            ML.warning("Error text given to an OUDSRadioItem must be defined in case of error")
         }
         // swiftlint:enable force_unwrapping
 
@@ -317,23 +317,23 @@ public struct OUDSRadioItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            OL.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            OL.warning("Label given to an OUDSRadioItem is empty, prefer OUDSRadio(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an OUDSRadioItem is empty, prefer OUDSRadio(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            OL.warning("Description text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if let extraLabel, extraLabel.isEmpty {
-            OL.warning("Extra label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Extra label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if isError, errorText.isEmpty {
-            OL.warning("Error text given to an OUDSRadioItem must be defined in case of error")
+            ML.warning("Error text given to an OUDSRadioItem must be defined in case of error")
         }
 
         _isOn = isOn

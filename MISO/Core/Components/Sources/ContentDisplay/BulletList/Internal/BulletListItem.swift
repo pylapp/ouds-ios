@@ -117,7 +117,7 @@ struct BulletListItem: View {
 
     private var nextLevel: OUDSBulletList.NestedLevel {
         guard let nextLevel = OUDSBulletList.NestedLevel(rawValue: level.rawValue + 1) else {
-            OL.fatal("It is forbidden by design to have more than 3 levels depth. Children of '\(item.text)' are too much.")
+            ML.fatal("It is forbidden by design to have more than 3 levels depth. Children of '\(item.text)' are too much.")
         }
         return nextLevel
     }

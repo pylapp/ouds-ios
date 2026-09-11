@@ -13,9 +13,9 @@
 
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
+import MISOThemesContract
+import MISOTokensComponent
 import MISOTokensSemantic
-import OUDSThemesContract
-import OUDSTokensComponent
 import SwiftUI
 
 // swiftlint:disable file_length
@@ -265,7 +265,7 @@ public struct MISOTextInput: View {
             precondition(image.asset != nil, "MISOTextInput.TrailingAction.icon must be created with an asset Image")
 
             if actionHint.isEmpty {
-                OL.warning("The accessibility action hint for the MISOTextInput trailing action should not be empty, think about your disabled users!")
+                ML.warning("The accessibility action hint for the MISOTextInput trailing action should not be empty, think about your disabled users!")
             }
             icon = image
             self.actionHint = actionHint
@@ -337,7 +337,7 @@ public struct MISOTextInput: View {
         ///   - action: The action when clicked
         public init(text: String, action: @escaping () -> Void) {
             if text.isEmpty {
-                OL.warning("The helper link text for the MISOTextInput is empty, avoid using it in that case.")
+                ML.warning("The helper link text for the MISOTextInput is empty, avoid using it in that case.")
             }
             self.text = text
             self.action = action

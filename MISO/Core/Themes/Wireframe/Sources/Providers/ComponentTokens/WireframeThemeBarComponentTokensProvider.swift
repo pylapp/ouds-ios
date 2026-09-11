@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 /// A class which wraps all **component  tokens of bar**.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -59,7 +59,7 @@ final class WireframeThemeBarComponentTokensProvider: AllBarComponentTokensProvi
          opacities: AllOpacitySemanticTokensProvider? = nil,
          effects: AllEffectSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of WireframeBarComponentTokensProvider")
+        ML.debug("Init of WireframeBarComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())

@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -60,7 +60,7 @@ final class WireframeThemeChipComponentTokensProvider: AllChipComponentTokensPro
          spaces: AllSpaceSemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of WireframeThemeChipComponentTokensProvider")
+        ML.debug("Init of WireframeThemeChipComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())

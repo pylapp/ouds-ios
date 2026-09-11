@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 /// A class which wraps all **grid semantic tokens** and expose them.
 /// This provider should be integrated as a `AllGridSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -27,7 +27,7 @@ final class WireframeThemeGridSemanticTokensProvider: AllGridSemanticTokensProvi
 
     /// Intializes the provider
     init() {
-        OL.debug("Init of WireframeThemeGridSemanticTokensProvider")
+        ML.debug("Init of WireframeThemeGridSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "WireframeThemeGridSemanticTokensProvider")

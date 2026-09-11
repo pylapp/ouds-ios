@@ -139,7 +139,7 @@ public struct OUDSAlertMessage: View {
         ///   - action: The action to process when clicked
         public init(text: String, position: Position = .bottom, action: @escaping () -> Void) {
             if text.isEmpty {
-                OL.warning("The link text for the OUDSAlertMessage is empty, avoid using it in that case.")
+                ML.warning("The link text for the OUDSAlertMessage is empty, avoid using it in that case.")
             }
             self.text = text
             self.action = action
@@ -182,7 +182,7 @@ public struct OUDSAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            OL.warning("The label for the OUDSAlertMessage must not be empty!")
+            ML.warning("The label for the OUDSAlertMessage must not be empty!")
         }
         self.status = status
         self.description = if let description {
@@ -225,7 +225,7 @@ public struct OUDSAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            OL.warning("The label for the OUDSAlertMessage must not be empty!")
+            ML.warning("The label for the OUDSAlertMessage must not be empty!")
         }
         self.status = status
         self.description = .attributed(description)
@@ -267,7 +267,7 @@ public struct OUDSAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            OL.warning("The label for the OUDSAlertMessage must not be empty!")
+            ML.warning("The label for the OUDSAlertMessage must not be empty!")
         }
         self.status = status
         self.description = if let description {
@@ -314,7 +314,7 @@ public struct OUDSAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            OL.warning("The label for the OUDSAlertMessage must not be empty!")
+            ML.warning("The label for the OUDSAlertMessage must not be empty!")
         }
         self.status = status
         self.description = .attributed(description)

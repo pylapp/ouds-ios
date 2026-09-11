@@ -12,21 +12,21 @@
 //
 
 import MISOFoundations
+import MISOThemesContract
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 // MARK: - Checkbox Indicator Modifier
 
 /// A `ViewModier` to apply to the ``CheckboxIndicator`` component.
-/// It will define the look and feel of the indicator depending to the ``OUDSButtonInteractionState``,
+/// It will define the look and feel of the indicator depending to the ``MISOButtonInteractionState``,
 /// the ``OUDSCheckboxIndicatorState`` and if there is an error context or not.
 /// This `View` manages also the high contrast mode in light color scheme so as to use a dedicated color for indicator.
 struct CheckboxIndicatorModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
@@ -47,7 +47,7 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
@@ -100,7 +100,7 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     private var readOnlyColor: MultipleColorSemanticToken {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a read only state and an error situation has been detected, which is not allowed."
+            ML.fatal("An OUDS Checkbox with a read only state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionReadOnlyPrimary
@@ -108,7 +108,7 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticToken {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
+            ML.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionDisabled
@@ -121,7 +121,7 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -165,7 +165,7 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
 
     private var readOnlyColor: Color {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a read only state and an error situation has been detected, which is not allowed."
+            ML.fatal("An OUDS Checkbox with a read only state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
@@ -173,7 +173,7 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
 
     private var disabledColor: Color {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
+            ML.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
@@ -186,7 +186,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
@@ -257,7 +257,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var readOnlyColor: MultipleColorSemanticToken {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a read only state and an error situation has been detected, which is not allowed"
+            ML.fatal("An OUDS Checkbox with a read only state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionReadOnlySecondary
@@ -265,7 +265,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticToken {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed"
+            ML.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionDisabled

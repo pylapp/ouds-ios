@@ -27,7 +27,7 @@ import MISOFoundations
 ///         // Defines for your chip an interaction button with a given action to trigger
 ///         // It has MyChipLayout as layout, and casts the button interaction state
 ///         // to the chip interaction state
-///         OUDSInteractionButton(action: action) {
+///         MISOInteractionButton(action: action) {
 ///             // Deal with the states in the chip layout to change the layout
 ///             MyChipLayout(interactionState: OUDSChipInteractionState(with: $0))
 ///         }
@@ -50,13 +50,13 @@ import MISOFoundations
     /// The user cannot interact with the component
     case disabled
 
-    /// Initializes the ``OUDSChipInteractionState`` from the ``OUDSButtonInteractionState``
-    /// provided by the ``OUDSInteractionButton`` which is used to build a chip.
+    /// Initializes the ``OUDSChipInteractionState`` from the ``MISOButtonInteractionState``
+    /// provided by the ``MISOInteractionButton`` which is used to build a chip.
     ///
     /// This is preferred because chip does not support read only state.
     ///
-    /// - Parameter interactionState: State provided by `OUDSInteractionButton`. Crashes if `.readOnly`.
-    public init(with interactionState: OUDSButtonInteractionState) {
+    /// - Parameter interactionState: State provided by `MISOInteractionButton`. Crashes if `.readOnly`.
+    public init(with interactionState: MISOButtonInteractionState) {
         switch interactionState {
         case .enabled:
             self = .enabled
@@ -67,7 +67,7 @@ import MISOFoundations
         case .disabled:
             self = .disabled
         case .readOnly:
-            OL.fatal("An OUDS chip is a component which cannot be in read only mode")
+            ML.fatal("An OUDS chip is a component which cannot be in read only mode")
         }
     }
 }

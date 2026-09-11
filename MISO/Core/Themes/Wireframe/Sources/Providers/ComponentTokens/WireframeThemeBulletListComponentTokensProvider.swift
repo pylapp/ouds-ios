@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -36,7 +36,7 @@ final class WireframeThemeBulletListComponentTokensProvider: AllBulletListCompon
     /// Defines a provider of component tokens dedicated to `OUDSLink`
     /// - Parameter spaces: Provider for space semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
     init(spaces: AllSpaceSemanticTokensProvider? = nil) {
-        OL.debug("Init of WireframeThemeBulletListComponentTokensProvider")
+        ML.debug("Init of WireframeThemeBulletListComponentTokensProvider")
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++

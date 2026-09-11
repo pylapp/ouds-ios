@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOThemesContract
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 /// An country flag element that can be used at the leading or trailing position of a list item

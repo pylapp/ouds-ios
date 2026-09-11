@@ -78,7 +78,7 @@ extension [PostScriptFontNamesMapKey: String] {
     /// - Parameter key: The key to use to get a value
     public subscript(orKey key: Key) -> String {
         guard let value = self[key] else {
-            OL.warning("It seems there is missing rule for PostScript identifier with '\(key.familyName)'/'\(key.fontWeight)'. Fallback to '\(key.description)'")
+            ML.warning("It seems there is missing rule for PostScript identifier with '\(key.familyName)'/'\(key.fontWeight)'. Fallback to '\(key.description)'")
             return key.description
         }
         return value

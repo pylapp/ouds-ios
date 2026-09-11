@@ -85,14 +85,14 @@ public struct OUDSInputTag: View {
     ///    - action: Called when the input tag is clicked, supposed for remove / delete action
     public init(label: String, action: @escaping () -> Void) {
         if label.isEmpty {
-            OL.warning("The OUDSInputTag must not be empty!")
+            ML.warning("The OUDSInputTag must not be empty!")
         }
         self.label = label
         self.action = action
     }
 
     public var body: some View {
-        OUDSInteractionButton(action: action) {
+        MISOInteractionButton(action: action) {
             InputTagContent(label: label, interactionState: $0)
         }
         .frame(height: theme.tag.sizeMinHeightInteractiveArea, alignment: .center)

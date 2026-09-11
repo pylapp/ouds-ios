@@ -193,20 +193,20 @@ public struct OUDSSwitchItem: View {
                 constrainedMaxWidth: Bool = false)
     {
         if isError, isReadOnly {
-            OL.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            OL.warning("Label given to an OUDSSwitchItem is empty, prefer OUDSSwitch(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an OUDSSwitchItem is empty, prefer OUDSSwitch(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            OL.warning("Description text given to an OUDSSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description text given to an OUDSSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
-            OL.warning("Error text given to an OUDSSwitchItem must be defined in case of error")
+            ML.warning("Error text given to an OUDSSwitchItem must be defined in case of error")
         }
         // swiftlint:enable force_unwrapping
 
@@ -275,19 +275,19 @@ public struct OUDSSwitchItem: View {
                 constrainedMaxWidth: Bool = false)
     {
         if isError, isReadOnly {
-            OL.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            OL.warning("Label given to an OUDSSwitchItem is empty, prefer OUDSSwitch(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an OUDSSwitchItem is empty, prefer OUDSSwitch(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            OL.warning("Description text given to an OUDSSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description text given to an OUDSSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if isError, errorText.isEmpty {
-            OL.warning("Error text given to an OUDSSwitchItem must be defined in case of error")
+            ML.warning("Error text given to an OUDSSwitchItem must be defined in case of error")
         }
 
         _isOn = isOn

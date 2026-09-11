@@ -33,8 +33,8 @@ public struct MISOLegacyLayoutModifier: ViewModifier {
     /// Instanciates the `MISOLegacyLayoutModifier` and displays error messages in the standard output
     public init() {
         if !Self.usersHaveBeenWarned {
-            OL.warning("You should not force the legacy layout of the navigation elements like bars; please embrace Liquid Glass!")
-            OL.warning("You should not use this MISOLegacyLayoutModifier with Xcode 27 or with Xcode 26 without UIDesignRequiresCompatibility or set to NO")
+            ML.warning("You should not force the legacy layout of the navigation elements like bars; please embrace Liquid Glass!")
+            ML.warning("You should not use this MISOLegacyLayoutModifier with Xcode 27 or with Xcode 26 without UIDesignRequiresCompatibility or set to NO")
             Self.usersHaveBeenWarned = true
         }
     }

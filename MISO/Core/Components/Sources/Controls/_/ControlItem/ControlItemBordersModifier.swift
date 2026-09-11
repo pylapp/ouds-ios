@@ -12,8 +12,8 @@
 //
 
 import MISOFoundations
+import MISOThemesContract
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 /// A `ViewModifier` to apply to `ControlItem` views so as to define an outline effect, i.e. draw kind of borders around the object, or a divider.
@@ -24,7 +24,7 @@ struct ControlItemBordersModifier: ViewModifier {
 
     // MARK: Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let layoutData: ControlItemLabel.LayoutData
     let isOn: Bool
 
@@ -73,7 +73,7 @@ struct ControlItemBordersModifier: ViewModifier {
         case .hover:
             theme.colors.actionNegativeHover
         case .readOnly, .disabled:
-            OL.fatal("An outlined ControlItem with a disabled or read only state and an error situation has been detected, which is not allowed."
+            ML.fatal("An outlined ControlItem with a disabled or read only state and an error situation has been detected, which is not allowed."
                 + " Only non-error / non-read only situation are allowed to have a disabled state.")
         }
     }

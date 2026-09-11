@@ -12,20 +12,20 @@
 //
 
 import MISOFoundations
+import MISOThemesContract
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 // MARK: - Radio Indicator Modifier
 
 /// A `ViewModier` to apply to the ``RadioIndicator`` component.
-/// It will define the look and feel of the indicator depending to the ``OUDSButtonInteractionState`` and some flags
+/// It will define the look and feel of the indicator depending to the ``MISOButtonInteractionState`` and some flags
 /// This `View` manages also the high contrast mode in light color scheme so as to use a dedicated color for indicator.
 struct RadioIndicatorModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let isOn: Bool
     let isError: Bool
 
@@ -46,7 +46,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let isOn: Bool
     let isError: Bool
 
@@ -100,7 +100,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     private var readOnlyColor: MultipleColorSemanticToken {
         guard !isError else {
-            OL.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed."
+            ML.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a read only state.")
         }
         return theme.colors.actionReadOnlyPrimary
@@ -108,7 +108,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticToken {
         guard !isError else {
-            OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
+            ML.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionDisabled
@@ -121,7 +121,7 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let isError: Bool
 
     // MARK: - Body
@@ -160,7 +160,7 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
 
     private var disabledColor: Color {
         guard !isError else {
-            OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
+            ML.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
@@ -173,7 +173,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let isOn: Bool
     let isError: Bool
 
@@ -238,7 +238,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     private var readOnlyColor: MultipleColorSemanticToken {
         guard !isError else {
-            OL.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed"
+            ML.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionReadOnlySecondary
@@ -246,7 +246,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticToken {
         guard !isError else {
-            OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed"
+            ML.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionDisabled

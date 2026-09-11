@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesContract
-import OUDSTokensComponent
+import MISOThemesContract
+import MISOTokensComponent
 import SwiftUI
 
 // MARK: - Link Button Style
@@ -44,7 +44,7 @@ struct LinkButtonStyle: ButtonStyle {
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        let interactionState = OUDSButtonInteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
+        let interactionState = MISOButtonInteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
         Group {
             switch layout {
             case let .indicator(indicator):
@@ -101,7 +101,7 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let size: OUDSLink.Size
     let indicator: OUDSLink.Indicator
     let isFullWidth: Bool
@@ -145,7 +145,7 @@ private struct LinkTextAndIconLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let size: OUDSLink.Size
     let layout: OUDSLink.Layout
 

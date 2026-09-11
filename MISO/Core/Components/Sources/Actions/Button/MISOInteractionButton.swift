@@ -15,7 +15,7 @@ import SwiftUI
 
 // MARK: - Interaction Button
 
-/// ``OUDSInteractionButton`` defines how a tappable component can be defined with several interaction states.
+/// ``MISOInteractionButton`` defines how a tappable component can be defined with several interaction states.
 /// Remark: If the *isReadOnly* flag is true the action on the button is dropped.
 ///
 /// ## Code samples
@@ -26,34 +26,34 @@ import SwiftUI
 ///     let isReadOnly: Bool
 ///
 ///     var body: some View {
-///         OUDSInteractionButton(isReadOnly: isReadOnly) {
+///         MISOInteractionButton(isReadOnly: isReadOnly) {
 ///             // Do something on tap
 ///         } content: { interactionState in
-///             // Define your component and its style depending to the given OUDSButtonInteractionState
+///             // Define your component and its style depending to the given MISOButtonInteractionState
 ///         }
 ///     }
 /// }
 /// ```
 ///
 /// - Since: 2.3.0
-public struct OUDSInteractionButton<Content>: View where Content: View {
+public struct MISOInteractionButton<Content>: View where Content: View {
 
     // MARK: Properties
 
     private let isReadOnly: Bool
     private let action: () -> Void
 
-    @ViewBuilder private let content: (OUDSButtonInteractionState) -> Content
+    @ViewBuilder private let content: (MISOButtonInteractionState) -> Content
 
     // MARK: Initializer
 
     /// - Parameters:
     ///    - isReadOnly: Default set to `false`, defines if the component is in read only state or not
-    ///    - action: The action to trigger when the user taps the `OUDSInteractionButton`. Won't be triggered if `isReadOnly` set to `true`.
-    ///    - content: A `ViewBuilder` to define the content of the `OUDSInteractionButton`
+    ///    - action: The action to trigger when the user taps the `MISOInteractionButton`. Won't be triggered if `isReadOnly` set to `true`.
+    ///    - content: A `ViewBuilder` to define the content of the `MISOInteractionButton`
     public init(isReadOnly: Bool = false,
                 action: @escaping () -> Void,
-                @ViewBuilder content: @escaping (OUDSButtonInteractionState) -> Content)
+                @ViewBuilder content: @escaping (MISOButtonInteractionState) -> Content)
     {
         self.isReadOnly = isReadOnly
         self.action = action
@@ -68,13 +68,13 @@ public struct OUDSInteractionButton<Content>: View where Content: View {
                 action()
             }
         }
-        .buttonStyle(OUDSInteractionButtonStyle(isReadOnly: isReadOnly, content: content))
+        .buttonStyle(MISOInteractionButtonStyle(isReadOnly: isReadOnly, content: content))
     }
 }
 
 // MARK: - Interaction Button Style
 
-/// The SwiftUI `ButtonStyle` to compute the interaction state ``OUDSButtonInteractionState`` and send it to
+/// The SwiftUI `ButtonStyle` to compute the interaction state ``MISOButtonInteractionState`` and send it to
 /// the provided content builder.
 /// To compute this state, some elements are needed:
 /// - the `isHover` flag get from the `onHover` added on the `content`
@@ -89,7 +89,7 @@ public struct OUDSInteractionButton<Content>: View where Content: View {
 ///
 ///     let isReadOnly: Bool
 ///     let action: () -> Void
-///     @ViewBuilder let content: (OUDSButtonInteractionState) -> Content
+///     @ViewBuilder let content: (MISOButtonInteractionState) -> Content
 ///
 ///     var body: some View {
 ///         Button("") {
@@ -98,7 +98,7 @@ public struct OUDSInteractionButton<Content>: View where Content: View {
 ///             }
 ///         }
 ///         // Will defined the interaction state for the button depending to the OS
-///         .buttonStyle(OUDSInteractionButtonStyle(isReadOnly: isReadOnly, content: content))
+///         .buttonStyle(MISOInteractionButtonStyle(isReadOnly: isReadOnly, content: content))
 ///     }
 /// }
 ///
@@ -112,19 +112,19 @@ public struct OUDSInteractionButton<Content>: View where Content: View {
 /// ```
 ///
 /// - Since: 2.3.0
-public struct OUDSInteractionButtonStyle<Content>: ButtonStyle where Content: View {
+public struct MISOInteractionButtonStyle<Content>: ButtonStyle where Content: View {
 
     // MARK: Properties
 
     private let isReadOnly: Bool
-    @ViewBuilder private let content: (OUDSButtonInteractionState) -> Content
+    @ViewBuilder private let content: (MISOButtonInteractionState) -> Content
     @State private var isHover: Bool = false
 
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Initializer
 
-    public init(isReadOnly: Bool = false, @ViewBuilder content: @escaping (OUDSButtonInteractionState) -> Content) {
+    public init(isReadOnly: Bool = false, @ViewBuilder content: @escaping (MISOButtonInteractionState) -> Content) {
         self.isReadOnly = isReadOnly
         self.content = content
     }
@@ -132,7 +132,7 @@ public struct OUDSInteractionButtonStyle<Content>: ButtonStyle where Content: Vi
     // MARK: Body
 
     public func makeBody(configuration: Configuration) -> some View {
-        content(OUDSButtonInteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed, isReadOnly: isReadOnly))
+        content(MISOButtonInteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed, isReadOnly: isReadOnly))
         #if !os(watchOS) && !os(tvOS)
             .onHover { isHover in
                 self.isHover = isHover

@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -44,7 +44,7 @@ final class WireframeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensP
     init(spaces: AllSpaceSemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of WireframeThemeBadgeComponentTokensProvider")
+        ML.debug("Init of WireframeThemeBadgeComponentTokensProvider")
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
         self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())
         #if DEBUG

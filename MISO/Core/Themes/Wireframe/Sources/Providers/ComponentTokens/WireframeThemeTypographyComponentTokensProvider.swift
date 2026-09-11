@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -42,7 +42,7 @@ final class WireframeThemeTypographyComponentTokensProvider: AllTypographyCompon
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens, if nil, a default one will be used (``WireframeThemeColorSemanticTokensProvider``)
     init(spaces: AllSpaceSemanticTokensProvider? = nil, colors: AllColorSemanticTokensProvider? = nil) {
-        OL.debug("Init of WireframeThemeTypographyComponentTokensProvider")
+        ML.debug("Init of WireframeThemeTypographyComponentTokensProvider")
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         #if DEBUG

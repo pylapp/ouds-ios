@@ -44,7 +44,7 @@ extension OUDSTheme {
         case .regular:
             grids.regularMinWidth
         @unknown default:
-            OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
+            ML.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
@@ -73,7 +73,7 @@ extension OUDSTheme {
         case .regular:
             grids.regularMaxWidth
         @unknown default:
-            OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
+            ML.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
@@ -102,7 +102,7 @@ extension OUDSTheme {
         case .regular:
             grids.regularMargin
         @unknown default:
-            OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
+            ML.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
@@ -131,7 +131,7 @@ extension OUDSTheme {
         case .regular:
             grids.regularColumnGap
         @unknown default:
-            OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
+            ML.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 }

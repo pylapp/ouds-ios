@@ -71,14 +71,14 @@ struct TextInputTrailingContainer: View {
 
     private func trailingButton(for trailingAction: MISOTextInput.TrailingAction) -> some View {
         precondition(trailingAction.icon.asset != nil, "MISOTextInput.TrailingAction.icon must be created with an asset Image")
-        // Inject the actionHint as accessibilityLabel into a new MISOImage for OUDSButton icon-only
+        // Inject the actionHint as accessibilityLabel into a new MISOImage for MISOButton icon-only
         // swiftlint:disable:next force_unwrapping
         let imageWithA11y = MISOImage(asset: trailingAction.icon.asset!,
                                       flipped: trailingAction.icon.flipped,
                                       accessibilityLabel: trailingAction.actionHint,
                                       renderingMode: trailingAction.icon.renderingMode)
 
-        return OUDSButton(image: imageWithA11y,
+        return MISOButton(image: imageWithA11y,
                           appearance: .minimal,
                           style: .default,
                           action: trailingAction.action)

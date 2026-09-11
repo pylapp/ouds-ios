@@ -14,9 +14,9 @@
 #if os(iOS)
 
 import MISOFoundations
+import MISOThemesContract
 import MISOTokensRaw
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 /// A small stroke, like a divider, to display in the top of the tab bar for iOS lower than 26 (i.e. no Liquid Glass)

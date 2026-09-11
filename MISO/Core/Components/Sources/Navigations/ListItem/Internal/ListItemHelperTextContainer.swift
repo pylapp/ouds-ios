@@ -15,13 +15,13 @@ import MISOTokensSemantic
 import SwiftUI
 
 /// Displays an helper message below ``ListItemContent`` text.
-/// and updates text color according to the ``OUDSButtonInteractionState``.
+/// and updates text color according to the ``MISOButtonInteractionState``.
 struct ListItemHelperTextContainer: View {
 
     // MARK: Properties
 
     let text: TextualContent?
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
 

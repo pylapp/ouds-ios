@@ -11,24 +11,24 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOThemesContract
+import MISOTokensComponent
 import MISOTokensSemantic
-import OUDSThemesContract
-import OUDSTokensComponent
 import SwiftUI
 
 /// Used to apply a border with color, width and radius associated to the appearance
 struct ButtonBorderModifier: ViewModifier {
 
-    @Environment(\.theme) private var theme
-    @Environment(\.oudsUseMonochrome) private var useMonochrome
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
-
     // MARK: Stored Properties
 
-    let appearance: OUDSButton.Appearance
+    let appearance: MISOButton.Appearance
     let state: ButtonInternalState
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.misoUseMonochrome) private var useMonochrome
+    @Environment(\.misoOnColoredSurface) private var onColoredSurface
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: Body
 

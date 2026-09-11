@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSTokensComponent
+import MISOTokensComponent
 import SwiftUI
 
 /// Switch is a UI element that allows to toggle between two states, typically "On" and "Off", and used to enable or disable features, options or settings.
@@ -116,7 +116,7 @@ public struct OUDSSwitch: View {
     ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
     public init(isOn: Binding<Bool>, accessibilityLabel: String, isReadOnly: Bool = false) {
         if accessibilityLabel.isEmpty {
-            OL.warning("The OUDSSwitch should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The OUDSSwitch should not have an empty accessibility label, think about your disabled users!")
         }
         _isOn = isOn
         self.accessibilityLabel = accessibilityLabel.localized()
@@ -126,7 +126,7 @@ public struct OUDSSwitch: View {
     // MARK: Body
 
     public var body: some View {
-        OUDSInteractionButton(isReadOnly: isReadOnly) {
+        MISOInteractionButton(isReadOnly: isReadOnly) {
             if reduceMotion {
                 $isOn.wrappedValue.toggle()
             } else {

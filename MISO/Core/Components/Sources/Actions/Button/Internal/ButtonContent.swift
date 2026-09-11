@@ -19,7 +19,7 @@ import SwiftUI
 struct ButtonIcon: View {
 
     let image: MISOImage
-    let size: OUDSButton.Size
+    let size: MISOButton.Size
 
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
@@ -65,7 +65,7 @@ struct ButtonIcon: View {
 struct ButtonText: View {
 
     let text: String
-    let size: OUDSButton.Size
+    let size: MISOButton.Size
 
     @Environment(\.theme) private var theme
 
@@ -100,7 +100,7 @@ struct ButtonTextAndIcon: View {
 
     let text: String
     let image: MISOImage
-    let size: OUDSButton.Size
+    let size: MISOButton.Size
 
     @Environment(\.theme) private var theme
 
@@ -165,7 +165,7 @@ struct ButtonTextAndIcon: View {
 private struct TextForButton: View {
 
     let text: String
-    let size: OUDSButton.Size
+    let size: MISOButton.Size
 
     @Environment(\.theme) private var theme
 

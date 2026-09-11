@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOThemesContract
+import MISOTokensComponent
 import MISOTokensSemantic
-import OUDSThemesContract
-import OUDSTokensComponent
 import SwiftUI
 
 // MARK: - Button Loading Content Modifier
@@ -26,13 +26,13 @@ struct ButtonLoadingContentModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let appearance: OUDSButton.Appearance
-    let size: OUDSButton.Size
+    let appearance: MISOButton.Appearance
+    let size: MISOButton.Size
     let progress: Double?
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsUseMonochrome) private var useMonochrome
+    @Environment(\.misoUseMonochrome) private var useMonochrome
     @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: Body

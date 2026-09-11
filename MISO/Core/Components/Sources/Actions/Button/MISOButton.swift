@@ -14,7 +14,7 @@
 import MISOFoundations
 import SwiftUI
 
-// MARK: - OUDS Button
+// MARK: - MISO Button
 
 /// Button is a UI element that triggers an action or event, and is used to initiate tasks or confirming an action.
 /// Button appears in different layouts, styles and states to indicate hierarchy or emphasis.
@@ -30,53 +30,52 @@ import SwiftUI
 ///
 /// - **brand**: A brand primary color alternative to the *strong* button.
 /// To be used sparingly for high-value specific actions or to visually anchor a brand moment. Do not use it as the default primary button in your interfaces.
-/// A button with `OUDSButton.Appearance.Brand` appearance is not allowed as a direct or indirect child of an `MISOColoredSurface`.
+/// A button with `MISOButton.Appearance.Brand` appearance is not allowed as a direct or indirect child of an `MISOColoredSurface`.
 ///
 /// - **minimal**: Minimal buttons are commonly used for actions that are considered less crucial. They can be used independently or together with a strong button.
 ///
 /// - **negative**: Negative buttons should be used sparingly to warn of a destructive action,
 /// for example, delete or remove, typically resulting in the opening of a confirmation dialog.
-/// A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a direct or indirect child of an `MISOColoredSurface`.
+/// A button with `MISOButton.Appearance.Negative` appearance is not allowed as a direct or indirect child of an `MISOColoredSurface`.
 ///
 /// ## Code samples
 ///
 /// ```swift
 ///     // Icon only with default appearance
-///     OUDSButton(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
+///     MISOButton(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
 ///     // Or simpler
-///     OUDSButton(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Like") { /* the action to process */ }
+///     MISOButton(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Like") { /* the action to process */ }
 ///     // With an image to keep raw without tint
-///     OUDSButton(image: MISOImage(asset: Image("il_someImage")), accessibilityLabel: "Like", renderingMode: .original) { /* the action to process */ }
+///     MISOButton(image: MISOImage(asset: Image("il_someImage")), accessibilityLabel: "Like", renderingMode: .original) { /* the action to process */ }
 ///
 ///     // Text only with negative appearance
-///     OUDSButton(text: "Delete", appearance: .negative,  style: .default) { /* the action to process */ }
+///     MISOButton(text: "Delete", appearance: .negative,  style: .default) { /* the action to process */ }
 ///     // Or simpler
-///     OUDSButton(text: "Delete", appearance: .negative) { /* the action to process */ }
+///     MISOButton(text: "Delete", appearance: .negative) { /* the action to process */ }
 ///
 ///     // A small loading button with indeterminate progress
-///     OUDSButton(text: "Delete", style: .loading(), size: .small) { /* the action to process */ }
+///     MISOButton(text: "Delete", style: .loading(), size: .small) { /* the action to process */ }
 ///
 ///     // A small loading button with a progress (i.e. percent of progress)
-///     OUDSButton(text: "Delete", style: .loading(progress: 0.75), size: .small) { /* the action to process */ }
+///     MISOButton(text: "Delete", style: .loading(progress: 0.75), size: .small) { /* the action to process */ }
 ///
 ///     // Text and icon with strong appearance
-///     OUDSButton(text: "Validate", image: MISOImage(asset: Image("ic_heart")), appearance: .strong) { /* the action to process */ }
+///     MISOButton(text: "Validate", image: MISOImage(asset: Image("ic_heart")), appearance: .strong) { /* the action to process */ }
 ///
 ///     // Text and icon with strong appearance and button taking full width
-///     OUDSButton(text: "Validate", image: MISOImage(asset: Image("ic_heart")), appearance: .strong, isFullWidth: true) { /* the action to process */ }
+///     MISOButton(text: "Validate", image: MISOImage(asset: Image("ic_heart")), appearance: .strong, isFullWidth: true) { /* the action to process */ }
 ///
 ///     // Localizable from bundle can also be used
-///     OUDSButton(LocalizedStringKey("validate_button"), bundle: Bundle.module, appearance: .strong) { }
+///     MISOButton(LocalizedStringKey("validate_button"), bundle: Bundle.module, appearance: .strong) { }
 /// ```
 ///
 /// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
 /// ```swift
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
-///     OUDSButton(text: "Button",
+///     MISOButton(text: "Button",
 ///                image: MISOImage(asset: Image(systemName: "figure.handball"), flipped: layoutDirection == .rightToLeft))
 /// ```
-///
 ///
 /// ## Sizes
 ///
@@ -101,7 +100,6 @@ import SwiftUI
 ///
 /// To activate the rounded button behavior, set to true the `hasRoundedButtons` values of the `Tuning` object
 /// in your theme configuration (if the theme exposes this property at init).
-/// Some themes do not have this flexibility like `SoshTheme` and `WireframeTheme`.
 ///
 /// ## Colored surface
 ///
@@ -114,32 +112,10 @@ import SwiftUI
 /// For accessibility reasons, if the system settings for reducing motion is enabled, the loading indicator does not move.
 /// For ecodesign reasons, if the device is in low power mode, the loading indicator does not move.
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-button)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A button component in light and dark modes with Orange theme](component_button_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A button component in light and dark modes with Orange Compact theme](component_button_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A button component in light and dark modes with Sosh theme](component_button_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A button component in light and dark modes with Wireframe theme](component_button_Wireframe)
-///
 /// - Version: 3.3.0 (Figma component design version)
 /// - Since: 0.10.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSButton: View {
+public struct MISOButton: View {
 
     // MARK: Stored Properties
 
@@ -151,7 +127,7 @@ public struct OUDSButton: View {
     private let action: () -> Void
 
     @State private var isHover: Bool
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
+    @Environment(\.misoOnColoredSurface) private var onColoredSurface
 
     private enum `Type` {
         case text(String)
@@ -215,7 +191,7 @@ public struct OUDSButton: View {
     /// ```swift
     ///     let oudsImage = MISOImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
     ///     // Use localizable
-    ///     OUDSButton(LocalizedStringKey("validate_button"),
+    ///     MISOButton(LocalizedStringKey("validate_button"),
     ///                bundle: Bundle.module,
     ///                image: oudsImage,
     ///                appearance: .strong) { }
@@ -250,13 +226,13 @@ public struct OUDSButton: View {
     ///
     /// ```swift
     ///     // With default setup
-    ///     OUDSButton(text: "Validate",
+    ///     MISOButton(text: "Validate",
     ///                image: MISOImage(asset: Image(systemName: "checkmark")),
     ///                appearance: .strong) { }
     ///
     ///     // With more setup
     ///     let oudsImage = MISOImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
-    ///     OUDSButton(text: "Validate",
+    ///     MISOButton(text: "Validate",
     ///                image: oudsImage,
     ///                appearance: .strong) { }
     /// ```
@@ -293,7 +269,7 @@ public struct OUDSButton: View {
     ///                                flipped: true,
     ///                                accessibilityLabel: LocalizedStringKey("some.wording.key"),
     ///                                renderingMode: .original)
-    ///     OUDSButton(text: "Validate",
+    ///     MISOButton(text: "Validate",
     ///                image: oudsImage,
     ///                appearance: .strong) { }
     /// ```
@@ -324,7 +300,7 @@ public struct OUDSButton: View {
     /// Creates a button with a localized text only, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSButton(LocalizedStringKey("delete_button"), bundle: Bundle.module, appearance: .negative) { }
+    ///     MISOButton(LocalizedStringKey("delete_button"), bundle: Bundle.module, appearance: .negative) { }
     /// ```
     ///
     /// - Parameters:
@@ -352,7 +328,7 @@ public struct OUDSButton: View {
     /// Create a button with a text only.
     ///
     /// ```swift
-    ///     OUDSButton(text: "Delete", appearance: .negative) { }
+    ///     MISOButton(text: "Delete", appearance: .negative) { }
     /// ```
     ///
     /// - Parameters:
@@ -385,7 +361,7 @@ public struct OUDSButton: View {
         // A button with negative or brand appearance is not allowed on a colored surface.
         // Test is done here because onColoredSurface is environment variable which is not accessible in init.
         if onColoredSurface, appearance == .negative || appearance == .brand {
-            OL.fatal("An OUDSButton with OUDSButton.Appearance.{Negative | Brand} appearance has been detected as a direct or indirect child of an MISOColoredSurface, which is not allowed.")
+            ML.fatal("An MISOButton with MISOButton.Appearance.{Negative | Brand} appearance has been detected as a direct or indirect child of an MISOColoredSurface, which is not allowed.")
         }
 
         Button(action: action) {

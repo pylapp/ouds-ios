@@ -41,7 +41,7 @@ struct BadgeModifier: ViewModifier {
         default:
             // Should never happen, only 3 implementations of BadgeConfiguration:
             // BadgeStandardConfiguration, BadgeCountConfiguration and BadgeIconConfiguration
-            OL.fatal("Impossible to compute the standard size for the badge.")
+            ML.fatal("Impossible to compute the standard size for the badge.")
         }
     }
 
@@ -130,7 +130,7 @@ struct BadgeColorModifier: ViewModifier {
         default:
             // Should never happen, only 3 implementations of BadgeConfiguration:
             // BadgeStandardConfiguration, BadgeCountConfiguration and BadgeIconConfiguration
-            OL.fatal("Impossible to compute the standard status for the badge.")
+            ML.fatal("Impossible to compute the standard status for the badge.")
         }
     }
 }

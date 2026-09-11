@@ -20,9 +20,9 @@ public struct MISOColoredSurfaceModifier: ViewModifier {
     public func body(content: Content) -> some View {
         content
             .background(useColorToken.color(for: colorScheme))
-            .environment(\.oudsUseMonochrome, useMonochrome)
-            .environment(\.oudsOnColoredSurface, true)
-            .environment(\.oudsSurfaceColor, useColorToken)
+            .environment(\.misoUseMonochrome, useMonochrome)
+            .environment(\.misoOnColoredSurface, true)
+            .environment(\.misoSurfaceColor, useColorToken)
             .environment(\.colorScheme, useColorScheme)
     }
 

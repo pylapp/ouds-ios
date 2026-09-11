@@ -12,23 +12,23 @@
 //
 
 import MISOFoundations
+import MISOThemesContract
+import MISOTokensComponent
 import MISOTokensSemantic
-import OUDSThemesContract
-import OUDSTokensComponent
 import SwiftUI
 
 /// Used to apply the right forground color associated to the appearance and state
 struct ButtonForegroundModifier: ViewModifier {
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsUseMonochrome) private var useMonochrome
-    @Environment(\.oudsSurfaceColor) private var surfaceColor
-
     // MARK: Stored Properties
 
-    let appearance: OUDSButton.Appearance
+    let appearance: MISOButton.Appearance
     let state: ButtonInternalState
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.misoSurfaceColor) private var surfaceColor
+    @Environment(\.misoUseMonochrome) private var useMonochrome
 
     // MARK: Body
 

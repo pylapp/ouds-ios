@@ -13,9 +13,9 @@
 
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
+import MISOThemesContract
+import MISOTokensComponent
 import MISOTokensSemantic
-import OUDSThemesContract
-import OUDSTokensComponent
 import SwiftUI
 
 /// Text area is a UI element that allows to type, edit, or select longer blocks of textual data, such as comments, messages or descriptions;
@@ -332,7 +332,7 @@ public struct MISOTextArea: View {
         ///   - action: The action when clicked
         public init(text: String, action: @escaping () -> Void) {
             if text.isEmpty {
-                OL.warning("The helper link text for the MISOTextArea is empty, avoid using it in that case.")
+                ML.warning("The helper link text for the MISOTextArea is empty, avoid using it in that case.")
             }
             self.text = text
             self.action = action

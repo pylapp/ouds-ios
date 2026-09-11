@@ -25,7 +25,7 @@ struct LinearProgressIndicatorView: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsUseMonochrome) private var useMonochrome
+    @Environment(\.misoUseMonochrome) private var useMonochrome
 
     // MARK: - Body
 

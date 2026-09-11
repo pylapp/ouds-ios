@@ -1,4 +1,4 @@
-# ``OUDSTokensComponent``
+# ``MISOTokensComponent``
 
 @Metadata {
     @PageImage(purpose: icon, source: "ic_design_token_figma_component")
@@ -117,7 +117,7 @@ accordion / accordionFaq       | For accordions components
 alert                          | For alert mesdsages and inline alert components like `OUDSAlertMessage` and `OUDSInlineAlert`
 bar                            | For bars components like bottom and navigation bars
 badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
-button                         | For buttons like `OUDSButton` 
+button                         | For buttons like `MISOButton` 
 bulletList                     | For list of elements with bullets like `OUDSBulletList`
 checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckboxItem` and their indeterminate variants 
 chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip`  

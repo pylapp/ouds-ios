@@ -91,7 +91,7 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
         // but .rgba uses UIColor.getRed(green:blue:alpha) which returns values in [0;1]
         // thus no need to convert colors in 8-bits values to divide then by 255: values are suitable already
         guard let (R_sRGB, G_sRGB, B_sRGB, _) = color.rgba else {
-            OL.error("Not possible to have RGB content of current color")
+            ML.error("Not possible to have RGB content of current color")
             return nil
         }
 
@@ -116,7 +116,7 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
         guard let selfLuminance = luminance(for: lhs),
               let otherLuminance = luminance(for: rhs)
         else {
-            OL.error("Missing color luminance(s) for contrast ratio computation")
+            ML.error("Missing color luminance(s) for contrast ratio computation")
             return nil
         }
 
@@ -137,21 +137,21 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
     /// - Returns: The computed ratio and flags saying if it match 3:1, 4.5:1 or 7:1
     public static func contrastRatios(_ lhs: String, _ rhs: String) -> OUDSWCAG21Ratio? {
         guard !lhs.isEmpty, !rhs.isEmpty else {
-            OL.warning("Ask to comput contrast ratio but one or two of the colors is empty")
+            ML.warning("Ask to comput contrast ratio but one or two of the colors is empty")
             return nil
         }
         guard let lhsHexa6 = lhs.toHex6(), let rhsHexa6 = rhs.toHex6() else {
-            OL.error("Not possible to convert hexa colors to hex6 to compute contrast ratio between '\(lhs)' and '\(rhs)'!")
+            ML.error("Not possible to convert hexa colors to hex6 to compute contrast ratio between '\(lhs)' and '\(rhs)'!")
             return nil
         }
 
         guard let lhsColor = Color(hexadecimalCode: lhsHexa6), let rhsColor = Color(hexadecimalCode: rhsHexa6) else {
-            OL.error("Not possible to convert string to colors to compute contrast ratio between '\(lhs)' and '\(rhs)'!")
+            ML.error("Not possible to convert string to colors to compute contrast ratio between '\(lhs)' and '\(rhs)'!")
             return nil
         }
 
         guard let contrastRatio = Self.contrastRatio(lhsColor, rhsColor) else {
-            OL.error("Not possible to compute ratio between '\(lhs)' and '\(rhs)'!")
+            ML.error("Not possible to compute ratio between '\(lhs)' and '\(rhs)'!")
             return nil
         }
 

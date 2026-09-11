@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSTokensComponent
+import MISOTokensComponent
 import SwiftUI
 
 // MARK: - OUDS Radio
@@ -137,7 +137,7 @@ public struct OUDSRadio: View {
                 isReadOnly: Bool = false)
     {
         if accessibilityLabel.isEmpty {
-            OL.warning("The OUDSRadio should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The OUDSRadio should not have an empty accessibility label, think about your disabled users!")
         }
         _isOn = isOn
         self.accessibilityLabel = accessibilityLabel.localized()
@@ -148,7 +148,7 @@ public struct OUDSRadio: View {
     // MARK: Body
 
     public var body: some View {
-        OUDSInteractionButton(isReadOnly: isReadOnly) {
+        MISOInteractionButton(isReadOnly: isReadOnly) {
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             RadioIndicator(interactionState: interactionState, isOn: isOn, isError: isError)

@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 // swiftlint:disable line_length
@@ -61,7 +61,7 @@ final class WireframeThemeProgressIndicatorComponentTokensProvider: AllProgressI
          spaces: AllSpaceSemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of WireframeThemeProgressIndicatorComponentTokensProvider")
+        ML.debug("Init of WireframeThemeProgressIndicatorComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())

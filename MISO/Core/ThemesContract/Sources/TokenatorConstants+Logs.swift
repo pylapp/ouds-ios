@@ -27,7 +27,7 @@ extension OUDSVersions {
         versionsLog += "- Core Wireframe: \(Self.themeWireframeCoreVersion)\n"
         versionsLog += "- Brand Wireframe: \(Self.themeWireframeBrandVersion)\n"
 
-        OL.info(versionsLog)
+        ML.info(versionsLog)
     }
 
     /// Displays in standard output an informationmemssage about the versions of the components
@@ -64,6 +64,6 @@ extension OUDSVersions {
         versionsLog += "- Text Area: \(Self.componentTextAreaVersion)\n"
         versionsLog += "- Text Input: \(Self.componentTextInputVersion)\n"
 
-        OL.log(versionsLog)
+        ML.log(versionsLog)
     }
 }

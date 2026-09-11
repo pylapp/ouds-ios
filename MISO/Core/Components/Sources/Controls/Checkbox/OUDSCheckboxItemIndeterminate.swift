@@ -200,20 +200,20 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            OL.fatal("It is forbidden by design to have an OUDSCheckboxItemIndeterminate in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an OUDSCheckboxItemIndeterminate in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            OL.warning("Label given to an OUDSCheckboxItemIndeterminate is defined but empty, prefer OUDSCheckboxIndeterminate(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an OUDSCheckboxItemIndeterminate is defined but empty, prefer OUDSCheckboxIndeterminate(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            OL.warning("Description text given to an OUDSCheckboxItemIndeterminate is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description text given to an OUDSCheckboxItemIndeterminate is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
-            OL.warning("Error text given to an OUDSCheckboxItemIndeterminate must be defined in case of error")
+            ML.warning("Error text given to an OUDSCheckboxItemIndeterminate must be defined in case of error")
         }
         // swiftlint:enable force_unwrapping
 

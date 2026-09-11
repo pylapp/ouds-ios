@@ -1,4 +1,4 @@
-# ``OUDSThemesContract``
+# ``MISOThemesContract``
 
 @Metadata {
     @PageImage(purpose: icon, source: "ic_unified_ds")

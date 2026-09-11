@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 /// A class which wraps all **size semantic tokens**, *multiple* or not, and expose them.
 /// This provider should be integrated as a `AllSizeSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -32,7 +32,7 @@ final class WireframeThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvi
     /// Intializes the provider
     /// - Parameter dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
     init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
-        OL.debug("Init of WireframeThemeSizeSemanticTokensProvider")
+        ML.debug("Init of WireframeThemeSizeSemanticTokensProvider")
         self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++

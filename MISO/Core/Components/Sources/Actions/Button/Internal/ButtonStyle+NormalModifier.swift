@@ -29,7 +29,7 @@ struct ButtonViewModifier: ViewModifier {
 
     // MARK: Properties
 
-    let appearance: OUDSButton.Appearance
+    let appearance: MISOButton.Appearance
     let state: ButtonInternalState
 
     // MARK: Body

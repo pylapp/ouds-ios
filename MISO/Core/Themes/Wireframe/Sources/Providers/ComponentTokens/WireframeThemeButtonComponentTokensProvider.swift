@@ -12,11 +12,11 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of buttons** for *button* objects like `OUDSButton`.
+/// A class which wraps all **component  tokens of buttons** for *button* objects like `MISOButton`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllButtonComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
@@ -43,7 +43,7 @@ final class WireframeThemeButtonComponentTokensProvider: AllButtonComponentToken
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSButton`
+    /// Defines a provider of component tokens dedicated to `MISOButton`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
@@ -54,7 +54,7 @@ final class WireframeThemeButtonComponentTokensProvider: AllButtonComponentToken
          colors: AllColorSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of WireframeThemeButtonComponentTokensProvider")
+        ML.debug("Init of WireframeThemeButtonComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())

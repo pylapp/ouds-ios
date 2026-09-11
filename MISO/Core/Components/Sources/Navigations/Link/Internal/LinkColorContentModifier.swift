@@ -12,20 +12,20 @@
 //
 
 import MISOFoundations
+import MISOThemesContract
+import MISOTokensComponent
 import MISOTokensSemantic
-import OUDSThemesContract
-import OUDSTokensComponent
 import SwiftUI
 
 struct LinkColorContentModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsUseMonochrome) private var useMonochrome
-    @Environment(\.oudsSurfaceColor) private var surfaceColor
+    @Environment(\.misoUseMonochrome) private var useMonochrome
+    @Environment(\.misoSurfaceColor) private var surfaceColor
 
     // MARK: - Body
 

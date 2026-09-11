@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -29,7 +29,7 @@ final class WireframeThemeEffectSemanticTokensProvider: AllEffectSemanticTokensP
 
     /// Intializes the provider
     init() {
-        OL.debug("Init of WireframeThemeEffectSemanticTokensProvider")
+        ML.debug("Init of WireframeThemeEffectSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "WireframeThemeEffectSemanticTokensProvider")

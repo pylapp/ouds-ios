@@ -167,7 +167,7 @@ public struct OUDSBadgeStandard: View {
     ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     private init(size: OUDSBadgeStandard.Size, status: OUDSBadgeStandard.Status, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
-            OL.warning("The OUDSBadgeStandard should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The OUDSBadgeStandard should not have an empty accessibility label, think about your disabled users!")
         }
         configuration = .init(size: size, status: status)
         self.accessibilityLabel = accessibilityLabel

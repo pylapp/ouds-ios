@@ -231,7 +231,7 @@ public struct OUDSNavigationListItem: View {
     // MARK: Body
 
     public var body: some View {
-        OUDSInteractionButton(isReadOnly: false) {
+        MISOInteractionButton(isReadOnly: false) {
             action?()
         } content: { interactionState in
             ListItemContent(data: data,

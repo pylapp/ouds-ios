@@ -13,7 +13,7 @@
 
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 import SwiftUI
 
 // MARK: - ToolBar Top Modifier
@@ -50,10 +50,10 @@ struct ToolBarTopModifier: ViewModifier {
          @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem])
     {
         if title.isEmpty {
-            OL.warning("The title of ToolBarTopModifier is empty, prefer a non-empty title")
+            ML.warning("The title of ToolBarTopModifier is empty, prefer a non-empty title")
         }
         if let subtitle, subtitle.isEmpty {
-            OL.warning("The subtitle of ToolBarTopModifier is empty, prefer nil instead")
+            ML.warning("The subtitle of ToolBarTopModifier is empty, prefer nil instead")
         }
 
         self.title = title

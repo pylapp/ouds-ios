@@ -29,7 +29,7 @@
 ///         // isEnabled: picked from environment object / SwiftUI layer
 ///         // isHover: from API callback on some OS
 ///         // isPressed: from ButtonStyle SwiftUI API
-///         let interactionState = OUDSButtonInteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
+///         let interactionState = MISOButtonInteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
 ///         YourComponentBody(with: interactionState) // Define your style depending to the state
 ///         #if !os(watchOS) && !os(tvOS)
 ///            .onHover { isHover in
@@ -50,7 +50,7 @@
 /// ```
 ///
 /// - Since: 2.3.0
-@frozen public enum OUDSButtonInteractionState {
+@frozen public enum MISOButtonInteractionState {
 
     /// User can interact with the component
     case enabled

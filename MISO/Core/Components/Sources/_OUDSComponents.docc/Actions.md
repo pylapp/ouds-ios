@@ -26,25 +26,25 @@ Some components can be used for **actions**.
     }
 }
 
-The ``OUDSButton`` proposes layout with text only, icon only or text and icon. 
+The ``MISOButton`` proposes layout with text only, icon only or text and icon. 
 Four hierarchies are proposed for all layouts: *default*, *strong*, *minimal* and *negative*.
 Two style are available: *default* and *loading*.
 If button is placed on colored surface using `MISOColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrom.
-A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a direct or indirect child of an `MISOColoredSurface`.
+A button with `MISOButton.Appearance.Negative` appearance is not allowed as a direct or indirect child of an `MISOColoredSurface`.
 Two sizes are available: *default* and *small*.
 
 ```swift
     // Icon only with default appearance
-    OUDSButton(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
+    MISOButton(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
 
     // Text only with negative appearance
-    OUDSButton(text: "Delete", appearance: .negative, size: .small) {}
+    MISOButton(text: "Delete", appearance: .negative, size: .small) {}
     
     // The same button (text only) with loading style (indeterminate process)
-    OUDSButton(text: "Delete", style: .loading(), size: .small) {}
+    MISOButton(text: "Delete", style: .loading(), size: .small) {}
     
     // The same button (text only) with loading style (progress at 75 %)
-    OUDSButton(text: "Delete", style: .loading(progress: 0.75), size: .small) {}
+    MISOButton(text: "Delete", style: .loading(progress: 0.75), size: .small) {}
 ```
 
 For accessibility reasons, if the user in the system settings toggles the option to reduce the animations, the loading indicator will be frozen to be more comfortable for the user.

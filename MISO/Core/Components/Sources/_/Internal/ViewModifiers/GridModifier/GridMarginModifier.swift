@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesContract
+import MISOThemesContract
 import SwiftUI
 
 /// `ViewModifier` to use to define pading to given `edges` using the OUDS current horizontal size class

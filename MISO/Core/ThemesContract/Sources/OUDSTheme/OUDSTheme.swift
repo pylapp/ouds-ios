@@ -115,7 +115,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to bullet list components like `OUDSBulletList`
     public let bulletList: AllBulletListComponentTokensProvider
 
-    /// All components tokens related to button components like `OUDSButton`
+    /// All components tokens related to button components like `MISOButton`
     public let button: AllButtonComponentTokensProvider
 
     /// All components tokens related to categorical tag like `OUDSCategoricalTag`

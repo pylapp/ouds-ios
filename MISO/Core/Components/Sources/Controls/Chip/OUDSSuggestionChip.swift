@@ -122,7 +122,7 @@ public struct OUDSSuggestionChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, text: String, action: @escaping () -> Void) {
         if text.isEmpty {
-            OL.warning("The OUDSSuggestionChip should not have an empty text! Prefer instead OUDSSuggestionChip(icon:accessibilityLabel:action).")
+            ML.warning("The OUDSSuggestionChip should not have an empty text! Prefer instead OUDSSuggestionChip(icon:accessibilityLabel:action).")
         }
         layout = .textAndIcon(text: text, icon: image, iconPosition: .leading)
         self.action = action
@@ -168,7 +168,7 @@ public struct OUDSSuggestionChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, accessibilityLabel: String, action: @escaping () -> Void) {
         if accessibilityLabel.isEmpty {
-            OL.warning("The OUDSSuggestionChip should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The OUDSSuggestionChip should not have an empty accessibility label, think about your disabled users!")
         }
         layout = .icon(image, accessibilityLabel)
         self.action = action
@@ -207,7 +207,7 @@ public struct OUDSSuggestionChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(text: String, action: @escaping () -> Void) {
         if text.isEmpty {
-            OL.fatal("The OUDSSuggestionChip must not have an empty text!")
+            ML.fatal("The OUDSSuggestionChip must not have an empty text!")
         }
         layout = .text(text)
         self.action = action
@@ -216,7 +216,7 @@ public struct OUDSSuggestionChip: View {
     // MARK: - Body
 
     public var body: some View {
-        OUDSInteractionButton(action: action) {
+        MISOInteractionButton(action: action) {
             Chip(layout: layout, selected: false, interactionState: OUDSChipInteractionState(with: $0))
                 .accessibilityHidden(true)
         }

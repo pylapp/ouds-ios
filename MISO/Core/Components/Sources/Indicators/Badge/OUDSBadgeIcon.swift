@@ -165,7 +165,7 @@ public struct OUDSBadgeIcon: View {
     ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
     private init(size: OUDSBadgeStandard.Size, status: OUDSBadgeIcon.Status, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
-            OL.warning("The OUDSBadgeIcon should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The OUDSBadgeIcon should not have an empty accessibility label, think about your disabled users!")
         }
 
         configuration = .init(size: size, status: status)

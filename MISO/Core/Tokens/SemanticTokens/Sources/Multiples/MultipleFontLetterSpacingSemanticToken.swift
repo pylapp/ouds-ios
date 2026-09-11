@@ -67,7 +67,7 @@ public final class MultipleFontLetterSpacingSemanticToken: NSObject, Sendable {
         self.compact = compact
         self.regular = regular
         if compact > regular {
-            OL.warning("A multiple font letter spacing semantic token as a compact value (\(compact)) bigger than the regular one (\(regular)), it's strange")
+            ML.warning("A multiple font letter spacing semantic token as a compact value (\(compact)) bigger than the regular one (\(regular)), it's strange")
         }
     }
 

@@ -20,7 +20,7 @@ They can be seen as an high level of usage with functional meanings.
 🧬 Core version: 1.11.0
 ```
 
-If we need for example to change a warning color for a button (which has its component tokens, see [OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)), supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition. In fact, semantic tokens are here to bring meaning, semantic, between raw values and components.
+If we need for example to change a warning color for a button (which has its component tokens, see [MISOTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)), supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition. In fact, semantic tokens are here to bring meaning, semantic, between raw values and components.
 
 In addition, there are hundreds of _semantics tokens_ which must be exposed in the end through the theme. Each _semantic token_ "family" is declared in its dedicated _Swift protocol_. This protocol is then used for the tokens providers embedded inside the theme.
 

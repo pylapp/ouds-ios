@@ -20,7 +20,7 @@ struct ListItemTrailingContainer: View {
     // MARK: Properties
 
     let trailing: OUDSListItemTrailing
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemSize) private var itemSize

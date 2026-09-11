@@ -13,7 +13,7 @@
 
 import Foundation
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 import SwiftUI
 
 extension View {

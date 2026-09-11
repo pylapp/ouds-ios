@@ -212,20 +212,20 @@ public struct OUDSCheckboxItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            OL.fatal("It is forbidden by design to have an OUDSCheckboxItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an OUDSCheckboxItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            OL.warning("Label given to an OUDSCheckboxItem is empty, prefer OUDSCheckbox(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an OUDSCheckboxItem is empty, prefer OUDSCheckbox(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            OL.warning("Description given to an OUDSCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description given to an OUDSCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
-            OL.warning("Error text given to an OUDSCheckboxItem must be defined in case of error")
+            ML.warning("Error text given to an OUDSCheckboxItem must be defined in case of error")
         }
         // swiftlint:enable force_unwrapping
 
@@ -299,19 +299,19 @@ public struct OUDSCheckboxItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            OL.fatal("It is forbidden by design to have an OUDSCheckboxItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an OUDSCheckboxItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            OL.warning("Label given to an OUDSCheckboxItem is empty, prefer OUDSCheckbox(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an OUDSCheckboxItem is empty, prefer OUDSCheckbox(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            OL.warning("Description given to an OUDSCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description given to an OUDSCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if isError, errorText.isEmpty {
-            OL.warning("Error text given to an OUDSCheckboxItem must be defined in case of error")
+            ML.warning("Error text given to an OUDSCheckboxItem must be defined in case of error")
         }
 
         _isOn = isOn

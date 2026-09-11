@@ -14,14 +14,14 @@
 import MISOTokensSemantic
 import SwiftUI
 
-/// A container to display the indicator according to its type and apply the right color based on the ``OUDSButtonInteractionState`.
+/// A container to display the indicator according to its type and apply the right color based on the ``MISOButtonInteractionState`.
 /// For RTL, the next and previous indicators change their assets according to the `LayoutDirection`.
 struct ListItemIndicatorContainer: View {
 
     // MARK: Properties
 
     let type: OUDSNavigationListItemIndicatorType?
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemSize) private var itemSize

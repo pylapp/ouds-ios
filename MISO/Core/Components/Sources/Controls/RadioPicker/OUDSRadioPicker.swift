@@ -234,9 +234,9 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
         let selection = selection.wrappedValue
         let selectionCount = radios.count(where: { $0.tag == selection })
         if selectionCount == 0 {
-            OL.error("It seems the selection '\(selection)' is not available inside the radio buttons. Be sure the value is available in only one tag.")
+            ML.error("It seems the selection '\(selection)' is not available inside the radio buttons. Be sure the value is available in only one tag.")
         } else if selectionCount > 1 {
-            OL.error("It seems the selection '\(selection)' is available more than one time. Be sure the value is available in only one tag.")
+            ML.error("It seems the selection '\(selection)' is available more than one time. Be sure the value is available in only one tag.")
         }
     }
 }

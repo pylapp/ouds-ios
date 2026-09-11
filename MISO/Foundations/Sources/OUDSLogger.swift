@@ -15,15 +15,15 @@ import Foundation
 import os
 
 /// To keep code smaller
-public typealias OL = OUDSLogger
+public typealias OL = MISOLogger
 
 /// The `os.Logger` wrapper used in the *OUDS iOS* library so as to logs things in standard output or elsewhere.
 ///
 /// By default, debug and log level messages are suppressed even in DEBUG builds.
-/// Set `OUDSLogger.verbose = true` to enable them.
+/// Set `MISOLogger.verbose = true` to enable them.
 ///
 /// - Since: 0.8.0
-@frozen public struct OUDSLogger {
+@frozen public struct MISOLogger {
 
     private init() {}
 

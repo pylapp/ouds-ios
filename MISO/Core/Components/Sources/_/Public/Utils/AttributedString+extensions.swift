@@ -531,7 +531,7 @@ extension AttributedString {
                 result[run.range].foregroundColor = defaultConfiguration.color
                 result[run.range].font = defaultConfiguration.font
             } else {
-                OL.warning("No configuration found for URL '\(String(describing: run.link?.absoluteString))'")
+                ML.warning("No configuration found for URL '\(String(describing: run.link?.absoluteString))'")
             }
             result[run.range].underlineStyle = .single
         }

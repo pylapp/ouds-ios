@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -46,7 +46,7 @@ final class WireframeThemeTextInputComponentTokensProvider: AllTextInputComponen
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSButton`
+    /// Defines a provider of component tokens dedicated to `MISOButton`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (`WireframeThemeSizeSemanticTokensProvider`)
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (`WireframeThemeBorderSemanticTokensProvider`)
@@ -59,7 +59,7 @@ final class WireframeThemeTextInputComponentTokensProvider: AllTextInputComponen
          spaces: AllSpaceSemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of WireframeThemeTextInputComponentTokensProvider")
+        ML.debug("Init of WireframeThemeTextInputComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())

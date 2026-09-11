@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -41,7 +41,7 @@ final class WireframeThemeQuantityInputComponentTokensProvider: AllQuantityInput
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of WireframeThemeQuantityInputComponentTokensProvider")
+        ML.debug("Init of WireframeThemeQuantityInputComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
         #if DEBUG

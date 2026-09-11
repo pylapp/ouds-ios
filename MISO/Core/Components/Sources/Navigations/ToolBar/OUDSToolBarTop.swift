@@ -13,7 +13,7 @@
 
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 import SwiftUI
 
 // MARK: - OUDS ToolBar Top View Modifier

@@ -11,12 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOThemesContract
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 /// The content for the ``OUDSStaticListItem`` and the ``OUDSNavigationListItem`` component described by the ``OUDSListItemData``.
-/// The layout (divider, background, size) are updated according to the interaction state ``OUDSButtonInteractionState``.
+/// The layout (divider, background, size) are updated according to the interaction state ``MISOButtonInteractionState``.
 struct ListItemContent: View {
 
     // MARK: Properties
@@ -25,7 +25,7 @@ struct ListItemContent: View {
     let indicatorType: OUDSNavigationListItemIndicatorType?
     let leading: OUDSListItemLeading?
     let trailing: OUDSListItemTrailing?
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemSize) private var itemSize

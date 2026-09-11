@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -33,7 +33,7 @@ final class WireframeThemeColorModeSemanticTokensProvider: AllColorModeSemanticT
     /// Defines a provider of color mode semantic tokens
     /// - Parameter colors: Provider for color semantic tokens. If nil, a default one will be used (``WireframeThemeColorSemanticTokensProvider``)
     init(colors: AllColorSemanticTokensProvider? = nil) {
-        OL.debug("Init of WireframeThemeColorModeSemanticTokensProvider")
+        ML.debug("Init of WireframeThemeColorModeSemanticTokensProvider")
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++

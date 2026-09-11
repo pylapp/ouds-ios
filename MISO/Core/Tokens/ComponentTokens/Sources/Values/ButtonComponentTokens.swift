@@ -19,7 +19,7 @@ import MISOTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for buttons components like `OUDSButton`
+/// Declares all component tokens for buttons components like `MISOButton`
 /// Use for tokens providers like `OrangeThemeButtonComponentTokensProvider`.
 ///
 /// - Since: 0.9.0

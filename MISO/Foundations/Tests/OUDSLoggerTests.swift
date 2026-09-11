@@ -14,22 +14,22 @@
 @testable import MISOFoundations
 import Testing
 
-@Suite("OUDSLogger Tests")
+@Suite("MISOLogger Tests")
 struct OUDSLoggerTests {
 
     @Test("verbose flag is false by default")
     func verboseFlagDefaultValue() {
         // The documented default is false; verify without resetting first
         // so we can detect if the declaration default were ever changed.
-        #expect(OUDSLogger.verbose == false)
+        #expect(MISOLogger.verbose == false)
     }
 
     @Test("verbose flag can be toggled by consumers")
     func verboseFlagCanBeChanged() {
-        defer { OUDSLogger.verbose = false } // Always restore, even on failure
-        OUDSLogger.verbose = true
-        #expect(OUDSLogger.verbose == true)
-        OUDSLogger.verbose = false
-        #expect(OUDSLogger.verbose == false)
+        defer { MISOLogger.verbose = false } // Always restore, even on failure
+        MISOLogger.verbose = true
+        #expect(MISOLogger.verbose == true)
+        MISOLogger.verbose = false
+        #expect(MISOLogger.verbose == false)
     }
 }

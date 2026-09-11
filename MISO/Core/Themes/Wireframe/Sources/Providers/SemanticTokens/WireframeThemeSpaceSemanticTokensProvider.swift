@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -34,7 +34,7 @@ final class WireframeThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensPro
     /// Intializes the provider
     /// - Parameter dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
     init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
-        OL.debug("Init of WireframeThemeSpaceSemanticTokensProvider")
+        ML.debug("Init of WireframeThemeSpaceSemanticTokensProvider")
         self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++

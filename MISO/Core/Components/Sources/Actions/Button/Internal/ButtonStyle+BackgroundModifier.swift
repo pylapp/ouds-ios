@@ -11,21 +11,21 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOThemesContract
+import MISOTokensComponent
 import MISOTokensSemantic
-import OUDSThemesContract
-import OUDSTokensComponent
 import SwiftUI
 
 /// Used to apply the right background color associated to the appearance and style
 struct ButtonBackgroundModifier: ViewModifier {
 
-    @Environment(\.theme) private var theme
-    @Environment(\.oudsUseMonochrome) private var useMonochrome
-
     // MARK: Stored Properties
 
-    let appearance: OUDSButton.Appearance
+    let appearance: MISOButton.Appearance
     let state: ButtonInternalState
+
+    @Environment(\.theme) private var theme
+    @Environment(\.misoUseMonochrome) private var useMonochrome
 
     // MARK: Body
 

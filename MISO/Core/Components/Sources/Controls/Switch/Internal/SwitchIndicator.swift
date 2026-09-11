@@ -11,19 +11,19 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOThemesContract
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 // MARK: - Switch Indicator
 
 /// The indicator of the switch.
-/// Its content depends mainly to the ``OUDSButtonInteractionState`` and from flags also.
+/// Its content depends mainly to the ``MISOButtonInteractionState`` and from flags also.
 struct SwitchIndicator: View {
 
     // MARK: Stored properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     @Binding var isOn: Bool
 
     @State private var offset = CGSize.zero
@@ -70,7 +70,7 @@ struct SwitchIndicator: View {
 
     // MARK: Private Helpers
 
-    private var interactionStateComputed: OUDSButtonInteractionState {
+    private var interactionStateComputed: MISOButtonInteractionState {
         if isDragging {
             return .pressed
         }
@@ -121,7 +121,7 @@ private struct Cursor: View {
 
     // MARK: Stored properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let isOn: Bool
 
     @Environment(\.theme) private var theme

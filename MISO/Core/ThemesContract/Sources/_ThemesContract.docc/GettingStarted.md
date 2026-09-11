@@ -24,14 +24,14 @@ You should use one (or several) of the following imports for your needs, which a
 > Tip: We recommend to embed in your apps only the ones you need to avoid to embed useless assets.
 
 ```swift
-import OUDSThemesContract // If you want to define your theme, use themes or MISOThemeableView
+import MISOThemesContract // If you want to define your theme, use themes or MISOThemeableView
 import OUDSModules // To use modules
 import MISOComponents // To use components
 import OUDSThemesOrange // To use the default Orange theme
 import OUDSThemesOrangeCompact // To use the Orange Compact theme
 import OUDSThemesSosh // To use the Sosh theme
 import OUDSThemesWireframe // To use the Wireframe theme
-import OUDSTokensComponent // If you need to override or use directly components tokens
+import MISOTokensComponent // If you need to override or use directly components tokens
 import OUDSTokenSemantic // If you need to override or use directly semantic tokens
 import MISOTokensRaw // If you need to override or use directly raw tokens
 import MISOFoundations // For some utilities

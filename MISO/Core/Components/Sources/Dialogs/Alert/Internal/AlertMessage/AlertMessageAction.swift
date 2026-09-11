@@ -33,7 +33,7 @@ struct AlertMessageAction: View {
             }
 
             if let onClose {
-                OUDSButton(image: MISOImage(asset: Image(decorative: "Component-button-expurge", bundle: theme.resourcesBundle),
+                MISOButton(image: MISOImage(asset: Image(decorative: "Component-button-expurge", bundle: theme.resourcesBundle),
                                             accessibilityLabel: "core_alertMessage_close_a11y".localized()),
                            appearance: .minimal,
                            action: onClose)

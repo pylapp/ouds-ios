@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -36,7 +36,7 @@ final class WireframeThemeSelectInputComponentTokensProvider: AllSelectInputComp
     /// Defines a provider of component tokens dedicated to `OUDSSelect`
     /// - Parameter dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
     init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
-        OL.debug("Init of WireframeThemeSelectInputComponentTokensProvider")
+        ML.debug("Init of WireframeThemeSelectInputComponentTokensProvider")
         self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++

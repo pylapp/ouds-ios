@@ -14,7 +14,7 @@
 import MISOTokensSemantic
 import SwiftUI
 
-// MARK: - Environment values for oudsUseMonochrome
+// MARK: - Environment values for misoUseMonochrome
 
 private struct ColoredSurfaceUseMonochromeKey: EnvironmentKey {
 
@@ -24,7 +24,7 @@ private struct ColoredSurfaceUseMonochromeKey: EnvironmentKey {
 extension EnvironmentValues {
 
     /// Updated by the ``MISOColoredSurface``, the value tells that component (or `View`) needs to switch to monochrome.
-    public var oudsUseMonochrome: Bool {
+    public var misoUseMonochrome: Bool {
         get {
             self[ColoredSurfaceUseMonochromeKey.self]
         }
@@ -34,7 +34,7 @@ extension EnvironmentValues {
     }
 }
 
-// MARK: - Environment values for oudsSurfaceColor
+// MARK: - Environment values for misoSurfaceColor
 
 private struct SurfaceColor: EnvironmentKey {
 
@@ -44,7 +44,7 @@ private struct SurfaceColor: EnvironmentKey {
 extension EnvironmentValues {
 
     /// Updated by the ``MISOColoredSurface``, the value tells the color token of the surface
-    public var oudsSurfaceColor: MultipleColorSemanticToken {
+    public var misoSurfaceColor: MultipleColorSemanticToken {
         get {
             self[SurfaceColor.self]
         }
@@ -54,7 +54,7 @@ extension EnvironmentValues {
     }
 }
 
-// MARK: - Environment values for oudsOnColoredSurface
+// MARK: - Environment values for misoOnColoredSurface
 
 private struct OnColoredSurfaceKey: EnvironmentKey {
 
@@ -64,7 +64,7 @@ private struct OnColoredSurfaceKey: EnvironmentKey {
 extension EnvironmentValues {
 
     /// Updated by the ``MISOColoredSurface``, the value tells the component (or `View`)  is on a colored surface or not.
-    public var oudsOnColoredSurface: Bool {
+    public var misoOnColoredSurface: Bool {
         get {
             self[OnColoredSurfaceKey.self]
         }

@@ -248,12 +248,12 @@ public struct OUDSHeading: View {
     /// Emits warnings when the parameters are used outside their supported combinations.
     private func logMisuseWarningsIfNeeded() {
         if hasMarker, size != .large {
-            OL.warning("The 'hasMarker' parameter of OUDSHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
+            ML.warning("The 'hasMarker' parameter of OUDSHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
         } else if hasMarker, size == .large, !theme.typography.headingLargeMarker {
-            OL.warning("The current theme does not support a large heading marker. The 'hasMarker' parameter is ignored.")
+            ML.warning("The current theme does not support a large heading marker. The 'hasMarker' parameter is ignored.")
         }
         if coloredText != nil, size != .large {
-            OL.warning("The 'coloredText' parameter of OUDSHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
+            ML.warning("The 'coloredText' parameter of OUDSHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
         }
     }
 
@@ -276,12 +276,12 @@ public struct OUDSHeading: View {
             return Text(text)
         }
         if theme.colors.contentBrandSecondary.hasForbiddenColorValue() {
-            OL.warning("The current theme does not provide a valid 'contentBrandSecondary' color. The 'coloredText' parameter is ignored.")
+            ML.warning("The current theme does not provide a valid 'contentBrandSecondary' color. The 'coloredText' parameter is ignored.")
             return Text(text)
         }
         var attributed = AttributedString(text)
         guard let range = attributed.range(of: coloredText) else {
-            OL.warning("The 'coloredText' sub-string '\(coloredText)' was not found in the heading text '\(text)'. It is ignored.")
+            ML.warning("The 'coloredText' sub-string '\(coloredText)' was not found in the heading text '\(text)'. It is ignored.")
             return Text(text)
         }
         attributed[range].foregroundColor = theme.colors.contentBrandSecondary.color(for: colorScheme)

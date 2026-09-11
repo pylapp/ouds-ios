@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 /// A class which wraps all **component  tokens of tag** for *tag* objects like `OUDSTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -53,7 +53,7 @@ final class WireframeThemeTagComponentTokensProvider: AllTagComponentTokensProvi
          spaces: AllSpaceSemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of WireframeThemeTagComponentTokensProvider")
+        ML.debug("Init of WireframeThemeTagComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())

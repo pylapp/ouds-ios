@@ -66,7 +66,7 @@ public final class MultipleFontLineHeightSemanticToken: NSObject, Sendable, Comp
         self.compact = compact
         self.regular = regular
         if compact > regular {
-            OL.warning("A multiple font line height semantic token as a compact value (\(compact)) bigger than the regular one (\(regular)), it's strange")
+            ML.warning("A multiple font line height semantic token as a compact value (\(compact)) bigger than the regular one (\(regular)), it's strange")
         }
     }
 

@@ -11,12 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOThemesContract
 import MISOTokensSemantic
-import OUDSThemesContract
 import OUDSThemesWireframe
 import Testing
 
-/// Tests some helper functions defined in extensions of `OUDSTheme` in the *OUDSThemesContract* module, related to grids tokens.
+/// Tests some helper functions defined in extensions of `OUDSTheme` in the *MISOThemesContract* module, related to grids tokens.
 /// Cannot be tested there because no theme exists at that level., but here the ``WireframeTheme`` can be used.
 struct GridSemanticTokenHelperTests {
 

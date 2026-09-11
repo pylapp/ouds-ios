@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOThemesContract
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 /// A `ViewModifier` to apply to `ListItemContent` views so as to define the background
@@ -20,7 +20,7 @@ struct ListItemBackgroundModifier: ViewModifier {
 
     // MARK: Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContentStyle) private var style

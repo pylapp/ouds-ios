@@ -63,7 +63,7 @@ public final class MultipleFontSizeSemanticToken: NSObject, Sendable, Comparable
         self.compact = compact
         self.regular = regular
         if compact > regular {
-            OL.warning("A multiple font size semantic token as a compact value (\(compact)) bigger than the regular one (\(regular)), it's strange")
+            ML.warning("A multiple font size semantic token as a compact value (\(compact)) bigger than the regular one (\(regular)), it's strange")
         }
     }
 

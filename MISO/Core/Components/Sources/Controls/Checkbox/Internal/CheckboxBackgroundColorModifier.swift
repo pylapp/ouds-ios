@@ -19,7 +19,7 @@ struct CheckboxBackgroundColorModifier: ViewModifier {
 
     // MARK: Properties
 
-    var interactionState: OUDSButtonInteractionState
+    var interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
 

@@ -13,9 +13,9 @@
 
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
+import MISOThemesContract
+import MISOTokensComponent
 import MISOTokensSemantic
-import OUDSThemesContract
-import OUDSTokensComponent
 import SwiftUI
 
 /// Password input is a UI element that allows to securely and confidentially capture a user’s password.

@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSThemesContract
+import MISOThemesContract
 import SwiftUI
 
 // MARK: - OUDS Toolbar Bottom View Modifier

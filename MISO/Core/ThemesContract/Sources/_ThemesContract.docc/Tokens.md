@@ -11,7 +11,7 @@ Design tokens represent the small, repeated design decisions that make up a desi
 
 ### What they are
 
-These _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) are defined for components and refer to semantic tokens or raw tokens.
+These _tokens_ ([MISOTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) are defined for components and refer to semantic tokens or raw tokens.
 They can be seen as a kind of bridge between components and in the end primitive values of the design kit.
 
 Components tokens are defined and gathered inside _Swift protocol_ so as to be exposed then through implementation of `OUDSTheme` thanks to dedicated tokens providers. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes or providers to override properties declared in _protocols_ and defined in _extensions_.
@@ -70,7 +70,7 @@ That is the reason why tokens are exposed as `@objc open` to be available and ov
 
 To keep the same semantics as the ones used in our specifications, _type aliases_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These *type aliases* are available for those who want to make their own theme. It's only syntaxic sugar to bring _design words_ in our product.
 
-Below is an example about how the component tokens are declared, defined and provided (with [OUDSTokensComponent/ColorSemanticTokens](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/colorsemantictokens)).
+Below is an example about how the component tokens are declared, defined and provided (with [MISOTokensComponent/ColorSemanticTokens](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/colorsemantictokens)).
 
 ```swift
 // Declare the semantic tokens

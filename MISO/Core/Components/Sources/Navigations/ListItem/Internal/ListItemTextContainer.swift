@@ -12,8 +12,8 @@
 //
 
 import MISOFoundations
+import MISOThemesContract
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 /// Contains all texts (overline, label, extra label, description) of the ``ListItemContent``.
@@ -29,7 +29,7 @@ struct ListItemTextContainer: View {
     // MARK: Properties
 
     let data: OUDSListItemData
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemSize) private var itemSize

@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -46,7 +46,7 @@ final class WireframeThemeCheckboxComponentTokensProvider: AllCheckboxComponentT
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of WireframeThemeCheckboxComponentTokensProvider")
+        ML.debug("Init of WireframeThemeCheckboxComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         #if DEBUG

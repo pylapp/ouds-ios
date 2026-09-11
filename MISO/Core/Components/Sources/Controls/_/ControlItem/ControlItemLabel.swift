@@ -12,8 +12,8 @@
 //
 
 import MISOFoundations
+import MISOThemesContract
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 /// The trailing part of the  component, i.e. all the views without the indicator, i.e. texts, icons and dividers.
@@ -22,7 +22,7 @@ struct ControlItemLabel: View {
 
     // MARK: - Stored properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let layoutData: LayoutData
 
     @Environment(\.theme) private var theme
@@ -91,7 +91,7 @@ struct ControlItemLabel: View {
             case .pressed:
                 theme.colors.actionNegativePressed
             case .readOnly, .disabled:
-                OL.fatal("A component (checkbox, switch, radio) with a disabled state / read only mode and an error situation has been detected, which is not allowed by design."
+                ML.fatal("A component (checkbox, switch, radio) with a disabled state / read only mode and an error situation has been detected, which is not allowed by design."
                     + " Only non-error situation are allowed to have a disabled state or a read only mode.")
             }
         } else {

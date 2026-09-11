@@ -11,10 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesContract
+import MISOThemesContract
 import SwiftUI
 
-/// The content for the ``ControlItem`` component according to the interaction state ``OUDSButtonInteractionState``.
+/// The content for the ``ControlItem`` component according to the interaction state ``MISOButtonInteractionState``.
 ///
 /// This state is used by:
 /// - the indicator according to ``ControlItem.IndicatorType`` to apply right tokens
@@ -26,7 +26,7 @@ struct ControlItemContent: View {
 
     // MARK: Stored properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
     let indicatorType: ControlItem.IndicatorType
     let layoutData: ControlItemLabel.LayoutData
 

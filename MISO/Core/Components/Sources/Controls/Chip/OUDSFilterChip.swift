@@ -117,7 +117,7 @@ public struct OUDSFilterChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, text: String, selected: Bool = false, action: @escaping () -> Void) {
         if text.isEmpty {
-            OL.warning("The OUDSFilterChip should not have an empty text, prefer instead OUDSFilterChip(image:accessibilityLabel:selected:action).")
+            ML.warning("The OUDSFilterChip should not have an empty text, prefer instead OUDSFilterChip(image:accessibilityLabel:selected:action).")
         }
         layout = .textAndIcon(text: text, icon: image, iconPosition: .trailing)
         self.action = action
@@ -167,7 +167,7 @@ public struct OUDSFilterChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, accessibilityLabel: String, selected: Bool = false, action: @escaping () -> Void) {
         if accessibilityLabel.isEmpty {
-            OL.warning("The OUDSFilterChip should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The OUDSFilterChip should not have an empty accessibility label, think about your disabled users!")
         }
         layout = .icon(image, accessibilityLabel)
         self.action = action
@@ -210,7 +210,7 @@ public struct OUDSFilterChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(text: String, selected: Bool = false, action: @escaping () -> Void) {
         if text.isEmpty {
-            OL.fatal("The OUDSFilterChip must not have an empty text!")
+            ML.fatal("The OUDSFilterChip must not have an empty text!")
         }
         layout = .text(text)
         self.action = action
@@ -220,7 +220,7 @@ public struct OUDSFilterChip: View {
     // MARK: - Body
 
     public var body: some View {
-        OUDSInteractionButton(action: action) {
+        MISOInteractionButton(action: action) {
             Chip(layout: layout, selected: selected, interactionState: OUDSChipInteractionState(with: $0))
                 .accessibilityHidden(true)
         }

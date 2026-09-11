@@ -85,7 +85,7 @@ public struct OUDSInlineAlert: View {
     public init(label: String, status: OUDSAlertStatus = .neutral()) {
         text = label
         if text.isEmpty {
-            OL.warning("The label for the OUDSInlineAlert must not be empty!")
+            ML.warning("The label for the OUDSInlineAlert must not be empty!")
         }
         self.status = status
     }

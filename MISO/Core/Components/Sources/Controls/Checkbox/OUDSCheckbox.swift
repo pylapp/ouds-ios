@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSTokensComponent
+import MISOTokensComponent
 import SwiftUI
 
 // MARK: - OUDS Checkbox
@@ -150,7 +150,7 @@ public struct OUDSCheckbox: View {
                 isReadOnly: Bool = false)
     {
         if accessibilityLabel.isEmpty {
-            OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
         _isOn = isOn
         self.accessibilityLabel = accessibilityLabel
@@ -161,7 +161,7 @@ public struct OUDSCheckbox: View {
     // MARK: Body
 
     public var body: some View {
-        OUDSInteractionButton(isReadOnly: isReadOnly) {
+        MISOInteractionButton(isReadOnly: isReadOnly) {
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             CheckboxIndicator(interactionState: interactionState, indicatorState: convertedState, isError: isError)

@@ -19,11 +19,11 @@ import SwiftUI
 /// Used to define if a content is used on a colored surface.
 ///
 /// It applies the `color` to the background and set the `oudsColoredSurface` environment variable to *true*.
-/// This variable is useful, for example, to change the style of a component according to its environment (e.g monochrome mode on `OUDSButton`).
+/// This variable is useful, for example, to change the style of a component according to its environment (e.g monochrome mode on `MISOButton`).
 ///
 /// ```swift
 ///   MISOColoredSurface(color: theme.colorModes.onBrandPrimary) {
-///      OUDSButton(image: MISOImage(asset: Image("ic_heart")), appearance: .strong) {}
+///      MISOButton(image: MISOImage(asset: Image("ic_heart")), appearance: .strong) {}
 ///   }
 /// ```
 ///

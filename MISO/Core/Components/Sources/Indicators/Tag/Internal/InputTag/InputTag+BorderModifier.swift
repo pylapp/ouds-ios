@@ -11,15 +11,15 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOThemesContract
 import MISOTokensSemantic
-import OUDSThemesContract
 import SwiftUI
 
 struct InputTagBorderModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let state: OUDSButtonInteractionState
+    let state: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
 

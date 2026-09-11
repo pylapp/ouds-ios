@@ -164,7 +164,7 @@ public final class MISOAsyncImageCache: @unchecked Sendable {
             try data.write(to: fileURL)
             cleanupDiskCacheIfNeeded()
         } catch {
-            OL.warning("Failed to save data to disk for \(fileURL): \(error)")
+            ML.warning("Failed to save data to disk for \(fileURL): \(error)")
         }
     }
 

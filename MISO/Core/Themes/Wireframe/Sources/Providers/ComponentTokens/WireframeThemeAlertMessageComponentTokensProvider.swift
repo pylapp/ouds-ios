@@ -12,7 +12,7 @@
 //
 
 import MISOFoundations
-import OUDSThemesContract
+import MISOThemesContract
 
 // swiftlint:disable type_name
 
@@ -44,7 +44,7 @@ final class WireframeThemeAlertMessageComponentTokensProvider: AllAlertMessageCo
     init(borders: AllBorderSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of WireframeThemeAlertMessageComponentTokensProvider")
+        ML.debug("Init of WireframeThemeAlertMessageComponentTokensProvider")
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
         #if DEBUG

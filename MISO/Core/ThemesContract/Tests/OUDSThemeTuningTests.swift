@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSThemesContract
+import MISOThemesContract
 import Testing
 
 /// Some tests on the default theme tuning setup

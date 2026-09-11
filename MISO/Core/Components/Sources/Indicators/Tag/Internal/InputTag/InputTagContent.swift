@@ -11,13 +11,13 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesContract
+import MISOThemesContract
 import SwiftUI
 
 struct InputTagContent: View {
 
     let label: String
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: MISOButtonInteractionState
 
     @Environment(\.theme) private var theme
 

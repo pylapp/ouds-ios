@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesContract
+import MISOThemesContract
 import SwiftUI
 
 /// A `ViewModifier` which applies a default border to a `View` using the default semantic tokens from the current theme.

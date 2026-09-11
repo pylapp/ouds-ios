@@ -14,7 +14,7 @@
 import Foundation
 import SwiftUI
 
-/// Used to apply the right style on an ``OUDSButton`` according to the `appearance`
+/// Used to apply the right style on an ``MISOButton`` according to the `appearance`
 /// and the `style`.
 ///
 /// Four appearances are proposed:
@@ -32,9 +32,9 @@ struct StyleForButton: ButtonStyle {
 
     // MARK: Properties
 
-    private let appearance: OUDSButton.Appearance
-    private let style: OUDSButton.Style
-    private let size: OUDSButton.Size
+    private let appearance: MISOButton.Appearance
+    private let style: MISOButton.Style
+    private let size: MISOButton.Size
     private let isHover: Bool
     private let isFullWidth: Bool
 
@@ -44,7 +44,7 @@ struct StyleForButton: ButtonStyle {
     // MARK: Initializer
 
     /// Initialize the `StyleForButton` for the `appearance`
-    /// and the `style` of the `OUDSButton`.
+    /// and the `style` of the `MISOButton`.
     ///
     /// - Parameters:
     ///    - appearance: The button appearance
@@ -52,9 +52,9 @@ struct StyleForButton: ButtonStyle {
     ///    - size: The size of the button
     ///    - isHover: Flag if button is hovered (e.g. by mouse)
     ///    - isFullWidth: Flag to rise to make the button take all screen width
-    init(appearance: OUDSButton.Appearance,
-         style: OUDSButton.Style,
-         size: OUDSButton.Size,
+    init(appearance: MISOButton.Appearance,
+         style: MISOButton.Style,
+         size: MISOButton.Size,
          isHover: Bool,
          isFullWidth: Bool)
     {
