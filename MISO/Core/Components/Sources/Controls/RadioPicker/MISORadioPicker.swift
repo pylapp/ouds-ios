@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
 import MISOTokensSemantic
@@ -78,28 +65,6 @@ import SwiftUI
 ///                     placement: .horitzontal(true))
 /// ```
 ///
-/// ## Design documentation
-///
-/// There is no online specification as this component is not an official OUDS one
-///
-/// ## Theme rendering
-///
-/// ### Orange
-///
-/// ![A radio picker component in light and dark modes with Orange theme](component_radioPicker_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A radio picker component in light and dark modes with Orange Compact theme](component_radioPicker_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A radio picker component in light and dark modes with Sosh theme](component_radioPicker_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A radio picker component in light and dark modes with Wirefraùe theme](component_radioPicker_Wireframe)
-///
 /// - Since: 0.14.0
 @available(iOS 15, macOS 13, visionOS 1, *)
 public struct MISORadioPicker<Tag>: View where Tag: Hashable {
@@ -113,7 +78,7 @@ public struct MISORadioPicker<Tag>: View where Tag: Hashable {
     private let radios: [MISORadioPickerData<Tag>]
 
     /// The type of layout the picker must have
-    private let placement: OUDSRadioPickerPlacement
+    private let placement: MISORadioPickerPlacement
 
     /// Overrides any configuration applied to embedded ``MISORadioItem`` and forces them to apply the outlined layout
     private let isOutlined: Bool
@@ -158,7 +123,7 @@ public struct MISORadioPicker<Tag>: View where Tag: Hashable {
     ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(selection: Binding<Tag>,
                 radios: [MISORadioPickerData<Tag>],
-                placement: OUDSRadioPickerPlacement = .vertical,
+                placement: MISORadioPickerPlacement = .vertical,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
