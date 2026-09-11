@@ -467,7 +467,7 @@ public struct OUDSCheckboxItem: View {
 
     // MARK: - Computed value
 
-    private var convertedState: Binding<OUDSCheckboxIndicatorState> {
+    private var convertedState: Binding<MISOCheckboxIndicatorState> {
         Binding(get: { isOn ? .selected : .unselected }, set: { isOn = ($0 == .selected ? true : false) })
     }
 

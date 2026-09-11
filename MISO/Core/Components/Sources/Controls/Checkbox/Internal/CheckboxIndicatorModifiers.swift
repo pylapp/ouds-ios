@@ -23,14 +23,14 @@ import SwiftUI
 
 /// A `ViewModier` to apply to the ``CheckboxIndicator`` component.
 /// It will define the look and feel of the indicator depending to the ``MISOButtonInteractionState``,
-/// the ``OUDSCheckboxIndicatorState`` and if there is an error context or not.
+/// the ``MISOCheckboxIndicatorState`` and if there is an error context or not.
 /// This `View` manages also the high contrast mode in light color scheme so as to use a dedicated color for indicator.
 struct CheckboxIndicatorModifier: ViewModifier {
 
     // MARK: - Properties
 
     let interactionState: MISOButtonInteractionState
-    let indicatorState: OUDSCheckboxIndicatorState
+    let indicatorState: MISOCheckboxIndicatorState
     let isError: Bool
 
     // MARK: - Body
@@ -51,7 +51,7 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
     // MARK: - Properties
 
     let interactionState: MISOButtonInteractionState
-    let indicatorState: OUDSCheckboxIndicatorState
+    let indicatorState: MISOCheckboxIndicatorState
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -190,7 +190,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     // MARK: - Properties
 
     let interactionState: MISOButtonInteractionState
-    let indicatorState: OUDSCheckboxIndicatorState
+    let indicatorState: MISOCheckboxIndicatorState
     let isError: Bool
 
     @Environment(\.theme) private var theme

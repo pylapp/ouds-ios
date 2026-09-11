@@ -183,7 +183,7 @@ public struct OUDSCheckbox: View {
 
     // MARK: Computed value
 
-    private var convertedState: OUDSCheckboxIndicatorState {
+    private var convertedState: MISOCheckboxIndicatorState {
         isOn ? .selected : .unselected
     }
 

@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 /// Modelizes the layout for a checkbox, radio button or switch with additional components like labels, icons and dividers.
@@ -36,7 +23,7 @@ struct ControlItem: View {
         /// Indicator is a radio button
         case radioButton(Binding<Bool>)
         /// Indicator is a checkbox
-        case checkBox(Binding<OUDSCheckboxIndicatorState>)
+        case checkBox(Binding<MISOCheckboxIndicatorState>)
     }
 
     /// Used to define the orientation of the Layout

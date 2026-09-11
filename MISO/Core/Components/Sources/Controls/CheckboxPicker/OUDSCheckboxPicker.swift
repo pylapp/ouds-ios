@@ -290,7 +290,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// - otherwise, root checkbox is indeterminate
     private final class CheckboxPickerCoordinator: ObservableObject {
 
-        @Published var selectionRootState: OUDSCheckboxIndicatorState = .unselected
+        @Published var selectionRootState: MISOCheckboxIndicatorState = .unselected
 
         init(_ selectionsCount: Int, _ checkboxesCount: Int) {
             selectionRootState = Self.valueFor(selectionsCount, checkboxesCount)
@@ -302,7 +302,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
             selectionRootState = Self.valueFor(selectionsCount, checkboxesCount)
         }
 
-        private static func valueFor(_ selectionsCount: Int, _ checkboxesCount: Int) -> OUDSCheckboxIndicatorState {
+        private static func valueFor(_ selectionsCount: Int, _ checkboxesCount: Int) -> MISOCheckboxIndicatorState {
             if selectionsCount == 0 {
                 return .unselected
             }

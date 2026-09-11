@@ -67,7 +67,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Supposing we have an indeterminate state checkbox
-///     @Published var selection: OUDSCheckboxIndicatorState = .indeterminate
+///     @Published var selection: MISOCheckboxIndicatorState = .indeterminate
 ///
 ///     // A leading checkbox with a label.
 ///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection)
@@ -153,7 +153,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
 
     // MARK: - Properties
 
-    @Binding private var selection: OUDSCheckboxIndicatorState
+    @Binding private var selection: MISOCheckboxIndicatorState
     private let layoutData: ControlItemLabel.LayoutData
     private let action: (() -> Void)?
 
@@ -191,7 +191,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///     modifier. Defaults to `false`.
     ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
     public init(_ label: String,
-                selection: Binding<OUDSCheckboxIndicatorState>,
+                selection: Binding<MISOCheckboxIndicatorState>,
                 description: String? = nil,
                 image: MISOImage? = nil,
                 isReversed: Bool = false,
@@ -274,7 +274,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                selection: Binding<OUDSCheckboxIndicatorState>,
+                selection: Binding<MISOCheckboxIndicatorState>,
                 description: String? = nil,
                 image: MISOImage? = nil,
                 isReversed: Bool = false,

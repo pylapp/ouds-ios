@@ -22,22 +22,22 @@ struct OUDSCheckboxStateTests {
 
     /// A selected checkbox must be toggled to an unselected checkbox.
     @Test func toggle() {
-        var selectedState = OUDSCheckboxIndicatorState.selected
+        var selectedState = MISOCheckboxIndicatorState.selected
         selectedState.toggle()
-        #expect(selectedState == OUDSCheckboxIndicatorState.unselected)
+        #expect(selectedState == MISOCheckboxIndicatorState.unselected)
     }
 
     /// An unselected checkbox must be toggled to a selected checkbox.
     @Test func `toggle unselected must give selected`() {
-        var unselectedState = OUDSCheckboxIndicatorState.unselected
+        var unselectedState = MISOCheckboxIndicatorState.unselected
         unselectedState.toggle()
-        #expect(unselectedState == OUDSCheckboxIndicatorState.selected)
+        #expect(unselectedState == MISOCheckboxIndicatorState.selected)
     }
 
     /// An indeterminate checkbox must be toggled to a selected checkbox.
     @Test func `toggle undetermibate must give selected`() {
-        var indeterminateState = OUDSCheckboxIndicatorState.indeterminate
+        var indeterminateState = MISOCheckboxIndicatorState.indeterminate
         indeterminateState.toggle()
-        #expect(indeterminateState == OUDSCheckboxIndicatorState.selected)
+        #expect(indeterminateState == MISOCheckboxIndicatorState.selected)
     }
 }

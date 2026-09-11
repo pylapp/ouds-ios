@@ -20,14 +20,14 @@ import MISOTokensSemantic
 import SwiftUI
 
 /// The indicator of the checkbox.
-/// Its content depends to the ``MISOButtonInteractionState`` and the ``OUDSCheckboxIndicatorState`` also.
+/// Its content depends to the ``MISOButtonInteractionState`` and the ``MISOCheckboxIndicatorState`` also.
 /// This `View` manages also the high contrast mode in light color scheme so as to use a dedicated color for indicator.
 struct CheckboxIndicator: View {
 
     // MARK: - Properties
 
     let interactionState: MISOButtonInteractionState
-    let indicatorState: OUDSCheckboxIndicatorState
+    let indicatorState: MISOCheckboxIndicatorState
     let isError: Bool
 
     @Environment(\.theme) private var theme

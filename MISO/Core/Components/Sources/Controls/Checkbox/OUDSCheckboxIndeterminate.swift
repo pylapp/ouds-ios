@@ -51,7 +51,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Supposing we have an indeterminate state checkbox
-///     @Published var selection: OUDSCheckboxIndicatorState = .indeterminate
+///     @Published var selection: MISOCheckboxIndicatorState = .indeterminate
 ///
 ///     // A simple checkbox, no error, not in read only mode
 ///     OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "The cake is a lie")
@@ -102,7 +102,7 @@ public struct OUDSCheckboxIndeterminate: View {
     private let isError: Bool
     private let isReadOnly: Bool
 
-    @Binding var selection: OUDSCheckboxIndicatorState
+    @Binding var selection: MISOCheckboxIndicatorState
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
 
@@ -123,7 +123,7 @@ public struct OUDSCheckboxIndeterminate: View {
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
-    public init(selection: Binding<OUDSCheckboxIndicatorState>,
+    public init(selection: Binding<MISOCheckboxIndicatorState>,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -147,7 +147,7 @@ public struct OUDSCheckboxIndeterminate: View {
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
-    public init(selection: Binding<OUDSCheckboxIndicatorState>,
+    public init(selection: Binding<MISOCheckboxIndicatorState>,
                 accessibilityLabel: String,
                 isError: Bool = false,
                 isReadOnly: Bool = false)
