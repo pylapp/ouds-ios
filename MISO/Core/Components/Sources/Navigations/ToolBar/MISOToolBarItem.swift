@@ -1,72 +1,59 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
 import MISOThemesContract
 import MISOTokensSemantic
 import SwiftUI
 
-// MARK: - OUDS ToolBar Item
+// MARK: - MISO ToolBar Item
 
 /// A strongly typed toolbar item container used inside:
 /// - `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:principalItem:trailingItems:)`
 /// - `toolBarBottom(leadingItems:trailingItems:)`
 ///
-/// Use ``OUDSToolBarItem`` to provide custom toolbar views or predefined navigation items.
+/// Use ``MISOToolBarItem`` to provide custom toolbar views or predefined navigation items.
 ///
 /// ```swift
 ///     // A toolbar item with only the close icon
-///     OUDSToolBarItem(navigation: .close)
+///     MISOToolBarItem(navigation: .close)
 ///
 ///     // A toolbar item with the back icon and and a text, for iOS < 26
-///     OUDSToolBarItem(navigation: .back(label: "Back"))
+///     MISOToolBarItem(navigation: .back(label: "Back"))
 ///
 ///     // A toolbar item with the label
-///     OUDSToolBarItem(action: "Label") {
+///     MISOToolBarItem(action: "Label") {
 ///        // do something
 ///     }
 ///
 ///     // A toolbar item with the label
-///     OUDSToolBarItem(action: .label("Label")) {
+///     MISOToolBarItem(action: .label("Label")) {
 ///        // do something
 ///     }
 ///
 ///     // A toolbar item with the icon
-///     OUDSToolBarItem(action: .icon(asset: Image("mail"),
+///     MISOToolBarItem(action: .icon(asset: Image("mail"),
 ///                     accessibilityLabel: "New messages available")) {
 ///        // do something
 ///     }
 ///
 ///     // A toolbar item with the icon and badge count
-///     OUDSToolBarItem(action: .icon(asset: Image("mail"),
+///     MISOToolBarItem(action: .icon(asset: Image("mail"),
 ///                                   accessibilityLabel: "9 new messages",
 ///                                   badgeType: .number(count: 9))) {
 ///        // do something
 ///     }
 ///
 ///     // A toolbar item with some View inside
-///     OUDSToolBarItem {
+///     MISOToolBarItem {
 ///         // Menu, ...
 ///     }
 /// ```
 ///
 /// - Since: 1.4.0
 @available(iOS 15, visionOS 1, *)
-public struct OUDSToolBarItem: View, Identifiable {
+public struct MISOToolBarItem: View, Identifiable {
 
     // MARK: - Item content
 
@@ -175,7 +162,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     /// Creates an action toolbar item with only a text
     ///
     /// ```swift
-    ///     OUDSToolBarItem(label: "Done") { /* Action */ }
+    ///     MISOToolBarItem(label: "Done") { /* Action */ }
     /// ```
     ///
     /// - Parameters:
@@ -191,7 +178,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     /// Creates an action toolbar item with an icon only dedicated to action.
     ///
     /// ```swift
-    ///     OUDSToolBarItem(icon: Image(systemName: "plus"), accessibilityLabel: "Add") { /* Action */ }
+    ///     MISOToolBarItem(icon: Image(systemName: "plus"), accessibilityLabel: "Add") { /* Action */ }
     /// ```
     ///
     /// - Parameters:
@@ -206,10 +193,10 @@ public struct OUDSToolBarItem: View, Identifiable {
     ///
     /// ```swift
     ///     // A toolbar item with an "Edit" label and an associated action
-    ///     OUDSToolBarItem(action: .label("Edit") { /* Action */ })
+    ///     MISOToolBarItem(action: .label("Edit") { /* Action */ })
     ///
     ///     // A toolbar item with an image and a badge
-    ///     OUDSToolBarItem(action: .icon(asset: Image("mail"), accessibilityLabel: "5 new emails", badgeType: .number(count: 5)))
+    ///     MISOToolBarItem(action: .icon(asset: Image("mail"), accessibilityLabel: "5 new emails", badgeType: .number(count: 5)))
     /// ```
     ///
     /// - Parameter type: The action type describing the layout and assoicated action.
@@ -220,7 +207,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     /// Creates a toolbar item with action type and a style
     ///
     /// ```swift
-    ///     OUDSToolBarItem(action: .label("Edit") { }, style: .tinted)
+    ///     MISOToolBarItem(action: .label("Edit") { }, style: .tinted)
     /// ```
     ///
     /// - Parameters:
@@ -234,7 +221,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     /// Creates a toolbar item with icon dedicated to navigation.
     ///
     /// ```swift
-    ///     OUDSToolBarItem(navigation: .back { /* Action */ })
+    ///     MISOToolBarItem(navigation: .back { /* Action */ })
     /// ```
     ///
     /// - Parameter type: The navigation type describing asset and associated action.
@@ -247,7 +234,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     /// Use this initializer to provide any SwiftUI view, such as a `Menu`, custom button, or complex layout.
     ///
     /// ```swift
-    ///     OUDSToolBarItem {
+    ///     MISOToolBarItem {
     ///         Menu("Options") {
     ///             Button("Option 1") { }
     ///             Button("Option 2") { }
@@ -274,53 +261,53 @@ public struct OUDSToolBarItem: View, Identifiable {
     }
 }
 
-// MARK: - OUDS Tool Bar Items Builder
+// MARK: - MISO Tool Bar Items Builder
 
-/// A result builder to group ``OUDSToolBarItem`` instances.
+/// A result builder to group ``MISOToolBarItem`` instances.
 ///
 /// - Since: 1.4.0
 @resultBuilder
-public enum OUDSToolBarItemsBuilder {
-    /// Combines multiple `OUDSToolBarItem` instances into a single array
-    public static func buildBlock(_ components: OUDSToolBarItem...) -> [OUDSToolBarItem] {
+public enum MISOToolBarItemsBuilder {
+    /// Combines multiple `MISOToolBarItem` instances into a single array
+    public static func buildBlock(_ components: MISOToolBarItem...) -> [MISOToolBarItem] {
         components
     }
 
-    /// Combines multiple `OUDSToolBarItem` instances into a single array
-    public static func buildBlock(_ components: [OUDSToolBarItem]...) -> [OUDSToolBarItem] {
+    /// Combines multiple `MISOToolBarItem` instances into a single array
+    public static func buildBlock(_ components: [MISOToolBarItem]...) -> [MISOToolBarItem] {
         components.flatMap(\.self)
     }
 
     // swiftlint:disable discouraged_optional_collection
     /// Finalizes the result, returning an empty list of items
-    public static func buildOptional(_ component: [OUDSToolBarItem]?) -> [OUDSToolBarItem] {
+    public static func buildOptional(_ component: [MISOToolBarItem]?) -> [MISOToolBarItem] {
         component ?? []
     }
 
     // swiftlint:enable discouraged_optional_collection
 
     /// Finalizes the result, returning the complete list of items
-    public static func buildFinalResult(_ component: [OUDSToolBarItem]) -> [OUDSToolBarItem] {
+    public static func buildFinalResult(_ component: [MISOToolBarItem]) -> [MISOToolBarItem] {
         component
     }
 
     /// Handles the first branch of an if-else statement (true branch)
-    public static func buildEither(first component: [OUDSToolBarItem]) -> [OUDSToolBarItem] {
+    public static func buildEither(first component: [MISOToolBarItem]) -> [MISOToolBarItem] {
         component
     }
 
     /// Handles the second branch of an if-else statement (false branch)
-    public static func buildEither(second component: [OUDSToolBarItem]) -> [OUDSToolBarItem] {
+    public static func buildEither(second component: [MISOToolBarItem]) -> [MISOToolBarItem] {
         component
     }
 
     /// Finalizes the result, returning an array of items from array of array of items
-    public static func buildArray(_ components: [[OUDSToolBarItem]]) -> [OUDSToolBarItem] {
+    public static func buildArray(_ components: [[MISOToolBarItem]]) -> [MISOToolBarItem] {
         components.flatMap(\.self)
     }
 }
 
-// MARK: - OUDS Tool Bar Item Position
+// MARK: - MISO Tool Bar Item Position
 
 enum ToolBarItemLocation {
     case toolbarTop
@@ -329,7 +316,7 @@ enum ToolBarItemLocation {
 
 extension EnvironmentValues {
 
-    /// A flag to know if ``OUDSToolBarItem`` will be placed in ``OUDSToolBarBottom`` or ``OUDSToolBarTop``
+    /// A flag to know if ``MISOToolBarItem`` will be placed in ``MISOToolBarBottom`` or ``MISOToolBarTop``
     @Entry var toolbarItemLocation: ToolBarItemLocation = .toolbarTop
 }
 

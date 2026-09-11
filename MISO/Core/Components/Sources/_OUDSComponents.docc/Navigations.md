@@ -427,12 +427,12 @@ NavigationStack {
         .toolBarTop("Title",
                     leadingItems: {
                         // Back button — system dismiss is automatic, no closure needed
-                        OUDSToolBarItem(navigation: .back())
+                        MISOToolBarItem(navigation: .back())
                     },
-                    principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { /* Action to process */ },
+                    principalItem: MISOToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { /* Action to process */ },
                     trailingItems: {
-                        OUDSToolBarItem(label: "Label") { /* Action to process */ }
-                        OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+                        MISOToolBarItem(label: "Label") { /* Action to process */ }
+                        MISOToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
                     })
 }
 .oudsNavigationBarAppearance() // required — apply on the NavigationStack, not on the child view
@@ -442,31 +442,31 @@ SomeView()
     .toolBarTop("Title",
                 hasLargeTitle: true,
                 subtitle: "This subtitle will never be shown because a principalItem is set",
-                principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { })
+                principalItem: MISOToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { })
 
 // Principal item without hasLargeTitle: neither title nor subtitle are displayed
 SomeView()
-    .toolBarTop("Title", principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { })
+    .toolBarTop("Title", principalItem: MISOToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { })
 
 // Close button — .close takes NO closure, dismiss is handled automatically
 SomeView()
     .toolBarTop("Title",
                 leadingItems: {
-                    OUDSToolBarItem(navigation: .close)
+                    MISOToolBarItem(navigation: .close)
                 })
 
 // Back button with a visible label (label text is ignored on iOS 26+ / Liquid Glass)
 SomeView()
     .toolBarTop("Title",
                 leadingItems: {
-                    OUDSToolBarItem(navigation: .back(label: "Cancel"))
+                    MISOToolBarItem(navigation: .back(label: "Cancel"))
                 })
 
 // Back button with custom action executed before automatic dismiss
 SomeView()
     .toolBarTop("Title",
                 leadingItems: {
-                    OUDSToolBarItem(navigation: .back(label: "Back") { saveDraft() })
+                    MISOToolBarItem(navigation: .back(label: "Back") { saveDraft() })
                 })
 
 // On iOS ≤ 18, add on the root view to color the system back-button chevron correctly
@@ -517,16 +517,16 @@ SomeView()
 // Leading + trailing split — works on all supported OS versions
 SomeView()
     .toolBarBottom(leadingItems: {
-        OUDSToolBarItem(label: "Some label") { /* Action to process */ }
+        MISOToolBarItem(label: "Some label") { /* Action to process */ }
     }, trailingItems: {
-        OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+        MISOToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
     })
 
 // Grouped / centered — meaningful on iOS 26+ (Liquid Glass) only
 // On earlier OS versions the system splits the items into leading/trailing positions.
 SomeView()
     .toolBarBottom(groupedItems: {
-        OUDSToolBarItem(label: "Save") { /* Action to process */ }
-        OUDSToolBarItem(icon: Image(decorative: "ic_delete"), accessibilityLabel: "Delete") { /* Action to process */ }
+        MISOToolBarItem(label: "Save") { /* Action to process */ }
+        MISOToolBarItem(icon: Image(decorative: "ic_delete"), accessibilityLabel: "Delete") { /* Action to process */ }
     })
 ```

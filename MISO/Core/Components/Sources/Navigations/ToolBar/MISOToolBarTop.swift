@@ -1,25 +1,12 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
 import MISOThemesContract
 import SwiftUI
 
-// MARK: - OUDS ToolBar Top View Modifier
+// MARK: - MISO ToolBar Top View Modifier
 
 /// The top toolbar (aka *navigation bar* on iOS and iPadOS 18 and lower) sits at the top of the screen and provides contextual information
 /// and controls related to the current view.
@@ -75,12 +62,12 @@ import SwiftUI
 ///     ContentView()
 ///         .toolBarTop("Title",
 ///             leadingItems: {
-///                 OUDSToolBarItem(navigation: .back())
+///                 MISOToolBarItem(navigation: .back())
 ///             },
-///             principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { /* Action to process */ },
+///             principalItem: MISOToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { /* Action to process */ },
 ///             trailingItems: {
-///                 OUDSToolBarItem(label: "Label") { /* Action to process */ }
-///                 OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+///                 MISOToolBarItem(label: "Label") { /* Action to process */ }
+///                 MISOToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
 ///             }
 ///         )
 /// ```
@@ -91,60 +78,10 @@ import SwiftUI
 ///     toolBarTop(_:hasLargeTitle:subtitle:leadingItems:principalItem:trailingItems:)
 /// ```
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-ios-tool-bar-top)
-///
-/// ## Themes rendering
-///
-/// ### Liquid Glass
-///
-/// #### Orange
-///
-/// ![A top toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
-///
-/// #### Orange Compact
-///
-/// ![A top toolbar component in light mode with Liquid Glass effect and Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_dark)
-///
-/// #### Sosh
-///
-/// ![A top toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_Sosh_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_Sosh_dark)
-///
-/// #### Wireframe
-///
-/// ![A top toolBar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_dark)
-///
-/// ### Without Liquid Glass
-///
-/// #### Orange
-///
-/// ![A top toolbar component in light mode without Liquid Glass effect and Orange theme](component_toolBarTop_Orange_light)
-/// ![A top toolbar component in dark mode without Liquid Glass effect and Orange theme](component_toolBarTop_Orange_dark)
-///
-/// #### Orange Compact
-///
-/// ![A top toolbar component in light mode without Liquid Glass effect and Orange Compact theme](component_toolBarTop_OrangeCompact_light)
-/// ![A top toolbar component in dark mode without Liquid Glass effect and Orange Compact theme](component_toolBarTop_OrangeCompact_dark)
-///
-/// #### Sosh
-///
-/// ![A top toolbar component in light mode without Liquid Glass effect and Sosh theme](component_toolBarTop_Sosh_light)
-/// ![A top toolbar component in dark mode without Liquid Glass effect and Sosh theme](component_toolBarTop_Sosh_dark)
-///
-/// #### Wireframe
-///
-/// ![A top toolbar component in light mode without Liquid Glass effect and Wireframe theme](component_toolBarTop_Wireframe_light)
-/// ![A top toolbar component in dark mode without Liquid Glass effect and Wireframe theme](component_toolBarTop_Wireframe_dark)
-///
 /// - Version: 1.1.0 (Figma component design version)
 /// - Since: 1.4.0
 @available(iOS 15, visionOS 1, *)
-public struct OUDSToolBarTop: ViewModifier {
+public struct MISOToolBarTop: ViewModifier {
     // NOTE: As Swift DocC cannot build rich documention for methods, this struct does not the job
 
     // MARK: Properties
@@ -156,11 +93,11 @@ public struct OUDSToolBarTop: ViewModifier {
     /// An optional subtitle displayed below the title if iOS 26+
     private let subtitle: String?
     /// The items to display in leading position
-    @OUDSToolBarItemsBuilder private let leadingItems: () -> [OUDSToolBarItem]
+    @MISOToolBarItemsBuilder private let leadingItems: () -> [MISOToolBarItem]
     /// The item to display in principal (center) position (only one item supported)
-    private let principalItem: OUDSToolBarItem?
+    private let principalItem: MISOToolBarItem?
     /// The items to display in trailing position
-    @OUDSToolBarItemsBuilder private let trailingItems: () -> [OUDSToolBarItem]
+    @MISOToolBarItemsBuilder private let trailingItems: () -> [MISOToolBarItem]
 
     // MARK: Initializer
 
@@ -170,12 +107,12 @@ public struct OUDSToolBarTop: ViewModifier {
     ///  inside `NavigationView` or`NavigationStack`.
     ///
     /// ```swift
-    ///     OUDSToolBarTop(title: "Home") {
-    ///         OUDSToolBarItem(navigation: .back { })
+    ///     MISOToolBarTop(title: "Home") {
+    ///         MISOToolBarItem(navigation: .back { })
     ///     },
-    ///     principalItem: OUDSToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { },
+    ///     principalItem: MISOToolBarItem(icon: Image(decorative: "search"), accessibilityLabel: "Search") { },
     ///     trailingItems: {
-    ///         OUDSToolBarItem(label: "Done") { }
+    ///         MISOToolBarItem(label: "Done") { }
     ///     }
     /// ```
     ///
@@ -190,9 +127,9 @@ public struct OUDSToolBarTop: ViewModifier {
     public init(title: String,
                 hasLargeTitle: Bool = false,
                 subtitle: String? = nil,
-                leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
-                principalItem: OUDSToolBarItem? = nil,
-                trailingItems: @escaping () -> [OUDSToolBarItem] = { [] })
+                leadingItems: @escaping () -> [MISOToolBarItem] = { [] },
+                principalItem: MISOToolBarItem? = nil,
+                trailingItems: @escaping () -> [MISOToolBarItem] = { [] })
     {
         self.title = title
         self.hasLargeTitle = hasLargeTitle
@@ -242,9 +179,9 @@ extension View {
     public func toolBarTop(_ title: String,
                            hasLargeTitle: Bool = false,
                            subtitle: String? = nil,
-                           @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
-                           principalItem: OUDSToolBarItem? = nil,
-                           @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem] = { [] }) -> some View
+                           @MISOToolBarItemsBuilder leadingItems: @escaping () -> [MISOToolBarItem] = { [] },
+                           principalItem: MISOToolBarItem? = nil,
+                           @MISOToolBarItemsBuilder trailingItems: @escaping () -> [MISOToolBarItem] = { [] }) -> some View
     {
         modifier(ToolBarTopModifier(title: title,
                                     hasLargeTitle: hasLargeTitle,

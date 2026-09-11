@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
 import MISOThemesContract
@@ -23,9 +10,9 @@ struct ToolBarBottomModifier: ViewModifier {
 
     // MARK: - Properties
 
-    private let leadingItems: [OUDSToolBarItem]
-    private let trailingItems: [OUDSToolBarItem]
-    private let groupedItems: [OUDSToolBarItem]
+    private let leadingItems: [MISOToolBarItem]
+    private let trailingItems: [MISOToolBarItem]
+    private let groupedItems: [MISOToolBarItem]
 
     // MARK: - Initializer
 
@@ -34,8 +21,8 @@ struct ToolBarBottomModifier: ViewModifier {
     /// - Parameters:
     ///   - leadingItems: The items displayed on the leading side.
     ///   - trailingItems: The items displayed on the trailing side.
-    init(@OUDSToolBarItemsBuilder leadingItems: () -> [OUDSToolBarItem] = { [] },
-         @OUDSToolBarItemsBuilder trailingItems: () -> [OUDSToolBarItem] = { [] })
+    init(@MISOToolBarItemsBuilder leadingItems: () -> [MISOToolBarItem] = { [] },
+         @MISOToolBarItemsBuilder trailingItems: () -> [MISOToolBarItem] = { [] })
     {
         groupedItems = []
         self.leadingItems = leadingItems()
@@ -48,7 +35,7 @@ struct ToolBarBottomModifier: ViewModifier {
     ///
     /// - Parameters:
     ///   - groupedItems: All the items to place in the center of the s creen
-    init(@OUDSToolBarItemsBuilder groupedItems: () -> [OUDSToolBarItem] = { [] }) {
+    init(@MISOToolBarItemsBuilder groupedItems: () -> [MISOToolBarItem] = { [] }) {
         self.groupedItems = groupedItems()
         leadingItems = []
         trailingItems = []
@@ -86,7 +73,7 @@ struct ToolBarBottomModifier: ViewModifier {
         #endif
     }
 
-    private func itemsView(_ items: [OUDSToolBarItem]) -> some View {
+    private func itemsView(_ items: [MISOToolBarItem]) -> some View {
         ForEach(items) { item in
             item
                 .environment(\.toolbarItemLocation, .toolbarBottom)

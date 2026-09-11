@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
 import MISOThemesContract
@@ -26,8 +13,8 @@ struct ToolBarItemActionButton: View {
 
     // MARK: Properties
 
-    let type: OUDSToolBarItem.ActionType
-    let style: OUDSToolBarItem.ActionStyle
+    let type: MISOToolBarItem.ActionType
+    let style: MISOToolBarItem.ActionStyle
 
     @Environment(\.forceMISOLegacyLayout) private var forceMISOLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
@@ -79,7 +66,7 @@ struct ToolBarItemActionButton: View {
 /// For iOS versions up to 18, use the OUDS badge in all cases.
 private struct ToolBarItemBadgeModifier: ViewModifier {
 
-    let type: OUDSToolBarItem.BadgeType?
+    let type: MISOToolBarItem.BadgeType?
 
     @Environment(\.toolbarItemLocation) private var location
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
@@ -87,13 +74,13 @@ private struct ToolBarItemBadgeModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         if isLiquidGlassDisabled || forceMISOLegacyLayout {
-            oudsBadgeLayout(content)
+            misoBadgeLayout(content)
         } else {
             switch location {
             case .toolbarTop:
                 systemBadgeLayout(content)
             case .toolbarBottom:
-                oudsBadgeLayout(content)
+                misoBadgeLayout(content)
             }
         }
     }
@@ -112,7 +99,7 @@ private struct ToolBarItemBadgeModifier: ViewModifier {
     }
 
     /// Adds an OUDS badge to the item
-    @ViewBuilder private func oudsBadgeLayout(_ content: Content) -> some View {
+    @ViewBuilder private func misoBadgeLayout(_ content: Content) -> some View {
         ZStack(alignment: .topTrailing) {
             content
             switch type {
@@ -134,7 +121,7 @@ struct ToolBarItemNavigationButton: View {
 
     // MARK: Properties
 
-    let type: OUDSToolBarItem.NavigationType
+    let type: MISOToolBarItem.NavigationType
 
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection

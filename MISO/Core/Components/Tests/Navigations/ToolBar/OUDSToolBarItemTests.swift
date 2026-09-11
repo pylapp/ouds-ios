@@ -19,13 +19,13 @@ import MISOComponents
 import SwiftUI
 import Testing
 
-/// Tests the default and explicit parameter values of `OUDSToolBarItem` enum cases.
+/// Tests the default and explicit parameter values of `MISOToolBarItem` enum cases.
 struct OUDSToolBarItemTests {
 
     // MARK: - ActionType.label default values
 
     @Test func labelActionTypeDefaultEmphasizedIsFalse() {
-        guard case let .label(_, emphasized, _, _) = OUDSToolBarItem.ActionType.label("Action") else {
+        guard case let .label(_, emphasized, _, _) = MISOToolBarItem.ActionType.label("Action") else {
             Issue.record("Expected .label case")
             return
         }
@@ -33,7 +33,7 @@ struct OUDSToolBarItemTests {
     }
 
     @Test func labelActionTypeDefaultAccessibilityHintIsNil() {
-        guard case let .label(_, _, accessibilityHint, _) = OUDSToolBarItem.ActionType.label("Action") else {
+        guard case let .label(_, _, accessibilityHint, _) = MISOToolBarItem.ActionType.label("Action") else {
             Issue.record("Expected .label case")
             return
         }
@@ -43,7 +43,7 @@ struct OUDSToolBarItemTests {
     // MARK: - ActionType.icon default values
 
     @Test func iconActionTypeDefaultAccessibilityHintIsNil() {
-        guard case let .icon(_, _, accessibilityHint, _, _) = OUDSToolBarItem.ActionType.icon(asset: Image(systemName: "star"), accessibilityLabel: "Star") else {
+        guard case let .icon(_, _, accessibilityHint, _, _) = MISOToolBarItem.ActionType.icon(asset: Image(systemName: "star"), accessibilityLabel: "Star") else {
             Issue.record("Expected .icon case")
             return
         }
@@ -51,7 +51,7 @@ struct OUDSToolBarItemTests {
     }
 
     @Test func iconActionTypeDefaultBadgeTypeIsNil() {
-        guard case let .icon(_, _, _, badgeType, _) = OUDSToolBarItem.ActionType.icon(asset: Image(systemName: "star"), accessibilityLabel: "Star") else {
+        guard case let .icon(_, _, _, badgeType, _) = MISOToolBarItem.ActionType.icon(asset: Image(systemName: "star"), accessibilityLabel: "Star") else {
             Issue.record("Expected .icon case")
             return
         }
@@ -61,7 +61,7 @@ struct OUDSToolBarItemTests {
     // MARK: - NavigationType.back default values
 
     @Test func backNavigationTypeDefaultLabelIsNil() {
-        guard case let .back(label, _, _) = OUDSToolBarItem.NavigationType.back() else {
+        guard case let .back(label, _, _) = MISOToolBarItem.NavigationType.back() else {
             Issue.record("Expected .back case")
             return
         }
@@ -69,7 +69,7 @@ struct OUDSToolBarItemTests {
     }
 
     @Test func backNavigationTypeDefaultAccessibilityLabelIsNotEmpty() {
-        guard case let .back(_, accessibilityLabel, _) = OUDSToolBarItem.NavigationType.back() else {
+        guard case let .back(_, accessibilityLabel, _) = MISOToolBarItem.NavigationType.back() else {
             Issue.record("Expected .back case")
             return
         }

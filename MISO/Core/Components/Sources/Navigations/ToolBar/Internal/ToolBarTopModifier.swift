@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
 import MISOThemesContract
@@ -28,9 +15,9 @@ struct ToolBarTopModifier: ViewModifier {
     let title: String
     let hasLargeTitle: Bool
     let subtitle: String?
-    @OUDSToolBarItemsBuilder let leadingItems: [OUDSToolBarItem]
-    let principalItem: OUDSToolBarItem?
-    @OUDSToolBarItemsBuilder let trailingItems: [OUDSToolBarItem]
+    @MISOToolBarItemsBuilder let leadingItems: [MISOToolBarItem]
+    let principalItem: MISOToolBarItem?
+    @MISOToolBarItemsBuilder let trailingItems: [MISOToolBarItem]
 
     // MARK: - Initializer
 
@@ -48,9 +35,9 @@ struct ToolBarTopModifier: ViewModifier {
     init(title: String,
          hasLargeTitle: Bool,
          subtitle: String? = nil,
-         @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem],
-         principalItem: OUDSToolBarItem? = nil,
-         @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem])
+         @MISOToolBarItemsBuilder leadingItems: @escaping () -> [MISOToolBarItem],
+         principalItem: MISOToolBarItem? = nil,
+         @MISOToolBarItemsBuilder trailingItems: @escaping () -> [MISOToolBarItem])
     {
         if title.isEmpty {
             ML.warning("The title of ToolBarTopModifier is empty, prefer a non-empty title")
@@ -119,7 +106,7 @@ struct ToolBarTopModifier: ViewModifier {
 
     // MARK: - Helpers
 
-    private func itemsView(_ items: [OUDSToolBarItem]) -> some View {
+    private func itemsView(_ items: [MISOToolBarItem]) -> some View {
         ForEach(items) { item in
             item
                 .environment(\.toolbarItemLocation, .toolbarTop)

@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOFoundations
 import MISOThemesContract
@@ -32,7 +19,7 @@ struct ToolBarActionItemModifier: ViewModifier {
 
     // MARK: Properties
 
-    let style: OUDSToolBarItem.ActionStyle
+    let style: MISOToolBarItem.ActionStyle
 
     @Environment(\.theme) private var theme
 
@@ -59,7 +46,7 @@ struct ToolBarActionItemStyle: ButtonStyle {
 
     // MARK: Properties
 
-    let style: OUDSToolBarItem.ActionStyle
+    let style: MISOToolBarItem.ActionStyle
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
@@ -102,7 +89,7 @@ struct ToolBarTopItemNavigationStyle: ButtonStyle {
 
     // MARK: Properties
 
-    let type: OUDSToolBarItem.NavigationType
+    let type: MISOToolBarItem.NavigationType
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
