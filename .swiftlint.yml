@@ -1,6 +1,6 @@
 #
-# Software Name: OUDS iOS
-# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# Software Name: MISO iOS
+# SPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne
 # SPDX-License-Identifier: MIT
 #
 # This software is distributed under the MIT license,
@@ -21,16 +21,7 @@ strict: true
 # ========
 
 included:
-- OUDS
-
-# ========
-# Excluded
-# ========
-
-excluded:
-- OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_discovery
-- OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_onboarding
-- OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_lime
+- MISO
 
 # ==============
 # Disabled rules
