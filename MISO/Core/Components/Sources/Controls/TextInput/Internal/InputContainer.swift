@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 struct InputContainer: View {
@@ -22,7 +22,7 @@ struct InputContainer: View {
     let placeholder: String?
     let prefix: String?
     let suffix: String?
-    let status: OUDSTextInput.Status
+    let status: MISOTextInput.Status
     let interactionState: TextInputInteractionState
     let accessibilityLabel: String
     let accessibilityValue: String

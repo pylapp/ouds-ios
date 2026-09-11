@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 // swiftlint:disable file_length
@@ -45,7 +45,7 @@ import SwiftUI
 /// The component does not follow the right-to-left (RTL) / left-to-right (LTR) mode returned by the system as it could have some meaning
 /// to have for example the indicator in trailing position for LTR mode and vice versa.
 /// However, if the component has an icon in leading position (RTL mode) or in trailing position (LTR), the content of the icon is never changed.
-/// It could lead to a loss of meaning or semantics in the icon. Thus the ``OUDSImage`` `flipped` property can be used to flip the icon content
+/// It could lead to a loss of meaning or semantics in the icon. Thus the ``MISOImage`` `flipped` property can be used to flip the icon content
 /// whatever the layout direction is, preventing the user from implementing their own rules to flip or not the image.
 ///
 /// ## Rich text
@@ -94,7 +94,7 @@ import SwiftUI
 ///     OUDSRadioItem("Rescue from this world!",
 ///                   isOn: $selection,
 ///                   description: "Put your hand in mine",
-///                   image: OUDSImage(asset: Image(decorative: "ic_heart")),
+///                   image: MISOImage(asset: Image(decorative: "ic_heart")),
 ///                   isReversed: true,
 ///                   isError: true,
 ///                   hasDivider: true)
@@ -103,15 +103,15 @@ import SwiftUI
 ///     OUDSRadioItem("Rescue from this world!",
 ///                   isOn: $selection,
 ///                   description: "Put your hand in mine",
-///                   image: OUDSImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
+///                   image: MISOImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
 ///                   isReversed: true,
 ///                   isError: true,
 ///                   hasDivider: true)
 ///
-///     // Flip the icon for RTL layouts using OUDSImage.
+///     // Flip the icon for RTL layouts using MISOImage.
 ///     OUDSRadioItem("Cocorico !",
 ///                   isOn: $selection,
-///                   image: OUDSImage(asset: Image(systemName: "figure.handball"),
+///                   image: MISOImage(asset: Image(systemName: "figure.handball"),
 ///                                   flipped: layoutDirection == .rightToLeft),
 ///                   isReversed: layoutDirection == .rightToLeft)
 ///
@@ -177,7 +177,7 @@ public struct OUDSRadioItem: View {
     ///                   isOn: $selection,
     ///                   extraLabel: "Very spicy",
     ///                   description: "No alcohol, only tasty flavors",
-    ///                   image: OUDSImage(asset: Image(systemName: "flame")))
+    ///                   image: MISOImage(asset: Image(systemName: "flame")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -192,7 +192,7 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode.
     ///   Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
@@ -208,7 +208,7 @@ public struct OUDSRadioItem: View {
                 isOn: Binding<Bool>,
                 extraLabel: String? = nil,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
@@ -273,7 +273,7 @@ public struct OUDSRadioItem: View {
     ///                   isOn: $selection,
     ///                   extraLabel: "Very spicy",
     ///                   description: "No alcohol, only tasty flavors",
-    ///                   image: OUDSImage(asset: Image(systemName: "flame")),
+    ///                   image: MISOImage(asset: Image(systemName: "flame")),
     ///                   errorText: AttributedString(markdown: "Please select **one flavor** for this drink"))
     ///                    // Manage in your side errors for init for AttributedString(markdown:)
     /// ```
@@ -290,7 +290,7 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
@@ -306,7 +306,7 @@ public struct OUDSRadioItem: View {
                 isOn: Binding<Bool>,
                 extraLabel: String? = nil,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
@@ -368,7 +368,7 @@ public struct OUDSRadioItem: View {
     ///     OUDSRadioItem(LocalizedStringKey("option_label"),
     ///                   bundle: Bundle.module,
     ///                   isOn: $selection,
-    ///                   image: OUDSImage(asset: Image(decorative: "ic_heart")))
+    ///                   image: MISOImage(asset: Image(decorative: "ic_heart")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -380,7 +380,7 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
@@ -396,7 +396,7 @@ public struct OUDSRadioItem: View {
                 isOn: Binding<Bool>,
                 extraLabel: String? = nil,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
@@ -445,7 +445,7 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
@@ -461,7 +461,7 @@ public struct OUDSRadioItem: View {
                 isOn: Binding<Bool>,
                 extraLabel: String? = nil,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,

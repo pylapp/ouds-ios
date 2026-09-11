@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSTokensSemantic
+import MISOTokensSemantic
 
 // MARK: - OUDS Theme
 
@@ -167,10 +167,10 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to tags components like `OUDSInputTag`
     public let inputTag: AllInputTagComponentTokensProvider
 
-    /// All components tokens related to text area components like `OUDSTextArea`
+    /// All components tokens related to text area components like `MISOTextArea`
     public let textArea: AllTextAreaComponentTokensProvider
 
-    /// All components tokens related to bullet list components like `OUDSTextInput`
+    /// All components tokens related to bullet list components like `MISOTextInput`
     public let textInput: AllTextInputComponentTokensProvider
 
     /// All components tokens related to toast components like `OUDSToast`

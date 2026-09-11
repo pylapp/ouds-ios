@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSFoundations
+import MISOFoundations
 
 // swiftlint:disable line_length
 

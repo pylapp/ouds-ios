@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOTokensSemantic
 import OUDSTokensComponent
-import OUDSTokensSemantic
 
 // swiftlint:disable type_name
 

@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOTokensSemantic
 import SwiftUI
 
 struct BadgeModifier: ViewModifier {

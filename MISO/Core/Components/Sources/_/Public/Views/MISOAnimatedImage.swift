@@ -1,22 +1,12 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
-/// `OUDSAnimatedImage` is a SwiftUI view able to play animated **GIF** and **WebP** images.
+/// `MISOAnimatedImage` is a SwiftUI view able to play animated **GIF** and **WebP** images.
 ///
-/// Remote animated images are downloaded and cached (memory + disk) using `OUDSAsyncImageCache`.
+/// Remote animated images are downloaded and cached (memory + disk) using `MISOAsyncImageCache`.
 ///
 /// ## Providing a local GIF or WebP file
 ///
@@ -35,29 +25,29 @@ import SwiftUI
 /// - "Reduce Motion" accessibility setting is enabled, or
 /// - Low Power Mode is enabled.
 ///
-/// > Note: Low Power Mode detection relies on `OUDSLowPowerModeObserver`, injected as an environment
-/// > object by `OUDSThemeableView`. Make sure `OUDSAnimatedImage` is used inside a view hierarchy
-/// > rooted by `OUDSThemeableView` for this behavior to work.
+/// > Note: Low Power Mode detection relies on `MISOLowPowerModeObserver`, injected as an environment
+/// > object by `MISOThemeableView`. Make sure `MISOAnimatedImage` is used inside a view hierarchy
+/// > rooted by `MISOThemeableView` for this behavior to work.
 ///
 /// ## Code samples
 ///
 /// ```swift
 ///     // From a remote URL (downloaded once, then cached)
-///     OUDSAnimatedImage(url: URL(string: "https://example.com/animation.gif"))
+///     MISOAnimatedImage(url: URL(string: "https://example.com/animation.gif"))
 ///
 ///     // From a local file bundled with the app ("loading_spinner.gif" in the main bundle)
-///     OUDSAnimatedImage(named: "loading_spinner", withExtension: "gif")
+///     MISOAnimatedImage(named: "loading_spinner", withExtension: "gif")
 ///
 ///     // From a local file bundled with a Swift Package module ("product_teaser.webp" in .module)
-///     OUDSAnimatedImage(named: "product_teaser", withExtension: "webp", bundle: .module)
+///     MISOAnimatedImage(named: "product_teaser", withExtension: "webp", bundle: .module)
 ///
 ///     // From local data already loaded by the caller (e.g. downloaded and cached elsewhere)
-///     OUDSAnimatedImage(data: myWebPData)
+///     MISOAnimatedImage(data: myWebPData)
 /// ```
 ///
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSAnimatedImage: View {
+public struct MISOAnimatedImage: View {
 
     // MARK: - Properties
 
@@ -95,13 +85,13 @@ public struct OUDSAnimatedImage: View {
     ///
     /// ```swift
     ///     // "loading_spinner.gif" added as a bundle resource of the main target
-    ///     OUDSAnimatedImage(named: "loading_spinner", withExtension: "gif")
+    ///     MISOAnimatedImage(named: "loading_spinner", withExtension: "gif")
     ///
     ///     // "product_teaser.webp" bundled in a Swift Package module resource
-    ///     OUDSAnimatedImage(named: "product_teaser", withExtension: "webp", bundle: .module)
+    ///     MISOAnimatedImage(named: "product_teaser", withExtension: "webp", bundle: .module)
     ///
     ///     // Extension omitted: the first resource matching the name, whatever its extension, is used
-    ///     OUDSAnimatedImage(named: "loading_spinner")
+    ///     MISOAnimatedImage(named: "loading_spinner")
     /// ```
     ///
     /// - Parameters:
@@ -178,7 +168,7 @@ private struct RemoteAnimatedImageView: View {
         }
         .task(id: url) {
             guard let url else { return }
-            data = await OUDSAsyncImageCache.shared.loadData(from: url)
+            data = await MISOAsyncImageCache.shared.loadData(from: url)
         }
     }
 }
@@ -192,7 +182,7 @@ private struct DecodedAnimatedImageView: View {
     @State private var content: AnimatedImageContent?
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
+    @EnvironmentObject private var lowPowerModeObserver: MISOLowPowerModeObserver
 
     var body: some View {
         Group {

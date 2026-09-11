@@ -13,10 +13,10 @@
 
 #if os(iOS)
 
-import OUDSFoundations
+import MISOFoundations
+import MISOTokensRaw
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensRaw
-import OUDSTokensSemantic
 import SwiftUI
 
 /// An indicator to display at the top of the selected tab for iOS lower than 26 (i.e. Liquid Glass not available) or with Liquid Glass disabled (26+)
@@ -51,7 +51,7 @@ struct SelectedTabIndicator: View {
     @State private var indicatorScaleX: CGFloat = 0
 
     /// To disable animation if device in low power mode
-    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
+    @EnvironmentObject private var lowPowerModeObserver: MISOLowPowerModeObserver
     /// To disable animation if user asked for it in device settings
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 

@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 /*
@@ -33,7 +33,7 @@ import SwiftUI
 ///
 /// Animations are disabled and the target value is applied instantly when either
 /// ``EnvironmentValues/accessibilityReduceMotion`` is `true` or Low Power Mode is enabled
-/// (via ``OUDSLowPowerModeObserver``), mirroring the behavior of the indeterminate animator.
+/// (via ``MISOLowPowerModeObserver``), mirroring the behavior of the indeterminate animator.
 struct CircularProgressIndicatorDeterminateView: View {
 
     // MARK: - Android Material 3 spring animation constants
@@ -75,7 +75,7 @@ struct CircularProgressIndicatorDeterminateView: View {
     @State private var displayedProgress: Double = 0
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
+    @EnvironmentObject private var lowPowerModeObserver: MISOLowPowerModeObserver
 
     // MARK: - Body
 

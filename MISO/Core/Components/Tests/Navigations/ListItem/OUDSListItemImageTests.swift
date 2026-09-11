@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-@testable import OUDSComponents
+@testable import MISOComponents
 import SwiftUI
 import Testing
 
@@ -33,7 +33,7 @@ struct OUDSListItemImageTests {
     // MARK: - init(animatedImage:) builds a .animated case
 
     @Test func animatedImageInitializerBuildsAnimatedCase() {
-        let image = OUDSListItemImage(animatedImage: OUDSAnimatedImage(url: nil))
+        let image = OUDSListItemImage(animatedImage: MISOAnimatedImage(url: nil))
         guard case .animated = image.imageType else {
             Issue.record("Expected .animated case")
             return

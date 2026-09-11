@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS) && !os(macOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 // \("˚☐˚)/ ⊹₊⟡⋆

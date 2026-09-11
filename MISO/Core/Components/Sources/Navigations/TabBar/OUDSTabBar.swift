@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 /// The Tab bar is a system navigation component with a position which can vary depending to the OS.
@@ -221,7 +221,7 @@ public struct OUDSTabBar<Content: View>: View {
     @State private var isTabBarHidden: Bool = false
     #endif
 
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceMISOLegacyLayout) private var forceMISOLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Initializers
@@ -364,7 +364,7 @@ public struct OUDSTabBar<Content: View>: View {
     /// Determines if the selected tab indicator should be shown, i.e. if iOS lower than 26 in portrait mode.
     private var shouldShowTabIndicator: Bool {
         #if canImport(UIKit) && !os(watchOS)
-        if forceOUDSLegacyLayout { return true }
+        if forceMISOLegacyLayout { return true }
         guard isLiquidGlassDisabled else { return false }
         guard UIDevice.current.userInterfaceIdiom == .phone else { return false }
         return !isLandscape
@@ -376,7 +376,7 @@ public struct OUDSTabBar<Content: View>: View {
     /// - Returns Bool: true if iOS lower than 26.0 for iPhone or iOS lower than 18.0 for iPad, false otherwise
     private var hasLegacyLayout: Bool {
         #if canImport(UIKit) && !os(watchOS)
-        if forceOUDSLegacyLayout { return true }
+        if forceMISOLegacyLayout { return true }
         // iOS < 26
         if isLiquidGlassDisabled {
             // iPhone

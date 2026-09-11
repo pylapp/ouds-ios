@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
+import MISOTokensRaw
 
 /// Basically a semantic token for effect is a raw token for effect, to keep grammar clean and clear with design system grammar.
 public typealias EffectSemanticToken = EffectRawToken

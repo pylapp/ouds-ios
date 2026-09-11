@@ -12,7 +12,7 @@
 //
 
 #if !os(tvOS) && !os(watchOS)
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 // MARK: - OUDS Tab View
@@ -245,7 +245,7 @@ private struct OUDSTabViewBody<TabViewContent: View>: View {
     @State private var isTabBarHidden: Bool = false
     #endif
 
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceMISOLegacyLayout) private var forceMISOLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     var body: some View {
@@ -291,7 +291,7 @@ private struct OUDSTabViewBody<TabViewContent: View>: View {
 
     private var shouldShowTabIndicator: Bool {
         #if canImport(UIKit) && !os(watchOS)
-        if forceOUDSLegacyLayout { return tabCount > 0 }
+        if forceMISOLegacyLayout { return tabCount > 0 }
         guard tabCount > 0 else { return false }
         guard isLiquidGlassDisabled else { return false }
         guard UIDevice.current.userInterfaceIdiom == .phone else { return false }
@@ -303,7 +303,7 @@ private struct OUDSTabViewBody<TabViewContent: View>: View {
 
     private var hasLegacyLayout: Bool {
         #if canImport(UIKit) && !os(watchOS)
-        if forceOUDSLegacyLayout { return true }
+        if forceMISOLegacyLayout { return true }
         if isLiquidGlassDisabled {
             if UIDevice.current.userInterfaceIdiom == .phone {
                 return true

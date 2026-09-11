@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - Alert Leading Icon
@@ -44,15 +44,15 @@ struct AlertLeadingIcon: View {
             case let .neutral(icon):
                 icon?.update(with: theme.colors.contentDefault)
             case .negative:
-                OUDSImage(name: "Component-alert-important-fill", color: theme.colors.contentStatusNegative)
+                MISOImage(name: "Component-alert-important-fill", color: theme.colors.contentStatusNegative)
             case .positive:
-                OUDSImage(name: "Component-alert-tick-confirmation-fill", color: theme.colors.contentStatusPositive)
+                MISOImage(name: "Component-alert-tick-confirmation-fill", color: theme.colors.contentStatusPositive)
             case .info:
-                OUDSImage(name: "Component-alert-info-fill", color: theme.colors.contentStatusInfo)
+                MISOImage(name: "Component-alert-info-fill", color: theme.colors.contentStatusInfo)
             case .warning:
                 ZStack {
-                    OUDSImage(name: "Component-alert-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
-                    OUDSImage(name: "Component-alert-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                    MISOImage(name: "Component-alert-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
+                    MISOImage(name: "Component-alert-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
                 }
             }
         }

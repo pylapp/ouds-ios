@@ -24,17 +24,17 @@ You should use one (or several) of the following imports for your needs, which a
 > Tip: We recommend to embed in your apps only the ones you need to avoid to embed useless assets.
 
 ```swift
-import OUDSThemesContract // If you want to define your theme, use themes or OUDSThemeableView
+import OUDSThemesContract // If you want to define your theme, use themes or MISOThemeableView
 import OUDSModules // To use modules
-import OUDSComponents // To use components
+import MISOComponents // To use components
 import OUDSThemesOrange // To use the default Orange theme
 import OUDSThemesOrangeCompact // To use the Orange Compact theme
 import OUDSThemesSosh // To use the Sosh theme
 import OUDSThemesWireframe // To use the Wireframe theme
 import OUDSTokensComponent // If you need to override or use directly components tokens
 import OUDSTokenSemantic // If you need to override or use directly semantic tokens
-import OUDSTokensRaw // If you need to override or use directly raw tokens
-import OUDSFoundations // For some utilities
+import MISOTokensRaw // If you need to override or use directly raw tokens
+import MISOFoundations // For some utilities
 ```
 
 ### Or more simple, import umbrella library
@@ -67,7 +67,7 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
 
 @Row {
         @Column {
-            You will need to use for your application root view the [`OUDSThemeableView`](https://ios.unified-design-system.orange.com/documentation/ouds/oudsthemeableview/). 
+            You will need to use for your application root view the [`MISOThemeableView`](https://ios.unified-design-system.orange.com/documentation/ouds/oudsthemeableview/). 
              [This page may help](https://ios.unified-design-system.orange.com/documentation/ouds/themes) also.
             This special view is here to define some elements as environment variables and injects the choosen theme.
         }
@@ -77,7 +77,7 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
             struct YourApp: App {
                 var body: some Scene {
                    WindowGroup {
-                      OUDSThemeableView(theme: OrangeTheme()) {
+                      MISOThemeableView(theme: OrangeTheme()) {
                             // Your root view
                       }
                    }
@@ -100,13 +100,13 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
     }
 }
 
-> Tip: Keep in mind only one theme can be used within one `OUDSThemeableView`.
+> Tip: Keep in mind only one theme can be used within one `MISOThemeableView`.
 
 ### Trick for Xcode Preview
 
-If you use Xcode `#Preview` blocks, you will have to be sure the theme is instanciated and injected through the `OUDSThemeableView`.
+If you use Xcode `#Preview` blocks, you will have to be sure the theme is instanciated and injected through the `MISOThemeableView`.
 Because it is not possible today to override the legit `#Preview` block, you can instead use some of our utilities to wrap your content
-inside the `OUDSThemeableView` automatically. These utilities come with the themes modules. Without them you may face errors about undefined theme.
+inside the `MISOThemeableView` automatically. These utilities come with the themes modules. Without them you may face errors about undefined theme.
 
 ```swift
 // Apply Orange theme

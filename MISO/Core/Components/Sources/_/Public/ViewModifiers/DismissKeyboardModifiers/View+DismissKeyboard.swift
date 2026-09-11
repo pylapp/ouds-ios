@@ -1,15 +1,5 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
 
 import SwiftUI
 
@@ -18,17 +8,17 @@ extension View {
     /// Dismisses the software keyboard when the user taps anywhere
     /// outside a text input field.
     ///
-    /// Apply this modifier on the parent view containing an `OUDSTextInput`
-    /// or `OUDSTextArea` for example.
+    /// Apply this modifier on the parent view containing an `MISOTextInput`
+    /// or `MISOTextArea` for example.
     ///
     /// ```swift
     /// VStack {
-    ///     OUDSTextInput(label: "Email", text: $email)
-    ///     OUDSTextInput(label: "Name", text: $name)
+    ///     MISOTextInput(label: "Email", text: $email)
+    ///     MISOTextInput(label: "Name", text: $name)
     /// }
-    /// .oudsHideKeyboardOnTap()
+    /// .misoHideKeyboardOnTap()
     /// ```
-    public func oudsHideKeyboardOnTap() -> some View {
+    public func misoHideKeyboardOnTap() -> some View {
         #if os(iOS) || os(iPadOS) || os(visionOS)
         modifier(DismissKeyboardOnTapModifier())
         #else

@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import MISOTokensRaw
+import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - Extension of View

@@ -1,4 +1,4 @@
-# ``OUDSTokensSemantic``
+# ``MISOTokensSemantic``
 
 @Metadata {
     @PageImage(purpose: icon, source: "ic_design_token_figma_semantic")
@@ -141,7 +141,7 @@ Thus, get the theme and call the needed property with some helpers.
 ```swift
 struct SomeView: View {
 
-    @Environment(\.theme) private var theme // Supposed you used in your root view the `OUDSThemeableView` to register the theme
+    @Environment(\.theme) private var theme // Supposed you used in your root view the `MISOThemeableView` to register the theme
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
@@ -160,13 +160,13 @@ struct SomeView: View {
 */
 }
 
-// Do not forget in your app to use the `OUDSThemeableView` for your theme, e.g. `OrangeTheme`
+// Do not forget in your app to use the `MISOThemeableView` for your theme, e.g. `OrangeTheme`
 @main
 struct DesignToolbox: App {
 
     var body: some Scene {
         WindowGroup {
-            OUDSThemeableView(theme: OrangeTheme()) {
+            MISOThemeableView(theme: OrangeTheme()) {
                 // Your root view
                 ...
             }

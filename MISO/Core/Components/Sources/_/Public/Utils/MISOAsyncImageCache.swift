@@ -1,26 +1,16 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
 
 import Foundation
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 /// Defines a cache, in memory and on disk, to store `AsyncImage` content.
-/// Backs the ``OUDSAsyncImage`` View.
+/// Backs the ``MISOAsyncImage`` View.
 ///
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public final class OUDSAsyncImageCache: @unchecked Sendable {
+public final class MISOAsyncImageCache: @unchecked Sendable {
 
     // MARK: - Settings
 
@@ -60,7 +50,7 @@ public final class OUDSAsyncImageCache: @unchecked Sendable {
     // MARK: - Singleton
 
     /// The singleton to to access the shared cache
-    public static let shared = OUDSAsyncImageCache()
+    public static let shared = MISOAsyncImageCache()
 
     // MARK: - Service
 

@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 // MARK: - OUDS Switch Item
@@ -71,20 +71,20 @@ import SwiftUI
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
 ///                    description: "The Beatles",
-///                    image: OUDSImage(asset: Image(decorative: "ic_heart")),
+///                    image: MISOImage(asset: Image(decorative: "ic_heart")),
 ///                    isReversed: true)
 ///
 ///     // A trailing switch with a raw (non-tinted) image.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
 ///                    description: "The Beatles",
-///                    image: OUDSImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
+///                    image: MISOImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
 ///                    isReversed: true)
 ///
-///     // Flip the icon for RTL layouts using OUDSImage.
+///     // Flip the icon for RTL layouts using MISOImage.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
-///                    image: OUDSImage(asset: Image(systemName: "figure.handball"),
+///                    image: MISOImage(asset: Image(systemName: "figure.handball"),
 ///                                    flipped: layoutDirection == .rightToLeft))
 ///
 ///     // If on error, add an error message to help user understand the error context
@@ -158,7 +158,7 @@ public struct OUDSSwitchItem: View {
     ///     OUDSSwitchItem("Wi-Fi", isOn: $isOn)
     ///
     ///     OUDSSwitchItem("Wi-Fi", isOn: $isOn,
-    ///                    image: OUDSImage(asset: Image(decorative: "ic_wifi")))
+    ///                    image: MISOImage(asset: Image(decorative: "ic_wifi")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -170,7 +170,7 @@ public struct OUDSSwitchItem: View {
     ///   - label: The main label text of the switch, must not be empty
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -184,7 +184,7 @@ public struct OUDSSwitchItem: View {
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -253,7 +253,7 @@ public struct OUDSSwitchItem: View {
     ///   - label: The main label text of the switch, must not be empty
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -266,7 +266,7 @@ public struct OUDSSwitchItem: View {
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -319,7 +319,7 @@ public struct OUDSSwitchItem: View {
     ///     OUDSSwitchItem(LocalizedStringKey("wifi_setting"),
     ///                    bundle: Bundle.module,
     ///                    isOn: $isOn,
-    ///                    image: OUDSImage(asset: Image(decorative: "ic_wifi")))
+    ///                    image: MISOImage(asset: Image(decorative: "ic_wifi")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -330,7 +330,7 @@ public struct OUDSSwitchItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -343,7 +343,7 @@ public struct OUDSSwitchItem: View {
                 bundle: Bundle = .main,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -386,7 +386,7 @@ public struct OUDSSwitchItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -399,7 +399,7 @@ public struct OUDSSwitchItem: View {
                 bundle: Bundle = .main,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: AttributedString,

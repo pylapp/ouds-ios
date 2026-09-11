@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 /// A container to display the indicator according to its type and apply the right color based on the ``OUDSButtonInteractionState`.
@@ -32,7 +32,7 @@ struct ListItemIndicatorContainer: View {
     var body: some View {
         if let asset {
             HStack {
-                OUDSScaledIcon(image: OUDSImage(asset: asset), size: theme.listItem.sizeAssetSmall)
+                MISOScaledIcon(image: MISOImage(asset: asset), size: theme.listItem.sizeAssetSmall)
                     .foregroundColor(color)
             }
             .frame(minHeight: minHeight, alignment: .center)

@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 

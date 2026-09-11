@@ -41,12 +41,12 @@ A theme can use its own tokens providers, implemented from scratch or by inherit
 
 ```swift
 // Add themeable view to your root view to use the OrangeTheme
-OUDSThemeableView(theme: OrangeTheme()) {
+MISOThemeableView(theme: OrangeTheme()) {
     YourRootView()
 }
 
 // Or use your custom theme if you want
-OUDSThemeableView(theme: YourCustomTheme()) {
+MISOThemeableView(theme: YourCustomTheme()) {
     YourRootView()
 }
 ```
@@ -236,7 +236,7 @@ Finaly for your app root view:
 struct MyAppRootView: View {
 
     var body: some View {
-        OUDSThemeableView(theme: YourAppTheme()) {
+        MISOThemeableView(theme: YourAppTheme()) {
             // ...
         }
     }
@@ -246,7 +246,7 @@ struct MyAppRootView: View {
 You can define your own set of raw tokens, and asign them in the semantic tokens you override as values, for example:
 
 ```swift
-public typealias MyOwnFontRawTokens = FontRawTokens // Refer to type FontRawTokens for consistency, declared in OUDSTokensRaw
+public typealias MyOwnFontRawTokens = FontRawTokens // Refer to type FontRawTokens for consistency, declared in MISOTokensRaw
 
 public enum MyOwnFontRawTokens {
     public static let someFontBody: MyOwnFontRawTokens = "Arial"

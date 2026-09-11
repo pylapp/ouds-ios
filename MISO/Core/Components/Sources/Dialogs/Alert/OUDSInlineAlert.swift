@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOTokensSemantic
 import SwiftUI
 
 /// Inline alert is a lightweight UI element, placed in the content flow, that displays information, system feedback,
@@ -31,8 +31,8 @@ import SwiftUI
 ///     OUDSInlineAlert(label: "Warning", status: .warning)
 ///
 ///     // Add a custom icon for accent and neutral status
-///     OUDSInlineAlert(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_heart"))))
-///     OUDSInlineAlert(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic_heart"))))
+///     OUDSInlineAlert(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_heart"))))
+///     OUDSInlineAlert(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_heart"))))
 /// ```
 ///
 /// ## Design documentation

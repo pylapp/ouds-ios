@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 /// A `ViewModifier` to apply to `ControlItem` views so as to define an outline effect, i.e. draw kind of borders around the object, or a divider.

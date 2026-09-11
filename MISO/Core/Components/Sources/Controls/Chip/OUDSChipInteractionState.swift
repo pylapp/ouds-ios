@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 
 /// The state used by modifiers to handle all states of the chip components.
 /// Combined with an interaction button, defines the available states for a component of a chip family.

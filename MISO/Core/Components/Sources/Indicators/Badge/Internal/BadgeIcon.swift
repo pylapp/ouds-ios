@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 struct BadgeIcon: View {
@@ -32,11 +32,11 @@ struct BadgeIcon: View {
             case .warning:
                 if isEnabled {
                     ZStack {
-                        OUDSImage(name: "Component-badge-icon-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
-                        OUDSImage(name: "Component-badge-icon-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
+                        MISOImage(name: "Component-badge-icon-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                        MISOImage(name: "Component-badge-icon-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
                     }
                 } else {
-                    OUDSImage(name: "Component-badge-icon-warning-external-shape", color: theme.colors.actionDisabled)
+                    MISOImage(name: "Component-badge-icon-warning-external-shape", color: theme.colors.actionDisabled)
                 }
             default:
                 image
@@ -66,18 +66,18 @@ struct BadgeIcon: View {
         }
     }
 
-    private var image: OUDSImage {
+    private var image: MISOImage {
         switch configuration.status {
         case let .neutral(image), let .accent(image):
             image
         case .warning:
-            OUDSImage(asset: Image(decorative: "Component-badge-icon-warning-external-shape", bundle: theme.resourcesBundle))
+            MISOImage(asset: Image(decorative: "Component-badge-icon-warning-external-shape", bundle: theme.resourcesBundle))
         case .positive:
-            OUDSImage(asset: Image(decorative: "Component-badge-icon-tick-confirmation-fill", bundle: theme.resourcesBundle))
+            MISOImage(asset: Image(decorative: "Component-badge-icon-tick-confirmation-fill", bundle: theme.resourcesBundle))
         case .negative:
-            OUDSImage(asset: Image(decorative: "Component-badge-icon-error-fill", bundle: theme.resourcesBundle))
+            MISOImage(asset: Image(decorative: "Component-badge-icon-error-fill", bundle: theme.resourcesBundle))
         case .info:
-            OUDSImage(asset: Image(decorative: "Component-badge-icon-info-fill", bundle: theme.resourcesBundle))
+            MISOImage(asset: Image(decorative: "Component-badge-icon-info-fill", bundle: theme.resourcesBundle))
         }
     }
 }

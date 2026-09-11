@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 /// Text component used to structure the hierarchy of a screen.

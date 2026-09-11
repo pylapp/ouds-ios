@@ -1,15 +1,5 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
 
 import SwiftUI
 
@@ -31,7 +21,7 @@ extension View {
     /// `title` and optional `subtitle`. It also sends a notification to accessibility layers for a screen change when it appears.
     ///
     /// ```swift
-    ///      SomeView().oudsNavigationTitle("your title key")
+    ///      SomeView().misoNavigationTitle("your title key")
     /// ```
     ///
     /// - Parameters:
@@ -42,7 +32,7 @@ extension View {
     ///    - hasLargeTitle: Flag to activate the large title. Default is `false`.
     ///
     /// - Returns View: The view with a new modifier
-    public func oudsNavigationTitle(_ title: String, subtitle: String? = nil, hasLargeTitle: Bool = false) -> some View {
+    public func misoNavigationTitle(_ title: String, subtitle: String? = nil, hasLargeTitle: Bool = false) -> some View {
         #if canImport(UIKit)
         modifier(AccessibleNavigationTitleModifier(title: title,
                                                    subtitle: subtitle,

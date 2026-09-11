@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 /*
@@ -49,7 +49,7 @@ import SwiftUI
 ///
 /// Motion is disabled and a static bar filled at 70% is displayed when either
 /// ``EnvironmentValues/accessibilityReduceMotion`` is `true` or Low Power Mode is enabled (via
-/// ``OUDSLowPowerModeObserver``).
+/// ``MISOLowPowerModeObserver``).
 struct LinearProgressIndicatorIndeterminateView: View {
 
     // MARK: - Material animation constants
@@ -102,7 +102,7 @@ struct LinearProgressIndicatorIndeterminateView: View {
     let barHeight: CGFloat
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
+    @EnvironmentObject private var lowPowerModeObserver: MISOLowPowerModeObserver
 
     // MARK: - Body
 

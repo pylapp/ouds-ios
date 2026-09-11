@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-@testable import OUDSComponents
+@testable import MISOComponents
 import Testing
 
 struct OUDSBulletListItemTests {
@@ -283,7 +283,7 @@ struct OUDSBulletListItemTests {
 
     // MARK: - Helpers
 
-    // Note: localised strings (level / sub-items) are looked up from the OUDSComponents bundle at
+    // Note: localised strings (level / sub-items) are looked up from the MISOComponents bundle at
     // runtime. In the Swift Package test runner the resource bundle is not bundled the same way,
     // so `String(localized:bundle:)` falls back to the raw key. The tests below therefore verify
     // the *structural* correctness (which components are present, in which order) by splitting on

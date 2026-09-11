@@ -12,8 +12,8 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOTokensSemantic
 import SwiftUI
 
 /// A picker allowing to expose several radio buttons and choose only one within the others.
@@ -45,16 +45,16 @@ import SwiftUI
 ///                                         label: "Virgin Holy Lava",
 ///                                         extraLabel: "Very spicy",
 ///                                         description: "No alcohol, only tasty flavors",
-///                                         image: OUDSImage(asset: Image(systemName: "flame")),
+///                                         image: MISOImage(asset: Image(systemName: "flame")),
 ///
 ///             OUDSRadioPickerData<String>(tag: "Choice_2",
 ///                                         label: "IPA beer",
 ///                                         description: "From Brewdog company",
-///                                         image: OUDSImage(asset: Image(systemName: "dog.fill")),
+///                                         image: MISOImage(asset: Image(systemName: "dog.fill")),
 ///
 ///             OUDSRadioPickerData<String>(tag: "Choice_3",
 ///                                         label: "Mineral water",
-///                                         image: OUDSImage(asset: Image(systemName: "waterbottle.fill")),
+///                                         image: MISOImage(asset: Image(systemName: "waterbottle.fill")),
 ///         ]
 ///     }
 ///

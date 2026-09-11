@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSTokensSemantic
+import MISOTokensSemantic
 
 // swiftlint:disable line_length
 

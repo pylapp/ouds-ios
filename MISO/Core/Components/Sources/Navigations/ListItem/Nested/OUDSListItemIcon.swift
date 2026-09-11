@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 /// An icon element that can be used at the leading or trailing position of a list item
@@ -163,8 +163,8 @@ public struct OUDSListItemIcon: View {
             case .warning:
                 if isEnabled {
                     ZStack {
-                        OUDSImage(name: "Component-alert-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
-                        OUDSImage(name: "Component-alert-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
+                        MISOImage(name: "Component-alert-warning-external-shape", color: theme.icon.colorContentStatusWarningExternalShape)
+                        MISOImage(name: "Component-alert-warning-internal-shape", color: theme.icon.colorContentStatusWarningInternalShape)
                     }
                 } else {
                     asset.foregroundColor(theme.colors.actionDisabled)

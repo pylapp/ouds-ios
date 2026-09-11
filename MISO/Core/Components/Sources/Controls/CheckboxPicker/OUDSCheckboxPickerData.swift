@@ -31,7 +31,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     let description: String?
 
     /// An optional image the ``OUDSCheckboxItem`` can have, encapsulating the asset, flip flag and rendering mode
-    let icon: OUDSImage?
+    let icon: MISOImage?
 
     /// Define if the ``OUDSCheckboxItem`` is reversed or not
     let isReversed: Bool
@@ -57,19 +57,19 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     ///
     ///     OUDSCheckboxPickerData(tag: "option2",
     ///                            label: "Option 2",
-    ///                            image: OUDSImage(asset: Image(systemName: "flame")))
+    ///                            image: MISOImage(asset: Image(systemName: "flame")))
     ///
     ///     // Raw (non-tinted) image:
     ///     OUDSCheckboxPickerData(tag: "option3",
     ///                            label: "Option 3",
-    ///                            image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+    ///                            image: MISOImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
     /// ```
     ///
     /// - Parameters:
     ///    - tag: a value to discriminate one checkbox to another
     ///    - label: the mandatory text to add to ``OUDSCheckboxItem``
     ///    - description: An optional text, default set to nil
-    ///    - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///    - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///    - isReversed: True to use to reversed layout of the ``OUDSCheckboxItem``, false otherwise (default)
     ///    - isError: True if in an error context, false otherwise (default)
     ///    - isReadOnly: True if read only, false otherwise (default)
@@ -81,7 +81,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     public init(tag: Tag,
                 label: String,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,

@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: MISO iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -11,18 +11,18 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOTokensRaw
+import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - Native fonts
 
 #if os(macOS)
-/// For OUDS a `NativeFont` on macOS is a `NSFont`
+/// For MISO a `NativeFont` on macOS is a `NSFont`
 public typealias NativeFont = NSFont
 #else
-/// For OUDS a `NativeFont` on iOS is a `UIFont`
+/// For MISO a `NativeFont` on iOS is a `UIFont`
 public typealias NativeFont = UIFont
 #endif
 
@@ -96,7 +96,7 @@ extension UIFont {
     /// From a `UIFont` of UIKit, creates a SwiftUI `Font` object
     ///
     /// Note in some cases the `UIFont` is preferred to the `Font` because the *line height* to compute the *line spacing* is needed.
-    /// In addition, SwiftUI *line height* dedicated API stacks text to the top, and OUDS requires to have text centered.
+    /// In addition, SwiftUI *line height* dedicated API stacks text to the top, and MISO requires to have text centered.
     ///
     /// You may need to use instead `View/font(:MultipleFontCompositeSemanticToken)` so as to apply computed lines and letters
     /// heights and spacings.

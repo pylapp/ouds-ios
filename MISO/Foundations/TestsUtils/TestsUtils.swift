@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSFoundations
+import MISOFoundations
 import Testing
 
 // swiftlint:disable force_unwrapping

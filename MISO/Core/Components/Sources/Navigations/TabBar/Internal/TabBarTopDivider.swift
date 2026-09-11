@@ -13,10 +13,10 @@
 
 #if os(iOS)
 
-import OUDSFoundations
+import MISOFoundations
+import MISOTokensRaw
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensRaw
-import OUDSTokensSemantic
 import SwiftUI
 
 /// A small stroke, like a divider, to display in the top of the tab bar for iOS lower than 26 (i.e. no Liquid Glass)

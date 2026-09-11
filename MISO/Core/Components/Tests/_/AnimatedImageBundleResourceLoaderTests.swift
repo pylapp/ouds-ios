@@ -12,10 +12,10 @@
 //
 
 import Foundation
-@testable import OUDSComponents
+@testable import MISOComponents
 import Testing
 
-/// Tests on ``AnimatedImageBundleResourceLoader``, used by ``OUDSAnimatedImage/init(named:withExtension:bundle:)``
+/// Tests on ``AnimatedImageBundleResourceLoader``, used by ``MISOAnimatedImage/init(named:withExtension:bundle:)``
 /// to read a local GIF/WebP file bundled as a plain resource (not an `.xcassets` entry).
 struct AnimatedImageBundleResourceLoaderTests {
 

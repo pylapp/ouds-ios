@@ -12,8 +12,8 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOTokensSemantic
 import SwiftUI
 
 /// A picker allowing to expose several checkboxes and select some of them within the others.
@@ -45,16 +45,16 @@ import SwiftUI
 ///         OUDSCheckboxPickerData<String>(tag: "Choice_1",
 ///                                        label: "Virgin Holy Lava",
 ///                                        description: "No alcohol, only tasty flavors",
-///                                        image: OUDSImage(asset: Image(systemName: "flame")),
+///                                        image: MISOImage(asset: Image(systemName: "flame")),
 ///
 ///         OUDSCheckboxPickerData<String>(tag: "Choice_2",
 ///                                        label: "IPA beer",
 ///                                        description: "From Brewdog company",
-///                                        image: OUDSImage(asset: Image(systemName: "dog.fill")),
+///                                        image: MISOImage(asset: Image(systemName: "dog.fill")),
 ///
 ///         OUDSCheckboxPickerData<String>(tag: "Choice_3",
 ///                                        label: "Mineral water",
-///                                        image: OUDSImage(asset: Image(systemName: "waterbottle.fill"))
+///                                        image: MISOImage(asset: Image(systemName: "waterbottle.fill"))
 ///         ]
 ///     }
 ///

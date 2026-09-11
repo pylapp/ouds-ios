@@ -12,8 +12,8 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOTokensSemantic
 import SwiftUI
 
 /// A picker allowing to expose several *filter chips* and proposing single or multiple selections.
@@ -39,13 +39,13 @@ import SwiftUI
 ///     var someDataToPopulate: [OUDSChipPickerData<Drink>] {
 ///         [
 ///             OUDSChipPickerData(tag: Drink.virginHolyLava,
-///                                layout: .textAndImage("Virgin Holy Lava", image: OUDSImage(asset: Image(systemName: "flame")))),
+///                                layout: .textAndImage("Virgin Holy Lava", image: MISOImage(asset: Image(systemName: "flame")))),
 ///
 ///             OUDSChipPickerData(tag: Drink.ipaBeer,
-///                                layout: .textAndImage("IPA Beer", image: OUDSImage(asset: Image(systemName: "dog.fill")))),
+///                                layout: .textAndImage("IPA Beer", image: MISOImage(asset: Image(systemName: "dog.fill")))),
 ///
 ///             OUDSChipPickerData(tag: Drink.mineralWater,
-///                                layout: .textAndImage("Mineral water", image: OUDSImage(asset: Image(systemName: "waterbottle.fill")))),
+///                                layout: .textAndImage("Mineral water", image: MISOImage(asset: Image(systemName: "waterbottle.fill")))),
 ///         ]
 ///     }
 ///

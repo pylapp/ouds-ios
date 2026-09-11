@@ -12,7 +12,7 @@
 //
 
 #if os(macOS)
-import OUDSComponents
+import MISOComponents
 import SwiftUI
 import Testing
 

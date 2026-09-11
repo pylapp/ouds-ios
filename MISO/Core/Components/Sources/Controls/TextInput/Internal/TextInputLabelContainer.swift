@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 struct TextInputLabelContainer: View {
@@ -20,7 +20,7 @@ struct TextInputLabelContainer: View {
     // MARK: Properties
 
     let label: String
-    let status: OUDSTextInput.Status
+    let status: MISOTextInput.Status
     let interactionState: TextInputInteractionState
     let position: Position
 

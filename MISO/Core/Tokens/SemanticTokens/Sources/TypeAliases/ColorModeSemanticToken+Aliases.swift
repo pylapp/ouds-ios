@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
+import MISOTokensRaw
 
 /// Basically a color mode semantic token is a `ColorModeRawToken`
 public typealias ColorModeSemanticToken = ColorModeRawToken

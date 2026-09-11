@@ -32,10 +32,10 @@ import SwiftUI
 ///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .small) { }
 ///
 ///     // Text and icon in default size
-///     OUDSLink(text: "Feedback", image: OUDSImage(asset: Image("ic_heart")), size: .default) { }
+///     OUDSLink(text: "Feedback", image: MISOImage(asset: Image("ic_heart")), size: .default) { }
 ///
 ///     // Text and icon with raw image (not tinted)
-///     OUDSLink(text: "Feedback", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) { }
+///     OUDSLink(text: "Feedback", image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) { }
 /// ```
 ///
 /// ## Navigation layout
@@ -58,7 +58,7 @@ import SwiftUI
 ///
 /// ## Colored Surface
 ///
-/// If link is placed on colored surface using `OUDSColoredSurface`, the default colors (content text and icon or arrow) are automatically adjusted to switch to monochrom.
+/// If link is placed on colored surface using `MISOColoredSurface`, the default colors (content text and icon or arrow) are automatically adjusted to switch to monochrom.
 ///
 /// ## Design documentation
 ///
@@ -121,7 +121,7 @@ public struct OUDSLink: View {
     enum Layout {
         case indicator(OUDSLink.Indicator)
         case textOnly
-        case textAndIcon(OUDSImage)
+        case textAndIcon(MISOImage)
     }
 
     // MARK: - Initializers — String label + optional icon
@@ -129,10 +129,10 @@ public struct OUDSLink: View {
     /// Create a link with text and an optional icon.
     ///
     /// ```swift
-    ///     OUDSLink(text: "Learn more", image: OUDSImage(asset: Image(systemName: "arrow.right")), size: .default) {}
+    ///     OUDSLink(text: "Learn more", image: MISOImage(asset: Image(systemName: "arrow.right")), size: .default) {}
     ///
     ///     // Raw (non-tinted) image:
-    ///     OUDSLink(text: "Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
+    ///     OUDSLink(text: "Brand", image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
     ///
     ///     // Text only — omit image or pass nil:
     ///     OUDSLink(text: "Feedback", size: .small) {}
@@ -140,12 +140,12 @@ public struct OUDSLink: View {
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
+    ///   - image: An optional ``MISOImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
     ///   - size: Size of the link
     ///   - density: The density to apply to the link defining some spaces, default set to `.default`
     ///   - action: The action to perform when the user triggers the link
     public init(text: String,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 size: Size = .default,
                 density: Density = .default,
                 action: @escaping () -> Void)
@@ -167,7 +167,7 @@ public struct OUDSLink: View {
     ///
     ///     OUDSLink(LocalizedStringKey("learn_more"),
     ///              bundle: Bundle.module,
-    ///              image: OUDSImage(asset: Image("ic_heart")),
+    ///              image: MISOImage(asset: Image("ic_heart")),
     ///              size: .default) {}
     /// ```
     ///
@@ -175,14 +175,14 @@ public struct OUDSLink: View {
     ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
+    ///   - image: An optional ``MISOImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
     ///   - size: Size of the link
     ///   - density: The density to apply to the link defining some spaces, default set to `.default`
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 size: Size = .default,
                 density: Density = .default,
                 action: @escaping () -> Void)

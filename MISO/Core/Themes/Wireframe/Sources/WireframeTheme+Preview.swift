@@ -12,13 +12,13 @@
 //
 
 import Foundation
-import OUDSFoundations
+import MISOFoundations
 import OUDSThemesContract
 import SwiftUI
 
 extension View {
 
-    /// Wraps `self` `View` inside an `OUDSThemeableView` applying the ``WireframeTheme``.
+    /// Wraps `self` `View` inside an `MISOThemeableView` applying the ``WireframeTheme``.
     /// This helper should be used in two cases:
     /// - to debug a `View` in Xcode `#Preview` macro
     /// - to let end-users testing on their side in `#Preview` macro your `View` based on OUDS.
@@ -50,7 +50,7 @@ extension View {
     public func wireframePreview() -> some View {
         #if DEBUG
         if ProcessInfo.doesRunOnXcodePreview {
-            OUDSThemeableView(theme: WireframeTheme()) {
+            MISOThemeableView(theme: WireframeTheme()) {
                 self
             }
         } else {

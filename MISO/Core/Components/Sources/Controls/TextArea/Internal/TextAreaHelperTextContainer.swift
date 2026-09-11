@@ -12,15 +12,15 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 struct TextAreaHelperErrorTextContainer: View {
 
     // MARK: - Properties
 
-    let helperText: OUDSTextArea.HelperText?
-    let status: OUDSTextArea.Status
+    let helperText: MISOTextArea.HelperText?
+    let status: MISOTextArea.Status
     let isOverLimit: Bool
     let excessCount: Int
     let remainingCount: Int

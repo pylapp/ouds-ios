@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS) && !os(macOS)
-@testable import OUDSComponents
+@testable import MISOComponents
 import Testing
 import UIKit
 

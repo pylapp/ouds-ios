@@ -12,9 +12,9 @@
 //
 
 #if os(macOS)
+import MISOTokensRaw
+import MISOTokensSemantic
 @testable import OUDSThemesWireframe
-import OUDSTokensRaw
-import OUDSTokensSemantic
 import Testing
 
 /// Tests crash scenarios for `WireframeTheme` color mode handling using Swift Testing's `#expect(exitsWith:)`.

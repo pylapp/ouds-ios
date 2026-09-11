@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSFoundations
+import MISOFoundations
 
 /// Kind of semantic tokens which will wrap a combination of ``FontSizeSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from Figma inside one object.

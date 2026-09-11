@@ -12,15 +12,15 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 struct TextInputTrailingContainer: View {
 
     // MARK: - Properties
 
-    let trailingAction: OUDSTextInput.TrailingAction?
-    let status: OUDSTextInput.Status
+    let trailingAction: MISOTextInput.TrailingAction?
+    let status: MISOTextInput.Status
     let interactionState: TextInputInteractionState
 
     @Environment(\.theme) private var theme
@@ -69,11 +69,11 @@ struct TextInputTrailingContainer: View {
         }
     }
 
-    private func trailingButton(for trailingAction: OUDSTextInput.TrailingAction) -> some View {
-        precondition(trailingAction.icon.asset != nil, "OUDSTextInput.TrailingAction.icon must be created with an asset Image")
-        // Inject the actionHint as accessibilityLabel into a new OUDSImage for OUDSButton icon-only
+    private func trailingButton(for trailingAction: MISOTextInput.TrailingAction) -> some View {
+        precondition(trailingAction.icon.asset != nil, "MISOTextInput.TrailingAction.icon must be created with an asset Image")
+        // Inject the actionHint as accessibilityLabel into a new MISOImage for OUDSButton icon-only
         // swiftlint:disable:next force_unwrapping
-        let imageWithA11y = OUDSImage(asset: trailingAction.icon.asset!,
+        let imageWithA11y = MISOImage(asset: trailingAction.icon.asset!,
                                       flipped: trailingAction.icon.flipped,
                                       accessibilityLabel: trailingAction.actionHint,
                                       renderingMode: trailingAction.icon.renderingMode)

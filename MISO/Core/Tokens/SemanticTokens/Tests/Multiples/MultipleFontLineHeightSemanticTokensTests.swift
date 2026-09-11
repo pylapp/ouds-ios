@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import MISOTokensRaw
+import MISOTokensSemantic
 import Testing
 
 /// To ensure the `MultipleFontLineHeightSemanticToken` is tested as a provider of semantic tokens for compact and regular size classes.

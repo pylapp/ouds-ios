@@ -12,7 +12,7 @@
 //
 
 import Foundation
-@testable import OUDSComponents
+@testable import MISOComponents
 import Testing
 
 /// Tests on the pure static function ``CircularProgressCanvas/trackLayout(sweepDegrees:gapSweepDegrees:)``.

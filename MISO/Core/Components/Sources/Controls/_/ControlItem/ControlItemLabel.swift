@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 /// The trailing part of the  component, i.e. all the views without the indicator, i.e. texts, icons and dividers.
@@ -34,7 +34,7 @@ struct ControlItemLabel: View {
         let label: String
         let extraLabel: String?
         let description: String?
-        let icon: OUDSImage?
+        let icon: MISOImage?
         let isOutlined: Bool
         let isError: Bool
         let errorText: TextualContent?

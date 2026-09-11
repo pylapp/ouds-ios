@@ -11,12 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 import OUDSThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of input text** for *input text* objects like `OUDSTextInput`.
+/// A class which wraps all **component  tokens of input text** for *input text* objects like `MISOTextInput`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllTextInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.

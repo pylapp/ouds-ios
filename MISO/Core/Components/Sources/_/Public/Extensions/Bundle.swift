@@ -12,12 +12,12 @@
 //
 
 import Foundation
-import OUDSFoundations
+import MISOFoundations
 
 extension Bundle {
 
-    /// The OUDS bundle, useful to find resources
-    public static let OUDSComponents = Bundle.module
+    /// The MISO bundle, useful to find resources
+    public static let MISOComponents = Bundle.module
 
     /// Loads the first  preferred localization from main Bundle or if not defined the english one
     public static var preferredLocalization: String {

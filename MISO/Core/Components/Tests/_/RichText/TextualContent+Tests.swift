@@ -12,7 +12,7 @@
 //
 
 import Foundation
-@testable import OUDSComponents
+@testable import MISOComponents
 import Testing
 
 // MARK: - TextualContent Tests

@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-@testable import OUDSComponents
+@testable import MISOComponents
 import Testing
 
 /// Tests on the public API and internal configuration of ``OUDSCircularProgressIndicator``.

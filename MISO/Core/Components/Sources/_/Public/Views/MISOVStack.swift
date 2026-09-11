@@ -1,30 +1,20 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 /// Creates a `VStack` with spacing scaled according to `verticalSizeClass` base on OUDS `MultipleSpaceSemanticToken`.
 ///
 /// ```swift
-/// // For sclaed space use the initializer with token aprameter
-///    OUDSVStack(alignment: .leading, spacing: theme.space.scaledMedium) {
+///    // For sclaed space use the initializer with token aprameter
+///    MISOVStack(alignment: .leading, spacing: theme.space.scaledMedium) {
 ///        Text("Hello")
 ///        Text("World")
 ///    }
 ///
 ///    // For not scaled space use the initializer with the Double parameter
-///    OUDSVStack(alignment: .top, spacing: theme.spaces.rowGapMedium) {
+///    MISOVStack(alignment: .top, spacing: theme.spaces.rowGapMedium) {
 ///        Text("Hello")
 ///        Text("World")
 ///    }
@@ -33,7 +23,7 @@ import SwiftUI
 ///
 /// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSVStack<Content: View>: View {
+public struct MISOVStack<Content: View>: View {
 
     // MARK: - Properties
 
@@ -49,7 +39,7 @@ public struct OUDSVStack<Content: View>: View {
     /// Creates a vertical stack with the given spacing token and horizontal alignment.
     ///
     /// ```swift
-    ///     OUDSVStack(spacing: theme.spaces.scaledMedium) {
+    ///     MISOVStack(spacing: theme.spaces.scaledMedium) {
     ///         Text("Hello")
     ///         Text("World")
     ///     }
@@ -72,7 +62,7 @@ public struct OUDSVStack<Content: View>: View {
     /// Creates a vertical stack with the given spacing value and horizontal alignment.
     ///
     /// ```swift
-    ///     OUDSVStack(spacing: theme.spaces.scaledSmall) {
+    ///     MISOVStack(spacing: theme.spaces.scaledSmall) {
     ///         Text("Hello")
     ///         Text("World")
     ///     }

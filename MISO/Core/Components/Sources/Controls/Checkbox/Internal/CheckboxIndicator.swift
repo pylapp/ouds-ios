@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 /// The indicator of the checkbox.

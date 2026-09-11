@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 // MARK: - OUDS Button
@@ -30,23 +30,23 @@ import SwiftUI
 ///
 /// - **brand**: A brand primary color alternative to the *strong* button.
 /// To be used sparingly for high-value specific actions or to visually anchor a brand moment. Do not use it as the default primary button in your interfaces.
-/// A button with `OUDSButton.Appearance.Brand` appearance is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
+/// A button with `OUDSButton.Appearance.Brand` appearance is not allowed as a direct or indirect child of an `MISOColoredSurface`.
 ///
 /// - **minimal**: Minimal buttons are commonly used for actions that are considered less crucial. They can be used independently or together with a strong button.
 ///
 /// - **negative**: Negative buttons should be used sparingly to warn of a destructive action,
 /// for example, delete or remove, typically resulting in the opening of a confirmation dialog.
-/// A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
+/// A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a direct or indirect child of an `MISOColoredSurface`.
 ///
 /// ## Code samples
 ///
 /// ```swift
 ///     // Icon only with default appearance
-///     OUDSButton(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
+///     OUDSButton(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
 ///     // Or simpler
-///     OUDSButton(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Like") { /* the action to process */ }
+///     OUDSButton(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Like") { /* the action to process */ }
 ///     // With an image to keep raw without tint
-///     OUDSButton(image: OUDSImage(asset: Image("il_someImage")), accessibilityLabel: "Like", renderingMode: .original) { /* the action to process */ }
+///     OUDSButton(image: MISOImage(asset: Image("il_someImage")), accessibilityLabel: "Like", renderingMode: .original) { /* the action to process */ }
 ///
 ///     // Text only with negative appearance
 ///     OUDSButton(text: "Delete", appearance: .negative,  style: .default) { /* the action to process */ }
@@ -60,10 +60,10 @@ import SwiftUI
 ///     OUDSButton(text: "Delete", style: .loading(progress: 0.75), size: .small) { /* the action to process */ }
 ///
 ///     // Text and icon with strong appearance
-///     OUDSButton(text: "Validate", image: OUDSImage(asset: Image("ic_heart")), appearance: .strong) { /* the action to process */ }
+///     OUDSButton(text: "Validate", image: MISOImage(asset: Image("ic_heart")), appearance: .strong) { /* the action to process */ }
 ///
 ///     // Text and icon with strong appearance and button taking full width
-///     OUDSButton(text: "Validate", image: OUDSImage(asset: Image("ic_heart")), appearance: .strong, isFullWidth: true) { /* the action to process */ }
+///     OUDSButton(text: "Validate", image: MISOImage(asset: Image("ic_heart")), appearance: .strong, isFullWidth: true) { /* the action to process */ }
 ///
 ///     // Localizable from bundle can also be used
 ///     OUDSButton(LocalizedStringKey("validate_button"), bundle: Bundle.module, appearance: .strong) { }
@@ -74,7 +74,7 @@ import SwiftUI
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
 ///     OUDSButton(text: "Button",
-///                image: OUDSImage(asset: Image(systemName: "figure.handball"), flipped: layoutDirection == .rightToLeft))
+///                image: MISOImage(asset: Image(systemName: "figure.handball"), flipped: layoutDirection == .rightToLeft))
 /// ```
 ///
 ///
@@ -105,7 +105,7 @@ import SwiftUI
 ///
 /// ## Colored surface
 ///
-/// If button is placed on colored surface using `OUDSColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrome mode.
+/// If button is placed on colored surface using `MISOColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrome mode.
 ///
 /// **Remark: Today it is not allowed to place a Negative nor a Brand button on a colored surface.**
 ///
@@ -155,8 +155,8 @@ public struct OUDSButton: View {
 
     private enum `Type` {
         case text(String)
-        case icon(OUDSImage)
-        case textAndIcon(text: String, icon: OUDSImage)
+        case icon(MISOImage)
+        case textAndIcon(text: String, icon: MISOImage)
     }
 
     /// Represents the appearance of an OUDS button, i.e. a kind of type
@@ -213,7 +213,7 @@ public struct OUDSButton: View {
     /// A raw string can also be given to be displayed.
     ///
     /// ```swift
-    ///     let oudsImage = OUDSImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
+    ///     let oudsImage = MISOImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
     ///     // Use localizable
     ///     OUDSButton(LocalizedStringKey("validate_button"),
     ///                bundle: Bundle.module,
@@ -234,7 +234,7 @@ public struct OUDSButton: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                image: OUDSImage,
+                image: MISOImage,
                 appearance: Appearance = .default,
                 style: Style = .default,
                 size: Size = .default,
@@ -251,11 +251,11 @@ public struct OUDSButton: View {
     /// ```swift
     ///     // With default setup
     ///     OUDSButton(text: "Validate",
-    ///                image: OUDSImage(asset: Image(systemName: "checkmark")),
+    ///                image: MISOImage(asset: Image(systemName: "checkmark")),
     ///                appearance: .strong) { }
     ///
     ///     // With more setup
-    ///     let oudsImage = OUDSImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
+    ///     let oudsImage = MISOImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
     ///     OUDSButton(text: "Validate",
     ///                image: oudsImage,
     ///                appearance: .strong) { }
@@ -270,7 +270,7 @@ public struct OUDSButton: View {
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
     public init(text: String,
-                image: OUDSImage,
+                image: MISOImage,
                 appearance: Appearance = .default,
                 style: Style = .default,
                 size: Size = .default,
@@ -289,7 +289,7 @@ public struct OUDSButton: View {
     /// Creates a button with an icon only.
     ///
     /// ```swift
-    ///     let oudsImage = OUDSImage(asset: Image("someIcon"),
+    ///     let oudsImage = MISOImage(asset: Image("someIcon"),
     ///                                flipped: true,
     ///                                accessibilityLabel: LocalizedStringKey("some.wording.key"),
     ///                                renderingMode: .original)
@@ -305,7 +305,7 @@ public struct OUDSButton: View {
     ///    - size: The size of the button, default set to `.default`
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
-    public init(image: OUDSImage,
+    public init(image: MISOImage,
                 appearance: Appearance = .default,
                 style: Style = .default,
                 size: Size = .default,
@@ -385,7 +385,7 @@ public struct OUDSButton: View {
         // A button with negative or brand appearance is not allowed on a colored surface.
         // Test is done here because onColoredSurface is environment variable which is not accessible in init.
         if onColoredSurface, appearance == .negative || appearance == .brand {
-            OL.fatal("An OUDSButton with OUDSButton.Appearance.{Negative | Brand} appearance has been detected as a direct or indirect child of an OUDSColoredSurface, which is not allowed.")
+            OL.fatal("An OUDSButton with OUDSButton.Appearance.{Negative | Brand} appearance has been detected as a direct or indirect child of an MISOColoredSurface, which is not allowed.")
         }
 
         Button(action: action) {

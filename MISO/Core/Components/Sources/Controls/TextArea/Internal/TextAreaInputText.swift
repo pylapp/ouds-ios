@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 #if canImport(UIKit)
 import UIKit
@@ -24,7 +24,7 @@ struct TextAreaInputText: View {
 
     let placeholder: String
     let text: Binding<String>
-    let status: OUDSTextArea.Status
+    let status: MISOTextArea.Status
     let constrainedMaxHeight: Bool
 
     @Environment(\.theme) private var theme

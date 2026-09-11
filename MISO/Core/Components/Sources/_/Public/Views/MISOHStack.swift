@@ -1,30 +1,20 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 /// Creates an `HStack` with spacing scaled according to `horizontalSizeClass` base on OUDS `MultipleSpaceSemanticToken`.
 ///
 /// ```swift
 ///     // For scaled space use the initialier with the token you want
-///    OUDSHStack(alignment: .top, spacing: theme.space.scaledMedium) {
+///    MISOSHStack(alignment: .top, spacing: theme.space.scaledMedium) {
 ///        Text("Hello")
 ///        Text("World")
 ///    }
 ///
 ///    // For not scaled space use the initializer with a Double parameter
-///    OUDSHStack(alignment: .top, spacing: theme.spaces.rowGapMedium) {
+///    MISOSHStack(alignment: .top, spacing: theme.spaces.rowGapMedium) {
 ///        Text("Hello")
 ///        Text("World")
 ///    }
@@ -32,7 +22,7 @@ import SwiftUI
 ///
 /// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSHStack<Content: View>: View {
+public struct MISOSHStack<Content: View>: View {
 
     // MARK: - Properties
 
@@ -48,7 +38,7 @@ public struct OUDSHStack<Content: View>: View {
     /// Creates an horizontal stack with the given spacing token and vertical alignment.
     ///
     /// ```swift
-    ///     OUDSHStack(spacing: theme.spaces.scaledSmall) {
+    ///     MISOSHStack(spacing: theme.spaces.scaledSmall) {
     ///         Text("Hello")
     ///         Text("World")
     ///     }
@@ -71,7 +61,7 @@ public struct OUDSHStack<Content: View>: View {
     /// Creates an horizontal stack with the given spacing value and vertical alignment.
     ///
     /// ```swift
-    ///     OUDSHStack(spacing: theme.spaces.rowGapMedium) {
+    ///     MISOSHStack(spacing: theme.spaces.rowGapMedium) {
     ///         Text("Hello")
     ///         Text("World")
     ///     }

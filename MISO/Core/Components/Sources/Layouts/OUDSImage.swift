@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - OUDS Image
@@ -25,14 +25,14 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Display an image with a label loaded from a given module (default in rendering mode)
-///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
+///     MISOImage(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
 ///
 ///     // Display an image but without tints and in original mode
-///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
+///     MISOImage(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
 /// ```
 ///
 /// - Since: 1.3.0
-public struct OUDSImage: View {
+public struct MISOImage: View {
 
     // MARK: Properties
 
@@ -59,7 +59,7 @@ public struct OUDSImage: View {
     /// Create the icon with asset.
     ///
     /// ```swift
-    ///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
+    ///     MISOImage(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
     /// ```
     ///
     /// - Parameters:
@@ -85,7 +85,7 @@ public struct OUDSImage: View {
     /// Create the icon with asset.
     ///
     /// ```swift
-    ///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like")
+    ///     MISOImage(asset: Image("ic_heart"), accessibilityLabel: "Like")
     /// ```
     ///
     /// - Parameters:

@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
+import MISOFoundations
 import OUDSThemesContract
 import SwiftUI
 

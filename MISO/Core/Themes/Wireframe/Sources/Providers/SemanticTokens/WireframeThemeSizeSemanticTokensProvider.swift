@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 import OUDSThemesContract
 
 /// A class which wraps all **size semantic tokens**, *multiple* or not, and expose them.

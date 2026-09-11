@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
+import MISOTokensRaw
 import Testing
 
 /// The aim of this tests class is to look for regressions in **effect raw tokens**.

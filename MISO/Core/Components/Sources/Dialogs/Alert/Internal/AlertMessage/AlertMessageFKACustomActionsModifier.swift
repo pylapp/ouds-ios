@@ -12,7 +12,7 @@
 //
 
 #if canImport(UIKit)
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 /// Adds accessibility custom actions for the action link and the close button onto the combined text element.

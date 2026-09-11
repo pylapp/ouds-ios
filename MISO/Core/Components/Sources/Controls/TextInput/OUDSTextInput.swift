@@ -12,10 +12,10 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
+import MISOFoundations
+import MISOTokensSemantic
 import OUDSThemesContract
 import OUDSTokensComponent
-import OUDSTokensSemantic
 import SwiftUI
 
 // swiftlint:disable file_length
@@ -56,10 +56,10 @@ import SwiftUI
 ///
 ///  ```swift
 ///     // An outlined text input
-///     OUDSTextInput(label: "Label", text: $text, isOutlined: true)
+///     MISOTextInput(label: "Label", text: $text, isOutlined: true)
 ///
 ///     // With a localizable and a bundle
-///     OUDSTextInput(LocalizedStringKey("label_wording"), bundle: Bundle.module, text: $text)
+///     MISOTextInput(LocalizedStringKey("label_wording"), bundle: Bundle.module, text: $text)
 /// ```
 ///
 /// ### Rounded layout
@@ -136,32 +136,32 @@ import SwiftUI
 ///     @State var text: String = ""
 ///
 ///     // Empty text and no placeholder
-///     OUDSTextInput(label: "Email", text: $text)
+///     MISOTextInput(label: "Email", text: $text)
 ///
 ///     // Empty text with placeholder and suffix
-///     OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com")
+///     MISOTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com")
 ///
 ///     // Empty text with prefix and suffix
-///     OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
+///     MISOTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
 ///
 ///     // Add a leading icon for more context
-///     OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com",
-///                   leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
+///     MISOTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com",
+///                   leadingImage: MISOImage(asset: Image(systemName: "envelope")))
 ///
 ///     // Add a leading icon displayed as raw image (not tinted)
-///     OUDSTextInput(label: "Brand", text: $text,
-///                   leadingImage: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
+///     MISOTextInput(label: "Brand", text: $text,
+///                   leadingImage: MISOImage(asset: Image("ic_brand"), renderingMode: .original))
 ///
-///     // Flip the leading icon for RTL layouts using OUDSImage.flipped
-///     OUDSTextInput(label: "Label", text: $text,
-///                   leadingImage: OUDSImage(asset: Image("ic_arrow"), flipped: layoutDirection == .rightToLeft))
+///     // Flip the leading icon for RTL layouts using MISOImage.flipped
+///     MISOTextInput(label: "Label", text: $text,
+///                   leadingImage: MISOImage(asset: Image("ic_arrow"), flipped: layoutDirection == .rightToLeft))
 ///
 ///     // Add a trailing button with local image named "ic_cross" for additional action
-///     let trailingAction = OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_cross")), actionHint: "Delete") { text = "" }
-///     OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
+///     let trailingAction = MISOTextInput.TrailingAction(image: MISOImage(asset: Image("ic_cross")), actionHint: "Delete") { text = "" }
+///     MISOTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 ///
 ///     // With helper text
-///     OUDSTextInput(label: "Email",
+///     MISOTextInput(label: "Email",
 ///                   text: $text,
 ///                   placeholder: "firstName.lastName",
 ///                   suffix: "@orange.com",
@@ -170,19 +170,19 @@ import SwiftUI
 ///     // With helper link
 ///     @Environment(\.openURL) private var openUrl
 ///
-///     let helperLink = OUDSTextInput.HelperLink(text: "Helper Link") {
+///     let helperLink = MISOTextInput.HelperLink(text: "Helper Link") {
 ///        openUrl.callAsFunction(url)
 ///     }
 ///
-///     OUDSTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLink: helperLink)
+///     MISOTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLink: helperLink)
 /// ```
 ///
-/// If you need to flip your leading icon for RTL, use the `flipped` property of ``OUDSImage``:
+/// If you need to flip your leading icon for RTL, use the `flipped` property of ``MISOImage``:
 /// ```swift
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
-///     OUDSTextInput(label: "Label", text: $text,
-///                   leadingImage: OUDSImage(asset: Image("ic_arrow"), flipped: layoutDirection == .rightToLeft))
+///     MISOTextInput(label: "Label", text: $text,
+///                   leadingImage: MISOImage(asset: Image("ic_arrow"), flipped: layoutDirection == .rightToLeft))
 /// ```
 ///
 /// ## Design documentation
@@ -210,7 +210,7 @@ import SwiftUI
 /// - Version: 1.4.1 (Figma component design version)
 /// - Since: 0.20.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSTextInput: View {
+public struct MISOTextInput: View {
 
     // MARK: - Properties
 
@@ -219,7 +219,7 @@ public struct OUDSTextInput: View {
     let placeholder: String?
     let prefix: String?
     let suffix: String?
-    let leadingIcon: OUDSImage?
+    let leadingIcon: MISOImage?
     let trailingAction: TrailingAction?
     let helperText: TextualContent?
     let helperLink: Helperlink?
@@ -242,30 +242,30 @@ public struct OUDSTextInput: View {
     /// - Since: 0.20.0
     @frozen public struct TrailingAction {
 
-        let icon: OUDSImage
+        let icon: MISOImage
         let actionHint: String
         let action: () -> Void
 
         /// Creates a trailing action.
         ///
         /// ```swift
-        ///     OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_cross")),
+        ///     MISOTextInput.TrailingAction(image: MISOImage(asset: Image("ic_cross")),
         ///                                  actionHint: "Delete") { text = "" }
         ///
         ///     // Raw (non-tinted) icon:
-        ///     OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original),
+        ///     MISOTextInput.TrailingAction(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original),
         ///                                  actionHint: "Brand") { }
         /// ```
         ///
         /// - Parameters:
-        ///   - image: An ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode
+        ///   - image: An ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode
         ///   - actionHint: A string that describes the purpose of the button's `action`
         ///   - action: The action to perform when the user triggers the button
-        public init(image: OUDSImage, actionHint: String, action: @escaping () -> Void) {
-            precondition(image.asset != nil, "OUDSTextInput.TrailingAction.icon must be created with an asset Image")
+        public init(image: MISOImage, actionHint: String, action: @escaping () -> Void) {
+            precondition(image.asset != nil, "MISOTextInput.TrailingAction.icon must be created with an asset Image")
 
             if actionHint.isEmpty {
-                OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
+                OL.warning("The accessibility action hint for the MISOTextInput trailing action should not be empty, think about your disabled users!")
             }
             icon = image
             self.actionHint = actionHint
@@ -337,7 +337,7 @@ public struct OUDSTextInput: View {
         ///   - action: The action when clicked
         public init(text: String, action: @escaping () -> Void) {
             if text.isEmpty {
-                OL.warning("The helper link text for the OUDSTextInput is empty, avoid using it in that case.")
+                OL.warning("The helper link text for the MISOTextInput is empty, avoid using it in that case.")
             }
             self.text = text
             self.action = action
@@ -349,13 +349,13 @@ public struct OUDSTextInput: View {
     /// Creates a text input.
     ///
     /// ```swift
-    ///     OUDSTextInput(label: "Email", text: $text)
+    ///     MISOTextInput(label: "Email", text: $text)
     ///
-    ///     OUDSTextInput(label: "Email", text: $text,
-    ///                   leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
+    ///     MISOTextInput(label: "Email", text: $text,
+    ///                   leadingImage: MISOImage(asset: Image(systemName: "envelope")))
     ///
-    ///     OUDSTextInput(label: "Brand", text: $text,
-    ///                   leadingImage: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
+    ///     MISOTextInput(label: "Brand", text: $text,
+    ///                   leadingImage: MISOImage(asset: Image("ic_brand"), renderingMode: .original))
     /// ```
     ///
     /// - Parameters:
@@ -364,7 +364,7 @@ public struct OUDSTextInput: View {
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input, by default is *nil*
     ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
+    ///    - leadingImage: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
     ///    - trailingAction: An optional trailing action, by default is *nil*
     ///    - helperText: An optional helper text, by default is *nil*
     ///    - helperLink: An optional helper link, by default is *nil*
@@ -376,7 +376,7 @@ public struct OUDSTextInput: View {
                 placeholder: String? = nil,
                 prefix: String? = nil,
                 suffix: String? = nil,
-                leadingImage: OUDSImage? = nil,
+                leadingImage: MISOImage? = nil,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: String? = nil,
                 helperLink: Self.Helperlink? = nil,
@@ -408,7 +408,7 @@ public struct OUDSTextInput: View {
     /// Creates a text input with a rich attributed helper text.
     ///
     /// ```swift
-    ///     OUDSTextInput(label: "Email",
+    ///     MISOTextInput(label: "Email",
     ///                   text: $text,
     ///                   helperText: AttributedString(markdown: "You should use your **corporate email**"))
     /// ```
@@ -419,7 +419,7 @@ public struct OUDSTextInput: View {
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input, by default is *nil*
     ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
+    ///    - leadingImage: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
     ///    - trailingAction: An optional trailing action, by default is *nil*
     ///    - helperText: A rich `AttributedString` helper text
     ///    - helperLink: An optional helper link, by default is *nil*
@@ -431,7 +431,7 @@ public struct OUDSTextInput: View {
                 placeholder: String? = nil,
                 prefix: String? = nil,
                 suffix: String? = nil,
-                leadingImage: OUDSImage? = nil,
+                leadingImage: MISOImage? = nil,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: AttributedString,
                 helperLink: Self.Helperlink? = nil,
@@ -461,10 +461,10 @@ public struct OUDSTextInput: View {
     /// Creates a text input with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSTextInput(LocalizedStringKey("email_label"), bundle: Bundle.module, text: $text)
+    ///     MISOTextInput(LocalizedStringKey("email_label"), bundle: Bundle.module, text: $text)
     ///
-    ///     OUDSTextInput(LocalizedStringKey("email_label"), bundle: Bundle.module, text: $text,
-    ///                   leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
+    ///     MISOTextInput(LocalizedStringKey("email_label"), bundle: Bundle.module, text: $text,
+    ///                   leadingImage: MISOImage(asset: Image(systemName: "envelope")))
     /// ```
     ///
     /// - Parameters:
@@ -475,7 +475,7 @@ public struct OUDSTextInput: View {
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input, by default is *nil*
     ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
+    ///    - leadingImage: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
     ///    - trailingAction: An optional trailing action, by default is *nil*
     ///    - helperText: An optional helper text, by default is *nil*
     ///    - helperLink: An optional helper link, by default is *nil*
@@ -489,7 +489,7 @@ public struct OUDSTextInput: View {
                 placeholder: String? = nil,
                 prefix: String? = nil,
                 suffix: String? = nil,
-                leadingImage: OUDSImage? = nil,
+                leadingImage: MISOImage? = nil,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: String? = nil,
                 helperLink: Self.Helperlink? = nil,
@@ -519,7 +519,7 @@ public struct OUDSTextInput: View {
     /// Creates a text input with a localized label and a rich attributed helper text.
     ///
     /// ```swift
-    ///     OUDSTextInput(LocalizedStringKey("email_label"),
+    ///     MISOTextInput(LocalizedStringKey("email_label"),
     ///                   bundle: Bundle.module,
     ///                   text: $text,
     ///                   helperText: AttributedString(markdown: "You should use your **corporate email**"))
@@ -533,7 +533,7 @@ public struct OUDSTextInput: View {
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input, by default is *nil*
     ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
+    ///    - leadingImage: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
     ///    - trailingAction: An optional trailing action, by default is *nil*
     ///    - helperText: A rich `AttributedString` helper text
     ///    - helperLink: An optional helper link, by default is *nil*
@@ -547,7 +547,7 @@ public struct OUDSTextInput: View {
                 placeholder: String? = nil,
                 prefix: String? = nil,
                 suffix: String? = nil,
-                leadingImage: OUDSImage? = nil,
+                leadingImage: MISOImage? = nil,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: AttributedString,
                 helperLink: Self.Helperlink? = nil,

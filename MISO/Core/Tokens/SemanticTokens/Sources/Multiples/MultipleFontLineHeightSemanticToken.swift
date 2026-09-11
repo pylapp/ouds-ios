@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 /// Kind of semantic tokens which will wrap a combination of ``FontLineHeightSemanticToken`` depending to size classes.

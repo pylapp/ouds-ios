@@ -1,19 +1,9 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
 
 import SwiftUI
 
-/// ``OUDSAsyncImage`` is an async image component with built-in caching support.
+/// ``MISOAsyncImage`` is an async image component with built-in caching support.
 /// It loads images from URLs and caches them in memory and on disk for optimal performance.
 ///
 /// This component mirrors the API of `AsyncImage` but adds caching functionality.
@@ -28,17 +18,17 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Basic usage (like SwiftUI.AsyncImage)
-///     OUDSAsyncImage(url: URL(string: "https://example.com/photo.png"))
+///     MISOAsyncImage(url: URL(string: "https://example.com/photo.png"))
 ///
 ///     // With content transformation and placeholder
-///     OUDSAsyncImage(url: url) { image in
+///     MISOAsyncImage(url: url) { image in
 ///         image.resizable()
 ///     } placeholder: {
 ///         ProgressView()
 ///     }
 ///
 ///     // With phases for full control
-///     OUDSAsyncImage(url: url) { phase in
+///     MISOAsyncImage(url: url) { phase in
 ///         switch phase {
 ///         case .empty: ProgressView()
 ///         case .success(let image): image.resizable()
@@ -49,7 +39,7 @@ import SwiftUI
 ///
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSAsyncImage<Content>: View where Content: View {
+public struct MISOAsyncImage<Content>: View where Content: View {
 
     // MARK: - Properties
 
@@ -61,7 +51,7 @@ public struct OUDSAsyncImage<Content>: View where Content: View {
     /// Creates an async image with caching support.
     ///
     /// ```swift
-    ///     OUDSAsyncImage(url: URL(string: "https://example.com/photo.png"))
+    ///     MISOAsyncImage(url: URL(string: "https://example.com/photo.png"))
     /// ```
     ///
     /// - Parameter url: The URL to load the image from
@@ -80,7 +70,7 @@ public struct OUDSAsyncImage<Content>: View where Content: View {
     /// Creates an async image with caching support using custom content and placeholder.
     ///
     /// ```swift
-    ///     OUDSAsyncImage(url: url) { image in
+    ///     MISOAsyncImage(url: url) { image in
     ///         image.resizable()
     ///     } placeholder: {
     ///         ProgressView()
@@ -110,7 +100,7 @@ public struct OUDSAsyncImage<Content>: View where Content: View {
     /// Creates an async image with caching support using phase-based content.
     ///
     /// ```swift
-    ///     OUDSAsyncImage(url: url) { phase in
+    ///     MISOAsyncImage(url: url) { phase in
     ///         switch phase {
     ///         case .empty: ProgressView()
     ///         case .success(let image): image.resizable()
@@ -178,7 +168,7 @@ private struct CachedAsyncImageView: View {
 
         phase = .empty
 
-        if let cachedData = OUDSAsyncImageCache.shared.data(for: url),
+        if let cachedData = MISOAsyncImageCache.shared.data(for: url),
            let image = makeImage(from: cachedData)
         {
             phase = .success(image)
@@ -195,7 +185,7 @@ private struct CachedAsyncImageView: View {
                 return
             }
 
-            OUDSAsyncImageCache.shared.setData(data, for: url)
+            MISOAsyncImageCache.shared.setData(data, for: url)
 
             if let image = makeImage(from: data) {
                 phase = .success(image)

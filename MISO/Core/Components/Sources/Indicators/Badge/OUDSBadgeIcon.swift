@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 /// Badge is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour only.
@@ -25,11 +25,11 @@ import SwiftUI
 ///     OUDSBadgeIcon(status: .info, accessibilityLabel: "Like", size: .medium)
 ///
 ///     // Badge with neutral status with a custom decorative icon
-///     OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium)
+///     OUDSBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium)
 ///
 ///     // If your layout is in RTL mode but your badge has an icon with another meaning because of bad orientation,
 ///     // you can flip the icon
-///     OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true, accessibilityLabel: "Like"), size: .medium)
+///     OUDSBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), flipped: true, accessibilityLabel: "Like"), size: .medium)
 /// ```
 ///
 /// ## Accessibility considerations
@@ -84,13 +84,13 @@ public struct OUDSBadgeIcon: View {
 
         /// Used for general labels without specific emphasis.
         ///
-        /// - Parameter image: The `OUDSImage` to display in the badge
-        case neutral(image: OUDSImage)
+        /// - Parameter image: The `MISOImage` to display in the badge
+        case neutral(image: MISOImage)
 
         /// Employed to highlight discovery or exploration-related content
         ///
-        /// - Parameter image: The `OUDSImage` to display in the badge
-        case accent(image: OUDSImage)
+        /// - Parameter image: The `MISOImage` to display in the badge
+        case accent(image: MISOImage)
 
         /// Indicates success, completion, or approval
         case positive

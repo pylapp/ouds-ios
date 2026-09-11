@@ -11,21 +11,21 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - Button Icon
 
 struct ButtonIcon: View {
 
-    let image: OUDSImage
+    let image: MISOImage
     let size: OUDSButton.Size
 
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        OUDSScaledIcon(image: image, size: sizeIcon)
+        MISOScaledIcon(image: image, size: sizeIcon)
             .padding(.all, paddingInset)
             .frame(maxHeight: maxHeight, alignment: .center)
     }
@@ -99,14 +99,14 @@ struct ButtonText: View {
 struct ButtonTextAndIcon: View {
 
     let text: String
-    let image: OUDSImage
+    let image: MISOImage
     let size: OUDSButton.Size
 
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center, spacing: spacing) {
-            OUDSFixedIcon(image: image, size: sizeIcon)
+            MISOFixedIcon(image: image, size: sizeIcon)
             TextForButton(text: text, size: size)
         }
         .padding(.vertical, paddingVertical)

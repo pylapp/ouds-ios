@@ -105,12 +105,12 @@ import SwiftUI
 ///     OUDSTag(label: "Label", status: .neutral(leading: .bullet)
 ///
 ///     // Tag with neutral status with a custom decorative icon
-///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"))))
+///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"))))
 ///     // If your layout is in RTL mode but your tag has an icon with another meaning because of bad orientation,
-///     // you can flip the icon using OUDSImage.flipped
-///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true)))
+///     // you can flip the icon using MISOImage.flipped
+///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), flipped: true)))
 ///     // If you want to display a raw image (not tinted), use renderingMode: .original
-///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
 ///
 ///     // Text with neutral status with bullet
 ///     OUDSTag(label: "Label", status: .neutral(bullet: true))
@@ -182,7 +182,7 @@ public struct OUDSTag: View {
 
         let leading: Self.Leading
         let category: Self.Category
-        let customIcon: OUDSImage?
+        let customIcon: MISOImage?
 
         /// The leading element of the tag
         /// - Since: 0.18.0
@@ -247,20 +247,20 @@ public struct OUDSTag: View {
             Status(leading: leading, category: .info)
         }
 
-        /// Used to create a tag with a neutral status with a leading ``OUDSImage`` icon.
+        /// Used to create a tag with a neutral status with a leading ``MISOImage`` icon.
         ///
         /// ```swift
-        ///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"))))
+        ///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"))))
         ///
         ///     // Raw (non-tinted) image:
-        ///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+        ///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
         ///
         ///     // Flip for RTL:
-        ///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true)))
+        ///     OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), flipped: true)))
         /// ```
         ///
-        /// - Parameter image: An ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode
-        public static func neutral(image: OUDSImage) -> Status {
+        /// - Parameter image: An ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode
+        public static func neutral(image: MISOImage) -> Status {
             Status(leading: .icon, category: .neutral, alternativeIcon: image)
         }
 
@@ -271,17 +271,17 @@ public struct OUDSTag: View {
             Status(leading: bullet ? .bullet : .none, category: .neutral)
         }
 
-        /// Used to create a tag with an accent status with a leading ``OUDSImage`` icon.
+        /// Used to create a tag with an accent status with a leading ``MISOImage`` icon.
         ///
         /// ```swift
-        ///     OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image(decorative: "ic_heart"))))
+        ///     OUDSTag(label: "Label", status: .accent(image: MISOImage(asset: Image(decorative: "ic_heart"))))
         ///
         ///     // Raw (non-tinted) image:
-        ///     OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+        ///     OUDSTag(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
         /// ```
         ///
-        /// - Parameter image: An ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode
-        public static func accent(image: OUDSImage) -> Status {
+        /// - Parameter image: An ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode
+        public static func accent(image: MISOImage) -> Status {
             Status(leading: .icon, category: .accent, alternativeIcon: image)
         }
 
@@ -297,8 +297,8 @@ public struct OUDSTag: View {
         /// - Parameters:
         ///    - leading: The leading element
         ///    - category: The category of the status
-        ///    - alternativeIcon: The optional leading ``OUDSImage`` (asset, flip and rendering mode encapsulated)
-        private init(leading: Leading, category: Self.Category, alternativeIcon: OUDSImage? = nil) {
+        ///    - alternativeIcon: The optional leading ``MISOImage`` (asset, flip and rendering mode encapsulated)
+        private init(leading: Leading, category: Self.Category, alternativeIcon: MISOImage? = nil) {
             self.leading = leading
             self.category = category
             customIcon = alternativeIcon

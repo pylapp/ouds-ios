@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 struct AlertMessageBulletListItem: View {
@@ -31,7 +31,7 @@ struct AlertMessageBulletListItem: View {
     var body: some View {
         HStack(alignment: .top, spacing: theme.bulletList.spaceColumnGapBodyMedium) {
             HStack(alignment: .center) {
-                OUDSImage(name: "Component-bullet-list-bullet-level-0", color: foregroundColor)
+                MISOImage(name: "Component-bullet-list-bullet-level-0", color: foregroundColor)
                     .frame(width: iconSize, height: iconSize)
             }
             .frame(width: width, alignment: .trailing)

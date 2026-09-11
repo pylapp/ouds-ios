@@ -1,15 +1,5 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
 
 #if !os(watchOS) && !os(tvOS)
 import SwiftUI
@@ -18,7 +8,7 @@ import SwiftUI
 /// and let system applies theme colors on navigation bar appearance.
 ///
 /// - Since: 1.4.0
-public struct OUDSNavigationStack<Content: View>: View {
+public struct MISONavigationStack<Content: View>: View {
 
     // MARK: - Properties
 
@@ -30,7 +20,7 @@ public struct OUDSNavigationStack<Content: View>: View {
     /// Creates a navigation stack and apply the right appearance according to the current theme.
     ///
     /// ```swift
-    ///     OUDSNavigationStack {
+    ///     MISONavigationStack {
     ///         HomeView()
     ///     }
     /// ```

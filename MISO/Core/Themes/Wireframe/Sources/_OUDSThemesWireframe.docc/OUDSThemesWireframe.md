@@ -25,14 +25,14 @@ This Wireframe theme is a theme for some specific usages, like for prototyping a
 
 ## How to use the theme
 
-You can use ``WireframeTheme`` directly. To use the ``WireframeTheme`` without further modifications, you will have to use the `OUDSThemeableView` for your root view and give it an instance of ``WireframeTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you may use only as instance as singleton and not store any properties.
+You can use ``WireframeTheme`` directly. To use the ``WireframeTheme`` without further modifications, you will have to use the `MISOThemeableView` for your root view and give it an instance of ``WireframeTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you may use only as instance as singleton and not store any properties.
 
 ```swift
 @main
 struct YourApp: App {
     var body: some Scene {
         WindowGroup {
-            OUDSThemeableView(theme: WireframeTheme()) {
+            MISOThemeableView(theme: WireframeTheme()) {
                 // Your root view
             }
         }
@@ -82,13 +82,13 @@ You cannot derivate the *Wireframe* theme.
 
 ### Actions
 
-![A button component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_Wireframe.png)
+![A button component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_button_Wireframe.png)
 
 ### Content display
 
 #### Bullet list
 
-![A bullet list component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_bullet_list_Wireframe.png)
+![A bullet list component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_bullet_list_Wireframe.png)
 
 ### Controls
 
@@ -96,10 +96,10 @@ You cannot derivate the *Wireframe* theme.
 
 @TabNavigator {
     @Tab("Checkbox") {
-        ![A checkbox component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_Wireframe.png)        
+        ![A checkbox component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_checkbox_Wireframe.png)        
     }
     @Tab("Checkbox item") {
-        ![A checkbox item component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkboxItem_Wireframe.png)
+        ![A checkbox item component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_checkboxItem_Wireframe.png)
     }
 }
 <!-- Maybe not relevant to display checkbox picker -->
@@ -108,10 +108,10 @@ You cannot derivate the *Wireframe* theme.
 
 @TabNavigator {
     @Tab("Radio") {
-        ![A radio button component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_Wireframe.png)        
+        ![A radio button component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_radio_Wireframe.png)        
     }
     @Tab("Radio item") {
-        ![A radio item component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioItem_Wireframe.png)
+        ![A radio item component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_radioItem_Wireframe.png)
     }
 }
 <!-- Maybe not relevant to display radio picker -->
@@ -120,10 +120,10 @@ You cannot derivate the *Wireframe* theme.
 
 @TabNavigator {
     @Tab("Switch") {
-        ![A switch component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_Wireframe.png)        
+        ![A switch component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_switch_Wireframe.png)        
     }
     @Tab("Switch item") {
-        ![A switch item component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchItem_Wireframe.png)
+        ![A switch item component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_switchItem_Wireframe.png)
     }
 }
 
@@ -131,17 +131,17 @@ You cannot derivate the *Wireframe* theme.
 
 @TabNavigator {
     @Tab("Filter chip") {
-        ![A filter chip component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_Wireframe.png)        
+        ![A filter chip component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_filterChip_Wireframe.png)        
     }
     @Tab("Suggestion chip") {
-        ![A suggestion chip component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_Wireframe.png)
+        ![A suggestion chip component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_suggestionChip_Wireframe.png)
     }
 }
 <!-- Maybe not relevant to display chip picker -->
 
 #### Text input
 
-![A text input component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_Wireframe.png)
+![A text input component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_textInput_Wireframe.png)
 
 ### Indicators
 
@@ -149,13 +149,13 @@ You cannot derivate the *Wireframe* theme.
 
 @TabNavigator {
     @Tab("Badge standard") {
-        ![A badge standard component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Wireframe.png)
+        ![A badge standard component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_badge_Wireframe.png)
     }
     @Tab("Badge count") {
-        ![A badge count component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badgeCount_Wireframe.png)
+        ![A badge count component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_badgeCount_Wireframe.png)
     }
     @Tab("Badge icon") {
-        ![A badge icon component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badgeIcon_Wireframe.png)
+        ![A badge icon component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_badgeIcon_Wireframe.png)
     }
 }
 
@@ -163,10 +163,10 @@ You cannot derivate the *Wireframe* theme.
 
 @TabNavigator {
     @Tab("Tag") {
-        ![A tag component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Wireframe.png)        
+        ![A tag component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_tag_Wireframe.png)        
     }
     @Tab("Input tag") {
-        ![An input tag component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inputTag_Wireframe.png)
+        ![An input tag component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_inputTag_Wireframe.png)
     }
 }
 
@@ -178,10 +178,10 @@ You cannot derivate the *Wireframe* theme.
 
 @TabNavigator {
     @Tab("Horizontal divider") {
-        ![An horizontal divider component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontalDivider_Wireframe.png)
+        ![An horizontal divider component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_horizontalDivider_Wireframe.png)
     }
     @Tab("Vertical divider") {
-        ![A vertical divider component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticalDivider_Wireframe.png)
+        ![A vertical divider component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_verticalDivider_Wireframe.png)
     }
 }
 
@@ -189,16 +189,16 @@ You cannot derivate the *Wireframe* theme.
 
 #### Link
 
-![A link component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_Wireframe.png)
+![A link component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_link_Wireframe.png)
 
 #### Tab bar
 
 @TabNavigator {
     @Tab("With Liquid Glass") {
-        ![A tab component in light mode with Wireframe theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_Wireframe_light.png)
+        ![A tab component in light mode with Wireframe theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/MISOComponents/component_tabBar_LiquidGlass_Wireframe_light.png)
     }
     @Tab("Without Liquid Glass") {
-        ![A tab component in light mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_Wireframe_light.png)
+        ![A tab component in light mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_tabBar_Wireframe_light.png)
     }
 }
 
@@ -206,40 +206,40 @@ You cannot derivate the *Wireframe* theme.
 
 @TabNavigator {
     @Tab("Static") {
-        ![A static list item component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_static_list_item_Wireframe.png)
+        ![A static list item component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_static_list_item_Wireframe.png)
     }
     @Tab("Navigation") {
-        ![A navigation list item component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_navigation_list_item_Wireframe.png)
+        ![A navigation list item component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_navigation_list_item_Wireframe.png)
     }
 }
 
 #### Tool bar
 
-![A tool bar component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_toolBarTop_Wireframe_light.png)
+![A tool bar component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_toolBarTop_Wireframe_light.png)
 
 ### Dialogs
 
 #### Alert message
 
-![An alert message component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_alertMessage_Wireframe.png)
+![An alert message component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_alertMessage_Wireframe.png)
 
 #### Inline alert
 
-![An inline alert component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inlineAlert_Wireframe.png)
+![An inline alert component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_inlineAlert_Wireframe.png)
 
 ### Controls
 
 #### Pin code input
 
-![A pin code input component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_pinCodeInput_Wireframe.png)
+![A pin code input component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_pinCodeInput_Wireframe.png)
 
 #### Password input
 
-![A password input component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_passwordInput_Wireframe.png)
+![A password input component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_passwordInput_Wireframe.png)
 
 #### Text area
 
-![A text area component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textArea_Wireframe.png)
+![A text area component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_textArea_Wireframe.png)
 
 ### Indicators
 
@@ -247,10 +247,10 @@ You cannot derivate the *Wireframe* theme.
 
 @TabNavigator {
     @Tab("Circular") {
-        ![A circular progress indicator component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_circular_Wireframe.png)
+        ![A circular progress indicator component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_progress_indicator_circular_Wireframe.png)
     }
     @Tab("Linear") {
-        ![A linear progress indicator component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_progress_indicator_linear_Wireframe.png)
+        ![A linear progress indicator component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_progress_indicator_linear_Wireframe.png)
     }
 }
 
@@ -258,13 +258,13 @@ You cannot derivate the *Wireframe* theme.
 
 #### Colored surface
 
-![A colored surface component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_coloredSurface_Wireframe.png)
+![A colored surface component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_coloredSurface_Wireframe.png)
 
 ### Foundations
 
 #### Typography
 
-![A typography component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_typography_heading_Wireframe.png)
+![A typography component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/MISOComponents/component_typography_heading_Wireframe.png)
 
 ## Topics
 

@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 /// An avatar element that can be used at the leading or trailing position of a list item
@@ -207,9 +207,9 @@ public struct OUDSListItemAvatar: View {
                         .dynamicTypeSize(.medium)
                         .foregroundStyle(foregroundColor)
                 case .icon:
-                    let icon = OUDSImage(asset: Image(decorative: "communication-people-avatar", bundle: theme.resourcesBundle),
+                    let icon = MISOImage(asset: Image(decorative: "communication-people-avatar", bundle: theme.resourcesBundle),
                                          renderingMode: .template)
-                    OUDSScaledIcon(image: icon, size: avatarSize)
+                    MISOScaledIcon(image: icon, size: avatarSize)
                         .foregroundStyle(foregroundColor)
                 }
             }

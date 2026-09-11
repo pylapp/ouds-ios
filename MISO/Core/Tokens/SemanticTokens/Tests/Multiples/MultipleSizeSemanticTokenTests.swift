@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import Testing
 
 /// To ensure the `MultipleSizeSemanticToken` is tested as a provider of semantic tokens for compact and regular size classes.

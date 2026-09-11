@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 /*
@@ -38,7 +38,7 @@ import SwiftUI
 ///
 /// Animations are disabled and the target value is applied instantly when either
 /// ``EnvironmentValues/accessibilityReduceMotion`` is `true`, Low Power Mode is enabled (via
-/// ``OUDSLowPowerModeObserver``) or ``animated`` is `false`.
+/// ``MISOLowPowerModeObserver``) or ``animated`` is `false`.
 struct LinearProgressIndicatorDeterminateView: View {
 
     // MARK: - Android Material 3 spring animation constants
@@ -67,7 +67,7 @@ struct LinearProgressIndicatorDeterminateView: View {
     let barHeight: CGFloat
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
+    @EnvironmentObject private var lowPowerModeObserver: MISOLowPowerModeObserver
 
     /// Current displayed progress. Starts at `0` so that the first `onAppear` can animate towards
     /// the target value when ``animated`` is `true`.

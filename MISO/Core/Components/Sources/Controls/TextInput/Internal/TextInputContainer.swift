@@ -23,10 +23,10 @@ struct TextInputContainer: View {
     let placeholder: String?
     let prefix: String?
     let suffix: String?
-    let leadingIcon: OUDSImage?
-    let trailingAction: OUDSTextInput.TrailingAction?
+    let leadingIcon: MISOImage?
+    let trailingAction: MISOTextInput.TrailingAction?
     let isOutlined: Bool
-    let status: OUDSTextInput.Status
+    let status: MISOTextInput.Status
     let accessibilityHint: TextualContent?
     @State var hover: Bool = false
 

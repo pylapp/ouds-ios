@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-@testable import OUDSFoundations
+@testable import MISOFoundations
 import Testing
 
 @Suite("OUDSLogger Tests")

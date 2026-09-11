@@ -28,14 +28,14 @@ import SwiftUI
 ///
 /// ## Integration
 ///
-/// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
+/// To use this theme, inject it to your view using `MISOThemeableView` and get it through environment variable.
 ///
 /// ```swift
 ///     @main
 ///     struct YourApp: App {
 ///         var body: some Scene {
 ///             WindowGroup {
-///                 OUDSThemeableView(theme: WireframeTheme()) {
+///                 MISOThemeableView(theme: WireframeTheme()) {
 ///                     // Your root view
 ///                 }
 ///             }

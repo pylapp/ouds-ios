@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 struct HelperErrorTextContainer: View {
@@ -20,7 +20,7 @@ struct HelperErrorTextContainer: View {
     // MARK: - Properties
 
     let helperText: TextualContent?
-    let status: OUDSTextInput.Status
+    let status: MISOTextInput.Status
 
     @Environment(\.theme) private var theme
 

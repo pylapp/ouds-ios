@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
+import MISOTokensRaw
 
 /// The global design system tools uses verbs of semantic token for font family, which is basically a raw token for font family
 public typealias FontFamilySemanticToken = FontFamilyRawToken

@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOTokensSemantic
 import SwiftUI
 
 /// Alert message is a UI element that displays system feedback, status changes or required action; throughout detailed, prominent, persistent and actionable
@@ -40,8 +40,8 @@ import SwiftUI
 ///         // Add a custom icon for accent and neutral status
 ///         // with original rendering mode (to avoid tints) or not.
 ///         // By default, tinted, template mode.
-///         OUDSAlertMessage(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_heart"))))
-///         OUDSAlertMessage(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)))
+///         OUDSAlertMessage(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_heart"))))
+///         OUDSAlertMessage(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original)))
 ///
 ///         // Add a custom action (i.e Link) at bottom (could also at top trailing position)
 ///         @Environment(\.openURL) private var openUrl

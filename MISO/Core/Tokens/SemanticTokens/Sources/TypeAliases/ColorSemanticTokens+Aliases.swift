@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
+import MISOTokensRaw
 
 /// Basically a color semantic  token is a `ColorRawToken`, to keep grammar clean and clear with design system grammar.
 public typealias ColorSemanticToken = ColorRawToken

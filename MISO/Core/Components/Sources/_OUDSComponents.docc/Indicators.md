@@ -34,7 +34,7 @@ An ``OUDSBadgeCount`` displays an integer value.
 
 ```swift            
 // Neutral badge in medium size with an image
-OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
+OUDSBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
 ```
 
 #### Badge Icon
@@ -58,7 +58,7 @@ An ``OUDSBadgeIcon`` displays only an icon and has specific colors.
 
 ```swift            
 // Neutral badge in medium size with an image
-OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
+OUDSBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
 ```
 
 #### Badge Standard
@@ -181,15 +181,15 @@ OUDSTag(label: "Label")
 OUDSTag(label: "Label", status: .negative(leading: .bullet)
             
 // Tag with neutral status with a custom decorative icon
-OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"))))
-// Flip the icon for RTL layouts using OUDSImage.flipped
-OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true)))
+OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"))))
+// Flip the icon for RTL layouts using MISOImage.flipped
+OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), flipped: true)))
 
 // Tag with neutral status with a raw image (not tinted)
-OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+OUDSTag(label: "Label", status: .neutral(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
 
 // Tag with accent status with a raw image (not tinted)
-OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+OUDSTag(label: "Label", status: .accent(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original)))
             
 // Text with neutral status with bullet
 OUDSTag(label: "Label", status: .neutral(bullet: true))

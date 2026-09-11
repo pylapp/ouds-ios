@@ -12,15 +12,15 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 struct TextInputLeadingIconContainer: View {
 
     // MARK: - Properties
 
-    let leadingIcon: OUDSImage?
-    let status: OUDSTextInput.Status
+    let leadingIcon: MISOImage?
+    let status: MISOTextInput.Status
 
     @Environment(\.theme) private var theme
 

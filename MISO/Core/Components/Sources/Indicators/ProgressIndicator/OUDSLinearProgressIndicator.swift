@@ -176,7 +176,7 @@ import SwiftUI
 ///
 /// ## Colored surfaces
 ///
-/// When placed on an ``OUDSColoredSurface``, the indicator switches to a **monochrome** rendering, the
+/// When placed on an ``MISOColoredSurface``, the indicator switches to a **monochrome** rendering, the
 /// `status` is ignored.
 ///
 /// ## Design documentation

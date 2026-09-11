@@ -13,7 +13,7 @@
 
 #if os(iOS)
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 /// Modifier used to define as environment variable the type of iPhone device
@@ -33,7 +33,7 @@ struct DeviceModifier: ViewModifier {
         let screenBounds = UIScreen.main.nativeBounds
         let safeAreaBottom = window.safeAreaInsets.bottom
 
-        return OUDSFoundations.iPhoneDevice(screenBounds.width, screenBounds.height, safeAreaBottom)
+        return MISOFoundations.iPhoneDevice(screenBounds.width, screenBounds.height, safeAreaBottom)
     }()
 
     func body(content: Content) -> some View {

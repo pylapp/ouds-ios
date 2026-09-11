@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOTokensSemantic
 import OUDSThemesContract
 import OUDSThemesWireframe
-import OUDSTokensSemantic
 import Testing
 
 /// Tests some helper functions defined in extensions of `OUDSTheme` in the *OUDSThemesContract* module, related to grids tokens.

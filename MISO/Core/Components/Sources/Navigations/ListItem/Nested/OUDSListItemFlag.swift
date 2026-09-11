@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 /// An country flag element that can be used at the leading or trailing position of a list item
@@ -74,7 +74,7 @@ public struct OUDSListItemFlag: View {
 
     public var body: some View {
         HStack {
-            OUDSImage(asset: asset, accessibilityLabel: description, renderingMode: .original)
+            MISOImage(asset: asset, accessibilityLabel: description, renderingMode: .original)
                 .aspectRatio(contentMode: .fit)
                 .frame(height: flagHeight)
                 .opacity(opacity)

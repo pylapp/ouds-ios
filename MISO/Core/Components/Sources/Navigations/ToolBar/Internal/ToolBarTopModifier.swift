@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
+import MISOFoundations
 import OUDSThemesContract
 import SwiftUI
 
@@ -87,7 +87,7 @@ struct ToolBarTopModifier: ViewModifier {
             // nor `.navigationSubtitle()` (iOS 26+), which would otherwise keep rendering next to/under the principal
             // item with no visible title next to it. So the subtitle must never be forwarded here.
             content
-                .oudsNavigationTitle(title, subtitle: nil, hasLargeTitle: hasLargeTitle)
+                .misoNavigationTitle(title, subtitle: nil, hasLargeTitle: hasLargeTitle)
                 .toolbar {
                     ToolbarItemGroup(placement: leadingPlacement) {
                         itemsView(leadingItems)
@@ -102,7 +102,7 @@ struct ToolBarTopModifier: ViewModifier {
         } else {
             // No principal item: standard behavior, title and subtitle displayed as configured.
             content
-                .oudsNavigationTitle(title, subtitle: subtitle, hasLargeTitle: hasLargeTitle)
+                .misoNavigationTitle(title, subtitle: subtitle, hasLargeTitle: hasLargeTitle)
                 .toolbar {
                     ToolbarItemGroup(placement: leadingPlacement) {
                         itemsView(leadingItems)

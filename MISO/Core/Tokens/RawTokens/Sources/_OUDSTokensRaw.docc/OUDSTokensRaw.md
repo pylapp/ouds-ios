@@ -1,4 +1,4 @@
-# ``OUDSTokensRaw``
+# ``MISOTokensRaw``
 
 @Metadata {
     @PageImage(purpose: icon, source: "ic_design_token_figma_raw")

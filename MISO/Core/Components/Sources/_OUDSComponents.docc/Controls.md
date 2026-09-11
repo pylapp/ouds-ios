@@ -79,7 +79,7 @@ OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
 OUDSCheckboxItem("We live in a fabled world",
                  isOn: $isOn,
                  description: "Of dreaming boys and wide-eyed girls",
-                 image: OUDSImage(asset: Image(decorative: "ic_heart")),
+                 image: MISOImage(asset: Image(decorative: "ic_heart")),
                  isReversed: true,
                  isError: true,
                  hasDivider: true)
@@ -113,16 +113,16 @@ var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
          OUDSCheckboxPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
                                         description: "No alcohol, only tasty flavors",
-                                        image: OUDSImage(asset: Image(systemName: "flame"))),
+                                        image: MISOImage(asset: Image(systemName: "flame"))),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         description: "From Brewdog company",
-                                        image: OUDSImage(asset: Image(systemName: "dog.fill"))),
+                                        image: MISOImage(asset: Image(systemName: "dog.fill"))),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
-                                        image: OUDSImage(asset: Image(systemName: "waterbottle.fill"))),
+                                        image: MISOImage(asset: Image(systemName: "waterbottle.fill"))),
     ]
 }
 
@@ -206,7 +206,7 @@ OUDSRadioItem("Lucy in the Sky with Diamonds",
               isOn: $isOn,
               extraLabel: "The Beatles",
               description: "1967",
-              image: OUDSImage(asset: Image(decorative: "ic_heart")),
+              image: MISOImage(asset: Image(decorative: "ic_heart")),
               isReversed: true,
               isError: true,
               hasDivider: true)
@@ -214,7 +214,7 @@ OUDSRadioItem("Lucy in the Sky with Diamonds",
 // A radio with a raw (non-tinted) image and RTL flip support
 OUDSRadioItem("Lucy in the Sky with Diamonds",
               isOn: $isOn,
-              image: OUDSImage(asset: Image(decorative: "il_someImage"),
+              image: MISOImage(asset: Image(decorative: "il_someImage"),
                                flipped: layoutDirection == .rightToLeft,
                                renderingMode: .original))
 ```
@@ -248,16 +248,16 @@ var someDataToPopulate: [OUDSRadioPickerData<String>] {
                                         label: "Virgin Holy Lava",
                                         extraLabel: "Very spicy",
                                         description: "No alcohol, only tasty flavors",
-                                        image: OUDSImage(asset: Image(systemName: "flame"))),
+                                        image: MISOImage(asset: Image(systemName: "flame"))),
 
             OUDSRadioPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         description: "From Brewdog company",
-                                        image: OUDSImage(asset: Image(systemName: "dog.fill"))),
+                                        image: MISOImage(asset: Image(systemName: "dog.fill"))),
 
             OUDSRadioPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
-                                        image: OUDSImage(asset: Image(systemName: "waterbottle.fill"))),
+                                        image: MISOImage(asset: Image(systemName: "waterbottle.fill"))),
     ]
 }
 
@@ -334,7 +334,7 @@ OUDSSwitchItem("Dead Robot Zombie Cop",
 OUDSSwitchItem("We live in a fabled world",
                 isOn: $isOn,
                 description: "Of dreaming boys and wide-eyed girls",
-                image: OUDSImage(asset: Image(decorative: "ic_heart")),
+                image: MISOImage(asset: Image(decorative: "ic_heart")),
                 isReversed: true,
                 isError: true,
                 hasDivider: true)
@@ -342,7 +342,7 @@ OUDSSwitchItem("We live in a fabled world",
 // A trailing switch with a raw (non-tinted) image and RTL flip support
 OUDSSwitchItem("We live in a fabled world",
                 isOn: $isOn,
-                image: OUDSImage(asset: Image(decorative: "il_someImage"),
+                image: MISOImage(asset: Image(decorative: "il_someImage"),
                                  flipped: layoutDirection == .rightToLeft,
                                  renderingMode: .original))
 ```
@@ -370,19 +370,19 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 
 ```swift
 // Suggestion chip with icon only
-OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
 
 // Suggestion chip with raw icon (not tinted)
-OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+OUDSSuggestionChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 
 // Layout with text only
 OUDSSuggestionChip(text: "Heart") {}
 
 // Layout with text and icon
-OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
+OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart")), text: "Heart") {}
 
 // Layout with text and raw icon (not tinted)
-OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+OUDSSuggestionChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 ```
 
 #### Filter
@@ -406,19 +406,19 @@ The library proposes filter chip component (``OUDSFilterChip``) to make some fil
 
 ```swift
 // Filter chip with icon only as selected
-OUDSFilterChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
+OUDSFilterChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
 
 // Filter chip with raw icon (not tinted)
-OUDSFilterChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+OUDSFilterChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 
 // Filter chip with text only as not selected
 OUDSFilterChip(text: "Heart") {}
 
 // Filter chip with text and icon in selected state
-OUDSFilterChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
+OUDSFilterChip(image: MISOImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
 
 // Filter chip with text and raw icon (not tinted)
-OUDSFilterChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+OUDSFilterChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 ```
 
 
@@ -454,15 +454,15 @@ var someDataToPopulate: [OUDSChipPickerData<Drink>] {
     [
         OUDSChipPickerData(tag: Drink.virginHolyLava,
                           layout: .textAndIcon("Virgin Holy Lava",
-                                               image: OUDSImage(asset: Image(systemName: "flame")))),
+                                               image: MISOImage(asset: Image(systemName: "flame")))),
 
         OUDSChipPickerData(tag: Drink.ipaBeer,
                            layout: .textAndIcon("IPA Beer",
-                                                image: OUDSImage(asset: Image(systemName: "dog.fill")))),
+                                                image: MISOImage(asset: Image(systemName: "dog.fill")))),
 
         OUDSChipPickerData(tag: Drink.mineralWater,
                            layout: .textAndIcon("Mineral water",
-                                                image: OUDSImage(asset: Image(systemName: "waterbottle.fill")))),
+                                                image: MISOImage(asset: Image(systemName: "waterbottle.fill")))),
     ]
 }
 
@@ -511,7 +511,7 @@ OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someData
     }
 }
 
-The library provides an `OUDSPasswordInput` based on a `OUDSTextInput` to let user provides password in a secure text field.
+The library provides an `OUDSPasswordInput` based on a `MISOTextInput` to let user provides password in a secure text field.
 
 ```swift
 // The password to display and edit
@@ -577,7 +577,7 @@ OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code y
     }
 }
 
-The library provides ``OUDSTextArea`` for multiline text entry in forms such as comments, descriptions or messages.
+The library provides ``MISOTextArea`` for multiline text entry in forms such as comments, descriptions or messages.
 The field grows from a minimum of visible lines up to maximum lines based on tokens associated to the theme, after which the content scrolls.
 It supports labels, placeholders, helper text, a helper link and five statuses: enabled, loading, error, read-only and disabled.
 
@@ -586,32 +586,32 @@ It supports labels, placeholders, helper text, a helper link and five statuses: 
 @State var text: String = ""
 
 // Basic usage — label and text only
-OUDSTextArea(label: "Comments", text: $text)
+MISOTextArea(label: "Comments", text: $text)
 
 // With a placeholder shown when the field is empty
-OUDSTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
+MISOTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
 
 // With a plain helper text
-OUDSTextArea(label: "Comments",
+MISOTextArea(label: "Comments",
              text: $text,
              helperText: .plain("Maximum 500 characters."))
 
 // With a maximum character count — remaining count rendered bold, error style when exceeded
-OUDSTextArea(label: "Comments",
+MISOTextArea(label: "Comments",
              text: $text,
              helperText: .charactersMaxCount(500))
 
 // With a helper link
 @Environment(\.openURL) private var openUrl
 
-let helperLink = OUDSTextArea.Helperlink(text: "Learn more") {
+let helperLink = MISOTextArea.Helperlink(text: "Learn more") {
     openUrl.callAsFunction(url)
 }
 
-OUDSTextArea(label: "Comments", text: $text, helperLink: helperLink)
+MISOTextArea(label: "Comments", text: $text, helperLink: helperLink)
 
 // With error status — error message replaces the helper text
-OUDSTextArea(label: "Comments",
+MISOTextArea(label: "Comments",
              text: $text,
              status: .error(message: "This field cannot be empty."))
 ```
@@ -633,7 +633,7 @@ OUDSTextArea(label: "Comments",
     }
 }
 
-The library provides useful components for forms like `OUDSTextInput` to let user write text data and be helped if needed.
+The library provides useful components for forms like `MISOTextInput` to let user write text data and be helped if needed.
 Such components can have or not a leading icon or a trailing action with or without placeholders.
 
 ```swift
@@ -641,32 +641,32 @@ Such components can have or not a leading icon or a trailing action with or with
 @State var text: String = ""
 
 // Empty text and no placeholder
-OUDSTextInput(label: "Email", text: $text)
+MISOTextInput(label: "Email", text: $text)
 
 // Empty text with prefix and suffix
-OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
+MISOTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
 
 // Add a leading icon for more context
-OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com",
-              leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
+MISOTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com",
+              leadingImage: MISOImage(asset: Image(systemName: "envelope")))
 
 // Add a leading raw image (not tinted)
-OUDSTextInput(label: "Brand", text: $text,
-              leadingImage: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
+MISOTextInput(label: "Brand", text: $text,
+              leadingImage: MISOImage(asset: Image("ic_brand"), renderingMode: .original))
 
 // Add a trailing button for additional action
-let trailingAction = OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_cross")),
+let trailingAction = MISOTextInput.TrailingAction(image: MISOImage(asset: Image("ic_cross")),
                                                    actionHint: "Delete") { text = "" }
-OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
+MISOTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 
 // Add a trailing button with raw image (not tinted)
-let trailingActionRaw = OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_brand"),
+let trailingActionRaw = MISOTextInput.TrailingAction(image: MISOImage(asset: Image("ic_brand"),
                                                                       renderingMode: .original),
                                                       actionHint: "Brand") { /* action */ }
-OUDSTextInput(label: "Brand", text: $text, trailingAction: trailingActionRaw)
+MISOTextInput(label: "Brand", text: $text, trailingAction: trailingActionRaw)
 
 // With helper text
-OUDSTextInput(label: "Email",
+MISOTextInput(label: "Email",
               text: $text,
               placeholder: "firstName.lastName",
               suffix: "@orange.com",
@@ -675,9 +675,9 @@ OUDSTextInput(label: "Email",
 // With helper link
 @Environment(\.openURL) private var openUrl
 
-let helperLink = OUDSTextInput.HelperLink(text: "Helper Link") {
+let helperLink = MISOTextInput.HelperLink(text: "Helper Link") {
     openUrl.callAsFunction(url)
 }
 
-OUDSTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLink: helperLink)
+MISOTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLink: helperLink)
 ```

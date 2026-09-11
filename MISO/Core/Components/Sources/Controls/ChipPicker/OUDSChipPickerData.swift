@@ -42,55 +42,55 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
         case text(text: String)
 
         /// Layout with image
-        case image(image: OUDSImage)
+        case image(image: MISOImage)
 
         /// Layout with text and image.
-        case textAndImage(text: String, image: OUDSImage)
+        case textAndImage(text: String, image: MISOImage)
 
-        // MARK: - OUDSImage factories
+        // MARK: - MISOImage factories
 
-        /// Creates an icon-only layout from an ``OUDSImage``.
+        /// Creates an icon-only layout from an ``MISOImage``.
         ///
         /// ```swift
         ///     OUDSChipPickerData(tag: "a",
-        ///                        layout: .image(OUDSImage(asset: Image("ic_heart")),
+        ///                        layout: .image(MISOImage(asset: Image("ic_heart")),
         ///                                       accessibilityLabel: "Heart"))
         ///
         ///     // Raw (non-tinted) image:
         ///     OUDSChipPickerData(tag: "b",
-        ///                        layout: .image(OUDSImage(asset: Image("ic_brand"), renderingMode: .original),
+        ///                        layout: .image(MISOImage(asset: Image("ic_brand"), renderingMode: .original),
         ///                                       accessibilityLabel: "Brand"))
         /// ```
         ///
         /// - Parameters:
-        ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode
+        ///    - image: An ``MISOImage`` encapsulating the asset and its rendering mode
         ///    - accessibilityLabel: The text to vocalize with Voice Over describing the chip
-        @MainActor public static func icon(_ image: OUDSImage, accessibilityLabel: String) -> Layout {
-            precondition(image.image != nil, "OUDSChipPickerData.Layout.icon(_:accessibilityLabel:) requires a reliable OUDSImage")
+        @MainActor public static func icon(_ image: MISOImage, accessibilityLabel: String) -> Layout {
+            precondition(image.image != nil, "OUDSChipPickerData.Layout.icon(_:accessibilityLabel:) requires a reliable MISOImage")
             // swiftlint:disable:next force_unwrapping
-            let newOudsImage = OUDSImage(asset: image.image!, accessibilityLabel: accessibilityLabel, renderingMode: image.renderingMode)
+            let newOudsImage = MISOImage(asset: image.image!, accessibilityLabel: accessibilityLabel, renderingMode: image.renderingMode)
             return .image(image: newOudsImage)
         }
 
-        /// Creates a text + icon layout from an ``OUDSImage``.
+        /// Creates a text + icon layout from an ``MISOImage``.
         ///
         /// ```swift
         ///     OUDSChipPickerData(tag: "a",
         ///                        layout: .textAndImage("Label",
-        ///                                             image: OUDSImage(asset: Image("ic_heart"))))
+        ///                                             image: MISOImage(asset: Image("ic_heart"))))
         ///
         ///     // Raw (non-tinted) image:
         ///     OUDSChipPickerData(tag: "b",
         ///                        layout: .textAndImage("Brand",
-        ///                                             image: OUDSImage(asset: Image("ic_brand"),
+        ///                                             image: MISOImage(asset: Image("ic_brand"),
         ///                                                              renderingMode: .original)))
         /// ```
         ///
         /// - Parameters:
         ///    - text: The text to display in the chip
-        ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode
-        @MainActor public static func textAndIcon(_ text: String, image: OUDSImage) -> Layout {
-            precondition(image.image != nil, "OUDSChipPickerData.Layout.textAndIcon(text:image:) requires a reliable OUDSImage")
+        ///    - image: An ``MISOImage`` encapsulating the asset and its rendering mode
+        @MainActor public static func textAndIcon(_ text: String, image: MISOImage) -> Layout {
+            precondition(image.image != nil, "OUDSChipPickerData.Layout.textAndIcon(text:image:) requires a reliable MISOImage")
             return .textAndImage(text: text, image: image)
         }
     }

@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 /// A `ViewModifier` which will apply a specific divider under a `View` using color and size semantic tokens for a specified orientation.

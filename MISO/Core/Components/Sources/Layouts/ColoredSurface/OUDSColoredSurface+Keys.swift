@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - Environment values for oudsUseMonochrome
@@ -23,7 +23,7 @@ private struct ColoredSurfaceUseMonochromeKey: EnvironmentKey {
 
 extension EnvironmentValues {
 
-    /// Updated by the ``OUDSColoredSurface``, the value tells that component (or `View`) needs to switch to monochrome.
+    /// Updated by the ``MISOColoredSurface``, the value tells that component (or `View`) needs to switch to monochrome.
     public var oudsUseMonochrome: Bool {
         get {
             self[ColoredSurfaceUseMonochromeKey.self]
@@ -43,7 +43,7 @@ private struct SurfaceColor: EnvironmentKey {
 
 extension EnvironmentValues {
 
-    /// Updated by the ``OUDSColoredSurface``, the value tells the color token of the surface
+    /// Updated by the ``MISOColoredSurface``, the value tells the color token of the surface
     public var oudsSurfaceColor: MultipleColorSemanticToken {
         get {
             self[SurfaceColor.self]
@@ -63,7 +63,7 @@ private struct OnColoredSurfaceKey: EnvironmentKey {
 
 extension EnvironmentValues {
 
-    /// Updated by the ``OUDSColoredSurface``, the value tells the component (or `View`)  is on a colored surface or not.
+    /// Updated by the ``MISOColoredSurface``, the value tells the component (or `View`)  is on a colored surface or not.
     public var oudsOnColoredSurface: Bool {
         get {
             self[OnColoredSurfaceKey.self]

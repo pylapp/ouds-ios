@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - Chip
@@ -37,8 +37,8 @@ struct Chip: View {
 
     enum Layout {
         case text(String)
-        case icon(OUDSImage, String)
-        case textAndIcon(text: String, icon: OUDSImage, iconPosition: IconPosition = .leading)
+        case icon(MISOImage, String)
+        case textAndIcon(text: String, icon: MISOImage, iconPosition: IconPosition = .leading)
     }
 
     // MARK: Initializers
@@ -126,7 +126,7 @@ private struct ChipContent: View {
             switch layout {
             case let .icon(oudsImage, accessibilityLabel):
                 if let asset = oudsImage.asset {
-                    OUDSScaledIcon(image: OUDSImage(asset: asset,
+                    MISOScaledIcon(image: MISOImage(asset: asset,
                                                     flipped: oudsImage.flipped,
                                                     accessibilityLabel: accessibilityLabel,
                                                     renderingMode: oudsImage.renderingMode),
@@ -137,14 +137,14 @@ private struct ChipContent: View {
             case let .textAndIcon(text, oudsImage, iconPosition):
                 HStack(alignment: .center, spacing: theme.chip.spaceColumnGapIcon) {
                     if iconPosition == .leading, oudsImage.asset != nil {
-                        OUDSFixedIcon(image: oudsImage,
+                        MISOFixedIcon(image: oudsImage,
                                       size: theme.chip.sizeIcon)
                     }
 
                     ChipText(text: text)
 
                     if iconPosition == .trailing, oudsImage.asset != nil {
-                        OUDSFixedIcon(image: oudsImage,
+                        MISOFixedIcon(image: oudsImage,
                                       size: theme.chip.sizeIcon)
                     }
                 }
@@ -183,7 +183,7 @@ private struct ChipSelectionIndicator: View {
 
     var body: some View {
         if selected {
-            OUDSScaledIcon(image: OUDSImage(asset: Image(decorative: "Component-chip-tick", bundle: theme.resourcesBundle), renderingMode: .template),
+            MISOScaledIcon(image: MISOImage(asset: Image(decorative: "Component-chip-tick", bundle: theme.resourcesBundle), renderingMode: .template),
                            size: theme.chip.sizeIcon)
                 .accessibilityHidden(true)
                 .foregroundColor(appliedColor)

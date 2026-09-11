@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 /// An icon element that can be used at the leading or trailing position of a list item
@@ -46,10 +46,10 @@ import SwiftUI
 ///     OUDSListItemImage(asset: Image("meaningful_image"), description: "A nice landscape", ratio: .square)
 ///
 ///     // Async image from URL
-///     OUDSListItemImage(asyncImage: OUDSAsyncImage(url: URL(string: "https://example.com/image.png")), description: "A remote image")
+///     OUDSListItemImage(asyncImage: MISOAsyncImage(url: URL(string: "https://example.com/image.png")), description: "A remote image")
 ///
 ///     // Animated image (GIF or WebP) from URL
-///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(url: URL(string: "https://example.com/animation.gif")),
+///     OUDSListItemImage(animatedImage: MISOAnimatedImage(url: URL(string: "https://example.com/animation.gif")),
 ///                       description: "An animated image")
 ///
 ///     // Usage as leading element in a list item
@@ -144,14 +144,14 @@ public struct OUDSListItemImage: View {
     ///
     /// ```swift
     ///     // Async image from URL
-    ///     OUDSListItemImage(asyncImage: OUDSAsyncImage(url: URL(string: "https://example.com/image.png")), description: "A remote image")
+    ///     OUDSListItemImage(asyncImage: MISOAsyncImage(url: URL(string: "https://example.com/image.png")), description: "A remote image")
     ///
     ///     // Async image with large size
-    ///     OUDSListItemImage(asyncImage: OUDSAsyncImage(url: URL(string: "https://example.com/image.png")), description: "A remote image", size: .large)
+    ///     OUDSListItemImage(asyncImage: MISOAsyncImage(url: URL(string: "https://example.com/image.png")), description: "A remote image", size: .large)
     ///
     ///     // Async image with custom content and placeholder
     ///     OUDSListItemImage(
-    ///         asyncImage: OUDSAsyncImage(url: URL(string: "https://example.com/image.png")) { image in
+    ///         asyncImage: MISOAsyncImage(url: URL(string: "https://example.com/image.png")) { image in
     ///             image.resizable()
     ///         } placeholder: {
     ///             ProgressView()
@@ -162,14 +162,14 @@ public struct OUDSListItemImage: View {
     /// ```
     ///
     /// - Parameters:
-    ///   - asyncImage: The async image to load (created with ``OUDSAsyncImage``)
+    ///   - asyncImage: The async image to load (created with ``MISOAsyncImage``)
     ///   - description: The description of the image for accessibility
     ///   - size: The size of the icon. Defaults to `.medium`.
     ///     **Note:** Ignored when the icon is embedded in a list item with small size
     ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
     ///   - ratio: Ratio of the image. By default a `square` image.
     ///   - contentMode: A flag indicating whether this view should fit or fill the parent context. Default set to `.fit`.
-    public init(asyncImage: OUDSAsyncImage<some View>, description: String? = nil, size: Size = .medium, ratio: Ratio = .square, contentMode: ContentMode = .fit) {
+    public init(asyncImage: MISOAsyncImage<some View>, description: String? = nil, size: Size = .medium, ratio: Ratio = .square, contentMode: ContentMode = .fit) {
         imageType = .asyncImage(AnyView(asyncImage))
         self.size = size
         self.ratio = ratio
@@ -182,28 +182,28 @@ public struct OUDSListItemImage: View {
     ///
     /// ```swift
     ///     // Animated image from a remote URL
-    ///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(url: URL(string: "https://example.com/animation.gif")),
+    ///     OUDSListItemImage(animatedImage: MISOAnimatedImage(url: URL(string: "https://example.com/animation.gif")),
     ///                       description: "An animated image")
     ///
     ///     // Animated image from a local file bundled with the app (not an .xcassets entry)
-    ///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(named: "loading_spinner", withExtension: "gif"),
+    ///     OUDSListItemImage(animatedImage: MISOAnimatedImage(named: "loading_spinner", withExtension: "gif"),
     ///                       description: "An animated image")
     ///
     ///     // Animated image from local data (e.g. already downloaded and cached by the caller)
-    ///     OUDSListItemImage(animatedImage: OUDSAnimatedImage(data: myWebPData),
+    ///     OUDSListItemImage(animatedImage: MISOAnimatedImage(data: myWebPData),
     ///                       description: "An animated image",
     ///                       size: .large)
     /// ```
     ///
     /// - Parameters:
-    ///   - animatedImage: The animated image to play (created with ``OUDSAnimatedImage``)
+    ///   - animatedImage: The animated image to play (created with ``MISOAnimatedImage``)
     ///   - description: The description of the image for accessibility
     ///   - size: The size of the icon. Defaults to `.medium`.
     ///     **Note:** Ignored when the icon is embedded in a list item with small size
     ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
     ///   - ratio: Ratio of the image. By default a `square` image.
     ///   - contentMode: A flag indicating whether this view should fit or fill the parent context. Default set to `.fit`.
-    public init(animatedImage: OUDSAnimatedImage, description: String? = nil, size: Size = .medium, ratio: Ratio = .square, contentMode: ContentMode = .fit) {
+    public init(animatedImage: MISOAnimatedImage, description: String? = nil, size: Size = .medium, ratio: Ratio = .square, contentMode: ContentMode = .fit) {
         imageType = .animated(AnyView(animatedImage))
         self.size = size
         self.ratio = ratio

@@ -1,4 +1,4 @@
-# ``OUDSComponents``
+# ``MISOComponents``
 
 @Metadata {
     @PageImage(purpose: icon, source: "ic_folder_categories")
@@ -30,7 +30,7 @@ You can get more details about them in the categories below:
 ### Apply a specific shadow effect (elevation tokens)
 
 The unified design system implemented by OUDS iOS library allows to apply *elevation effets* on a `View`, i.e. a shadow under the component.
-Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a _spread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
+Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a _spread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [MISOTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
 
 ```swift
 // For example, apply the elevation effect "drag" from your theme:
@@ -171,7 +171,7 @@ of your app changes, the images in use can loose meanings or have another one (e
 Even if some assets can be defined in a project with specific RTL/LTR variants, images can be loaded outside and in some case, in the end, must not be mirrored.
 
 If your application manages several languages with RTL and LTR, here is a simple trick to flip the icons depending to the layout for the cases you want.
-The `flipped` property of ``OUDSImage`` can be used when passing an icon to a component.
+The `flipped` property of ``MISOImage`` can be used when passing an icon to a component.
 
 ```swift
 // Get the layout direction in your View
@@ -180,10 +180,10 @@ The `flipped` property of ``OUDSImage`` can be used when passing an icon to a co
 // Because by default icons are not flipped, i.e. more LTR flavoured, use a simple comparison
 // (layoutDirection == .rightToLeft)
 
-// For example in a checkbox item — wrap the asset in OUDSImage and set flipped:
+// For example in a checkbox item — wrap the asset in MISOImage and set flipped:
 OUDSCheckboxItem("Label",
                  isOn: $isOn,
-                 image: OUDSImage(asset: Image(systemName: "figure.handball"),
+                 image: MISOImage(asset: Image(systemName: "figure.handball"),
                                   flipped: layoutDirection == .rightToLeft),
                  isReversed: layoutDirection == .rightToLeft)
 ```

@@ -34,7 +34,7 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// If components like button (`OUDSButton`) must have always rounded corners or not
     public let hasRoundedButtons: Bool
 
-    /// If text input components (e.g. `OUDSTextInput`, `OUDSPinCodeInput`, `OUDSPasswordInput` and `OUDSTextArea`)
+    /// If text input components (e.g. `MISOTextInput`, `OUDSPinCodeInput`, `OUDSPasswordInput` and `MISOTextArea`)
     /// must have always rounded corners or not
     public let hasRoundedTextInputs: Bool
 

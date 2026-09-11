@@ -12,9 +12,9 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
+import MISOFoundations
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - OUDS ToolBar Item

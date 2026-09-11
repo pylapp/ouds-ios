@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - Circular Progress Indicator View
@@ -71,7 +71,7 @@ struct CircularProgressIndicatorView: View {
     // MARK: - Helpers
 
     /// The color used for the foreground arc. Falls back to the monochrome content color when the
-    /// indicator is placed on an ``OUDSColoredSurface``.
+    /// indicator is placed on an ``MISOColoredSurface``.
     private var foregroundColor: Color {
         if useMonochrome {
             return theme.colors.contentDefault.color(for: colorScheme)

@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 // swiftlint:disable file_length
@@ -46,7 +46,7 @@ import SwiftUI
 /// The component does not follow the right-to-left (RTL) / left-to-right (LTR) mode returned by the system as it could have some meaning
 /// to have for example the indicator in trailing position for LTR mode and vice versa.
 /// However, if the component has an icon in leading position (RTL mode) or in trailing position (LTR), the content of the icon is never changed.
-/// It could lead to a loss of meaning or semantics in the icon. Thus the ``OUDSImage`` `flipped` property can be used to flip the icon content
+/// It could lead to a loss of meaning or semantics in the icon. Thus the ``MISOImage`` `flipped` property can be used to flip the icon content
 /// whatever the layout direction is, preventing the user from implementing their own rules to flip or not the image.
 ///
 /// ## Rich text
@@ -92,20 +92,20 @@ import SwiftUI
 ///     OUDSCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      description: "Of dreaming boys and wide-eyed girls",
-///                      image: OUDSImage(asset: Image(decorative: "ic_heart")),
+///                      image: MISOImage(asset: Image(decorative: "ic_heart")),
 ///                      isReversed: true)
 ///
 ///     // A trailing checkbox with a raw (non-tinted) image.
 ///     OUDSCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      description: "Of dreaming boys and wide-eyed girls",
-///                      image: OUDSImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
+///                      image: MISOImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
 ///                      isReversed: true)
 ///
-///     // Flip the icon for RTL layouts using OUDSImage.
+///     // Flip the icon for RTL layouts using MISOImage.
 ///     OUDSCheckboxItem("Cocorico !",
 ///                      isOn: $isOn,
-///                      image: OUDSImage(asset: Image(systemName: "figure.handball"),
+///                      image: MISOImage(asset: Image(systemName: "figure.handball"),
 ///                                      flipped: layoutDirection == .rightToLeft),
 ///                      isReversed: layoutDirection == .rightToLeft)
 ///
@@ -175,7 +175,7 @@ public struct OUDSCheckboxItem: View {
     ///     OUDSCheckboxItem("Virgin Holy Lava",
     ///                      isOn: $isOn,
     ///                      description: "Very spicy",
-    ///                      image: OUDSImage(asset: Image(systemName: "flame")))
+    ///                      image: MISOImage(asset: Image(systemName: "flame")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -187,7 +187,7 @@ public struct OUDSCheckboxItem: View {
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -202,7 +202,7 @@ public struct OUDSCheckboxItem: View {
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -261,7 +261,7 @@ public struct OUDSCheckboxItem: View {
     ///     OUDSCheckboxItem("Virgin Holy Lava",
     ///                      isOn: $isOn,
     ///                      description: "Very spicy",
-    ///                      image: OUDSImage(asset: Image(systemName: "flame")),
+    ///                      image: MISOImage(asset: Image(systemName: "flame")),
     ///                      errorText: AttributedString(markdown: "Please select **one flavor** for this drink"))
     ///                    // Manage in your side errors for init for AttributedString(markdown:)
     /// ```
@@ -275,7 +275,7 @@ public struct OUDSCheckboxItem: View {
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -289,7 +289,7 @@ public struct OUDSCheckboxItem: View {
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -344,7 +344,7 @@ public struct OUDSCheckboxItem: View {
     ///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"),
     ///                      bundle: Bundle.module,
     ///                      isOn: $isOn,
-    ///                      image: OUDSImage(asset: Image(decorative: "ic_heart")))
+    ///                      image: MISOImage(asset: Image(decorative: "ic_heart")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -355,7 +355,7 @@ public struct OUDSCheckboxItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -369,7 +369,7 @@ public struct OUDSCheckboxItem: View {
                 bundle: Bundle = .main,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -414,7 +414,7 @@ public struct OUDSCheckboxItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -428,7 +428,7 @@ public struct OUDSCheckboxItem: View {
                 bundle: Bundle = .main,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: AttributedString,

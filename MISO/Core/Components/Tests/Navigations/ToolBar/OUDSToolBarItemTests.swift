@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSComponents
+import MISOComponents
 import SwiftUI
 import Testing
 

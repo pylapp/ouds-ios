@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - Bullet
@@ -95,7 +95,7 @@ struct UnorderedBullet: View {
     // MARK: Body
 
     var body: some View {
-        OUDSScaledIcon(image: OUDSImage(asset: image, renderingMode: .template), size: assetSize)
+        MISOScaledIcon(image: MISOImage(asset: image, renderingMode: .template), size: assetSize)
             .foregroundColor(color)
     }
 

@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 
 /// Badge is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour only.

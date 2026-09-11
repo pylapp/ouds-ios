@@ -69,7 +69,7 @@ Thus, get the theme and call the needed property with some helpers.
 ```swift
 struct SomeView: View {
 
-    @Environment(\.theme) private var theme // Supposed you used in your root view the `OUDSThemeableView` to register the theme
+    @Environment(\.theme) private var theme // Supposed you used in your root view the `MISOThemeableView` to register the theme
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
@@ -94,13 +94,13 @@ struct SomeView: View {
 */
 }
 
-// Do not forget in your app to use the `OUDSThemeableView` for your theme, e.g. `OrangeTheme`
+// Do not forget in your app to use the `MISOThemeableView` for your theme, e.g. `OrangeTheme`
 @main
 struct DesignToolbox: App {
 
     var body: some Scene {
         WindowGroup {
-            OUDSThemeableView(theme: OrangeTheme()) {
+            MISOThemeableView(theme: OrangeTheme()) {
                 // Your root view
                 ...
             }
@@ -133,8 +133,8 @@ skeleton                       |
 switch                         | For switch components like `OUDSSwitch` and `OUDSSwitchItem` 
 tag                            | For tag components like `OUDSTag`
 inputTag                       | For input tag components like `OUDSInputTag`
-textArea                       | For text area components like `OUDSTextArea`
-textInput                      | For text field input components like `OUDSTextInput`
+textArea                       | For text area components like `MISOTextArea`
+textInput                      | For text field input components like `MISOTextInput`
 typography                     | For textual components like `OUDSText`
 
 ## Topics

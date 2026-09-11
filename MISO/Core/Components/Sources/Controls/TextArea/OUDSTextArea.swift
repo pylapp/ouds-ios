@@ -12,10 +12,10 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
+import MISOFoundations
+import MISOTokensSemantic
 import OUDSThemesContract
 import OUDSTokensComponent
-import OUDSTokensSemantic
 import SwiftUI
 
 /// Text area is a UI element that allows to type, edit, or select longer blocks of textual data, such as comments, messages or descriptions;
@@ -97,7 +97,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     // An outlined text area
-///     OUDSTextArea(label: "Comments", text: $text, isOutlined: true)
+///     MISOTextArea(label: "Comments", text: $text, isOutlined: true)
 /// ```
 ///
 /// ## Fixed height
@@ -113,7 +113,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Height is fixed to the minimum (no vertical growth)
-///     OUDSTextArea(label: "Comments", text: $text, constrainedMaxHeight: true)
+///     MISOTextArea(label: "Comments", text: $text, constrainedMaxHeight: true)
 /// ```
 ///
 /// ## Rich text
@@ -131,40 +131,40 @@ import SwiftUI
 ///     @State var text: String = ""
 ///
 ///     // Empty text and no placeholder
-///     OUDSTextArea(label: "Comments", text: $text)
+///     MISOTextArea(label: "Comments", text: $text)
 ///
 ///     // Empty text with placeholder
-///     OUDSTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
+///     MISOTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
 ///
 ///     // With a plain helper text
-///     OUDSTextArea(label: "Comments",
+///     MISOTextArea(label: "Comments",
 ///                  text: $text,
 ///                  placeholder: "Describe your issue in detail",
 ///                  helperText: .plain("Maximum 500 characters."))
 ///
 ///     // With a maximum character count — the component shows "X characters remaining" (bold)
 ///     // and switches to an error style when exceeded.
-///     OUDSTextArea(label: "Comments",
+///     MISOTextArea(label: "Comments",
 ///                  text: $text,
 ///                  helperText: .charactersMaxCount(500))
 ///
 ///     // With helper link
 ///     @Environment(\.openURL) private var openUrl
 ///
-///     let helperLink = OUDSTextArea.Helperlink(text: "Helper Link") {
+///     let helperLink = MISOTextArea.Helperlink(text: "Helper Link") {
 ///        openUrl.callAsFunction(url)
 ///     }
 ///
-///     OUDSTextArea(label: "Comments", text: $text, placeholder: "Placeholder", helperLink: helperLink)
+///     MISOTextArea(label: "Comments", text: $text, placeholder: "Placeholder", helperLink: helperLink)
 ///
 ///     // With error status
-///     OUDSTextArea(label: "Comments", text: $text, status: .error(message: "This field can't be empty."))
+///     MISOTextArea(label: "Comments", text: $text, status: .error(message: "This field can't be empty."))
 ///
 ///     // Outlined style
-///     OUDSTextArea(label: "Comments", text: $text, isOutlined: true)
+///     MISOTextArea(label: "Comments", text: $text, isOutlined: true)
 ///
 ///     // Fixed height — no vertical growth
-///     OUDSTextArea(label: "Comments", text: $text, constrainedMaxHeight: true)
+///     MISOTextArea(label: "Comments", text: $text, constrainedMaxHeight: true)
 /// ```
 ///
 /// ## Design documentation
@@ -192,7 +192,7 @@ import SwiftUI
 /// - Version: 1.2.1 (Figma component design version)
 /// - Since: 1.4.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSTextArea: View {
+public struct MISOTextArea: View {
 
     // MARK: - Properties
 
@@ -214,10 +214,10 @@ public struct OUDSTextArea: View {
     ///
     /// ```swift
     ///     // Plain text error
-    ///     OUDSTextArea(label: "Comments", text: $text, status: .error(message: "This field can't be empty."))
+    ///     MISOTextArea(label: "Comments", text: $text, status: .error(message: "This field can't be empty."))
     ///
     ///     // Rich text error
-    ///     OUDSTextArea(label: "Comments", text: $text, status: .richError(message: AttributedString(markdown: "This field **must be defined**.")))
+    ///     MISOTextArea(label: "Comments", text: $text, status: .richError(message: AttributedString(markdown: "This field **must be defined**.")))
     ///     // Manage parsing of AttributedString on your side
     /// ```
     ///
@@ -279,14 +279,14 @@ public struct OUDSTextArea: View {
     ///
     /// ```swift
     ///     // Plain helper text
-    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .plain("Maximum 500 characters."))
+    ///     MISOTextArea(label: "Bio", text: $text, helperText: .plain("Maximum 500 characters."))
     ///
     ///     // Rich helper text
-    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .rich("Maximum **500** characters."))
+    ///     MISOTextArea(label: "Bio", text: $text, helperText: .rich("Maximum **500** characters."))
     ///
     ///     // Character limit: component shows "X characters remaining" (bold count),
     ///     // and switches to "You have X characters too many." when exceeded.
-    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .charactersMaxCount(500))
+    ///     MISOTextArea(label: "Bio", text: $text, helperText: .charactersMaxCount(500))
     /// ```
     ///
     /// - Since: 1.4.0
@@ -332,7 +332,7 @@ public struct OUDSTextArea: View {
         ///   - action: The action when clicked
         public init(text: String, action: @escaping () -> Void) {
             if text.isEmpty {
-                OL.warning("The helper link text for the OUDSTextArea is empty, avoid using it in that case.")
+                OL.warning("The helper link text for the MISOTextArea is empty, avoid using it in that case.")
             }
             self.text = text
             self.action = action
@@ -344,7 +344,7 @@ public struct OUDSTextArea: View {
     /// Creates a text area.
     ///
     /// ```swift
-    ///     OUDSTextArea(label: "Comments", text: $text)
+    ///     MISOTextArea(label: "Comments", text: $text)
     /// ```
     ///
     /// - Parameters:
@@ -389,7 +389,7 @@ public struct OUDSTextArea: View {
     /// Creates a text area with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSTextArea(LocalizedStringKey("comments_label"), bundle: Bundle.module, text: $text)
+    ///     MISOTextArea(LocalizedStringKey("comments_label"), bundle: Bundle.module, text: $text)
     /// ```
     ///
     /// - Parameters:

@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSTokensRaw
+import MISOTokensRaw
 import SwiftUI
 
 /// Kind of semantic tokens which will wrap a combination of `DimensionRawToken` depending to size classes.

@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
+import MISOFoundations
 import OUDSThemesContract
 import SwiftUI
 
@@ -25,7 +25,7 @@ struct NavigationStackRefresher: ViewModifier {
 
     @Environment(\.theme) private var theme: OUDSTheme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceMISOLegacyLayout) private var forceMISOLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Initializer
@@ -160,7 +160,7 @@ struct NavigationStackRefresher: ViewModifier {
 
         // Background and tint colors
 
-        if isLiquidGlassDisabled || forceOUDSLegacyLayout {
+        if isLiquidGlassDisabled || forceMISOLegacyLayout {
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = newTheme.bar.colorBgTranslucent.color(for: newColorScheme).uiColor
         }

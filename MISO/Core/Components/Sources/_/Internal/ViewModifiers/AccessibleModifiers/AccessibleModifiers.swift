@@ -1,17 +1,7 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
 
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 #if canImport(UIKit) // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import UIKit
@@ -35,7 +25,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     #endif
 
     @Environment(\.theme) private var theme
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceMISOLegacyLayout) private var forceMISOLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
@@ -48,7 +38,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
         #else
         Group {
             if let subtitle {
-                if #available(iOS 26.0, *), !(forceOUDSLegacyLayout || isLiquidGlassDisabled) {
+                if #available(iOS 26.0, *), !(forceMISOLegacyLayout || isLiquidGlassDisabled) {
                     content
                         .navigationTitle(LocalizedStringKey(title))
                         .oudsNavigationSubtitle(subtitle)

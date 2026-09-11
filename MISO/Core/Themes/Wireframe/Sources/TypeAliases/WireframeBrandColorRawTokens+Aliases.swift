@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
+import MISOTokensRaw
 
 /// In the global design system tool, the verbs of "brand colors" are used, and at this level mean simply raw tokens of colors.
 public typealias ColorWireframeBrandRawToken = ColorRawToken

@@ -12,7 +12,7 @@
 //
 
 #if os(iOS)
-@testable import OUDSComponents
+@testable import MISOComponents
 import Testing
 
 /// Tests the public static constants exposed by `SelectedTabIndicator`.

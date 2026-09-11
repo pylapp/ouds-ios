@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import MISOTokensSemantic
 import OUDSThemesContract
 import OUDSTokensComponent
-import OUDSTokensSemantic
 import SwiftUI
 
 /// Used to apply a border with color, width and radius associated to the state

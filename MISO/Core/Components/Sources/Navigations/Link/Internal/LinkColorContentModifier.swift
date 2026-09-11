@@ -11,10 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import MISOFoundations
+import MISOTokensSemantic
 import OUDSThemesContract
 import OUDSTokensComponent
-import OUDSTokensSemantic
 import SwiftUI
 
 struct LinkColorContentModifier: ViewModifier {

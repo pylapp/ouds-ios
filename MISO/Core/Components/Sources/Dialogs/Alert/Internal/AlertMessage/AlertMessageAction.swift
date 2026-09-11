@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 struct AlertMessageAction: View {
@@ -33,7 +33,7 @@ struct AlertMessageAction: View {
             }
 
             if let onClose {
-                OUDSButton(image: OUDSImage(asset: Image(decorative: "Component-button-expurge", bundle: theme.resourcesBundle),
+                OUDSButton(image: MISOImage(asset: Image(decorative: "Component-button-expurge", bundle: theme.resourcesBundle),
                                             accessibilityLabel: "core_alertMessage_close_a11y".localized()),
                            appearance: .minimal,
                            action: onClose)

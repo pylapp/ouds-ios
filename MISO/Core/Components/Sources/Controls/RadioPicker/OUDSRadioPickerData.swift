@@ -34,7 +34,7 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     let description: String?
 
     /// An optional image the ``OUDSRadioItem`` can have, encapsulating the asset, flip flag and rendering mode
-    let icon: OUDSImage?
+    let icon: MISOImage?
 
     /// Define if the ``OUDSRadioItem`` is outlined or not
     let isOutlined: Bool
@@ -63,12 +63,12 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     ///
     ///     OUDSRadioPickerData(tag: "option2",
     ///                         label: "Option 2",
-    ///                         image: OUDSImage(asset: Image(systemName: "flame")))
+    ///                         image: MISOImage(asset: Image(systemName: "flame")))
     ///
     ///     // Raw (non-tinted) image:
     ///     OUDSRadioPickerData(tag: "option3",
     ///                         label: "Option 3",
-    ///                         image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+    ///                         image: MISOImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
     /// ```
     ///
     /// - Parameters:
@@ -76,7 +76,7 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     ///    - label: the mandatory text to add to ``OUDSRadioItem``
     ///    - extraLabel: An optional additional text, default set to nil
     ///    - description: Another optional text, a description, default set to nil
-    ///    - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///    - image: An optional ``MISOImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///    - isOutlined: True to outline the ``OUDSRadioItem``, false otherwise (default)
     ///    - isReversed: True to use to reversed layout of the ``OUDSRadioItem``, false otherwise (default)
     ///    - isError: True if in an error context, false otherwise (default)
@@ -90,7 +90,7 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
                 label: String,
                 extraLabel: String? = nil,
                 description: String? = nil,
-                image: OUDSImage? = nil,
+                image: MISOImage? = nil,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,

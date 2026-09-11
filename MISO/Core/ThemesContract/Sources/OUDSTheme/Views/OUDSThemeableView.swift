@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSFoundations
+import MISOFoundations
 import SwiftUI
 #if canImport(UIKit) // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import UIKit
@@ -36,7 +36,7 @@ extension EnvironmentValues {
 
     /// A flag indicating whether Liquid Glass is disabled.
     /// The environment entry default is *false*.
-    /// When using `OUDSThemeableView` (the recommended integration path), this value may be overridden to *true*
+    /// When using `MISOThemeableView` (the recommended integration path), this value may be overridden to *true*
     /// on iOS versions earlier than 26 or when the app enables *UIDesignRequiresCompatibility* in the
     /// *main Bundle* `Info.plist` if Xcode 26.
     /// For Xcode 27, will be always `false` as Apple forces Liquid Glass.
@@ -53,18 +53,18 @@ extension EnvironmentValues {
 ///
 /// ```swift
 ///     // Add themeable view to your root view to use the OrangeTheme
-///     OUDSThemeableView(theme: OrangeTheme()) {
+///     MISOThemeableView(theme: OrangeTheme()) {
 ///         YourRootView()
 ///     }
 ///
 ///     // Or use your custom theme if you want
-///     OUDSThemeableView(theme: YourCustomTheme()) {
+///     MISOThemeableView(theme: YourCustomTheme()) {
 ///         YourRootView()
 ///     }
 /// ```
 ///
 /// - Since: 0.8.0
-public struct OUDSThemeableView<Content: View>: View {
+public struct MISOThemeableView<Content: View>: View {
 
     private let theme: OUDSTheme
     private let content: () -> Content
@@ -89,12 +89,12 @@ public struct OUDSThemeableView<Content: View>: View {
         content()
             .environment(\.isLiquidGlassDisabled, Self.isLiquidGlassDisabled)
             .environment(\._theme, theme)
-            .environmentObject(OUDSLowPowerModeObserver())
+            .environmentObject(MISOLowPowerModeObserver())
             .modifier(UserInterfaceSizeClassModifier())
         #else
         content()
             .environment(\._theme, theme)
-            .environmentObject(OUDSLowPowerModeObserver())
+            .environmentObject(MISOLowPowerModeObserver())
         #endif
     }
 }

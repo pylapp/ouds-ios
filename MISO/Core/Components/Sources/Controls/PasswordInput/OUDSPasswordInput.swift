@@ -12,14 +12,14 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
+import MISOFoundations
+import MISOTokensSemantic
 import OUDSThemesContract
 import OUDSTokensComponent
-import OUDSTokensSemantic
 import SwiftUI
 
 /// Password input is a UI element that allows to securely and confidentially capture a user’s password.
-/// As it is based on the `OUDSTextInput`,  it offers same layout and the same elements of configuration.
+/// As it is based on the `MISOTextInput`,  it offers same layout and the same elements of configuration.
 ///
 /// ## Layout
 ///
@@ -48,12 +48,12 @@ import SwiftUI
 ///
 /// ### Rounded layout
 ///
-/// As the` OUDSTextInput`, rounded corners can be enabled or disabled using the `hasRoundedTextInputs` values of the `Tuning` object
+/// As the` MISOTextInput`, rounded corners can be enabled or disabled using the `hasRoundedTextInputs` values of the `Tuning` object
 /// in your theme configuration.
 ///
 /// ## Status
 ///
-/// As `OUDSPasswordInput` is based on the` OUDSTextInput`, all the status are the same and have the same behavior available here `OUDSTextInput.Status`
+/// As `OUDSPasswordInput` is based on the` MISOTextInput`, all the status are the same and have the same behavior available here `MISOTextInput.Status`
 ///
 /// ## Accessibility considerations
 ///
@@ -123,7 +123,7 @@ public struct OUDSPasswordInput: View {
     let prefix: String?
     let lockIcon: Bool
     let helperText: TextualContent?
-    let status: OUDSTextInput.Status
+    let status: MISOTextInput.Status
     let isOutlined: Bool
     let constrainedMaxWidth: Bool
 
@@ -153,13 +153,13 @@ public struct OUDSPasswordInput: View {
     ///    -  lockIcon: When `true`, a lock icon is displayed at the start of the password input to visually reinforce
     ///    the security context. Defaults to `false`.
     ///    - helperText: An optional helper text displayed below the password input. It conveys additional, information about the input field,
-    ///    such as how it will be used, by default is *nil*. If `status` is set to `OUDSTextInput.Status.Error`, this `helperText` is ignored.
+    ///    such as how it will be used, by default is *nil*. If `status` is set to `MISOTextInput.Status.Error`, this `helperText` is ignored.
     ///    - isOutlined: Controls the style of the pasword input. When `true`, it displays a minimalist
     ///      password input with a transparent background and a visible stroke outlining the field, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
     ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///      modifier. Defaults to `false`.
-    ///    - status: The current status of the password input base on ` OUDSTextInput.Status `, by default to set *enabled*
+    ///    - status: The current status of the password input base on ` MISOTextInput.Status `, by default to set *enabled*
     public init(label: String,
                 password: Binding<String>,
                 isHiddenPassword: Binding<Bool> = .constant(true),
@@ -169,7 +169,7 @@ public struct OUDSPasswordInput: View {
                 helperText: String? = nil,
                 isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
-                status: OUDSTextInput.Status = .enabled)
+                status: MISOTextInput.Status = .enabled)
     {
         self.label = label
         self.password = password
@@ -207,13 +207,13 @@ public struct OUDSPasswordInput: View {
     ///    -  lockIcon: When `true`, a lock icon is displayed at the start of the password input to visually reinforce
     ///    the security context. Defaults to `false`.
     ///    - helperText: An helper text displayed below the password input. It conveys additional, information about the input field,
-    ///    such as how it will be used, by default is *nil*. If `status` is set to `OUDSTextInput.Status.Error`, this `helperText` is ignored.
+    ///    such as how it will be used, by default is *nil*. If `status` is set to `MISOTextInput.Status.Error`, this `helperText` is ignored.
     ///    - isOutlined: Controls the style of the pasword input. When `true`, it displays a minimalist
     ///      password input with a transparent background and a visible stroke outlining the field, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
     ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///      modifier. Defaults to `false`.
-    ///    - status: The current status of the password input base on ` OUDSTextInput.Status `, by default to set *enabled*
+    ///    - status: The current status of the password input base on ` MISOTextInput.Status `, by default to set *enabled*
     public init(label: String,
                 password: Binding<String>,
                 isHiddenPassword: Binding<Bool> = .constant(true),
@@ -223,7 +223,7 @@ public struct OUDSPasswordInput: View {
                 helperText: AttributedString,
                 isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
-                status: OUDSTextInput.Status = .enabled)
+                status: MISOTextInput.Status = .enabled)
     {
         self.label = label
         self.password = password
@@ -270,7 +270,7 @@ public struct OUDSPasswordInput: View {
                 helperText: String? = nil,
                 isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
-                status: OUDSTextInput.Status = .enabled)
+                status: MISOTextInput.Status = .enabled)
     {
         self.init(label: key.resolved(tableName: tableName, bundle: bundle),
                   password: password,
@@ -314,7 +314,7 @@ public struct OUDSPasswordInput: View {
                 helperText: AttributedString,
                 isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
-                status: OUDSTextInput.Status = .enabled)
+                status: MISOTextInput.Status = .enabled)
     {
         self.init(label: key.resolved(tableName: tableName, bundle: bundle),
                   password: password,
@@ -335,7 +335,7 @@ public struct OUDSPasswordInput: View {
     public var body: some View {
         switch helperText {
         case let .raw(rawHelperText):
-            OUDSTextInput(label: label,
+            MISOTextInput(label: label,
                           text: password,
                           placeholder: placeholder,
                           prefix: prefix,
@@ -347,7 +347,7 @@ public struct OUDSPasswordInput: View {
                           status: status)
                 .environment(\.textInputAsSecureField, isHiddenPassword)
         case let .attributed(richHelperText):
-            OUDSTextInput(label: label,
+            MISOTextInput(label: label,
                           text: password,
                           placeholder: placeholder,
                           prefix: prefix,
@@ -359,7 +359,7 @@ public struct OUDSPasswordInput: View {
                           status: status)
                 .environment(\.textInputAsSecureField, isHiddenPassword)
         default:
-            OUDSTextInput(label: label,
+            MISOTextInput(label: label,
                           text: password,
                           placeholder: placeholder,
                           prefix: prefix,
@@ -375,16 +375,16 @@ public struct OUDSPasswordInput: View {
 
     // MARK: - Helpers
 
-    private var leadingIcon: OUDSImage? {
+    private var leadingIcon: MISOImage? {
         // TODO: #997 - Should we add an accessibility label?
-        lockIcon ? OUDSImage(asset: Image(decorative: "communication-security-and-safety-lock-closed", bundle: theme.resourcesBundle)) : nil
+        lockIcon ? MISOImage(asset: Image(decorative: "communication-security-and-safety-lock-closed", bundle: theme.resourcesBundle)) : nil
     }
 
-    private var trailingAction: OUDSTextInput.TrailingAction {
+    private var trailingAction: MISOTextInput.TrailingAction {
         let iconName = isHiddenPassword ? "communication-accessibility-accessibility-vision" : "functional-settings-and-tools-accessibility-hide"
         let actionHint = isHiddenPassword ? "core_passwordInput_showPassword_a11y" : "core_passwordInput_hidePassword_a11y"
 
-        return .init(image: OUDSImage(asset: Image(decorative: iconName, bundle: theme.resourcesBundle)),
+        return .init(image: MISOImage(asset: Image(decorative: iconName, bundle: theme.resourcesBundle)),
                      actionHint: actionHint.localized())
         {
             isHiddenPassword.toggle()

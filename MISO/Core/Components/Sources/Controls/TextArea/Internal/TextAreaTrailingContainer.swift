@@ -12,10 +12,10 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
-/// Renders the top-trailing indicator for `OUDSTextArea`.
+/// Renders the top-trailing indicator for `MISOTextArea`.
 ///
 /// Always reserves the same fixed-size slot regardless of status so the `HStack` width
 /// never changes when switching between statuses — preventing height reflow.
@@ -27,11 +27,11 @@ struct TextAreaTrailingContainer: View {
 
     // MARK: - Properties
 
-    let status: OUDSTextArea.Status
+    let status: MISOTextArea.Status
     let interactionState: TextAreaInteractionState
     /// `true` when the caller uses `.charactersMaxCount` and the text exceeds the limit.
     let isOverLimit: Bool
-    /// `true` if the associated `OUDSTextArea` component does not have a placeholder nor a value, i.e. the label is small
+    /// `true` if the associated `MISOTextArea` component does not have a placeholder nor a value, i.e. the label is small
     let isSmallLabel: Bool
 
     @Environment(\.theme) private var theme

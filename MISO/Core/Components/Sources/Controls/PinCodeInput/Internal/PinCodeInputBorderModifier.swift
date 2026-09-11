@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 /// `ViewModifier` to draw borders on text fields in ``OUDSPinCodeInput`` component

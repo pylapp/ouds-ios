@@ -23,7 +23,7 @@ struct HeadingMarker: View {
 
     // MARK: - Constants
     // Values coming from the Figma design of the marker (Foundation / Typography — .Marker / Heading large).
-    // Kept `internal` (default) so they can be validated by unit tests via `@testable import OUDSComponents`.
+    // Kept `internal` (default) so they can be validated by unit tests via `@testable import MISOComponents`.
 
     /// Width of the marker rectangle, in points.
     static let markerWidth: CGFloat = 30

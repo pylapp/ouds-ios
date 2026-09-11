@@ -12,14 +12,14 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 struct TextInputBackgroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let status: OUDSTextInput.Status
+    let status: MISOTextInput.Status
     let isOutlined: Bool
     let interactionState: TextInputInteractionState
 

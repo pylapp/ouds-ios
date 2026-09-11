@@ -12,9 +12,9 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
+import MISOFoundations
+import MISOTokensSemantic
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - ToolBar Item Action Style Modifier (Top/Bottom)
@@ -60,7 +60,7 @@ struct ToolBarActionItemStyle: ButtonStyle {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceMISOLegacyLayout) private var forceMISOLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
@@ -69,7 +69,7 @@ struct ToolBarActionItemStyle: ButtonStyle {
         if !isEnabled {
             configuration.label.foregroundColor(theme.button.colorContentMinimalDisabled)
         } else {
-            if isLiquidGlassDisabled || forceOUDSLegacyLayout {
+            if isLiquidGlassDisabled || forceMISOLegacyLayout {
                 if configuration.isPressed {
                     configuration.label.foregroundColor(theme.button.colorContentMinimalPressed)
                 } else {
@@ -103,13 +103,13 @@ struct ToolBarTopItemNavigationStyle: ButtonStyle {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceMISOLegacyLayout) private var forceMISOLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        if isLiquidGlassDisabled || forceOUDSLegacyLayout {
+        if isLiquidGlassDisabled || forceMISOLegacyLayout {
             configuration.label
                 .foregroundColor(foregroundColor)
         } else {

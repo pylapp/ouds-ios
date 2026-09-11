@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - Colored Surface
@@ -22,8 +22,8 @@ import SwiftUI
 /// This variable is useful, for example, to change the style of a component according to its environment (e.g monochrome mode on `OUDSButton`).
 ///
 /// ```swift
-///   OUDSColoredSurface(color: theme.colorModes.onBrandPrimary) {
-///      OUDSButton(image: OUDSImage(asset: Image("ic_heart")), appearance: .strong) {}
+///   MISOColoredSurface(color: theme.colorModes.onBrandPrimary) {
+///      OUDSButton(image: MISOImage(asset: Image("ic_heart")), appearance: .strong) {}
 ///   }
 /// ```
 ///
@@ -35,7 +35,7 @@ import SwiftUI
 ///
 /// - Since: 0.13.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSColoredSurface<Content>: View where Content: View {
+public struct MISOColoredSurface<Content>: View where Content: View {
 
     /// A type alias to use for clarity reasons ; a surface color is in the end a token
     public typealias SurfaceColor = MultipleColorModeSemanticToken
@@ -50,7 +50,7 @@ public struct OUDSColoredSurface<Content>: View where Content: View {
     /// Create a view with background color applied on the `content` view.
     ///
     /// ```swift
-    ///     OUDSColoredSurface(color: theme.colorModes.onBgPrimary) {
+    ///     MISOColoredSurface(color: theme.colorModes.onBgPrimary) {
     ///         Text("Hello")
     ///     }
     /// ```
@@ -66,6 +66,6 @@ public struct OUDSColoredSurface<Content>: View where Content: View {
     // MARK: Body
 
     public var body: some View {
-        content().modifier(OUDSColoredSurfaceModifier(backgroundSurfaceColor: backgroundSurfaceColor))
+        content().modifier(MISOColoredSurfaceModifier(backgroundSurfaceColor: backgroundSurfaceColor))
     }
 }

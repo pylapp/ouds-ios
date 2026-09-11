@@ -12,7 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSTokensSemantic
+import MISOTokensSemantic
 import SwiftUI
 
 struct TextAreaLabelContainer: View {
@@ -21,7 +21,7 @@ struct TextAreaLabelContainer: View {
 
     let label: String
     let isSmallLabel: Bool
-    let status: OUDSTextArea.Status
+    let status: MISOTextArea.Status
     let interactionState: TextAreaInteractionState
     let isOverLimit: Bool
 

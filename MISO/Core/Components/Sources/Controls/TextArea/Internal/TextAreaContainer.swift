@@ -12,8 +12,8 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
-import OUDSFoundations
-import OUDSTokensRaw
+import MISOFoundations
+import MISOTokensRaw
 import SwiftUI
 #if canImport(UIKit)
 import UIKit
@@ -28,7 +28,7 @@ struct TextAreaContainer: View {
     let placeholder: String?
     let isOverLimit: Bool
     let excessCount: Int
-    let status: OUDSTextArea.Status
+    let status: MISOTextArea.Status
     let isOutlined: Bool
     let constrainedMaxHeight: Bool
     let accessibilityHint: String?
@@ -46,7 +46,7 @@ struct TextAreaContainer: View {
         HStack(alignment: .top, spacing: theme.textInput.spaceColumnGapDefault) {
             // Main content: label + text editor
             VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
-                // Label is always at the top in small typography — same pattern as OUDSTextInput.
+                // Label is always at the top in small typography — same pattern as MISOTextInput.
                 TextAreaLabelContainer(label: label,
                                        isSmallLabel: isSmallLabel,
                                        status: status,
