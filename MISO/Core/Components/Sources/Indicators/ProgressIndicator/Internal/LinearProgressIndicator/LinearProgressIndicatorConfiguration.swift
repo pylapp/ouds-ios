@@ -1,22 +1,9 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import Foundation
 
-/// Internal configuration used to draw an ``OUDSLinearProgressIndicator``.
+/// Internal configuration used to draw an ``MISOLinearProgressIndicator``.
 enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
 
     case determinate(Determinate)
@@ -31,7 +18,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         let progress: Double
 
         /// Color status of the indicator.
-        let status: OUDSProgressIndicatorStatus
+        let status: MISOProgressIndicatorStatus
 
         /// Whether the track is displayed on the right of the foreground bar.
         let track: Bool
@@ -40,10 +27,10 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         let stopIndicator: Bool
 
         /// Optional additional text displayed below the bar.
-        let helperText: OUDSLinearProgressIndicator.HelperTextType?
+        let helperText: MISOLinearProgressIndicator.HelperTextType?
 
         /// Size of the gap between the foreground bar and the track.
-        let gapSize: OUDSProgressIndicatorGapSize
+        let gapSize: MISOProgressIndicatorGapSize
 
         /// Whether the reveal / update animation is played.
         let animated: Bool
@@ -56,11 +43,11 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
 
         /// Creates a determinate configuration. The `progress` value is clamped to `[0, 1]`.
         init(progress: Double,
-             status: OUDSProgressIndicatorStatus,
+             status: MISOProgressIndicatorStatus,
              track: Bool,
              stopIndicator: Bool,
-             helperText: OUDSLinearProgressIndicator.HelperTextType?,
-             gapSize: OUDSProgressIndicatorGapSize,
+             helperText: MISOLinearProgressIndicator.HelperTextType?,
+             gapSize: MISOProgressIndicatorGapSize,
              animated: Bool,
              accessibilityName: String? = nil,
              accessibilityState: String? = nil)
@@ -83,7 +70,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
     struct Indeterminate: Equatable, Sendable {
 
         /// Color status of the indicator.
-        let status: OUDSProgressIndicatorStatus
+        let status: MISOProgressIndicatorStatus
 
         /// Whether the track is displayed.
         let track: Bool
@@ -92,10 +79,10 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         let helperText: String?
 
         /// The alignment of the helper text.
-        let helperTextAlignment: OUDSLinearProgressIndicator.HelperTextAlignment
+        let helperTextAlignment: MISOLinearProgressIndicator.HelperTextAlignment
 
         /// Size of the gap between the bars and the track.
-        let gapSize: OUDSProgressIndicatorGapSize
+        let gapSize: MISOProgressIndicatorGapSize
 
         /// Accessibility name for VoiceOver (e.g., "progress bar", "download bar").
         let accessibilityName: String?
@@ -103,11 +90,11 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
         /// Accessibility state for VoiceOver (e.g., "downloading", "step 1 of 4").
         let accessibilityState: String?
 
-        init(status: OUDSProgressIndicatorStatus,
+        init(status: MISOProgressIndicatorStatus,
              track: Bool,
              helperText: String?,
-             helperTextAlignment: OUDSLinearProgressIndicator.HelperTextAlignment,
-             gapSize: OUDSProgressIndicatorGapSize,
+             helperTextAlignment: MISOLinearProgressIndicator.HelperTextAlignment,
+             gapSize: MISOProgressIndicatorGapSize,
              accessibilityName: String? = nil,
              accessibilityState: String? = nil)
         {
@@ -132,7 +119,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
     }
 
     /// The color status of the indicator, regardless of the variant.
-    var status: OUDSProgressIndicatorStatus {
+    var status: MISOProgressIndicatorStatus {
         switch self {
         case let .determinate(configuration):
             configuration.status
@@ -152,7 +139,7 @@ enum LinearProgressIndicatorConfiguration: Equatable, Sendable {
     }
 
     /// The size of the gap between the foreground and the track, regardless of the variant.
-    var gapSize: OUDSProgressIndicatorGapSize {
+    var gapSize: MISOProgressIndicatorGapSize {
         switch self {
         case let .determinate(configuration):
             configuration.gapSize

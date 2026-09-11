@@ -19,7 +19,7 @@ import Testing
 
 // swiftlint:disable type_body_length
 
-/// Tests on the public API and internal configuration of ``OUDSLinearProgressIndicator``.
+/// Tests on the public API and internal configuration of ``MISOLinearProgressIndicator``.
 struct OUDSLinearProgressIndicatorTests {
 
     // MARK: - Determinate configuration

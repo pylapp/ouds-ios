@@ -131,25 +131,25 @@ MISOCircularProgressIndicator(status: .accent)
     }
 }
 
-An ``OUDSLinearProgressIndicator`` is a horizontal progress indicator which can be used to display determinate value or indeterminate value animations.
+An ``MISOLinearProgressIndicator`` is a horizontal progress indicator which can be used to display determinate value or indeterminate value animations.
 
 ```swift
 // A horizontal bar filled at 75% in neutral color with a track and reveal animation
-OUDSLinearProgressIndicator(progress: 0.75, status: .neutral)
+MISOLinearProgressIndicator(progress: 0.75, status: .neutral)
 
 // A horizontal bar without defined value and an accent color
-OUDSLinearProgressIndicator(status: .accent)
+MISOLinearProgressIndicator(status: .accent)
 
 // A horizontal bar with a helper text center aligned, a stop indicator (determinate only) and no animations
-OUDSLinearProgressIndicator(progress: 0.5, stopIndicator: true, helperText: .description("Uploading…"), animated: false)
+MISOLinearProgressIndicator(progress: 0.5, stopIndicator: true, helperText: .description("Uploading…"), animated: false)
 
 // A horizontal bar with a helper text with progress information start aligned
 // The percentage rendering (symbol, spacing, position) follows the localized wording key
 // `core_progressIndicator_percent_value` (e.g. "75%" in English, "75 %" in French, "٪75" in Arabic).
-OUDSLinearProgressIndicator(progress: 0.5, helperText: .percent(description: "Uploading…", alignment: .start))
+MISOLinearProgressIndicator(progress: 0.5, helperText: .percent(description: "Uploading…", alignment: .start))
 
 // An indeterminate horizontal bar with a helper text start aligned 
-OUDSLinearProgressIndicator(status: .info, helperText: "Processing…", helperTextAlignment: .start)
+MISOLinearProgressIndicator(status: .info, helperText: "Processing…", helperTextAlignment: .start)
 ```
 
 ### Tag

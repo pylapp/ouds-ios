@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import Foundation
 
 /*
@@ -21,7 +8,7 @@ import Foundation
  */
 
 /// Generic cubic-bezier easing evaluator, shared by the indeterminate animations of
-/// ``MISOCircularProgressIndicator`` and ``OUDSLinearProgressIndicator``.
+/// ``MISOCircularProgressIndicator`` and ``MISOLinearProgressIndicator``.
 ///
 /// Reproduces the CSS/Android/Flutter `cubic-bezier(x1, y1, x2, y2)` timing function: given
 /// control points `P0 = (0, 0)`, `P1 = (x1, y1)`, `P2 = (x2, y2)`, `P3 = (1, 1)`, it solves for the

@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import Foundation
 
 /// Internal configuration used to draw an ``MISOCircularProgressIndicator``.
@@ -34,13 +21,13 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     let progress: Double?
 
     /// Color status of the indicator.
-    let status: OUDSProgressIndicatorStatus
+    let status: MISOProgressIndicatorStatus
 
     /// Whether the track is displayed under the indicator arc.
     let track: Bool
 
     /// Size of the gap between the indicator and the track.
-    let gapSize: OUDSProgressIndicatorGapSize
+    let gapSize: MISOProgressIndicatorGapSize
 
     /// Whether the determinate indicator animates on first display (reveal from `0`) and on subsequent
     /// changes of `progress`. Ignored in indeterminate mode.
@@ -73,9 +60,9 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     ///    - accessibilityName: Optional accessibility name for VoiceOver. Defaults to `nil`.
     ///    - accessibilityState: Optional accessibility state for VoiceOver. Defaults to `nil`.
     init(progress: Double?,
-         status: OUDSProgressIndicatorStatus,
+         status: MISOProgressIndicatorStatus,
          track: Bool,
-         gapSize: OUDSProgressIndicatorGapSize,
+         gapSize: MISOProgressIndicatorGapSize,
          size: CGFloat,
          animated: Bool = true,
          helperText: MISOCircularProgressIndicator.HelperTextType? = nil,

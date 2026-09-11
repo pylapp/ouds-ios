@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 /// A linear indicator shows the progress of a task using a horizontal line.
@@ -79,7 +66,7 @@ import SwiftUI
 ///
 /// An optional text displayed below the progress bar to provide context or additional information.
 ///
-/// In **determinate** mode, use ``OUDSLinearProgressIndicator/HelperTextType`` which offers two variants:
+/// In **determinate** mode, use ``MISOLinearProgressIndicator/HelperTextType`` which offers two variants:
 ///
 /// - **`.description(_:)`**: Displays a simple description text without the progress percentage.
 ///   The `alignment` parameter controls horizontal alignment (`.center`, `.start`, or `.end`).
@@ -115,44 +102,44 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Determinate — default (neutral, with track, default gap, reveal animation)
-///     OUDSLinearProgressIndicator(progress: 0.75)
+///     MISOLinearProgressIndicator(progress: 0.75)
 ///
 ///     // Determinate with an accent status, no track and a helper text
-///     OUDSLinearProgressIndicator(progress: 0.5,
+///     MISOLinearProgressIndicator(progress: 0.5,
 ///                                 status: .accent,
 ///                                 track: false,
 ///                                 helperText: .description("Uploading…"))
 ///
 ///     // Description aligned to the end
-///     OUDSLinearProgressIndicator(progress: 0.5, helperText: .description("Uploading...", alignment: .end))
+///     MISOLinearProgressIndicator(progress: 0.5, helperText: .description("Uploading...", alignment: .end))
 ///
 ///     // Percentage centered (default)
-///     OUDSLinearProgressIndicator(progress: 0.75, helperText: .percent())
+///     MISOLinearProgressIndicator(progress: 0.75, helperText: .percent())
 ///
 ///     // Percentage with description at start (percentage leading, description trailing)
-///     OUDSLinearProgressIndicator(progress: 0.75,
+///     MISOLinearProgressIndicator(progress: 0.75,
 ///                                 helperText: .percent(description: "of 100 MB", alignment: .start))
 ///
 ///     // Indeterminate
-///     OUDSLinearProgressIndicator(status: .info)
-///     OUDSLinearProgressIndicator(status: .accent, helperText: "Processing…")
+///     MISOLinearProgressIndicator(status: .info)
+///     MISOLinearProgressIndicator(status: .accent, helperText: "Processing…")
 ///
 ///     // Helper text aligned to the end
-///     OUDSLinearProgressIndicator(status: .info,
+///     MISOLinearProgressIndicator(status: .info,
 ///                                 helperText: "Loading data…",
 ///                                 helperTextAlignment: .end)
 ///
 ///     // Determinate with accessibility name and state for VoiceOver
-///     OUDSLinearProgressIndicator(progress: 0.75,
+///     MISOLinearProgressIndicator(progress: 0.75,
 ///                                 accessibility: .init(name: "download bar", state: "downloading"))
 ///
 ///     // Determinate with accessibility and helper text
-///     OUDSLinearProgressIndicator(progress: 0.5,
+///     MISOLinearProgressIndicator(progress: 0.5,
 ///                                 accessibility: .init(name: "progress bar", state: "step 1 of 4"),
 ///                                 helperText: .description("Loading..."))
 ///
 ///     // Indeterminate with accessibility
-///     OUDSLinearProgressIndicator(status: .info,
+///     MISOLinearProgressIndicator(status: .info,
 ///                                 accessibility: .init(name: "loading", state: "processing"))
 /// ```
 ///
@@ -182,32 +169,10 @@ import SwiftUI
 /// When placed on an ``MISOColoredSurface``, the indicator switches to a **monochrome** rendering, the
 /// `status` is ignored.
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A linear progress indicator component in light and dark modes with Orange theme](component_progress_indicator_linear_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A linear progress indicator component in light and dark modes with Orange Compact theme](component_progress_indicator_linear_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A linear progress indicator component in light and dark modes with Sosh theme](component_progress_indicator_linear_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A linear progress indicator component in light and dark modes with Wireframe theme](component_progress_indicator_linear_Wireframe)
-///
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink to documentation when ready
+public struct MISOLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink to documentation when ready
 
     // MARK: - Properties
 
@@ -265,14 +230,14 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     ///
     /// - Parameters:
     ///    - progress: The current progress in the `[0, 1]` range. Values outside of this range are coerced.
-    ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
+    ///    - status: The status of the indicator, driving its color. Defaults to ``MISOProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - stopIndicator: Whether a stop indicator is displayed at the end of the track. Defaults to
     ///      `false`.
     ///    - helperText: Optional additional text displayed below the bar. Defaults to `.percent` with alignment `.center`. The
     ///      percentage rendering (symbol, spacing, position) follows the localized wording key
     ///      `core_progressIndicator_percent_value`.
-    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``OUDSProgressIndicatorGapSize/default``.
+    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``MISOProgressIndicatorGapSize/default``.
     ///    - animated: When `true` (default), the indicator progressively fills from `0` to `progress` on
     ///      first display, and animates any subsequent change of `progress`. When `false`, the indicator
     ///      is displayed instantly at its target value with no animation. Animations are always disabled
@@ -280,13 +245,13 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     ///      flag.
     ///    - accessibility: Optional accessibility configuration for VoiceOver. Defaults to `nil`.
     public init(progress: Double,
-                status: OUDSProgressIndicatorStatus = .neutral,
+                status: MISOProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 stopIndicator: Bool = false,
                 helperText: Self.HelperTextType? = .percent(alignment: .center),
-                gapSize: OUDSProgressIndicatorGapSize = .default,
+                gapSize: MISOProgressIndicatorGapSize = .default,
                 animated: Bool = true,
-                accessibility: OUDSAccessibilityConfiguration? = nil)
+                accessibility: MISOAccessibilityConfiguration? = nil)
     {
         configuration = .determinate(.init(progress: progress,
                                            status: status,
@@ -306,19 +271,19 @@ public struct OUDSLinearProgressIndicator: View { // TODO: #1509 - Add hyperlink
     /// bar filled at 70% is displayed automatically.
     ///
     /// - Parameters:
-    ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
+    ///    - status: The status of the indicator, driving its color. Defaults to ``MISOProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
     ///    - helperText: Optional additional text displayed below the bar. Defaults to `nil`.
     ///    - helperTextAlignment: The alignment of the helper text. Defaults to `.center`. Ignored if `helperText` is `nil`.
     ///    - gapSize: The size of the gap between the indicator and the track. Defaults to
-    ///      ``OUDSProgressIndicatorGapSize/default``.
+    ///      ``MISOProgressIndicatorGapSize/default``.
     ///    - accessibility: Optional accessibility configuration for VoiceOver. Defaults to `nil`.
-    public init(status: OUDSProgressIndicatorStatus = .neutral,
+    public init(status: MISOProgressIndicatorStatus = .neutral,
                 track: Bool = true,
                 helperText: String? = nil,
                 helperTextAlignment: HelperTextAlignment = .center,
-                gapSize: OUDSProgressIndicatorGapSize = .default,
-                accessibility: OUDSAccessibilityConfiguration? = nil)
+                gapSize: MISOProgressIndicatorGapSize = .default,
+                accessibility: MISOAccessibilityConfiguration? = nil)
     {
         configuration = .indeterminate(.init(status: status,
                                              track: track,

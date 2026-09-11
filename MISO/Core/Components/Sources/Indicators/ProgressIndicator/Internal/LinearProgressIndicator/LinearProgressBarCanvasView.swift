@@ -1,26 +1,13 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 /*
  ━━━━━★. *･｡ﾟ✧⁺ Magic stuff
  */
 
-/// Draws the horizontal bar of an ``OUDSLinearProgressIndicator``.
+/// Draws the horizontal bar of an ``MISOLinearProgressIndicator``.
 ///
 /// The layout mirrors the Android Material 3 reference implementation (AndroidX Compose
 /// `ProgressIndicator.kt`). Two rendering modes are supported through ``Content``:
@@ -111,7 +98,7 @@ struct LinearProgressBarCanvasView: View {
     let hasStopIndicator: Bool
 
     /// Requested gap size.
-    let gapSize: OUDSProgressIndicatorGapSize
+    let gapSize: MISOProgressIndicatorGapSize
 
     /// Height of the bar, in points.
     let barHeight: CGFloat

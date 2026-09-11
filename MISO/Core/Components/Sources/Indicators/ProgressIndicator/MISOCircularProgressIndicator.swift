@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 /// A circular indicator shows the progress of a task using a circle.
@@ -149,28 +136,6 @@ import SwiftUI
 /// When placed on an ``MISOColoredSurface``, the indicator switches to a **monochrome** rendering, the `status` is
 /// ignored.
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A circular progress indicator component in light and dark modes with Orange theme](component_progress_indicator_circular_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A circular progress indicator component in light and dark modes with Orange Compact theme](component_progress_indicator_circular_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A circular progress indicator component in light and dark modes with Sosh theme](component_progress_indicator_circular_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A circular progress indicator component in light and dark modes with Wireframe theme](component_progress_indicator_circular_Wireframe)
-///
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
@@ -214,9 +179,9 @@ public struct MISOCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///
     /// - Parameters:
     ///    - progress: The current progress in the `[0, 1]` range. Values outside of this range are coerced.
-    ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
+    ///    - status: The status of the indicator, driving its color. Defaults to ``MISOProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
-    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``OUDSProgressIndicatorGapSize/default``.
+    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``MISOProgressIndicatorGapSize/default``.
     ///    - animated: When `true` (default), the indicator progressively fills from `0` to `progress` on first
     ///      display, and animates any subsequent change of `progress`. When `false`, the indicator is displayed
     ///      instantly at its target value with no animation. Animations are always disabled when
@@ -225,13 +190,13 @@ public struct MISOCircularProgressIndicator: View { // TODO: #409 - Update docum
     ///    - helperText: Optional helper text displayed below the indicator. Defaults to `nil`.
     ///    - accessibility: Optional accessibility configuration for VoiceOver. Defaults to `nil`.
     public init(progress: Double,
-                status: OUDSProgressIndicatorStatus = .neutral,
+                status: MISOProgressIndicatorStatus = .neutral,
                 track: Bool = true,
-                gapSize: OUDSProgressIndicatorGapSize = .default,
+                gapSize: MISOProgressIndicatorGapSize = .default,
                 animated: Bool = true,
                 size: CGFloat = Self.defaultSize,
                 helperText: Self.HelperTextType? = nil,
-                accessibility: OUDSAccessibilityConfiguration? = nil)
+                accessibility: MISOAccessibilityConfiguration? = nil)
     {
         configuration = CircularProgressIndicatorConfiguration(progress: progress,
                                                                status: status,
@@ -247,18 +212,18 @@ public struct MISOCircularProgressIndicator: View { // TODO: #409 - Update docum
     /// Creates an **indeterminate** circular progress indicator.
     ///
     /// - Parameters:
-    ///    - status: The status of the indicator, driving its color. Defaults to ``OUDSProgressIndicatorStatus/neutral``.
+    ///    - status: The status of the indicator, driving its color. Defaults to ``MISOProgressIndicatorStatus/neutral``.
     ///    - track: Whether the track is displayed. Defaults to `true`.
-    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``OUDSProgressIndicatorGapSize/default``.
+    ///    - gapSize: The size of the gap between the indicator and the track. Defaults to ``MISOProgressIndicatorGapSize/default``.
     ///    - size: The size of the component could be adjusted if used internally by components.
     ///    - helperText: Optional helper text displayed below the indicator. Defaults to `nil`.
     ///    - accessibility: Optional accessibility configuration for VoiceOver. Defaults to `nil`.
-    public init(status: OUDSProgressIndicatorStatus = .neutral,
+    public init(status: MISOProgressIndicatorStatus = .neutral,
                 track: Bool = true,
-                gapSize: OUDSProgressIndicatorGapSize = .default,
+                gapSize: MISOProgressIndicatorGapSize = .default,
                 size: CGFloat = Self.defaultSize,
                 helperText: String? = nil,
-                accessibility: OUDSAccessibilityConfiguration? = nil)
+                accessibility: MISOAccessibilityConfiguration? = nil)
     {
         configuration = CircularProgressIndicatorConfiguration(progress: nil,
                                                                status: status,

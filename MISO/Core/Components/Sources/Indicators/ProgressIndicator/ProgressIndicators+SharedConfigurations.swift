@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 // MARK: - Progress Indicator Status
@@ -21,7 +8,7 @@ import SwiftUI
 /// The status of the progress indicator. It determines the color of the bar.
 ///
 /// - Since: 3.0.0
-@frozen public enum OUDSProgressIndicatorStatus: Sendable {
+@frozen public enum MISOProgressIndicatorStatus: Sendable {
 
     /// Default status used when progress has no specific semantic meaning.
     case neutral
@@ -47,7 +34,7 @@ import SwiftUI
 /// The size of the gap between the progress bar and the track.
 ///
 /// - Since: 3.0.0
-@frozen public enum OUDSProgressIndicatorGapSize: Sendable {
+@frozen public enum MISOProgressIndicatorGapSize: Sendable {
 
     /// Standard gap size
     case `default`
@@ -64,7 +51,7 @@ import SwiftUI
 /// vocalization.
 ///
 /// - Since: 3.0.0
-@frozen public struct OUDSAccessibilityConfiguration: Equatable, Sendable {
+@frozen public struct MISOAccessibilityConfiguration: Equatable, Sendable {
 
     /// The name of the component (e.g., "progress bar", "download bar").
     public let name: String?
