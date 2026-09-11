@@ -22,7 +22,7 @@ import MISOTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for switch components like `OUDSSwitch`
+/// Declares all component tokens for switch components like `MISOSwitch`
 /// Use for tokens providers like `OrangeThemeSwitchComponentTokensProvider`.
 ///
 /// - Since: 0.10.0

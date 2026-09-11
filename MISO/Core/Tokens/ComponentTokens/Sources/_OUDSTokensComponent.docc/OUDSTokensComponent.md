@@ -130,7 +130,7 @@ quantityInput                  |
 radioButton                    | For radio components like `MISORadio` and `MISORadioItem` 
 selectInput                    |
 skeleton                       |
-switch                         | For switch components like `OUDSSwitch` and `OUDSSwitchItem` 
+switch                         | For switch components like `MISOSwitch` and `MISOSwitchItem` 
 tag                            | For tag components like `OUDSTag`
 inputTag                       | For input tag components like `OUDSInputTag`
 textArea                       | For text area components like `MISOTextArea`

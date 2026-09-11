@@ -1,23 +1,10 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import SwiftUI
 
-// MARK: - OUDS Switch Item
+// MARK: - MISO Switch Item
 
 /// Switch item is a UI element that allows to toggle between two states, typically "On" and "Off", and used to enable or disable features, options or settings.
 /// Switch Item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.
@@ -35,11 +22,11 @@ import SwiftUI
 ///
 /// ## Particular cases
 ///
-/// An ``OUDSSwitchItem`` can be related to an error situation, for example troubles for a form.
+/// An ``MISOSwitchItem`` can be related to an error situation, for example troubles for a form.
 /// A dedicated look and feel is implemented for that if the `isError` flag is risen.
 /// In that case if the component displayed an icon, this icon will be replaced automatically by an error icon.
 ///
-/// In addition, the ``OUDSSwitchItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
+/// In addition, the ``MISOSwitchItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
 ///
 /// ## Accessibility considerations
@@ -59,52 +46,52 @@ import SwiftUI
 ///     @Published var isOn: Bool = false
 ///
 ///     // A leading switch with a label.
-///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn)
+///     MISOSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 ///
 ///     // Localizable from bundle can also be used
-///     OUDSSwitchItem(LocalizedStringKey("notifications_setting"), bundle: Bundle.module, isOn: $isOn)
+///     MISOSwitchItem(LocalizedStringKey("notifications_setting"), bundle: Bundle.module, isOn: $isOn)
 ///
 ///     // A leading switch with a label, but in read only mode (user cannot interact yet, but not disabled).
-///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, isReadOnly: true)
+///     MISOSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, isReadOnly: true)
 ///
 ///     // A leading switch with a label and a description text.
-///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, description: "The Beatles")
+///     MISOSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, description: "The Beatles")
 ///
 ///     // A trailing switch with a label, a description and a tinted icon.
-///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
+///     MISOSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
 ///                    description: "The Beatles",
 ///                    image: MISOImage(asset: Image(decorative: "ic_heart")),
 ///                    isReversed: true)
 ///
 ///     // A trailing switch with a raw (non-tinted) image.
-///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
+///     MISOSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
 ///                    description: "The Beatles",
 ///                    image: MISOImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
 ///                    isReversed: true)
 ///
 ///     // Flip the icon for RTL layouts using MISOImage.
-///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
+///     MISOSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
 ///                    image: MISOImage(asset: Image(systemName: "figure.handball"),
 ///                                    flipped: layoutDirection == .rightToLeft))
 ///
 ///     // If on error, add an error message to help user understand the error context
-///     OUDSSwitchItem("Rescue from this world!",
+///     MISOSwitchItem("Rescue from this world!",
 ///                    isOn: $isOn,
 ///                    isError: true,
 ///                    errorText: "Something wrong",
 ///                    hasDivider: true)
 ///
 ///     // A leading switch with a label, but disabled.
-///     OUDSSwitchItem("Rescue from this world!", isOn: $isOn)
+///     MISOSwitchItem("Rescue from this world!", isOn: $isOn)
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related switch as it will crash
 ///     // This is forbidden by design!
-///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isError: true).disabled(true) // fatal error
-///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isReadOnly: true).disabled(true) // fatal error
+///     MISOSwitchItem("Kaboom!", isOn: $isOn, isError: true).disabled(true) // fatal error
+///     MISOSwitchItem("Kaboom!", isOn: $isOn, isReadOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Rich text
@@ -119,32 +106,10 @@ import SwiftUI
 ///
 /// Always check the results of rich text mode with high contrast, light and dark modes, and Voice Over vocalization.
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-switch)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A switch item component in light and dark modes with Orange theme](component_switchItem_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A switch item  component in light and dark modes with Orange Compact theme](component_switchItem_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A switch item component in light and dark modes with Sosh theme](component_switchItem_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A switch item component in light and dark modes with Wireframe theme](component_switchItem_Wireframe)
-///
 /// - Version: 1.5.0 (Figma component design version)
 /// - Since: 0.14.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSSwitchItem: View {
+public struct MISOSwitchItem: View {
 
     // MARK: - Properties
 
@@ -158,9 +123,9 @@ public struct OUDSSwitchItem: View {
     /// Creates a switch with label and optional description text, icon, divider.
     ///
     /// ```swift
-    ///     OUDSSwitchItem("Wi-Fi", isOn: $isOn)
+    ///     MISOSwitchItem("Wi-Fi", isOn: $isOn)
     ///
-    ///     OUDSSwitchItem("Wi-Fi", isOn: $isOn,
+    ///     MISOSwitchItem("Wi-Fi", isOn: $isOn,
     ///                    image: MISOImage(asset: Image(decorative: "ic_wifi")))
     /// ```
     ///
@@ -196,20 +161,20 @@ public struct OUDSSwitchItem: View {
                 constrainedMaxWidth: Bool = false)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an MISOSwitchItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an OUDSSwitchItem is empty, prefer OUDSSwitch(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an MISOSwitchItem is empty, prefer MISOSwitch(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description text given to an OUDSSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description text given to an MISOSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
-            ML.warning("Error text given to an OUDSSwitchItem must be defined in case of error")
+            ML.warning("Error text given to an MISOSwitchItem must be defined in case of error")
         }
         // swiftlint:enable force_unwrapping
 
@@ -241,7 +206,7 @@ public struct OUDSSwitchItem: View {
     /// Creates a switch with label, optional description text, icon, divider, and an error message in rich text format.
     ///
     /// ```swift
-    ///     OUDSSwitchItem("Enable automatic payments",
+    ///     MISOSwitchItem("Enable automatic payments",
     ///                    isOn: $isOn,
     ///                    errorText: AttributedString(markdown: "You must enable **automatic payments** to activate this offer"))
     ///                    // Manage in your side errors for init for AttributedString(markdown:)
@@ -278,19 +243,19 @@ public struct OUDSSwitchItem: View {
                 constrainedMaxWidth: Bool = false)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
+            ML.fatal("It is forbidden by design to have an MISOSwitchItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an OUDSSwitchItem is empty, prefer OUDSSwitch(isOn:accessibilityLabel:) instead")
+            ML.warning("Label given to an MISOSwitchItem is empty, prefer MISOSwitch(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description text given to an OUDSSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            ML.warning("Description text given to an MISOSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if isError, errorText.isEmpty {
-            ML.warning("Error text given to an OUDSSwitchItem must be defined in case of error")
+            ML.warning("Error text given to an MISOSwitchItem must be defined in case of error")
         }
 
         _isOn = isOn
@@ -317,9 +282,9 @@ public struct OUDSSwitchItem: View {
     /// Creates a switch with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSSwitchItem(LocalizedStringKey("notifications_setting"), bundle: Bundle.module, isOn: $isOn)
+    ///     MISOSwitchItem(LocalizedStringKey("notifications_setting"), bundle: Bundle.module, isOn: $isOn)
     ///
-    ///     OUDSSwitchItem(LocalizedStringKey("wifi_setting"),
+    ///     MISOSwitchItem(LocalizedStringKey("wifi_setting"),
     ///                    bundle: Bundle.module,
     ///                    isOn: $isOn,
     ///                    image: MISOImage(asset: Image(decorative: "ic_wifi")))
@@ -374,7 +339,7 @@ public struct OUDSSwitchItem: View {
     /// Creates a switch with a localized label and a rich attributed error text.
     ///
     /// ```swift
-    ///     OUDSSwitchItem(LocalizedStringKey("enable_payments"),
+    ///     MISOSwitchItem(LocalizedStringKey("enable_payments"),
     ///                    bundle: Bundle.module,
     ///                    isOn: $isOn,
     ///                    errorText: AttributedString(markdown: "You must enable **automatic payments** to activate this offer"))

@@ -19,19 +19,19 @@ import MISOComponents
 import SwiftUI
 import Testing
 
-/// Tests crash scenarios for `OUDSSwitchItem` using Swift Testing's `#expect(exitsWith:)`.
+/// Tests crash scenarios for `MISOSwitchItem` using Swift Testing's `#expect(exitsWith:)`.
 /// These tests verify that the component correctly enforces design constraints by crashing when
 /// forbidden parameter combinations are used.
 ///
 /// **Should be run on macOS to catch the failure crash, not possible on iOS yet**
 struct OUDSSwitchItemCrashTests {
 
-    /// Verify that `OUDSSwitchItem` crashes when both `isReadOnly` and `isError` are set to `true`.
+    /// Verify that `MISOSwitchItem` crashes when both `isReadOnly` and `isError` are set to `true`.
     /// This is forbidden by design as a component cannot be in both error and read-only states.
     @Test
     func `switch item crashes when read only and error`() async {
         await #expect(processExitsWith: .failure) {
-            _ = OUDSSwitchItem("Test",
+            _ = MISOSwitchItem("Test",
                                isOn: .constant(false),
                                isError: true,
                                isReadOnly: true)

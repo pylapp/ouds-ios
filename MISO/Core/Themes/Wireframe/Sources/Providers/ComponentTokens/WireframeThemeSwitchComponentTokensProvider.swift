@@ -19,7 +19,7 @@ import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of switch** for *switch / toggle* objects like `OUDSSwitch`.
+/// A class which wraps all **component  tokens of switch** for *switch / toggle* objects like `MISOSwitch`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllSwitchComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
@@ -54,7 +54,7 @@ final class WireframeThemeSwitchComponentTokensProvider: AllSwitchComponentToken
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSSwitch` and `OUDSSwitchItem`
+    /// Defines a provider of component tokens dedicated to `MISOSwitch` and `MISOSwitchItem`
     /// - Parameters:
     ///    - sizes: Provider for sizes semantic tokens. If nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)

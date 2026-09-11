@@ -140,7 +140,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     public let link: AllLinkComponentTokensProvider
 
     /// All components tokens related to list item components like `OUDSListItem` and `OUDSSmallListItem`,
-    /// and also `OUDSSwitchItem`, `OUDSRadioButtonItem` and `MISOCheckboxItem`
+    /// and also `MISOSwitchItem`, `OUDSRadioButtonItem` and `MISOCheckboxItem`
     public let listItem: AllListItemComponentTokensProvider
 
     /// All components tokens related to pin code input components
@@ -161,7 +161,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to skeleto components
     public let skeleton: AllSkeletonComponentTokensProvider
 
-    /// All components tokens related to switch / toggle components like `OUDSSwitch`
+    /// All components tokens related to switch / toggle components like `MISOSwitch`
     public let `switch`: AllSwitchComponentTokensProvider
 
     /// All components tokens related to tags components like `OUDSTag`

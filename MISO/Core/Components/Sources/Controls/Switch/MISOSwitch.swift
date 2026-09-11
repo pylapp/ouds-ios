@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOTokensComponent
 import SwiftUI
@@ -38,35 +25,13 @@ import SwiftUI
 ///     @Published var isOn: Bool = false
 ///
 ///     // A simple switch, no error, not in read only mode
-///     OUDSSwitch(isOn: $isOn, accessibilityLabel: "The cake is a lie")
+///     MISOSwitch(isOn: $isOn, accessibilityLabel: "The cake is a lie")
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com]( https://r.orange.fr/r/S-ouds-doc-switch)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A switch component in light and dark modes with Orange theme](component_switch_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A switch component in light and dark modes with Orange Compact theme](component_switch_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A switch component in light and dark modes with Sosh theme](component_switch_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A switch component in light and dark modes with Wireframe theme](component_switch_Wireframe)
 ///
 /// - Version: 1.5.0 (Figma component design version)
 /// - Since: 0.14.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSSwitch: View {
+public struct MISOSwitch: View {
 
     // MARK: - Properties
 
@@ -84,7 +49,7 @@ public struct OUDSSwitch: View {
     /// Creates a switch with only an indicator.
     ///
     /// ```swift
-    ///     OUDSSwitch(isOn: $isOn, accessibilityLabel: LocalizedStringKey("wifi_toggle"), bundle: Bundle.module)
+    ///     MISOSwitch(isOn: $isOn, accessibilityLabel: LocalizedStringKey("wifi_toggle"), bundle: Bundle.module)
     /// ```
     ///
     /// **The design system does not allow to have both a read only situation and a disabled state for the component.**
@@ -108,7 +73,7 @@ public struct OUDSSwitch: View {
     /// Creates a switch with only an indicator.
     ///
     /// ```swift
-    ///     OUDSSwitch(isOn: $isOn, accessibilityLabel: "Wi-Fi")
+    ///     MISOSwitch(isOn: $isOn, accessibilityLabel: "Wi-Fi")
     /// ```
     ///
     /// **The design system does not allow to have both a read only situation and a disabled state for the component.**
@@ -119,7 +84,7 @@ public struct OUDSSwitch: View {
     ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
     public init(isOn: Binding<Bool>, accessibilityLabel: String, isReadOnly: Bool = false) {
         if accessibilityLabel.isEmpty {
-            ML.warning("The OUDSSwitch should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The MISOSwitch should not have an empty accessibility label, think about your disabled users!")
         }
         _isOn = isOn
         self.accessibilityLabel = accessibilityLabel.localized()

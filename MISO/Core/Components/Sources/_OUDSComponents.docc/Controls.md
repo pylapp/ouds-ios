@@ -289,7 +289,7 @@ MISORadioPicker(selection: $selection, radios: someDataToPopulate)
 }
 
 The library proposes a new layout for the switch component. The native one is not used.
-You can use a simple switch without any labels and images thanks to the ``OUDSSwitch``.
+You can use a simple switch without any labels and images thanks to the ``MISOSwitch``.
 
 ```swift
 // A simple switch, with only an indicator
@@ -297,7 +297,7 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
 // vocalized by Voice Over.
 
 // The isOn parameter can have only two values: true (selected), false (unselected)
-OUDSSwitch(isOn: $isOn, accessibilityLabel: "Select the element")
+MISOSwitch(isOn: $isOn, accessibilityLabel: "Select the element")
 ```
 
 #### Switch item
@@ -317,21 +317,21 @@ OUDSSwitch(isOn: $isOn, accessibilityLabel: "Select the element")
     }
 }
 
-The library proposes also a switch which has in its layout some labels and icons (``OUDSSwitchItem``).
+The library proposes also a switch which has in its layout some labels and icons (``MISOSwitchItem``).
 The indicator can be leading or trailing.
 
 ```swift
 // A leading switch with a label and exposing the state through isOn binding
-OUDSSwitchItem("Hello world", isOn: $isOn)
+MISOSwitchItem("Hello world", isOn: $isOn)
 
 // A leading switch with a label and a description
-OUDSSwitchItem("Dead Robot Zombie Cop",
+MISOSwitchItem("Dead Robot Zombie Cop",
                isOn: $isOn,
                description: "from Outer Space II")
 
 // A trailing switch with a label, a description, a tinted icon, a divider and is about an error
 // with an inverse layout
-OUDSSwitchItem("We live in a fabled world",
+MISOSwitchItem("We live in a fabled world",
                 isOn: $isOn,
                 description: "Of dreaming boys and wide-eyed girls",
                 image: MISOImage(asset: Image(decorative: "ic_heart")),
@@ -340,7 +340,7 @@ OUDSSwitchItem("We live in a fabled world",
                 hasDivider: true)
 
 // A trailing switch with a raw (non-tinted) image and RTL flip support
-OUDSSwitchItem("We live in a fabled world",
+MISOSwitchItem("We live in a fabled world",
                 isOn: $isOn,
                 image: MISOImage(asset: Image(decorative: "il_someImage"),
                                  flipped: layoutDirection == .rightToLeft,
