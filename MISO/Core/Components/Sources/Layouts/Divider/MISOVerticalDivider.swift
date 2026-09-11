@@ -1,25 +1,12 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 /// Divider is a UI element that allows to structure the content by visually separating the content zones.
 /// Divider improves readability and content organization without introducing a stronger visual hierarchy like a heading or a container would.
 /// A vertical Divider is used to separate content laid out side by side (`HStack`).
-/// The divider can be colored using dedicated ``OUDSDividerColor`` colors.
+/// The divider can be colored using dedicated ``MISODividerColor`` colors.
 /// The thickness (width) is fixed by dedicated token from `OUDSTheme`.
 ///
 /// ## Code samples
@@ -27,54 +14,32 @@ import SwiftUI
 /// ```swift
 /// HStack {
 ///     Text("Hello wolrd!")
-///     OUDSVerticalDivider(color: .brandPrimary)
+///     MISOVerticalDivider(color: .brandPrimary)
 ///     Text("Happy to see you")
 /// }
 /// ```
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-divider)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![An vertical divider component in light and dark modes with Orange theme](component_verticalDivider_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A vertical divider component in light and dark modes with Orange Compact theme](component_verticalDivider_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A vertical divider component in light and dark modes with Sosh theme](component_verticalDivider_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A vertical divider component in light and dark modes with Wireframe theme](component_verticalDivider_Wireframe)
-///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 0.14.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSVerticalDivider: View {
+public struct MISOVerticalDivider: View {
 
     // MARK: - Stored properties
 
-    private let color: OUDSDividerColor
+    private let color: MISODividerColor
 
     // MARK: - Initializer
 
     /// Create a vertical colored divider.
     ///
     /// ```swift
-    ///     OUDSVerticalDivider(color: .brandPrimary)
+    ///     MISOVerticalDivider(color: .brandPrimary)
     /// ```
     ///
-    /// - Parameter color: The color of the divider, `OUDSDividerColor.default` by default
+    /// - Parameter color: The color of the divider, `MISODividerColor.default` by default
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
-    public init(color: OUDSDividerColor = .default) {
+    public init(color: MISODividerColor = .default) {
         self.color = color
     }
 
@@ -100,11 +65,11 @@ extension Divider {
     /// }
     /// ```
     ///
-    /// - Parameter color: the color of the divider, `OUDSDividerColor.default` by default
+    /// - Parameter color: the color of the divider, `MISODividerColor.default` by default
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
     @MainActor
-    public func vertical(color: OUDSDividerColor) -> some View {
+    public func vertical(color: MISODividerColor) -> some View {
         modifier(DividerModifier(orientation: .vertical, dividerColor: color))
     }
 }

@@ -121,7 +121,7 @@ button                         | For buttons like `MISOButton`
 bulletList                     | For list of elements with bullets like `MISOBulletList`
 checkbox                       | For checkboxes like `MISOCheckbox`, `MISOCheckboxItem` and their indeterminate variants 
 chip                           | For chips like `MISOSuggestionChip` and `MISOFilterChip`  
-divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
+divider                        | For dividers like `MISOHorizontalDivider` and `MISOVerticalDivider` 
 icon                           | For components containing icons like `MISOTag`
 link                           | For links like `OUDSLink` 
 listItem                       | Shared and used for switch, checkbox, radio items and list items layouts

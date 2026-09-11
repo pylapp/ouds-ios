@@ -1,28 +1,15 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOThemesContract
 import MISOTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// List of colors available for dividers (i.e. `OUDSHorizontalDivider` or `OUDSVerticalDivider`)
+/// List of colors available for dividers (i.e. `MISOHorizontalDivider` or `MISOVerticalDivider`)
 ///
 /// - Since: 0.14.0
-@frozen public enum OUDSDividerColor {
+@frozen public enum MISODividerColor {
     case `default`
     case muted
     case emphasized

@@ -22,7 +22,7 @@ import MISOTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for divider components like `OUDSHorizontalDivider` and `OUDSVerticalDivider`
+/// Declares all component tokens for divider components like `MISOHorizontalDivider` and `MISOVerticalDivider`
 /// Use for tokens providers like `OrangeThemeDividerComponentTokensProvider`.
 ///
 /// - Since: 0.13.0

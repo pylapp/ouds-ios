@@ -19,7 +19,7 @@ import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of divider** for *divider* objects like `OUDSHorizontalDivider` and `OUDSVerticalDivider`.
+/// A class which wraps all **component  tokens of divider** for *divider* objects like `MISOHorizontalDivider` and `MISOVerticalDivider`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllDividerComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
@@ -36,7 +36,7 @@ final class WireframeThemeDividerComponentTokensProvider: AllDividerComponentTok
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSHorizontalDivider` and `OUDSVerticalDivider`
+    /// Defines a provider of component tokens dedicated to `MISOHorizontalDivider` and `MISOVerticalDivider`
     /// - Parameter borders: Provider for border semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
     init(borders: AllBorderSemanticTokensProvider? = nil) {
         ML.debug("Init of WireframeThemeDividerComponentTokensProvider")

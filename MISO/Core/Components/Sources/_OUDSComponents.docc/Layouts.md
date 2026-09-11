@@ -106,10 +106,10 @@ OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .AAA)
 #### How it works
 
 A divider is used to separate content elements in a view. Two kinds of divider are proposed:
-- ``OUDSHorizontalDivider``: to separate elements stacked vertically (e.g. in `VStack`)
-- ``OUDSVerticalDivider``: to separate elements stacked horizontally (e.g. in `HStack)
+- ``MISOHorizontalDivider``: to separate elements stacked vertically (e.g. in `VStack`)
+- ``MISOVerticalDivider``: to separate elements stacked horizontally (e.g. in `HStack)
 
-A divider can be colored using color enumerated in the `OUDSDividerColor`.
+A divider can be colored using color enumerated in the `MISODividerColor`.
 
 ##### Horizontal
 
@@ -151,14 +151,14 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
 // Add a vertical divider between items
 HStack {
     Text("Hello world!")
-    OUDSVerticalDivider(color: .brandPrimary)
+    MISOVerticalDivider(color: .brandPrimary)
     Text("Happy to see you")
 }
 
 // Add an horizontal divider between items
 VStack {
     Text("Hello world!")
-    OUDSHorizontalDivider(color: .brandPrimary)
+    MISOHorizontalDivider(color: .brandPrimary)
     Text("Happy to see you")
 }
 ```
