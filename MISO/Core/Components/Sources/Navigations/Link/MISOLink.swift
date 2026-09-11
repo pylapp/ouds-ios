@@ -20,7 +20,7 @@ import SwiftUI
 /// or to an external resource.
 /// Link's primary function is navigation and it communicates its interactive nature visually and semantically.
 ///
-/// The ``OUDSLink`` proposes layout with text only or text with icon.
+/// The ``MISOLink`` proposes layout with text only or text with icon.
 /// It also proposes layout to navigate forward or backward. The link can be displayed in `small` or `default` size.
 ///
 /// ## Text only or Text and icon layout
@@ -29,16 +29,16 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Text only in small size, in compact density
-///     OUDSLink(text: "Feedback", size: .small, density: .compact) { /* the action to process */ }
+///     MISOLink(text: "Feedback", size: .small, density: .compact) { /* the action to process */ }
 ///
 ///     // From a localizable and a bundle
-///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .small) { }
+///     MISOLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .small) { }
 ///
 ///     // Text and icon in default size
-///     OUDSLink(text: "Feedback", image: MISOImage(asset: Image("ic_heart")), size: .default) { }
+///     MISOLink(text: "Feedback", image: MISOImage(asset: Image("ic_heart")), size: .default) { }
 ///
 ///     // Text and icon with raw image (not tinted)
-///     OUDSLink(text: "Feedback", image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) { }
+///     MISOLink(text: "Feedback", image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) { }
 /// ```
 ///
 /// ## Navigation layout
@@ -47,16 +47,16 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Navigate to next page with link in a small size
-///     OUDSLink(text: "Feedback", indicator: .next, size: .small, density: .compact) { /* the action to process */ }
+///     MISOLink(text: "Feedback", indicator: .next, size: .small, density: .compact) { /* the action to process */ }
 ///
 ///     // Navigate to previous page with link in a default size
-///     OUDSLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
+///     MISOLink(text: "Back", indicator: .previous, size: .default) { /* the action to process */ }
 ///
 ///     // Full-width: label stays, chevron anchored to the right / left
-///     OUDSLink(text: "See all", indicator: .next, isFullWidth: true) { /* the action to process */ }
+///     MISOLink(text: "See all", indicator: .next, isFullWidth: true) { /* the action to process */ }
 ///
 ///     // Full-width: label stays, indicator anchored to the right / left
-///     OUDSLink(text: "See all", indicator: .external, isFullWidth: true) { /* the action to process */ }
+///     MISOLink(text: "See all", indicator: .external, isFullWidth: true) { /* the action to process */ }
 /// ```
 ///
 /// ## Colored Surface
@@ -88,7 +88,7 @@ import SwiftUI
 /// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.11.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSLink: View {
+public struct MISOLink: View {
 
     // MARK: - Stored Properties
 
@@ -102,27 +102,27 @@ public struct OUDSLink: View {
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
 
-    /// Represents the size of an `OUDSLink`.
+    /// Represents the size of an `MISOLink`.
     /// - Since: 0.11.0
     @frozen public enum Size {
         case small, `default`
     }
 
-    /// Represents the type of density for an `OUDSLink`.
+    /// Represents the type of density for an `MISOLink`.
     /// `.compact` can be used for interfaces with a lot of content to display.
     /// - Since: 3.0.0
     @frozen public enum Density {
         case `default`, compact
     }
 
-    /// Represents the arrow / chevron / indicator of an `OUDSLink`.
+    /// Represents the arrow / chevron / indicator of an `MISOLink`.
     /// - Since: 0.11.0
     @frozen public enum Indicator {
         case previous, next, external
     }
 
     enum Layout {
-        case indicator(OUDSLink.Indicator)
+        case indicator(MISOLink.Indicator)
         case textOnly
         case textAndIcon(MISOImage)
     }
@@ -132,13 +132,13 @@ public struct OUDSLink: View {
     /// Create a link with text and an optional icon.
     ///
     /// ```swift
-    ///     OUDSLink(text: "Learn more", image: MISOImage(asset: Image(systemName: "arrow.right")), size: .default) {}
+    ///     MISOLink(text: "Learn more", image: MISOImage(asset: Image(systemName: "arrow.right")), size: .default) {}
     ///
     ///     // Raw (non-tinted) image:
-    ///     OUDSLink(text: "Brand", image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
+    ///     MISOLink(text: "Brand", image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
     ///
     ///     // Text only — omit image or pass nil:
-    ///     OUDSLink(text: "Feedback", size: .small) {}
+    ///     MISOLink(text: "Feedback", size: .small) {}
     /// ```
     ///
     /// - Parameters:
@@ -166,9 +166,9 @@ public struct OUDSLink: View {
     /// Creates a link with a localized text and optional icon, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .default) {}
+    ///     MISOLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .default) {}
     ///
-    ///     OUDSLink(LocalizedStringKey("learn_more"),
+    ///     MISOLink(LocalizedStringKey("learn_more"),
     ///              bundle: Bundle.module,
     ///              image: MISOImage(asset: Image("ic_heart")),
     ///              size: .default) {}
@@ -202,20 +202,20 @@ public struct OUDSLink: View {
 
     // swiftlint:disable function_default_parameter_at_end
 
-    /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.previous`) or "after indicator" (`OUDSLink.Indicator.next`) beside the text.
+    /// Create a link with a "before `Indicator`" (`MISOLink.Indicator.previous`) or "after indicator" (`MISOLink.Indicator.next`) beside the text.
     ///
     /// ```swift
     ///     // A "back" link
-    ///     OUDSLink(text: "Back", indicator: .previous) { /* action to trigger */ }
+    ///     MISOLink(text: "Back", indicator: .previous) { /* action to trigger */ }
     ///     // An "open external" link
-    ///     OUDSLink(text: "Open", indicator: .external) { /* action to trigger, i.e. redirect outside the app */ }
+    ///     MISOLink(text: "Open", indicator: .external) { /* action to trigger, i.e. redirect outside the app */ }
     /// ```
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link
     ///   - indicator: Indicator displayed in the link.
-    ///   When `OUDSLink.Indicator.previous`, the indicator is displayed before the text.
-    ///   When `OUDSLink.Indicator.next`, the indicator is displayed after the text.
+    ///   When `MISOLink.Indicator.previous`, the indicator is displayed before the text.
+    ///   When `MISOLink.Indicator.next`, the indicator is displayed after the text.
     ///   - size: Size of the link
     ///   - density: The density to apply to the link defining some spaces, default set to `.default`
     ///   - isFullWidth: When `true`, the link stretches to fill all available horizontal width.
@@ -241,9 +241,9 @@ public struct OUDSLink: View {
     ///
     /// ```swift
     ///     // A "back" link
-    ///     OUDSLink(LocalizedStringKey("back_link"), bundle: Bundle.module, indicator: .previous) { /* action to trigger */ }
+    ///     MISOLink(LocalizedStringKey("back_link"), bundle: Bundle.module, indicator: .previous) { /* action to trigger */ }
     ///     // An "open external" link
-    ///     OUDSLink(LocalizedStringKey("open_link"), bundle: Bundle.module, indicator: .external) { /* action to trigger, i.e. redirect outside the app */ }
+    ///     MISOLink(LocalizedStringKey("open_link"), bundle: Bundle.module, indicator: .external) { /* action to trigger, i.e. redirect outside the app */ }
     /// ```
     ///
     /// - Parameters:
@@ -315,7 +315,7 @@ public struct OUDSLink: View {
 
     // MARK: - Helpers
 
-    private func resourceName(for navigationIndicator: OUDSLink.Indicator) -> String {
+    private func resourceName(for navigationIndicator: MISOLink.Indicator) -> String {
         switch navigationIndicator {
         case .previous:
             "Component-link-previous"
