@@ -114,7 +114,7 @@ import SwiftUI
     ///
     /// See ``OUDSListItemAvatar`` for available types (`.icon`, `.image`, `.initials`)
     /// and sizes (`.medium`, `.large`, `.extraLarge`).
-    /// An optional ``OUDSBadgeStandard`` can be attached to the avatar.
+    /// An optional ``MISOBadgeStandard`` can be attached to the avatar.
     case avatar(OUDSListItemAvatar)
 
     /// A custom SwiftUI view displayed at the leading position.

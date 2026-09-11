@@ -94,7 +94,7 @@ public struct OUDSListItemIcon: View {
         ///
         /// - Parameters:
         ///   - asset: The `Image` to display as the icon.
-        ///   - badge: When `true`, a small notification badge (``OUDSBadgeStandard`` with `.negative` status)
+        ///   - badge: When `true`, a small notification badge (``MISOBadgeStandard`` with `.negative` status)
         ///     is displayed at the top-trailing corner of the icon. Defaults to `false`.
         case neutral(asset: Image, badge: Bool = false)
 
@@ -180,7 +180,7 @@ public struct OUDSListItemIcon: View {
                         .renderingMode(.template)
                         .foregroundColor(foregroundColor)
                     if badge {
-                        OUDSBadgeStandard(accessibilityLabel: "", status: .negative, size: badgeSize)
+                        MISOBadgeStandard(accessibilityLabel: "", status: .negative, size: badgeSize)
                             .border(style: theme.borders.styleDefault,
                                     width: theme.borders.widthThin,
                                     radius: theme.borders.radiusPill,
@@ -255,7 +255,7 @@ public struct OUDSListItemIcon: View {
         return rawSize * dynamicTypeSize.percentageRate / 100
     }
 
-    private var badgeSize: OUDSBadgeStandard.Size {
+    private var badgeSize: MISOBadgeStandard.Size {
         if itemSize == .small {
             .extraSmall
         } else {

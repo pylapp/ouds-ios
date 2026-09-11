@@ -1,31 +1,18 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import SwiftUI
 
 /// Badge is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour only.
 /// Badge is rendered as a coloured shape, without icon, text or number; and its chosen size remains unchanged regardless of the changes of the interface size.
-/// ``OUDSBadgeCount`` displays a text, as integer, limited to 99.
+/// ``MISOBadgeCount`` displays a text, as integer, limited to 99.
 ///
 /// ## Code samples
 ///
 /// ```swift
 ///     // Negative badge in large size with count information
-///     OUDSBadgeCount(9, accessibilityLabel: "9 new messages", status: .negative, size: .large)
+///     MISOBadgeCount(9, accessibilityLabel: "9 new messages", status: .negative, size: .large)
 /// ```
 ///
 /// ## Accessibility considerations
@@ -39,33 +26,10 @@ import SwiftUI
 /// ### Vocalizations
 ///
 /// A badge needs an accessibility label to decribe the meaning that will be vocalized.
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-badge-count)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A badge component in light and dark modes with Orange theme](component_badge_count_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A badge component in light and dark modes with Orange Compact theme](component_badge_count_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A badge component in light and dark modes with Sosh theme](component_badge_count_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A badge component in light and dark modes with Wireframe theme](component_badge_count_Wireframe)
-///
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 2.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSBadgeCount: View {
+public struct MISOBadgeCount: View {
 
     static let maxCount = 99
 
@@ -97,7 +61,7 @@ public struct OUDSBadgeCount: View {
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
     ///
     /// ```swift
-    ///     OUDSBadgeCount(9, accessibilityLabel: "9 new messages", status: .negative)
+    ///     MISOBadgeCount(9, accessibilityLabel: "9 new messages", status: .negative)
     /// ```
     ///
     /// - Parameters:
@@ -105,7 +69,7 @@ public struct OUDSBadgeCount: View {
     ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    public init(_ count: UInt8, accessibilityLabel: String, status: OUDSBadgeStandard.Status = .neutral, size: OUDSBadgeCount.Size = .medium) {
+    public init(_ count: UInt8, accessibilityLabel: String, status: MISOBadgeStandard.Status = .neutral, size: MISOBadgeCount.Size = .medium) {
         self.init(count: count, size: size, status: status, accessibilityLabel: accessibilityLabel)
     }
 
@@ -117,7 +81,7 @@ public struct OUDSBadgeCount: View {
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
     ///
     /// ```swift
-    ///     OUDSBadgeCount(9, accessibilityLabel: LocalizedStringKey("new_messages"), bundle: Bundle.module, status: .negative)
+    ///     MISOBadgeCount(9, accessibilityLabel: LocalizedStringKey("new_messages"), bundle: Bundle.module, status: .negative)
     /// ```
     ///
     /// - Parameters:
@@ -131,8 +95,8 @@ public struct OUDSBadgeCount: View {
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                status: OUDSBadgeStandard.Status = .neutral,
-                size: OUDSBadgeCount.Size = .medium)
+                status: MISOBadgeStandard.Status = .neutral,
+                size: MISOBadgeCount.Size = .medium)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
         self.init(count: count, size: size, status: status, accessibilityLabel: resolvedText)
@@ -145,9 +109,9 @@ public struct OUDSBadgeCount: View {
     ///    - size: The size of this badge
     ///    - status: The status of this badge with icon
     ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
-    private init(count: UInt8, size: OUDSBadgeCount.Size, status: OUDSBadgeStandard.Status, accessibilityLabel: String) {
+    private init(count: UInt8, size: MISOBadgeCount.Size, status: MISOBadgeStandard.Status, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
-            ML.warning("The OUDSBadgeCount should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The MISOBadgeCount should not have an empty accessibility label, think about your disabled users!")
         }
         configuration = .init(value: count, size: size, status: status)
         self.accessibilityLabel = accessibilityLabel

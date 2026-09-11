@@ -116,7 +116,7 @@ Components tokens provider     | Target component
 accordion / accordionFaq       | For accordions components
 alert                          | For alert mesdsages and inline alert components like `MISOAlertMessage` and `MISOInlineAlert`
 bar                            | For bars components like bottom and navigation bars
-badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
+badge                          | For badges like `MISOBadgeStandard`, `MISOBadgeIcon` and `MISOBadgeCount`.
 button                         | For buttons like `MISOButton` 
 bulletList                     | For list of elements with bullets like `MISOBulletList`
 checkbox                       | For checkboxes like `MISOCheckbox`, `MISOCheckboxItem` and their indeterminate variants 

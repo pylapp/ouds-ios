@@ -104,7 +104,7 @@ private struct ToolBarItemBadgeModifier: ViewModifier {
         case .standard:
             content.badge("")
         case let .number(count):
-            let text = count > OUDSBadgeCount.maxCount ? "+\(OUDSBadgeCount.maxCount)" : "\(count)"
+            let text = count > MISOBadgeCount.maxCount ? "+\(MISOBadgeCount.maxCount)" : "\(count)"
             content.badge(Text(text))
         case .none:
             content
@@ -117,9 +117,9 @@ private struct ToolBarItemBadgeModifier: ViewModifier {
             content
             switch type {
             case .standard:
-                OUDSBadgeStandard(accessibilityLabel: "", status: .negative, size: .small)
+                MISOBadgeStandard(accessibilityLabel: "", status: .negative, size: .small)
             case let .number(count):
-                OUDSBadgeCount(count, accessibilityLabel: String(count), status: .negative, size: .medium)
+                MISOBadgeCount(count, accessibilityLabel: String(count), status: .negative, size: .medium)
                     .offset(x: 3, y: -3)
             case .none:
                 EmptyView()

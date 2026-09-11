@@ -22,7 +22,7 @@ import MISOTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for badge components like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
+/// Declares all component tokens for badge components like `MISOBadgeStandard`, `MISOBadgeIcon` and `MISOBadgeCount`.
 /// Use for tokens providers like `OrangeThemeBadgeComponentTokensProvider`.
 ///
 /// - Since: 0.10.0

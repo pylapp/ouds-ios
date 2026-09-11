@@ -25,7 +25,7 @@ import SwiftUI
 /// ## Available options
 ///
 /// - `text(_:)`: A textual element with various styles (see ``TextType``).
-/// - `badge(_:)`: A badge component (see ``OUDSBadgeStandard`` or ``OUDSBadgeCount``).
+/// - `badge(_:)`: A badge component (see ``MISOBadgeStandard`` or ``MISOBadgeCount``).
 /// - `tag(_:)`: A tag component (see ``OUDSTag``).
 /// - `icon(_:)`: A status or custom icon (see ``OUDSListItemIcon``).
 /// - `image(_:)`: A static image asset (see ``OUDSListItemImage``).
@@ -150,10 +150,10 @@ import SwiftUI
     /// - Since: 3.0.0
     @frozen public enum BadgeType {
         /// A standard badge
-        case standard(OUDSBadgeStandard)
+        case standard(MISOBadgeStandard)
 
         /// A badge with count
-        case count(OUDSBadgeCount)
+        case count(MISOBadgeCount)
     }
 
     // MARK: - Values
@@ -166,7 +166,7 @@ import SwiftUI
 
     /// A badge component providing status or count information.
     ///
-    /// See ``OUDSBadgeStandard``  or ``OUDSBadgeCount``for available configurations.
+    /// See ``MISOBadgeStandard``  or ``MISOBadgeCount``for available configurations.
     case badge(BadgeType)
 
     /// A tag component providing categorization or status information.

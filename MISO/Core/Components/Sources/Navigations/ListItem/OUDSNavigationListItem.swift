@@ -126,8 +126,8 @@ import SwiftUI
 /// - `.text(.labelMuted(String))`: A muted (secondary) label
 /// - `.text(.labelStrong(String))`: An emphasized (bold) label
 /// - `.text(.labelAndExtraLabel(String, String))`: A label with an additional extra label below
-/// - `.badge(.count(OUDSBadgeCount)`: A badge with count
-/// - `.badge(.standard(OUDSBadgeStandard)`: A badge with standard status
+/// - `.badge(.count(MISOBadgeCount)`: A badge with count
+/// - `.badge(.standard(MISOBadgeStandard)`: A badge with standard status
 /// - `.tag(OUDSTag)`: A tag for categorization
 /// - `.icon(OUDSListItemIcon)`: A status or custom icon
 /// - `.image(OUDSListItemImage)`:  A static image asset

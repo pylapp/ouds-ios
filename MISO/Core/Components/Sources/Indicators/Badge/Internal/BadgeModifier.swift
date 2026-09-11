@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOTokensSemantic
 import SwiftUI
@@ -24,7 +11,7 @@ struct BadgeModifier: ViewModifier {
 
     let configuration: BadgeConfiguration
     let accessibilityLabel: String
-    private let standardSize: OUDSBadgeStandard.Size
+    private let standardSize: MISOBadgeStandard.Size
 
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
@@ -122,7 +109,7 @@ struct BadgeColorModifier: ViewModifier {
     }
 
     /// Converts any badge configuration status to standard status.
-    private func standardStatus(from configuration: BadgeConfiguration) -> OUDSBadgeStandard.Status {
+    private func standardStatus(from configuration: BadgeConfiguration) -> MISOBadgeStandard.Status {
         switch configuration {
         case let standard as BadgeStandardConfiguration:
             standard.status
@@ -142,7 +129,7 @@ struct BadgeTextColorModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let status: OUDSBadgeStandard.Status
+    let status: MISOBadgeStandard.Status
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled: Bool
@@ -204,7 +191,7 @@ struct BadgeIconColorModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let status: OUDSBadgeStandard.Status
+    let status: MISOBadgeStandard.Status
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled: Bool
@@ -279,8 +266,8 @@ struct BadgeIconColorModifier: ViewModifier {
 }
 
 // swiftlint:disable switch_case_on_newline
-extension OUDSBadgeIcon.Status {
-    var toStandardStatus: OUDSBadgeStandard.Status {
+extension MISOBadgeIcon.Status {
+    var toStandardStatus: MISOBadgeStandard.Status {
         switch self {
         case .neutral: .neutral
         case .accent: .accent
@@ -292,8 +279,8 @@ extension OUDSBadgeIcon.Status {
     }
 }
 
-extension OUDSBadgeCount.Size {
-    var toStandardSize: OUDSBadgeStandard.Size {
+extension MISOBadgeCount.Size {
+    var toStandardSize: MISOBadgeStandard.Size {
         switch self {
         case .medium: .medium
         case .large: .large

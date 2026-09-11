@@ -19,7 +19,7 @@ import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of badge** for *badge* objects like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
+/// A class which wraps all **component  tokens of badge** for *badge* objects like `MISOBadgeStandard`, `MISOBadgeIcon` and `MISOBadgeCount`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllBadgeComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
@@ -40,7 +40,7 @@ final class WireframeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensP
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`
+    /// Defines a provider of component tokens dedicated to `MISOBadgeStandard`, `MISOBadgeIcon` and `MISOBadgeCount`
     /// - Parameters:
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens, if nil, default one will be used ( ``WireframeThemeDimensionSemanticTokensProvider``)

@@ -22,7 +22,7 @@ import SwiftUI
 ///
 /// ``OUDSListItemAvatar`` displays a circular visual identifier that can represent a user, a contact,
 /// or any entity. It supports three content types: a predefined icon, a custom image, or text initials.
-/// An optional ``OUDSBadgeStandard`` or ``OUDSBadgeIcon`` can be attached at the bottom-trailing corner to indicate status.
+/// An optional ``MISOBadgeStandard`` or ``MISOBadgeIcon`` can be attached at the bottom-trailing corner to indicate status.
 ///
 /// ## Avatar types
 ///
@@ -44,7 +44,7 @@ import SwiftUI
 ///
 /// ## Badge
 ///
-/// An optional badge ``OUDSBadgeStandard`` or ``OUDSBadgeIcon`` can be placed at the
+/// An optional badge ``MISOBadgeStandard`` or ``MISOBadgeIcon`` can be placed at the
 /// bottom-trailing corner of the avatar to convey status information (e.g. online presence, notification count).
 /// The badge is rendered with a safety-area border matching the theme's `controlItem.colorBadgeSafetyArea`.
 ///
@@ -105,16 +105,16 @@ public struct OUDSListItemAvatar: View {
         /// A standard badge in its status.
         ///
         /// - Parameters:
-        ///     - status: The status of the badge. See ``OUDSBadgeStandard/Status``
+        ///     - status: The status of the badge. See ``MISOBadgeStandard/Status``
         ///     - accessibilityLabel: An additional accessibility label to vocalize the meaning of the badge
-        case standard(_ status: OUDSBadgeStandard.Status, accessibilityLabel: String = "")
+        case standard(_ status: MISOBadgeStandard.Status, accessibilityLabel: String = "")
 
         /// A badge with icon in its status
         ///
         /// - Parameters:
-        ///     - status: The status of the badge. See ``OUDSBadgeIcon/Status``
+        ///     - status: The status of the badge. See ``MISOBadgeIcon/Status``
         ///     - accessibilityLabel: An additional accessibility label to vocalize the meaning of the badge
-        case icon(_ status: OUDSBadgeIcon.Status, accessibilityLabel: String = "")
+        case icon(_ status: MISOBadgeIcon.Status, accessibilityLabel: String = "")
     }
 
     /// The type of content displayed inside the avatar.
@@ -320,9 +320,9 @@ public struct OUDSListItemAvatar: View {
         Group {
             switch badgeType {
             case let .standard(status, accessibilityLabel):
-                OUDSBadgeStandard(accessibilityLabel: accessibilityLabel, status: status, size: badgeSize)
+                MISOBadgeStandard(accessibilityLabel: accessibilityLabel, status: status, size: badgeSize)
             case let .icon(status, accessibilityLabel):
-                OUDSBadgeIcon(status: status, accessibilityLabel: accessibilityLabel, size: badgeSize)
+                MISOBadgeIcon(status: status, accessibilityLabel: accessibilityLabel, size: badgeSize)
             }
         }
         .border(style: theme.borders.styleDefault,
@@ -331,7 +331,7 @@ public struct OUDSListItemAvatar: View {
                 color: theme.listItem.colorBgBadgeSafetyArea)
     }
 
-    private var badgeSize: OUDSBadgeStandard.Size {
+    private var badgeSize: MISOBadgeStandard.Size {
         switch itemSize {
         case .default:
             switch size {

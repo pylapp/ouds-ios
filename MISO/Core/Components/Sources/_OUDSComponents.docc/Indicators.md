@@ -30,11 +30,11 @@ The badge is a small UI element used to highlight status, notifications, or cate
     }
 }
  
-An ``OUDSBadgeCount`` displays an integer value.
+An ``MISOBadgeCount`` displays an integer value.
 
 ```swift            
 // Neutral badge in medium size with an image
-OUDSBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
+MISOBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
 ```
 
 #### Badge Icon
@@ -54,11 +54,11 @@ OUDSBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_hea
     }
 }
 
-An ``OUDSBadgeIcon`` displays only an icon and has specific colors.
+An ``MISOBadgeIcon`` displays only an icon and has specific colors.
 
 ```swift            
 // Neutral badge in medium size with an image
-OUDSBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
+MISOBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
 ```
 
 #### Badge Standard
@@ -78,11 +78,11 @@ OUDSBadgeIcon(status: .neutral(image: MISOImage(asset: Image(decorative: "ic_hea
     }
 }
 
-An ``OUDSBadgeStandard`` is an empty badge like a coloured pastille.
+An ``MISOBadgeStandard`` is an empty badge like a coloured pastille.
 
 ```swift            
 // Info badge in medium size without information
-OUDSBadgeStandard(status: .info, size: .medium)
+MISOBadgeStandard(status: .info, size: .medium)
 ```
 
 ### Progress Indicators
