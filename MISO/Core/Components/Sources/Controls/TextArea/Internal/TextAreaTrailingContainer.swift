@@ -11,7 +11,7 @@ import SwiftUI
 /// never changes when switching between statuses — preventing height reflow.
 ///
 /// - `.error` or `isOverLimit` → red alert icon (`ic_alert_important_fill`)
-/// - `.loading` → `OUDSCircularProgressIndicator`, accessibility hidden
+/// - `.loading` → `MISOCircularProgressIndicator`, accessibility hidden
 /// - all other statuses → invisible placeholder of the same size
 struct TextAreaTrailingContainer: View {
 

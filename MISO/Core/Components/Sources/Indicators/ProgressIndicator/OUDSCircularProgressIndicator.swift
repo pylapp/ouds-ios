@@ -75,7 +75,7 @@ import SwiftUI
 /// An optional text displayed below the circular indicator to provide context or additional information.
 /// The helper text is always centered under the indicator.
 ///
-/// In **determinate** mode, use ``OUDSCircularProgressIndicator/HelperTextType`` which offers two variants:
+/// In **determinate** mode, use ``MISOCircularProgressIndicator/HelperTextType`` which offers two variants:
 ///
 /// - **`.description(_:)`**: Displays a simple description text without the progress percentage.
 ///
@@ -90,39 +90,39 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Determinate - default (neutral, with track, default gap, reveal animation on display)
-///     OUDSCircularProgressIndicator(progress: 0.75)
+///     MISOCircularProgressIndicator(progress: 0.75)
 ///
 ///     // Determinate with an accent status and no track
-///     OUDSCircularProgressIndicator(progress: 0.5, status: .accent, track: false)
+///     MISOCircularProgressIndicator(progress: 0.5, status: .accent, track: false)
 ///
 ///     // Determinate with a warning status and a small gap
-///     OUDSCircularProgressIndicator(progress: 0.3, status: .warning, gapSize: .small)
+///     MISOCircularProgressIndicator(progress: 0.3, status: .warning, gapSize: .small)
 ///
 ///     // Determinate displayed instantly at its target value, without any animation
-///     OUDSCircularProgressIndicator(progress: 0.75, animated: false)
+///     MISOCircularProgressIndicator(progress: 0.75, animated: false)
 ///
 ///     // Determinate with helper text
-///     OUDSCircularProgressIndicator(progress: 0.75, helperText: .description("Uploading..."))
+///     MISOCircularProgressIndicator(progress: 0.75, helperText: .description("Uploading..."))
 ///
 ///     // Determinate with percentage and description
-///     OUDSCircularProgressIndicator(progress: 0.75,
+///     MISOCircularProgressIndicator(progress: 0.75,
 ///                                   helperText: .percent("of 100 MB"))
 ///
 ///     // Determinate with accessibility name and state for VoiceOver
-///     OUDSCircularProgressIndicator(progress: 0.75,
+///     MISOCircularProgressIndicator(progress: 0.75,
 ///                                   accessibility: .init(name: "download bar", state: "downloading"))
 ///
 ///     // Determinate with accessibility and helper text
-///     OUDSCircularProgressIndicator(progress: 0.5,
+///     MISOCircularProgressIndicator(progress: 0.5,
 ///                                   accessibility: .init(name: "progress bar", state: "step 1 of 4"),
 ///                                   helperText: .description("Loading..."))
 ///
 ///     // Indeterminate
-///     OUDSCircularProgressIndicator()
-///     OUDSCircularProgressIndicator(status: .info)
+///     MISOCircularProgressIndicator()
+///     MISOCircularProgressIndicator(status: .info)
 ///
 ///     // Indeterminate with helper text
-///     OUDSCircularProgressIndicator(status: .info, helperText: "Processing...")
+///     MISOCircularProgressIndicator(status: .info, helperText: "Processing...")
 /// ```
 ///
 /// ## Accessibility considerations
@@ -174,7 +174,7 @@ import SwiftUI
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSCircularProgressIndicator: View { // TODO: #409 - Update documentation reference
+public struct MISOCircularProgressIndicator: View { // TODO: #409 - Update documentation reference
 
     /// The default component size (matches the Android reference implementation and Material 3 defaults).
     public static let defaultSize: CGFloat = 48.0

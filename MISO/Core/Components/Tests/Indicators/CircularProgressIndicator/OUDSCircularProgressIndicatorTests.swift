@@ -17,30 +17,30 @@
 @testable import MISOComponents
 import Testing
 
-/// Tests on the public API and internal configuration of ``OUDSCircularProgressIndicator``.
+/// Tests on the public API and internal configuration of ``MISOCircularProgressIndicator``.
 struct OUDSCircularProgressIndicatorTests {
 
     // MARK: - View constants
 
     @Test func `default size constant must be 48 points`() {
-        #expect(OUDSCircularProgressIndicator.defaultSize == 48.0)
+        #expect(MISOCircularProgressIndicator.defaultSize == 48.0)
     }
 
     // MARK: - Determinate configuration defaults
 
     @Test @MainActor
     func `determinate configuration must expose the provided progress and defaults for other fields`() {
-        // Mirrors the defaults applied by OUDSCircularProgressIndicator.init(progress:status:track:gapSize:).
+        // Mirrors the defaults applied by MISOCircularProgressIndicator.init(progress:status:track:gapSize:).
         let configuration = CircularProgressIndicatorConfiguration(progress: 0.5,
                                                                    status: .neutral,
                                                                    track: true,
                                                                    gapSize: .default,
-                                                                   size: OUDSCircularProgressIndicator.defaultSize)
+                                                                   size: MISOCircularProgressIndicator.defaultSize)
         #expect(configuration.progress == 0.5)
         #expect(configuration.status == .neutral)
         #expect(configuration.track == true)
         #expect(configuration.gapSize == .default)
-        #expect(configuration.size == OUDSCircularProgressIndicator.defaultSize)
+        #expect(configuration.size == MISOCircularProgressIndicator.defaultSize)
         #expect(configuration.isIndeterminate == false)
     }
 
@@ -48,17 +48,17 @@ struct OUDSCircularProgressIndicatorTests {
 
     @Test @MainActor
     func `indeterminate configuration must have nil progress and defaults for other fields`() {
-        // Mirrors the defaults applied by OUDSCircularProgressIndicator.init(status:track:gapSize:).
+        // Mirrors the defaults applied by MISOCircularProgressIndicator.init(status:track:gapSize:).
         let configuration = CircularProgressIndicatorConfiguration(progress: nil,
                                                                    status: .neutral,
                                                                    track: true,
                                                                    gapSize: .default,
-                                                                   size: OUDSCircularProgressIndicator.defaultSize)
+                                                                   size: MISOCircularProgressIndicator.defaultSize)
         #expect(configuration.progress == nil)
         #expect(configuration.status == .neutral)
         #expect(configuration.track == true)
         #expect(configuration.gapSize == .default)
-        #expect(configuration.size == OUDSCircularProgressIndicator.defaultSize)
+        #expect(configuration.size == MISOCircularProgressIndicator.defaultSize)
 
         #expect(configuration.isIndeterminate)
     }

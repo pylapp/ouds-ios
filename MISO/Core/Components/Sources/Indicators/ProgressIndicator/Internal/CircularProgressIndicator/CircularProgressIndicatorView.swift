@@ -19,7 +19,7 @@ import SwiftUI
 
 // MARK: - Circular Progress Indicator View
 
-/// Internal view that draws an ``OUDSCircularProgressIndicator``.
+/// Internal view that draws an ``MISOCircularProgressIndicator``.
 struct CircularProgressIndicatorView: View {
 
     // MARK: Properties

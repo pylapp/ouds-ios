@@ -67,7 +67,7 @@ import SwiftUI
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "SMS credit"),
 ///         leading: .slot {
-///             OUDSCircularProgressIndicator(progress: 0.75)
+///             MISOCircularProgressIndicator(progress: 0.75)
 ///         }
 ///     )
 /// ```
@@ -134,7 +134,7 @@ import SwiftUI
     ///     OUDSStaticListItem(
     ///         data: OUDSListItemData(label: "SMS credit"),
     ///         leading: .slot {
-    ///             OUDSCircularProgressIndicator(progress: 0.75)
+    ///             MISOCircularProgressIndicator(progress: 0.75)
     ///         }
     ///     )
     /// ```

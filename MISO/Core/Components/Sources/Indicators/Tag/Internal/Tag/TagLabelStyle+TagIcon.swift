@@ -52,9 +52,9 @@ struct TagLoader: View {
     var body: some View {
         Group {
             if let progress {
-                OUDSCircularProgressIndicator(progress: progress, status: .neutral, track: false, animated: true, size: progressIndicatorSize)
+                MISOCircularProgressIndicator(progress: progress, status: .neutral, track: false, animated: true, size: progressIndicatorSize)
             } else {
-                OUDSCircularProgressIndicator(status: .neutral, track: false, size: progressIndicatorSize)
+                MISOCircularProgressIndicator(status: .neutral, track: false, size: progressIndicatorSize)
             }
         }
         .padding(.all, padding)

@@ -23,7 +23,7 @@ import SwiftUI
 
 // swiftlint:disable type_name
 
-/// Animates the foreground arc of an indeterminate ``OUDSCircularProgressIndicator``.
+/// Animates the foreground arc of an indeterminate ``MISOCircularProgressIndicator``.
 ///
 /// The animation reproduces the **Material** indeterminate circular progress specification, as
 /// implemented identically by Material Web, Material Components Android and Flutter's

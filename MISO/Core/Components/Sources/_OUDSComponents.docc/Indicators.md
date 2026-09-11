@@ -104,14 +104,14 @@ OUDSBadgeStandard(status: .info, size: .medium)
     }
 }
 
-An ``OUDSCircularProgressIndicator`` is a progress indicator which can be used to display determinate value or indeterminate value with animations.
+An ``MISOCircularProgressIndicator`` is a progress indicator which can be used to display determinate value or indeterminate value with animations.
 
 ```swift            
 // A circular gauge filled at 75% in neutral color with a track displayed with an animation
-OUDSCircularProgressIndicator(progress: 0.75, status: .neutral)
+MISOCircularProgressIndicator(progress: 0.75, status: .neutral)
 
 // A circular gauge without defined value and an accent color
-OUDSCircularProgressIndicator(status: .accent)
+MISOCircularProgressIndicator(status: .accent)
 ```
 
 #### Linear Progress Indicator

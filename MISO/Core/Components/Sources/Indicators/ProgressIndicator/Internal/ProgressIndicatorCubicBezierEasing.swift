@@ -21,7 +21,7 @@ import Foundation
  */
 
 /// Generic cubic-bezier easing evaluator, shared by the indeterminate animations of
-/// ``OUDSCircularProgressIndicator`` and ``OUDSLinearProgressIndicator``.
+/// ``MISOCircularProgressIndicator`` and ``OUDSLinearProgressIndicator``.
 ///
 /// Reproduces the CSS/Android/Flutter `cubic-bezier(x1, y1, x2, y2)` timing function: given
 /// control points `P0 = (0, 0)`, `P1 = (x1, y1)`, `P2 = (x2, y2)`, `P3 = (1, 1)`, it solves for the

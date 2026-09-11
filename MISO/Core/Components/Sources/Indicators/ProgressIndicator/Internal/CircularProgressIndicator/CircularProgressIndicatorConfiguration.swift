@@ -16,7 +16,7 @@
 
 import Foundation
 
-/// Internal configuration used to draw an ``OUDSCircularProgressIndicator``.
+/// Internal configuration used to draw an ``MISOCircularProgressIndicator``.
 ///
 /// - `progress`: when `nil`, the indicator is **indeterminate**. When set, the value is clamped to `[0, 1]`.
 /// - `status`: the color status of the indicator.
@@ -50,7 +50,7 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
     let size: CGFloat
 
     /// Optional helper text displayed below the indicator (always centered).
-    let helperTextType: OUDSCircularProgressIndicator.HelperTextType?
+    let helperTextType: MISOCircularProgressIndicator.HelperTextType?
 
     /// Accessibility name for VoiceOver (e.g., "progress bar", "download bar").
     let accessibilityName: String?
@@ -78,7 +78,7 @@ struct CircularProgressIndicatorConfiguration: Equatable, Sendable {
          gapSize: OUDSProgressIndicatorGapSize,
          size: CGFloat,
          animated: Bool = true,
-         helperText: OUDSCircularProgressIndicator.HelperTextType? = nil,
+         helperText: MISOCircularProgressIndicator.HelperTextType? = nil,
          accessibilityName: String? = nil,
          accessibilityState: String? = nil)
     {

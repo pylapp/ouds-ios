@@ -81,7 +81,7 @@ import SwiftUI
 ///     OUDSNavigationListItem(
 ///         data: OUDSListItemData(label: "SMS credit"),
 ///         trailing: .custom {
-///             OUDSCircularProgressIndicator(progress: 0.75)
+///             MISOCircularProgressIndicator(progress: 0.75)
 ///         }
 ///     ) {
 ///         // Navigate to SMS credit details

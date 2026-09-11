@@ -22,7 +22,7 @@ import SwiftUI
  ━━━━━★. *･｡ﾟ✧⁺ Magic stuff
  */
 
-/// Internal view rendering the **determinate** variant of ``OUDSCircularProgressIndicator``.
+/// Internal view rendering the **determinate** variant of ``MISOCircularProgressIndicator``.
 ///
 /// Handles two SwiftUI animations driven by the ``animated`` flag:
 /// - a **reveal** animation on first display (from `0` to the target `progress`);

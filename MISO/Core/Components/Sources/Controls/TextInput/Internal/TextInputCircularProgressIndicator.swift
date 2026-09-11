@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 import MISOTokensSemantic
 import SwiftUI
@@ -37,9 +24,9 @@ struct TextInputCircularProgressIndicator: View {
     var body: some View {
         Group {
             if let progress {
-                OUDSCircularProgressIndicator(progress: progress, status: .neutral, track: false, animated: false, size: size)
+                MISOCircularProgressIndicator(progress: progress, status: .neutral, track: false, animated: false, size: size)
             } else {
-                OUDSCircularProgressIndicator(status: .neutral, track: false, size: size)
+                MISOCircularProgressIndicator(status: .neutral, track: false, size: size)
             }
         }
         .accessibilityHidden(true)

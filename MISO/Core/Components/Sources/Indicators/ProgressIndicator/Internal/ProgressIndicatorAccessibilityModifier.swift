@@ -16,7 +16,7 @@
 
 import SwiftUI
 
-/// Internal view modifier for accessibility used by ``OUDSLinearProgressIndicator`` and ``OUDSCircularProgressIndicator``
+/// Internal view modifier for accessibility used by ``OUDSLinearProgressIndicator`` and ``MISOCircularProgressIndicator``
 ///
 /// Applies accessibility traits and values on progress indicators (linear or circular).
 ///
