@@ -26,21 +26,21 @@ import Testing
 /// **Should be run on macOS to catch the failure crash, not possible on iOS yet**
 struct OUDSChipCrashTests {
 
-    /// Verify that `OUDSFilterChip` crashes when text parameter is empty.
+    /// Verify that `MISOFilterChip` crashes when text parameter is empty.
     /// An empty text is forbidden by design.
     @Test
     func `filter chip crashes with empty text`() async {
         await #expect(processExitsWith: .failure) {
-            _ = OUDSFilterChip(text: "") {}
+            _ = MISOFilterChip(text: "") {}
         }
     }
 
-    /// Verify that `OUDSSuggestionChip` crashes when text parameter is empty.
+    /// Verify that `MISOSuggestionChip` crashes when text parameter is empty.
     /// An empty text is forbidden by design.
     @Test
     func `suggestion chip crashes with empty text`() async {
         await #expect(processExitsWith: .failure) {
-            _ = OUDSSuggestionChip(text: "") {}
+            _ = MISOSuggestionChip(text: "") {}
         }
     }
 }

@@ -120,7 +120,7 @@ badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadge
 button                         | For buttons like `MISOButton` 
 bulletList                     | For list of elements with bullets like `MISOBulletList`
 checkbox                       | For checkboxes like `MISOCheckbox`, `MISOCheckboxItem` and their indeterminate variants 
-chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip`  
+chip                           | For chips like `MISOSuggestionChip` and `MISOFilterChip`  
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
 icon                           | For components containing icons like `OUDSTag`
 link                           | For links like `OUDSLink` 

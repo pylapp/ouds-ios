@@ -1,33 +1,20 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOTokensSemantic
 import SwiftUI
 
 // MARK: - Chip
 
 /// The ``Chip`` proposes layout with text only, icon only or text with icon.
-/// The layout of the chip will change according to the ``OUDSChipInteractionState`` and the selected flag.
+/// The layout of the chip will change according to the ``MISOChipInteractionState`` and the selected flag.
 struct Chip: View {
 
     // MARK: Stored Properties
 
     private let layout: Layout
     private let selected: Bool
-    private let interactionState: OUDSChipInteractionState
+    private let interactionState: MISOChipInteractionState
 
     @Environment(\.theme) private var theme
 
@@ -52,7 +39,7 @@ struct Chip: View {
     ///    - layout: The layout of the chip
     ///    - selected: Flag to know if chip is selected or not
     ///    - interactionState: The interaction state
-    init(layout: Layout, selected: Bool, interactionState: OUDSChipInteractionState) {
+    init(layout: Layout, selected: Bool, interactionState: MISOChipInteractionState) {
         self.layout = layout
         self.selected = selected
         self.interactionState = interactionState
@@ -118,7 +105,7 @@ private struct ChipContent: View {
 
     let layout: Chip.Layout
     let selected: Bool
-    let interactionState: OUDSChipInteractionState
+    let interactionState: MISOChipInteractionState
 
     @Environment(\.theme) private var theme
 
@@ -177,7 +164,7 @@ private struct ChipSelectionIndicator: View {
 
     // MARK: Stored Properties
 
-    let state: OUDSChipInteractionState
+    let state: MISOChipInteractionState
     let selected: Bool
 
     @Environment(\.theme) private var theme

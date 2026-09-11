@@ -127,7 +127,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to checkboxes components like `MISOCheckbox` and `MISOCheckboxItem`
     public let checkbox: AllCheckboxComponentTokensProvider
 
-    /// All components tokens related to chip components like `OUDSFilterChip` and `OUDSSuggestionChip`
+    /// All components tokens related to chip components like `MISOFilterChip` and `MISOSuggestionChip`
     public let chip: AllChipComponentTokensProvider
 
     /// All components tokens related to divider components like `OUDSHorizontalDivider` and `OUDSVerticalDivider`

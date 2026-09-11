@@ -22,7 +22,7 @@ import MISOTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for chips components like `OUDSFilterChip` and `OUDSSuggestionChip`
+/// Declares all component tokens for chips components like `MISOFilterChip` and `MISOSuggestionChip`
 /// Use for tokens providers like `OrangeThemeChipComponentTokensProvider`.
 ///
 /// - Since: 0.10.0

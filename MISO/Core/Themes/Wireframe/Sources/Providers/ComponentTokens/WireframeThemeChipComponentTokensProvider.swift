@@ -19,7 +19,7 @@ import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of chip** for *chip* objects like `OUDSFilterChip` and `OUDSSuggestionChip`.
+/// A class which wraps all **component  tokens of chip** for *chip* objects like `MISOFilterChip` and `MISOSuggestionChip`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllChipComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
@@ -50,7 +50,7 @@ final class WireframeThemeChipComponentTokensProvider: AllChipComponentTokensPro
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSFilterChip` and `OUDSSuggestionChip`
+    /// Defines a provider of component tokens dedicated to `MISOFilterChip` and `MISOSuggestionChip`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)

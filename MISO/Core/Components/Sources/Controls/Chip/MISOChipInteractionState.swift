@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 
 /// The state used by modifiers to handle all states of the chip components.
@@ -32,14 +19,14 @@ import MISOFoundations
 ///         // to the chip interaction state
 ///         MISOInteractionButton(action: action) {
 ///             // Deal with the states in the chip layout to change the layout
-///             MyChipLayout(interactionState: OUDSChipInteractionState(with: $0))
+///             MyChipLayout(interactionState: MISOChipInteractionState(with: $0))
 ///         }
 ///     }
 /// }
 /// ```
 ///
 /// - Since: 2.3.0
-@frozen public enum OUDSChipInteractionState {
+@frozen public enum MISOChipInteractionState {
 
     /// User can interact with the component
     case enabled
@@ -53,7 +40,7 @@ import MISOFoundations
     /// The user cannot interact with the component
     case disabled
 
-    /// Initializes the ``OUDSChipInteractionState`` from the ``MISOButtonInteractionState``
+    /// Initializes the ``MISOChipInteractionState`` from the ``MISOButtonInteractionState``
     /// provided by the ``MISOInteractionButton`` which is used to build a chip.
     ///
     /// This is preferred because chip does not support read only state.
@@ -70,7 +57,7 @@ import MISOFoundations
         case .disabled:
             self = .disabled
         case .readOnly:
-            ML.fatal("An OUDS chip is a component which cannot be in read only mode")
+            ML.fatal("A MISO chip is a component which cannot be in read only mode")
         }
     }
 }

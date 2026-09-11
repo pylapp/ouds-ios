@@ -366,23 +366,23 @@ OUDSSwitchItem("We live in a fabled world",
     }
 }
 
-The library proposes suggestion (``OUDSSuggestionChip``) chip component to make some predicitve or recommended selection.
+The library proposes suggestion (``MISOSuggestionChip``) chip component to make some predicitve or recommended selection.
 
 ```swift
 // Suggestion chip with icon only
-OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+MISOSuggestionChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
 
 // Suggestion chip with raw icon (not tinted)
-OUDSSuggestionChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+MISOSuggestionChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 
 // Layout with text only
-OUDSSuggestionChip(text: "Heart") {}
+MISOSuggestionChip(text: "Heart") {}
 
 // Layout with text and icon
-OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart")), text: "Heart") {}
+MISOSuggestionChip(image: MISOImage(asset: Image("ic_heart")), text: "Heart") {}
 
 // Layout with text and raw icon (not tinted)
-OUDSSuggestionChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+MISOSuggestionChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 ```
 
 #### Filter
@@ -402,23 +402,23 @@ OUDSSuggestionChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .or
     }
 }
 
-The library proposes filter chip component (``OUDSFilterChip``) to make some filtering with selected or unselected options.
+The library proposes filter chip component (``MISOFilterChip``) to make some filtering with selected or unselected options.
 
 ```swift
 // Filter chip with icon only as selected
-OUDSFilterChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
+MISOFilterChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
 
 // Filter chip with raw icon (not tinted)
-OUDSFilterChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+MISOFilterChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 
 // Filter chip with text only as not selected
-OUDSFilterChip(text: "Heart") {}
+MISOFilterChip(text: "Heart") {}
 
 // Filter chip with text and icon in selected state
-OUDSFilterChip(image: MISOImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
+MISOFilterChip(image: MISOImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
 
 // Filter chip with text and raw icon (not tinted)
-OUDSFilterChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+MISOFilterChip(image: MISOImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 ```
 
 

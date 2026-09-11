@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import SwiftUI
 
@@ -32,50 +19,28 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Icon only
-///     OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+///     MISOSuggestionChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
 ///
 ///     // Icon only, raw image (not tinted)
-///     OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original), accessibilityLabel: "Heart") {}
+///     MISOSuggestionChip(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original), accessibilityLabel: "Heart") {}
 ///
 ///     // Text only
-///     OUDSSuggestionChip(text: "Heart") {}
+///     MISOSuggestionChip(text: "Heart") {}
 ///
 ///     // Text from a localizable and a bundle
-///     OUDSSuggestionChip(LocalizedStringKey("category_chip"), bundle: Bundle.module) {}
+///     MISOSuggestionChip(LocalizedStringKey("category_chip"), bundle: Bundle.module) {}
 ///
 ///     // Text and icon
-///     OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart")), text: "Heart") {}
+///     MISOSuggestionChip(image: MISOImage(asset: Image("ic_heart")), text: "Heart") {}
 ///
 ///     // Text and icon, raw image (not tinted)
-///     OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original), text: "Heart") {}
+///     MISOSuggestionChip(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original), text: "Heart") {}
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-suggestion-chip)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A suggestion chip component in light and dark modes with Orange theme](component_suggestionChip_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A suggestion chip component in light and dark modes with Orange Compact theme](component_suggestionChip_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A suggestion chip component in light and dark modes with Sosh theme](component_suggestionChip_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A suggestion chip component in light and dark modes with Wireframe theme](component_suggestionChip_Wireframe)
 ///
 /// - Version: 1.5.0 (Figma component design version)
 /// - Since: 0.17.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSSuggestionChip: View {
+public struct MISOSuggestionChip: View {
 
     // MARK: - Stored Properties
 
@@ -87,7 +52,7 @@ public struct OUDSSuggestionChip: View {
     /// Creates a chip with a localized text and icon, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart")),
+    ///     MISOSuggestionChip(image: MISOImage(asset: Image("ic_heart")),
     ///                        LocalizedStringKey("like_chip"),
     ///                        bundle: Bundle.module) {}
     /// ```
@@ -113,7 +78,7 @@ public struct OUDSSuggestionChip: View {
     /// Creates a chip with text and icon.
     ///
     /// ```swift
-    ///     OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart")), text: "Heart") {}
+    ///     MISOSuggestionChip(image: MISOImage(asset: Image("ic_heart")), text: "Heart") {}
     /// ```
     ///
     /// No accessibility hint is defined for this component.
@@ -125,7 +90,7 @@ public struct OUDSSuggestionChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, text: String, action: @escaping () -> Void) {
         if text.isEmpty {
-            ML.warning("The OUDSSuggestionChip should not have an empty text! Prefer instead OUDSSuggestionChip(icon:accessibilityLabel:action).")
+            ML.warning("The MISOSuggestionChip should not have an empty text! Prefer instead MISOSuggestionChip(icon:accessibilityLabel:action).")
         }
         layout = .textAndIcon(text: text, icon: image, iconPosition: .leading)
         self.action = action
@@ -136,7 +101,7 @@ public struct OUDSSuggestionChip: View {
     /// Creates a chip with an icon only and a localized accessibility label.
     ///
     /// ```swift
-    ///     OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart")),
+    ///     MISOSuggestionChip(image: MISOImage(asset: Image("ic_heart")),
     ///                        accessibilityLabel: LocalizedStringKey("like_chip"),
     ///                        bundle: Bundle.module) {}
     /// ```
@@ -162,7 +127,7 @@ public struct OUDSSuggestionChip: View {
     /// Creates a chip with an icon only.
     ///
     /// ```swift
-    ///     OUDSSuggestionChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+    ///     MISOSuggestionChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
     /// ```
     ///
     /// - Parameters:
@@ -171,7 +136,7 @@ public struct OUDSSuggestionChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, accessibilityLabel: String, action: @escaping () -> Void) {
         if accessibilityLabel.isEmpty {
-            ML.warning("The OUDSSuggestionChip should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The MISOSuggestionChip should not have an empty accessibility label, think about your disabled users!")
         }
         layout = .icon(image, accessibilityLabel)
         self.action = action
@@ -182,7 +147,7 @@ public struct OUDSSuggestionChip: View {
     /// Creates a chip with a localized text only, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSSuggestionChip(LocalizedStringKey("category_chip"), bundle: Bundle.module) {}
+    ///     MISOSuggestionChip(LocalizedStringKey("category_chip"), bundle: Bundle.module) {}
     /// ```
     ///
     /// - Parameters:
@@ -202,7 +167,7 @@ public struct OUDSSuggestionChip: View {
     /// Creates a chip with a text only.
     ///
     /// ```swift
-    ///     OUDSSuggestionChip(text: "Heart") {}
+    ///     MISOSuggestionChip(text: "Heart") {}
     /// ```
     ///
     /// - Parameters:
@@ -210,7 +175,7 @@ public struct OUDSSuggestionChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(text: String, action: @escaping () -> Void) {
         if text.isEmpty {
-            ML.fatal("The OUDSSuggestionChip must not have an empty text!")
+            ML.fatal("The MISOSuggestionChip must not have an empty text!")
         }
         layout = .text(text)
         self.action = action
@@ -220,7 +185,7 @@ public struct OUDSSuggestionChip: View {
 
     public var body: some View {
         MISOInteractionButton(action: action) {
-            Chip(layout: layout, selected: false, interactionState: OUDSChipInteractionState(with: $0))
+            Chip(layout: layout, selected: false, interactionState: MISOChipInteractionState(with: $0))
                 .accessibilityHidden(true)
         }
         .accessibilityLabel(accessibilityLabel)

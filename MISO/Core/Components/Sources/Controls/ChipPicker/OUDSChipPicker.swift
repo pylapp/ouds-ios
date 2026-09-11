@@ -23,7 +23,7 @@ import SwiftUI
 ///
 /// Each chip contains a "tag", i.e. a supposed to be unique value.
 /// The picker will expose choosen values through this "tag".
-/// It has also some configuration elements which will override the one applied to nested ``OUDSFilterChip``.
+/// It has also some configuration elements which will override the one applied to nested ``MISOFilterChip``.
 ///
 /// ## Accessibility considerations
 ///
@@ -103,7 +103,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     /// The type of selection
     var selectionType: SelectionType
 
-    /// The list of data to wrap in ``OUDSFilterChip`` inside this picker
+    /// The list of data to wrap in ``MISOFilterChip`` inside this picker
     private let chips: [OUDSChipPickerData<Tag>]
 
     /// The custom spacing to apply between items by user
@@ -126,7 +126,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     // MARK: - Init
 
     // swiftlint:disable function_default_parameter_at_end
-    /// Defines the single selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``.
+    /// Defines the single selection picker view which displays using ``MISOFilterChip`` view the ``OUDSChipPickerData``.
     /// The user will be able to choose zero or one option in this picker.
     ///
     /// ```swift
@@ -136,7 +136,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
-    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - chips: The raw data to wrap in ``MISOFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selection: Binding<Tag?>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
@@ -159,7 +159,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - selection: The current selected value
-    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - chips: The raw data to wrap in ``MISOFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: LocalizedStringKey?,
                 tableName: String? = nil,
@@ -178,7 +178,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
         selectionType = .singleOrNone(selection)
     }
 
-    /// Defines the single selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
+    /// Defines the single selection picker view which displays using ``MISOFilterChip`` view the ``OUDSChipPickerData``
     /// The user will be able to choose only one option in this picker.
     ///
     /// ```swift
@@ -188,7 +188,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
-    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - chips: The raw data to wrap in ``MISOFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selection: Binding<Tag>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
@@ -211,7 +211,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - selection: The current selected value
-    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - chips: The raw data to wrap in ``MISOFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: LocalizedStringKey?,
                 tableName: String? = nil,
@@ -230,7 +230,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
         selectionType = .single(selection)
     }
 
-    /// Defines the multiple selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``.
+    /// Defines the multiple selection picker view which displays using ``MISOFilterChip`` view the ``OUDSChipPickerData``.
     /// The user will be able to choose zero or one or seevral options in this picker.
     ///
     /// ```swift
@@ -240,7 +240,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
     ///    - selections: Current selected values
-    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - chips: The raw data to wrap in ``MISOFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selections: Binding<[Tag]>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
@@ -263,7 +263,7 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - selections: Current selected values
-    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - chips: The raw data to wrap in ``MISOFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: LocalizedStringKey?,
                 tableName: String? = nil,
@@ -328,11 +328,11 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
         let selected = selected(tag: data.tag)
         switch data.layout {
         case let .text(text):
-            OUDSFilterChip(text: text, selected: selected, action: action)
+            MISOFilterChip(text: text, selected: selected, action: action)
         case let .image(image):
-            OUDSFilterChip(image: image, accessibilityLabel: image.accessibilityLabel ?? "", selected: selected, action: action)
+            MISOFilterChip(image: image, accessibilityLabel: image.accessibilityLabel ?? "", selected: selected, action: action)
         case let .textAndImage(text, image):
-            OUDSFilterChip(image: image, text: text, selected: selected, action: action)
+            MISOFilterChip(image: image, text: text, selected: selected, action: action)
         }
     }
 

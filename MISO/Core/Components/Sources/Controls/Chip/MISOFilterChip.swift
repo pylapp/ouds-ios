@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import SwiftUI
 
@@ -25,50 +12,28 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Icon only layout as selected
-///     OUDSFilterChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
+///     MISOFilterChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
 ///
 ///     // Icon only, raw image (not tinted)
-///     OUDSFilterChip(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original), accessibilityLabel: "Heart") {}
+///     MISOFilterChip(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original), accessibilityLabel: "Heart") {}
 ///
 ///     // Text only as not selected (default unselected)
-///     OUDSFilterChip(text: "Label") {}
+///     MISOFilterChip(text: "Label") {}
 ///
 ///     // Text from a localizable and a bundle
-///     OUDSFilterChip(LocalizedStringKey("category_filter"), bundle: Bundle.module) {}
+///     MISOFilterChip(LocalizedStringKey("category_filter"), bundle: Bundle.module) {}
 ///
 ///     // Text and icon as selected
-///     OUDSFilterChip(image: MISOImage(asset: Image("ic_heart")), text: "Label", selected: true) {}
+///     MISOFilterChip(image: MISOImage(asset: Image("ic_heart")), text: "Label", selected: true) {}
 ///
 ///     // Text and icon, raw image (not tinted)
-///     OUDSFilterChip(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original), text: "Label") {}
+///     MISOFilterChip(image: MISOImage(asset: Image("ic_heart"), renderingMode: .original), text: "Label") {}
 /// ```
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-filter-chip)
-///
-/// ## Themes rendering
-///
-/// ### Orange
-///
-/// ![A filter chip component in light and dark modes with Orange theme](component_filterChip_Orange)
-///
-/// ### Orange Compact
-///
-/// ![A filter chip component in light and dark modes with Orange Compact theme](component_filterChip_OrangeCompact)
-///
-/// ### Sosh
-///
-/// ![A filter chip component in light and dark modes with Sosh theme](component_filterChip_Sosh)
-///
-/// ### Wireframe
-///
-/// ![A filter chip component in light and dark modes with Wireframe theme](component_filterChip_Wireframe)
 ///
 /// - Version: 1.5.0 (Figma component design version)
 /// - Since: 0.17.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSFilterChip: View {
+public struct MISOFilterChip: View {
 
     // MARK: - Stored Properties
 
@@ -81,7 +46,7 @@ public struct OUDSFilterChip: View {
     /// Creates a filter chip with a localized text and icon, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSFilterChip(image: MISOImage(asset: Image("ic_heart")),
+    ///     MISOFilterChip(image: MISOImage(asset: Image("ic_heart")),
     ///                    LocalizedStringKey("like_filter"),
     ///                    bundle: Bundle.module,
     ///                    selected: true) {}
@@ -110,7 +75,7 @@ public struct OUDSFilterChip: View {
     /// Creates a filter chip with text and icon.
     ///
     /// ```swift
-    ///     OUDSFilterChip(image: MISOImage(asset: Image("ic_heart")), text: "Label", selected: true) {}
+    ///     MISOFilterChip(image: MISOImage(asset: Image("ic_heart")), text: "Label", selected: true) {}
     /// ```
     ///
     /// - Parameters:
@@ -120,7 +85,7 @@ public struct OUDSFilterChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, text: String, selected: Bool = false, action: @escaping () -> Void) {
         if text.isEmpty {
-            ML.warning("The OUDSFilterChip should not have an empty text, prefer instead OUDSFilterChip(image:accessibilityLabel:selected:action).")
+            ML.warning("The MISOFilterChip should not have an empty text, prefer instead MISOFilterChip(image:accessibilityLabel:selected:action).")
         }
         layout = .textAndIcon(text: text, icon: image, iconPosition: .trailing)
         self.action = action
@@ -132,7 +97,7 @@ public struct OUDSFilterChip: View {
     /// Creates a filter chip with an icon only and a localized accessibility label.
     ///
     /// ```swift
-    ///     OUDSFilterChip(image: MISOImage(asset: Image("ic_heart")),
+    ///     MISOFilterChip(image: MISOImage(asset: Image("ic_heart")),
     ///                    accessibilityLabel: LocalizedStringKey("like_filter"),
     ///                    bundle: Bundle.module) {}
     /// ```
@@ -160,7 +125,7 @@ public struct OUDSFilterChip: View {
     /// Creates a filter chip with an icon only.
     ///
     /// ```swift
-    ///     OUDSFilterChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+    ///     MISOFilterChip(image: MISOImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
     /// ```
     ///
     /// - Parameters:
@@ -170,7 +135,7 @@ public struct OUDSFilterChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, accessibilityLabel: String, selected: Bool = false, action: @escaping () -> Void) {
         if accessibilityLabel.isEmpty {
-            ML.warning("The OUDSFilterChip should not have an empty accessibility label, think about your disabled users!")
+            ML.warning("The MISOFilterChip should not have an empty accessibility label, think about your disabled users!")
         }
         layout = .icon(image, accessibilityLabel)
         self.action = action
@@ -182,7 +147,7 @@ public struct OUDSFilterChip: View {
     /// Creates a filter chip with a localized text only, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSFilterChip(LocalizedStringKey("category_filter"), bundle: Bundle.module) {}
+    ///     MISOFilterChip(LocalizedStringKey("category_filter"), bundle: Bundle.module) {}
     /// ```
     ///
     /// - Parameters:
@@ -204,7 +169,7 @@ public struct OUDSFilterChip: View {
     /// Creates a filter chip with a text only.
     ///
     /// ```swift
-    ///     OUDSFilterChip(text: "Label") {}
+    ///     MISOFilterChip(text: "Label") {}
     /// ```
     ///
     /// - Parameters:
@@ -213,7 +178,7 @@ public struct OUDSFilterChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(text: String, selected: Bool = false, action: @escaping () -> Void) {
         if text.isEmpty {
-            ML.fatal("The OUDSFilterChip must not have an empty text!")
+            ML.fatal("The MISOFilterChip must not have an empty text!")
         }
         layout = .text(text)
         self.action = action
@@ -224,7 +189,7 @@ public struct OUDSFilterChip: View {
 
     public var body: some View {
         MISOInteractionButton(action: action) {
-            Chip(layout: layout, selected: selected, interactionState: OUDSChipInteractionState(with: $0))
+            Chip(layout: layout, selected: selected, interactionState: MISOChipInteractionState(with: $0))
                 .accessibilityHidden(true)
         }
         .accessibilityAddTraits(selected ? [.isSelected] : [])
