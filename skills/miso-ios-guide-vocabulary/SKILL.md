@@ -1,10 +1,10 @@
 ---
-name: ouds-ios-guide-vocabulary
-description: Use when the user asks about OUDS-specific terms such as tokenator, token, raw token, semantic token, component token, theme, tuning, token provider, or component
+name: miso-ios-guide-vocabulary
+description: Use when the user asks about MISO-specific terms such as tokenator, token, raw token, semantic token, component token, theme, tuning, token provider, or component
 license: MIT
 ---
 
-# OUDS Vocabulary
+# MISO Vocabulary
 
 | Term | Definition |
 |---|---|
@@ -16,7 +16,7 @@ license: MIT
 | **theme** | Cohesive set of tokens + assets (fonts, images) controlling the look and feel of an app |
 | **tuning** | Lightweight configuration knobs on a theme (e.g. rounded-corner radius) |
 | **token provider** | Object within a theme that groups semantic and component tokens together |
-| **component** | SwiftUI view shipped by OUDS with well-defined layout and behaviour (buttons, switches, links, …) |
+| **component** | SwiftUI view shipped by MISO with well-defined layout and behaviour (buttons, switches, links, …) |
 | **view modifier** | Object which changes the style or look and feel of a component |
 | **typography** | Style applied on texts with font line height, letter spacing weight, size and family |
 
@@ -24,5 +24,5 @@ license: MIT
 
 | Task | Skill to load |
 |---|---|
-| Write or review Swift code using OUDS components or tokens | `ouds-ios-framework-usage` |
-| Convert a Figma token path to its Swift equivalent | `ouds-ios-guide-figma-to-swift` |
+| Write or review Swift code using MISO components or tokens | `miso-ios-framework-usage` |
+| Convert a Figma token path to its Swift equivalent | `miso-ios-guide-figma-to-swift` |

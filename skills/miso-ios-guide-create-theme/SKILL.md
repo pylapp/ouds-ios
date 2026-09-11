@@ -1,12 +1,12 @@
 ---
-name: ouds-ios-guide-create-theme
-description: Use when the user wants to create a custom OUDS theme or brand theme for an iOS app — covers subclassing OrangeTheme, building a theme from scratch on OUDSTheme, mixing existing providers, local custom fonts (.ttf registration), and tuning.
+name: miso-ios-guide-create-theme
+description: Use when the user wants to create a custom MISO theme or brand theme for an iOS app — covers subclassing OrangeTheme, building a theme from scratch on MISOTheme, mixing existing providers, local custom fonts (.ttf registration), and tuning.
 license: MIT
 ---
 
-# Skill: ouds-ios-guide-create-theme
+# Skill: miso-ios-guide-create-theme
 
-Step-by-step guide to create a **custom OUDS theme** for an iOS/iPadOS app.
+Step-by-step guide to create a **custom MISO theme** for an iOS/iPadOS app.
 
 ---
 
@@ -19,7 +19,7 @@ Before writing any code, ask the user these two questions:
 | Strategy | When to choose |
 |---|---|
 | **A — Subclass `OrangeTheme`** *(recommended)* | Orange brand assets are needed; only some tokens differ from Orange defaults |
-| **B — From scratch on `OUDSTheme`** | Fully independent brand (no Orange assets); all tokens are custom |
+| **B — From scratch on `MISOTheme`** | Fully independent brand (no Orange assets); all tokens are custom |
 | **C — Mix existing providers** | Compose providers from existing themes without creating a new subclass |
 
 **Question 2 — Custom fonts?**
@@ -34,36 +34,36 @@ Does the theme need to embed `.ttf` font files? If yes, collect:
 
 To get the full list of properties / tokens by protocols:
 
-- **General OUDS documentation** : https://ios.unified-design-system.orange.com
+- **General MISO documentation** : https://ios.unified-design-system.orange.com
 
-- **Semantic tokens** : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/
-  - `ColorSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/ColorSemanticTokens
-  - `BorderSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/BorderSemanticTokens
-  - `DimensionSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/DimensionSemanticTokens
-  - `SizeSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/SizeSemanticTokens
-  - `SpaceSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/SpaceSemanticTokens
-  - `FontSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/FontSemanticTokens
+- **Semantic tokens** : https://ios.unified-design-system.orange.com/documentation/misoTokensSemantic/
+  - `ColorSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/misoTokensSemantic/ColorSemanticTokens
+  - `BorderSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/misoTokensSemantic/BorderSemanticTokens
+  - `DimensionSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/misoTokensSemantic/DimensionSemanticTokens
+  - `SizeSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/misoTokensSemantic/SizeSemanticTokens
+  - `SpaceSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/misoTokensSemantic/SpaceSemanticTokens
+  - `FontSemanticTokens` : https://ios.unified-design-system.orange.com/documentation/misoTokensSemantic/FontSemanticTokens
   - etc.
 
-- **Component tokens** : https://ios.unified-design-system.orange.com/documentation/oudsTokensComponent/
-  - `ButtonComponentTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensComponent/ButtonComponentTokens
-  - `TextInputComponentTokens` : https://ios.unified-design-system.orange.com/documentation/oudsTokensComponent/TextInputComponentTokens
+- **Component tokens** : https://ios.unified-design-system.orange.com/documentation/misoTokensComponent/
+  - `ButtonComponentTokens` : https://ios.unified-design-system.orange.com/documentation/misoTokensComponent/ButtonComponentTokens
+  - `TextInputComponentTokens` : https://ios.unified-design-system.orange.com/documentation/misoTokensComponent/TextInputComponentTokens
   - etc.
 
-> **Tip** : To see all properties / tokens of a provider, look in files `Values/SemanticTokens/` or `Values/ComponentTokens/` in Orange theme from OUDS iOS repository.
+> **Tip** : To see all properties / tokens of a provider, look in files `Values/SemanticTokens/` or `Values/ComponentTokens/` in Orange theme from MISO iOS repository.
 
 ---
 
 ## 1. Inheritance hierarchy
 
 ```
-OUDSTheme                    ← base "abstract" class (open)
+MISOTheme                    ← base "abstract" class (open)
     │
     └── OrangeTheme          ← open, the ONLY publicly subclassable theme
             │
             └── YourTheme    ← your app's custom theme (Strategy A)
 
-OUDSTheme
+MISOTheme
     └── YourTheme            ← from-scratch theme (Strategy B)
 ```
 
@@ -78,9 +78,9 @@ OUDSTheme
 ### 2.1 Import
 
 ```swift
-import OUDSThemesOrange
+import MISOThemesOrange
 // or the umbrella product that includes it:
-import OUDSSwiftUIOrange
+import MISOSwiftUIOrange
 ```
 
 ### 2.2 Override only the providers you need
@@ -93,7 +93,7 @@ Each provider inherits from an `OrangeThemeXxxProvider` class. Override `@objc o
 |---|---|
 | Borders (style / width / radius) | `OrangeThemeBorderSemanticTokensProvider` |
 | Colors (light + dark via `MultipleColorSemanticToken`) | `OrangeThemeColorSemanticTokensProvider` |
-| Color modes (for `OUDSColoredSurface`) | `OrangeThemeColorModeSemanticTokensProvider` |
+| Color modes (for `MISOColoredSurface`) | `OrangeThemeColorModeSemanticTokensProvider` |
 | Color charts | `OrangeThemeColorChartSemanticTokensProvider` |
 | Color decorative | `OrangeThemeColorDecorativeSemanticTokensProvider` |
 | Effects | `OrangeThemeEffectSemanticTokensProvider` |
@@ -136,7 +136,7 @@ Etc.
 ### 2.3 Example provider overrides
 
 ```swift
-import OUDSTokensRaw
+import MISOTokensRaw
 
 // Colors
 class YourThemeColorProvider: OrangeThemeColorSemanticTokensProvider {
@@ -205,10 +205,10 @@ class YourThemeFontProvider: OrangeThemeFontSemanticTokensProvider {
 ### 2.4 Theme class skeleton
 
 ```swift
-import OUDSThemesContract
-import OUDSTokensRaw
+import MISOThemesContract
+import MISOTokensRaw
 
-class YourTheme: OUDSTheme {
+class YourTheme: MISOTheme {
 
     static let name = "YourBrand"
 
@@ -236,16 +236,16 @@ class YourTheme: OUDSTheme {
 
 ---
 
-## 3. Strategy B — From scratch on `OUDSTheme`
+## 3. Strategy B — From scratch on `MISOTheme`
 
 > **Warning:** This requires implementing all providers — potentially hundreds of `@objc open`
 > property overrides. Use only for fully independent brands with no Orange assets.
-> See `SoshTheme` in the OUDS source as the canonical reference.
+> See `SoshTheme` in the MISO source as the canonical reference.
 
 ### 3.1 Import
 
 ```swift
-import OUDSThemesContract   // OUDSTheme base + AllXxx protocols
+import MISOThemesContract   // MISOTheme base + AllXxx protocols
 import SwiftUI
 import CoreText              // only if registering custom fonts
 ```
@@ -308,18 +308,18 @@ Respect dependency order — some providers take others as constructor arguments
 | `textArea` | `AllTextAreaComponentTokensProvider` |
 | `textInput` | `AllTextInputComponentTokensProvider` |
 
-See init of `OrangeTheme` or `OUDSTheme` for fill list.
+See init of `OrangeTheme` or `MISOTheme` for fill list.
 
 ### 3.4 Theme class skeleton
 
 ```swift
 import Foundation
-import OUDSThemesContract
+import MISOThemesContract
 import SwiftUI
 // import CoreText  ← add only if using custom fonts
 
 // swiftlint:disable function_body_length
-public final class YourTheme: OUDSTheme, @unchecked Sendable {
+public final class YourTheme: MISOTheme, @unchecked Sendable {
 
     public static let name = "YourBrand"
     nonisolated(unsafe) private static var fontsAlreadyRegistered = false
@@ -417,10 +417,10 @@ public final class YourTheme: OUDSTheme, @unchecked Sendable {
 
 ## 4. Strategy C — Mix existing providers
 
-No new subclass needed. Instantiate providers from existing themes and pass them directly to `OrangeTheme` or `OUDSTheme`:
+No new subclass needed. Instantiate providers from existing themes and pass them directly to `OrangeTheme` or `MISOTheme`:
 
 ```swift
-import OUDSThemesOrange
+import MISOThemesOrange
 
 // Reuse most Orange providers, only replace colors:
 let dimensions = OrangeThemeDimensionSemanticTokensProvider()
@@ -554,7 +554,7 @@ Pass `nil` to fall back to the system font.
 
 ### 6.5 Register PostScript names per weight (multi-weight fonts)
 
-When a font family has distinct PostScript names per weight, register the mapping so OUDS can resolve `Font` objects correctly. Use `registerFont(postScript:forCombination:)` with the `PSFNMK` typealias:
+When a font family has distinct PostScript names per weight, register the mapping so MISO can resolve `Font` objects correctly. Use `registerFont(postScript:forCombination:)` with the `PSFNMK` typealias:
 
 ```swift
 // Inside registerFonts(), after CTFontManagerRegisterFontsForURL calls:
@@ -566,14 +566,14 @@ registerFont(postScript: "YourFont-Bold",     forCombination: PSFNMK("Your Font"
 registerFont(postScript: "YourFont-Black",    forCombination: PSFNMK("Your Font", Font.Weight.black))
 ```
 
-> `kApplePostScriptFontNames` is the read-only map used internally by OUDS to resolve weights.
+> `kApplePostScriptFontNames` is the read-only map used internally by MISO to resolve weights.
 > Unregistered weight/family combinations fall back to the family name without weight hints.
 
 ### 6.6 Declare raw tokens for the font family (recommended)
 
 ```swift
 // YourBrandFontRawTokens.swift
-import OUDSTokensRaw  // for FontFamilyRawToken
+import MISOTokensRaw  // for FontFamilyRawToken
 
 public typealias YourBrandFontRawToken = FontFamilyRawToken
 
@@ -589,13 +589,13 @@ Then pass `YourBrandFontRawTokens.familyDefault` as `fontFamily:` in `super.init
 ## 7. Inject the theme in your app
 
 ```swift
-import OUDSSwiftUI  // or OUDSSwiftUIOrange if subclassing OrangeTheme
+import MISOSwiftUI  // or MISOSwiftUIOrange if subclassing OrangeTheme
 
 @main
 struct YourApp: App {
     var body: some Scene {
         WindowGroup {
-            OUDSThemeableView(theme: YourTheme()) {
+            MISOThemeableView(theme: YourTheme()) {
                 ContentView()
             }
         }
@@ -625,7 +625,7 @@ Understanding the three token layers is essential for creating custom themes:
 │  RAW TOKENS (Layer 1)                                           │
 │  Primitive values: ColorRawToken, DimensionRawToken, etc.      │
 │  Example: ColorRawTokens.colorPrimary = "#FF6600FF"            │
-│  Location: OUDSTokensRaw / YourBrandColorRawTokens             │
+│  Location: MISOTokensRaw / YourBrandColorRawTokens             │
 └─────────────────────────────────────────────────────────────────┘
                               ↓ references
 ┌─────────────────────────────────────────────────────────────────┐
@@ -663,7 +663,7 @@ Raw tokens are organized in two parts:
 
 ```swift
 // MyBrandColorRawTokens.swift (in Sources/Declarations/)
-import OUDSTokensRaw
+import MISOTokensRaw
 
 /// Color raw tokens exclusive to MyBrand theme.
 /// These are primitive color values (hex strings) used to build semantic tokens.
@@ -674,7 +674,7 @@ import OUDSTokensRaw
 
 ```swift
 // MyBrandColorRawTokens+Values.swift (in Sources/Values/RawTokens/)
-import OUDSTokensRaw
+import MISOTokensRaw
 
 extension MyBrandColorRawTokens {
     /// Primary brand color — orange
@@ -701,7 +701,7 @@ extension MyBrandColorRawTokens {
 
 ```swift
 // MyBrandFontRawTokens.swift (in Sources/Declarations/)
-import OUDSTokensRaw
+import MISOTokensRaw
 
 /// Font family raw tokens for MyBrand theme.
 @frozen public enum MyBrandFontRawTokens {
@@ -711,7 +711,7 @@ import OUDSTokensRaw
 
 ```swift
 // MyBrandFontRawTokens+Values.swift (in Sources/Values/RawTokens/)
-import OUDSTokensRaw
+import MISOTokensRaw
 
 extension MyBrandFontRawTokens {
     /// Default font family
@@ -727,7 +727,7 @@ extension MyBrandFontRawTokens {
 Once defined, use them in your semantic token providers:
 
 ```swift
-import OUDSTokensRaw
+import MISOTokensRaw
 
 class MyBrandColorSemanticTokensProvider: AllColorSemanticTokensProvider {
 
@@ -767,7 +767,7 @@ class MyBrandColorSemanticTokensProvider: AllColorSemanticTokensProvider {
 
 ## 10. Complete example: minimal from-scratch theme
 
-This example shows a minimal but functional from-scratch theme. It uses existing core raw tokens (from `OUDSTokensRaw`) rather than defining custom ones, but demonstrates the full provider implementation.
+This example shows a minimal but functional from-scratch theme. It uses existing core raw tokens (from `MISOTokensRaw`) rather than defining custom ones, but demonstrates the full provider implementation.
 
 ### 10.1 File structure
 
@@ -796,10 +796,10 @@ MyBrandTheme/
 
 ```swift
 // MyBrandColorSemanticTokensProvider.swift
-import OUDSFoundations
-import OUDSThemesContract
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOThemesContract
+import MISOTokensRaw
+import MISOTokensSemantic
 
 final class MyBrandColorSemanticTokensProvider: AllColorSemanticTokensProvider {
 
@@ -809,8 +809,8 @@ final class MyBrandColorSemanticTokensProvider: AllColorSemanticTokensProvider {
 }
 
 // MyBrandTheme+ColorSemanticTokens.swift
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import MISOTokensRaw
+import MISOTokensSemantic
 
 extension MyBrandColorSemanticTokensProvider: ColorSemanticTokens {
 
@@ -836,11 +836,11 @@ extension MyBrandColorSemanticTokensProvider: ColorSemanticTokens {
     }
 
     // ... many more properties required by ColorSemanticTokens protocol
-    // See: https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/ColorSemanticTokens
+    // See: https://ios.unified-design-system.orange.com/documentation/misoTokensSemantic/ColorSemanticTokens
 }
 
 // MyBrandTheme+ColorMultipleSemanticTokens.swift
-import OUDSTokensSemantic
+import MISOTokensSemantic
 
 extension MyBrandColorSemanticTokensProvider: ColorMultipleSemanticTokensProvider {
 
@@ -866,7 +866,7 @@ extension MyBrandColorSemanticTokensProvider: ColorMultipleSemanticTokensProvide
     }
 
     // ... more multiple tokens
-    // See: https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/ColorMultipleSemanticTokens
+    // See: https://ios.unified-design-system.orange.com/documentation/misoTokensSemantic/ColorMultipleSemanticTokens
 }
 ```
 
@@ -874,10 +874,10 @@ extension MyBrandColorSemanticTokensProvider: ColorMultipleSemanticTokensProvide
 
 ```swift
 // MyBrandBorderSemanticTokensProvider.swift
-import OUDSFoundations
-import OUDSThemesContract
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOThemesContract
+import MISOTokensRaw
+import MISOTokensSemantic
 
 final class MyBrandBorderSemanticTokensProvider: AllBorderSemanticTokensProvider {
 
@@ -898,15 +898,15 @@ extension MyBrandBorderSemanticTokensProvider: BorderSemanticTokens {
     @objc public final var radiusMedium: BorderRadiusSemanticToken {
         BorderRawTokens.radius200
     }
-    // See: https://ios.unified-design-system.orange.com/documentation/oudsTokensSemantic/BorderSemanticTokens
+    // See: https://ios.unified-design-system.orange.com/documentation/misoTokensSemantic/BorderSemanticTokens
 }
 ```
 
 ### 10.4 Dimension, Size, Space providers
 
 ```swift
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import MISOTokensRaw
+import MISOTokensSemantic
 
 // MyBrandDimensionSemanticTokensProvider.swift
 final class MyBrandDimensionSemanticTokensProvider: AllDimensionSemanticTokensProvider {
@@ -942,8 +942,8 @@ extension MyBrandSpaceSemanticTokensProvider: SpaceSemanticTokens {
 ### 10.5 Font semantic provider
 
 ```swift
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import MISOTokensRaw
+import MISOTokensSemantic
 
 // MyBrandFontSemanticTokensProvider.swift
 final class MyBrandFontSemanticTokensProvider: AllFontSemanticTokensProvider {
@@ -978,10 +978,10 @@ extension MyBrandFontSemanticTokensProvider: FontMultipleSemanticTokensProvider 
 ### 10.6 Button component provider
 
 ```swift
-import OUDSFoundations
-import OUDSThemesContract
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import MISOFoundations
+import MISOThemesContract
+import MISOTokensRaw
+import MISOTokensSemantic
 
 // MyBrandButtonComponentTokensProvider.swift
 
@@ -1029,10 +1029,10 @@ extension MyBrandButtonComponentTokensProvider: ButtonComponentTokens {
 ```swift
 // MyBrandTheme.swift
 import Foundation
-import OUDSThemesContract
+import MISOThemesContract
 import SwiftUI
 
-public final class MyBrandTheme: OUDSTheme, @unchecked Sendable {
+public final class MyBrandTheme: MISOTheme, @unchecked Sendable {
 
     public static let name = "MyBrand"
 
@@ -1053,7 +1053,7 @@ public final class MyBrandTheme: OUDSTheme, @unchecked Sendable {
         // ── Component providers ─
         let button = MyBrandButtonComponentTokensProvider(
             sizes: sizes, borders: borders, colors: colors, spaces: spaces)
-        // ... other components - see https://ios.unified-design-system.orange.com/documentation/oudsTokensComponent/
+        // ... other components - see https://ios.unified-design-system.orange.com/documentation/misoTokensComponent/
 
         super.init(
             borders:     borders,
@@ -1068,7 +1068,7 @@ public final class MyBrandTheme: OUDSTheme, @unchecked Sendable {
             sizes:       sizes,
             spaces:      spaces,
             button:      button,
-            // ... other components - see https://ios.unified-design-system.orange.com/documentation/oudsTokensComponent/
+            // ... other components - see https://ios.unified-design-system.orange.com/documentation/misoTokensComponent/
             name:        Self.name,
             tuning:      Tuning.default)
     }
@@ -1088,6 +1088,6 @@ public final class MyBrandTheme: OUDSTheme, @unchecked Sendable {
 - [ ] `registerFonts()` is called after `super.init(...)`
 - [ ] PostScript names are registered for each weight variant used
 - [ ] `fontFamily` value matches the exact string visible in Font Book (family name or PostScript name)
-- [ ] `OUDSThemeableView` wraps the root view in the app entry point
+- [ ] `MISOThemeableView` wraps the root view in the app entry point
 - [ ] All semantic token providers implement their protocol (check with Xcode protocol conformance)
-- [ ] Raw tokens used in providers exist and are spelled correctly (check `OUDSTokensRaw` module)
+- [ ] Raw tokens used in providers exist and are spelled correctly (check `MISOTokensRaw` module)

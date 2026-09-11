@@ -1,21 +1,21 @@
 ---
-name: ouds-ios-framework-usage
-description: Setup and general usage of the OUDS iOS framework — imports, themes, token namespaces, view modifiers, image rules, shared control patterns and custom font registration. Load this first; then load the matching `ouds-ios-components-*` skill for a specific component family (actions, content-display, controls, dialogs, foundations, indicators, layouts, navigations).
+name: miso-ios-framework-usage
+description: Setup and general usage of the MISO iOS framework — imports, themes, token namespaces, view modifiers, image rules, shared control patterns and custom font registration. Load this first; then load the matching `miso-ios-components-*` skill for a specific component family (actions, content-display, controls, dialogs, foundations, indicators, layouts, navigations).
 license: MIT
 ---
 
-# OUDS Framework Usage
+# MISO Framework Usage
 
 ## 1. Basic setup
 
 ```swift
-import OUDSSwiftUI // Always use the umbrella import
+import MISOSwiftUI // Always use the umbrella import
 
 @main
 struct MyApp: App {
     var body: some Scene {
         WindowGroup {
-            OUDSThemeableView(theme: OrangeTheme()) {
+            MISOThemeableView(theme: OrangeTheme()) {
                 ContentView()
             }
         }
@@ -26,7 +26,7 @@ struct ContentView: View {
     @Environment(\.theme) private var theme
     var body: some View {
         VStack(spacing: theme.spaces.fixedMedium) {
-            OUDSButton(text: "Action", appearance: .default) {}
+            MISOButton(text: "Action", appearance: .default) {}
         }
         .padding(theme.spaces.fixedLarge)
     }
@@ -41,19 +41,19 @@ Can import internal modules, but for developer experience there are umbrella pro
 
 | Product | Themes | When |
 |---|---|---|
-| `OUDSSwiftUI` | All | Default |
-| `OUDSSwiftUIOrange` | Orange + OrangeCompact | Orange apps only |
-| `OUDSSwiftUIOrangeSosh` | Orange + Sosh | Multi-brand |
-| `OUDSSwiftUIWireframe` | Wireframe | Prototyping |
+| `MISOSwiftUI` | All | Default |
+| `MISOSwiftUIOrange` | Orange + OrangeCompact | Orange apps only |
+| `MISOSwiftUIOrangeSosh` | Orange + Sosh | Multi-brand |
+| `MISOSwiftUIWireframe` | Wireframe | Prototyping |
 
-Internal modules: `OUDSComponents`, `OUDSTokensRaw`, `OUDSTokensSemantic`, `OUDSTokensComponent`, `OUDSThemesOrange`, `OUDSThemesSosh`, `OUDSFoundations`, etc.
+Internal modules: `MISOComponents`, `MISOTokensRaw`, `MISOTokensSemantic`, `MISOTokensComponent`, `MISOThemesOrange`, `MISOThemesSosh`, `MISOFoundations`, etc.
 
 ---
 
 ## 3. Themes
 
 ```swift
-OUDSThemeableView(theme: OrangeTheme()) { … }   // inject at root
+MISOThemeableView(theme: OrangeTheme()) { … }   // inject at root
 @Environment(\.theme) private var theme          // consume anywhere
 ```
 
@@ -66,7 +66,7 @@ Available: `OrangeTheme`, `OrangeCompact`, `SoshTheme`, `WireframeTheme`.
 | Namespace | Content |
 |---|---|
 | `theme.colors` | Color semantic tokens |
-| `theme.colorModes` | Color-mode tokens (for `OUDSColoredSurface`) |
+| `theme.colorModes` | Color-mode tokens (for `MISOColoredSurface`) |
 | `theme.borders` | Border style / width / radius |
 | `theme.fonts` | Typography |
 | `theme.sizes` | Sizes |
@@ -104,37 +104,37 @@ RoundedRectangle(cornerRadius: 8)
 
 ---
 
-## 6. Images in OUDS components
+## 6. Images in MISO components
 
-**Never call SwiftUI modifiers on an `Image` that is passed as a parameter to an OUDS component.**
+**Never call SwiftUI modifiers on an `Image` that is passed as a parameter to an MISO component.**
 
-OUDS components accept `Image` — the bare SwiftUI type. Calling any modifier on it (including `.accessibilityHidden(true)`) changes the type to `some View` and produces a compile error.
+MISO components accept `Image` — the bare SwiftUI type. Calling any modifier on it (including `.accessibilityHidden(true)`) changes the type to `some View` and produces a compile error.
 
 > The component handles the accessibility of its own images internally. You must not alter them from the call site.
 
 **Never do this:**
 ```swift
-OUDSButton(
+MISOButton(
     text: "Add",
     icon: Image(systemName: "plus").accessibilityHidden(true), // ❌ compile error: Image → some View
     appearance: .default) {}
 
-OUDSLink(
+MISOLink(
     text: "Back",
-    icon: OUDSImage(asset: Image(systemName: "chevron.left").accessibilityHidden(true)), // ❌ compile error: Image modifier → some View
+    icon: MISOImage(asset: Image(systemName: "chevron.left").accessibilityHidden(true)), // ❌ compile error: Image modifier → some View
     size: .default) {}
 ```
 
-**Always do this — pass a bare `Image` inside `OUDSImage`, swiftlint comment on the line before:**
+**Always do this — pass a bare `Image` inside `MISOImage`, swiftlint comment on the line before:**
 ```swift
 // swiftlint:disable:next accessibility_label_for_image
-OUDSButton(text: "Add", icon: Image(systemName: "plus"), appearance: .default) {}
+MISOButton(text: "Add", icon: Image(systemName: "plus"), appearance: .default) {}
 
 // swiftlint:disable:next accessibility_label_for_image
-OUDSLink(text: "Back", icon: OUDSImage(asset: Image(systemName: "chevron.left")), size: .default) {}
+MISOLink(text: "Back", icon: MISOImage(asset: Image(systemName: "chevron.left")), size: .default) {}
 
 // swiftlint:disable:next accessibility_label_for_image
-OUDSToolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") {}
+MISOToolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") {}
 ```
 
 The `// swiftlint:disable:next accessibility_label_for_image` comment must appear **on the line immediately before** the component call, never on the line of the `Image(...)` itself.
@@ -145,7 +145,7 @@ Exception: `Image(decorative: "name")` suppresses the linter rule automatically 
 
 ## 7. Registering custom fonts
 
-To use a custom font family with OUDS, two steps are required after adding the TTF files to your project:
+To use a custom font family with MISO, two steps are required after adding the TTF files to your project:
 
 **Step 1 — Register the font files** (Core Text, call once at app startup):
 
@@ -171,13 +171,13 @@ registerFont(postScript: "WinkyRough-Regular_Bold",    forCombination: PSFNMK("W
 registerFont(postScript: "WinkyRough-Regular_Black",   forCombination: PSFNMK("Winky Rough", Font.Weight.black))
 ```
 
-`kApplePostScriptFontNames` exposes the full map (read-only). OUDS uses it internally to resolve `Font` objects from theme font tokens. Unregistered combinations fall back to the family name without spaces.
+`kApplePostScriptFontNames` exposes the full map (read-only). MISO uses it internally to resolve `Font` objects from theme font tokens. Unregistered combinations fall back to the family name without spaces.
 
 ---
 
 ## 8. Styled AttributedString with hyperlinks
 
-OUDS provides utilities to create styled `AttributedString` from plain text or Markdown, with custom styling for links based on their text or URL.
+MISO provides utilities to create styled `AttributedString` from plain text or Markdown, with custom styling for links based on their text or URL.
 
 Font tokens (e.g. `theme.fonts.bodyDefaultMedium`) are `MultipleFontCompositeSemanticToken` values, not SwiftUI `Font`.
 Convert them with `Font.makeFont(family:from:isCompact:)` before using them in `AttributedStringUrlConfiguration` or `AttributedString.from(...)`.
@@ -185,7 +185,7 @@ Convert them with `Font.makeFont(family:from:isCompact:)` before using them in `
 ### Basic usage — Markdown
 
 ```swift
-import OUDSComponents
+import MISOComponents
 import SwiftUI
 
 let markdown = "Read our [terms of service](https://example.com/terms) and [privacy policy](https://example.com/privacy)"
@@ -285,23 +285,23 @@ For each hyperlink found in the Markdown source, the **first** configuration in 
 
 ## 10. AsyncImage — cached image loading
 
-``OUDSAsyncImage`` is a cached version of ``SwiftUI/AsyncImage``. It loads images from URLs and caches them in memory (100MB) and on disk (500MB).
+``MISOAsyncImage`` is a cached version of ``SwiftUI/AsyncImage``. It loads images from URLs and caches them in memory (100MB) and on disk (500MB).
 
 ```swift
-import OUDSSwiftUI
+import MISOSwiftUI
 
 // Basic usage
-OUDSAsyncImage(url: URL(string: "https://example.com/photo.png"))
+MISOAsyncImage(url: URL(string: "https://example.com/photo.png"))
 
 // With content transformation and placeholder
-OUDSAsyncImage(url: url) { image in
+MISOAsyncImage(url: url) { image in
     image.resizable()
 } placeholder: {
     ProgressView()
 }
 
 // With phases for full control
-OUDSAsyncImage(url: url) { phase in
+MISOAsyncImage(url: url) { phase in
     switch phase {
     case .empty: ProgressView()
     case .success(let image): image.resizable()
@@ -310,12 +310,12 @@ OUDSAsyncImage(url: url) { phase in
 }
 
 // Cache management
-OUDSAsyncImageCache.shared.clearCache()           // memory + disk
-OUDSAsyncImageCache.shared.clearMemoryCache()
-OUDSAsyncImageCache.shared.clearDiskCache()
+MISOAsyncImageCache.shared.clearCache()           // memory + disk
+MISOAsyncImageCache.shared.clearMemoryCache()
+MISOAsyncImageCache.shared.clearDiskCache()
 ```
 
-The cache uses ``OUDSAsyncImageCache/Settings`` internally (100MB memory, 500MB disk).
+The cache uses ``MISOAsyncImageCache/Settings`` internally (100MB memory, 500MB disk).
 
 ---
 
@@ -323,15 +323,15 @@ The cache uses ``OUDSAsyncImageCache/Settings`` internally (100MB memory, 500MB 
 
 ### RTL/LTR image flipping
 
-If your app supports right-to-left (RTL) layouts, use ``OUDSImage`` to flip icons automatically:
+If your app supports right-to-left (RTL) layouts, use ``MISOImage`` to flip icons automatically:
 
 ```swift
 @Environment(\.layoutDirection) private var layoutDirection
 
-OUDSCheckboxItem(
+MISOCheckboxItem(
     "Label",
     isOn: $isOn,
-    image: OUDSImage(
+    image: MISOImage(
         asset: Image(systemName: "figure.handball"),
         flipped: layoutDirection == .rightToLeft
     ),
@@ -341,11 +341,11 @@ OUDSCheckboxItem(
 
 ### Detecting Arabic locale
 
-Use ``OUDSUtils/isArabicLanguageInUse()`` to detect if Arabic is in use and switch font family:
+Use ``MISOUtils/isArabicLanguageInUse()`` to detect if Arabic is in use and switch font family:
 
 ```swift
 func localizedHelveticaFont() -> String {
-    return (OUDSUtils.isArabicLanguageInUse() ? "Helvetica Neue Arabic" : "Helvetica Neue")
+    return (MISOUtils.isArabicLanguageInUse() ? "Helvetica Neue Arabic" : "Helvetica Neue")
 }
 
 let theme = OrangeTheme(fontFamily: localizedHelveticaFont())
@@ -355,17 +355,17 @@ let theme = OrangeTheme(fontFamily: localizedHelveticaFont())
 
 ## 12. Component skills
 
-Load the matching skill for the component family you need. Each family skill mirrors `OUDS/Core/Components/Sources/<Family>/` in the repo.
+Load the matching skill for the component family you need. Each family skill mirrors `MISO/Core/Components/Sources/<Family>/` in the repo.
 
 | Family | Skill | Components |
 |---|---|---|
-| Actions | `ouds-ios-components-actions` | OUDSButton |
-| Content Display | `ouds-ios-components-content-display` | OUDSBulletList |
-| Controls | `ouds-ios-components-controls` | OUDSCheckbox, OUDSRadio, OUDSSwitch, OUDSSuggestionChip / OUDSFilterChip / OUDSChipPicker, OUDSPinCodeInput, OUDSPasswordInput, OUDSTextInput, OUDSTextArea |
-| Dialogs | `ouds-ios-components-dialogs` | OUDSAlertMessage, OUDSInlineAlert |
-| Foundations | `ouds-ios-components-foundations` | OUDSDisplay, OUDSHeading, OUDSLabel, OUDSBody, OUDSCode |
-| Indicators | `ouds-ios-components-indicators` | OUDSBadge*, OUDSTag, OUDSInputTag, OUDSCircularProgressIndicator, OUDSLinearProgressIndicator |
-| Layouts | `ouds-ios-components-layouts` | OUDSColoredSurface, OUDSHorizontalDivider, OUDSVerticalDivider |
-| Navigations | `ouds-ios-components-navigations` | OUDSLink, OUDSTabBar, OUDSToolBarItem / `toolBarTop` / `toolBarBottom` |
+| Actions | `miso-ios-components-actions` | MISOButton |
+| Content Display | `miso-ios-components-content-display` | MISOBulletList |
+| Controls | `miso-ios-components-controls` | MISOCheckbox, MISORadio, MISOSwitch, MISOSuggestionChip / MISOFilterChip / MISOChipPicker, MISOPinCodeInput, MISOPasswordInput, MISOTextInput, MISOTextArea |
+| Dialogs | `miso-ios-components-dialogs` | MISOAlertMessage, MISOInlineAlert |
+| Foundations | `miso-ios-components-foundations` | MISODisplay, MISOHeading, MISOLabel, MISOBody, MISOCode |
+| Indicators | `miso-ios-components-indicators` | MISOBadge*, MISOTag, MISOInputTag, MISOCircularProgressIndicator, MISOLinearProgressIndicator |
+| Layouts | `miso-ios-components-layouts` | MISOColoredSurface, MISOHorizontalDivider, MISOVerticalDivider |
+| Navigations | `miso-ios-components-navigations` | MISOLink, MISOTabBar, MISOToolBarItem / `toolBarTop` / `toolBarBottom` |
 
 ---

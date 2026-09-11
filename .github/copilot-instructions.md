@@ -1,4 +1,4 @@
-# OUDS iOS - GitHub Copilot Instructions
+# MISO iOS - GitHub Copilot Instructions
 
 This file provides guidance to GitHub Copilot when working on this repository.
 It covers contributor and maintainer guidelines: code formatting, architecture, build process, best practices, ecodesign, accessibility, development requirements, build commands and review guidelines.
@@ -18,18 +18,6 @@ Here are the modules of the Swift Package, i.e. set of features with external de
 #### Core / Components
 
 Here the the components provided by the Swift Package like buttons, switchs, checkboxes, chips, tags, links, etc.
-
-#### Core / Themes / Orange
-
-Here is the definition of the Orange theme for all Orange products.
-
-#### Core / Themes / Orange Compact
-
-Here is the definition of the Orange theme for all Orange products but with constraints of spaces and sizes.
-
-#### Core / Themes / Sosh
-
-Here is the definition of the Sosh theme for all Sosh products.
 
 #### Core / Themes / Wireframe
 
@@ -132,7 +120,7 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 
 ### 5.7 Fonts
 
-- Prefer system fonts if possible, but in OUDS context use still the view modifiers and provided typography
+- Prefer system fonts if possible, but in MISO context use still the view modifiers and provided typography
 - Use WOFF2 otherwise
 
 ### 5.8 Network connections
@@ -305,49 +293,31 @@ When adding or modifying components, you MUST add illustrations in both:
 
 ### 10.1 Component documentation files
 
-Location: `OUDS/Core/Components/Sources/_OUDSComponents.docc/*.md`
+Location: `MISO/Core/Components/Sources/_MISOComponents.docc/*.md`
 
-Each component MUST have an illustration with `@TabNavigator` for all 4 themes:
+Each component MUST have an illustration with `@TabNavigator` for all themes:
 
 ```markdown
 @TabNavigator {
-    @Tab("Orange") {
-        ![A component in light and dark modes with Orange theme](component_nom_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A component in light and dark modes with Orange Compact theme](component_nom_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A component in light and dark modes with Sosh theme](component_nom_Sosh)
-    }
     @Tab("Wireframe") {
-        ![A component in light and dark modes with Wireframe theme](component_nom_Wireframe)
+        ![A component in light and dark modes with Wireframe theme](component_name_Wireframe)
     }
 }
 ```
 
-- Use local references (not URLs): `component_nom_Orange`
+- Use local references (not URLs): `component_name_Wireframe`
 - For components with variants (e.g., Badge standard/count/icon), use nested tabs
 
 ### 10.2 Theme documentation files
 
-Location: `OUDS/Core/Themes/*/Sources/_OUDSThemes*.docc/OUDSThemes*.md`
+Location: `MISO/Core/Themes/*/Sources/_MISOThemes*.docc/MISOThemes*.md`
 
 Each component MUST have an illustration with `@TabNavigator` using full URLs:
 
 ```markdown
 @TabNavigator {
-    @Tab("Orange") {
-        ![A component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_Orange.png)
-    }
-    @Tab("Orange Compact") {
-        ![A component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_OrangeCompact.png)
-    }
-    @Tab("Sosh") {
-        ![A component in light and dark modes with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_Sosh.png)
-    }
     @Tab("Wireframe") {
-        ![A component in light and dark modes with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_nom_Wireframe.png)
+        ![A component in light and dark modes with Wireframe theme](https://some.url/component_name_Wireframe.png)
     }
 }
 ```
@@ -375,8 +345,8 @@ For components with multiple variants (e.g., Badge, ProgressIndicator, ListItem)
 @TabNavigator {
     @Tab("Standard") {
         @TabNavigator {
-            @Tab("Orange") {
-                ![Badge Standard](component_badge_Orange)
+            @Tab("Wireframe") {
+                ![Badge Standard](component_badge_Wireframe)
             }
             ...
         }
@@ -392,8 +362,8 @@ For components with multiple variants (e.g., Badge, ProgressIndicator, ListItem)
 
 ### 10.5 Review checklist for illustrations
 
-- [ ] New component has illustration in component docs (*.md in _OUDSComponents.docc)
-- [ ] New component has illustration in all 4 theme docs (OUDSThemes*.md)
+- [ ] New component has illustration in component docs (*.md in _MISOComponents.docc)
+- [ ] New component has illustration in all 4 theme docs (MISOThemes*.md)
 - [ ] Image filenames use snake_case (not CamelCase)
 - [ ] Theme doc URLs point to correct snake_case filenames
 - [ ] Components with variants (Badge, ProgressIndicator, ListItem) use proper tabs

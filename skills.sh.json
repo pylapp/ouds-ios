@@ -5,18 +5,16 @@
       "title": "OUDS iOS",
       "description": "Skills for working with the Orange Unified Design System iOS Swift Package.",
       "skills": [
-        "ouds-ios-framework-usage",
-        "ouds-ios-components-actions",
-        "ouds-ios-components-content-display",
-        "ouds-ios-components-controls",
-        "ouds-ios-components-dialogs",
-        "ouds-ios-components-indicators",
-        "ouds-ios-components-layouts",
-        "ouds-ios-components-navigations",
-        "ouds-ios-guide-vocabulary",
-        "ouds-ios-guide-figma-to-swift",
-        "ouds-ios-guide-migration",
-        "ouds-ios-guide-create-theme"
+        "miso-ios-framework-usage",
+        "miso-ios-components-actions",
+        "miso-ios-components-content-display",
+        "miso-ios-components-controls",
+        "miso-ios-components-dialogs",
+        "miso-ios-components-indicators",
+        "miso-ios-components-layouts",
+        "miso-ios-components-navigations",
+        "miso-ios-guide-vocabulary",
+        "miso-ios-guide-create-theme"
       ]
     }
   ]
