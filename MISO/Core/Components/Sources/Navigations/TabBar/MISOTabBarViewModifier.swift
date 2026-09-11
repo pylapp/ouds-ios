@@ -105,7 +105,7 @@ public struct MISOTabBarViewModifier: ViewModifier {
     // swiftlint:disable function_body_length
     /// Defines the selected and unselected states, and background colors for the tab bar.
     /// Can use forced values for color scheme and theme in some edge cases (app refresh).
-    /// More details: https://github.com/Orange-OpenSource/ouds-ios/discussions/1076
+    /// More details: https://github.com/Orange-OpenSource/miso-ios/discussions/1076
     ///
     /// - Parameters:
     ///    - scheme: The color scheme to apply if defined

@@ -29,7 +29,7 @@ import SwiftUI
 ///
 /// Without Liquid Glass / iOS 18 and lower, the OS won't change that much the style of the toolbar items, Items won't be visually grouped.
 ///
-/// Globaly the appearence of the * navigation bar* elements is changed by the `oudsNavigationBarAppearance`
+/// Globaly the appearence of the * navigation bar* elements is changed by the `misoNavigationBarAppearance`
 /// helper of `View` that must be applyed on the root view of the `NavigationStack` for example.
 ///
 /// ## Technical constraints
@@ -52,9 +52,9 @@ import SwiftUI
 ///
 /// ## Badges uses
 ///
-/// For iOS 26 with Liquid Glass, the system badge is used because the OUDS badge component does not provide a suitable
+/// For iOS 26 with Liquid Glass, the system badge is used because the MISO badge component does not provide a suitable
 /// rendering with the glassified effect applied on the top toolbar.
-/// For iOS until 18 and without Liquid Glass  OUDS badge component is always used.
+/// For iOS until 18 and without Liquid Glass  MISO badge component is always used.
 ///
 /// ## Code sample
 ///
@@ -101,7 +101,7 @@ public struct MISOToolBarTop: ViewModifier {
 
     // MARK: Initializer
 
-    /// `ViewModifier` to define an OUDS top toolbar.
+    /// `ViewModifier` to define an MISO top toolbar.
     ///
     ///  You should prefer `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:principalItem:trailingItems:)` on view placed
     ///  inside `NavigationView` or`NavigationStack`.

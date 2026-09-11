@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import Testing
 
@@ -22,7 +9,7 @@ import Testing
 /// To test  the extension `String`, here the `toHex6` utils.
 struct StringExtensionsTests {
 
-    // See https://github.com/Orange-OpenSource/ouds-ios/issues/667
+    // See https://github.com/Orange-OpenSource/miso-ios/issues/667
     #if !os(iOS)
     private static let doesRunOniOS = false
     #else
@@ -81,7 +68,7 @@ struct StringExtensionsTests {
     }
 
     @Test("#FF7900FF in hexa6 must be #F4F4F4", .enabled(if: Self.doesRunOniOS))
-    func convertColorOrange500() {
+    func convertColorSample500() {
         #expect("#FF7900FF".toHex6()! == "#FF7900")
     }
 

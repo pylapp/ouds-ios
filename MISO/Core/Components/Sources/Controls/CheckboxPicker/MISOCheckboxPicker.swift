@@ -304,9 +304,9 @@ public struct MISOCheckboxPicker<Tag>: View where Tag: Hashable {
         for selection in selections {
             let selectionCount = checkboxes.count(where: { $0.tag == selection })
             if selectionCount == 0 {
-                ML.error("It seems the selection '\(selection)' is not available inside the checkboxes. Be sure the value is available in only one tag.")
+                OL.error("It seems the selection '\(selection)' is not available inside the checkboxes. Be sure the value is available in only one tag.")
             } else if selectionCount > 1 {
-                ML.error("It seems the selection '\(selection)' is available more than one time. Be sure the value is available in only one tag.")
+                OL.error("It seems the selection '\(selection)' is available more than one time. Be sure the value is available in only one tag.")
             }
         }
     }

@@ -84,7 +84,7 @@ public struct MISOSwitch: View {
     ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
     public init(isOn: Binding<Bool>, accessibilityLabel: String, isReadOnly: Bool = false) {
         if accessibilityLabel.isEmpty {
-            ML.warning("The MISOSwitch should not have an empty accessibility label, think about your disabled users!")
+            OL.warning("The MISOSwitch should not have an empty accessibility label, think about your disabled users!")
         }
         _isOn = isOn
         self.accessibilityLabel = accessibilityLabel.localized()

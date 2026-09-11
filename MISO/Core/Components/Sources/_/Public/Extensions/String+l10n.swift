@@ -27,19 +27,19 @@ extension String {
         // If language is supported by Bundle.module, prefer this translation
         let stringInModule = NSLocalizedString(self, tableName: nil, bundle: Bundle.module, value: "", comment: "")
         if stringInModule != self {
-            // ML.debug("L10N: Preferred localization found: '\(preferredLocalization)' in Bundle.module")
+            // OL.debug("L10N: Preferred localization found: '\(preferredLocalization)' in Bundle.module")
             return stringInModule
         }
 
         // If language is supported by Bundle.main (i.e. application) use it.
         let stringInMain = NSLocalizedString(self, tableName: nil, bundle: .main, value: "", comment: "")
         if stringInMain != self {
-            // ML.debug("L10N: Preferred localization found: '\(preferredLocalization)' in Bundle.main")
+            // OL.debug("L10N: Preferred localization found: '\(preferredLocalization)' in Bundle.main")
             return stringInMain
         }
 
         // Fallback, use default language from Bundle.module
-        // ML.warning("L10N: Unable to find string '\(self)' from Bundle.module and Bundle.main for preferred localization '\(preferredLocalization)': use the default language of Bundle.module")
+        // OL.warning("L10N: Unable to find string '\(self)' from Bundle.module and Bundle.main for preferred localization '\(preferredLocalization)': use the default language of Bundle.module")
         return stringInModule
     }
 

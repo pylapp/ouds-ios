@@ -48,7 +48,7 @@ import SwiftUI
 /// Strong text can be used sparingly within alert messages to highlight key information.
 /// Underlined text must not be used for emphasis, as it is commonly associated with links.
 /// If a hyperlink is needed within the content, the underlined style should be used.
-/// Italic should be used with care, some brands do not allow it like Orange brand.
+/// Italic should be used with care, some brands do not allow it.
 /// No other text styles should be used.
 ///
 /// ## Accessibility considerations
@@ -107,7 +107,7 @@ public struct MISOAlertMessage: View {
         ///   - action: The action to process when clicked
         public init(text: String, position: Position = .bottom, action: @escaping () -> Void) {
             if text.isEmpty {
-                ML.warning("The link text for the MISOAlertMessage is empty, avoid using it in that case.")
+                OL.warning("The link text for the MISOAlertMessage is empty, avoid using it in that case.")
             }
             self.text = text
             self.action = action
@@ -150,7 +150,7 @@ public struct MISOAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            ML.warning("The label for the MISOAlertMessage must not be empty!")
+            OL.warning("The label for the MISOAlertMessage must not be empty!")
         }
         self.status = status
         self.description = if let description {
@@ -193,7 +193,7 @@ public struct MISOAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            ML.warning("The label for the MISOAlertMessage must not be empty!")
+            OL.warning("The label for the MISOAlertMessage must not be empty!")
         }
         self.status = status
         self.description = .attributed(description)
@@ -235,7 +235,7 @@ public struct MISOAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            ML.warning("The label for the MISOAlertMessage must not be empty!")
+            OL.warning("The label for the MISOAlertMessage must not be empty!")
         }
         self.status = status
         self.description = if let description {
@@ -282,7 +282,7 @@ public struct MISOAlertMessage: View {
     {
         text = label
         if text.isEmpty {
-            ML.warning("The label for the MISOAlertMessage must not be empty!")
+            OL.warning("The label for the MISOAlertMessage must not be empty!")
         }
         self.status = status
         self.description = .attributed(description)

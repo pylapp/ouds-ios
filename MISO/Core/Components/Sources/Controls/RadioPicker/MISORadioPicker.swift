@@ -74,7 +74,7 @@ public struct MISORadioPicker<Tag>: View where Tag: Hashable {
     /// The tag of the selected radio button
     var selection: Binding<Tag>
 
-    /// The list of data to wrap in ``OUDSRadiooItem`` inside this picker
+    /// The list of data to wrap in ``MISORadiooItem`` inside this picker
     private let radios: [MISORadioPickerData<Tag>]
 
     /// The type of layout the picker must have
@@ -202,9 +202,9 @@ public struct MISORadioPicker<Tag>: View where Tag: Hashable {
         let selection = selection.wrappedValue
         let selectionCount = radios.count(where: { $0.tag == selection })
         if selectionCount == 0 {
-            ML.error("It seems the selection '\(selection)' is not available inside the radio buttons. Be sure the value is available in only one tag.")
+            OL.error("It seems the selection '\(selection)' is not available inside the radio buttons. Be sure the value is available in only one tag.")
         } else if selectionCount > 1 {
-            ML.error("It seems the selection '\(selection)' is available more than one time. Be sure the value is available in only one tag.")
+            OL.error("It seems the selection '\(selection)' is available more than one time. Be sure the value is available in only one tag.")
         }
     }
 }

@@ -135,7 +135,7 @@ public struct MISOBadgeStandard: View {
     ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     private init(size: MISOBadgeStandard.Size, status: MISOBadgeStandard.Status, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
-            ML.warning("The MISOBadgeStandard should not have an empty accessibility label, think about your disabled users!")
+            OL.warning("The MISOBadgeStandard should not have an empty accessibility label, think about your disabled users!")
         }
         configuration = .init(size: size, status: status)
         self.accessibilityLabel = accessibilityLabel

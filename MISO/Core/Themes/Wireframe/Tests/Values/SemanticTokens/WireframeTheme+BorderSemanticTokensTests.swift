@@ -1,21 +1,8 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOThemesContract
-import OUDSThemesWireframe
+import MISOThemesWireframe
 import Testing
 
 /// The aim of this tests class is to look for regressions in **Wireframe brand border semantic tokens**.
@@ -24,7 +11,7 @@ import Testing
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
 struct WireframeThemeBorderSemanticTokensTests {
 
-    private var theme: OUDSTheme
+    private var theme: MISOTheme
 
     init() {
         theme = WireframeTheme()

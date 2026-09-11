@@ -134,26 +134,11 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-ios-tab-bar)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-miso-doc-ios-tab-bar)
 ///
 /// ## Themes rendering
 ///
 /// ### Liquid Glass
-///
-/// #### Orange
-///
-/// ![A tab bar component in light mode with Liquid Glass effect and Orange theme](component_tabBar_LiquidGlass_Orange_light)
-/// ![A tab bar component in dark mode with Liquid Glass effect and Orange theme](component_tabBar_LiquidGlass_Orange_dark)
-///
-/// #### Orange Compact
-///
-/// ![A  tab bar component in light mode with Liquid Glass effect and Orange Compact theme](component_tabBar_LiquidGlass_OrangeCompact_light)
-/// ![A  tab bar component in dark mode with Liquid Glass effect and Orange Compact theme](component_tabBar_LiquidGlass_OrangeCompact_dark)
-///
-/// #### Sosh
-///
-/// ![A  tab bar component in light mode with Liquid Glass effect and Sosh theme](component_tabBar_LiquidGlass_Sosh_light)
-/// ![A  tab bar component in dark mode with Liquid Glass effect and Sosh theme](component_tabBar_LiquidGlass_Sosh_dark)
 ///
 /// #### Wireframe
 ///
@@ -161,21 +146,6 @@ import SwiftUI
 /// ![A  tab bar component in dark mode with Liquid Glass effect and Wireframe theme](component_tabBar_LiquidGlass_Wireframe_dark)
 ///
 /// ### Without Liquid Glass
-///
-/// #### Orange
-///
-/// ![A tab bar component in light mode without Liquid Glass effect and Orange theme](component_tabBar_Orange_light)
-/// ![A tab bar component in dark mode without Liquid Glass effect and Orange theme](component_tabBar_Orange_dark)
-///
-/// #### Orange Compact
-///
-/// ![A  tab bar component in light mode without Liquid Glass effect and Orange Compact theme](component_tabBar_OrangeCompact_light)
-/// ![A  tab bar component in dark mode without Liquid Glass effect and Orange Compact theme](component_tabBar_OrangeCompact_dark)
-///
-/// #### Sosh
-///
-/// ![A  tab bar component in light mode without Liquid Glass effect and Sosh theme](component_tabBar_Sosh_light)
-/// ![A  tab bar component in dark mode without Liquid Glass effect and Sosh theme](component_tabBar_Sosh_dark)
 ///
 /// #### Wireframe
 ///
@@ -251,7 +221,7 @@ public struct MISOTabBar<Content: View>: View {
                 @ViewBuilder content: @escaping () -> Content)
     {
         if selectedTab.wrappedValue < 0 || selectedTab.wrappedValue >= count {
-            ML.warning("The selected tab binding for the MISOTabBar does not match the count of tabs")
+            OL.warning("The selected tab binding for the MISOTabBar does not match the count of tabs")
         }
         _selectedTab = selectedTab
         tabCount = Int(count)

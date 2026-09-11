@@ -5,9 +5,9 @@ import MISOFoundations
 import MISOTokensSemantic
 import SwiftUI
 
-// MARK: - OUDS Image
+// MARK: - MISO Image
 
-/// Use to provide an asset to ouds in order to be added in some components.
+/// Use to provide an asset to miso in order to be added in some components.
 /// The icon can be flipped for RTL consideration and an associated `acessibilityLabel`must be provided
 /// if the icon is not decorative.
 ///

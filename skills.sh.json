@@ -2,8 +2,8 @@
   "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
   "groupings": [
     {
-      "title": "OUDS iOS",
-      "description": "Skills for working with the Orange Unified Design System iOS Swift Package.",
+      "title": "MISO iOS",
+      "description": "Skills for working with the MISO iOS Swift Package.",
       "skills": [
         "miso-ios-framework-usage",
         "miso-ios-components-actions",

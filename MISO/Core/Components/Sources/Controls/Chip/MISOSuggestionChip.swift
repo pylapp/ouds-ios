@@ -90,7 +90,7 @@ public struct MISOSuggestionChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, text: String, action: @escaping () -> Void) {
         if text.isEmpty {
-            ML.warning("The MISOSuggestionChip should not have an empty text! Prefer instead MISOSuggestionChip(icon:accessibilityLabel:action).")
+            OL.warning("The MISOSuggestionChip should not have an empty text! Prefer instead MISOSuggestionChip(icon:accessibilityLabel:action).")
         }
         layout = .textAndIcon(text: text, icon: image, iconPosition: .leading)
         self.action = action
@@ -136,7 +136,7 @@ public struct MISOSuggestionChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, accessibilityLabel: String, action: @escaping () -> Void) {
         if accessibilityLabel.isEmpty {
-            ML.warning("The MISOSuggestionChip should not have an empty accessibility label, think about your disabled users!")
+            OL.warning("The MISOSuggestionChip should not have an empty accessibility label, think about your disabled users!")
         }
         layout = .icon(image, accessibilityLabel)
         self.action = action
@@ -175,7 +175,7 @@ public struct MISOSuggestionChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(text: String, action: @escaping () -> Void) {
         if text.isEmpty {
-            ML.fatal("The MISOSuggestionChip must not have an empty text!")
+            OL.fatal("The MISOSuggestionChip must not have an empty text!")
         }
         layout = .text(text)
         self.action = action

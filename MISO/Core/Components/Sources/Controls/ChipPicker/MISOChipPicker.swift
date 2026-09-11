@@ -105,7 +105,7 @@ public struct MISOChipPicker<Tag: Hashable>: View {
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selection: Binding<Tag?>, chips: [MISOChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
-            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
+            OL.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
         self.chips = chips
@@ -135,7 +135,7 @@ public struct MISOChipPicker<Tag: Hashable>: View {
     {
         let resolvedTitle = title.map { $0.resolved(tableName: tableName, bundle: bundle) }
         if let resolvedTitle, resolvedTitle.isEmpty {
-            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
+            OL.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = resolvedTitle
         self.chips = chips
@@ -157,7 +157,7 @@ public struct MISOChipPicker<Tag: Hashable>: View {
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selection: Binding<Tag>, chips: [MISOChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
-            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
+            OL.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
         self.chips = chips
@@ -187,7 +187,7 @@ public struct MISOChipPicker<Tag: Hashable>: View {
     {
         let resolvedTitle = title.map { $0.resolved(tableName: tableName, bundle: bundle) }
         if let resolvedTitle, resolvedTitle.isEmpty {
-            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
+            OL.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = resolvedTitle
         self.chips = chips
@@ -209,7 +209,7 @@ public struct MISOChipPicker<Tag: Hashable>: View {
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selections: Binding<[Tag]>, chips: [MISOChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
-            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
+            OL.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
         self.chips = chips
@@ -239,7 +239,7 @@ public struct MISOChipPicker<Tag: Hashable>: View {
     {
         let resolvedTitle = title.map { $0.resolved(tableName: tableName, bundle: bundle) }
         if let resolvedTitle, resolvedTitle.isEmpty {
-            ML.warning("The title of the MISOChipPicker is empty, prefer nil instead")
+            OL.warning("The title of the MISOChipPicker is empty, prefer nil instead")
         }
         self.title = resolvedTitle
         self.chips = chips

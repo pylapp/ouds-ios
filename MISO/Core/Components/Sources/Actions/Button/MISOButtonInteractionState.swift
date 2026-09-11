@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 /// The interaction state used by modifiers to handle all states of the indicator.
-/// Any OUDS components should manage all these cases.
+/// Any MISO components should manage all these cases.
 ///
 /// The `readOnly` state primes over all.
 /// Then `disabled` state, `pressed`, `hover` and in the end `enabled`

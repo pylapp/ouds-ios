@@ -24,7 +24,7 @@ import MISOTokensSemantic
     /// Provides the color sementic token in theme associated to the divider color
     ///
     /// - Parameter theme: The theme that defines the token color
-    public func colorToken(in theme: OUDSTheme) -> MultipleColorSemanticToken {
+    public func colorToken(in theme: MISOTheme) -> MultipleColorSemanticToken {
         switch self {
         case .default:
             theme.colors.borderDefault

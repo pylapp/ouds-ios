@@ -1,27 +1,14 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
 /// A class which wraps all **component  tokens of bar**.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllBarComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a `AllBarComponentTokensProvider` implementation inside `MISOTheme` so as to provide
 /// all tokens to the users.
-/// It implements also the protocol `BarComponentTokens` so as to expose the component tokens for *bar* through any `OUDSTheme`.
+/// It implements also the protocol `BarComponentTokens` so as to expose the component tokens for *bar* through any `MISOTheme`.
 /// *Bar* components tokens are defined with semantic tokens of colors (`AllColorSemanticTokensProviders`),
 /// sizes (from `AllSizeSemanticTokensProvider`), borders (from `AllBorderSemanticTokensProvider`)
 /// and effects (from `AllEffectSemanticTokensProvider`).
@@ -62,7 +49,7 @@ final class WireframeThemeBarComponentTokensProvider: AllBarComponentTokensProvi
          opacities: AllOpacitySemanticTokensProvider? = nil,
          effects: AllEffectSemanticTokensProvider? = nil)
     {
-        ML.debug("Init of WireframeBarComponentTokensProvider")
+        OL.debug("Init of WireframeBarComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())

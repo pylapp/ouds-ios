@@ -4,7 +4,7 @@
 import MISOTokensSemantic
 import SwiftUI
 
-/// Creates an `HStack` with spacing scaled according to `horizontalSizeClass` base on OUDS `MultipleSpaceSemanticToken`.
+/// Creates an `HStack` with spacing scaled according to `horizontalSizeClass` base on MISO `MultipleSpaceSemanticToken`.
 ///
 /// ```swift
 ///     // For scaled space use the initialier with the token you want

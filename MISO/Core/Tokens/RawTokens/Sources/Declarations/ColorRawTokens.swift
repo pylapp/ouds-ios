@@ -1,24 +1,11 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 /// Defined as the group of all **raw tokens** related to **colors**.
 /// ``ColorRawTokens`` are tokens to use to define *colors* of components thants to ``ColorRawToken`` type.
 /// Some of these colors are "raw", and others have transparency effects.
 /// This enum contains also the shared colors, i.e. colors exposed to any theme.
-/// Some colors related to the Orange brand are defined elsewhere in `OrangeBrandColorRawTokens`.
+/// Some colors related to a specific brand can be defined elsewhere, e.g. in `WireframeBrandColorRawTokens`.
 ///
 /// - Since: 0.8.0
 @frozen public enum ColorRawTokens {

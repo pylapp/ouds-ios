@@ -42,7 +42,7 @@ import SwiftUI
 /// However for countries speaking arabic, these rules can't be applied. Indeed, there is no notion of upper and lower case characters in arabic alphabet.
 /// In addition, the numbers in use (i.e. the european "arabic" numbers like "1, 2, 3") are accepted in arabic countries, even if the "true arabic" numbers (like " ٢ ٣ ١") are used
 /// in middle-east arabic countries and for official documents.
-/// Thus the OUDS ordered bullet list will use "european" numbers for first level, and arabic alphabets for second and third levels.
+/// Thus the MISO ordered bullet list will use "european" numbers for first level, and arabic alphabets for second and third levels.
 ///
 /// ## Code samples
 ///
@@ -114,7 +114,7 @@ import SwiftUI
 /// Underlined text must not be used for emphasis, as it is commonly associated with links.
 /// Underlined links must be bold.
 /// If a hyperlink is needed within the content, the underlined style should be used.
-/// Italic should be used with care, some brands do not allow it like Orange brand.
+/// Italic should be used with care, some brands do not allow it.
 /// No other text styles should be used.
 ///
 /// ## Accessibility considerations

@@ -6,7 +6,7 @@
 import SwiftUI
 
 /// Uses an ``MISONavigationListItem``  object backed by a `NavigationLink`
-/// so as to use easily the navigation list item from OUDS inside the navigation of the app.
+/// so as to use easily the navigation list item from MISO inside the navigation of the app.
 ///
 /// ## Code samples
 ///

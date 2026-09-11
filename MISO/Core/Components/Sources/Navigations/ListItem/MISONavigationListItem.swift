@@ -214,7 +214,7 @@ public struct MISONavigationListItem: View {
     }
 }
 
-// MARK: - OUDS List Item Navigation Indicator Type
+// MARK: - MISO List Item Navigation Indicator Type
 
 /// The navigation indicator, describing the type of navigation triggered when the item is tapped.
 ///

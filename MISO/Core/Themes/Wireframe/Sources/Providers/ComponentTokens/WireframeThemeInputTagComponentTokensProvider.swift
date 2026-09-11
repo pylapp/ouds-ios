@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
@@ -21,7 +8,7 @@ import MISOThemesContract
 
 /// A class which wraps all **component  tokens of tag input** objects like `MISOInputTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// It implements also the protocol `InputTagComponentTokens` so as to expose the component tokens for *tag inputs* through any `OUDSTheme`.
+/// It implements also the protocol `InputTagComponentTokens` so as to expose the component tokens for *tag inputs* through any `MISOTheme`.
 /// *Tag inputs* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`),
 /// and borders (from `AllBorderSemanticTokensProvider`).
 ///
@@ -45,7 +32,7 @@ final class WireframeThemeInputTagComponentTokensProvider: AllInputTagComponentT
     init(borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil)
     {
-        ML.debug("Init of WireframeThemeInputTagComponentTokensProvider")
+        OL.debug("Init of WireframeThemeInputTagComponentTokensProvider")
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         #if DEBUG

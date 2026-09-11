@@ -1,42 +1,24 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 
-extension OUDSVersions {
+extension MISOVersions {
 
     /// Displays in standard output an information message about the tokens libraries versions in use
     static func logTokensLibrairiesVersions() {
-        var versionsLog = "OUDS iOS Libraries Versions:\n"
-        versionsLog += "- Core OUDS: \(Self.themeCoreVersion)\n"
-        versionsLog += "- Core Orange: \(Self.themeOrangeCoreVersion)\n"
-        versionsLog += "- Brand Orange: \(Self.themeOrangeBrandVersion)\n"
-        versionsLog += "- Brand Orange Compact: \(Self.themeOrangeCompactBrandVersion)\n"
-        versionsLog += "- Core Sosh: \(Self.themeSoshCoreVersion)\n"
-        versionsLog += "- Brand Sosh: \(Self.themeSoshBrandVersion)\n"
+        var versionsLog = "MISO iOS Libraries Versions:\n"
+        versionsLog += "- Core MISO: \(Self.themeCoreVersion)\n"
         versionsLog += "- Core Wireframe: \(Self.themeWireframeCoreVersion)\n"
         versionsLog += "- Brand Wireframe: \(Self.themeWireframeBrandVersion)\n"
 
-        ML.info(versionsLog)
+        OL.info(versionsLog)
     }
 
     /// Displays in standard output an informationmemssage about the versions of the components
     static func logComponentsVersions() {
         // NOTE: Keep components sorted
-        var versionsLog = "OUDS iOS Components Versions:\n"
+        var versionsLog = "MISO iOS Components Versions:\n"
         versionsLog += "- Alert message: \(Self.componentAlertMessageVersion)\n"
         versionsLog += "- Badge Standard: \(Self.componentBadgeVersion)\n"
         versionsLog += "- Badge Count: \(Self.componentBadgeCountVersion)\n"
@@ -67,6 +49,6 @@ extension OUDSVersions {
         versionsLog += "- Text Area: \(Self.componentTextAreaVersion)\n"
         versionsLog += "- Text Input: \(Self.componentTextInputVersion)\n"
 
-        ML.log(versionsLog)
+        OL.log(versionsLog)
     }
 }

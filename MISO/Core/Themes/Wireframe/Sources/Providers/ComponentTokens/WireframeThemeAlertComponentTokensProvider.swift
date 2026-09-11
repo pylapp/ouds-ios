@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
@@ -21,9 +8,9 @@ import MISOThemesContract
 
 /// A class which wraps all **component  tokens of alert** for *alert* objects like `MISOAlertMessage`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllAlertComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a `AllAlertComponentTokensProvider` implementation inside `MISOTheme` so as to provide
 /// all tokens to the users.
-/// It implements also the protocol `AlertComponentTokens` so as to expose the component tokens for *alert* through any `OUDSTheme`.
+/// It implements also the protocol `AlertComponentTokens` so as to expose the component tokens for *alert* through any `MISOTheme`.
 /// *Alert* components tokens are defined with semantic tokens of borders (`AllBorderSemanticTokensProviders`),
 /// spaces (from `AllSpaceSemanticTokensProvider`) and sizes (from `AllSizeSemanticTokensProvider`).
 ///
@@ -52,7 +39,7 @@ final class WireframeThemeAlertComponentTokensProvider: AllAlertComponentTokensP
          borders: AllBorderSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil)
     {
-        ML.debug("Init of WireframeThemeAlertComponentTokensProvider")
+        OL.debug("Init of WireframeThemeAlertComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())

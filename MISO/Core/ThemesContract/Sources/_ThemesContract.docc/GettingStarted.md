@@ -1,4 +1,4 @@
-# Getting Started with OUDS
+# Getting Started with MISO
 
 @Metadata {
     @PageImage(purpose: icon, source: "ic_unified_ds")
@@ -7,15 +7,15 @@
 
 How to add the package as dependency, import libraries and use theme and components for your apps.
 
-## Integrate OUDS
+## Integrate MISO
 
 ### Use Swift Package Manager
 
-If you want to add the iOS library of *Orange Unified Design System*, you need to add our _Swift Package_ into your project.
-To do that, add a new _package dependency_ to your _Xcode_ project by refering to it by `github.com/Orange-OpenSource/ouds-ios`.
+If you want to add the iOS library of *MISO*, you need to add our _Swift Package_ into your project.
+To do that, add a new _package dependency_ to your _Xcode_ project by refering to it by `github.com/Orange-OpenSource/miso-ios`.
 You are free to choose whether or not you want a branch or a specific tag, pick the solution you want.
 
-You can [refer to the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds) for more details about versions, releases and tags. You can find release tags (e.g. *1.0.0*) and release candidates tags (e.g. *1.0.0-rc3*).
+You can [refer to the wiki](https://github.com/Orange-OpenSource/miso-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds) for more details about versions, releases and tags. You can find release tags (e.g. *1.0.0*) and release candidates tags (e.g. *1.0.0-rc3*).
 
 ### Import the libraries you need
 
@@ -25,14 +25,11 @@ You should use one (or several) of the following imports for your needs, which a
 
 ```swift
 import MISOThemesContract // If you want to define your theme, use themes or MISOThemeableView
-import OUDSModules // To use modules
+import MISOModules // To use modules
 import MISOComponents // To use components
-import OUDSThemesOrange // To use the default Orange theme
-import OUDSThemesOrangeCompact // To use the Orange Compact theme
-import OUDSThemesSosh // To use the Sosh theme
-import OUDSThemesWireframe // To use the Wireframe theme
+import MISOThemesWireframe // To use the Wireframe theme
 import MISOTokensComponent // If you need to override or use directly components tokens
-import OUDSTokenSemantic // If you need to override or use directly semantic tokens
+import MISOTokenSemantic // If you need to override or use directly semantic tokens
 import MISOTokensRaw // If you need to override or use directly raw tokens
 import MISOFoundations // For some utilities
 ```
@@ -47,28 +44,22 @@ Import the _Swift Package_ product which suits your needs:
 
 Umbrella                  | Description                          
 ------------------------- | ------------------------------------- 
-OUDSSwiftUI               | All libraries listed above and all themes  
-OUDSSwiftUIOrange         | All libraries listed above but with only Orange and Orange Compact themes
-OUDSSwiftUIWireframe      | All libraries listed above but with only Wireframe theme
-OUDSSwiftUIOrangeSosh     | All libraries listed above but with only Orange and Sosh themes
+MISOSwiftUI               | All libraries listed above and the Wireframe theme
+MISOSwiftUIWireframe      | All libraries listed above but with only Wireframe theme
 
 ### Chose your theme
 
-The *Orange Unified Design System* framework provides today four themes:
+The *MISO* framework provides today one theme:
 
 Theme                     | Description                          
 ------------------------- | ------------------------------------- 
-Orange                    | The default one for Orange products and can be enriched / derivated  
-Orange Compact            | For some Orange products with heavy / rich UI and dimensions constraints           
-Sosh                      | For Sosh products
-Wireframe                 | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
+Wireframe                 | For mockups, prototypes and prooves of concepts without any brand-flavoured styles
 
 ### Apply a theme
 
 @Row {
         @Column {
-            You will need to use for your application root view the [`MISOThemeableView`](https://ios.unified-design-system.orange.com/documentation/ouds/oudsthemeableview/). 
-             [This page may help](https://ios.unified-design-system.orange.com/documentation/ouds/themes) also.
+            You will need to use for your application root view the `MISOThemeableView`.
             This special view is here to define some elements as environment variables and injects the choosen theme.
         }
         @Column {
@@ -77,7 +68,7 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
             struct YourApp: App {
                 var body: some Scene {
                    WindowGroup {
-                      MISOThemeableView(theme: OrangeTheme()) {
+                      MISOThemeableView(theme: WireframeTheme()) {
                             // Your root view
                       }
                    }
@@ -109,24 +100,6 @@ Because it is not possible today to override the legit `#Preview` block, you can
 inside the `MISOThemeableView` automatically. These utilities come with the themes modules. Without them you may face errors about undefined theme.
 
 ```swift
-// Apply Orange theme
-#Preview {
-    SampleView()
-        .orangePreview()
-}
-
-// Apply Orange Compact theme
-#Preview {
-    SampleView()
-        .orangeCompactPreview()
-}
-
-// Apply Sosh theme
-#Preview {
-    SampleView()
-        .soshPreview()
-}
-
 // Apply Wireframe theme
 #Preview {
     SampleView()

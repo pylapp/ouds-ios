@@ -1,29 +1,16 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of categorical tag** for *tag* objects like `OUDSCategoricalTag`.
+/// A class which wraps all **component  tokens of categorical tag** for *tag* objects like `MISOCategoricalTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllCategoricalTagComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// It implements also the protocol `CategoricalTagComponentTokens` so as to expose the component tokens for *categorical tags* through any `OUDSTheme`.
+/// This provider should be integrated as a `AllCategoricalTagComponentTokensProvider` implementation inside `MISOTheme` so as to provide
+/// all tokens to the users. It helps users to override some of the tokens and assign them to an `MISOTheme` implementation to use.
+/// It implements also the protocol `CategoricalTagComponentTokens` so as to expose the component tokens for *categorical tags* through any `MISOTheme`.
 /// *Categorical tags* components tokens are defined with semantic tokens of colors (`AllColorSemanticTokensProvider`)
 ///
 /// - Since: 3.0.0
@@ -36,10 +23,10 @@ final class WireframeThemeCategoricalTagComponentTokensProvider: AllCategoricalT
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSCategoricalTag`
+    /// Defines a provider of component tokens dedicated to `MISOCategoricalTag`
     /// - Parameter colors: Provider for color semantic tokens. If nil, a default one will be used (``WireframeThemeColorSemanticTokensProvider``)
     init(colors: AllColorSemanticTokensProvider? = nil) {
-        ML.debug("Init of WireframeThemeCategoricalTagComponentTokensProvider")
+        OL.debug("Init of WireframeThemeCategoricalTagComponentTokensProvider")
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++

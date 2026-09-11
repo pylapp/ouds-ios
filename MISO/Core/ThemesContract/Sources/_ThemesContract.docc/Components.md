@@ -13,10 +13,10 @@ Import the product of components, and use the component you want.
 Of course you must use in your root view the <doc:/MISOThemesContract/MISOThemeableView> with the suitable theme to asign it in environment variable so as to allow components to load their tokens:
 
 ```swift
-// The theme can be OrangeTheme or your own
-MISOThemeableView(theme: OrangeTheme()) {
+// The theme can be WireframeTheme or your own
+MISOThemeableView(theme: WireframeTheme()) {
         
 }
 ``` 
 
-You can get more details about _Components_ with the [MISOComponents documentation](https://ios.unified-design-system.orange.com/documentation/oudscomponents/).
+You can get more details about _Components_ with the [MISOComponents documentation](https://ios.unified-design-system.orange.com/documentation/misocomponents/).

@@ -1,29 +1,16 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of toast** for *toast* objects like `OUDSToast`.
+/// A class which wraps all **component  tokens of toast** for *toast* objects like `MISOToast`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllToastComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// It implements also the protocol `ToastComponentTokens` so as to expose the component tokens for *toast* through any `OUDSTheme`.
+/// This provider should be integrated as a `AllToastComponentTokensProvider` implementation inside `MISOTheme` so as to provide
+/// all tokens to the users. It helps users to override some of the tokens and assign them to an `MISOTheme` implementation to use.
+/// It implements also the protocol `ToastComponentTokens` so as to expose the component tokens for *toast* through any `MISOTheme`.
 /// *Toast* components tokens are defined with semantic tokens of borders (`AllBorderSemanticTokensProvider`),
 /// dimensions (`AllDimensionSemanticTokensProvider`) and sizes (from `AllSizeSemanticTokensProvider`).
 ///
@@ -43,7 +30,7 @@ final class WireframeThemeToastComponentTokensProvider: AllToastComponentTokensP
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSToast`
+    /// Defines a provider of component tokens dedicated to `MISOToast`
     /// - Parameters:
     ///    - borders: Provider for border semantic tokens, if nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens, if nil, default one will be used ( ``WireframeThemeDimensionSemanticTokensProvider``)
@@ -52,7 +39,7 @@ final class WireframeThemeToastComponentTokensProvider: AllToastComponentTokensP
          dimensions: AllDimensionSemanticTokensProvider? = nil,
          sizes: AllSizeSemanticTokensProvider? = nil)
     {
-        ML.debug("Init of WireframeThemeToastComponentTokensProvider")
+        OL.debug("Init of WireframeThemeToastComponentTokensProvider")
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider(dimensions: self.dimensions))

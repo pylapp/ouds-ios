@@ -51,7 +51,7 @@ import SwiftUI
 /// Always check the results of rich text mode with high contrast, light and dark modes, and Voice Over vocalization.
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and optional texts and a custom radio trait.
-/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
+/// No accessibility identifier is defined in MISO side as this value remains in the users hands.
 ///
 /// ## Forbidden by design
 ///
@@ -187,24 +187,24 @@ public struct MISORadioItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an MISORadioItem in an error context and in read only mode")
+            OL.fatal("It is forbidden by design to have an MISORadioItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an MISORadioItem is empty, prefer MISORadio(isOn:accessibilityLabel:) instead")
+            OL.warning("Label given to an MISORadioItem is empty, prefer MISORadio(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Description text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if let extraLabel, extraLabel.isEmpty {
-            ML.warning("Extra label text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Extra label text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
-            ML.warning("Error text given to an MISORadioItem must be defined in case of error")
+            OL.warning("Error text given to an MISORadioItem must be defined in case of error")
         }
         // swiftlint:enable force_unwrapping
 
@@ -285,23 +285,23 @@ public struct MISORadioItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an MISORadioItem in an error context and in read only mode")
+            OL.fatal("It is forbidden by design to have an MISORadioItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an MISORadioItem is empty, prefer MISORadio(isOn:accessibilityLabel:) instead")
+            OL.warning("Label given to an MISORadioItem is empty, prefer MISORadio(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Description text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if let extraLabel, extraLabel.isEmpty {
-            ML.warning("Extra label text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Extra label text given to an MISORadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if isError, errorText.isEmpty {
-            ML.warning("Error text given to an MISORadioItem must be defined in case of error")
+            OL.warning("Error text given to an MISORadioItem must be defined in case of error")
         }
 
         _isOn = isOn

@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import Foundation
 import MISOTokensRaw
 import MISOTokensSemantic
@@ -165,9 +152,9 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token repositorySecondaryMedium (= "#DB2345FF")
     @objc public final var borderBrandSecondaryLight: ColorSemanticToken { repositorySecondaryMedium }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var borderBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var borderBrandTertiaryDark: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var borderBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var borderBrandTertiaryLight: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token repositoryOpacityWhiteMediumLow (= "#EFF5FF33")
     @objc public final var borderDefaultDark: ColorSemanticToken { repositoryOpacityWhiteMediumLow }
     /// Has for value token repositoryOpacityBlackMediumLow (= "#05052E33")
@@ -197,13 +184,13 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var borderOnBrandPrimaryLight: ColorSemanticToken { repositoryNeutralMutedWhite }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var borderOnBrandSecondaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var borderOnBrandSecondaryDark: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var borderOnBrandSecondaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var borderOnBrandSecondaryLight: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var borderOnBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var borderOnBrandTertiaryDark: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var borderOnBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var borderOnBrandTertiaryLight: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token repositoryAccentLow (= "#FA9EA6FF")
     @objc public final var borderStatusAccentDark: ColorSemanticToken { repositoryAccentLow }
     /// Has for value token repositoryAccentMedium (= "#DB2345FF")
@@ -233,9 +220,9 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token repositorySecondaryMedium (= "#DB2345FF")
     @objc public final var contentBrandSecondaryLight: ColorSemanticToken { repositorySecondaryMedium }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var contentBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var contentBrandTertiaryDark: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var contentBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var contentBrandTertiaryLight: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token repositoryNeutralMutedLower (= "#E9ECF1FF")
     @objc public final var contentDefaultDark: ColorSemanticToken { repositoryNeutralMutedLower }
     /// Has for value token repositoryNeutralEmphasizedBlack (= "#08090DFF")
@@ -293,9 +280,9 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnBrandSecondaryLight: ColorSemanticToken { repositoryNeutralMutedWhite }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var contentOnBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var contentOnBrandTertiaryDark: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var contentOnBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var contentOnBrandTertiaryLight: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token repositoryNeutralEmphasizedBlack (= "#08090DFF")
     @objc public final var contentOnStatusAccentEmphasizedDark: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
     /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
@@ -413,7 +400,7 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token repositoryNeutralEmphasizedHigh (= "#1F2632FF")
     @objc public final var overlayTooltipLight: ColorSemanticToken { repositoryNeutralEmphasizedHigh }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryAccentHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryAccentHigh: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token WireframeBrandColorRawTokens.rustyRed900 (= "#681229FF")
     @objc public final var repositoryAccentHigher: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed900 }
     /// Has for value token WireframeBrandColorRawTokens.rustyRed1000 (= "#380513FF")
@@ -421,7 +408,7 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token WireframeBrandColorRawTokens.rustyRed300 (= "#FA9EA6FF")
     @objc public final var repositoryAccentLow: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed300 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryAccentLower: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryAccentLower: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token WireframeBrandColorRawTokens.rustyRed50 (= "#FFF1F1FF")
     @objc public final var repositoryAccentLowest: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed50 }
     /// Has for value token WireframeBrandColorRawTokens.rustyRed600 (= "#DB2345FF")
@@ -429,23 +416,23 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token ColorRawTokens.functionalDodgerBlue700 (= "#0073B2FF")
     @objc public final var repositoryInfoHigh: ColorSemanticToken { ColorRawTokens.functionalDodgerBlue700 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryInfoHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryInfoHigher: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryInfoHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryInfoHighest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token ColorRawTokens.functionalDodgerBlue300 (= "#8AD5FFFF")
     @objc public final var repositoryInfoLow: ColorSemanticToken { ColorRawTokens.functionalDodgerBlue300 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryInfoLower: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryInfoLower: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryInfoLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryInfoLowest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryInfoMedium: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryInfoMedium: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token ColorRawTokens.functionalScarlet700 (= "#B20002FF")
     @objc public final var repositoryNegativeHigh: ColorSemanticToken { ColorRawTokens.functionalScarlet700 }
     /// Has for value token ColorRawTokens.functionalScarlet800 (= "#800001FF")
     @objc public final var repositoryNegativeHigher: ColorSemanticToken { ColorRawTokens.functionalScarlet800 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryNegativeHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryNegativeHighest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token ColorRawTokens.functionalScarlet300 (= "#FF8081FF")
     @objc public final var repositoryNegativeLow: ColorSemanticToken { ColorRawTokens.functionalScarlet300 }
     /// Has for value token ColorRawTokens.functionalScarlet200 (= "#FFB2B3FF")
@@ -465,25 +452,25 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayDark560 (= "#2F384BFF")
     @objc public final var repositoryNeutralEmphasizedLow: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayDark560 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryNeutralEmphasizedLower: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryNeutralEmphasizedLower: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryNeutralEmphasizedLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryNeutralEmphasizedLowest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayDark640 (= "#272F3FFF")
     @objc public final var repositoryNeutralEmphasizedMedium: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayDark640 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryNeutralMutedHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryNeutralMutedHigh: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryNeutralMutedHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryNeutralMutedHigher: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryNeutralMutedHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryNeutralMutedHighest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryNeutralMutedLow: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryNeutralMutedLow: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayLight160 (= "#E9ECF1FF")
     @objc public final var repositoryNeutralMutedLower: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayLight160 }
     /// Has for value token WireframeBrandColorRawTokens.functionalGrayLight80 (= "#F7F8FAFF")
     @objc public final var repositoryNeutralMutedLowest: ColorSemanticToken { WireframeBrandColorRawTokens.functionalGrayLight80 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryNeutralMutedMedium: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryNeutralMutedMedium: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token ColorRawTokens.functionalWhite (= "#FFFFFFFF")
     @objc public final var repositoryNeutralMutedWhite: ColorSemanticToken { ColorRawTokens.functionalWhite }
     /// Has for value token WireframeBrandColorRawTokens.opacityRustyRed80 (= "#DB234514")
@@ -527,7 +514,7 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token WireframeBrandColorRawTokens.opacityRoyalBlue680 (= "#2055E5AD")
     @objc public final var repositoryOpacityPrimaryHigher: ColorSemanticToken { WireframeBrandColorRawTokens.opacityRoyalBlue680 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryOpacityPrimaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryOpacityPrimaryHighest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token WireframeBrandColorRawTokens.opacityRoyalBlue360 (= "#2055E55C")
     @objc public final var repositoryOpacityPrimaryLow: ColorSemanticToken { WireframeBrandColorRawTokens.opacityRoyalBlue360 }
     /// Has for value token WireframeBrandColorRawTokens.opacityRoyalBlue200 (= "#2055E533")
@@ -537,7 +524,7 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token WireframeBrandColorRawTokens.opacityRoyalBlue400 (= "#2055E566")
     @objc public final var repositoryOpacityPrimaryMedium: ColorSemanticToken { WireframeBrandColorRawTokens.opacityRoyalBlue400 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryOpacityPrimaryTransparent: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryOpacityPrimaryTransparent: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token ColorRawTokens.sun160 (= "#FFD00029")
     @objc public final var repositoryOpacityWarningLow: ColorSemanticToken { ColorRawTokens.sun160 }
     /// Has for value token ColorRawTokens.sun480 (= "#6651007A")
@@ -565,13 +552,13 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token ColorRawTokens.functionalMalachite750 (= "#138126FF")
     @objc public final var repositoryPositiveHigher: ColorSemanticToken { ColorRawTokens.functionalMalachite750 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryPositiveHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryPositiveHighest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token ColorRawTokens.functionalMalachite300 (= "#94F0A4FF")
     @objc public final var repositoryPositiveLow: ColorSemanticToken { ColorRawTokens.functionalMalachite300 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryPositiveLower: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryPositiveLower: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryPositiveLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryPositiveLowest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token ColorRawTokens.functionalMalachite600 (= "#1ECD3CFF")
     @objc public final var repositoryPositiveMedium: ColorSemanticToken { ColorRawTokens.functionalMalachite600 }
     /// Has for value token WireframeBrandColorRawTokens.royalBlue800 (= "#223CABFF")
@@ -595,7 +582,7 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token WireframeBrandColorRawTokens.rustyRed800 (= "#8E1532FF")
     @objc public final var repositorySecondaryHigherLow: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed800 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositorySecondaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositorySecondaryHighest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token WireframeBrandColorRawTokens.rustyRed400 (= "#F66F7DFF")
     @objc public final var repositorySecondaryLow: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed400 }
     /// Has for value token WireframeBrandColorRawTokens.rustyRed300 (= "#FA9EA6FF")
@@ -605,31 +592,31 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token WireframeBrandColorRawTokens.rustyRed600 (= "#DB2345FF")
     @objc public final var repositorySecondaryMedium: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed600 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryTertiaryHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryTertiaryHigh: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryTertiaryHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryTertiaryHigher: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryTertiaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryTertiaryHighest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryTertiaryLow: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryTertiaryLow: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryTertiaryLower: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryTertiaryLower: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryTertiaryLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryTertiaryLowest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryTertiaryMedium: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryTertiaryMedium: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token ColorRawTokens.functionalSun750 (= "#856A00FF")
     @objc public final var repositoryWarningHigh: ColorSemanticToken { ColorRawTokens.functionalSun750 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryWarningHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryWarningHigher: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryWarningHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryWarningHighest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token ColorRawTokens.functionalSun300 (= "#FFE270FF")
     @objc public final var repositoryWarningLow: ColorSemanticToken { ColorRawTokens.functionalSun300 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryWarningLower: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryWarningLower: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var repositoryWarningLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var repositoryWarningLowest: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token ColorRawTokens.functionalSun500 (= "#FFD000FF")
     @objc public final var repositoryWarningMedium: ColorSemanticToken { ColorRawTokens.functionalSun500 }
     /// Has for value token repositoryPrimaryLow (= "#96C1FAFF")
@@ -641,9 +628,9 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token repositorySecondaryMedium (= "#DB2345FF")
     @objc public final var surfaceBrandSecondaryLight: ColorSemanticToken { repositorySecondaryMedium }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var surfaceBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var surfaceBrandTertiaryDark: ColorSemanticToken { "miso-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
-    @objc public final var surfaceBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc public final var surfaceBrandTertiaryLight: ColorSemanticToken { "miso-forbidden-color-value" }
     /// Has for value token repositoryNeutralMutedLower (= "#E9ECF1FF")
     @objc public final var surfaceInverseHighDark: ColorSemanticToken { repositoryNeutralMutedLower }
     /// Has for value token repositoryNeutralEmphasizedHigh (= "#1F2632FF")

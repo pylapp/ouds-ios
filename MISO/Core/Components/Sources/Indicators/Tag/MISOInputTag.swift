@@ -53,7 +53,7 @@ public struct MISOInputTag: View {
     ///    - action: Called when the input tag is clicked, supposed for remove / delete action
     public init(label: String, action: @escaping () -> Void) {
         if label.isEmpty {
-            ML.warning("The MISOInputTag must not be empty!")
+            OL.warning("The MISOInputTag must not be empty!")
         }
         self.label = label
         self.action = action

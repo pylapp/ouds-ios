@@ -60,7 +60,7 @@ import SwiftUI
 ///
 /// To activate the rounded corner behavior, set to true the `hasRoundedTextInputs` values of the `Tuning` object
 /// in your theme configuration (if the theme exposes this property at init).
-/// Some themes do not have this flexibility like `SoshTheme` and `WireframeTheme`.
+/// Some themes do not have this flexibility, like `WireframeTheme`.
 ///
 /// ## Status
 ///
@@ -233,7 +233,7 @@ public struct MISOTextInput: View {
             precondition(image.asset != nil, "MISOTextInput.TrailingAction.icon must be created with an asset Image")
 
             if actionHint.isEmpty {
-                ML.warning("The accessibility action hint for the MISOTextInput trailing action should not be empty, think about your disabled users!")
+                OL.warning("The accessibility action hint for the MISOTextInput trailing action should not be empty, think about your disabled users!")
             }
             icon = image
             self.actionHint = actionHint
@@ -305,7 +305,7 @@ public struct MISOTextInput: View {
         ///   - action: The action when clicked
         public init(text: String, action: @escaping () -> Void) {
             if text.isEmpty {
-                ML.warning("The helper link text for the MISOTextInput is empty, avoid using it in that case.")
+                OL.warning("The helper link text for the MISOTextInput is empty, avoid using it in that case.")
             }
             self.text = text
             self.action = action

@@ -33,7 +33,7 @@ struct BadgeIcon: View {
             }
         }
         .padding(.all, padding)
-        .accessibilityElement() // Otherwise label cannot be used in OUDSBadge* body
+        .accessibilityElement() // Otherwise label cannot be used in MISOBadge* body
     }
 
     // MARK: Helpers

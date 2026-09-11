@@ -6,12 +6,12 @@ import SwiftUI
 
 /// `ViewModifier` to manage an edge case about Liquid Glass configuration of Apple OS and Xcode versions.
 ///
-/// If an app is compiled with Xcode 27 for iOS 27, Liquid Glass is forced by the system and considered as enabled by OUDS.
-/// If an app is compiled with Xcode 26 for iOS 26, the *UIDesignRequiresCompatibility* flag is read and OUDS considers wether or not Liquid Glass is enabled.
+/// If an app is compiled with Xcode 27 for iOS 27, Liquid Glass is forced by the system and considered as enabled by MISO.
+/// If an app is compiled with Xcode 26 for iOS 26, the *UIDesignRequiresCompatibility* flag is read and MISO considers wether or not Liquid Glass is enabled.
 /// If an app is compiled with Xcode 26 for iOS 18 and lower, Liquid Glass is considered as unavailable, disabled.
 ///
 /// The edge case is when the OS version is 27, the flag *UIDesignRequiresCompatibility* stils exists but the app is compiled with Xcode 26.
-/// This case is extreme: the system does not force Liquid Glass, the flag is here, and OUDS cannot only rely on the OS version.
+/// This case is extreme: the system does not force Liquid Glass, the flag is here, and MISO cannot only rely on the OS version.
 /// Thus, this ``MISOLegacyLayoutModifier``  will define an environment value saying any legacy layout things (appearances, selector, divider) must be displayed.
 ///
 /// **You must use this `ViewModifier` with care, and only if you are using Xcode 26 and  _UIDesignRequiresCompatibility_ to YES **.
@@ -33,8 +33,8 @@ public struct MISOLegacyLayoutModifier: ViewModifier {
     /// Instanciates the `MISOLegacyLayoutModifier` and displays error messages in the standard output
     public init() {
         if !Self.usersHaveBeenWarned {
-            ML.warning("You should not force the legacy layout of the navigation elements like bars; please embrace Liquid Glass!")
-            ML.warning("You should not use this MISOLegacyLayoutModifier with Xcode 27 or with Xcode 26 without UIDesignRequiresCompatibility or set to NO")
+            OL.warning("You should not force the legacy layout of the navigation elements like bars; please embrace Liquid Glass!")
+            OL.warning("You should not use this MISOLegacyLayoutModifier with Xcode 27 or with Xcode 26 without UIDesignRequiresCompatibility or set to NO")
             Self.usersHaveBeenWarned = true
         }
     }

@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 /// Defines a group of all **raw tokens** related to **borders**.
 /// ``BorderRawTokens`` are tokens to use to define *borders* of components.
 /// Several types of *raw tokens* exist to render a border: radius (``BorderRadiusRawToken``), style (``BorderStyleRawToken``) and width (``BorderWidthRawToken``).

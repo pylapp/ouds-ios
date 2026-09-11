@@ -48,7 +48,7 @@ struct PinCodeInputContainer: View {
         // Warning if value is longer than the expected length
         let rawValue = value.wrappedValue
         if rawValue.count > length.rawValue {
-            ML.warning("The given value '\(rawValue)' for MISOPinCodeInput has \(rawValue.count) digits but length is \(length.rawValue). Extra digits will be ignored.")
+            OL.warning("The given value '\(rawValue)' for MISOPinCodeInput has \(rawValue.count) digits but length is \(length.rawValue). Extra digits will be ignored.")
         }
 
         // Pre-fill digits from value, filtered to digits only and clamped to length
@@ -319,7 +319,7 @@ struct PinCodeInputContainer: View {
 struct PinCodeInputVoiceOverGroupModifier: ViewModifier {
 
     // NOTE: People needing both Full Keyboard Access and VoiceOver simultaneously will get the
-    // VoiceOver behaviour (grouped container). See https://github.com/Orange-OpenSource/ouds-ios/issues/1631
+    // VoiceOver behaviour (grouped container). See https://github.com/Orange-OpenSource/miso-ios/issues/1631
 
     let groupLabel: String
 

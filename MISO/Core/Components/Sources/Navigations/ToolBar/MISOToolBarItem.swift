@@ -104,7 +104,7 @@ public struct MISOToolBarItem: View, Identifiable {
 
     /// Defines the badge type can be added on `ActionType.icon` for item of toolbars.
     ///
-    /// **By default, the OUDS badge component is used, but for iOS > 26, the system one is used, so its color, size and position
+    /// **By default, the MISO badge component is used, but for iOS > 26, the system one is used, so its color, size and position
     /// can not be changed.**
     ///
     /// - Since: 2.0.0
@@ -120,7 +120,7 @@ public struct MISOToolBarItem: View, Identifiable {
     }
 
     /// Defines the built-in navigation type available for the toolbars. Those items must be used only on top leading position of `.toolBar`
-    /// Each case maps to an image asset provided by the OUDS package resources.
+    /// Each case maps to an image asset provided by the MISO package resources.
     ///
     /// - Since: 1.4.0
     @frozen public enum NavigationType {
@@ -170,7 +170,7 @@ public struct MISOToolBarItem: View, Identifiable {
     ///   - action: The action triggered when the item is tapped
     public init(label: String, action: (() -> Void)? = nil) {
         if label.isEmpty {
-            ML.fatal("The label for a toolBar item without icon must not be empty")
+            OL.fatal("The label for a toolBar item without icon must not be empty")
         }
         content = .action(type: .label(label, action: action), style: .default)
     }

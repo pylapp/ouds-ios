@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
@@ -22,9 +9,9 @@ import MISOThemesContract
 /// A class which wraps all **component  tokens of checkbox** for  *checkboxes* objects
 /// like `MISOCheckbox` and `MISOCheckboxItem`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllCheckboxComponentTokensProvider` implementation inside `OUDSTheme` so as to provide all tokens to the users.
-/// It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// It implements also the protocol `CheckboxComponentTokens` so as to expose the component tokens for *checkboxes* through any `OUDSTheme`.
+/// This provider should be integrated as a `AllCheckboxComponentTokensProvider` implementation inside `MISOTheme` so as to provide all tokens to the users.
+/// It helps users to override some of the tokens and assign them to an `MISOTheme` implementation to use.
+/// It implements also the protocol `CheckboxComponentTokens` so as to expose the component tokens for *checkboxes* through any `MISOTheme`.
 /// *Checkboxes* components tokens are defined with raw and semantic tokens of sizes (from `SizeSemanticToken`) and
 /// borders (`BorderRadiusSemanticToken`, `BorderWidthSemanticToken`).
 /// These components share the same type of tokens which are all gathered here.
@@ -49,7 +36,7 @@ final class WireframeThemeCheckboxComponentTokensProvider: AllCheckboxComponentT
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil)
     {
-        ML.debug("Init of WireframeThemeCheckboxComponentTokensProvider")
+        OL.debug("Init of WireframeThemeCheckboxComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         #if DEBUG

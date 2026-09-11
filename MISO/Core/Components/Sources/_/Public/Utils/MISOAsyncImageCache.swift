@@ -18,7 +18,7 @@ public final class MISOAsyncImageCache: @unchecked Sendable {
         static let maxMemoryCost = 100 * 1_024 * 1_024 // 100 MB
         static let maxMemoryCount = 100
         static let maxDiskSize = 500 * 1_024 * 1_024 // 500 MB
-        static let diskCacheFolderName = "OUDS-Cache-AsyncImage"
+        static let diskCacheFolderName = "MISO-Cache-AsyncImage"
     }
 
     // MARK: - Properties
@@ -26,7 +26,7 @@ public final class MISOAsyncImageCache: @unchecked Sendable {
     private let memoryCache: NSCache<NSURL, NSData>
     private let diskCacheURL: URL
     private let fileManager: FileManager
-    private let diskQueue = DispatchQueue(label: "com.orange.ouds.cache.asyncimagec.disk", qos: .utility)
+    private let diskQueue = DispatchQueue(label: "com.orange.miso.cache.asyncimagec.disk", qos: .utility)
 
     private init() {
         memoryCache = NSCache<NSURL, NSData>()
@@ -164,7 +164,7 @@ public final class MISOAsyncImageCache: @unchecked Sendable {
             try data.write(to: fileURL)
             cleanupDiskCacheIfNeeded()
         } catch {
-            ML.warning("Failed to save data to disk for \(fileURL): \(error)")
+            OL.warning("Failed to save data to disk for \(fileURL): \(error)")
         }
     }
 

@@ -1,29 +1,16 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOThemesContract
+import MISOThemesWireframe
 import MISOTokensSemantic
-import OUDSThemesWireframe
 import Testing
 
-/// Tests some helper functions defined in extensions of `OUDSTheme` in the *MISOThemesContract* module, related to grids tokens.
+/// Tests some helper functions defined in extensions of `MISOTheme` in the *MISOThemesContract* module, related to grids tokens.
 /// Cannot be tested there because no theme exists at that level., but here the ``WireframeTheme`` can be used.
 struct GridSemanticTokenHelperTests {
 
-    private let someTheme: OUDSTheme = WireframeTheme()
+    private let someTheme: MISOTheme = WireframeTheme()
 
     @Test func gridMinWith() throws {
         #expect(someTheme.grids.extraCompactMinWidth == someTheme.gridMinWidth(for: .extraCompact))

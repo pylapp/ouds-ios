@@ -34,14 +34,14 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
         #if os(macOS) || os(watchOS) || os(tvOS)
         content
             .navigationTitle(LocalizedStringKey(title))
-            .oudsNavigationSubtitle(subtitle)
+            .misoNavigationSubtitle(subtitle)
         #else
         Group {
             if let subtitle {
                 if #available(iOS 26.0, *), !(forceMISOLegacyLayout || isLiquidGlassDisabled) {
                     content
                         .navigationTitle(LocalizedStringKey(title))
-                        .oudsNavigationSubtitle(subtitle)
+                        .misoNavigationSubtitle(subtitle)
                 } else {
                     if let fonts, !hasLargeTitle {
                         content
@@ -169,7 +169,7 @@ struct RestrictedRequestAccessibleFocusModifier: ViewModifier {
 extension View {
 
     @ViewBuilder
-    func oudsNavigationSubtitle(_ subtitle: String? = nil) -> some View {
+    func misoNavigationSubtitle(_ subtitle: String? = nil) -> some View {
         #if os(iOS) || os(macOS)
         if #available(iOS 26.0, *), let subtitle {
             navigationSubtitle(Text(LocalizedStringKey(subtitle)))

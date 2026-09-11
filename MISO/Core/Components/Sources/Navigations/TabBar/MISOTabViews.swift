@@ -111,7 +111,7 @@ public struct MISOTabView<Content: TabContent>: View where Content.TabValue == I
                 @TabContentBuilder<Int> content: @escaping () -> Content)
     {
         if selectedTab.wrappedValue < 0 || selectedTab.wrappedValue >= count {
-            ML.warning("The selected tab binding for the MISOTabView does not match the count of tabs")
+            OL.warning("The selected tab binding for the MISOTabView does not match the count of tabs")
         }
         _selectedTab = selectedTab
         tabCount = Int(count)

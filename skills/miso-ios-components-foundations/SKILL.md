@@ -41,7 +41,7 @@ MISOCode(LocalizedStringKey("code_sample"), bundle: .module)
 
 `MISOHeading` can have *marker*. `hasMarker: true` draws a small brand-coloured marker below the text — only when:
 - `size == .large`, AND
-- the current theme supports it (`theme.typography.headingLargeMarker == true`, e.g. Orange, Orange Compact, Wireframe).
+- the current theme supports it (`theme.typography.headingLargeMarker == true`, e.g. Wireframe).
 
 A dedicated initializer takes a `coloredText: String` sub-string rendered with `theme.colors.contentBrandSecondary`. 
 Useful to emphasise a specific word (typically a brand name). Works on themes that do not support the marker.

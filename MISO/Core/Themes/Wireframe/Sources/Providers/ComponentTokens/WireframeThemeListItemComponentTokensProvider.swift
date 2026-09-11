@@ -1,29 +1,16 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component tokens** for list item components like `OUDSListItem`.
+/// A class which wraps all **component tokens** for list item components like `MISOListItem`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllListItemComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// It implements also the protocol `ListItemComponentTokens` so as to expose the component tokens for list item components through any `OUDSTheme`.
+/// This provider should be integrated as a `AllListItemComponentTokensProvider` implementation inside `MISOTheme` so as to provide
+/// all tokens to the users. It helps users to override some of the tokens and assign them to an `MISOTheme` implementation to use.
+/// It implements also the protocol `ListItemComponentTokens` so as to expose the component tokens for list item components through any `MISOTheme`.
 /// Such component tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
 /// borders (from `AllBorderSemanticTokensProvider`), colors (from `AllColorSemanticTokensProvider`),
 /// spaces (from `AllSpaceSemanticTokensProvider`), opacities (from `AllOpacitySemanticTokensProvider`)
@@ -69,7 +56,7 @@ final class WireframeThemeListItemComponentTokensProvider: AllListItemComponentT
          opacities: AllOpacitySemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
-        ML.debug("Init of WireframeThemeListItemComponentTokensProvider")
+        OL.debug("Init of WireframeThemeListItemComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())

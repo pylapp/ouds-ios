@@ -1,24 +1,11 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
 /// A class which wraps all **font semantic tokens**, *multiple*, *composite* or not, and expose them.
-/// This provider should be integrated as a `AllFontSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a `AllFontSemanticTokensProvider` implementation inside `MISOTheme` so as to provide
 /// all tokens to the users.
 ///
 /// - Since: 0.17.0
@@ -30,7 +17,7 @@ final class WireframeThemeFontSemanticTokensProvider: AllFontSemanticTokensProvi
 
     /// Intializes the provider
     init() {
-        ML.debug("Init of WireframeThemeFontSemanticTokensProvider")
+        OL.debug("Init of WireframeThemeFontSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "WireframeThemeFontSemanticTokensProvider")
@@ -49,5 +36,5 @@ final class WireframeThemeFontSemanticTokensProvider: AllFontSemanticTokensProvi
     // but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+FontSemanticTokens.swift,
     // in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+FontCompositeSemanticTokens.swift,
     // and in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+FontMultipleSemanticTokens.swift,
-    // This declaration of OUDSFontSemanticTokensProvider is here to allow to write documentation.
+    // This declaration of MISOFontSemanticTokensProvider is here to allow to write documentation.
 }

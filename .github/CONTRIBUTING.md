@@ -1,4 +1,4 @@
-# Contributing to OUDS iOS
+# Contributing to MISO iOS
 
 - [Using the Issue Tracker](#using-the-issue-tracker)
 - [Using the Discussion Tracker](#using-the-issue-tracker)
@@ -15,7 +15,7 @@
 - [Bringing evolutions](#bringing-evolutions)
 - [License](#license)
 
-Looking to contribute something OUDS iOS? **Here's how you can help.**
+Looking to contribute something MISO iOS? **Here's how you can help.**
 
 > [!TIP]
 > Please take a moment to review this document in order to make the contribution process easy for everyone involved.
@@ -25,14 +25,14 @@ Looking to contribute something OUDS iOS? **Here's how you can help.**
 > In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
 
 You should also have a look on the wiki if you are looking for information about how the project is managed, the releases and tests done, and how to do some actions:
-- [The wiki define the way to work anyone must agree](https://github.com/Orange-OpenSource/ouds-ios/wiki).
-- [The Code of Conduct](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/CODE_OF_CONDUCT.md) defines how we should interact together.
+- [The wiki define the way to work anyone must agree](https://github.com/Orange-OpenSource/miso-ios/wiki).
+- [The Code of Conduct](https://github.com/Orange-OpenSource/miso-ios/blob/develop/.github/CODE_OF_CONDUCT.md) defines how we should interact together.
 
 ## Using the Issue Tracker
 
-The [issue tracker](https://github.com/Orange-OpenSource/ouds-ios/issues) is the preferred channel for [bug reports](#bug-reports), [feature requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following restrictions:
+The [issue tracker](https://github.com/Orange-OpenSource/miso-ios/issues) is the preferred channel for [bug reports](#bug-reports), [feature requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following restrictions:
 
-- Please **do not** use the issue tracker for personal support requests. [GitHub Discussions](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a) or our internal Orange communication tools are better places to get help.
+- Please **do not** use the issue tracker for personal support requests. [GitHub Discussions](https://github.com/Orange-OpenSource/miso-ios/discussions/categories/q-a) or our internal Orange communication tools are better places to get help.
 
 - Please **do not** derail or troll issues. Keep the discussion on topic and respect the opinions of others.
 
@@ -40,9 +40,9 @@ The [issue tracker](https://github.com/Orange-OpenSource/ouds-ios/issues) is the
 
 ## Using the Discussion Tracker
 
-The GitHub project provides a [discussion tracker](https://github.com/Orange-OpenSource/ouds-ios/discussions) with several sections.
+The GitHub project provides a [discussion tracker](https://github.com/Orange-OpenSource/miso-ios/discussions) with several sections.
 
-You may need to refer to the [Q&A section](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a) if you have questions in mind, or to [Ideas section](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/ideas) for discussions about technical things.
+You may need to refer to the [Q&A section](https://github.com/Orange-OpenSource/miso-ios/discussions/categories/q-a) if you have questions in mind, or to [Ideas section](https://github.com/Orange-OpenSource/miso-ios/discussions/categories/ideas) for discussions about technical things.
 
 If you found a discussion which interests you or fills your needs, feel free to use [GitHub's "reactions" feature](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) and bring useful comments. We reserve the right to delete comments which violate this rule.
 
@@ -57,7 +57,7 @@ Our bug tracker utilizes several labels to help organize and identify issues. He
 - `help wanted` - Issues we need or would love help from the community to resolve.
 
 > [!TIP]
-> For a complete look at our labels, see the [project labels page](https://github.com/Orange-OpenSource/ouds-ios/labels).
+> For a complete look at our labels, see the [project labels page](https://github.com/Orange-OpenSource/miso-ios/labels).
 
 ## Bug Reports
 
@@ -116,11 +116,11 @@ Adhering to the following process is the best way to get your work included in t
 
    ```bash
    # Clone your fork of the repo into the current directory (use either SSH or HTTPS)
-   git clone https://github.com/<your-username>/ouds-ios.git
+   git clone https://github.com/<your-username>/miso-ios.git
    # Navigate to the newly cloned directory
-   cd ouds-ios
+   cd miso-ios
    # Assign the original repo to a remote called "upstream" (use either SSH or HTTPS)
-   git remote add upstream https://github.com/Orange-OpenSource/ouds-ios.git
+   git remote add upstream https://github.com/Orange-OpenSource/miso-ios.git
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
@@ -153,22 +153,22 @@ Adhering to the following process is the best way to get your work included in t
 
 7. [Open a Pull Request](https://help.github.com/articles/about-pull-requests/) with a clear title and description against the `develop` branch.
 
-**IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/LICENSE).
+**IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](https://github.com/Orange-OpenSource/miso-ios/blob/develop/LICENSE).
 
 Note that a ruleset based [on task-list-completed tool](https://github.com/marketplace/task-list-completed) is applied on `develop` branch: if any prerequisites are not futfilled in the pull request ticket the merge won't be done. 
 
-8. If your evolutions can be tested inside a sandbox app (like [Design System Toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/)), add in the pull request details the branch and the associated pull request (with of course codebase pointing to the suitable package branch)
+8. If your evolutions can be tested inside a sandbox app (like [Design System Toolbox](https://github.com/Orange-OpenSource/miso-ios-design-system-toolbox/)), add in the pull request details the branch and the associated pull request (with of course codebase pointing to the suitable package branch)
 
 ## Code Guidelines
 
 Format your code before committing to ensure your changes follow our coding standards.
 Linters and formatters are configured for the project.
 Keep documentation and tests updated.
-Respect the architecture of the project, and [refer to the wiki if needed](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture).
+Respect the architecture of the project, and [refer to the wiki if needed](https://github.com/Orange-OpenSource/miso-ios/wiki/30-%E2%80%90-About-the-architecture).
 
 > [!IMPORTANT]
 > About naming of the components and their parameters, use the parameters and components grammar as defined in Figma specifications.
-> Do not use your own wordings for such things as consitency must be kept between Figma specifications and all products of OUDS.
+> Do not use your own wordings for such things as consitency must be kept between Figma specifications and all products of MISO.
 
 ## Commits Style
 
@@ -303,8 +303,8 @@ flowchart TD
 
 Pull requests will be merged if no conditions / prerequisites / checks are red (except DCO which is not - yet - mandatory, but we must at least outside contributors to apply it). Some _GitHub Actions_ workflows are defined:
 - [task-list-completed GitHub app](https://github.com/apps/task-list-completed) prevents pull requests to be merged if some mandatory / not optional prerequisites are not filled ;
-- another [workflow YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml) building and testing the app / lib;
-- another [using GitLeaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml) ensuring no screts are leaked ;
+- another [workflow YAML](https://github.com/Orange-OpenSource/miso-ios/blob/develop/.github/workflows/build-and-test.yml) building and testing the app / lib;
+- another [using GitLeaks](https://github.com/Orange-OpenSource/miso-ios/blob/develop/.github/workflows/gitleaks-action.yml) ensuring no screts are leaked ;
 - the almost-optional-one checking [DCO is applied](https://probot.github.io/apps/dco/) ;
 - and the one [for the linter warnings](https://github.com/cirruslabs/swiftlint-action).
 
@@ -340,15 +340,15 @@ This is based on [the Linux Foundation Guidance Regarding Use of Generative AI T
 
 ## Bringing evolutions
 
-OUDS provides themes, tokens, components and modules to users and is opensource under MIT license to easy the use, reuse and contributions.
-**However OUDS may be unable to define local custom components for everyone.**
-**OUDS must be always able to maintain and evolve the official elements it provides.**
+MISO provides themes, tokens, components and modules to users and is opensource under MIT license to easy the use, reuse and contributions.
+**However MISO may be unable to define local custom components for everyone.**
+**MISO must be always able to maintain and evolve the official elements it provides.**
 
 Thus if you need some components or evolutions we invite you to contact the maintainers to let them share you the suitable formulars to submit your ideas.
 
-**Do not expect OUDS to merge any custom evolutions for your needs that are not official.**
+**Do not expect MISO to merge any custom evolutions for your needs that are not official.**
 
-If you want to share your work, feel free to create your own library of custom components, under MIT license, using OUDS. Thus it will ease the reuse of your work, based on OUDS, and people can use it until official elements are delivered.
+If you want to share your work, feel free to create your own library of custom components, under MIT license, using MISO. Thus it will ease the reuse of your work, based on MISO, and people can use it until official elements are delivered.
 
 ## License
 

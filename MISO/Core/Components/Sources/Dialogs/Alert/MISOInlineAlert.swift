@@ -53,7 +53,7 @@ public struct MISOInlineAlert: View {
     public init(label: String, status: MISOAlertStatus = .neutral()) {
         text = label
         if text.isEmpty {
-            ML.warning("The label for the MISOInlineAlert must not be empty!")
+            OL.warning("The label for the MISOInlineAlert must not be empty!")
         }
         self.status = status
     }

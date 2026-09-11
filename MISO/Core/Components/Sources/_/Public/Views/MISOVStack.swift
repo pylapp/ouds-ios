@@ -4,7 +4,7 @@
 import MISOTokensSemantic
 import SwiftUI
 
-/// Creates a `VStack` with spacing scaled according to `verticalSizeClass` base on OUDS `MultipleSpaceSemanticToken`.
+/// Creates a `VStack` with spacing scaled according to `verticalSizeClass` base on MISO `MultipleSpaceSemanticToken`.
 ///
 /// ```swift
 ///    // For sclaed space use the initializer with token aprameter

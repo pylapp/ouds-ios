@@ -4,8 +4,6 @@
 import MISOFoundations
 import SwiftUI
 
-// swiftlint:disable file_length
-
 /// Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices.
 /// Checkbox item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.
 ///
@@ -52,7 +50,7 @@ import SwiftUI
 /// Always check the results of rich text mode with high contrast, light and dark modes, and Voice Over vocalization.
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom checkbox trait.
-/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
+/// No accessibility identifier is defined in MISO side as this value remains in the users hands.
 ///
 /// ## Forbidden by design
 ///
@@ -175,20 +173,20 @@ public struct MISOCheckboxItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an MISOCheckboxItem in an error context and in read only mode")
+            OL.fatal("It is forbidden by design to have an MISOCheckboxItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an MISOCheckboxItem is empty, prefer MISOCheckbox(isOn:accessibilityLabel:) instead")
+            OL.warning("Label given to an MISOCheckboxItem is empty, prefer MISOCheckbox(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description given to an MISOCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Description given to an MISOCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
-            ML.warning("Error text given to an MISOCheckboxItem must be defined in case of error")
+            OL.warning("Error text given to an MISOCheckboxItem must be defined in case of error")
         }
         // swiftlint:enable force_unwrapping
 
@@ -262,19 +260,19 @@ public struct MISOCheckboxItem: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an MISOCheckboxItem in an error context and in read only mode")
+            OL.fatal("It is forbidden by design to have an MISOCheckboxItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an MISOCheckboxItem is empty, prefer MISOCheckbox(isOn:accessibilityLabel:) instead")
+            OL.warning("Label given to an MISOCheckboxItem is empty, prefer MISOCheckbox(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description given to an MISOCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Description given to an MISOCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if isError, errorText.isEmpty {
-            ML.warning("Error text given to an MISOCheckboxItem must be defined in case of error")
+            OL.warning("Error text given to an MISOCheckboxItem must be defined in case of error")
         }
 
         _isOn = isOn

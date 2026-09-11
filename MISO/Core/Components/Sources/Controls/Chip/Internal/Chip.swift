@@ -114,27 +114,27 @@ private struct ChipContent: View {
     var body: some View {
         Group {
             switch layout {
-            case let .icon(oudsImage, accessibilityLabel):
-                if let asset = oudsImage.asset {
+            case let .icon(misoImage, accessibilityLabel):
+                if let asset = misoImage.asset {
                     MISOScaledIcon(image: MISOImage(asset: asset,
-                                                    flipped: oudsImage.flipped,
+                                                    flipped: misoImage.flipped,
                                                     accessibilityLabel: accessibilityLabel,
-                                                    renderingMode: oudsImage.renderingMode),
+                                                    renderingMode: misoImage.renderingMode),
                                    size: theme.chip.sizeIcon)
                 }
             case let .text(text):
                 ChipText(text: text)
-            case let .textAndIcon(text, oudsImage, iconPosition):
+            case let .textAndIcon(text, misoImage, iconPosition):
                 HStack(alignment: .center, spacing: theme.chip.spaceColumnGapIcon) {
-                    if iconPosition == .leading, oudsImage.asset != nil {
-                        MISOFixedIcon(image: oudsImage,
+                    if iconPosition == .leading, misoImage.asset != nil {
+                        MISOFixedIcon(image: misoImage,
                                       size: theme.chip.sizeIcon)
                     }
 
                     ChipText(text: text)
 
-                    if iconPosition == .trailing, oudsImage.asset != nil {
-                        MISOFixedIcon(image: oudsImage,
+                    if iconPosition == .trailing, misoImage.asset != nil {
+                        MISOFixedIcon(image: misoImage,
                                       size: theme.chip.sizeIcon)
                     }
                 }

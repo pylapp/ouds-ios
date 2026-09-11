@@ -133,7 +133,7 @@ public struct MISOBadgeIcon: View {
     ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
     private init(size: MISOBadgeStandard.Size, status: MISOBadgeIcon.Status, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
-            ML.warning("The MISOBadgeIcon should not have an empty accessibility label, think about your disabled users!")
+            OL.warning("The MISOBadgeIcon should not have an empty accessibility label, think about your disabled users!")
         }
 
         configuration = .init(size: size, status: status)

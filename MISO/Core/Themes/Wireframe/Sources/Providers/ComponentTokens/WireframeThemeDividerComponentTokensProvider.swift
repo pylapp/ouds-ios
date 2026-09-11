@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
@@ -21,9 +8,9 @@ import MISOThemesContract
 
 /// A class which wraps all **component  tokens of divider** for *divider* objects like `MISOHorizontalDivider` and `MISOVerticalDivider`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllDividerComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// It implements also the protocol `DividerComponentTokens` so as to expose the component tokens for *divider* through any `OUDSTheme`.
+/// This provider should be integrated as a `AllDividerComponentTokensProvider` implementation inside `MISOTheme` so as to provide
+/// all tokens to the users. It helps users to override some of the tokens and assign them to an `MISOTheme` implementation to use.
+/// It implements also the protocol `DividerComponentTokens` so as to expose the component tokens for *divider* through any `MISOTheme`.
 /// *Divider* components tokens are defined with raw and semantic tokens of borders (from `AllBorderSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
@@ -39,7 +26,7 @@ final class WireframeThemeDividerComponentTokensProvider: AllDividerComponentTok
     /// Defines a provider of component tokens dedicated to `MISOHorizontalDivider` and `MISOVerticalDivider`
     /// - Parameter borders: Provider for border semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
     init(borders: AllBorderSemanticTokensProvider? = nil) {
-        ML.debug("Init of WireframeThemeDividerComponentTokensProvider")
+        OL.debug("Init of WireframeThemeDividerComponentTokensProvider")
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++

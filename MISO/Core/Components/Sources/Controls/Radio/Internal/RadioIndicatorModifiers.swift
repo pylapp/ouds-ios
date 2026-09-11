@@ -90,7 +90,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     private var readOnlyColor: MultipleColorSemanticToken {
         guard !isError else {
-            ML.fatal("A MISORadio with a read only state and an error situation has been detected, which is not allowed."
+            OL.fatal("A MISORadio with a read only state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a read only state.")
         }
         return theme.colors.actionReadOnlyPrimary
@@ -98,7 +98,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticToken {
         guard !isError else {
-            ML.fatal("A MISORadio with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("A MISORadio with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionDisabled
@@ -150,7 +150,7 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
 
     private var disabledColor: Color {
         guard !isError else {
-            ML.fatal("A MISORadio with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("A MISORadio with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
@@ -228,7 +228,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     private var readOnlyColor: MultipleColorSemanticToken {
         guard !isError else {
-            ML.fatal("An MISORadio with a read only state and an error situation has been detected, which is not allowed"
+            OL.fatal("An MISORadio with a read only state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionReadOnlySecondary
@@ -236,7 +236,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticToken {
         guard !isError else {
-            ML.fatal("An MISORadio with a disabled state and an error situation has been detected, which is not allowed"
+            OL.fatal("An MISORadio with a disabled state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionDisabled

@@ -111,7 +111,7 @@ public struct MISOBadgeCount: View {
     ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
     private init(count: UInt8, size: MISOBadgeCount.Size, status: MISOBadgeStandard.Status, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
-            ML.warning("The MISOBadgeCount should not have an empty accessibility label, think about your disabled users!")
+            OL.warning("The MISOBadgeCount should not have an empty accessibility label, think about your disabled users!")
         }
         configuration = .init(value: count, size: size, status: status)
         self.accessibilityLabel = accessibilityLabel

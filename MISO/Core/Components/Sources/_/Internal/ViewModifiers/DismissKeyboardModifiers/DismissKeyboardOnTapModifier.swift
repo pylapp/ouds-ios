@@ -65,7 +65,7 @@ struct DismissKeyboardOnTapModifier: ViewModifier {
 private final class DismissKeyboardTarget: NSObject {
 
     nonisolated(unsafe) static let shared = DismissKeyboardTarget()
-    static let gestureRecognizerName = "OUDSDismissKeyboardOnTap"
+    static let gestureRecognizerName = "MISODismissKeyboardOnTap"
 
     deinit {}
 

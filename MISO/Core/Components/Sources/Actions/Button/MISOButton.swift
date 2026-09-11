@@ -125,7 +125,7 @@ public struct MISOButton: View {
         case textAndIcon(text: String, icon: MISOImage)
     }
 
-    /// Represents the appearance of an OUDS button, i.e. a kind of type
+    /// Represents the appearance of an MISO button, i.e. a kind of type
     ///
     /// - Since: 0.10.0
     @frozen public enum Appearance {
@@ -179,11 +179,11 @@ public struct MISOButton: View {
     /// A raw string can also be given to be displayed.
     ///
     /// ```swift
-    ///     let oudsImage = MISOImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
+    ///     let misoImage = MISOImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
     ///     // Use localizable
     ///     MISOButton(LocalizedStringKey("validate_button"),
     ///                bundle: Bundle.module,
-    ///                image: oudsImage,
+    ///                image: misoImage,
     ///                appearance: .strong) { }
     /// ```
     ///
@@ -221,9 +221,9 @@ public struct MISOButton: View {
     ///                appearance: .strong) { }
     ///
     ///     // With more setup
-    ///     let oudsImage = MISOImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
+    ///     let misoImage = MISOImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
     ///     MISOButton(text: "Validate",
-    ///                image: oudsImage,
+    ///                image: misoImage,
     ///                appearance: .strong) { }
     /// ```
     ///
@@ -255,12 +255,12 @@ public struct MISOButton: View {
     /// Creates a button with an icon only.
     ///
     /// ```swift
-    ///     let oudsImage = MISOImage(asset: Image("someIcon"),
+    ///     let misoImage = MISOImage(asset: Image("someIcon"),
     ///                                flipped: true,
     ///                                accessibilityLabel: LocalizedStringKey("some.wording.key"),
     ///                                renderingMode: .original)
     ///     MISOButton(text: "Validate",
-    ///                image: oudsImage,
+    ///                image: misoImage,
     ///                appearance: .strong) { }
     /// ```
     ///
@@ -351,7 +351,7 @@ public struct MISOButton: View {
         // A button with negative or brand appearance is not allowed on a colored surface.
         // Test is done here because onColoredSurface is environment variable which is not accessible in init.
         if onColoredSurface, appearance == .negative || appearance == .brand {
-            ML.fatal("An MISOButton with MISOButton.Appearance.{Negative | Brand} appearance has been detected as a direct or indirect child of an MISOColoredSurface, which is not allowed.")
+            OL.fatal("An MISOButton with MISOButton.Appearance.{Negative | Brand} appearance has been detected as a direct or indirect child of an MISOColoredSurface, which is not allowed.")
         }
 
         Button(action: action) {

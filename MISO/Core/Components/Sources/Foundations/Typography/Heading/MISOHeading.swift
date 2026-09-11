@@ -17,8 +17,8 @@ import SwiftUI
 ///
 /// ## Marker
 ///
-/// Some themes (like *Orange*, *Orange Compact* and *Wireframe*) declare that a *large* heading is decorated with a small
-/// coloured rectangle below the text, i.e. the **marker**. Other themes (like *Sosh*) do not use a marker at all but something else.
+/// Some themes (like *Wireframe*) declare that a *large* heading is decorated with a small
+/// coloured rectangle below the text, i.e. the **marker**. Other themes may not use a marker at all but something else.
 ///
 /// ## Coloring a substring
 ///
@@ -26,8 +26,8 @@ import SwiftUI
 /// This is useful to emphasize a specific word inside a heading (for example a brand name). This feature is only
 /// meaningful for `size == .large`; on other sizes a warning is logged and the text is rendered plain.
 ///
-/// > Warning: Not all themes provide a valid `theme.colors.contentBrandSecondary` (e.g. *Orange* and *Orange Compact* where
-/// > the token is marked as forbidden). When the token is forbidden the coloring is skipped.
+/// > Warning: Not all themes provide a valid `theme.colors.contentBrandSecondary` (some themes may mark
+/// > the token as forbidden). When the token is forbidden the coloring is skipped.
 ///
 /// ## Code samples
 ///
@@ -42,10 +42,7 @@ import SwiftUI
 ///     MISOHeading(text: "Sub-section", size: .medium)
 ///
 ///     // Heading with a brand-coloured word
-///     MISOHeading(text: "Welcome to Orange", coloredText: "Orange")
-///
-///     // Combined: coloured word
-///     MISOHeading(text: "Welcome to Sosh", coloredText: "Sosh")
+///     MISOHeading(text: "Welcome to MISO", coloredText: "MISO")
 ///
 ///     // Localizable from a bundle
 ///     MISOHeading(LocalizedStringKey("section_title"), bundle: Bundle.module, size: .large)
@@ -141,7 +138,7 @@ public struct MISOHeading: View {
     /// This variant is meant for `size == .large`; passing another size will log a warning and render the text plain.
     ///
     /// ```swift
-    ///     MISOHeading(text: "Welcome to Sosh", coloredText: "Sosh")
+    ///     MISOHeading(text: "Welcome to MISO", coloredText: "MISO")
     /// ```
     ///
     /// - Parameters:
@@ -161,9 +158,9 @@ public struct MISOHeading: View {
     /// looking up the text in a bundle for localization.
     ///
     /// ```swift
-    ///     MISOHeading(LocalizedStringKey("welcome_sosh"),
+    ///     MISOHeading(LocalizedStringKey("welcome_message"),
     ///                 bundle: Bundle.module,
-    ///                 coloredText: "Sosh")
+    ///                 coloredText: "MISO")
     /// ```
     ///
     /// - Parameters:
@@ -216,12 +213,12 @@ public struct MISOHeading: View {
     /// Emits warnings when the parameters are used outside their supported combinations.
     private func logMisuseWarningsIfNeeded() {
         if hasMarker, size != .large {
-            ML.warning("The 'hasMarker' parameter of MISOHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
+            OL.warning("The 'hasMarker' parameter of MISOHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
         } else if hasMarker, size == .large, !theme.typography.headingLargeMarker {
-            ML.warning("The current theme does not support a large heading marker. The 'hasMarker' parameter is ignored.")
+            OL.warning("The current theme does not support a large heading marker. The 'hasMarker' parameter is ignored.")
         }
         if coloredText != nil, size != .large {
-            ML.warning("The 'coloredText' parameter of MISOHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
+            OL.warning("The 'coloredText' parameter of MISOHeading is only honored when 'size == .large'. It is ignored for size '\(size)'.")
         }
     }
 
@@ -244,12 +241,12 @@ public struct MISOHeading: View {
             return Text(text)
         }
         if theme.colors.contentBrandSecondary.hasForbiddenColorValue() {
-            ML.warning("The current theme does not provide a valid 'contentBrandSecondary' color. The 'coloredText' parameter is ignored.")
+            OL.warning("The current theme does not provide a valid 'contentBrandSecondary' color. The 'coloredText' parameter is ignored.")
             return Text(text)
         }
         var attributed = AttributedString(text)
         guard let range = attributed.range(of: coloredText) else {
-            ML.warning("The 'coloredText' sub-string '\(coloredText)' was not found in the heading text '\(text)'. It is ignored.")
+            OL.warning("The 'coloredText' sub-string '\(coloredText)' was not found in the heading text '\(text)'. It is ignored.")
             return Text(text)
         }
         attributed[range].foregroundColor = theme.colors.contentBrandSecondary.color(for: colorScheme)

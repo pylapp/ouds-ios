@@ -13,25 +13,22 @@ This framework exposes today following themes:
 
 Theme                                                                                                      | Description                          
 ---------------------------------------------------------------------------------------------------------- | ------------------------------------- 
-[Orange](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/)                     | The default one for Orange products and can be enriched / derivated  
-[Orange Compact](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangecompact/)| For some Orange products with heavy / rich UI and dimensions constraints           
-[Sosh](https://ios.unified-design-system.orange.com/documentation/oudsthemessosh/)                         | For Sosh products
-[Wireframe](https://ios.unified-design-system.orange.com/documentation/oudsthemeswireframe/)               | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
+Wireframe                                                                                                   | For mockups, prototypes and prooves of concepts without any brand-flavoured styles
 
-All themes are based on a theme contract called `OUDSTheme`.
+All themes are based on a theme contract called `MISOTheme`.
 
 _Themes_ use *tokens providers* which provide the *semantic tokens* and *component tokens* to apply in the project. 
 These tokens in most of cases can be overridden thanks to `@objc open` combination so as to make possible to override these values in extensions (thanks to `@objc`) and from objects outside the module (thanks to `open`). 
 Thus we can split values and responsabilities in different _Swift Package Manager_ targets and keep overriding and inheritance possible.
 
-> Important: Only one theme, the Orange theme, can be subclassed. However it is possible to build its own theme.
+> Important: It is possible to subclass an existing theme, or to build its own theme from scratch.
 
 ## Architecture
 
 A theme is a *Swift class* which several tokens providers providing their own definition of tokens. 
 
-We choose to pack all semantic tokens in protocols, so as to force any theme to manage them through tokens providers. Because Swift does not have notions of abstract classes compared to Kotlin, the `OUDSTheme` which can be considered like an almost-abstract class.
-Then, a white label theme may just inherit from this class and override the tokens it needs. The real, default theme to use, will be the `OrangeTheme` providing in its module brand colors and overriding some tokens with the suitable values.
+We choose to pack all semantic tokens in protocols, so as to force any theme to manage them through tokens providers. Because Swift does not have notions of abstract classes compared to Kotlin, the `MISOTheme` which can be considered like an almost-abstract class.
+Then, a white label theme may just inherit from this class and override the tokens it needs. A concrete example is the `WireframeTheme`, providing in its module its own colors and overriding some tokens with the suitable values.
 
 Themes can be able to override semantic tokens and components tokens, and use its own raw or semantic tokens without sharing them to other themes. The existing raw tokens, shared between all themes, are not overridable because their definitions are frozen.
 
@@ -40,8 +37,8 @@ A theme can use its own tokens providers, implemented from scratch or by inherit
 ## Use themeable view
 
 ```swift
-// Add themeable view to your root view to use the OrangeTheme
-MISOThemeableView(theme: OrangeTheme()) {
+// Add themeable view to your root view to use the WireframeTheme
+MISOThemeableView(theme: WireframeTheme()) {
     YourRootView()
 }
 
@@ -55,41 +52,34 @@ MISOThemeableView(theme: YourCustomTheme()) {
 
 ### Tunable themes or not
 
-Some themes like `OrangeTheme` and `OrangeCompact` can be tuned so as to be more flexible and adapt to some countries
-or affiliates constraints.
-However other themes like `SoshTheme` and `WireframeTheme` cannot be tuned.
+A theme can be made tunable so as to be more flexible and adapt to different contexts or constraints.
+By default, the `WireframeTheme` is not tuned.
 
-> Note: Tuning represents the group of "flexibility points" allowed by the Orange Brand to tailor and customize themes for particular contexts.
+> Note: Tuning represents the group of "flexibility points" a theme can expose to tailor and customize itself for particular contexts.
 
 ### Tuned values
 
-There are few elements which can be tuned. Some tunings have also been defined.
-You can find [the available predefined Orange-related tunings](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange#Tunable-theme).
+If your theme supports tuning, define the elements which can be tuned and provide predefined tunings if relevant.
 
 ### Tuning usages
 
-The tuning to apply must be done at theme init.
+The tuning to apply must be done at theme init, for a theme that supports it, for example:
 
 ```swift
     // Define your theme tuning with for example only rounded corners for buttons
     let tuning = Tuning(hasRoundedButtons: true)
 
     // Apply it to your theme
-    let theme = OrangeTheme(tuning: tuning)
+    let theme = YourAppTheme(tuning: tuning)
     // Or in one line
-    let theme = OrangeTheme(tuning: Tuning(hasRoundedButtons: true))
-
-    // Or use predefined tuning
-    let orangeFranceTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
-    let orangeBusinessTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
-    let maxItTheme = OrangeTheme(tuning: Tuning.MaxIt)
+    let theme = YourAppTheme(tuning: Tuning(hasRoundedButtons: true))
 ```
 
 ## Define a custom theme if needed
 
-You will have to create a _Swift class_ which will inherit from `OrangeTheme` (if you need Orange brand assets and resources) or `OUDSTheme`.
-You can see `OrangeTheme` as more specified and less abtract as `OUDSTheme` which is the base of all themes.
-We do not recommend to use directly the `OUDSTheme` as is, but you can of course, you just will have to add your own tokens providers or pick existing ones.
+You will have to create a _Swift class_ which will inherit from an existing theme like `WireframeTheme` (if you need its assets and resources) or from `MISOTheme` directly.
+You can see `WireframeTheme` as more specified and less abstract as `MISOTheme` which is the base of all themes.
+We do not recommend to use directly the `MISOTheme` as is, but you can of course, you just will have to add your own tokens providers or pick existing ones.
 
 Then, you should override the _semantic tokens_ and _components tokens_ you want using the providers; we recommend to use _Swift extensions_ for clarity reasons. You can use existing tokens providers or override them.
 
@@ -97,18 +87,18 @@ If your theme needs to define its own _raw tokens_, you can also define them usi
 
 ### By subclassing
 
-You may want to define your own theme, thus you can override the `OrangeTheme` with your own class or just override the providers.
-For clarity reasons maybe you should define your own class inheriting from `OrangeTheme`, or, more difficult, from `OUDSTheme` but we do not recommand that.
+You may want to define your own theme, thus you can override an existing theme like `WireframeTheme` with your own class or just override the providers.
+For clarity reasons maybe you should define your own class inheriting from `WireframeTheme`, or, more difficult, from `MISOTheme` but we do not recommand that.
 
 You must consider the tokens provider you need (to inherit from for overriding, or to use as is):
-- spaces tokens are `OrangeThemeSpaceSemanticTokensProvider`
-- sizes tokens are in `OrangeThemeSizeSemanticTokensProvider`
-- colors tokens are all defined in `OrangeThemeColorSemanticTokensProvider`
-- borders tokens are in `OrangeBorderSemanticTokensProvider`
-- elevations tokens are in `OrangeThemeElevationSemanticTokensProvider`
-- opacity tokens are in `OrangeThemeOpacitySemanticTokensProvider`
-- grid tokens are in `OrangeThemeGridSemanticTokensProvider`
-- font tokens are in `OrangeThemeFontSemanticTokensProvider`
+- spaces tokens are `WireframeThemeSpaceSemanticTokensProvider`
+- sizes tokens are in `WireframeThemeSizeSemanticTokensProvider`
+- colors tokens are all defined in `WireframeThemeColorSemanticTokensProvider`
+- borders tokens are in `WireframeThemeBorderSemanticTokensProvider`
+- elevations tokens are in `WireframeThemeElevationSemanticTokensProvider`
+- opacity tokens are in `WireframeThemeOpacitySemanticTokensProvider`
+- grid tokens are in `WireframeThemeGridSemanticTokensProvider`
+- font tokens are in `WireframeThemeFontSemanticTokensProvider`
 - and same logic for component tokens
 
 Find below some example
@@ -116,7 +106,7 @@ Find below some example
 ```swift
 // Token provider for spaces
 
-class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
+class YourAppThemeSpaceTokensProvider: WireframeThemeSpaceSemanticTokensProvider {
     override var fixedMedium: SpaceSemanticToken {
         DimensionRawTokens._400
     }
@@ -127,7 +117,7 @@ class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
 
 // Token provider for sizes
 
-class YourAppThemeSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
+class YourAppThemeSizeTokensProvider: WireframeThemeSizeSemanticTokensProvider {
     override var iconDecorative2xl: SizeSemanticToken {
         DimensionRawTokens._300
     }
@@ -138,9 +128,9 @@ class YourAppThemeSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
 
 // Token provider for colors
 
-class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
+class YourAppThemeColorTokensProvider: WireframeThemeColorSemanticTokensProvider {
     override var bgSecondary: MultipleColorSemanticToken {
-        MultipleColorSemanticToken(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
+        MultipleColorSemanticToken(light: ColorRawTokens.colorDecorativeAmber500, dark: WireframeBrandColorRawTokens.royalBlue300)
     }
     override var actionEnabled: MultipleColorSemanticToken {
         MultipleColorSemanticToken(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
@@ -149,7 +139,7 @@ class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
 
 // Token provider for border
 
-class YourAppThemeBorderTokensProvider: OrangeThemeBorderSemanticTokensProvider {
+class YourAppThemeBorderTokensProvider: WireframeThemeBorderSemanticTokensProvider {
     override var styleDefault: BorderStyleSemanticToken {
         BorderRawTokens.styleDashed
     }
@@ -163,7 +153,7 @@ class YourAppThemeBorderTokensProvider: OrangeThemeBorderSemanticTokensProvider 
 
 // Token provider for elevation
 
-class YourAppThemeElevationTokensProvider: OrangeThemeElevationSemanticTokensProvider {
+class YourAppThemeElevationTokensProvider: WireframeThemeElevationSemanticTokensProvider {
     override var stickyEmphasized: ElevationCompositeSemanticToken {
         ElevationCompositeSemanticToken(ElevationRawTokens.bottom_4_600)
     }
@@ -171,7 +161,7 @@ class YourAppThemeElevationTokensProvider: OrangeThemeElevationSemanticTokensPro
 
 // Token provider for opacity
 
-class YourAppThemeOpacityTokensProvider: OrangeThemeOpacitySemanticTokensProvider {
+class YourAppThemeOpacityTokensProvider: WireframeThemeOpacitySemanticTokensProvider {
     override var strong: OpacitySemanticToken {
         OpacityRawTokens._920
     }
@@ -179,7 +169,7 @@ class YourAppThemeOpacityTokensProvider: OrangeThemeOpacitySemanticTokensProvide
 
 // Token provider for grid
 
-class YourAppThemeGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
+class YourAppThemeGridTokensProvider: WireframeThemeGridSemanticTokensProvider {
     override var extraCompactColumnGap: GridSemanticToken {
         GridRawTokens.columnGap200
     }
@@ -193,7 +183,7 @@ class YourAppThemeGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
 
 // Token provider for font
 
-class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
+class YourAppThemeFontTokensProvider: WireframeThemeFontSemanticTokensProvider {
     override var displayLarge: MultipleFontCompositeSemanticToken { 
         MultipleFontCompositeSemanticToken(FontCompositeSemanticToken(
             size: sizeDisplayLargeMobile,
@@ -209,10 +199,10 @@ You can instead of overriding existing semantic tokens provider implement your o
 Then define your own theme class and assign the providers. You can just use some custom providers and leave the others as they are.
 
 ```swift
-import OUDSThemesOrange // To get OrangeTheme
+import MISOThemesWireframe // To get WireframeTheme
 
 // Define your theme
-class YourAppTheme: OrangeTheme {
+class YourAppTheme: WireframeTheme {
     
     override init() {
         super.init(colors: YourAppThemeColorTokensProvider(),
@@ -253,7 +243,7 @@ public enum MyOwnFontRawTokens {
 }
 ```
 
-All components the OUDS library provides are based on themes, handle through the abstract `OUDSTheme`, exposing *semantic tokens*, defined by *raw tokens* assigned to usable final values.
-In few words, if you want to change the look and feel for the OUDS components you use, you will have to override the matching *semantic tokens* or *component tokens*, but it will bring side effects as these *semantic tokens* are shared accross several components.
+All components the MISO library provides are based on themes, handle through the abstract `MISOTheme`, exposing *semantic tokens*, defined by *raw tokens* assigned to usable final values.
+In few words, if you want to change the look and feel for the MISO components you use, you will have to override the matching *semantic tokens* or *component tokens*, but it will bring side effects as these *semantic tokens* are shared accross several components.
 
 You are also able to define your *components tokens* and your *semantic tokens* used by them.

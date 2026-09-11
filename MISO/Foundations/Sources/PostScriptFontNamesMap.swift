@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import SwiftUI
 
 // MARK: - PostScript Font Names Map Key
@@ -81,7 +68,7 @@ extension [PostScriptFontNamesMapKey: String] {
     /// - Parameter key: The key to use to get a value
     public subscript(orKey key: Key) -> String {
         guard let value = self[key] else {
-            ML.warning("It seems there is missing rule for PostScript identifier with '\(key.familyName)'/'\(key.fontWeight)'. Fallback to '\(key.description)'")
+            OL.warning("It seems there is missing rule for PostScript identifier with '\(key.familyName)'/'\(key.fontWeight)'. Fallback to '\(key.description)'")
             return key.description
         }
         return value
@@ -102,7 +89,7 @@ public typealias PostScriptFontNamesMap = [PostScriptFontNamesMapKey: String]
 
 // MARK: - Values
 
-/// Because some local themes can use their own fonts, OUDS is not always able to make the conversion between the PostScript identifier
+/// Because some local themes can use their own fonts, MISO is not always able to make the conversion between the PostScript identifier
 /// of the TTF file for a given font and in the end tokens of fonts with weights.
 /// Registers a PostScript identifier to use for a given combination of font name and weight.
 ///
@@ -137,7 +124,7 @@ public var kApplePostScriptFontNames: PostScriptFontNamesMap { internalApplePost
 nonisolated(unsafe) private var internalApplePostScriptFontNames: PostScriptFontNamesMap =
     [
 
-        // MARK: OUDS
+        // MARK: MISO
 
         PSFNMK("Arial", Font.Weight.regular): "ArialMT",
         PSFNMK("Arial", Font.Weight.bold): "Arial-BoldMT",
@@ -179,7 +166,7 @@ nonisolated(unsafe) private var internalApplePostScriptFontNames: PostScriptFont
 
         // "SF Mono" defined in FontRawTokens but does not exist at all in font books
 
-        // MARK: Orange
+        // MARK: Brand
 
         PSFNMK("Helvetica Neue", Font.Weight.ultraLight): "HelveticaNeue-Ultralight",
         PSFNMK("Helvetica Neue", Font.Weight.thin): "HelveticaNeue-Thin",
@@ -189,23 +176,13 @@ nonisolated(unsafe) private var internalApplePostScriptFontNames: PostScriptFont
         PSFNMK("Helvetica Neue", nil /* normal */ ): "HelveticaNeue",
         PSFNMK("Helvetica Neue", Font.Weight.medium): "HelveticaNeue-Medium",
         PSFNMK("Helvetica Neue", Font.Weight.bold): "HelveticaNeue-Bold",
-        // NOTE: "Helvetica Neue 75" in Orange Brand TTF has "HelveticaNeue-Bold" PostScript Name
-        // ┬─┬ ︵ /(.□. \）
+        // NOTE: "Helvetica Neue 75" in Brand TTF has "HelveticaNeue-Bold" PostScript Name
 
         // WARNING: Needs TTF font files not available in iOS, thus needed to be added in project
-        // NOTE: Download it through Orange Brand website (need authentication): https://brand.orange.com/en/brand-basics/typography
         PSFNMK("Helvetica Neue Arabic", Font.Weight.light): "HelveticaNeueLTArabic-Light",
         PSFNMK("Helvetica Neue Arabic", Font.Weight.regular): "HelveticaNeueLTArabic-Roman",
         PSFNMK("Helvetica Neue Arabic", nil): "HelveticaNeueLTArabic-Roman",
         PSFNMK("Helvetica Neue Arabic", Font.Weight.bold): "HelveticaNeueLTArabic-Bold",
-
-        // MARK: Sosh
-
-        PSFNMK("Sosh", Font.Weight.thin): "Sosh-Thin",
-        PSFNMK("Sosh", Font.Weight.regular): "Sosh-Regular",
-        PSFNMK("Sosh", Font.Weight.medium): "Sosh-Medium",
-        PSFNMK("Sosh", Font.Weight.bold): "Sosh-Bold",
-        PSFNMK("Sosh", Font.Weight.black): "Sosh-Black",
 
         // MARK: Wireframe
 

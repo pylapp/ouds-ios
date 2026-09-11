@@ -19,9 +19,9 @@ import SwiftUI
 ///
 /// ## Theme rendering
 ///
-/// ### Orange
+/// ### Wireframe
 ///
-/// ![A colored surface with text, button and link in light and dark modes with Orange theme](component_coloredSurface_Orange)
+/// ![A colored surface with text, button and link in light and dark modes with Wireframe theme](component_coloredSurface_Wireframe)
 ///
 /// - Since: 0.13.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)

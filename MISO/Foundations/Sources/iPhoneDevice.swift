@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import Foundation
 import SwiftUI
 
@@ -45,7 +32,7 @@ extension EnvironmentValues {
 
 // MARK: - iPhone Device
 
-/// List some iPhone devices which can use OUDS, i.e. supposed to support at least iOS 15.
+/// List some iPhone devices which can use MISO, i.e. supposed to support at least iOS 15.
 /// Helps to define some metrics like tab bar heights.
 ///
 /// - Since: 1.0.0
@@ -217,7 +204,7 @@ public enum iPhoneDevice: CustomStringConvertible, Sendable {
         case 2_868: // 956 x @3 (16 Pro max, 17 Pro Max)
             self = .proMax16
         default:
-            ML.warning("iPhone device not recognized (with max dimension \(maxDimension)), please submit an issue with the device reference and computed dimension (https://github.com/Orange-OpenSource/ouds-ios/issues)")
+            OL.warning("iPhone device not recognized (with max dimension \(maxDimension)), please submit an issue with the device reference and computed dimension (https://github.com/Orange-OpenSource/miso-ios/issues)")
             self = iPhoneDevice.unknown
         }
     }

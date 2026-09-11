@@ -85,7 +85,7 @@ public struct MISOFilterChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, text: String, selected: Bool = false, action: @escaping () -> Void) {
         if text.isEmpty {
-            ML.warning("The MISOFilterChip should not have an empty text, prefer instead MISOFilterChip(image:accessibilityLabel:selected:action).")
+            OL.warning("The MISOFilterChip should not have an empty text, prefer instead MISOFilterChip(image:accessibilityLabel:selected:action).")
         }
         layout = .textAndIcon(text: text, icon: image, iconPosition: .trailing)
         self.action = action
@@ -135,7 +135,7 @@ public struct MISOFilterChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: MISOImage, accessibilityLabel: String, selected: Bool = false, action: @escaping () -> Void) {
         if accessibilityLabel.isEmpty {
-            ML.warning("The MISOFilterChip should not have an empty accessibility label, think about your disabled users!")
+            OL.warning("The MISOFilterChip should not have an empty accessibility label, think about your disabled users!")
         }
         layout = .icon(image, accessibilityLabel)
         self.action = action
@@ -178,7 +178,7 @@ public struct MISOFilterChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(text: String, selected: Bool = false, action: @escaping () -> Void) {
         if text.isEmpty {
-            ML.fatal("The MISOFilterChip must not have an empty text!")
+            OL.fatal("The MISOFilterChip must not have an empty text!")
         }
         layout = .text(text)
         self.action = action

@@ -12,7 +12,7 @@ import SwiftUI
 struct AlertMessageFKACustomActionsModifier: ViewModifier {
     // NOTE: This is very hacky
     // People needing both Full Keyboard Access and Voice Over will have "Voice Over enabled" behavior.
-    // See original https://github.com/Orange-OpenSource/ouds-ios/issues/1564
+    // See original https://github.com/Orange-OpenSource/miso-ios/issues/1564
 
     let link: MISOAlertMessage.Link?
     let onClose: (() -> Void)?

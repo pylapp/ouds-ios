@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
@@ -21,7 +8,7 @@ import MISOThemesContract
 
 /// A class which wraps all **component tokens of text area** objects like `MISOTextArea`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// It implements also the protocol `TextAreaComponentTokens` so as to expose the component tokens for *text area* through any `OUDSTheme`.
+/// It implements also the protocol `TextAreaComponentTokens` so as to expose the component tokens for *text area* through any `MISOTheme`.
 /// *Text area* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`)
 /// and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
@@ -45,7 +32,7 @@ final class WireframeThemeTextAreaComponentTokensProvider: AllTextAreaComponentT
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil)
     {
-        ML.debug("Init of WireframeThemeTextAreaComponentTokensProvider")
+        OL.debug("Init of WireframeThemeTextAreaComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
         #if DEBUG

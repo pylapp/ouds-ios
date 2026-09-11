@@ -51,7 +51,7 @@ public struct MISONavigationStack<Content: View>: View {
     }
 
     private var updatedContent: some View {
-        content.oudsNavigationBarAppearance(hideBackButtonLabel: hideBackButtonLabel)
+        content.misoNavigationBarAppearance(hideBackButtonLabel: hideBackButtonLabel)
     }
 }
 
@@ -62,7 +62,7 @@ extension View {
     /// If needed, it is possible to remove the label of the back button (associated to previous chevron).
     ///
     /// - Parameter hideBackButtonLabel: Flag to say if the label in back button should be hidden. `false` by default
-    public func oudsNavigationBarAppearance(hideBackButtonLabel: Bool = false) -> some View {
+    public func misoNavigationBarAppearance(hideBackButtonLabel: Bool = false) -> some View {
         modifier(NavigationStackRefresher(hideBackButtonLabel: hideBackButtonLabel))
     }
 }

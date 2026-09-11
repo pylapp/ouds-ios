@@ -40,10 +40,10 @@ struct ToolBarTopModifier: ViewModifier {
          @MISOToolBarItemsBuilder trailingItems: @escaping () -> [MISOToolBarItem])
     {
         if title.isEmpty {
-            ML.warning("The title of ToolBarTopModifier is empty, prefer a non-empty title")
+            OL.warning("The title of ToolBarTopModifier is empty, prefer a non-empty title")
         }
         if let subtitle, subtitle.isEmpty {
-            ML.warning("The subtitle of ToolBarTopModifier is empty, prefer nil instead")
+            OL.warning("The subtitle of ToolBarTopModifier is empty, prefer nil instead")
         }
 
         self.title = title

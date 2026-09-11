@@ -26,11 +26,11 @@ import SwiftUI
 ///
 /// ## Badges uses
 ///
-/// Because the system does not render system badge for items in bottom toolbar, the OUDS badge component is used for iOS 26 with Liquid Glass and bottom toolbars.
+/// Because the system does not render system badge for items in bottom toolbar, the MISO badge component is used for iOS 26 with Liquid Glass and bottom toolbars.
 /// However the glassified effect of Liquid Glass does not make sometimes the badge readable, that is the reason why you should use badge for bottom toolbars with lots of care
 /// and prefer *prominent* or *tinted* styles for the item with the badge instead of *default*.
 ///
-/// For iOS until 18 and without Liquid Glass the OUDS badge components are always used.
+/// For iOS until 18 and without Liquid Glass the MISO badge components are always used.
 ///
 /// ## Code samples
 ///
@@ -62,7 +62,7 @@ public struct MISOToolBarBottom: ViewModifier {
 
     // MARK: Initializer
 
-    /// `ViewModifier` to define an OUDS bottom toolbar.
+    /// `ViewModifier` to define an MISO bottom toolbar.
     ///
     ///  You should prefer `toolBarBottom(leadingItems:trailingItems:)`.
     ///
@@ -86,7 +86,7 @@ public struct MISOToolBarBottom: ViewModifier {
         useGroupedItems = false
     }
 
-    /// `ViewModifier` to define an OUDS bottom toolbar.
+    /// `ViewModifier` to define an MISO bottom toolbar.
     ///
     ///  You should prefer `toolBarBottom(groupedItems:)`.
     ///

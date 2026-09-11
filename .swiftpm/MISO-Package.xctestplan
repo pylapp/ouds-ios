@@ -1,0 +1,59 @@
+{
+  "configurations" : [
+    {
+      "id" : "4B63609D-392E-45F4-A8B0-4C91FDC0647C",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MISOComponents-Tests",
+        "name" : "MISOComponents-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MISOFoundations-Tests",
+        "name" : "MISOFoundations-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MISOThemesContract-Tests",
+        "name" : "MISOThemesContract-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MISOThemesWirefame-Tests",
+        "name" : "MISOThemesWirefame-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MISOTokensRaw-Tests",
+        "name" : "MISOTokensRaw-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MISOTokensSemantic-Tests",
+        "name" : "MISOTokensSemantic-Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

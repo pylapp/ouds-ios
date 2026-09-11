@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
@@ -21,9 +8,9 @@ import MISOThemesContract
 
 /// A class which wraps all **component  tokens of input text** for *input text* objects like `MISOTextInput`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllTextInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// It implements also the protocol `InouttextComponentTokens` so as to expose the component tokens for *input text* through any `OUDSTheme`.
+/// This provider should be integrated as a `AllTextInputComponentTokensProvider` implementation inside `MISOTheme` so as to provide
+/// all tokens to the users. It helps users to override some of the tokens and assign them to an `MISOTheme` implementation to use.
+/// It implements also the protocol `InouttextComponentTokens` so as to expose the component tokens for *input text* through any `MISOTheme`.
 /// *Inout text* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`), colors (`AllColorSemanticTokensProvider`)
 /// and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
@@ -62,7 +49,7 @@ final class WireframeThemeTextInputComponentTokensProvider: AllTextInputComponen
          spaces: AllSpaceSemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
-        ML.debug("Init of WireframeThemeTextInputComponentTokensProvider")
+        OL.debug("Init of WireframeThemeTextInputComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())

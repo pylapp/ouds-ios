@@ -63,7 +63,7 @@ struct CheckboxIndicator: View {
             case .pressed:
                 theme.colors.actionNegativePressed
             case .disabled, .readOnly:
-                ML.fatal("An OUDS Checkbox with a disabled state / read only mode and an error situation has been detected, which is not allowed"
+                OL.fatal("An MISO Checkbox with a disabled state / read only mode and an error situation has been detected, which is not allowed"
                     + " Only non-error situation are allowed to have a disabled state / read only mode.")
             }
             // Not error case

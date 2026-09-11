@@ -4,15 +4,15 @@
 import MISOThemesContract
 import SwiftUI
 
-/// `ViewModifier` to use to define pading to given `edges` using the OUDS current horizontal size class
+/// `ViewModifier` to use to define pading to given `edges` using the MISO current horizontal size class
 struct GridMarginModifier: ViewModifier {
 
     let edges: Edge.Set
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsHorizontalSizeClass) private var oudsHorizontalSizeClass
+    @Environment(\.misoHorizontalSizeClass) private var misoHorizontalSizeClass
 
     func body(content: Content) -> some View {
-        content.padding(edges, theme.gridMargin(for: oudsHorizontalSizeClass))
+        content.padding(edges, theme.gridMargin(for: misoHorizontalSizeClass))
     }
 }

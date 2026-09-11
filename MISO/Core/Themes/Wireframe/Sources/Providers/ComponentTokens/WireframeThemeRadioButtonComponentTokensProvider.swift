@@ -1,30 +1,17 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
 // swiftlint:disable type_name
 
 /// A class which wraps all **component  tokens of radio button** for  *radios* objects
-/// like `OUDSRadioButton` and `OUDSRadioButtonItem`.
+/// like `MISORadioButton` and `MISORadioButtonItem`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllRadioButtonComponentTokensProvider` implementation inside `OUDSTheme` so as to provide all tokens to the users.
-/// It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// It implements also the protocol `RadioButtonComponentTokens` so as to expose the component tokens for *radio buttons* through any `OUDSTheme`.
+/// This provider should be integrated as a `AllRadioButtonComponentTokensProvider` implementation inside `MISOTheme` so as to provide all tokens to the users.
+/// It helps users to override some of the tokens and assign them to an `MISOTheme` implementation to use.
+/// It implements also the protocol `RadioButtonComponentTokens` so as to expose the component tokens for *radio buttons* through any `MISOTheme`.
 /// *Radio buttons* components tokens are defined with raw and semantic tokens of sizes (from `SizeSemanticToken`) and
 /// borders (`BorderRadiusSemanticToken`, `BorderWidthSemanticToken`).
 /// These components share the same type of tokens which are all gathered here.                                        borders: CustomBorderSemanticTokensProvider()))
@@ -42,14 +29,14 @@ final class WireframeThemeRadioButtonComponentTokensProvider: AllRadioButtonComp
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSRadioButton` and `OUDSRadioButtonItem`.
+    /// Defines a provider of component tokens dedicated to `MISORadioButton` and `MISORadioButtonItem`.
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil)
     {
-        ML.debug("Init of WireframeThemeRadioButtonComponentTokensProvider")
+        OL.debug("Init of WireframeThemeRadioButtonComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         #if DEBUG

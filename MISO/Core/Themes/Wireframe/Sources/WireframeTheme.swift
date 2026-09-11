@@ -1,27 +1,14 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import Foundation
 import MISOThemesContract
 import SwiftUI
 
 // swiftlint:disable function_body_length
 
-/// This Wireframe theme is a theme for some specific usages, like for prototyping and design of journeys with non-Orange charted themes.
-/// This is an override of the default basic `OUDSTheme` for some usages.
+/// This Wireframe theme is a theme for some specific usages, like for prototyping and design of journeys without any brand-charted theme.
+/// This is an override of the default basic `MISOTheme` for some usages.
 /// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
 ///
 /// To get it:
@@ -52,12 +39,12 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.11.0
+/// - Core MISO version: 1.11.0
 /// - Core Wireframe version: 1.5.0
 /// - Brand Wireframe version: 2.7.0
 ///
 /// - Since: 0.17.0
-public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
+public final class WireframeTheme: MISOTheme, @unchecked Sendable {
 
     /// The theme name ("Wireframe")
     public static let name = "Wireframe"
@@ -171,7 +158,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
 extension Tuning {
 
-    /// The theme tuning for *Sosh* contains **square corners for buttons**,
+    /// The theme tuning for *Wireframe* contains **square corners for buttons**,
     /// **square corners for text / PIN code / password / text area inputs** and **list items**;
     /// and **rounded corners for alert messages** and **progress indicators**.
     public static let Wireframe = Tuning(hasRoundedButtons: false,

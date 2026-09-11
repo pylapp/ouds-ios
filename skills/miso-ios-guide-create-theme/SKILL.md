@@ -1,6 +1,6 @@
 ---
 name: miso-ios-guide-create-theme
-description: Use when the user wants to create a custom MISO theme or brand theme for an iOS app — covers subclassing OrangeTheme, building a theme from scratch on MISOTheme, mixing existing providers, local custom fonts (.ttf registration), and tuning.
+description: Use when the user wants to create a custom MISO theme or brand theme for an iOS app — covers subclassing an existing theme (e.g. WireframeTheme), building a theme from scratch on MISOTheme, mixing existing providers, local custom fonts (.ttf registration), and tuning.
 license: MIT
 ---
 
@@ -18,8 +18,8 @@ Before writing any code, ask the user these two questions:
 
 | Strategy | When to choose |
 |---|---|
-| **A — Subclass `OrangeTheme`** *(recommended)* | Orange brand assets are needed; only some tokens differ from Orange defaults |
-| **B — From scratch on `MISOTheme`** | Fully independent brand (no Orange assets); all tokens are custom |
+| **A — Subclass an existing theme (e.g. `WireframeTheme`)** *(recommended)* | An existing theme's assets are close enough; only some tokens differ from its defaults |
+| **B — From scratch on `MISOTheme`** | Fully independent brand; all tokens are custom |
 | **C — Mix existing providers** | Compose providers from existing themes without creating a new subclass |
 
 **Question 2 — Custom fonts?**
@@ -50,7 +50,7 @@ To get the full list of properties / tokens by protocols:
   - `TextInputComponentTokens` : https://ios.unified-design-system.orange.com/documentation/misoTokensComponent/TextInputComponentTokens
   - etc.
 
-> **Tip** : To see all properties / tokens of a provider, look in files `Values/SemanticTokens/` or `Values/ComponentTokens/` in Orange theme from MISO iOS repository.
+> **Tip** : To see all properties / tokens of a provider, look in files `Values/SemanticTokens/` or `Values/ComponentTokens/` in the Wireframe theme from MISO iOS repository.
 
 ---
 
@@ -59,7 +59,7 @@ To get the full list of properties / tokens by protocols:
 ```
 MISOTheme                    ← base "abstract" class (open)
     │
-    └── OrangeTheme          ← open, the ONLY publicly subclassable theme
+    └── YourBaseTheme        ← an existing open theme (e.g. WireframeTheme, if made subclassable)
             │
             └── YourTheme    ← your app's custom theme (Strategy A)
 
@@ -67,69 +67,69 @@ MISOTheme
     └── YourTheme            ← from-scratch theme (Strategy B)
 ```
 
-> **Rule:** Only `OrangeTheme` can be subclassed by external code.
-> `SoshTheme`, `OrangeCompactTheme`, and `WireframeTheme` are all `final`
-> but their tokens providers can be reused.
+> **Rule:** Check whether the theme you want to extend is declared `open` or `final`.
+> `WireframeTheme` is `final` in this repository, but its tokens providers can be reused (Strategy C),
+> or you can declare your own `open` theme subclassable from `MISOTheme`.
 
 ---
 
-## 2. Strategy A — Subclass `OrangeTheme` *(recommended)*
+## 2. Strategy A — Subclass an existing theme *(recommended)*
 
 ### 2.1 Import
 
 ```swift
-import MISOThemesOrange
+import MISOThemesWireframe
 // or the umbrella product that includes it:
-import MISOSwiftUIOrange
+import MISOSwiftUIWireframe
 ```
 
 ### 2.2 Override only the providers you need
 
-Each provider inherits from an `OrangeThemeXxxProvider` class. Override `@objc open` properties.
+Each provider inherits from a `WireframeThemeXxxProvider` class (or the equivalent for the theme you extend). Override `@objc open` properties.
 
 **Semantic token providers available to override** (Layer 2 — generic tokens):
 
-| What to override | Orange base class to inherit |
+| What to override | Wireframe base class to inherit |
 |---|---|
-| Borders (style / width / radius) | `OrangeThemeBorderSemanticTokensProvider` |
-| Colors (light + dark via `MultipleColorSemanticToken`) | `OrangeThemeColorSemanticTokensProvider` |
-| Color modes (for `MISOColoredSurface`) | `OrangeThemeColorModeSemanticTokensProvider` |
-| Color charts | `OrangeThemeColorChartSemanticTokensProvider` |
-| Color decorative | `OrangeThemeColorDecorativeSemanticTokensProvider` |
-| Effects | `OrangeThemeEffectSemanticTokensProvider` |
-| Elevations / shadows | `OrangeThemeElevationSemanticTokensProvider` |
-| Typography / fonts | `OrangeThemeFontSemanticTokensProvider` |
-| Grids | `OrangeThemeGridSemanticTokensProvider` |
-| Opacities | `OrangeThemeOpacitySemanticTokensProvider` |
-| Dimensions (base scale) | `OrangeThemeDimensionSemanticTokensProvider` |
-| Sizes (icon, component) | `OrangeThemeSizeSemanticTokensProvider` |
-| Spaces (fixed, scaled) | `OrangeThemeSpaceSemanticTokensProvider` |
+| Borders (style / width / radius) | `WireframeThemeBorderSemanticTokensProvider` |
+| Colors (light + dark via `MultipleColorSemanticToken`) | `WireframeThemeColorSemanticTokensProvider` |
+| Color modes (for `MISOColoredSurface`) | `WireframeThemeColorModeSemanticTokensProvider` |
+| Color charts | `WireframeThemeColorChartSemanticTokensProvider` |
+| Color decorative | `WireframeThemeColorDecorativeSemanticTokensProvider` |
+| Effects | `WireframeThemeEffectSemanticTokensProvider` |
+| Elevations / shadows | `WireframeThemeElevationSemanticTokensProvider` |
+| Typography / fonts | `WireframeThemeFontSemanticTokensProvider` |
+| Grids | `WireframeThemeGridSemanticTokensProvider` |
+| Opacities | `WireframeThemeOpacitySemanticTokensProvider` |
+| Dimensions (base scale) | `WireframeThemeDimensionSemanticTokensProvider` |
+| Sizes (icon, component) | `WireframeThemeSizeSemanticTokensProvider` |
+| Spaces (fixed, scaled) | `WireframeThemeSpaceSemanticTokensProvider` |
 
 **Component token providers available to override** (Layer 3 — component-specific tokens):
 
-| Component | Orange base class |
+| Component | Wireframe base class |
 |---|---|
-| Alert messages | `OrangeThemeAlertComponentTokensProvider` |
-| Badge | `OrangeThemeBadgeComponentTokensProvider` |
-| Bar (tab bar / toolbar) | `OrangeThemeBarComponentTokensProvider` |
-| Bullet list | `OrangeThemeBulletListComponentTokensProvider` |
-| Button | `OrangeThemeButtonComponentTokensProvider` |
-| Checkbox | `OrangeThemeCheckboxComponentTokensProvider` |
-| Chip | `OrangeThemeChipComponentTokensProvider` |
-| Divider | `OrangeThemeDividerComponentTokensProvider` |
-| Icon | `OrangeThemeIconComponentTokensProvider` |
-| Link | `OrangeThemeLinkComponentTokensProvider` |
-| List item | `OrangeThemeListItemComponentTokensProvider` |
-| Pin code input | `OrangeThemePinCodeInputComponentTokensProvider` |
-| Quantity input | `OrangeThemeQuantityInputComponentTokensProvider` |
-| Radio button | `OrangeThemeRadioButtonComponentTokensProvider` |
-| Select input | `OrangeThemeSelectInputComponentTokensProvider` |
-| Skeleton | `OrangeThemeSkeletonComponentTokensProvider` |
-| Switch | `OrangeThemeSwitchComponentTokensProvider` |
-| Tag | `OrangeThemeTagComponentTokensProvider` |
-| Input tag | `OrangeThemeInputTagComponentTokensProvider` |
-| Text area | `OrangeThemeTextAreaComponentTokensProvider` |
-| Text input | `OrangeThemeTextInputComponentTokensProvider` |
+| Alert messages | `WireframeThemeAlertComponentTokensProvider` |
+| Badge | `WireframeThemeBadgeComponentTokensProvider` |
+| Bar (tab bar / toolbar) | `WireframeThemeBarComponentTokensProvider` |
+| Bullet list | `WireframeThemeBulletListComponentTokensProvider` |
+| Button | `WireframeThemeButtonComponentTokensProvider` |
+| Checkbox | `WireframeThemeCheckboxComponentTokensProvider` |
+| Chip | `WireframeThemeChipComponentTokensProvider` |
+| Divider | `WireframeThemeDividerComponentTokensProvider` |
+| Icon | `WireframeThemeIconComponentTokensProvider` |
+| Link | `WireframeThemeLinkComponentTokensProvider` |
+| List item | `WireframeThemeListItemComponentTokensProvider` |
+| Pin code input | `WireframeThemePinCodeInputComponentTokensProvider` |
+| Quantity input | `WireframeThemeQuantityInputComponentTokensProvider` |
+| Radio button | `WireframeThemeRadioButtonComponentTokensProvider` |
+| Select input | `WireframeThemeSelectInputComponentTokensProvider` |
+| Skeleton | `WireframeThemeSkeletonComponentTokensProvider` |
+| Switch | `WireframeThemeSwitchComponentTokensProvider` |
+| Tag | `WireframeThemeTagComponentTokensProvider` |
+| Input tag | `WireframeThemeInputTagComponentTokensProvider` |
+| Text area | `WireframeThemeTextAreaComponentTokensProvider` |
+| Text input | `WireframeThemeTextInputComponentTokensProvider` |
 
 Etc.
 
@@ -139,11 +139,11 @@ Etc.
 import MISOTokensRaw
 
 // Colors
-class YourThemeColorProvider: OrangeThemeColorSemanticTokensProvider {
+class YourThemeColorProvider: WireframeThemeColorSemanticTokensProvider {
     override var bgSecondary: MultipleColorSemanticToken {
         MultipleColorSemanticToken(
             light: ColorRawTokens.colorDecorativeAmber500,
-            dark:  OrangeBrandColorRawTokens.colorOrange900)
+            dark:  WireframeBrandColorRawTokens.royalBlue300)
     }
     override var actionEnabled: MultipleColorSemanticToken {
         MultipleColorSemanticToken(
@@ -153,25 +153,25 @@ class YourThemeColorProvider: OrangeThemeColorSemanticTokensProvider {
 }
 
 // Borders
-class YourThemeBorderProvider: OrangeThemeBorderSemanticTokensProvider {
+class YourThemeBorderProvider: WireframeThemeBorderSemanticTokensProvider {
     override var styleDefault: BorderStyleSemanticToken { BorderRawTokens.styleDashed }
     override var radiusLarge:  BorderRadiusSemanticToken { BorderRawTokens.radius800 }
 }
 
 // Elevations
-class YourThemeElevationProvider: OrangeThemeElevationSemanticTokensProvider {
+class YourThemeElevationProvider: WireframeThemeElevationSemanticTokensProvider {
     override var stickyEmphasized: ElevationCompositeSemanticToken {
         ElevationCompositeSemanticToken(ElevationRawTokens.bottom_4_600)
     }
 }
 
 // Opacities
-class YourThemeOpacityProvider: OrangeThemeOpacitySemanticTokensProvider {
+class YourThemeOpacityProvider: WireframeThemeOpacitySemanticTokensProvider {
     override var strong: OpacitySemanticToken { OpacityRawTokens._920 }
 }
 
 // Spaces
-class YourThemeSpaceProvider: OrangeThemeSpaceSemanticTokensProvider {
+class YourThemeSpaceProvider: WireframeThemeSpaceSemanticTokensProvider {
     override var fixedMedium: SpaceSemanticToken { DimensionRawTokens._400 }
     override var scaledSmall: MultipleSpaceSemanticToken {
         MultipleSpaceSemanticToken(compact: fixed5xl, regular: fixed5xl)
@@ -179,19 +179,19 @@ class YourThemeSpaceProvider: OrangeThemeSpaceSemanticTokensProvider {
 }
 
 // Sizes
-class YourThemeSizeProvider: OrangeThemeSizeSemanticTokensProvider {
+class YourThemeSizeProvider: WireframeThemeSizeSemanticTokensProvider {
     override var iconDecorative2xl: SizeSemanticToken { DimensionRawTokens._300 }
 }
 
 // Grids
-class YourThemeGridProvider: OrangeThemeGridSemanticTokensProvider {
+class YourThemeGridProvider: WireframeThemeGridSemanticTokensProvider {
     override var extraCompactColumnGap: GridSemanticToken { GridRawTokens.columnGap200 }
     override var compactColumnGap:      GridSemanticToken { GridRawTokens.columnGap200 }
     override var regularColumnGap:      GridSemanticToken { GridRawTokens.columnGap200 }
 }
 
 // Font (typography scale)
-class YourThemeFontProvider: OrangeThemeFontSemanticTokensProvider {
+class YourThemeFontProvider: WireframeThemeFontSemanticTokensProvider {
     override var displayLarge: MultipleFontCompositeSemanticToken {
         MultipleFontCompositeSemanticToken(FontCompositeSemanticToken(
             size:          sizeDisplayLargeMobile,
@@ -214,7 +214,7 @@ class YourTheme: MISOTheme {
 
     override init() {
         // Only instantiate providers you need to override.
-        // All other parameters default to the Orange equivalents.
+        // All other parameters default to the base theme's equivalents.
         let colors  = YourThemeColorProvider()
         let borders = YourThemeBorderProvider()
         let fonts   = YourThemeFontProvider()
@@ -224,7 +224,7 @@ class YourTheme: MISOTheme {
             colors:  colors,
             borders: borders,
             fonts:   fonts,
-            // Leave unspecified parameters as nil → Orange defaults are used if OrangeTheme used as super class.
+            // Leave unspecified parameters as nil → base theme's defaults are used when WireframeTheme is used as super class.
             name:    Self.name,
             tuning:  Tuning.default)  // see §5 for tuning options
         )
@@ -239,8 +239,8 @@ class YourTheme: MISOTheme {
 ## 3. Strategy B — From scratch on `MISOTheme`
 
 > **Warning:** This requires implementing all providers — potentially hundreds of `@objc open`
-> property overrides. Use only for fully independent brands with no Orange assets.
-> See `SoshTheme` in the MISO source as the canonical reference.
+> property overrides. Use only for fully independent brands.
+> See `WireframeTheme` in the MISO source as the canonical reference.
 
 ### 3.1 Import
 
@@ -308,7 +308,7 @@ Respect dependency order — some providers take others as constructor arguments
 | `textArea` | `AllTextAreaComponentTokensProvider` |
 | `textInput` | `AllTextInputComponentTokensProvider` |
 
-See init of `OrangeTheme` or `MISOTheme` for fill list.
+See init of `WireframeTheme` or `MISOTheme` for fill list.
 
 ### 3.4 Theme class skeleton
 
@@ -417,37 +417,37 @@ public final class YourTheme: MISOTheme, @unchecked Sendable {
 
 ## 4. Strategy C — Mix existing providers
 
-No new subclass needed. Instantiate providers from existing themes and pass them directly to `OrangeTheme` or `MISOTheme`:
+No new subclass needed. Instantiate providers from existing themes and pass them directly to `WireframeTheme` or `MISOTheme`:
 
 ```swift
-import MISOThemesOrange
+import MISOThemesWireframe
 
-// Reuse most Orange providers, only replace colors:
-let dimensions = OrangeThemeDimensionSemanticTokensProvider()
-let borders    = OrangeThemeBorderSemanticTokensProvider()
+// Reuse most Wireframe providers, only replace colors:
+let dimensions = WireframeThemeDimensionSemanticTokensProvider()
+let borders    = WireframeThemeBorderSemanticTokensProvider()
 let colors     = YourOwnColorSemanticTokensProvider()  // custom
-let sizes      = OrangeThemeSizeSemanticTokensProvider(dimensions: dimensions)
-let spaces     = OrangeThemeSpaceSemanticTokensProvider(dimensions: dimensions)
+let sizes      = WireframeThemeSizeSemanticTokensProvider(dimensions: dimensions)
+let spaces     = WireframeThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
 // Component providers that depend on colors must receive the custom one:
-let button = OrangeThemeButtonComponentTokensProvider(
+let button = WireframeThemeButtonComponentTokensProvider(
                  sizes: sizes, borders: borders, colors: colors, spaces: spaces)
 
 // Inject directly — no subclass required:
-let theme = OrangeTheme(colors: colors, button: button)
+let theme = WireframeTheme(colors: colors, button: button)
 ```
 
 Or wrap in a named class for reuse across the app:
 
 ```swift
-class YourTheme: OrangeTheme {
+class YourTheme: WireframeTheme {
     override init() {
-        let dimensions = OrangeThemeDimensionSemanticTokensProvider()
-        let borders    = OrangeThemeBorderSemanticTokensProvider()
+        let dimensions = WireframeThemeDimensionSemanticTokensProvider()
+        let borders    = WireframeThemeBorderSemanticTokensProvider()
         let colors     = YourOwnColorSemanticTokensProvider()
-        let sizes      = OrangeThemeSizeSemanticTokensProvider(dimensions: dimensions)
-        let spaces     = OrangeThemeSpaceSemanticTokensProvider(dimensions: dimensions)
-        let button     = OrangeThemeButtonComponentTokensProvider(
+        let sizes      = WireframeThemeSizeSemanticTokensProvider(dimensions: dimensions)
+        let spaces     = WireframeThemeSpaceSemanticTokensProvider(dimensions: dimensions)
+        let button     = WireframeThemeButtonComponentTokensProvider(
                              sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         super.init(colors: colors, button: button)
     }
@@ -458,7 +458,7 @@ class YourTheme: OrangeTheme {
 
 ## 5. Tuning & Flags
 
-Tuning controls brand-level UI decisions for corner rounding. Only `OrangeTheme` (and its subclasses) support tuning.
+Tuning controls brand-level UI decisions for corner rounding. Only `WireframeTheme` (and its subclasses) support tuning.
 
 ```swift
 // Custom tuning:
@@ -467,14 +467,14 @@ let tuning = Tuning(
     hasRoundedTextInputs:    true,   // rounded corners on text / PIN / password / text area inputs
     hasRoundedAlertMessages: false)  // rounded corners on alert messages
 
-let theme = OrangeTheme(tuning: tuning)
-// or: YourTheme(tuning: tuning) if your init forwards the parameter
+let theme = YourTheme(tuning: tuning)
+// or forward the parameter from your own theme's init
 
-// Predefined tunings:
-OrangeTheme(tuning: Tuning.default)        // all false
-OrangeTheme(tuning: Tuning.OrangeFrance)   // same as default
-OrangeTheme(tuning: Tuning.OrangeBusiness) // rounded inputs + alerts
-OrangeTheme(tuning: Tuning.MaxIt)          // everything rounded
+// Default tuning:
+YourTheme(tuning: Tuning.default)             // all false
+
+// Define and reuse your own predefined tunings (see §5.1)
+YourTheme(tuning: Tuning.YourBrand)
 ```
 
 ### 5.1 Theme flags
@@ -589,7 +589,7 @@ Then pass `YourBrandFontRawTokens.familyDefault` as `fontFamily:` in `super.init
 ## 7. Inject the theme in your app
 
 ```swift
-import MISOSwiftUI  // or MISOSwiftUIOrange if subclassing OrangeTheme
+import MISOSwiftUI  // or MISOSwiftUIWireframe if subclassing WireframeTheme
 
 @main
 struct YourApp: App {
@@ -632,14 +632,14 @@ Understanding the three token layers is essential for creating custom themes:
 │  SEMANTIC TOKENS (Layer 2)                                      │
 │  Meaningful names tied to usage context; reference raw tokens  │
 │  Example: theme.colors.contentPrimary → uses ColorRawToken     │
-│  Provided by: OrangeThemeXxxSemanticTokensProvider             │
+│  Provided by: WireframeThemeXxxSemanticTokensProvider             │
 └─────────────────────────────────────────────────────────────────┘
                               ↓ references
 ┌─────────────────────────────────────────────────────────────────┐
 │  COMPONENT TOKENS (Layer 3)                                     │
 │  Scoped to specific components; reference semantic tokens      │
 │  Example: theme.button.colorBackgroundDefault                  │
-│  Provided by: OrangeThemeXxxComponentTokensProvider            │
+│  Provided by: WireframeThemeXxxComponentTokensProvider            │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -1081,7 +1081,7 @@ public final class MyBrandTheme: MISOTheme, @unchecked Sendable {
 
 - [ ] `swift build` passes with zero errors
 - [ ] No provider is missing from `super.init(...)` (check §3.3 for Strategy B)
-- [ ] Component providers that depend on `colors` receive the **custom** color provider, not the Orange default
+- [ ] Component providers that depend on `colors` receive the **custom** color provider, not the base theme's default
 - [ ] `colorsCharts` / `colorsDecorative` are set or explicitly omitted (Strategy B)
 - [ ] Font `.ttf` files are added to `Resources/` and declared in `Package.swift`
 - [ ] `Bundle.YourTheme` extension is defined and references `Bundle.module`

@@ -1,12 +1,12 @@
 # Developer guide
 
 - [Technical preconditions](#technical-preconditions)
-- [Build MISO Package](#build-ouds-package)
+- [Build MISO Package](#build-miso-package)
 - [Documentation](#documentation)
   * [Generation](#generation)
   * [Illustrations](#illustrations)
 - [Run tests](#run-tests)
-  * [Unit tests for MISO Swift package](#unit-tests-for-ouds-swift-package)
+  * [Unit tests for MISO Swift package](#unit-tests-for-miso-swift-package)
   * [On devices tests](#on-devices-tests)
 - [Developer Certificate of Origin](#developer-certificate-of-origin)
 - [Commits, changelog, release note, versioning](#commits-changelog-release-note-versioning)

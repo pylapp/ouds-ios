@@ -7,7 +7,7 @@ import SwiftUI
 /// Divider improves readability and content organization without introducing a stronger visual hierarchy like a heading or a container would.
 /// A vertical Divider is used to separate content laid out side by side (`HStack`).
 /// The divider can be colored using dedicated ``MISODividerColor`` colors.
-/// The thickness (width) is fixed by dedicated token from `OUDSTheme`.
+/// The thickness (width) is fixed by dedicated token from `MISOTheme`.
 ///
 /// ## Code samples
 ///

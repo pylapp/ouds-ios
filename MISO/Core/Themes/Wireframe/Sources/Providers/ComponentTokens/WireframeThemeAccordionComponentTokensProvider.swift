@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
@@ -21,10 +8,10 @@ import MISOThemesContract
 
 /// A class which wraps all **component  tokens of accordions** for *accordions* components.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllAccordionComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
+/// This provider should be integrated as a `AllAccordionComponentTokensProvider` implementation inside `MISOTheme` so as to provide
+/// all tokens to the users. It helps users to override some of the tokens and assign them to an `MISOTheme` implementation to use.
 /// It implements also the protocol `AccordionComponentTokens` and `AccordionFaqComponentTokens`
-/// so as to expose the component tokens for *accordions* through any `OUDSTheme`.
+/// so as to expose the component tokens for *accordions* through any `MISOTheme`.
 /// *Accordions* components tokens are defined with semantic tokens spaces (from `AllSpaceSemanticTokensProvider`)
 /// and sizes (from `AllSizeSemanticTokensProvider`).
 ///
@@ -48,7 +35,7 @@ final class WireframeThemeAccordionComponentTokensProvider: AllAccordionComponen
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil)
     {
-        ML.debug("Init of WireframeThemeAccordionComponentTokensProvider")
+        OL.debug("Init of WireframeThemeAccordionComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
         #if DEBUG

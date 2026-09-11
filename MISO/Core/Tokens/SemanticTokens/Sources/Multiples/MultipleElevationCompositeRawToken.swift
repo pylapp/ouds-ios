@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOTokensRaw
 import SwiftUI
 
@@ -32,7 +19,7 @@ import SwiftUI
 ///
 ///         // Then the develoment team declares an "higher" level elevation semantic token
 ///         // inside ElevationCompositeSemanticTokens protocol,
-///         // and defined inside OrangeTheme+ElevationCompositeSemanticTokens extension
+///         // and defined inside WireframeTheme+ElevationCompositeSemanticTokens extension
 ///         // ElevationCompositeSemanticToken is a typealias for MultipleElevationCompositeRawToken to keep same grammar as design kit
 ///         var none: ElevationCompositeSemanticToken {
 ///             ElevationCompositeSemanticToken(light: bottom_0, dark: bottom_1_100)

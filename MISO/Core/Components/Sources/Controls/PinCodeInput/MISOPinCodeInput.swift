@@ -4,7 +4,7 @@
 #if !os(watchOS) && !os(tvOS)
 import SwiftUI
 
-// MARK: - OUDS PIN Code Input
+// MARK: - MISO PIN Code Input
 
 /// PIN code input is a UI element that allows to capture short, fixed-length numeric codes, typically for authentication or confirmation purposes,
 /// such as a four, six or eight-digit personal identification number (PIN).

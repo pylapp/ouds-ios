@@ -32,7 +32,7 @@ import SwiftUI
     case center
 }
 
-// MARK: - OUDS List Item Content Style
+// MARK: - MISO List Item Content Style
 
 /// Defines the visual style of a list item such as ``MISOStaticListItem`` or ``MISONavigationListItem``.
 ///
@@ -133,7 +133,7 @@ import SwiftUI
     case item(divider: Bool = true, background: Bool = false)
 }
 
-// MARK: - OUDS List Item Size
+// MARK: - MISO List Item Size
 
 /// Defines the size of a list item such as ``MISOStaticListItem`` or ``MISONavigationListItem``.
 ///
@@ -157,7 +157,7 @@ import SwiftUI
 ///
 /// - Since: 3.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-@frozen public enum OUDSListItemSize {
+@frozen public enum MISOListItemSize {
     /// The default (i.e. standard) size of the list item.
     /// All text fields and elements are displayed at their normal size.
     case `default`
@@ -309,11 +309,11 @@ extension View {
     ///     .misoListItemSize(.small)
     /// ```
     ///
-    /// - Parameter size: The ``OUDSListItemSize`` to apply.
+    /// - Parameter size: The ``MISOListItemSize`` to apply.
     ///   Use `.standard` (default) for normal sizing, or `.small` for a compact layout.
     ///
     /// - Returns: A view with the specified size applied to its list items.
-    public func misoListItemSize(_ size: OUDSListItemSize) -> some View {
+    public func misoListItemSize(_ size: MISOListItemSize) -> some View {
         environment(\.misoListItemSize, size)
     }
 }
@@ -343,7 +343,7 @@ extension EnvironmentValues {
 
     /// The current size of list items.
     ///
-    /// Defaults to ``OUDSListItemSize/standard``.
+    /// Defaults to ``MISOListItemSize/standard``.
     /// Set via ``SwiftUICore/View/misoListItemSize(_:)``.
-    @Entry var misoListItemSize: OUDSListItemSize = .default
+    @Entry var misoListItemSize: MISOListItemSize = .default
 }

@@ -11,7 +11,7 @@ import GameController
 /// to read the FKA setting (unlike VoiceOver, Switch Control, etc.).
 ///
 /// The rationale is UX-oriented: when a physical keyboard is connected, a tab bar item can enter the `focused`
-/// state (via keyboard navigation / FKA). In this state the default OUDS style applies the bold `selectedFont`,
+/// state (via keyboard navigation / FKA). In this state the default MISO style applies the bold `selectedFont`,
 /// which at the fixed small font size used by `UITabBar` (10pt on iPhone, 13pt on iPad) can cause the title
 /// text to be truncated. Falling back to the regular-weight font in this situation prevents the truncation.
 enum PhysicalKeyboardDetector {

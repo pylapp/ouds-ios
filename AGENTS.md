@@ -9,7 +9,7 @@ min-deployment: iOS 15.0
 
 # MISO iOS - AI Agent Guide
 
-MISO (Orange Unified Design System) is a Swift Package providing design tokens, themes and SwiftUI components for Orange Group products.
+MISO is a Swift Package providing design tokens, themes and SwiftUI components, forked from ouds-ios.
 The demo application is called "Design System Toolbox".
 The project is open source (MIT) at https://github.com/Orange-OpenSource/miso-ios.
 Target platforms: iOS 15, iPadOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16. Language: Swift 6 / SwiftUI.
@@ -33,7 +33,7 @@ Components:
 
 Guides:
 - **`miso-ios-guide-vocabulary`** — glossary of MISO-specific terms (tokenator, token types, theme, …)
-- **`miso-ios-guide-create-theme`** — step-by-step guide to create a custom MISO theme (subclass OrangeTheme, from scratch on MISOTheme, mix of providers, local fonts)
+- **`miso-ios-guide-create-theme`** — step-by-step guide to create a custom MISO theme (subclass an existing theme, from scratch on MISOTheme, mix of providers, local fonts)
 
 ## Key files
 

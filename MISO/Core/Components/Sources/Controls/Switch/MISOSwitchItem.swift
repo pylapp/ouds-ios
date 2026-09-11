@@ -161,20 +161,20 @@ public struct MISOSwitchItem: View {
                 constrainedMaxWidth: Bool = false)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an MISOSwitchItem in an error context and in read only mode")
+            OL.fatal("It is forbidden by design to have an MISOSwitchItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an MISOSwitchItem is empty, prefer MISOSwitch(isOn:accessibilityLabel:) instead")
+            OL.warning("Label given to an MISOSwitchItem is empty, prefer MISOSwitch(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description text given to an MISOSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Description text given to an MISOSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
-            ML.warning("Error text given to an MISOSwitchItem must be defined in case of error")
+            OL.warning("Error text given to an MISOSwitchItem must be defined in case of error")
         }
         // swiftlint:enable force_unwrapping
 
@@ -243,19 +243,19 @@ public struct MISOSwitchItem: View {
                 constrainedMaxWidth: Bool = false)
     {
         if isError, isReadOnly {
-            ML.fatal("It is forbidden by design to have an MISOSwitchItem in an error context and in read only mode")
+            OL.fatal("It is forbidden by design to have an MISOSwitchItem in an error context and in read only mode")
         }
 
         if label.isEmpty {
-            ML.warning("Label given to an MISOSwitchItem is empty, prefer MISOSwitch(isOn:accessibilityLabel:) instead")
+            OL.warning("Label given to an MISOSwitchItem is empty, prefer MISOSwitch(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
-            ML.warning("Description text given to an MISOSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Description text given to an MISOSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if isError, errorText.isEmpty {
-            ML.warning("Error text given to an MISOSwitchItem must be defined in case of error")
+            OL.warning("Error text given to an MISOSwitchItem must be defined in case of error")
         }
 
         _isOn = isOn

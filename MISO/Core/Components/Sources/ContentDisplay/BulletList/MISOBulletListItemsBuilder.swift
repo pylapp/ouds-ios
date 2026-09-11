@@ -31,7 +31,7 @@ import SwiftUI
         components
     }
 
-    /// Combines multiple arrays of OUDSBulletListItem into a single array
+    /// Combines multiple arrays of MISOBulletListItem into a single array
     /// Accepts variadic array of arrays and flattens them into one array
     public static func buildBlock(_ components: [MISOBulletList.Item]...) -> [MISOBulletList.Item] {
         components.flatMap(\.self)

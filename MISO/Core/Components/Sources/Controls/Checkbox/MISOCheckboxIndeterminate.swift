@@ -113,7 +113,7 @@ public struct MISOCheckboxIndeterminate: View {
                 isReadOnly: Bool = false)
     {
         if accessibilityLabel.isEmpty {
-            ML.warning("The MISOCheckbox should not have an empty accessibility label, think about your disabled users!")
+            OL.warning("The MISOCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
         _selection = selection
         self.accessibilityLabel = accessibilityLabel

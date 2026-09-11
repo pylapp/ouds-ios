@@ -88,7 +88,7 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
-/// Do not use `AttributedString`  for *rich text* mode in OUDS componants if they contain hyperlinks.
+/// Do not use `AttributedString`  for *rich text* mode in MISO componants if they contain hyperlinks.
 /// Hyperlinks may be not accessible for Voice Over, Full Keyboard Access and Switch Control.
 /// Prefer use other components like `Text` from SwiftUI.
 ///
@@ -108,7 +108,7 @@ import SwiftUI
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - urlToOpen: The link to open on tap on the text
-    ///    - token: The color to apply to the text as URL, as OUDS token
+    ///    - token: The color to apply to the text as URL, as MISO token
     ///    - font: The font to apply to the text as URL
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -160,7 +160,7 @@ import SwiftUI
     /// - Parameters:
     ///    - text: The text to display as hyperlink, default set to `nil`
     ///    - urlToOpen: The link to open on tap on the text, default set to `nil`
-    ///    - token: The color to apply to the text as URL, as OUDS token
+    ///    - token: The color to apply to the text as URL, as MISO token
     ///    - font: The font to apply to the text as URL
     public init(text: String? = nil, urlToOpen: URL? = nil, color token: ColorSemanticToken, font: Font) {
         self.init(text: text, urlToOpen: urlToOpen, color: Color(hexadecimalCode: token), font: font)
@@ -213,7 +213,7 @@ extension AttributedString {
     ///    - key: A `LocalizedStringKey` pointing to the text to display which contains texts for URL
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - token: The color to apply to the  text as OUDS token
+    ///    - token: The color to apply to the  text as MISO token
     public static func from(_ key: LocalizedStringKey,
                             tableName: String? = nil,
                             bundle: Bundle = .main,
@@ -244,7 +244,7 @@ extension AttributedString {
     ///
     /// - Parameters:
     ///    - text: The text which contains some text shards to find and turn into hyperlinks
-    ///    - token: The color to apply to the text, as OUDS token
+    ///    - token: The color to apply to the text, as MISO token
     public static func from(text: String,
                             foregroundColor token: ColorSemanticToken) -> AttributedString
     {
@@ -276,7 +276,7 @@ extension AttributedString {
     ///    - key: A `LocalizedStringKey` pointing to the text to display
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - token: The color to apply to the whole text, as OUDS token
+    ///    - token: The color to apply to the whole text, as MISO token
     ///    - font: The font to apply to the whole text
     public static func from(_ key: LocalizedStringKey,
                             tableName: String? = nil,
@@ -315,7 +315,7 @@ extension AttributedString {
     ///
     /// - Parameters:
     ///    - text: The text to style
-    ///    - token: The color to apply to the whole text, as OUDS token
+    ///    - token: The color to apply to the whole text, as MISO token
     ///    - font: The font to apply to the whole text
     public static func from(text: String,
                             foregroundColor token: ColorSemanticToken,
@@ -357,7 +357,7 @@ extension AttributedString {
     ///    - key: A `LocalizedStringKey` pointing to the text to display which contains texts for URL
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - token: The color to apply to the whole text except the URL, as OUDS token
+    ///    - token: The color to apply to the whole text except the URL, as MISO token
     ///    - font: The font to apply to the whole text except the URL
     ///    - urlConfigurations: The styles to apply to the URLs
     public static func from(_ key: LocalizedStringKey,
@@ -398,7 +398,7 @@ extension AttributedString {
     ///
     /// - Parameters:
     ///    - text: The text which contains some text shards to find and turn into hyperlinks
-    ///    - token: The color to apply to the whole text except the URL, as OUDS token
+    ///    - token: The color to apply to the whole text except the URL, as MISO token
     ///    - font: The font to apply to the whole text except the URL
     ///    - urlConfigurations: The styles to apply to the URLs
     public static func from(text: String,
@@ -453,7 +453,7 @@ extension AttributedString {
     ///
     /// - Parameters:
     ///    - source: The Markdown text containing URL
-    ///    - token: The color to apply to the whole text except the URL, as OUDS token
+    ///    - token: The color to apply to the whole text except the URL, as MISO token
     public static func from(markdown source: String,
                             foregroundColor token: ColorSemanticToken) -> AttributedString
     {
@@ -481,7 +481,7 @@ extension AttributedString {
     ///
     /// - Parameters:
     ///    - source: The Markdown text containing URL
-    ///    - token: The color to apply to the whole text except the URL, as OUDS token
+    ///    - token: The color to apply to the whole text except the URL, as MISO token
     ///    - font: The font to apply to the whole text except the URL
     ///    - urlConfigurations: The styles to apply to the URLs
     public static func from(markdown source: String,
@@ -531,7 +531,7 @@ extension AttributedString {
                 result[run.range].foregroundColor = defaultConfiguration.color
                 result[run.range].font = defaultConfiguration.font
             } else {
-                ML.warning("No configuration found for URL '\(String(describing: run.link?.absoluteString))'")
+                OL.warning("No configuration found for URL '\(String(describing: run.link?.absoluteString))'")
             }
             result[run.range].underlineStyle = .single
         }

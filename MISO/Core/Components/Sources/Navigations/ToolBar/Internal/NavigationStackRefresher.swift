@@ -13,7 +13,7 @@ struct NavigationStackRefresher: ViewModifier {
 
     private let hideBackButtonLabel: Bool
 
-    @Environment(\.theme) private var theme: OUDSTheme
+    @Environment(\.theme) private var theme: MISOTheme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.forceMISOLegacyLayout) private var forceMISOLegacyLayout
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
@@ -57,7 +57,7 @@ struct NavigationStackRefresher: ViewModifier {
     #if !os(macOS)
     // MARK: - Helpers
 
-    private func refreshAllNavigationBars(for newTheme: OUDSTheme, with newColorScheme: ColorScheme) {
+    private func refreshAllNavigationBars(for newTheme: MISOTheme, with newColorScheme: ColorScheme) {
         DispatchQueue.main.async {
             // For the update of all visible navigation bars
             for scene in UIApplication.shared.connectedScenes {
@@ -73,7 +73,7 @@ struct NavigationStackRefresher: ViewModifier {
 
     // swiftlint:disable function_body_length
     private func refreshNavigationBars(in view: UIView,
-                                       for newTheme: OUDSTheme,
+                                       for newTheme: MISOTheme,
                                        with newColorScheme: ColorScheme)
     {
         let appearance = UINavigationBarAppearance()

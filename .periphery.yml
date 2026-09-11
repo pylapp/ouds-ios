@@ -5,7 +5,8 @@ targets:
 - MISOComponents
 - MISOFoundations
 - MISOModules
-- MISOThemesOrange
+- MISOThemesContract
+- MISOThemesWireframe
 - MISOTokensComponent
 - MISOTokensRaw
 - MISOTokensSemantic

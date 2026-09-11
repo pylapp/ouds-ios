@@ -7,14 +7,14 @@ import SwiftUI
 
 extension EnvironmentValues {
 
-    /// Some accessibility traits to add in specific parts of some compatible OUDS components.
+    /// Some accessibility traits to add in specific parts of some compatible MISO components.
     @Entry var additionalTraits: AccessibilityTraits = []
 }
 
-// MARK: - OUDS Component Accessibility Traits Modifier
+// MARK: - MISO Component Accessibility Traits Modifier
 
 /// `ViewModifier` that propagates accessibility traits down the environment so that
-/// specific parts of some compatible OUDS components can get additional accessibility traits.
+/// specific parts of some compatible MISO components can get additional accessibility traits.
 ///
 /// Prefer the convenience methods on `View`:
 /// - ``View/misoAccessibilityAddTraits(_:)-single``
@@ -32,7 +32,7 @@ struct MISOComponentAccessibilityTraitsModifier: ViewModifier {
 
 extension View {
 
-    /// Adds one accessibility trait to add to any compatible OUDS components in the view subtree.
+    /// Adds one accessibility trait to add to any compatible MISO components in the view subtree.
     ///
     /// ```swift
     /// MISOTextArea(label: "Title", text: $text)
@@ -45,7 +45,7 @@ extension View {
         modifier(MISOComponentAccessibilityTraitsModifier(traits: trait))
     }
 
-    /// Adds multiple accessibility traits to add to any compatible OUDS components in the view subtree.
+    /// Adds multiple accessibility traits to add to any compatible MISO components in the view subtree.
     ///
     /// ```swift
     /// MISOTextArea(label: "Title", text: $text)

@@ -34,9 +34,9 @@ struct TypographyModifier: ViewModifier {
         isCompactMode ? font.compact : font.regular
     }
 
-    /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `NativeFont`
+    /// According to the current `MISOTheme` and if a custom font is applied or not, returns the suitable `NativeFont`
     /// The `UIFont` is preferred to the `Font` because the `lineHeight` to compute the `lineSpacing` is needed.
-    /// In addition, SwiftUI line height dedicated API stacks text to the top, and OUDS requires to have text centered.
+    /// In addition, SwiftUI line height dedicated API stacks text to the top, and MISO requires to have text centered.
     private var adaptativeFont: NativeFont {
         // If a font family has been given by the user, use it.
         // If undefined, use font family from theme (maybe because not directly given by user), which can be also undefined

@@ -62,8 +62,8 @@ struct ToolBarItemActionButton: View {
 
 /// Depending on the OS version and the toolbar associated with the item, adds a badge to the item.
 /// For iOS 26 / Liquid Glass, the system badge must be used for the top toolbar; otherwise, the badge will not be readable.
-/// However, for the bottom toolbar, the system does not display the badge, so an OUDS badge is used as a workaround.
-/// For iOS versions up to 18, use the OUDS badge in all cases.
+/// However, for the bottom toolbar, the system does not display the badge, so an MISO badge is used as a workaround.
+/// For iOS versions up to 18, use the MISO badge in all cases.
 private struct ToolBarItemBadgeModifier: ViewModifier {
 
     let type: MISOToolBarItem.BadgeType?
@@ -98,7 +98,7 @@ private struct ToolBarItemBadgeModifier: ViewModifier {
         }
     }
 
-    /// Adds an OUDS badge to the item
+    /// Adds an MISO badge to the item
     @ViewBuilder private func misoBadgeLayout(_ content: Content) -> some View {
         ZStack(alignment: .topTrailing) {
             content

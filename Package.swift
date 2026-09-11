@@ -1,12 +1,7 @@
 // swift-tools-version: 6.3
 
-// Software Name: MISO iOS
-// SPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
 
 import PackageDescription
 
@@ -51,7 +46,7 @@ let package = Package(
             targets: ["MISOTokensComponent"]),
         .library(
             name: "MISOTokensSemantic",
-            targets: ["MISOSTokensRaw"]),
+            targets: ["MISOTokensRaw"]),
         .library(
             name: "MISOTokensRaw",
             targets: ["MISOTokensRaw"]),

@@ -8,4 +8,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
     
-- Migration from OUDS iOS codebase to MISO iOS
+- Migration from MISO iOS codebase to MISO iOS

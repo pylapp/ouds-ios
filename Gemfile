@@ -1,15 +1,5 @@
-#
-# Software Name: OUDS iOS
-# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 # SPDX-License-Identifier: MIT
-#
-# This software is distributed under the MIT license,
-# the text of which is available at https://opensource.org/license/MIT/
-# or see the "LICENSE" file for more details.
-#
-# Authors: See CONTRIBUTORS.txt
-# Software description: A SwiftUI components library with code examples for Orange Unified Design System
-#
 
 source "https://rubygems.org"
 
@@ -29,7 +19,7 @@ gem 'abbrev', '0.1.2'
 gem 'json', '2.21.2'
 
 # Embeded in Fastlane RubyGem it seems
-# Solves CVE-2026-54171 (https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/security/dependabot/1)
+# Solves CVE-2026-54171 (https://github.com/Orange-OpenSource/miso-ios-design-system-toolbox/security/dependabot/1)
 gem 'excon', '1.7.1'
 
 # Really needed gems

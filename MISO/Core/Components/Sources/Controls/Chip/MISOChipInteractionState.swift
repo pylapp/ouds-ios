@@ -57,7 +57,7 @@ import MISOFoundations
         case .disabled:
             self = .disabled
         case .readOnly:
-            ML.fatal("A MISO chip is a component which cannot be in read only mode")
+            OL.fatal("A MISO chip is a component which cannot be in read only mode")
         }
     }
 }

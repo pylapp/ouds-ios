@@ -11,10 +11,10 @@ Design tokens represent the small, repeated design decisions that make up a desi
 
 ### What they are
 
-These _tokens_ ([MISOTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) are defined for components and refer to semantic tokens or raw tokens.
+These _tokens_ ([MISOTokensComponent](https://ios.unified-design-system.orange.com/documentation/misotokenscomponent/)) are defined for components and refer to semantic tokens or raw tokens.
 They can be seen as a kind of bridge between components and in the end primitive values of the design kit.
 
-Components tokens are defined and gathered inside _Swift protocol_ so as to be exposed then through implementation of `OUDSTheme` thanks to dedicated tokens providers. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes or providers to override properties declared in _protocols_ and defined in _extensions_.
+Components tokens are defined and gathered inside _Swift protocol_ so as to be exposed then through implementation of `MISOTheme` thanks to dedicated tokens providers. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes or providers to override properties declared in _protocols_ and defined in _extensions_.
 That is the reason why tokens are exposed as `@objc open` to be available and overridable anywhere. 
 
 Below is an example about how the component tokens are declared, defined and provided.
@@ -30,10 +30,10 @@ public protocol ButtonComponentTokens {
 }
 
 // There is an existing provider for such tokens
-open class OrangeThemeButtonComponentTokensProvider { }
+open class WireframeThemeButtonComponentTokensProvider { }
 
 // Define the components tokens exposed through the theme thanks to provider
-extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
+extension WireframeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 
     // Raw tokens can be used
 
@@ -47,7 +47,7 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
 
-// This provider is then exposed through OUDSTheme as an AllButtonComponentTokensProvider
+// This provider is then exposed through MISOTheme as an AllButtonComponentTokensProvider
 ```
 
 > Tip: In most of cases you may use the components tokens if you want to implement your own components
@@ -56,7 +56,7 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 
 ### What they are
 
-These _tokens_ ([MISOTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/)) can be used mainly for _component tokens_ to apply some style and configuration values.
+These _tokens_ ([MISOTokensSemantic](https://ios.unified-design-system.orange.com/documentation/misotokenssemantic/)) can be used mainly for _component tokens_ to apply some style and configuration values.
 They can be seen as an high level of usage with functional meanings.
 
 A semantic token points to a raw token or another semantic token, and is used by components. 
@@ -70,7 +70,7 @@ That is the reason why tokens are exposed as `@objc open` to be available and ov
 
 To keep the same semantics as the ones used in our specifications, _type aliases_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These *type aliases* are available for those who want to make their own theme. It's only syntaxic sugar to bring _design words_ in our product.
 
-Below is an example about how the component tokens are declared, defined and provided (with [MISOTokensComponent/ColorSemanticTokens](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/colorsemantictokens)).
+Below is an example about how the component tokens are declared, defined and provided (with [MISOTokensComponent/ColorSemanticTokens](https://ios.unified-design-system.orange.com/documentation/misotokenssemantic/colorsemantictokens)).
 
 ```swift
 // Declare the semantic tokens
@@ -83,22 +83,22 @@ protocol ColorSemanticTokens {
 }
 
 // There is an existing provider for colors
-open class OrangeThemeColorSemanticTokensProvider { }
+open class WireframeThemeColorSemanticTokensProvider { }
 
 // Define the semantic tokens exposed through the theme thanks to provider
-extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
+extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
 
     // Possible to assign raw token of color available in the global package
     @objc open var bgPrimary: ColorSemanticToken { ColorRawTokens.functionalWhite }
 
     // Possible to assign raw token of color available in the the module
-    @objc open var bgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
+    @objc open var bgSecondary: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue200 }
 
     // Possible to refer to another semantic token of color
     @objc open var bgTertiary: ColorSemanticToken { bgSecondary }
 }
 
-// This provider is then exposed through OUDSTheme as an AllColorSemanticTokensProvider
+// This provider is then exposed through MISOTheme as an AllColorSemanticTokensProvider
 ```
 
 > Tip: In some cases you can use the components tokens if you want to implement your own components
@@ -107,7 +107,7 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
 
 ### What they are
 
-_Raw tokens_ ([MISOTokensRaw](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/)) are smallest _tokens_ possible. They are associated to raw values and will be finaly the values assigned to the _components_ properties.
+_Raw tokens_ ([MISOTokensRaw](https://ios.unified-design-system.orange.com/documentation/misotokensraw/)) are smallest _tokens_ possible. They are associated to raw values and will be finaly the values assigned to the _components_ properties.
 
 In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than *structs* or *classes*.
 
@@ -119,7 +119,7 @@ Using more simple and primitive types will help also to test the library. With a
 
 We also choose to add in _extension_ all the tokens values in a separated file so as to help the *Figma*-JSON-to-Swift parser (*el famoso tokenator*) to build files to copy and past easily in the project and keeping all the other objects.
 
-Example for [ColorRawTokens](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/colorrawtokens):
+Example for [ColorRawTokens](https://ios.unified-design-system.orange.com/documentation/misotokensraw/colorrawtokens):
 
 ```swift
 // Define type alias for color raw tokens, we don't care in higher level their real type, just use aliases
@@ -136,7 +136,7 @@ extension ColorRawTokens { // Gathers all color raw tokens, use enums for namesp
     ...
 }
 
-// The OUDS library still exposes this computed property
+// The MISO library still exposes this computed property
 extension String {
     public var color: Color {
         Color(hexadecimalCode: self)
@@ -144,8 +144,8 @@ extension String {
 }
 
 // Themes can embed their own tokens matching the good type
-enum OrangeBrandColorRawTokens {
-    public static let colorOrange200: ColorOrangeBrandRawToken = "#FFC18AFF"
+enum WireframeBrandColorRawTokens {
+    public static let royalBlue200: ColorWireframeBrandRawToken = "#FFC18AFF"
 }
 ```
 
@@ -154,4 +154,4 @@ enum OrangeBrandColorRawTokens {
 ## Add, edit or remove tokens
 
 If you need to add, update or remove tokens, you will have to follow some simple steps.
-You may need to [create an issue](https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml) or [a pull request](https://github.com/Orange-OpenSource/ouds-ios/pulls) to submit the evolutions you want. [The wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/20-%E2%80%90-How-to-update-tokens) can be also helpful.
+You may need to [create an issue](https://github.com/Orange-OpenSource/miso-ios/issues/new?template=token_update.yml) or [a pull request](https://github.com/Orange-OpenSource/miso-ios/pulls) to submit the evolutions you want. [The wiki](https://github.com/Orange-OpenSource/miso-ios/wiki/20-%E2%80%90-How-to-update-tokens) can be also helpful.

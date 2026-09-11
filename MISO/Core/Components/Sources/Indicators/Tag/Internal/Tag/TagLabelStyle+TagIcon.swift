@@ -118,16 +118,16 @@ struct TagAsset: View {
         case .bullet:
             return Image(decorative: "ic_tag_bullet", bundle: theme.resourcesBundle)
         case .icon:
-            if let oudsImage = status.customIcon {
-                return oudsImage.asset
+            if let misoImage = status.customIcon {
+                return misoImage.asset
             }
             return defaultLeadingIcon
         }
     }
 
     private var appliedRenderingMode: Image.TemplateRenderingMode {
-        if status.leading == .icon, let oudsImage = status.customIcon {
-            oudsImage.renderingMode
+        if status.leading == .icon, let misoImage = status.customIcon {
+            misoImage.renderingMode
         } else {
             .template
         }

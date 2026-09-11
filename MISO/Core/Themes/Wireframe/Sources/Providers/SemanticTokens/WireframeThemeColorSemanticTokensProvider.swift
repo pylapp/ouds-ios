@@ -1,26 +1,13 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
 // swiftlint:disable type_name
 
 /// A class which wraps all **color semantic tokens**, *multiple* or not, and expose them.
-/// This provider should be integrated as a `AllColorSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a `AllColorSemanticTokensProvider` implementation inside `MISOTheme` so as to provide
 /// all tokens to the users.
 ///
 /// - Since: 0.17.0
@@ -32,7 +19,7 @@ final class WireframeThemeColorSemanticTokensProvider: AllColorSemanticTokensPro
 
     /// Intializes the provider
     init() {
-        ML.debug("Init of WireframeThemeColorSemanticTokensProvider")
+        OL.debug("Init of WireframeThemeColorSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "WireframeThemeColorSemanticTokensProvider")

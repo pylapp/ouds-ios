@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import SwiftUI
 #if canImport(UIKit)
@@ -30,8 +17,8 @@ extension Color {
     public init?(hexadecimalCode: String) {
 
         #if DEBUG
-        if hexadecimalCode == "ouds-forbidden-color-value" {
-            ML.error("Trying to parse forbidden color as SwiftUI Color, it will crash")
+        if hexadecimalCode == "miso-forbidden-color-value" {
+            OL.error("Trying to parse forbidden color as SwiftUI Color, it will crash")
         }
         #endif
 
@@ -57,7 +44,7 @@ extension Color {
             b = CGFloat((rgb & 0x0000_FF00) >> 8) / 255.0
             a = CGFloat(rgb & 0x0000_00FF) / 255.0
         } else {
-            ML.warning("The hexadecimal code value given for the color cannot be processed, please check '\(hexadecimalCode)'")
+            OL.warning("The hexadecimal code value given for the color cannot be processed, please check '\(hexadecimalCode)'")
             return nil
         }
 

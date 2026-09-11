@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOTokensRaw
 import MISOTokensSemantic
@@ -25,7 +12,7 @@ import Testing
 /// Tests also utilies like, for exmaple, contrat ratio computations.
 struct MultipleColorSemanticTokenTests {
 
-    // See https://github.com/Orange-OpenSource/ouds-ios/issues/667
+    // See https://github.com/Orange-OpenSource/miso-ios/issues/667
     #if !os(iOS)
     private static let doesRunOniOS = false
     #else
@@ -72,7 +59,7 @@ struct MultipleColorSemanticTokenTests {
     /// Tests controls on `MultipleColorSemanticToken` to ensure that if it contains at least one forbidden color value we know it
     @Test func hasForbiddenColorValues() {
         // Given
-        let forbiddenColorValue = "ouds-forbidden-color-value"
+        let forbiddenColorValue = "miso-forbidden-color-value"
         let notForbiddenColorValue = ColorRawTokens.functionalMalachite300
 
         // When, then
@@ -94,16 +81,16 @@ struct MultipleColorSemanticTokenTests {
 
     // MARK: - Extension with MISOWCAG21Ratio
 
-    @Test("oudsDebugWCAG21Colors debug flag must be false by default")
-    func oudsDebugWCAG21ColorsDefaultIsFalse() {
-        defer { MISOWCAG21Ratio.oudsDebugWCAG21Colors = false }
-        #expect(MISOWCAG21Ratio.oudsDebugWCAG21Colors == false)
+    @Test("misoDebugWCAG21Colors debug flag must be false by default")
+    func misoDebugWCAG21ColorsDefaultIsFalse() {
+        defer { MISOWCAG21Ratio.misoDebugWCAG21Colors = false }
+        #expect(MISOWCAG21Ratio.misoDebugWCAG21Colors == false)
     }
 
     @Test("MISOWCAG21Ratio.debugContrastRatio(::::) utility must return suitable values", .enabled(if: Self.doesRunOniOS))
     func debugContrastRatioWithTokens() {
 
-        MISOWCAG21Ratio.oudsDebugWCAG21Colors = true
+        MISOWCAG21Ratio.misoDebugWCAG21Colors = true
 
         // Passing light and dark for AA and non textual (>= 3:1)
         var result = MISOWCAG21Ratio.debugContrastRatio(MultipleColorSemanticToken(light: "#FFFFFF", dark: "#000000"),

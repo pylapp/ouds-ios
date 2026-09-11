@@ -289,7 +289,7 @@ bundle exec fastlane update_sbom
 
 When adding or modifying components, you MUST add illustrations in both:
 - Component documentation files (public API docs)
-- Theme documentation files (Orange, OrangeCompact, Sosh, Wireframe)
+- Theme documentation files (Wireframe)
 
 ### 10.1 Component documentation files
 

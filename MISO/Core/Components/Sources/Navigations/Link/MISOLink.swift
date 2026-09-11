@@ -261,13 +261,13 @@ public struct MISOLink: View {
                 } icon: {
                     EmptyView()
                 }
-            case let .textAndIcon(oudsImage):
+            case let .textAndIcon(misoImage):
                 Label {
                     Text(LocalizedStringKey(text))
                 } icon: {
-                    if let asset = oudsImage.asset {
+                    if let asset = misoImage.asset {
                         asset
-                            .renderingMode(oudsImage.renderingMode)
+                            .renderingMode(misoImage.renderingMode)
                             .resizable()
                     }
                 }

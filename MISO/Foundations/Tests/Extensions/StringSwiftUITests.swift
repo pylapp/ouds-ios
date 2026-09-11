@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import Foundation
 import MISOFoundations
 import SwiftUI
@@ -122,27 +109,6 @@ struct StringSwiftUITests {
 
         result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.bold)")
         #expect(result == "HelveticaNeue-Bold", "Current value is '\(result)'")
-    }
-
-    /// Tests the Sosh font family values created using a font family name and a weight
-    @Test
-    func fontNameInPostScriptForSosh() throws {
-        var result: String
-
-        result = "Sosh".fontNameInPostScript(using: "\(Font.Weight.thin)")
-        #expect(result == "Sosh-Thin", "Current value is '\(result)'")
-
-        result = "Sosh".fontNameInPostScript(using: "\(Font.Weight.regular)")
-        #expect(result == "Sosh-Regular", "Current value is '\(result)'")
-
-        result = "Sosh".fontNameInPostScript(using: "\(Font.Weight.medium)")
-        #expect(result == "Sosh-Medium", "Current value is '\(result)'")
-
-        result = "Sosh".fontNameInPostScript(using: "\(Font.Weight.bold)")
-        #expect(result == "Sosh-Bold", "Current value is '\(result)'")
-
-        result = "Sosh".fontNameInPostScript(using: "\(Font.Weight.black)")
-        #expect(result == "Sosh-Black", "Current value is '\(result)'")
     }
 
     /// Tests the Shantell Sans family values created using a font family name and a weight

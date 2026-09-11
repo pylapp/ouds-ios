@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import MISOThemesContract
 
@@ -21,9 +8,9 @@ import MISOThemesContract
 
 /// A class which wraps all **component  tokens of bullet list** for *bullet list* objects like `MISOBulletList`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllBulletListComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// It implements also the protocol `BulletListComponentTokens` so as to expose the component tokens for *bullet list* through any `OUDSTheme`.
+/// This provider should be integrated as a `AllBulletListComponentTokensProvider` implementation inside `MISOTheme` so as to provide
+/// all tokens to the users. It helps users to override some of the tokens and assign them to an `MISOTheme` implementation to use.
+/// It implements also the protocol `BulletListComponentTokens` so as to expose the component tokens for *bullet list* through any `MISOTheme`.
 /// *Bullet list* components tokens are defined with raw and semantic tokens of spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
@@ -39,7 +26,7 @@ final class WireframeThemeBulletListComponentTokensProvider: AllBulletListCompon
     /// Defines a provider of component tokens dedicated to `MISOLink`
     /// - Parameter spaces: Provider for space semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
     init(spaces: AllSpaceSemanticTokensProvider? = nil) {
-        ML.debug("Init of WireframeThemeBulletListComponentTokensProvider")
+        OL.debug("Init of WireframeThemeBulletListComponentTokensProvider")
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++

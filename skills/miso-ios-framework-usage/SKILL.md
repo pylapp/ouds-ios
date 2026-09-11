@@ -15,7 +15,7 @@ import MISOSwiftUI // Always use the umbrella import
 struct MyApp: App {
     var body: some Scene {
         WindowGroup {
-            MISOThemeableView(theme: OrangeTheme()) {
+            MISOThemeableView(theme: WireframeTheme()) {
                 ContentView()
             }
         }
@@ -42,22 +42,20 @@ Can import internal modules, but for developer experience there are umbrella pro
 | Product | Themes | When |
 |---|---|---|
 | `MISOSwiftUI` | All | Default |
-| `MISOSwiftUIOrange` | Orange + OrangeCompact | Orange apps only |
-| `MISOSwiftUIOrangeSosh` | Orange + Sosh | Multi-brand |
 | `MISOSwiftUIWireframe` | Wireframe | Prototyping |
 
-Internal modules: `MISOComponents`, `MISOTokensRaw`, `MISOTokensSemantic`, `MISOTokensComponent`, `MISOThemesOrange`, `MISOThemesSosh`, `MISOFoundations`, etc.
+Internal modules: `MISOComponents`, `MISOTokensRaw`, `MISOTokensSemantic`, `MISOTokensComponent`, `MISOThemesWireframe`, `MISOFoundations`, etc.
 
 ---
 
 ## 3. Themes
 
 ```swift
-MISOThemeableView(theme: OrangeTheme()) { … }   // inject at root
+MISOThemeableView(theme: WireframeTheme()) { … }   // inject at root
 @Environment(\.theme) private var theme          // consume anywhere
 ```
 
-Available: `OrangeTheme`, `OrangeCompact`, `SoshTheme`, `WireframeTheme`.
+Available: `WireframeTheme` (only theme shipped by default; define your own by subclassing `MISOTheme` or `WireframeTheme`).
 
 ---
 
@@ -348,7 +346,7 @@ func localizedHelveticaFont() -> String {
     return (MISOUtils.isArabicLanguageInUse() ? "Helvetica Neue Arabic" : "Helvetica Neue")
 }
 
-let theme = OrangeTheme(fontFamily: localizedHelveticaFont())
+let theme = WireframeTheme(fontFamily: localizedHelveticaFont())
 ```
 
 ---
