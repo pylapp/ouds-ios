@@ -32,7 +32,8 @@ platform :ios do
     lane :format do
         puts "👉 Run Swift Format to format sources"
 
-        sh "cd .. && swiftformat ."
+        template = 'SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne\\nSPDX-License-Identifier: MIT'
+        sh "cd .. && swiftformat . --header \"#{template}\""
     end
 
     # ------------------------------------------------------------

@@ -123,7 +123,7 @@ More technical details [in the wiki](https://github.com/Orange-OpenSource/ouds-i
 
 ### Instanciate and inject theme
 
-In the root view of your app, add the `OUDSThemeableView` with inside the _theme_ object you want to apply.
+In the root view of your app, add the `MISOThemeableView` with inside the _theme_ object you want to apply.
 You can instanciate the theme object on the fly, but only once.
 
 ```swift
@@ -132,7 +132,7 @@ struct YourApp: App {
 
     var body: some Scene {
         WindowGroup {
-            OUDSThemeableView(theme: theTheme) { // theTheme can be: OrangeTheme(), SoshTheme(), WirefameTheme(), etc.
+            MISOThemeableView(theme: theTheme) { // theTheme can be: OrangeTheme(), SoshTheme(), WirefameTheme(), etc.
               AppRootView() // Add your app root view here
             }
         }
@@ -153,7 +153,7 @@ If you need to get configuration details from the theme (colors, dimensions, etc
 
 ### Use the components
 
-Import the `OUDSComponents` library and instanciate the component you need. All of them are described [in the online documentation (and grouped by categories)](https://ios.unified-design-system.orange.com/documentation/oudscomponents).
+Import the `MISOComponents` library and instanciate the component you need. All of them are described [in the online documentation (and grouped by categories)](https://ios.unified-design-system.orange.com/documentation/oudscomponents).
 
 The wiki lists also [the components and their availability](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
 
