@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 import MISOFoundations
 import SwiftUI
 
@@ -25,7 +12,7 @@ import SwiftUI
 /// ## Appearances
 ///
 /// iOS 26 brings Liquid Glass, the new Apple look and feel which will prevent developers to define specific styles for some critical components like bars.
-/// Because today the OUDS tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and older versions:
+/// Because today the MISO tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and older versions:
 /// - background color of tab bar can be changed for iOS lower than 26
 /// - background color of tab bar does not change since iOS 26
 /// - normal / unselected tab item color can be changed for both image and text only for iOS lower than 26
@@ -52,7 +39,7 @@ import SwiftUI
 ///
 /// ## Guidelines
 ///
-/// OUDS guidelines recommends to:
+/// MISO guidelines recommends to:
 /// - limit when possible the number of items to 5
 /// - use both images and texts in tab bar items
 /// - use badges only when needed to avoid to have heavy tab bar
@@ -62,12 +49,12 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
-/// - If your tabs embedded in the `OUDSTabBar` do not contain texts but only images, add an accessibility label introducing the journey for this tab
-/// - If your tabs embedded in the `OUDSTabBar` display a badge (empty or with text), vocalize it in your tab to let users know what it is (unread messages, new things, etc)
+/// - If your tabs embedded in the `MISOTabBar` do not contain texts but only images, add an accessibility label introducing the journey for this tab
+/// - If your tabs embedded in the `MISOTabBar` display a badge (empty or with text), vocalize it in your tab to let users know what it is (unread messages, new things, etc)
 /// by using accessibiltiy value
 ///
 /// ```swift
-///     OUDSTabBar {
+///     MISOTabBar {
 ///         SomeView()
 ///             .tabItem {
 ///                 Label {
@@ -84,7 +71,7 @@ import SwiftUI
 ///
 /// ## Selection of tabs
 ///
-/// For iOS lower than 26, a selected tab indicator is displayed in the `OUDSTabBar` ; the `count` parameter must be defined (to the number of tabs in the component),
+/// For iOS lower than 26, a selected tab indicator is displayed in the `MISOTabBar` ; the `count` parameter must be defined (to the number of tabs in the component),
 /// and if the `selectedTab` binding value is equal to a given tag associated to a tab item.
 /// Otherwise the indicator won't appear; these parameters are mandatory to compute the location of the indicator.
 /// This rule is only applied if selected tab indicator must be displayed.
@@ -92,8 +79,8 @@ import SwiftUI
 ///
 /// ## Technical considerations
 ///
-/// In order to improve the Developer eXperience the current `OUDSTabBar` implementation lets users define their own tab items.
-/// OUDS applies only appearances and styles on elements to prevent users to define raw data to assign to the component before being rendered like a *picker*.
+/// In order to improve the Developer eXperience the current `MISOTabBar` implementation lets users define their own tab items.
+/// MISO applies only appearances and styles on elements to prevent users to define raw data to assign to the component before being rendered like a *picker*.
 /// Thus users will need to add their own accessiiblity label if badges are used or also apply *template* rendering mode on images if needed.
 /// Thus it will be also possible to use Liquid Glass new API with animations and items stacking.
 ///
@@ -108,15 +95,15 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // Use the OUDS tab bar to wrap tab bar items and associated views
+///     // Use the MISO tab bar to wrap tab bar items and associated views
 ///     // Item tagged 0 will be selected first, 3 tabs are embedded.
 ///     // Image with size of 26 x 26
 ///     @State private var selectedTab = 0
 ///
-///     OUDSTabBar(selectedTab: $selectedTab, count: 3) {
+///     MISOTabBar(selectedTab: $selectedTab, count: 3) {
 ///
 ///         // Add the views with the SwiftUI tab item and labels
-///         // No need to define colors, everything is done inside OUDSTabBar
+///         // No need to define colors, everything is done inside MISOTabBar
 ///         SomeView()
 ///             .tabItem {
 ///                 Label("Label 1", image: "image_1")
@@ -142,8 +129,8 @@ import SwiftUI
 ///
 /// ## Alternative components
 ///
-/// If you want to use SwiftUI `Tab` View with or without rules, use instead `OUDSTabView`.
-/// If you target apps with Liquid Glass enabled and need `Tab` or rules, use instead `OUDSLiquidGlassTabView`.
+/// If you want to use SwiftUI `Tab` View with or without rules, use instead `MISOTabView`.
+/// If you target apps with Liquid Glass enabled and need `Tab` or rules, use instead `MISOLiquidGlassTabView`.
 ///
 /// ## Design documentation
 ///
@@ -198,11 +185,11 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.0.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSTabBar<Content: View>: View {
+public struct MISOTabBar<Content: View>: View {
 
     // MARK: Properties
 
-    /// The current number of tabs in the `OUDSTabBar` to compute the selected tab indicator for iOS without Liquid Glass
+    /// The current number of tabs in the `MISOTabBar` to compute the selected tab indicator for iOS without Liquid Glass
     private let tabCount: Int
 
     /// Binding to the currently selected tab index.
@@ -229,10 +216,10 @@ public struct OUDSTabBar<Content: View>: View {
 
     // MARK: Initializers
 
-    // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
+    // NOTE: No use of #if os(iOS) to let MISO maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items and a two-way binding to the selected tab index.
     /// Number of tabs and selected tab are needed to compute the selected tab indicator for iOS lower than 26.
-    /// If you target iOS 26+ or other platform, prefer instead `OUDSTabBar(content:)`.
+    /// If you target iOS 26+ or other platform, prefer instead `MISOTabBar(content:)`.
     ///
     /// The `selectedTab` binding is updated whenever the user taps a tab item, allowing the parent
     /// view to observe or drive tab selection programmatically.
@@ -240,7 +227,7 @@ public struct OUDSTabBar<Content: View>: View {
     /// ```swift
     ///     @State private var selectedTab = 0
     ///
-    ///     OUDSTabBar(selectedTab: $selectedTab, count: 2) {
+    ///     MISOTabBar(selectedTab: $selectedTab, count: 2) {
     ///         SomeView()
     ///             .tabItem {
     ///                 Label("Label 1", image: "some-image")
@@ -264,7 +251,7 @@ public struct OUDSTabBar<Content: View>: View {
                 @ViewBuilder content: @escaping () -> Content)
     {
         if selectedTab.wrappedValue < 0 || selectedTab.wrappedValue >= count {
-            ML.warning("The selected tab binding for the OUDSTabBar does not match the count of tabs")
+            ML.warning("The selected tab binding for the MISOTabBar does not match the count of tabs")
         }
         _selectedTab = selectedTab
         tabCount = Int(count)
@@ -272,12 +259,12 @@ public struct OUDSTabBar<Content: View>: View {
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
 
-    // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
+    // NOTE: No use of #if os(iOS) to let MISO maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
-    /// If you target iOS lower than 26, prefer instead `OUDSTabBar(selectedTab:count:content:)`
+    /// If you target iOS lower than 26, prefer instead `MISOTabBar(selectedTab:count:content:)`
     ///
     /// ```swift
-    ///     OUDSTabBar {
+    ///     MISOTabBar {
     ///         SomeView()
     ///             .tabItem {
     ///                 Label("Label 1", image: "some-image")
@@ -311,7 +298,7 @@ public struct OUDSTabBar<Content: View>: View {
         // because of the ZStack, its conditions and the multiple use of tab views.
         // Such cycle broke view hierachy, UI tests and had side effects with toolBar buttons.
         // Now it seems for iOS 26+ this code is not used and the tab bar is still well computed.
-        // `DeviceModifier` is intentionally applied at the `OUDSTabBar` level so that
+        // `DeviceModifier` is intentionally applied at the `MISOTabBar` level so that
         // device-related environment values (such as `iPhoneInUse`) are available only
         // within the TabBar view hierarchy (e.g. `SelectedTabIndicator`, `TabBarTopDivider`).
         ZStack(alignment: .bottom) {
@@ -327,7 +314,7 @@ public struct OUDSTabBar<Content: View>: View {
             TabView(selection: $selectedTab) {
                 content()
             }
-            .modifier(OUDSTabBarViewModifier())
+            .modifier(MISOTabBarViewModifier())
 
             SelectedTabIndicator(selected: $selectedTab, count: tabCount, isTabBarHidden: $isTabBarHidden)
                 .opacity(shouldShowTabIndicator ? 1 : 0)

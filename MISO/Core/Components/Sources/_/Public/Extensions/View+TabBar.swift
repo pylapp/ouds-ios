@@ -62,16 +62,16 @@ extension View {
 // MARK: - PreferenceKey
 
 /// A SwiftUI `PreferenceKey` that propagates tab bar visibility intent **upward** through the
-/// view hierarchy, from a child view to the `OUDSTabBar` ancestor that hosts the overlay elements.
+/// view hierarchy, from a child view to the `MISOTabBar` ancestor that hosts the overlay elements.
 ///
 /// SwiftUI's `.toolbar(.hidden, for: .tabBar)` hides the native `UITabBar` visually, but does so
 /// by modifying the internal UIKit layout of the `UITabBarController` without changing any
 /// observable property on `UITabBar` itself (`isHidden`, `alpha`, `frame` all stay unchanged).
-/// This makes it impossible for `OUDSTabBar` to detect the change via KVO, polling, or
+/// This makes it impossible for `MISOTabBar` to detect the change via KVO, polling, or
 /// `GeometryReader`.
 ///
 /// `TabBarHiddenPreferenceKey` solves this by letting child views explicitly signal their intent
-/// via `.hideTabBar()`, which posts this preference. `OUDSTabBar` listens with
+/// via `.hideTabBar()`, which posts this preference. `MISOTabBar` listens with
 /// `.onPreferenceChange` and updates its `isTabBarHidden` state accordingly.
 ///
 /// The `reduce` function uses logical OR so that if any descendant hides the tab bar, the
@@ -90,12 +90,12 @@ struct TabBarHiddenPreferenceKey: PreferenceKey {
 
 extension View {
 
-    /// Hides the native tab bar **and** signals `OUDSTabBar` to hide its overlay elements
+    /// Hides the native tab bar **and** signals `MISOTabBar` to hide its overlay elements
     /// (selected tab indicator and top divider) in sync.
     ///
     /// Use this modifier instead of `.toolbar(.hidden, for: .tabBar)`
-    /// whenever a view inside a `NavigationStack` embedded in an `OUDSTabBar` needs to hide
-    /// the tab bar. Without this modifier, `OUDSTabBar` cannot detect the visibility change
+    /// whenever a view inside a `NavigationStack` embedded in an `MISOTabBar` needs to hide
+    /// the tab bar. Without this modifier, `MISOTabBar` cannot detect the visibility change
     /// and its overlay elements remain visible on top of the content. This helper must be used for
     /// apps with nested views and tab bars.
     ///
@@ -110,7 +110,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// - Returns: A view that hides the tab bar and propagates the hidden state to `OUDSTabBar` overlay items.
+    /// - Returns: A view that hides the tab bar and propagates the hidden state to `MISOTabBar` overlay items.
     @available(iOS 16, *)
     public func hideTabBar() -> some View {
         #if !os(macOS) && !os(watchOS)
@@ -121,12 +121,12 @@ extension View {
         #endif
     }
 
-    /// Hides or not the native tab bar **and** signals `OUDSTabBar` to hide (or not) its overlay elements
+    /// Hides or not the native tab bar **and** signals `MISOTabBar` to hide (or not) its overlay elements
     /// (selected tab indicator and top divider) in sync.
     ///
     /// Use this modifier instead of `.toolbar(for:)`
-    /// whenever a view inside a `NavigationStack` embedded in an `OUDSTabBar` needs to hide
-    /// the tab bar. Without this modifier, `OUDSTabBar` cannot detect the visibility change
+    /// whenever a view inside a `NavigationStack` embedded in an `MISOTabBar` needs to hide
+    /// the tab bar. Without this modifier, `MISOTabBar` cannot detect the visibility change
     /// and its overlay elements remain visible on top of the content. This helper must be used for
     /// apps with nested views and tab bars.
     ///
@@ -141,7 +141,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// - Returns: A view that hides or not the tab bar and propagates the hidden state to `OUDSTabBar` overlay items.
+    /// - Returns: A view that hides or not the tab bar and propagates the hidden state to `MISOTabBar` overlay items.
     @available(iOS 16, *)
     public func tabBar(isHidden: Bool) -> some View {
         #if !os(macOS) && !os(watchOS)

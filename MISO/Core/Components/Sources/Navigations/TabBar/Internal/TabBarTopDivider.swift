@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if os(iOS)
 
 import MISOFoundations
@@ -26,7 +13,7 @@ import SwiftUI
 /// or 26+ with Liquid Glass disabled.
 struct TabBarTopDivider: View {
 
-    /// Driven by `OUDSTabBar`,  the single source of truth for tab bar visibility.
+    /// Driven by `MISOTabBar`,  the single source of truth for tab bar visibility.
     /// Using a `@Binding` avoids calling `findTabBar()` here for visibility,
     /// which was unreliable when intermediate navigation layers were present.
     @Binding var isTabBarHidden: Bool
@@ -77,7 +64,7 @@ struct TabBarTopDivider: View {
 
     /// Gets the tab bar height from the UIKit hierarchy and updates the stored dimension.
     /// Visibility (`isTabBarHidden`) is intentionally NOT updated here — it is owned by
-    /// `OUDSTabBar` and passed down via `@Binding` to avoid the race condition where
+    /// `MISOTabBar` and passed down via `@Binding` to avoid the race condition where
     /// `findTabBar()` might return a stale `isHidden` value during a navigation transition.
     private func updateTabBarHeight() { // ༼;´༎ຶ ۝ ༎ຶ༽
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,

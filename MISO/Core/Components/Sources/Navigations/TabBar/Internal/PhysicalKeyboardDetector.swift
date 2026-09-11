@@ -1,24 +1,11 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if os(iOS)
 
 import GameController
 
-/// Internal utility used by the `OUDSTabBar` to detect the presence of a physical keyboard connected to the device.
+/// Internal utility used by the `MISOTabBar` to detect the presence of a physical keyboard connected to the device.
 ///
 /// This is used as a proxy for detecting Full Keyboard Access (FKA), because iOS does not expose any public API
 /// to read the FKA setting (unlike VoiceOver, Switch Control, etc.).

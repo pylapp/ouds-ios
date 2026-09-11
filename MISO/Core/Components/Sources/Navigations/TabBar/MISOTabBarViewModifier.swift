@@ -1,19 +1,6 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(watchOS) && !os(tvOS)
 
 import MISOFoundations
@@ -24,26 +11,26 @@ import SwiftUI
 import GameController
 #endif
 
-/// Defines the look and feel the tab bar must have by applying the OUDS tokens.
+/// Defines the look and feel the tab bar must have by applying the MISO tokens.
 /// Changes only colors and typgraphies, and does not add additional items like indicator of selected tab or divider.
-/// To use these elements in your tab view, use instead ``OUDSTabBar``.
+/// To use these elements in your tab view, use instead ``MISOTabBar``.
 ///
 /// ## Rendering
 ///
 /// iOS 26 brings Liquid Glass, the new Apple look and feel which will prevent developers to define specific styles for some critical components like bars.
 ///
-/// Because today the OUDS tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and older versions:
+/// Because today the MISO tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and older versions:
 /// - background color of tab bar can be changed for iOS lower than 26
 /// - background color of tab bar does not change since iOS 26
 /// - normal / unselected tab item color can be changed for both image and text only for iOS lower than 26
 /// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed
 /// and not the text making theme not readable in dark color scheme
 ///
-/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on OUDS badge components.
+/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on MISO badge components.
 ///
 /// - Since: 3.0.0
 @available(iOS 15, *)
-public struct OUDSTabBarViewModifier: ViewModifier {
+public struct MISOTabBarViewModifier: ViewModifier {
 
     // MARK: Properties
 
@@ -123,7 +110,7 @@ public struct OUDSTabBarViewModifier: ViewModifier {
     /// - Parameters:
     ///    - scheme: The color scheme to apply if defined
     ///    - theme: The theme to apply if defined
-    private func setupTabBarAppearance(withColor scheme: ColorScheme? = nil, andTheme theme: OUDSTheme? = nil) {
+    private func setupTabBarAppearance(withColor scheme: ColorScheme? = nil, andTheme theme: MISOTheme? = nil) {
 
         // Get forced or most fresh theme and color scheme
         let colorSchemeToApply = scheme ?? colorScheme

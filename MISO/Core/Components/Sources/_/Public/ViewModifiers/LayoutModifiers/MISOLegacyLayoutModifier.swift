@@ -18,7 +18,7 @@ import SwiftUI
 /// Prefer build with Xcode 27 without the *UIDesignRequiresCompatibility*  flag.
 ///
 /// ```swift
-///   OUDSTabBar(selectedTab: ..., count: ...) { ... )
+///   MISOTabBar(selectedTab: ..., count: ...) { ... )
 ///     .modifier(MISOLegacyLayoutModifier())
 /// ```
 ///

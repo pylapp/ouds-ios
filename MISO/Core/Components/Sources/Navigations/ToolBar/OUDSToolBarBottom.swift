@@ -33,9 +33,9 @@ import SwiftUI
 /// ## Guidelines
 ///
 /// - Test the use of the `toolBarBottom` for both iOS with Liquid Glass and not Liquid Glass
-/// - If you use both an  ``OUDSTabBar`` with the `toolBarBottom`, the toolbar will be above the tabbar for iOS lower than 26, **not recommended**
-/// - If you use both an  ``OUDSTabBar`` with the `toolBarBottom`, the toolbar will be **behind** the tabbar for iOS 26+, so not usable, **not recommended**
-/// - Avoid use of both `toolBarBottom` and ``OUDSTabBar`` in the same page
+/// - If you use both an  ``MISOTabBar`` with the `toolBarBottom`, the toolbar will be above the tabbar for iOS lower than 26, **not recommended**
+/// - If you use both an  ``MISOTabBar`` with the `toolBarBottom`, the toolbar will be **behind** the tabbar for iOS 26+, so not usable, **not recommended**
+/// - Avoid use of both `toolBarBottom` and ``MISOTabBar`` in the same page
 ///
 /// ## Badges uses
 ///

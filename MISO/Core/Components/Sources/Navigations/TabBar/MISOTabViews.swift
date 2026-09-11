@@ -1,43 +1,30 @@
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 // SPDX-License-Identifier: MIT
 
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
 #if !os(tvOS) && !os(watchOS)
 import MISOFoundations
 import SwiftUI
 
-// MARK: - OUDS Tab View
+// MARK: - MISO Tab View
 
-/// A tab view component that accepts native SwiftUI `Tab` items (iOS 18+) while applying the full OUDS
-/// tab bar appearance — colors, typography, top divider and selected-tab indicator — just like ``OUDSTabBar``.
+/// A tab view component that accepts native SwiftUI `Tab` items (iOS 18+) while applying the full MISO
+/// tab bar appearance — colors, typography, top divider and selected-tab indicator — just like ``MISOTabBar``.
 ///
-/// Use ``OUDSTabView`` instead of ``OUDSTabBar`` when you need iOS 18+ `Tab`-based API such as
+/// Use ``MISOTabView`` instead of ``MISOTabBar`` when you need iOS 18+ `Tab`-based API such as
 /// positional `Tab("Label", image:) { }` items with a selection binding or rules like `Tab(role: .search)`.
-/// For apps targeting iOS 15–17, use ``OUDSTabBar`` instead.
-/// When you need `Tab(role: .search)` on iOS 26+, **with Liquid Glass enabled**, use ``OUDSLiquidGlassTabView`` instead.
+/// For apps targeting iOS 15–17, use ``MISOTabBar`` instead.
+/// When you need `Tab(role: .search)` on iOS 26+, **with Liquid Glass enabled**, use ``MISOLiquidGlassTabView`` instead.
 ///
 /// ## Selection binding
 ///
 /// A `Binding<Int>` is always required and always kept in sync, regardless of the OS version.
 /// For iOS 18 or iOS 26 without Liquid Glass, also pass `count:` (the number of tabs) so the selected-tab indicator can be positioned.
 /// Each `Tab` must carry an explicit `value: Int` matching the `selectedTab` binding.
-/// For iOS 26+ with Liquid Glass, use ``OUDSLiquidGlassTabView``.
+/// For iOS 26+ with Liquid Glass, use ``MISOLiquidGlassTabView``.
 ///
 /// ## Appearances
 ///
-/// iOS 26 brings Liquid Glass. The same rules as ``OUDSTabBar`` apply:
+/// iOS 26 brings Liquid Glass. The same rules as ``MISOTabBar`` apply:
 /// - Background and unselected item colors are applied for iOS lower than 26.
 /// - On iOS 26+ with Liquid Glass enabled, only the selected accent color is applied.
 /// - The top divider and selected-tab indicator are shown for iOS 18 (portrait iPhone only for
@@ -51,7 +38,7 @@ import SwiftUI
 ///
 /// ## Guidelines
 ///
-/// OUDS guidelines recommend using tab bar item images at **26 × 26 pt**.
+/// MISO guidelines recommend using tab bar item images at **26 × 26 pt**.
 ///
 /// ## Code samples
 ///
@@ -59,7 +46,7 @@ import SwiftUI
 /// // iOS 18 and 26 without Liquid Glass: binding + count required for the selected-tab indicator
 /// @State private var selectedTab = 0
 ///
-/// OUDSTabView(selectedTab: $selectedTab, count: 4) {
+/// MISOTabView(selectedTab: $selectedTab, count: 4) {
 ///     Tab("first_tab_label", image: "first-tab-image", value: 0) { FirstView() }
 ///     Tab("second_tab_label", image: "second-tab-image", value: 1) { SecondView() }
 ///     Tab("third_tab_label", image: "third-tab-image", value: 2) { ThirdView() }
@@ -69,11 +56,11 @@ import SwiftUI
 ///
 /// ```swift
 /// // iOS 26+ with Liquid Glass enabled: binding without count (no custom indicator)
-/// // value: is still required — use OUDSLiquidGlassTabView for Tab without value: or Tab(role:)
+/// // value: is still required — use MISOLiquidGlassTabView for Tab without value: or Tab(role:)
 /// @State private var selectedTab = 0
 ///
 /// if #available(iOS 26, *) {
-///     OUDSTabView(selectedTab: $selectedTab) {
+///     MISOTabView(selectedTab: $selectedTab) {
 ///         Tab("first_tab_label", image: "first-tab-image", value: 0) { FirstView() }
 ///         Tab("second_tab_label", image: "second-tab-image", value: 1) { SecondView() }
 ///         Tab("third_tab_label", image: "third-tab-image", value: 2) { ThirdView() }
@@ -84,7 +71,7 @@ import SwiftUI
 /// - Version: 1.0.0
 /// - Since: 3.0.0
 @available(iOS 18, macOS 15, visionOS 2, *) // Cannot be used for OS lower than 18 because of missing `Tab(value:)` API
-public struct OUDSTabView<Content: TabContent>: View where Content.TabValue == Int {
+public struct MISOTabView<Content: TabContent>: View where Content.TabValue == Int {
 
     // MARK: - Properties
 
@@ -99,8 +86,8 @@ public struct OUDSTabView<Content: TabContent>: View where Content.TabValue == I
 
     // MARK: - Initializers
 
-    // NOTE: No use of #if os(iOS) to let OUDS maintainers on macOS compile the documentation.
-    /// Creates an `OUDSTabView` for iOS 18 and iOS 26 with Liquid Glass disabled.
+    // NOTE: No use of #if os(iOS) to let MISO maintainers on macOS compile the documentation.
+    /// Creates an `MISOTabView` for iOS 18 and iOS 26 with Liquid Glass disabled.
     ///
     /// Pass `selectedTab` and `count` so the selected-tab indicator can be drawn above the correct column.
     /// Each `Tab` must carry a matching `value`.
@@ -108,7 +95,7 @@ public struct OUDSTabView<Content: TabContent>: View where Content.TabValue == I
     /// ```swift
     /// @State private var selectedTab = 0
     ///
-    /// OUDSTabView(selectedTab: $selectedTab, count: 3) {
+    /// MISOTabView(selectedTab: $selectedTab, count: 3) {
     ///     Tab("Home", image: "house", value: 0) { HomePage() }
     ///     Tab("Search", image: "magnifyingglass", value: 1) { SearchPage() }
     ///     Tab("Profile", image: "person", value: 2) { ProfilePage() }
@@ -124,21 +111,21 @@ public struct OUDSTabView<Content: TabContent>: View where Content.TabValue == I
                 @TabContentBuilder<Int> content: @escaping () -> Content)
     {
         if selectedTab.wrappedValue < 0 || selectedTab.wrappedValue >= count {
-            ML.warning("The selected tab binding for the OUDSTabView does not match the count of tabs")
+            ML.warning("The selected tab binding for the MISOTabView does not match the count of tabs")
         }
         _selectedTab = selectedTab
         tabCount = Int(count)
         self.content = content
     }
 
-    // NOTE: No use of #if os(iOS) to let OUDS maintainers on macOS compile the documentation.
-    /// Creates an `OUDSTabView` for iOS 26+ (Liquid Glass enabled).
+    // NOTE: No use of #if os(iOS) to let MISO maintainers on macOS compile the documentation.
+    /// Creates an `MISOTabView` for iOS 26+ (Liquid Glass enabled).
     ///
     /// ```swift
     /// @State private var selectedTab = 0
     ///
     /// if #available(iOS 26, *) {
-    ///     OUDSTabView(selectedTab: $selectedTab) {
+    ///     MISOTabView(selectedTab: $selectedTab) {
     ///         Tab("Home", image: "house", value: 0) { HomePage() }
     ///         Tab("Search", image: "magnifyingglass", value: 1) { SearchPage() }
     ///         Tab("Profile", image: "person", value: 2) { ProfilePage() }
@@ -159,7 +146,7 @@ public struct OUDSTabView<Content: TabContent>: View where Content.TabValue == I
     }
 
     public var body: some View {
-        OUDSTabViewBody(selectedTab: $selectedTab, tabCount: tabCount) {
+        MISOTabViewBody(selectedTab: $selectedTab, tabCount: tabCount) {
             TabView(selection: $selectedTab) {
                 content()
             }
@@ -167,14 +154,14 @@ public struct OUDSTabView<Content: TabContent>: View where Content.TabValue == I
     }
 }
 
-// MARK: - OUDS Liquid Glass Tab View
+// MARK: - MISO Liquid Glass Tab View
 
 /// A tab view component for iOS 26+ that accepts native SwiftUI `Tab` items including `Tab(role: .search)`,
-/// while applying the full OUDS tab bar appearance — colors, typography and top divider.
+/// while applying the full MISO tab bar appearance — colors, typography and top divider.
 ///
-/// Use ``OUDSLiquidGlassTabView`` when you need role-based tabs (iOS 26+) or targeting iOS 26+ OS with Liquid Glass.
-/// For iOS 18 and iOS 26 without Liquid Glass, use ``OUDSTabView`` instead.
-/// For older iOS version use ``OUDSTabBar`` instead.
+/// Use ``MISOLiquidGlassTabView`` when you need role-based tabs (iOS 26+) or targeting iOS 26+ OS with Liquid Glass.
+/// For iOS 18 and iOS 26 without Liquid Glass, use ``MISOTabView`` instead.
+/// For older iOS version use ``MISOTabBar`` instead.
 ///
 /// ## Platform considerations
 ///
@@ -184,7 +171,7 @@ public struct OUDSTabView<Content: TabContent>: View where Content.TabValue == I
 /// ## Code samples
 ///
 /// ```swift
-/// OUDSLiquidGlassTabView {
+/// MISOLiquidGlassTabView {
 ///     Tab("Home", image: "house") { HomePage() }
 ///     Tab("Search", image: "magnifyingglass") { SearchPage() }
 ///     Tab("Profile", image: "person") { ProfilePage() }
@@ -194,15 +181,15 @@ public struct OUDSTabView<Content: TabContent>: View where Content.TabValue == I
 /// - Version: 1.0.0
 /// - Since: 3.0.0
 @available(iOS 26, macOS 26, visionOS 26, *)
-public struct OUDSLiquidGlassTabView<Content: TabContent>: View where Content.TabValue == Never {
+public struct MISOLiquidGlassTabView<Content: TabContent>: View where Content.TabValue == Never {
 
     /// The `TabContentBuilder` to build the `Tab` views
     private let content: () -> Content
 
-    /// Creates an `OUDSLiquidGlassTabView` with `Tab` items
+    /// Creates an `MISOLiquidGlassTabView` with `Tab` items
     ///
     /// ```swift
-    /// OUDSLiquidGlassTabView {
+    /// MISOLiquidGlassTabView {
     ///     Tab("Home", image: "house") { HomePage() }
     ///     Tab("Search", image: "magnifyingglass") { SearchPage() }
     ///     Tab("Profile", image: "person") { ProfilePage() }
@@ -216,7 +203,7 @@ public struct OUDSLiquidGlassTabView<Content: TabContent>: View where Content.Ta
 
     public var body: some View {
         // tabCount 0: indicator never shown (Liquid Glass always active on iOS 27+, asked to use this component for iOS 26 with Liquid Glass
-        OUDSTabViewBody(selectedTab: .constant(0), tabCount: 0) {
+        MISOTabViewBody(selectedTab: .constant(0), tabCount: 0) {
             TabView {
                 content()
             }
@@ -226,9 +213,9 @@ public struct OUDSLiquidGlassTabView<Content: TabContent>: View where Content.Ta
 
 // MARK: - Internal shared decoration body
 
-/// Internal view that holds the full OUDS tab bar decoration logic shared by
-/// ``OUDSTabView`` and ``OUDSLiquidGlassTabView``:
-/// - ``OUDSTabBarViewModifier`` — UITabBarAppearance tokens
+/// Internal view that holds the full MISO tab bar decoration logic shared by
+/// ``MISOTabView`` and ``MISOLiquidGlassTabView``:
+/// - ``MISOTabBarViewModifier`` — UITabBarAppearance tokens
 /// - ``SelectedTabIndicator`` — selected-tab pill (iOS < 26, portrait iPhone)
 /// - ``TabBarTopDivider`` — top divider stroke (legacy layout)
 /// - ``DeviceModifier`` — injects `iPhoneInUse` into the environment
@@ -236,7 +223,7 @@ public struct OUDSLiquidGlassTabView<Content: TabContent>: View where Content.Ta
 /// The `content` closure receives a fully-built `TabView` (already typed as `some View`),
 /// so this helper does not need to know about `TabContent` or `@TabContentBuilder`.
 @available(iOS 18, macOS 15, visionOS 2, *)
-private struct OUDSTabViewBody<TabViewContent: View>: View {
+private struct MISOTabViewBody<TabViewContent: View>: View {
 
     @Binding var selectedTab: Int
     let tabCount: Int
@@ -264,7 +251,7 @@ private struct OUDSTabViewBody<TabViewContent: View>: View {
                 .ignoresSafeArea(.keyboard, edges: .bottom)
 
             content()
-                .modifier(OUDSTabBarViewModifier())
+                .modifier(MISOTabBarViewModifier())
 
             SelectedTabIndicator(selected: $selectedTab, count: tabCount, isTabBarHidden: $isTabBarHidden)
                 .opacity(shouldShowTabIndicator ? 1 : 0)
